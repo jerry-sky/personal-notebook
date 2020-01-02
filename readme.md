@@ -4,6 +4,30 @@
 
 ---
 
+## Index
+
+### Main
+
+  #### Web stuff
+  - [Angular Notes](main/web-stuff/angular-notes.md)
+  - [Express.js Notes](main/web-stuff/express-notes.md)
+  - [JS (Other) Notes](main/web-stuff/js-notes.md)
+  - [Web Errors in general](main/web-stuff/web-errors.md)
+
+  #### [Orange](main/orange/orange.md)
+
+  #### [Blender Notes](main/blender-notes.md)
+
+  #### [Linux Mint Cinnamon](main/linux-mint-cinnamon.md)
+
+  #### [Linux Server Maintenance](main/linux-server-maintenance.md)
+
+  #### [Software List](main/software-list.md)
+
+  #### [VS Code](main/vs-code.md)
+
+---
+
 #### The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
   - *very poor performance of the browser-based app*
   - *no Linux-based app*
