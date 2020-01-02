@@ -48,7 +48,8 @@
     3. Install icon themes *[how-to](https://itsfoss.com/install-icon-linux-mint/)*
        1. [Flat remix](https://drasite.com/flat-remix )
        2. [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
-       3. [Quintom Cursors](https://www.gnome-look.org/p/1329799/)
+       <!-- spellchecker: disable-next-line -->
+       4. [Quintom Cursors](https://www.gnome-look.org/p/1329799/)
 
 11. Configure the bottom panel
     1.  TODO: describe the process
@@ -85,7 +86,7 @@
 24. *Optional [Setup switching workspaces via touchpad gestures](https://github.com/Hikari9/comfortable-swipe)*
 
 25. Change login page background image ( Administration $\to$ Login Window )
-
+<!-- spellchecker: disable-next-line -->
 26. *Optional [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)*
 
 27. *Optional [Japanese keyboard layout](https://forums.linuxmint.com/viewtopic.php?t=160272)*
