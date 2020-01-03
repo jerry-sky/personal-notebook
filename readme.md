@@ -22,6 +22,12 @@
 
   #### [VS Code](main/vs-code.md)
 
+### Life
+
+  #### [Thoughts](life/thoughts/readme.md)
+
+  #### [Books](life/books/readme.md)
+
 ---
 
 #### The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
