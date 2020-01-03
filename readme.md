@@ -28,6 +28,10 @@
 
   - [Books](life/books/readme.md)
 
+### Languages
+
+  - [English](languages/english/readme.md)
+
 ---
 
 #### The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
