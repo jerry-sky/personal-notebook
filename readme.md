@@ -29,6 +29,10 @@
   - [Todo app](ideas/todo-app.md)
   - [Notes app](ideas/notes-app.md)
 
+### Adobe
+  - [After Effect](adobe/after-effects.md)
+  - [Illustrator](adobe/illustrator.md)
+
 ---
 
 #### The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
