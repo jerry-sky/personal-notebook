@@ -33,6 +33,8 @@
   - [After Effect](adobe/after-effects.md)
   - [Illustrator](adobe/illustrator.md)
 
+### [Videos](videos/readme.md)
+
 ---
 
 #### The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
