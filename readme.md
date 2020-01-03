@@ -22,6 +22,7 @@
 ### Languages
   - [English](languages/english/readme.md)
   - [German](languages/german/readme.md)
+  - [French](languages/french/readme.md)
 
 ---
 
