@@ -8,11 +8,7 @@
 
 ### Main
 
-  #### Web stuff
-  - [Angular Notes](main/web-stuff/angular-notes.md)
-  - [Express.js Notes](main/web-stuff/express-notes.md)
-  - [JS (Other) Notes](main/web-stuff/js-notes.md)
-  - [Web Errors in general](main/web-stuff/web-errors.md)
+  #### [Web stuff](main/web-stuff/readme.md)
 
   #### [Orange](main/orange/orange.md)
 
