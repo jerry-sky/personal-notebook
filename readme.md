@@ -24,6 +24,11 @@
   - [German](languages/german/readme.md)
   - [French](languages/french/readme.md)
 
+### Ideas
+  - [Calendar app](ideas/calendar-app.md)
+  - [Todo app](ideas/todo-app.md)
+  - [Notes app](ideas/notes-app.md)
+
 ---
 
 #### The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
