@@ -7,29 +7,19 @@
 ## Index
 
 ### Main
-
   - [Web stuff](main/web-stuff/readme.md)
-
   - [Orange](main/orange/orange.md)
-
   - [Blender Notes](main/blender-notes.md)
-
   - [Linux Mint Cinnamon](main/linux-mint-cinnamon.md)
-
   - [Linux Server Maintenance](main/linux-server-maintenance.md)
-
   - [Software List](main/software-list.md)
-
   - [VS Code](main/vs-code.md)
 
 ### Life
-
   - [Thoughts](life/thoughts/readme.md)
-
   - [Books](life/books/readme.md)
 
 ### Languages
-
   - [English](languages/english/readme.md)
   - [German](languages/german/readme.md)
 
