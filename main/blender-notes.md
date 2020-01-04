@@ -10,7 +10,7 @@ Every time you copy an object consider making it a linked copy - meaning to crea
 
 ## Adaptive subdivision
 
-Use adaptive subdivision to not generate too many polygons that are not necessary. Thanks to this method you can save processing power and memory on mesh data by decreasing its detail accordingly with the distance from the camera.
+Use adaptive subdivision to avoid generating too many polygons. Thanks to this method you can save processing power and memory on mesh data by decreasing its detail accordingly to the distance from the camera.
 
 ## !Alpha transparency
 
