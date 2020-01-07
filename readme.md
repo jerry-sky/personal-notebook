@@ -35,6 +35,8 @@
 
 ### [Videos](videos/readme.md)
 
+### [Other](other/readme.md)
+
 ---
 
 #### The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
