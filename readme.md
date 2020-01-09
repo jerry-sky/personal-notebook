@@ -30,6 +30,9 @@
   - [Todo app](ideas/todo-app.md)
   - [Notes app](ideas/notes-app.md)
 
+### The arbitrary collection
+  - []
+
 ### Adobe
   - [After Effect](adobe/after-effects.md)
   - [Illustrator](adobe/illustrator.md)
