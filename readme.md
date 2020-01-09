@@ -18,6 +18,7 @@
 ### Life
   - [Thoughts](life/thoughts/readme.md)
   - [Books](life/books/readme.md)
+  - [Journal](life/journal/readme.md)
 
 ### Languages
   - [English](languages/english/readme.md)
