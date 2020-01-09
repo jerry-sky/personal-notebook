@@ -31,7 +31,7 @@
   - [Notes app](ideas/notes-app.md)
 
 ### The arbitrary collection
-  - []
+  - [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
 
 ### Adobe
   - [After Effect](adobe/after-effects.md)
