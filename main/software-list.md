@@ -4,7 +4,7 @@
 ### Basic Package
 
 1. Internet Browsers
-   - [**Vivaldi**](https://vivaldi.com/download/)
+   - [**Vivaldi**](https://vivaldi.com/download/) (*Primary Internet Browser*)
    - [Chrome](https://www.google.com/chrome/)
    - [Opera](https://www.opera.com/de/download)
    - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
@@ -19,11 +19,11 @@
 3. Utilities
    - **PuTTY** `sudo apt install putty`
    - FileZilla `sudo apt install filezilla`
+   - [**Dropbox**](https://www.dropbox.com/install) (*Primary Cloud solution*)
    - [TeamViewer](https://www.teamviewer.com/en/download/)
    - [*XAMPP*](https://www.apachefriends.org/download.html)
    - [**NVM**](https://github.com/nvm-sh/nvm#installing-and-updating)
    - [Etcher.io](https://etcher.io)
-   - [**Dropbox**](https://www.dropbox.com/install)
    - [PureRef](https://www.pureref.com/download.php)
 4. Packages
    - Java `sudo apt install default-jdk`
