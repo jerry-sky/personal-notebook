@@ -10,7 +10,7 @@
   - [Web stuff](main/web-stuff/readme.md)
   - [Orange](main/orange/orange.md)
   - [Blender Notes](main/blender-notes.md)
-  - [Linux Mint Cinnamon](main/linux-mint-cinnamon.md)
+  - [Linux Mint Cinnamon](main/pc-setup.md)
   - [Linux Server Maintenance](main/linux-server-maintenance.md)
   - [Software List](main/software-list.md)
   - [VS Code](main/vs-code.md)
