@@ -1,5 +1,9 @@
 # Blender Notes
 
+## Addons
+
+- [Time Tracker](https://github.com/uhlik/bpy#time-tracker-for-blender-280)
+
 ## Geometry node
 
 Can be used to colorize an object according to its position, rotation and such.

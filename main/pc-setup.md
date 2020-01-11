@@ -98,6 +98,8 @@ Following statements are crucial to perform [steps from the next section](#steps
 27. *Optional* [Japanese keyboard layout](https://forums.linuxmint.com/viewtopic.php?t=160272)
     1.  Note: for now it seems there is no *convenient* way to write in Hiragana or Katakana in Linux. Windows has better support for non-western dialects.
 
+28. Install [Blender](https://www.blender.org/download/) with all the [addons](blender-notes.md#addons).
+
 29. Install the rest of programs from the [software list](software-list.md).
 
 ## Issues
