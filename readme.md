@@ -15,6 +15,7 @@
   - [Web stuff](main/web-stuff/readme.md)
   - [Orange](main/orange/orange.md)
   - [Git](main/git-notes.md)
+  - [Colours](main/colour-notes.md)
 
 ### Life
   - [Thoughts](life/thoughts/readme.md)
