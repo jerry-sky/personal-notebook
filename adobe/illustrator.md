@@ -1,5 +1,12 @@
 # Adobe Illustrator
 
+## Links
+
+  - [How to Easily create a Laurel](https://youtu.be/XoueFohrhn4)
+  - [Create a Seamless Pattern Brush](https://youtu.be/_UsvbhSjcaw)
+
+## Notes
+
 1. `CTRL + SHIFT + A` $\equiv$ deselect all
 
 2. For copying colors use the eyedropper tool.

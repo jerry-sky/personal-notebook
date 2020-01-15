@@ -1,5 +1,12 @@
 # Adobe After Effects
 
+## Links
+
+### Useful
+
+  - [Extend effect beyond layer boundary](https://forums.creativecow.net/thread/2/1094938)
+  - [10 Essential After Effects Shortcuts](https://www.premiumbeat.com/blog/10-essential-after-effects-shortcuts/)
+
 ## Defs
 
 - CTI $\equiv$ Current Time Indicator
