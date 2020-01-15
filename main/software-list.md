@@ -4,7 +4,7 @@
 ### Basic Package
 
 1. Internet Browsers
-   - [**Vivaldi**](https://vivaldi.com/download/) (*Primary Internet Browser*)
+   - [**Vivaldi**](https://vivaldi.com/download/) [installation](pc-setup.md#configuring-the-internet-browser)
    - [Chrome](https://www.google.com/chrome/)
    - [Opera](https://www.opera.com/de/download)
    - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
