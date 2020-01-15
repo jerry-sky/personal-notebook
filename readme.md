@@ -14,6 +14,7 @@
   - [Linux Server Maintenance](main/linux-server-maintenance.md)
   - [Web stuff](main/web-stuff/readme.md)
   - [Orange](main/orange/orange.md)
+  - [Git](main/git-notes.md)
 
 ### Life
   - [Thoughts](life/thoughts/readme.md)
