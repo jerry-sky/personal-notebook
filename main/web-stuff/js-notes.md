@@ -1,5 +1,19 @@
 # JS (other) Notes
 
+## Index
+
+  - [Links](#links)
+  - [Parsing numbers in bases other than base-10](#parsing-numbers-in-bases-other-than-base-10)
+  - [Samsung Internet webpage scroll position](#samsung-internet-webpage-scroll-position)
+
+## Links
+
+  - [The Post JavaScript Apocalypse](https://www.youtube.com/watch?v=99Zacm7SsWQ)
+
+### Archived *(sentimental)*
+
+  - [SVGPan - a JS SVG map-like viewer](http://www.vleo.net/svgpan-a-javascript-svg-panzoomdrag-library/)
+
 ## Parsing numbers in bases other than base-10
 
 To convert a `number` to a string in the target `base` use:
