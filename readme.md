@@ -9,13 +9,14 @@
 ### Main
   - [**PC Setup**](main/pc-setup.md)
   - [Software List](main/software-list.md)
+  - [Git](main/git-notes.md)
   - [VS Code](main/vs-code.md)
   - [Blender Notes](main/blender-notes.md)
   - [Linux Server Maintenance](main/linux-server-maintenance.md)
   - [Web stuff](main/web-stuff/readme.md)
-  - [Orange](main/orange/orange.md)
-  - [Git](main/git-notes.md)
+  - [$\LaTeX$](main/latex-notes.md)
   - [Colours](main/colour-notes.md)
+  - [Orange](main/orange/orange.md)
 
 ### Life
   - [Thoughts](life/thoughts/readme.md)
