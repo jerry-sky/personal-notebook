@@ -1,5 +1,13 @@
 # Angular Notes
 
+## Links
+
+  - [How to use `reportProgress` in `HttpClient`?](https://stackoverflow.com/a/54899930/4249875)
+  - [Shared assets with multiple apps](https://medium.com/@nit3watch/angular-shared-assets-with-multiple-apps-nrwl-nx-b4801c05c771)
+  - [`.htaccess` file for serving Angular app](https://stackoverflow.com/a/22740184/4249875)
+  - [Alligator.io](https://alligator.io/angular/)
+  - [Tracking many files](https://stackoverflow.com/a/56292289/4249875)
+
 ## Deploying an app
 
 1. Compile the Angular app
