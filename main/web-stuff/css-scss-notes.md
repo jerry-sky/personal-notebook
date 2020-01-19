@@ -18,3 +18,30 @@
 
 ### Archived *(sentimental)*
   - [The Shapes of CSS](https://css-tricks.com/the-shapes-of-css/)
+
+## Web-kit scrollbar styling
+
+As the webkit browser have very ugly scrollbars and there is no front-runner when it comes to JS-based scrollbar frameworks - the best solution seems to just style them using CSS/SCSS directly.
+
+```scss
+/* width */
+::-webkit-scrollbar {
+  background: lighten(#333, 3.5%);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lighten(#333, 9%);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lighten(#333, 30%);
+}
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: lighten(#333, 3.5%);
+}
+/* Resizer */
+::-webkit-resizer {
+  background: lighten(#333, 8%);
+}
+```
