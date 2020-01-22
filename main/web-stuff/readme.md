@@ -9,6 +9,7 @@
   - [Web Errors in general](web-errors.md)
   - [CSS/SCSS](css-scss-notes.md)
   - [SQL](sql-notes.md)
+  - [Freeing a TCP port](#freeing-a-tcp-port)
 
 ## Links
 
@@ -33,3 +34,13 @@
 ### Entertainment-like
   - [IE-11 end of support countdown](https://death-to-ie11.netlify.com/)
   - [Creating Electronic Dance Music with NodeJS](https://www.youtube.com/watch?v=G1bRi4El0iw)
+
+
+## Freeing a TCP port
+
+Execute bash command
+```bash
+sudo fuser 80/tcp
+```
+to see the all of the process listening to HTTP requests on port 80. Add a `-k` option to kill them.
+[Source](https://stackoverflow.com/a/750705/4249875)
