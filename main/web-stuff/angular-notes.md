@@ -1,5 +1,13 @@
 # Angular Notes
 
+## Index
+
+  - [Links](#links)
+  - [Deploying](#deploying-an-app)
+  - [Installing Bootstrap](#installing-bootstrap)
+  - [NgModel input element inside NgFor](#ngmodel-input-element-inside-ngfor)
+  - [`Router` vs `Location`](#router-vs-location)
+
 ## Links
 
   - [How to use `reportProgress` in `HttpClient`?](https://stackoverflow.com/a/54899930/4249875)
@@ -35,3 +43,8 @@
 ## NgModel input element inside ngFor
 
 Nested `ngModel` input element inside `ngFor` need to refer to a value inside an `Object`. If it isn't wrapped in an `Object` Angular won't compile the app for some odd reason.
+
+## `Router` vs. `Location`
+
+When using Angular navigation use the `Router`'s `navigate` function. The `Location`'s `go` function is meant to interact with URL, not navigate in application routes.
+[Source](https://stackoverflow.com/a/42858854/4249875)
