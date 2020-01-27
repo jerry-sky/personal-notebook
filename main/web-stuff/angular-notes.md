@@ -10,11 +10,7 @@
 
 ## Links
 
-  - [How to use `reportProgress` in `HttpClient`?](https://stackoverflow.com/a/54899930/4249875)
-  - [Shared assets with multiple apps](https://medium.com/@nit3watch/angular-shared-assets-with-multiple-apps-nrwl-nx-b4801c05c771)
-  - [`.htaccess` file for serving Angular app](https://stackoverflow.com/a/22740184/4249875)
   - [Alligator.io](https://alligator.io/angular/)
-  - [Tracking many files](https://stackoverflow.com/a/56292289/4249875)
 
 ## Deploying an app
 
@@ -48,3 +44,30 @@ Nested `ngModel` input element inside `ngFor` need to refer to a value inside an
 
 When using Angular navigation use the `Router`'s `navigate` function. The `Location`'s `go` function is meant to interact with URL, not navigate in application routes.
 [Source](https://stackoverflow.com/a/42858854/4249875)
+
+## Ending an `Observable`
+
+To complete the `Observable` use `return of()`. It will stop propagating any further notifications as `of` with no arguments will complete right away and not emit any notifications.
+
+## Upload progress
+
+To get notifications about a file being uploaded use `reportProgress: true` in any `HTTP` method's additional options object.
+
+[Source](https://stackoverflow.com/a/54899930/4249875)
+
+## The `.htaccess` file
+
+For serving a static Angular app on a standard Apache server you need to setup a `.htaccess` file [like so](web-errors.md#corb--cors).
+
+[StackOverflow answer without `https` CORB issue solution](https://stackoverflow.com/a/22740184/4249875)
+
+## Tracking many files
+
+When dealing with multiple Angular projects or Angular projects mixed with some other opened at once the system can be overwhelmed with the amount of files to track as the code editor is trying to observe every single file in all of the projects. The solution seems to be to alter a default number of files the system is allowed to track.
+
+<!-- spell-checker: disable-next-line -->
+1. Open `/etc/sysctl.conf` and add line `fs.inotify.max_user_watches=524288`.
+<!-- spell-checker: disable-next-line -->
+2. Execute `sudo sysctl -p`.
+<!-- spell-checker: disable-next-line -->
+3. View `/proc/sys/fs/inotify/max_user_watches` and verify that the output number is equals to `524288`.
