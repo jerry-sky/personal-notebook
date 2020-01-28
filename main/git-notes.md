@@ -1,5 +1,9 @@
 # Git notes
 
+## Index
+
+  - [Removing a commit](#removing-a-commit)
+
 ## Removing a commit
 
 First, remove the commit from local repository using a command like `git reset --soft [commit]^`.

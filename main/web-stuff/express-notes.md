@@ -1,5 +1,10 @@
 # Express.js Notes
 
+## Index
+
+  - [Links](#links)
+  - [Server error and listening](#server-error-and-listening)
+
 ## Links
 
   - [Why you should use TypeScript with NodeJS and Express.js](https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d)

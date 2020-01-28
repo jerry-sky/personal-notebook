@@ -1,5 +1,9 @@
 # SQL Notes
 
+## Index
+
+  - [Links](#links)
+
 ## Links
 
   - [`GROUP_CONCAT` and `DISTINCT`](https://stackoverflow.com/questions/3083499/mysql-distinct-on-a-group-concat)

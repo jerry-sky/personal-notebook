@@ -9,6 +9,7 @@
   - [Web Errors in general](web-errors.md)
   - [CSS/SCSS](css-scss-notes.md)
   - [SQL](sql-notes.md)
+  - [Links](#links)
   - [Freeing a TCP port](#freeing-a-tcp-port)
 
 ## Links

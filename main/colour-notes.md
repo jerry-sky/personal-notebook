@@ -1,5 +1,9 @@
 # Colour notes
 
+## Index
+
+  - [Links](#links)
+
 ## Links
 
 ### Useful
