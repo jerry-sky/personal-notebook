@@ -9,6 +9,7 @@
 ### Main
   - [**PC Setup**](main/pc-setup.md)
   - [Software List](main/software-list.md)
+  - [Config](config/readme.md)
   - [Git](main/git-notes.md)
   - [VS Code](main/vs-code.md)
   - [Blender Notes](main/blender-notes.md)
