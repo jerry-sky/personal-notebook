@@ -106,8 +106,16 @@ Following statements are crucial to perform [steps from the next section](#steps
 
 ### Keyboard layout settings
 
-Install [IBus](https://forums.linuxmint.com/viewtopic.php?t=160272) to allow using non-western keyboard layouts and allow using more than 4 keyboard layouts at once.
+1. Install [IBus](https://forums.linuxmint.com/viewtopic.php?t=160272) to allow using non-western keyboard layouts and allow using more than 4 keyboard layouts at once.
     1.  Should any issues arise, follow instructions provided in [this askubuntu.com answer](https://askubuntu.com/a/793046).
+
+2. For laptops with no dedicated `Menu` key you need to swap `Control_R` with `Menu` to use the `Control_R` key as the `Menu` key:
+    ```bash
+    xmodmap -e "keycode 105 = Menu"
+    xmodmap -e "keycode 135 = Control_R"
+    ```
+    To view list of all keycodes use `xmodmap -pk`.
+    To make this behaviour persistent put above commands into the `.profile` file.
 
 ### Additional packages
 
