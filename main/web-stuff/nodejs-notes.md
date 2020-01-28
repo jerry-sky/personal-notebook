@@ -1,5 +1,9 @@
 # NodeJS Notes
 
+## Index
+
+ - [Configuring `.htaccess`](#configuring-htaccess)
+
 ## Configuring `.htaccess`
 
 To use a NodeJS app on an Apache server you can setup the `.htaccess` file to redirect any request to the NodeJS server:

@@ -1,5 +1,9 @@
 # Web Errors in general
 
+## Index
+
+  - [CORB & CORS](#corb--cors)
+
 ## CORB & CORS
 
 CORB might be a potential hiccup when attempting to load resources from different origin (CORS). The problem can appear when a website requests additional data, but the user used different links to the same website: the one with `www.` prefix and without. Browser then remembers that the resource had the `Access-Control-Allow-Origin` set to the website link with `www.` prefix. That’s why when accessing the website without the prefix, browser blocks the CORS connection, because it remembers the resource had the header set to a different value.

@@ -1,5 +1,10 @@
 # CSS/SCSS
 
+## Index
+
+  - [Links](#links)
+  - [Web-kit scrollbar styling](#web-kit-scrollbar-styling)
+
 ## Links
 
   - [How you've been getting the Bootstrap grid all wrong](https://medium.com/@erik_flowers/how-youve-been-getting-the-bootstrap-grid-all-wrong-and-how-to-fix-it-6d97b920aa40)

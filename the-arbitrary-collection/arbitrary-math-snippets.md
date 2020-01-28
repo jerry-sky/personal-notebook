@@ -1,5 +1,9 @@
 # Arbitrary interesting math snippets
 
+## Index
+
+  - [Heart drawn using $\Complex$ numbers](#heart-drawn-using-complex-numbers)
+
 ## Heart drawn using $\Complex$ numbers
 
 $|z| = sin( \frac{Arg(z)}{2} )$

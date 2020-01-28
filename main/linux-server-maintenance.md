@@ -1,5 +1,9 @@
 # Linux Server Maintenance
 
+## Index
+
+  - [Keeping some script/program alive](#keeping-some-scriptprogram-alive)
+
 ## Keeping some script/program alive
 
 If you want to keep some script/program alive (e.g. a node.js script) you need to use `crontab`.

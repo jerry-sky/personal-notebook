@@ -1,5 +1,20 @@
 # Blender Notes
 
+## Index
+
+  - [Links](#links)
+  - [Addons](#addons)
+  - [Geometry node](#geometry-node)
+  - [Objects reusing mesh data](#objects-reusing-mesh-data)
+  - [Adaptive subdivision](#adaptive-subdivision)
+  - [!Alpha transparency](#alpha-transparency)
+  - [HDR world backgrounds](#hdr-world-backgrounds)
+  - [Select Sharp Edges](#select-sharp-edges)
+  - [45° edges](#45%c2%b0-edges-todo-elaborate)
+  - [Spherize tool](#spherize-tool)
+  - [Pie menus](#pie-menus)
+  - [Masking data](#masking-data)
+
 ## Links
 
 ### Useful
