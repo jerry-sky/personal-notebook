@@ -1,9 +1,0 @@
-
-
-# set PATH so it includes all optional binaries
-PATH="$PATH:/opt"
-
-# attach all user's aliases
-if [ -f "$HOME/.aliases" ] ; then
-  . "$HOME/.aliases"
-fi

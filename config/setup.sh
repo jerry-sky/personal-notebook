@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "Writing additional entries to .profile..."
-cat ./.profile.part >> ~/.profile
+echo "Writing additional entries to .bashrc..."
+cat ./.bashrc.part >> ~/.bashrc
 
 echo "Attaching aliases..."
-cp ./.aliases ~/
+cp ./.bash_aliases ~/
 
-echo "Done. Apply changes by restarting or by executing `. ~/.profile` "
+echo "Done."
