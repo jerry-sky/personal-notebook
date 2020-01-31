@@ -67,7 +67,9 @@ Following statements are crucial to perform [steps from the next section](#steps
 
 ### Configuring the user experience
 
-1.  Configure theme and colours
+1. Run [config setup](../config/readme.md).
+
+2.  Configure theme and colours
     1. Install [Canta theme](https://github.com/vinceliuice/Canta-theme)
        1. *__Important note__: If used with sudo the theme will install in /usr/share/themes, not in ~/.themes - this will allow GUI apps (e.g. Files, Terminal) to use that theme when running in the elevated privileges mode.*
     2. Configure theme
@@ -78,28 +80,28 @@ Following statements are crucial to perform [steps from the next section](#steps
        <!-- spellchecker: disable-next-line -->
        1. [Quintom Cursors](https://www.gnome-look.org/p/1329799/)
 
-2. Configure the bottom panel
+3. Configure the bottom panel
    - //TODO: describe the process
 
-3. Adjust mouse *(and touchpad)* settings ( Settings $\to$ Mouse and Touchpad )
+4. Adjust mouse *(and touchpad)* settings ( Settings $\to$ Mouse and Touchpad )
 
-4. Disable system sounds
+5. Disable system sounds
 
-5. Enable *'Prevent focus stealing'* ( Settings $\to$ Windows )
+6. Enable *'Prevent focus stealing'* ( Settings $\to$ Windows )
 
-6. Disable switching between open windows by middle-clicking to avail new tab opening in programs that use that mouse click for some shortcut inside this program ( Settings $\to$ Windows )
+7. Disable switching between open windows by middle-clicking to avail new tab opening in programs that use that mouse click for some shortcut inside this program ( Settings $\to$ Windows )
 
-7. Disable auto-rotate ( Settings $\to$ General )
+8. Disable auto-rotate ( Settings $\to$ General )
 
-8. Disable *'Global hotkey for cycling through thumbnail menus'* from Grouped window list. To access that settings panel, click on an icon of multiple windows in the panel, then Preferences, then Configure. [Details here](https://forums.linuxmint.com/viewtopic.php?t=291898)
+9.  Disable *'Global hotkey for cycling through thumbnail menus'* from Grouped window list. To access that settings panel, click on an icon of multiple windows in the panel, then Preferences, then Configure. [Details here](https://forums.linuxmint.com/viewtopic.php?t=291898)
 
-9.  Change panel opened programs viewing mode to show all titles.
+10. Change panel opened programs viewing mode to show all titles.
 
-10. Enable switching between keyboard layouts ( Settings $\to$ Keyboard $\to$ Layouts $\to$ Options ).
+11. Enable switching between keyboard layouts ( Settings $\to$ Keyboard $\to$ Layouts $\to$ Options ).
 
-11.  Change login page background image ( Administration $\to$ Login Window )
+12.  Change login page background image ( Administration $\to$ Login Window )
 
-12. *Optional* [Setup switching workspaces via touchpad gestures](https://github.com/Hikari9/comfortable-swipe)
+13. *Optional* [Setup switching workspaces via touchpad gestures](https://github.com/Hikari9/comfortable-swipe)
 
 <!-- spellchecker: disable-next-line -->
 13. *Optional* [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)
