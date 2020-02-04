@@ -4,22 +4,16 @@
 ## Definitions
 Following statements are crucial to perform [steps from the next section](#steps-to-reproduce).
 
-1. Cloud $\equiv$ Dropbox
-2. Internet Browser $\equiv$ Vivaldi
-3. Software Manager $\equiv$ Software Manager that is *basically* a GUI for `apt` in Linux Mint
+1. OS $\equiv$ [Linux Mint Cinnamon](linux-mint-setup.md)
+2. Cloud $\equiv$ Dropbox
+3. Internet Browser $\equiv$ Vivaldi
+4. Software Manager $\equiv$ Software Manager that is *basically* a GUI for `apt` in Linux Mint
 
 ## Steps to reproduce
 
 ### Installing the OS
 
-#### Install the Linux Mint Cinnamon distribution.
-
-1. Install it from a prepared bootable USB stick.
-2. If no bootable USB stick is available perform following actions:
-   1. Download the ISO from [the official website](https://linuxmint.com/download.php).
-   2. Install etcher.io on a secondary PC.
-   3. Use etcher.io to put the OS ISO on an arbitrary USB stick.
-   4. Install the OS by booting the target PC from the USB stick.
+Please see the OS-specific instructions in a separate note. See [definitions](#definitions).
 
 ### Configuring the Internet browser
 
@@ -69,42 +63,25 @@ Following statements are crucial to perform [steps from the next section](#steps
 
 1. Run [config setup](../config/readme.md).
 
-2.  Configure theme and colours
+2. Disable icons on the desktop.
+
+3.  Install themes and cursor packs
     1. Install [Canta theme](https://github.com/vinceliuice/Canta-theme)
        1. *__Important note__: If used with sudo the theme will install in /usr/share/themes, not in ~/.themes - this will allow GUI apps (e.g. Files, Terminal) to use that theme when running in the elevated privileges mode.*
-    2. Configure theme
-       ( Settings $\to$ Themes )
-    3. Install icon themes *[how-to](https://itsfoss.com/install-icon-linux-mint/)*
+    2. Install icon themes *[how-to](https://itsfoss.com/install-icon-linux-mint/)*
        1. [Flat remix](https://drasite.com/flat-remix )
        2. [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
-       <!-- spellchecker: disable-next-line -->
-       1. [Quintom Cursors](https://www.gnome-look.org/p/1329799/)
+          <!-- spellchecker: disable-next-line -->
+       3. [Quintom Cursors](https://www.gnome-look.org/p/1329799/)
 
-3. Configure the bottom panel
-   - //TODO: describe the process
+4. Adjust mouse *(and touchpad)* settings
 
-4. Adjust mouse *(and touchpad)* settings ( Settings $\to$ Mouse and Touchpad )
+5. Disable system sounds.
 
-5. Disable system sounds
+6. Follow the rest of the steps of this section in the OS-specific notes. See [definitions](#definitions).
 
-6. Enable *'Prevent focus stealing'* ( Settings $\to$ Windows )
-
-7. Disable switching between open windows by middle-clicking to avail new tab opening in programs that use that mouse click for some shortcut inside this program ( Settings $\to$ Windows )
-
-8. Disable auto-rotate ( Settings $\to$ General )
-
-9.  Disable *'Global hotkey for cycling through thumbnail menus'* from Grouped window list. To access that settings panel, click on an icon of multiple windows in the panel, then Preferences, then Configure. [Details here](https://forums.linuxmint.com/viewtopic.php?t=291898)
-
-10. Change panel opened programs viewing mode to show all titles.
-
-11. Enable switching between keyboard layouts ( Settings $\to$ Keyboard $\to$ Layouts $\to$ Options ).
-
-12.  Change login page background image ( Administration $\to$ Login Window )
-
-13. *Optional* [Setup switching workspaces via touchpad gestures](https://github.com/Hikari9/comfortable-swipe)
-
-<!-- spellchecker: disable-next-line -->
-13. *Optional* [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)
+    <!-- spellchecker: disable-next-line -->
+7. *Optional* [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)
 
 ### Keyboard layout settings
 
@@ -132,8 +109,3 @@ Following statements are crucial to perform [steps from the next section](#steps
 ### Other system settings
 
 1.  [Setup automount for the rest of the drives present in the system](https://fossbytes.com/how-to-auto-mount-partitions-on-boot-in-linux-easily/)
-
-## Issues
-
-1. The Cinnamon Desktop Environment currently doesn't support more than four keyboard layouts for some odd reason ([the issue on GitHub](https://github.com/linuxmint/cinnamon/issues/3212#issuecomment-337725452)).
-   - However, this issue can be resolved by installing IBus as described above in the [Keyboard layout settings](#keyboard-layout-settings) section.
