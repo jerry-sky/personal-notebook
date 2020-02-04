@@ -18,9 +18,14 @@ _prompt() {
   printf '\n===\n'
 }
 
-## Add colour to messages to print
+## Add colour to default messages
 _print_message() {
   printf "\033[36m$1\033[0m\n"
+}
+
+## Add colour to error messages
+_print_error() {
+  printf "\033[31m$1\033[0m\n"
 }
 
 echo '---'
@@ -51,13 +56,19 @@ _prompt
 if (( REPLY_ )) ; then
   if [ -d /opt/vivaldi ] ; then
     sudo cp ./vivaldi/browser.html /opt/vivaldi/resources/vivaldi/
+  else
+    _print_error "No /opt/vivaldi folder"
   fi
 fi
 
 _print_message "Attaching NVim init file..."
 _prompt
 if (( REPLY_ )) ; then
-  cp ./nvim/init.vim ~/.config/nvim/
+  if [ -d ~/.config/nvim ] ; then
+    cp ./nvim/init.vim ~/.config/nvim/
+  else
+    _print_error "No ~/.config/nvim directory"
+  fi
 fi
 
 _print_message "Attaching Java Formatter config file..."
