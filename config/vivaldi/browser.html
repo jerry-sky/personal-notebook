@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Vivaldi</title>
+  <link rel="stylesheet" href="style/common.css" />
+  <link rel="stylesheet" href="chrome://vivaldi-data/css-mods/css" />
+
+  <style>
+    /* #main .bookmark-bar {
+      height: 35px;
+    } */
+
+    #main .bookmark-bar .observer button img {
+      /* background: #eee; */
+      /* border-radius: 50%; */
+      /* border: rgb(218, 218, 218) dotted 2px; */
+      width: 19px;
+      height: 19px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      /* filter: drop-shadow(1px 1px 0 #aaa) drop-shadow(1px -1px 0 #aaa) drop-shadow(-1px 1px 0 #aaa) drop-shadow(-1px -1px 0 #aaa); */
+      /* filter: grayscale(1) contrast(200) brightness(100); */
+    }
+
+    #main .bookmark-bar .observer button[title="https://github.com/jerry-sky?tab=repositories"] img {
+      /* filter: drop-shadow(1px 1px 0 #eeeeee) drop-shadow(1px -1px 0 #eeeeee) drop-shadow(-1px 1px 0 #eeeeee) drop-shadow(-1px -1px 0 #eeeeee); */
+      background: #eee;
+      border-radius: 100%;
+      padding: 1px;
+    }
+
+    #main .bookmark-bar .observer button[title="https://www.dropbox.com/h"] img {
+      filter: brightness(2);
+    }
+
+    #main .bookmark-bar .observer button[title="https://wakatime.com/dashboard"] img {
+      filter: invert(1);
+    }
+
+    #main .bookmark-bar .observer button[title="https://soundcloud.com/you/library"] img {
+      filter: brightness(0.95) contrast(0.8);
+    }
+
+    #main .bookmark-bar .observer button[title="https://asoftmurmur.com/"] img {
+      filter: brightness(1.2);
+    }
+
+    #main .bookmark-bar .observer button[title="https://quizlet.com/latest"] img {
+      filter: brightness(1.7);
+    }
+  </style>
+
+</head>
+
+<body style="
+    background-color: #232323;">
+  <div id="app">
+    <div style="color: #999; display: flex; align-items: center; justify-content: center; width: 100%;">
+      <p style="font-family: 'Fira Code', 'Courier New', Courier, monospace; font-size: 2em; letter-spacing: 1.08em;">JERRY SKY</p>
+    </div>
+
+  </div>
+  <script src="background-common-bundle.js"></script>
+  <script src="vendor-bundle.js"></script>
+  <script src="settings-bundle.js"></script>
+  <script src="urlbar-bundle.js"></script>
+  <script src="components-bundle.js"></script>
+  <script src="bundle.js"></script>
+</body>
+
+</html>
