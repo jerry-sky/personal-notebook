@@ -33,10 +33,12 @@ This note contains all the settings related to Linux Mint setup. These settings 
 
 9. Disable *'Allow floating clock'* ( Settings $\to$ Screensaver $\to$ Customization ).
 
-10. *Optional* [Setup switching workspaces via touchpad gestures](https://github.com/Hikari9/comfortable-swipe)
+10. Prolong the screensaver timeout ( Settings $\to$ Screensaver )
+
+11. *Optional* [Setup switching workspaces via touchpad gestures](https://github.com/Hikari9/comfortable-swipe)
 
     <!-- spellchecker: disable-next-line -->
-11. *Optional* [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)
+12. *Optional* [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)
 
 ## Issues
 
