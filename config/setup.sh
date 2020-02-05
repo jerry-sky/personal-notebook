@@ -77,4 +77,10 @@ if (( REPLY_ )) ; then
   cp ./java-formatter.xml ~/.config/
 fi
 
+_print_message "Attaching Menu icon file..."
+_prompt
+if (( REPLY_ )) ; then
+  sudo cp ./menu-icon.png /usr/share/icons/
+fi
+
 printf "\nDone.\n"
