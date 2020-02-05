@@ -2,4 +2,4 @@
 
 PS1="\033[38;2;180;70;220;7m \W \033[0m\033[38;2;180;70;220m◗ \033[0m"
 
-PATH="$PATH:/opt/blender:/opt/idea:/opt/datagrip/:/opt/webstorm/"
+PATH="$PATH:/opt/blender:/opt/idea:/opt/datagrip/:/opt/webstorm/:/opt/etcher/"
