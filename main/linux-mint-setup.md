@@ -44,3 +44,5 @@ This note contains all the settings related to Linux Mint setup. These settings 
 
 1. The Cinnamon Desktop Environment currently doesn't support more than four keyboard layouts for some odd reason ([the issue on GitHub](https://github.com/linuxmint/cinnamon/issues/3212#issuecomment-337725452)).
    - However, this issue can be resolved by installing IBus as described in the [Keyboard layout settings](pc-setup.md#keyboard-layout-settings) section in the PC setup note.
+
+2. To enable a program to accept an argument (e.g. a link for the browser) add `%U` to the Menu list entry's command box.
