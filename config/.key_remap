@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# switch right CTRL and menu keys to enable menu key for laptops with no dedicated menu key
+xmodmap -e "keycode 105 = Menu"
+xmodmap -e "keycode 135 = Control_R"

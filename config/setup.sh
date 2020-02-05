@@ -37,6 +37,11 @@ _prompt
 (( REPLY_ )) && \
   cat ./.bashrc.part >> ~/.bashrc
 
+_print_message "Do you want to switch the Control_R and Menu keys?\nIt is advised to switch these keys when on a laptop without a dedicated Menu key."
+_prompt
+(( REPLY_ )) && \
+  cat ./.key_remap >> ~/.bashrc
+
 _print_message "Attaching aliases..."
 _prompt
 (( REPLY_ )) && \
