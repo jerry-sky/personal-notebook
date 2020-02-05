@@ -4,10 +4,10 @@
 
   - [Links](#links)
   - [Web-kit scrollbar styling](#web-kit-scrollbar-styling)
+  - [Bootstrap & Sass](#bootstrap--sass)
 
 ## Links
 
-  - [How you've been getting the Bootstrap grid all wrong](https://medium.com/@erik_flowers/how-youve-been-getting-the-bootstrap-grid-all-wrong-and-how-to-fix-it-6d97b920aa40)
   - [Practical CSS Scroll Snapping](https://css-tricks.com/practical-css-scroll-snapping/)
   - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
   - [Easings cheatsheet](https://easings.net/)
@@ -50,3 +50,50 @@ As the webkit browser have very ugly scrollbars and there is no front-runner whe
   background: lighten(#333, 8%);
 }
 ```
+
+## Bootstrap & Sass
+
+The idea is to not use the *classic* Bootstrap classes on HTML elements, but rather to compose a singular class of an element from Bootstrap's `@mixin`s.
+
+Instead of attaching these `col` classes like so:
+```html
+<div class="container">
+  <div class="row">
+    <div class="banana col-sm-6 col-md-4">
+      <p>banana 🍌 content</p>
+    </div>
+  </div>
+</div>
+```
+create a class that defines that element by using `@mixin`s:
+```scss
+.banana {
+  @include make-col-ready;
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(4);
+  }
+  p {
+    font-size: 3rem;
+    color: yellow;
+    font-weight: 600;
+  }
+}
+```
+
+To use these `@mixin`s and other Bootstrap's functionalities it is necessary to import them:
+```scss
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+```
+
+Since there is no need for these *classic* classes to be used in HTML you can turn them off by changing a variable in the `_variables.css` file:
+```css
+$enable-grid-classes: false !default;
+```
+or just not to include the Bootstrap css file in your app config e.g. Angular (`angular.json`).
+
+Read more in the [source](https://medium.com/@erik_flowers/how-youve-been-getting-the-bootstrap-grid-all-wrong-and-how-to-fix-it-6d97b920aa40).
