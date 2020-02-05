@@ -50,6 +50,46 @@
     #main .bookmark-bar .observer button[title="https://quizlet.com/latest"] img {
       filter: brightness(1.7);
     }
+    
+    #webview-container .webpage {
+      background: #2f2f2f;
+    }
+    
+    #webview-container .webpage webview {
+      z-index: 2;
+    }
+    
+    @keyframes basic-rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    #webview-container .webpage:after {
+      content: '';
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -100px;
+      font-size: 24px;
+      text-align: center;
+      color: white;
+      background: transparent;
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: solid rgba(255, 255, 255, 0.04) 4px;
+      border-left: none;
+      border-right: none;
+      border-radius: 100%;
+      box-shadow: rgba(255, 255, 255, 0.007) 0 0 24px;
+      animation: basic-rotation 2s infinite linear;
+    }
+    
   </style>
 
 </head>
