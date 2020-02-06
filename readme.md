@@ -37,6 +37,7 @@
 ### The arbitrary collection
   - [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
   - [Music](the-arbitrary-collection/arbitrary-music-things.md)
+  - [Hilarious IT stories](the-arbitrary-collection/hilarious-it-stories.md)
 
 ### Adobe
   - [After Effect](adobe/after-effects.md)
