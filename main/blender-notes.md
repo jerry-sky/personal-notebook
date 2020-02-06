@@ -40,6 +40,7 @@
 ## Addons
 
 - [Time Tracker](https://github.com/uhlik/bpy#time-tracker-for-blender-280)
+- [Physical Starlight and Atmosphere](https://youtu.be/Rbx9DlyddF8) *$38*
 
 ## Geometry node
 
