@@ -14,6 +14,7 @@
   - [Spherize tool](#spherize-tool)
   - [Pie menus](#pie-menus)
   - [Masking data](#masking-data)
+  - [Applying a property change to multiple objects](#applying-a-property-change-to-multiple-objects)
 
 ## Links
 
@@ -86,3 +87,9 @@ To clear sculpt masking data use
 ```blender
 Mesh: Clear Sculpt-Mask Data
 ```
+
+## Applying a property change to multiple objects
+
+To change a numeric value on a set of objects, first change the value for one *active* object and then press the `RMB` on the value field and choose `Copy To Selected`. This will apply this change to all the other selected objects that have this property.\
+[Source](https://blender.stackexchange.com/questions/6015/applying-numeric-input-attribute-changes-on-multiple-objects-at-the-same-time)
+
