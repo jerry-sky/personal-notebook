@@ -15,6 +15,7 @@
   - [VS Code](main/vs-code.md)
   - [Blender Notes](main/blender-notes.md)
   - [Web stuff](main/web-stuff/readme.md)
+  - [Linguistics of Computer Science related matters](main/linguistics-related-to-cs.md)
   - [$\LaTeX$](main/latex-notes.md)
   - [Colours](main/colour-notes.md)
   - [Orange](main/orange/orange.md)
