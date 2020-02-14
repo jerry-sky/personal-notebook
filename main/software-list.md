@@ -25,6 +25,7 @@
    - [**NVM**](https://github.com/nvm-sh/nvm#installing-and-updating)
    - [Etcher.io](https://etcher.io)
    - [PureRef](https://www.pureref.com/download.php)
+   - [MariaDB](https://linux4one.com/how-to-install-mariadb-10-on-linux-mint-19/)
 4. Packages
    - Java `sudo apt install default-jdk`
      <!-- spellchecker: disable-next-line -->
