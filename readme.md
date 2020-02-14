@@ -13,6 +13,7 @@
   - [Unix & Linux](main/unix-linux.md)
   - [Git](main/git-notes.md)
   - [VS Code](main/vs-code.md)
+  - [Software issues](main/software-issues.md)
   - [Blender Notes](main/blender-notes.md)
   - [Web stuff](main/web-stuff/readme.md)
   - [Linguistics of Computer Science related matters](main/linguistics-related-to-cs.md)
