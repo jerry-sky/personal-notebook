@@ -1,0 +1,1 @@
+cat ./.bashrc.part >> ~/.bashrc
