@@ -15,6 +15,9 @@
   - [Pie menus](#pie-menus)
   - [Masking data](#masking-data)
   - [Applying a property change to multiple objects](#applying-a-property-change-to-multiple-objects)
+  - [**UV mapping tutorial //TODO-note**](https://youtu.be/L3654VGZObg)
+  - [**Primary, secondary and tertiary shapes //TODO-note**](http://www.neilblevins.com/cg_education/primary_secondary_and_tertiary_shapes/primary_secondary_and_tertiary_shapes.htm)
+  - [**Easy cushion model //TODO-note**](https://twitter.com/andrewpprice/status/1224544692143964161)
 
 ## Links
 
