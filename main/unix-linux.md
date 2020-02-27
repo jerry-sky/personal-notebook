@@ -4,6 +4,7 @@
 
   - [Keeping some script/program alive](#keeping-some-scriptprogram-alive)
   - [ANSI Text Attributes](#ansi-text-attributes)
+  - [Customizing `bash` prompt](#customizing-bash-prompt)
 
 ## Keeping some script/program alive
 
@@ -75,3 +76,9 @@ Using `\033[38;5;206m` you're accessing the 256-colour-palette. Replace `38` wit
 To get even more colours use `\033[38;2;R;G;Bm` to use full RGB spectrum by replacing `R`, `G` and `B` with values from range of `0-255`.
 
 [Source](https://stackoverflow.com/a/33206814/4249875)
+
+## Customizing `bash` prompt
+
+When configuring the `bash` prompt you would use ANSI escape sequences to enhance the [text formatting](#ansi-text-attributes) to make it more visually appealing. However, inserting an ANSI escape sequence is a lot of characters that amount to special usage and *no physical characters*. That's why we need to mark these sequences as *zero-length* to prevent the bash from being confused where does the actual prompt end.\
+Every time you insert an ANSI escape sequence wrap it inside `\[<prompt>\]`.\
+[Source](https://unix.stackexchange.com/a/28828)
