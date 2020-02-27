@@ -73,7 +73,6 @@ _run_config_entries() {
 
   for ((i = 0; i < ${#config_entries[@]}; i++)); do
     if (( config_entries_values[$i] == 1 )); then
-      echo $([ "${config_entries[$i]}" = "${config_entries[0]}" ] && echo merdas)
       case "${config_entries[$i]}" in
         "${config_entries[0]}" ) bash "./scripts/bashrc.sh" ;;
         "${config_entries[1]}" ) bash "./scripts/key-remap.sh" ;;
