@@ -50,15 +50,15 @@
     #main .bookmark-bar .observer button[title="https://quizlet.com/latest"] img {
       filter: brightness(1.7);
     }
-    
+
     #webview-container .webpage {
       background: #2f2f2f;
     }
-    
+
     #webview-container .webpage webview {
       z-index: 2;
     }
-    
+
     @keyframes basic-rotation {
       from {
         transform: rotate(0deg);
@@ -67,7 +67,7 @@
         transform: rotate(360deg);
       }
     }
-    
+
     #webview-container .webpage:after {
       content: '';
       z-index: 1;
@@ -89,7 +89,15 @@
       box-shadow: rgba(255, 255, 255, 0.007) 0 0 24px;
       animation: basic-rotation 2s infinite linear;
     }
-    
+
+    #app #browser #titlebar .vivaldi {
+      height: 30px !important;
+    }
+
+    #tabs-container {
+      padding-top: 0 !important;
+    }
+
   </style>
 
 </head>
