@@ -10,9 +10,9 @@ alias gpl="git pull"
 alias gplr="git pull --rebase"
 alias gf="git fetch"
 alias gdf="git diff HEAD"
+alias gl="git log"
 
 # VS Code shortcuts
-# alias cx="code && exit"
 alias ccx="code . && exit"
 alias c="code"
 alias ccc="code ."
