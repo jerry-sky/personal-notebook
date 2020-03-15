@@ -1,5 +1,5 @@
 # PC Setup
-  #### A personal guide for setting up all programs, tools and configurations for personal use be it work or rest.
+*A personal guide for setting up all programs, tools and configurations for personal use be it work or rest.*
 
 ## Definitions
 Following statements are crucial to perform [steps from the next section](#steps-to-reproduce).
@@ -7,7 +7,6 @@ Following statements are crucial to perform [steps from the next section](#steps
 1. OS $\equiv$ [Linux Mint Cinnamon](linux-mint-setup.md)
 2. Cloud $\equiv$ Dropbox
 3. Internet Browser $\equiv$ Vivaldi
-4. Software Manager $\equiv$ Software Manager that is *basically* a GUI for `apt` in Linux Mint
 
 ## Steps to reproduce
 
@@ -29,43 +28,45 @@ Please see the OS-specific instructions in a separate note. See [definitions](#d
    5. Change default browser to the [Internet Browser](#definitions).
    6. *(Opera-only) [Enable DRM to view DRM-content such as Prime Video or Netflix etc.](https://forums.opera.com/topic/28663/widevine-and-opera/29)*
 
+### Configuration
+
+Run the `setup.sh` script from the `/config` directory of this repository to copy various config files to the system.\
+See [config](../config/readme.md).
+
 ### Programs
 
 1. Install the [Cloud](#definitions) Desktop app.
 
 2. Enable Redshift
-   1. Copy the config file from [Cloud](#definitions)`/Settings & Presets/Linux/` to `~/.config/`
-   2. Enable autostart
+   1. Install `redshift` if it is not already installed.
+   2. Enable autostart.
 
-3. Install Git
+3. Install [`snap`](https://snapcraft.io/docs/installing-snap-on-linux-mint)
+
+4. Install Git
    1. `sudo apt install git`
    2. Install [credentials manager](https://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo/40312117#40312117)
    3. Create new [personal github access token](https://github.com/settings/tokens)
    4. At first login provide the token as the password
 
-4. Install [VS Code](https://code.visualstudio.com/)
-    - *Note: __don't__ install it through `apt` or anu other package manager as those are not as frequently updated as it is on the official website*.
+5. Install [VS Code](https://code.visualstudio.com/)
+    - *Note: __don't__ install it through `apt` or any other package manager as those are not as frequently updated as it is on the official website*.
 
-5. Install [Blender](https://www.blender.org/download/) with all the [addons](blender-notes.md#addons).
+6. Install Blender
+    ```bash
+    sudo snap install blender --classic
+    ```
+    with all the [addons](blender-notes.md#addons).
 
-6. ~~Install Spotify (Software Manager)~~
-   1. *For now, the [web-based app](https://open.spotify.com/collection/playlists) seems to be working fine.*
+7. Install GParted `sudo apt install gparted`
 
-7. Install [`snap`](https://snapcraft.io/docs/installing-snap-on-linux-mint)
-
-8. ~~Install barrier (Snap)~~
-
-9.  Install GParted from [Software Manager](#definitions) or `sudo apt install gparted`
-
-10. Install the rest of programs from the [software list](software-list.md).
+8.  Install the rest of programs from the [software list](software-list.md).
 
 ### Configuring the user experience
 
-1. Run [config setup](../config/readme.md).
+1. Disable icons on the desktop.
 
-2. Disable icons on the desktop.
-
-3.  Install themes and cursor packs
+2.  Install themes and cursor packs
     1. Install [Canta theme](https://github.com/vinceliuice/Canta-theme)
        1. *__Important note__: If used with sudo the theme will install in /usr/share/themes, not in ~/.themes - this will allow GUI apps (e.g. Files, Terminal) to use that theme when running in the elevated privileges mode.*
     2. Install icon themes *[how-to](https://itsfoss.com/install-icon-linux-mint/)*
@@ -74,14 +75,14 @@ Please see the OS-specific instructions in a separate note. See [definitions](#d
           <!-- spellchecker: disable-next-line -->
        3. [Quintom Cursors](https://www.gnome-look.org/p/1329799/)
 
-4. Adjust mouse *(and touchpad)* settings
+3. Adjust mouse *(and touchpad)* settings.
 
-5. Disable system sounds.
+4. Disable system sounds.
 
-6. Follow the rest of the steps of this section in the OS-specific notes. See [definitions](#definitions).
+5. Follow the rest of the steps of this section in the OS-specific notes. See [definitions](#definitions).
 
     <!-- spellchecker: disable-next-line -->
-7. *Optional* [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)
+6. *Optional* [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)
 
 ### Keyboard layout settings
 
@@ -94,7 +95,7 @@ Please see the OS-specific instructions in a separate note. See [definitions](#d
     xmodmap -e "keycode 135 = Control_R"
     ```
     To view list of all keycodes use `xmodmap -pk`.
-    To make this behaviour persistent put above commands into the `.profile` file.
+    To make this behaviour persistent use [config](../config/readme.md) found in this repository.
 
 ### Additional packages
 
@@ -102,10 +103,10 @@ Please see the OS-specific instructions in a separate note. See [definitions](#d
     1.  Fira Sans
     2.  Fira Code
     3.  Fira Mono
-    4.  [All above as package here from Google Fonts](https://fonts.google.com/selection?query=fira&selection.family=Fira+Code%7CFira+Mono%7CFira+Sans)
+    4.  [All above as a package here from Google Fonts](https://fonts.google.com/selection?query=fira&selection.family=Fira+Code%7CFira+Mono%7CFira+Sans)
     5.  [Drogowskaz Classic](http://www.drogowskazclassic.pl/pismo.php)
     6.  *Optional* Change default font ( System Settings $\to$ Font Selection )
 
 ### Other system settings
 
-1.  [Setup automount for the rest of the drives present in the system](https://fossbytes.com/how-to-auto-mount-partitions-on-boot-in-linux-easily/)
+1.  [Setup automount for the rest of the drives present in the system.](https://fossbytes.com/how-to-auto-mount-partitions-on-boot-in-linux-easily/)
