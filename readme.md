@@ -43,7 +43,7 @@
   - [2D Animation](the-arbitrary-collection/2d-animation.md)
 
 ### Adobe
-  - [After Effect](adobe/after-effects.md)
+  - [After Effects](adobe/after-effects.md)
   - [Illustrator](adobe/illustrator.md)
 
 ### [Videos](videos/readme.md)
