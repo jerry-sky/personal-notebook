@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# directory shortcuts
+alias an="cd ~/notebooks/academic-notebook/"
+alias pn="cd ~/notebooks/personal-notebook/"
+
 # Git
 alias ga="git add"
 alias gaa="git add ."
