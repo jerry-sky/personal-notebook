@@ -60,8 +60,9 @@
 
 ---
 
-The only area in which OneNote is better than any other note-taking app is handwriting. Unfortunately, there is no other solution that has all the capabilities of OneNote and a nice, performant Linux app.
+The only area in which OneNote is better than any other note-taking app is **handwriting**. Unfortunately, there is no other solution that has all the capabilities of OneNote and a nice, performant Linux app.
 
-The solution, at least for now, is to use OneNote *only* for handwritten notes and Github repositories, just like this one, as the main solution for note-taking.
+**The solution is to use Github repositories, just like this one, as the main solution for note-taking.**
 
-Besides, the handwritten notes concern only math-related university subjects or language learning. The rest of the notes, be it the personal notes or IT-related matters can be put into a set of Github-flavoured Markdown documents.
+As this flavour of Markdown supports $\LaTeX$ syntax OneNote is redundant as far as taking notes is concerned. When it comes to graph drawing or any type of graphical endevor it can be done with OneNote. However, if it can be done with e.g. GIMP or any other graphical manipulating software *OneNote should **not** be used*.\
+An alternative for sketching simple and quick graphs is to use code blocks. Characters such as `\`, `|`, `/` and `_` all can be used as strokes while regular latin alphabet characters as e.g. graph nodes.
