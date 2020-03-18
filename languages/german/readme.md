@@ -2,9 +2,9 @@
 
 ## Index
 
+  - [**Expression map**](expressions.md)
   - [Grammar](grammar.md)
   - [Words](words.md)
-  - [Expressions](expressions.md)
   - [Verb conjugation](verb-conjugation.md)
 
 ## Links
