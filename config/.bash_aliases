@@ -19,6 +19,9 @@ alias gl="git log"
 # discarding changes
 alias gd="git checkout --"
 alias gdi="git checkout -p"
+# unstaging changes
+alias gu="git reset --"
+alias gui="git reset -p"
 
 # VS Code shortcuts
 alias ccx="code . && exit"
