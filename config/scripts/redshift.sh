@@ -1,6 +1,8 @@
-if [ ! -d ~/.config ] ; then
-    mkdir ~/.config
-  fi
-  cp ./redshift.conf ~/.config/
+#!/bin/bash
 
-printf " + copied Redshift config file"
+if [ ! -d ~/.config ]; then
+  mkdir ~/.config
+fi
+cp ./redshift.conf ~/.config/
+
+printf " + copied Redshift config file\n"
