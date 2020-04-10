@@ -17,7 +17,8 @@ config_entries=(\
   "copy Vivaldi browser.html file"\
   "copy nvim init file"\
   "copy java formatter file"\
-  "copy Menu icon file"
+  "copy Menu icon file"\
+  "load Cinnamon keyboard shortcuts"\
 )
 
 # default entires' values
@@ -30,6 +31,7 @@ config_entries_values=(\
   1\
   1\
   1\
+  0\
 )
 
 _config_entries_length=${#config_entries[@]}
@@ -82,6 +84,7 @@ _run_config_entries() {
         "${config_entries[5]}" ) bash "./scripts/nvim.sh" ;;
         "${config_entries[6]}" ) bash "./scripts/java-formatter.sh" ;;
         "${config_entries[7]}" ) bash "./scripts/menu-icon.sh" ;;
+        "${config_entries[8]}" ) bash "./scripts/cinnamon-keyboard-shortcuts-load.sh"
       esac
     fi
   done
