@@ -19,6 +19,7 @@ config_entries=(\
   "copy java formatter file"\
   "copy Menu icon file"\
   "load Cinnamon keyboard shortcuts"\
+  "copy utility scripts"\
 )
 
 # default entires' values
@@ -32,6 +33,7 @@ config_entries_values=(\
   1\
   1\
   0\
+  1\
 )
 
 _config_entries_length=${#config_entries[@]}
@@ -76,15 +78,16 @@ _run_config_entries() {
   for ((i = 0; i < ${#config_entries[@]}; i++)); do
     if (( config_entries_values[$i] == 1 )); then
       case "${config_entries[$i]}" in
-        "${config_entries[0]}" ) bash "./scripts/bashrc.sh" ;;
-        "${config_entries[1]}" ) bash "./scripts/key-remap.sh" ;;
-        "${config_entries[2]}" ) bash "./scripts/bash-aliases.sh" ;;
-        "${config_entries[3]}" ) bash "./scripts/redshift.sh" ;;
-        "${config_entries[4]}" ) bash "./scripts/vivaldi.sh" ;;
-        "${config_entries[5]}" ) bash "./scripts/nvim.sh" ;;
-        "${config_entries[6]}" ) bash "./scripts/java-formatter.sh" ;;
-        "${config_entries[7]}" ) bash "./scripts/menu-icon.sh" ;;
-        "${config_entries[8]}" ) bash "./scripts/cinnamon-keyboard-shortcuts-load.sh"
+        "${config_entries[0]}" ) bash "./scripts-setup/bashrc.sh" ;;
+        "${config_entries[1]}" ) bash "./scripts-setup/key-remap.sh" ;;
+        "${config_entries[2]}" ) bash "./scripts-setup/bash-aliases.sh" ;;
+        "${config_entries[3]}" ) bash "./scripts-setup/redshift.sh" ;;
+        "${config_entries[4]}" ) bash "./scripts-setup/vivaldi.sh" ;;
+        "${config_entries[5]}" ) bash "./scripts-setup/nvim.sh" ;;
+        "${config_entries[6]}" ) bash "./scripts-setup/java-formatter.sh" ;;
+        "${config_entries[7]}" ) bash "./scripts-setup/menu-icon.sh" ;;
+        "${config_entries[8]}" ) bash "./scripts-setup/cinnamon-keyboard-shortcuts-load.sh" ;;
+        "${config_entries[9]}" ) bash "./scripts-setup/copy-utility-scripts.sh"
       esac
     fi
   done
