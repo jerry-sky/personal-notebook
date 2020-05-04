@@ -20,6 +20,7 @@ config_entries=(\
   "copy Menu icon file"\
   "load Cinnamon keyboard shortcuts"\
   "copy utility scripts"\
+  "set IBus icon colour"\
 )
 
 # default entires' values
@@ -33,6 +34,8 @@ config_entries_values=(\
   1\
   1\
   0\
+  1\
+  1\
   1\
 )
 
@@ -87,7 +90,8 @@ _run_config_entries() {
         "${config_entries[6]}" ) bash "./scripts-setup/java-formatter.sh" ;;
         "${config_entries[7]}" ) bash "./scripts-setup/menu-icon.sh" ;;
         "${config_entries[8]}" ) bash "./scripts-setup/cinnamon-keyboard-shortcuts-load.sh" ;;
-        "${config_entries[9]}" ) bash "./scripts-setup/copy-utility-scripts.sh"
+        "${config_entries[9]}" ) bash "./scripts-setup/copy-utility-scripts.sh" ;;
+        "${config_entries[10]}" ) bash "./scripts-setup/ibus-icon-colour.sh"
       esac
     fi
   done
