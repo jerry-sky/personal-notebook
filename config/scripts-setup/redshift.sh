@@ -3,6 +3,6 @@
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
-cp ./redshift.conf ~/.config/
+cp ./config-files/redshift.conf ~/.config/
 
 printf " + copied Redshift config file\n"

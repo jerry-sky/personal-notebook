@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ -d ~/.config/nvim ] ; then
-    cp ./nvim/init.vim ~/.config/nvim/
+    cp ./config-files/nvim/init.vim ~/.config/nvim/
   else
-    _print_error "No ~/.config/nvim directory"
+    printf "No ~/.config/nvim directory\n"
 fi
 
 printf " + copied NVim init file\n"
