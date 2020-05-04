@@ -6,6 +6,7 @@
   - [Grammar](grammar.md)
   - [Words](words.md)
   - [Verb conjugation](verb-conjugation.md)
+  - [Text analysis](text-analysis/readme.md)
 
 ## Links
 
