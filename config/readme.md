@@ -2,9 +2,16 @@
 
 ## Setup
 
-In the same directory as this document there is a file `setup.sh` which copies various config files into all sorts of locations.
+In the same directory as this document there is a file called `setup.sh` which copies various config files into all sorts of locations.
 It's part of the [standard JRS PC Setup](../main/pc-setup.md) to configure the system and its programs.
 Execute it whilst being in the `/config` directory to setup a proper workspace.
 ```bash
 ./setup.sh
 ```
+
+## Utility scripts
+
+The `utility-scripts` directory contains some other useful scripts that are sometimes very handy.
+
+- [`fix-iso-date-file-contents.sh`](utility-scripts/fix-iso-date-file-contents.sh) & [`fix-iso-date-filenames.sh`](utility-scripts/fix-iso-date-filenames.sh) – these scripts fix all pseudo ISO-like dates that don't have a leading zero before a single-digit day number (e.g. 2020-04-**4** instead of 2020-04-**04**)
+- [`cinnamon-keyboard-shortcuts-dump.sh`](utility-scripts/cinnamon-keyboard-shortcuts-dump.sh) – dumps all the keyboard shortcuts settings into a `.conf` file for archival and later repurpose (it is used when [running `./setup.sh`](#setup))
