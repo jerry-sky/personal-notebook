@@ -3,7 +3,6 @@
 ## Index
 
   - [**Expression map**](expressions.md)
-  - [Grammar](grammar.md)
   - [Words](words.md)
   - [Verb conjugation](verb-conjugation.md)
   - [Text analysis](text-analysis/readme.md)
@@ -12,3 +11,9 @@
 
   - [Toms Deutschseite](http://www.deutschseite.de/inhalt.html)
   - [Nico DW - Adventure to Germany](https://www.youtube.com/watch?v=pMBvpCLflqU&feature=youtu.be)
+
+## Handy
+
+![keyboard layout](keyboard-layout-de.png)
+![possessive](possessive.png)
+![articles](articles.png)
