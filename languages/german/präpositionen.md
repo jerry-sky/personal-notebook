@@ -18,6 +18,7 @@
 - seit
 - zu
 - von
+- [*ab*](https://german.stackexchange.com/a/44118)
 
 **Akk + Dat**:
 - in
