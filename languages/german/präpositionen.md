@@ -7,6 +7,7 @@
 - ohne
 - gegen
 - entlang
+- bis
 
 **Dat:**
 - mit
