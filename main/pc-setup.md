@@ -26,7 +26,9 @@ Please see the OS-specific instructions in a separate note. See [definitions](#d
       4. [Discord](https://discordapp.com/channels/@me)
       5. [*Facebook Messenger*](https://www.messenger.com/)
    5. Change default browser to the [Internet Browser](#definitions).
-   6. *(Opera-only) [Enable DRM to view DRM-content such as Prime Video or Netflix etc.](https://forums.opera.com/topic/28663/widevine-and-opera/29)*
+   6. *(Opera-only) – if Opera doesn't play some video content use one of these solutions:*
+      - [Enable DRM to view DRM-content such as Prime Video or Netflix etc.](https://forums.opera.com/topic/28663/widevine-and-opera/29)
+      - [Fix `libffmpeg.so`](https://forums.opera.com/topic/30254/solved-video-playback-issues/7)
 
 ### Configuration
 
