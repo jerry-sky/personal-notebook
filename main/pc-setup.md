@@ -5,8 +5,8 @@
 Following statements are crucial to perform [steps from the next section](#steps-to-reproduce).
 
 1. OS $\equiv$ [Linux Mint Cinnamon](linux-mint-setup.md)
-2. Cloud $\equiv$ Dropbox
-3. Internet Browser $\equiv$ Vivaldi
+2. Cloud $\equiv$ InSync
+3. Internet Browser $\equiv$ Opera/Vivaldi
 
 ## Steps to reproduce
 
