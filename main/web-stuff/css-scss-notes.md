@@ -5,6 +5,7 @@
   - [Archived *(sentimental)*](#archived-sentimental)
 - [Web-kit scrollbar styling](#web-kit-scrollbar-styling)
 - [Bootstrap & Sass](#bootstrap--sass)
+- [Nested (layered) links](#nested-layered-links)
 
 ## Links
 
@@ -97,3 +98,41 @@ $enable-grid-classes: false !default;
 or just not to include the Bootstrap css file in your app config e.g. Angular (`angular.json`).
 
 Read more in the [source](https://medium.com/@erik_flowers/how-youve-been-getting-the-bootstrap-grid-all-wrong-and-how-to-fix-it-6d97b920aa40).
+
+
+## Nested (layered) links
+
+[nested-links]: https://www.sarasoueidan.com/blog/nested-links/#my-implementation
+
+To create a link inside a `div` (that could be e.g. a post) which itself is a separate link you could use a solution [described here by Sara Soueidan][nested-links].\
+Essentially, the header of, in this case, an article is stretched over a `div` representing a description of a given article. Of course, this header is a link to this article. Now, we can incorporate another link inside this description and making it hover over the article link (using `z-index`).
+
+Here is a piece of code [from previously mentioned article][nested-links] that presents an example solution to this problem:
+```scss
+.the-post {
+    /* elevate the links up */
+    a {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.the-post-title {
+    /* ... */
+
+    a {
+        position: static;
+        /* expand the pseudo-element to cover the post area */
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            top: ...;
+            left: ...;
+            width: ...;
+            height: ...;
+            /* ... */
+        }
+    }
+}
+```
