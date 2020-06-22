@@ -6,6 +6,7 @@
 - [Web-kit scrollbar styling](#web-kit-scrollbar-styling)
 - [Bootstrap & Sass](#bootstrap--sass)
 - [Nested (layered) links](#nested-layered-links)
+- [Website design with respect to keyboard users](#website-design-with-respect-to-keyboard-users)
 
 ## Links
 
@@ -136,3 +137,14 @@ Here is a piece of code [from previously mentioned article][nested-links] that p
     }
 }
 ```
+
+## Website design with respect to keyboard users
+
+[design-respect-to-keyboards]: https://www.sarasoueidan.com/blog/keyboard-friendlier-article-listings/
+
+Most website designs are not optimized for keyboard users that facilitate the Tab key for navigating websites. The problem is, many websites have redundant links (multiple links referring to the same resource) that generate excess Tab keystrokes to navigate through e.g. articles on a website, as described [here by Sara Soueidan][design-respect-to-keyboards]. However, a fix to this problem is quite simple:
+```html
+<a href="cool-subpage.html" tabindex="-1" aria-hidden="true">Cool subpage</a>
+```
+The `tabindex` attribute set to `-1` renders this element invisible to keyboard users navigating using the Tab key. This element will be skipped.\
+The `aria-hidden` attribute set to `true` makes this element invisible to screen readers thus preventing from exposing this unreachable element to the user.
