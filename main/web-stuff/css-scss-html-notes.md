@@ -1,4 +1,4 @@
-# CSS/SCSS
+# CSS/SCSS + HTML
 
 - [Links](#links)
   - [Animations](#animations)

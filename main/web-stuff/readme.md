@@ -14,7 +14,7 @@
   - [Express.js Notes](express-notes.md)
   - [JS (Other) Notes](js-notes.md)
   - [Web Errors in general](web-errors.md)
-  - [CSS/SCSS](css-scss-notes.md)
+  - [CSS/SCSS + HTML](css-scss-html-notes.md)
   - [SQL](sql-notes.md)
 
 ## Links
