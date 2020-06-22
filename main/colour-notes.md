@@ -1,8 +1,8 @@
 # Colour notes
 
-## Index
-
-  - [Links](#links)
+- [Links](#links)
+  - [Useful](#useful)
+  - [*Very nice*](#very-nice)
 
 ## Links
 

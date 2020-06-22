@@ -1,10 +1,10 @@
 # CSS/SCSS
 
-## Index
-
-  - [Links](#links)
-  - [Web-kit scrollbar styling](#web-kit-scrollbar-styling)
-  - [Bootstrap & Sass](#bootstrap--sass)
+- [Links](#links)
+  - [Animations](#animations)
+  - [Archived *(sentimental)*](#archived-sentimental)
+- [Web-kit scrollbar styling](#web-kit-scrollbar-styling)
+- [Bootstrap & Sass](#bootstrap--sass)
 
 ## Links
 

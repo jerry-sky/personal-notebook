@@ -1,7 +1,9 @@
 # Software List
-  #### All the programs that I install.
 
-### Basic Package
+- [Basic Package](#basic-package)
+- [$Windows$](#math-xmlnshttpwwww3org1998mathmathmlsemanticsmrowmiwmimiimiminmimidmimiomimiwmimismimrowannotation-encodingapplicationx-texwindowsannotationsemanticsmathwindows)
+
+## Basic Package
 
 1. Internet Browsers
    - [**Vivaldi**](https://vivaldi.com/download/) [installation](pc-setup.md#configuring-the-internet-browser)
@@ -40,7 +42,7 @@
    - Factorio
    - FTL
 
-### $Windows$
+## $Windows$
 
 1. Utilities
    - [Input Director](https://inputdirector.com/downloads.html)

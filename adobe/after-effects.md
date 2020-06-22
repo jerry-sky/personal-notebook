@@ -1,11 +1,10 @@
 # Adobe After Effects
 
-## Index
-
-  - [Links](#links)
-  - [Defs](#defs)
-  - [Notes](#notes)
-  - [Effects](#effects)
+- [Links](#links)
+  - [Useful](#useful)
+- [Defs](#defs)
+- [Notes](#notes)
+- [Effects](#effects)
 
 ## Links
 

@@ -1,10 +1,10 @@
 # Express.js Notes
 
-## Index
-
-  - [Links](#links)
-  - [Server error and listening](#server-error-and-listening)
-  - [Using TypeScript with Express.js](#using-typescript-with-expressjs)
+- [Links](#links)
+- [Server error and listening](#server-error-and-listening)
+- [Using TypeScript with Express.js](#using-typescript-with-expressjs)
+  - [Starter repository](#starter-repository)
+  - [Setup it manually](#setup-it-manually)
 
 ## Links
 

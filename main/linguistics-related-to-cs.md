@@ -1,8 +1,6 @@
 # Linguistics of Computer Science related matters
 
-## Index
-
-  - [Quantity](#quantity)
+- [Quantity](#quantity)
 
 ## Quantity
 

@@ -1,8 +1,6 @@
 # NodeJS Notes
 
-## Index
-
- - [Configuring `.htaccess`](#configuring-htaccess)
+- [Configuring `.htaccess`](#configuring-htaccess)
 
 ## Configuring `.htaccess`
 

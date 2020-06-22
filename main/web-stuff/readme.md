@@ -1,5 +1,12 @@
 # Web stuff
 
+- [Index](#index)
+- [Links](#links)
+  - [Interesting reads](#interesting-reads)
+  - [Useful](#useful)
+  - [Entertainment-like](#entertainment-like)
+- [Freeing a TCP port](#freeing-a-tcp-port)
+
 ## Index
 
   - [Angular Notes](angular-notes.md)
@@ -9,8 +16,6 @@
   - [Web Errors in general](web-errors.md)
   - [CSS/SCSS](css-scss-notes.md)
   - [SQL](sql-notes.md)
-  - [Links](#links)
-  - [Freeing a TCP port](#freeing-a-tcp-port)
 
 ## Links
 

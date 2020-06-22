@@ -1,8 +1,6 @@
 # Software issues
 
-## Index
-
-  - [Fix *MariaDB plugin `unix_socket` is not loaded* issue](#fix-mariadb-plugin-unixsocket-is-not-loaded-issue)
+- [Fix *MariaDB plugin `unix_socket` is not loaded* issue](#fix-mariadb-plugin-unix_socket-is-not-loaded-issue)
 
 ## Fix *MariaDB plugin `unix_socket` is not loaded* issue
 

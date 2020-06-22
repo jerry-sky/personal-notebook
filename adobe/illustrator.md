@@ -1,9 +1,7 @@
 # Adobe Illustrator
 
-## Index
-
-  - [Links](#links)
-  - [Notes](#notes)
+- [Links](#links)
+- [Notes](#notes)
 
 ## Links
 

@@ -1,9 +1,8 @@
 # Git notes
 
-- [Git notes](#git-notes)
-  - [Removing a commit](#removing-a-commit)
-  - [Removing a file from git history](#removing-a-file-from-git-history)
-  - [Fix displaying file names with unicode characters in them](#fix-displaying-file-names-with-unicode-characters-in-them)
+- [Removing a commit](#removing-a-commit)
+- [Removing a file from git history](#removing-a-file-from-git-history)
+- [Fix displaying file names with unicode characters in them](#fix-displaying-file-names-with-unicode-characters-in-them)
 
 ## Removing a commit
 

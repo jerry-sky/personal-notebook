@@ -1,12 +1,11 @@
 # Unix & Linux
 
-- [Unix & Linux](#unix--linux)
-  - [Keeping some script/program alive](#keeping-some-scriptprogram-alive)
-  - [ANSI Text Attributes](#ansi-text-attributes)
-    - [Text effects](#text-effects)
-  - [Customizing `bash` prompt](#customizing-bash-prompt)
-  - [Redirecting `stdout` to `stderr`](#redirecting-stdout-to-stderr)
-  - [Downloading a whole website using `wget`](#downloading-a-whole-website-using-wget)
+- [Keeping some script/program alive](#keeping-some-scriptprogram-alive)
+- [ANSI Text Attributes](#ansi-text-attributes)
+  - [Text effects](#text-effects)
+- [Customizing `bash` prompt](#customizing-bash-prompt)
+- [Redirecting `stdout` to `stderr`](#redirecting-stdout-to-stderr)
+- [Downloading a whole website using `wget`](#downloading-a-whole-website-using-wget)
 
 ## Keeping some script/program alive
 

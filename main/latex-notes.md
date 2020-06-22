@@ -1,8 +1,7 @@
 # $\LaTeX$ Notes
 
-- [$\LaTeX$ Notes](#math-xmlnshttpwwww3org1998mathmathmlsemanticsmrowmtextlatexmtextmrowannotation-encodingapplicationx-texlatexannotationsemanticsmathlatex-notes)
-  - [Links](#links)
-  - [Using SVG files with `inkscape`](#using-svg-files-with-inkscape)
+- [Links](#links)
+- [Using SVG files with `inkscape`](#using-svg-files-with-inkscape)
 
 ## Links
 

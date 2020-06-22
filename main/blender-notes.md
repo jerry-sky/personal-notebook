@@ -1,23 +1,21 @@
 # Blender Notes
 
-## Index
-
-  - [Links](#links)
-  - [Addons](#addons)
-  - [Geometry node](#geometry-node)
-  - [Objects reusing mesh data](#objects-reusing-mesh-data)
-  - [Adaptive subdivision](#adaptive-subdivision)
-  - [!Alpha transparency](#alpha-transparency)
-  - [HDR world backgrounds](#hdr-world-backgrounds)
-  - [Select Sharp Edges](#select-sharp-edges)
-  - [45° edges](#45%c2%b0-edges-todo-elaborate)
-  - [Spherize tool](#spherize-tool)
-  - [Pie menus](#pie-menus)
-  - [Masking data](#masking-data)
-  - [Applying a property change to multiple objects](#applying-a-property-change-to-multiple-objects)
-  - [**UV mapping tutorial //TODO-note**](https://youtu.be/L3654VGZObg)
-  - [**Primary, secondary and tertiary shapes //TODO-note**](http://www.neilblevins.com/cg_education/primary_secondary_and_tertiary_shapes/primary_secondary_and_tertiary_shapes.htm)
-  - [**Easy cushion model //TODO-note**](https://twitter.com/andrewpprice/status/1224544692143964161)
+- [Links](#links)
+  - [Useful](#useful)
+  - [Cool](#cool)
+  - [TODO](#todo)
+- [Addons](#addons)
+- [Geometry node](#geometry-node)
+- [Objects reusing mesh data](#objects-reusing-mesh-data)
+- [Adaptive subdivision](#adaptive-subdivision)
+- [!Alpha transparency](#alpha-transparency)
+- [HDR world backgrounds](#hdr-world-backgrounds)
+- [Select sharp edges](#select-sharp-edges)
+- [45° edges //TODO elaborate](#45-edges-todo-elaborate)
+- [Spherize tool](#spherize-tool)
+- [Pie Menus](#pie-menus)
+- [Masking data](#masking-data)
+- [Applying a property change to multiple objects](#applying-a-property-change-to-multiple-objects)
 
 ## Links
 
@@ -41,10 +39,19 @@
   - [10 Tips for Filming Visual Effects](https://youtu.be/xF0SypG7q8c)
   - [Create a Subway in 20 minutes](https://youtu.be/nb6rSMAooDs)
 
+### TODO
+
+  - [**UV mapping tutorial //TODO-note**](https://youtu.be/L3654VGZObg)
+  - [**Primary, secondary and tertiary shapes //TODO-note**](http://www.neilblevins.com/cg_education/primary_secondary_and_tertiary_shapes/primary_secondary_and_tertiary_shapes.htm)
+  - [**Easy cushion model //TODO-note**](https://twitter.com/andrewpprice/status/1224544692143964161)
+
+
 ## Addons
 
 - [Time Tracker](https://github.com/uhlik/bpy#time-tracker-for-blender-280)
 - [Physical Starlight and Atmosphere](https://youtu.be/Rbx9DlyddF8) *$38*
+
+---
 
 ## Geometry node
 

@@ -1,10 +1,9 @@
 # JS (other) Notes
 
-## Index
-
-  - [Links](#links)
-  - [Parsing numbers in bases other than base-10](#parsing-numbers-in-bases-other-than-base-10)
-  - [Samsung Internet webpage scroll position](#samsung-internet-webpage-scroll-position)
+- [Links](#links)
+  - [Archived *(sentimental)*](#archived-sentimental)
+- [Parsing numbers in bases other than base-10](#parsing-numbers-in-bases-other-than-base-10)
+- [Samsung Internet webpage scroll position](#samsung-internet-webpage-scroll-position)
 
 ## Links
 
