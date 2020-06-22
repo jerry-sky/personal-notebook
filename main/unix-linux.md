@@ -6,6 +6,7 @@
 - [Customizing `bash` prompt](#customizing-bash-prompt)
 - [Redirecting `stdout` to `stderr`](#redirecting-stdout-to-stderr)
 - [Downloading a whole website using `wget`](#downloading-a-whole-website-using-wget)
+- [Permanently setting the DNS server](#permanently-setting-the-dns-server)
 
 ## Keeping some script/program alive
 
@@ -104,3 +105,22 @@ There is a possibility that above command will not work on first try. For exampl
 wget -r -p -U Mozilla --wait=1 --limit-rate=2M --tries=3 -l 1 --base=https://example.com/subpage --force-html --relative -i example.com/subpage/index.html
 ```
 Executing above command will download all resources that appear on this subpage. All relative links will be preceded with the URL provided with the `--base` option.
+
+## Permanently setting the DNS server
+
+First, we need to install the `resolvconf` package:
+```bash
+sudo apt update
+sudo apt install resolvconf
+```
+Now, let's add the IP address of the desired DNS server.\
+Edit following file:
+```bash
+sudo nvim /etc/resolvconf/resolv.conf.d/head
+```
+adding line below to make `1.1.1.1` the DNS server:
+```
+nameserver 1.1.1.1
+```
+
+[Source](https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/)
