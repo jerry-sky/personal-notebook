@@ -1,8 +1,6 @@
 # Web Errors in general
 
-## Index
-
-  - [CORB & CORS](#corb--cors)
+- [CORB & CORS](#corb--cors)
 
 ## CORB & CORS
 

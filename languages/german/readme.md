@@ -1,5 +1,9 @@
 # German
 
+- [Index](#index)
+- [Links](#links)
+- [Handy](#handy)
+
 ## Index
 
   - [**Expression map**](expressions.md)

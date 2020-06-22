@@ -1,5 +1,8 @@
 # Config
 
+- [Setup](#setup)
+- [Utility scripts](#utility-scripts)
+
 ## Setup
 
 In the same directory as this document there is a file called `setup.sh` which copies various config files into all sorts of locations.

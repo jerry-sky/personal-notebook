@@ -1,10 +1,8 @@
 # SQL Notes
 
-## Index
-
-  - [Links](#links)
-  - [Show columns from a `SELECT` query](#show-columns-from-a-select-query)
-  - [`TRUNCATE` all tables in a database](#truncate-all-tables-in-a-database)
+- [Links](#links)
+- [Show columns from a `SELECT` query](#show-columns-from-a-select-query)
+- [`TRUNCATE` all tables in a database](#truncate-all-tables-in-a-database)
 
 ## Links
 

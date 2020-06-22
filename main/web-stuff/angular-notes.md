@@ -1,16 +1,14 @@
 # Angular Notes
 
-## Index
-
-  - [Links](#links)
-  - [Deploying](#deploying-an-app)
-  - [Installing Bootstrap](#installing-bootstrap)
-  - [NgModel input element inside NgFor](#ngmodel-input-element-inside-ngfor)
-  - [`Router` vs `Location`](#router-vs-location)
-  - [Ending an `Observable`](#ending-an-observable)
-  - [Upload progress](#upload-progress)
-  - [The `.htaccess` file](#the-htaccess-file)
-  - [Tracking many files](#tracking-many-files)
+- [Links](#links)
+- [Deploying an app](#deploying-an-app)
+- [Installing Bootstrap](#installing-bootstrap)
+- [NgModel input element inside ngFor](#ngmodel-input-element-inside-ngfor)
+- [`Router` vs. `Location`](#router-vs-location)
+- [Ending an `Observable`](#ending-an-observable)
+- [Upload progress](#upload-progress)
+- [The `.htaccess` file](#the-htaccess-file)
+- [Tracking many files](#tracking-many-files)
 
 ## Links
 

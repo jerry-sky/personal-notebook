@@ -1,9 +1,7 @@
 # VS Code
 
-## Index
-
-  - [Settings Sync](#settings-sync)
-  - [Java Formatter Settings](#java-formatter-settings)
+- [Settings Sync](#settings-sync)
+- [Java Formatter Settings](#java-formatter-settings)
 
 ## Settings Sync
 

@@ -1,6 +1,17 @@
 # PC Setup
 *A personal guide for setting up all programs, tools and configurations for personal use be it work or rest.*
 
+- [Definitions](#definitions)
+- [Steps to reproduce](#steps-to-reproduce)
+  - [Installing the OS](#installing-the-os)
+  - [Configuring the Internet browser](#configuring-the-internet-browser)
+  - [Configuration](#configuration)
+  - [Programs](#programs)
+  - [Configuring the user experience](#configuring-the-user-experience)
+  - [Keyboard layout settings](#keyboard-layout-settings)
+  - [Additional packages](#additional-packages)
+  - [Other system settings](#other-system-settings)
+
 ## Definitions
 Following statements are crucial to perform [steps from the next section](#steps-to-reproduce).
 
