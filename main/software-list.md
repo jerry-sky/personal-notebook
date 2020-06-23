@@ -1,14 +1,16 @@
 # Software List
 
-- [Basic Package](#basic-package)
+*All programs that are deemed necessary for normal use for both work and entertainment.*
+
+- [Primary](#primary)
 - [$Windows$](#windows)
 
-## Basic Package
+## Primary
 
-1. Internet Browsers
-   - [**Vivaldi**](https://vivaldi.com/download/) [installation](pc-setup.md#configuring-the-internet-browser)
-   - [Chrome](https://www.google.com/chrome/)
+1. Internet Browsers, [configuration](pc-setup.md#configuring-the-internet-browser)
    - [Opera](https://www.opera.com/de/download)
+   - [Vivaldi](https://vivaldi.com/download/)
+   - [Chrome](https://www.google.com/chrome/)
    - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
    - [*Tor*](https://www.torproject.org/download/)
 2. Productivity
@@ -21,9 +23,8 @@
 3. Utilities
    - **PuTTY** `sudo apt install putty`
    - FileZilla `sudo apt install filezilla`
-   - [**Dropbox**](https://www.dropbox.com/install) (*Primary Cloud solution*)
+   - [**InSync + GDrive**](https://www.insynchq.com/downloads) (*Primary Cloud solution*)
    - [TeamViewer](https://www.teamviewer.com/en/download/)
-   - [*XAMPP*](https://www.apachefriends.org/download.html)
    - [**NVM**](https://github.com/nvm-sh/nvm#installing-and-updating)
    - [Etcher.io](https://etcher.io)
    - [PureRef](https://www.pureref.com/download.php)
@@ -34,9 +35,11 @@
    - Java Source `sudo apt install openjdk-11-source`
 5. Communication
    - [Discord](https://discordapp.com/download)
+   - [WhatsApp Web](https://web.whatsapp.com/)
+   - [FB Messenger](https://www.messenger.com)
    - ~~Slack~~
 6. Entertainment
-   - [Spotify web-app](https://open.spotify.com/collection/)
+   - [Tidal web-app](https://listen.tidal.com)
    - [Steam](https://store.steampowered.com/about/)
    - [*Minecraft*](https://www.minecraft.net/en-us/download/)
    - Factorio
@@ -49,15 +52,14 @@
    - ~~Resource Hacker~~
    - [**7-Zip**](https://www.7-zip.org/download.html)
    - [AutoHotkey](https://www.autohotkey.com/download/)
-   - ~~OneDrive~~
 2. Productivity
    - [*Paint&#46;NET*](https://www.getpaint.net/download.html)
    - $Microsoft$ $Office$
 3. Entertainment
    - The Settlers 2: The 10th Anniversary
-   - *Colin McRae Rally 2005
+   - Colin McRae Rally 2005
    - NFS Carbon
    - NFS Underground 2
    - Space Engine
    - Epic Games Store
-   - ~~GTA V~~
+   - GTA V
