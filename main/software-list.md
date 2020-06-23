@@ -1,7 +1,7 @@
 # Software List
 
 - [Basic Package](#basic-package)
-- [$Windows$](#math-xmlnshttpwwww3org1998mathmathmlsemanticsmrowmiwmimiimiminmimidmimiomimiwmimismimrowannotation-encodingapplicationx-texwindowsannotationsemanticsmathwindows)
+- [$Windows$](#windows)
 
 ## Basic Package
 
