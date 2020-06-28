@@ -9,6 +9,7 @@
   - [**Expression map**](expressions.md)
   - [Words](words.md)
   - [Verb conjugation](verb-conjugation.md)
+  - [Präpositionen](präpositionen.md)
   - [Text analysis](text-analysis/readme.md)
 
 ## Links
