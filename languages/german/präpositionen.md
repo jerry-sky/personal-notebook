@@ -1,6 +1,6 @@
 # Präpositionen
 
-**Akkusativ:**
+## Akkusativ:
 - für
 - durch
 - um
@@ -9,7 +9,7 @@
 - entlang
 - bis
 
-**Dat:**
+## Dat:
 - mit
 - aus
 - außer
@@ -21,7 +21,7 @@
 - von
 - [*ab*](https://german.stackexchange.com/a/44118)
 
-**Akk + Dat**:
+## Akk + Dat:
 - in
 - auf
 - vor
