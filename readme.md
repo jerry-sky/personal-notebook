@@ -1,8 +1,19 @@
 # Jerry Sky's personal notebook
 
-### This notebook consists of all personal notes of Jerry Sky including those not related to programming or computer science.
+*This notebook consists of all personal notes of Jerry Sky including those not related to programming or computer science.*
 
 ---
+
+- [Index](#index)
+  - [Main](#main)
+  - [Life](#life)
+  - [Languages](#languages)
+  - [Ideas](#ideas)
+  - [The arbitrary collection](#the-arbitrary-collection)
+  - [Adobe](#adobe)
+  - [Videos](#videos)
+  - [Other](#other)
+- [Some remarks](#some-remarks)
 
 ## Index
 
@@ -52,7 +63,9 @@
 
 ---
 
-#### The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
+## Some remarks
+
+The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
   - *very poor performance of the browser-based app*
   - *no Linux-based app*
   - *proprietary technology*
@@ -64,5 +77,5 @@ The only area in which OneNote is better than any other note-taking app is **han
 
 **The solution is to use Github repositories, just like this one, as the main solution for note-taking.**
 
-As this flavour of Markdown supports $\LaTeX$ syntax OneNote is redundant as far as taking notes is concerned. When it comes to graph drawing or any type of graphical endevor it can be done with OneNote. However, if it can be done with e.g. GIMP or any other graphical manipulating software *OneNote should **not** be used*.\
-An alternative for sketching simple and quick graphs is to use code blocks. Characters such as `\`, `|`, `/` and `_` all can be used as strokes while regular latin alphabet characters as e.g. graph nodes.
+As this flavour of Markdown supports $\LaTeX$ syntax OneNote is redundant as far as taking notes is concerned. When it comes to graph drawing or any type of graphical endevor it can be done with OneNote. However, if it can be done with e.g. GIMP or any other graphics program software *OneNote should **not** be used*.\
+An alternative for sketching simple and quick graphs is to use `code blocks`. Characters such as `\`, `|`, `/` and `_` all can be used as strokes while regular latin alphabet characters as e.g. graph nodes.
