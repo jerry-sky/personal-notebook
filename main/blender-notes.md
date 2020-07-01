@@ -16,6 +16,7 @@
 - [Pie Menus](#pie-menus)
 - [Masking data](#masking-data)
 - [Applying a property change to multiple objects](#applying-a-property-change-to-multiple-objects)
+- [Fixing Linux Mint Cinnamon keyboard shortcuts](#fixing-linux-mint-cinnamon-keyboard-shortcuts)
 
 ## Links
 
@@ -103,3 +104,8 @@ Mesh: Clear Sculpt-Mask Data
 To change a numeric value on a set of objects, first change the value for one *active* object and then press the `RMB` on the value field and choose `Copy To Selected`. This will apply this change to all the other selected objects that have this property.\
 [Source](https://blender.stackexchange.com/questions/6015/applying-numeric-input-attribute-changes-on-multiple-objects-at-the-same-time)
 
+## Fixing Linux Mint Cinnamon keyboard shortcuts
+
+For some reason, by default `Alt + Shift + RMB` doesn't work as expected (doesn't select multiple edge loops).
+
+The solution is to *enable switching between keyboard layouts using `Alt + Shift` combination provided you're using IBus as the keyboard layout switching solution. Only with one keyboard layout selected **in the system settings (not in IBus settings)**it will not switch keyboard layouts but it will unlock the expected functionality in Blender.*
