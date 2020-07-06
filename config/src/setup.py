@@ -6,8 +6,6 @@ import os
 
 EXIT_MESSAGE = '\033[3mbye\033[0m'
 
-config_entries_shorthands = list(map(lambda x: x.shorthand, config_entries))
-
 
 def print_available_options():
 
@@ -22,6 +20,8 @@ def print_available_options():
 
 
 if __name__ == "__main__":
+
+    config_entries_shorthands = list(map(lambda x: x.shorthand, config_entries))
 
     _exit = False
 
