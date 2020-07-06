@@ -3,6 +3,7 @@ from config_entries.copy_some_lines import copy_some_lines
 import shutil
 import os
 import pathlib
+import re
 
 HD = os.path.expanduser('~')
 CD = str(pathlib.Path().absolute())
@@ -21,9 +22,30 @@ def cp(source, target, create_dirs=False, tree=False):
         shutil.copy2(source, target)
 
 
-
 # shorthand shell execution function
 def ex(command): return os.system(command)
+
+
+# a special case of a config entry
+def bash_aliases_insiders():
+    '''Copies `.bash_aliases` but with `code` replaced with `code-insiders`.
+    '''
+    # first – copy the original file
+    cp(CD + '/config-files/.bash_aliases', HD + '/')
+    # replace every occurrence of `code` with `code-insiders`
+    with open(HD + '/.bash_aliases', 'r+') as fi, open(HD + '/.bash_aliases_tmp', 'w+') as fo:
+        for line in fi:
+            fo.write(
+                re.sub(
+                    # replace all occurrences that aren't file paths
+                    r'code(?!\/)',
+                    'code-insiders',
+                    line
+                )
+            )
+    # remove the original file and rename the new one
+    os.remove(HD + '/.bash_aliases')
+    os.rename(HD + '/.bash_aliases_tmp', HD + '/.bash_aliases')
 
 
 config_entries = [
@@ -48,6 +70,12 @@ config_entries = [
     ),
 
     ConfigEntry(
+        description='copy .bash_aliases but with `code-insiders` instead of `code`',
+        shorthand='bas-insiders',
+        execute=bash_aliases_insiders
+    ),
+
+    ConfigEntry(
         description='copy redshift config file',
         shorthand='rds',
         execute=lambda: cp(
@@ -64,7 +92,8 @@ config_entries = [
     ConfigEntry(
         description='copy neovim init file',
         shorthand='nvi',
-        execute=lambda: cp(CD + '/config-files/nvim/init.vim', HD + '/.config/nvim/', create_dirs=True)
+        execute=lambda: cp(CD + '/config-files/nvim/init.vim',
+                           HD + '/.config/nvim/', create_dirs=True)
     ),
 
     ConfigEntry(
@@ -91,7 +120,8 @@ config_entries = [
     ConfigEntry(
         description='copy utility scripts',
         shorthand='cus',
-        execute=lambda: cp(CD + '/utility-scripts', '/opt/utility-scripts', tree=True)
+        execute=lambda: cp(CD + '/utility-scripts',
+                           '/opt/utility-scripts', tree=True)
     ),
 
     ConfigEntry(
