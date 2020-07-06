@@ -108,4 +108,6 @@ To change a numeric value on a set of objects, first change the value for one *a
 
 For some reason, by default `Alt + Shift + RMB` doesn't work as expected (doesn't select multiple edge loops).
 
-The solution is to *enable switching between keyboard layouts using `Alt + Shift` combination provided you're using IBus as the keyboard layout switching solution. Only with one keyboard layout selected **in the system settings (not in IBus settings)**it will not switch keyboard layouts but it will unlock the expected functionality in Blender.*
+~~The solution is to *enable switching between keyboard layouts using `Alt + Shift` combination provided you're using IBus as the keyboard layout switching solution. Only with one keyboard layout selected **in the system settings (not in IBus settings)**it will not switch keyboard layouts but it will unlock the expected functionality in Blender.*~~
+
+The issue got resolved on its own. ***I have no idea why***, which is the worst kind of *“resolved”*.
