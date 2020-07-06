@@ -6,14 +6,16 @@
 
 - [Index](#index)
   - [Main](#main)
-  - [Life](#life)
+  - [Life (Ω)](#life-ω)
   - [Languages](#languages)
-  - [Ideas](#ideas)
+  - [Ideas (Ω)](#ideas-ω)
   - [The arbitrary collection](#the-arbitrary-collection)
   - [Adobe](#adobe)
   - [Videos](#videos)
-  - [Other](#other)
+  - [Other (Ω)](#other-ω)
 - [Some remarks](#some-remarks)
+
+*Please note: to view some private notes (marked with (Ω)) you need to have access to the private part of this repository.*
 
 ## Index
 
@@ -30,22 +32,21 @@
   - [Linguistics of Computer Science related matters](main/linguistics-related-to-cs.md)
   - [$\LaTeX$](main/latex-notes.md)
   - [Colours](main/colour-notes.md)
-  - [Orange](main/orange/orange.md)
 
-### Life
-  - [Thoughts](life/thoughts/readme.md)
-  - [Books](life/books/readme.md)
-  - [Journal](life/journal/readme.md)
+### Life (Ω)
+  - [Thoughts](private/life/thoughts/readme.md)
+  - [Books](private/life/books/readme.md)
+  - [Journal](private/life/journal/readme.md)
 
 ### Languages
   - [English](languages/english/readme.md)
   - [German](languages/german/readme.md)
   - [French](languages/french/readme.md)
 
-### Ideas
-  - [Calendar app](ideas/calendar-app.md)
-  - [Todo app](ideas/todo-app.md)
-  - [Notes app](ideas/notes-app.md)
+### Ideas (Ω)
+  - [Calendar app](private/ideas/calendar-app.md)
+  - [Todo app](private/ideas/todo-app.md)
+  - [Notes app](private/ideas/notes-app.md)
 
 ### The arbitrary collection
   - [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
@@ -59,7 +60,7 @@
 
 ### [Videos](videos/readme.md)
 
-### [Other](other/readme.md)
+### [Other (Ω)](private/other/readme.md)
 
 ---
 
