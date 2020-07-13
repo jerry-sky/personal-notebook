@@ -9,6 +9,7 @@
 - [Upload progress](#upload-progress)
 - [The `.htaccess` file](#the-htaccess-file)
 - [Tracking many files](#tracking-many-files)
+- [Testing components that contain Angular Material components](#testing-components-that-contain-angular-material-components)
 
 ## Links
 
@@ -73,3 +74,68 @@ When dealing with multiple Angular projects or Angular projects mixed with some 
 2. Execute `sudo sysctl -p`.
 <!-- spell-checker: disable-next-line -->
 3. View `/proc/sys/fs/inotify/max_user_watches` and verify that the output number is equals to `524288`.
+
+---
+## Testing components that contain Angular Material components
+
+[ng-material-harnesses]: https://medium.com/@kevinkreuzer/test-your-components-using-angular-materials-component-harnesses-f9c1deebdf5d
+
+When testing a component with some components from Angular Material (e.g. `MatButton` or `MatCard`) you have to include appropriate Angular Material modules to your tests.\
+For example, when the component contains a `mat-button` you should add to the `imports` of the test a reference to the `MatButtonModule`:
+```ts
+beforeEach(async(() => {
+    TestBed.configureTestingModule({
+        imports: [
+            MatButtonModule, // said reference
+        ],
+        declarations: [
+            ...
+        ],
+    }).compileComponents();
+}));
+```
+otherwise, the test will complain about unidentifiable components.
+
+Secondly, if it is necessary to test the interaction with an Angular Material component (instead of e.g. testing only the function that is invoked by this component) it is advised to use Angular Material's component harnesses.
+This method prevents from possible issues due to change in the internal API of Angular Material.
+
+> *“Relying on implementation details of third party libraries is cumbersome because you are vulnerable to refactorings and you need to understand implementation details.”*
+
+Instead of accessing the components in the HTML through invoking the `query` method use mentioned earlier Angular Material's component harnesses.
+
+Setup:
+```ts
+let loader: HarnessLoader;
+let component: [...];
+
+beforeEach(() => {
+    fixture = TestBed.createComponent([...]);
+    component = fixture.componentInstance;
+    loader = TestBedHarnessEnvironment.loader(fixture); // (1)
+    fixture.detectedChanges();
+})
+```
+Here we are preparing the `TestBed` for our testing purposes. Notice the `(1)` additional line that loads the harness environment.
+
+Now we can test Angular Material components. Here is an example from the [source article][ng-material-harnesses]:
+```ts
+it('should filter out the alive characters if we set filter to dead', async () => {
+
+    const deadRadioButton = await loader.getHarness<MatRadioButtonHarness>(
+        MatRadioButtonHarness.with({
+            label: 'Dead'
+        })
+    );
+    const table = await loader.getHarness<MatTableHarness>(MathTableHarness);
+
+    await deadRadioButton.check();
+    const rows = await table.getRows();
+    expect(rows.length).toBe(5);
+
+});
+```
+
+Sources:
+- [Angular Material guide on component harnesses](https://material.angular.io/guide/using-component-harnesses)
+- [The original article on Medium by Kevin Kreuzer][ng-material-harnesses]
+
