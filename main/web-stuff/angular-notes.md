@@ -11,6 +11,7 @@
 - [Tracking many files](#tracking-many-files)
 - [Testing components that contain Angular Material components](#testing-components-that-contain-angular-material-components)
 - [Using anchor links](#using-anchor-links)
+- [Using SVG icons with Angular Material](#using-svg-icons-with-angular-material)
 
 ## Links
 
@@ -164,3 +165,32 @@ export class AppRoutingModule { }
 will enable this functionality.
 
 Source: [an answer on Stack Overflow](https://stackoverflow.com/a/52724769/4249875)
+
+---
+
+## Using SVG icons with Angular Material
+
+To add a custom SVG icon that can be used throughout the whole app you need to import `MatIconRegistry`:
+```ts
+import { MatIconRegistry } from "@angular/material/icon";
+```
+and the `DomSanitizer`:
+```ts
+import { DomSanitizer } from "@angular/platform-browser";
+```
+to resolve the path by trusting the local asset file.
+
+Then, inside of `app.module.ts` inject said dependencies into the class constructor and add the desired icon(s) to the registry:
+```ts
+constructor(
+    private MIR: MatIconRegistry,
+    private DS: DomSanitizer
+) {
+    this.MIR.addSvgIcon(
+        'custom_icon',
+        this.DS.bypassSecurityTrustResourceUrl("assets/custom-icon.svg")
+    )
+}
+```
+
+Source: [Digital Ocean Article](https://www.digitalocean.com/community/tutorials/angular-custom-svg-icons-angular-material)
