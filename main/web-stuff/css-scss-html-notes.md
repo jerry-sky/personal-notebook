@@ -7,6 +7,7 @@
 - [Bootstrap & Sass](#bootstrap--sass)
 - [Nested (layered) links](#nested-layered-links)
 - [Website design with respect to keyboard users](#website-design-with-respect-to-keyboard-users)
+- [Anchor links and fixed headers](#anchor-links-and-fixed-headers)
 
 ## Links
 
@@ -148,3 +149,28 @@ Most website designs are not optimized for keyboard users that facilitate the Ta
 ```
 The `tabindex` attribute set to `-1` renders this element invisible to keyboard users navigating using the Tab key. This element will be skipped.\
 The `aria-hidden` attribute set to `true` makes this element invisible to screen readers thus preventing from exposing this unreachable element to the user.
+
+---
+
+## Anchor links and fixed headers
+
+[anchor-links-fixed-headers]: https://stackoverflow.com/a/11842865/4249875
+
+When a fixed header (an HTML element that is always visible – scroll position doesn't matter) is present on the webpage the standard anchor links don't work as expected. The targeted anchor element is not fully visible as the fixed header covers some of the target element.
+
+The solution is to create a special anchor element that is offset by the fixed header's height.
+
+The anchor target element:
+```html
+<div class="anchor" id="target"></div>
+```
+and its styling:
+```scss
+.anchor {
+    margin-top: -$header-height;// - $additional-offset;
+    padding-top: $header-height;// + $additional-offset;
+}
+```
+where `$header-height` is the height of the fixed header and the optional `$additional-offset` variable can be used to move the view even further to improve readability.
+
+Source: [an answer on Stack Overflow][anchor-links-fixed-headers]
