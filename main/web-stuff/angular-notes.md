@@ -10,6 +10,7 @@
 - [The `.htaccess` file](#the-htaccess-file)
 - [Tracking many files](#tracking-many-files)
 - [Testing components that contain Angular Material components](#testing-components-that-contain-angular-material-components)
+- [Using anchor links](#using-anchor-links)
 
 ## Links
 
@@ -139,3 +140,27 @@ Sources:
 - [Angular Material guide on component harnesses](https://material.angular.io/guide/using-component-harnesses)
 - [The original article on Medium by Kevin Kreuzer][ng-material-harnesses]
 
+
+---
+
+## Using anchor links
+
+Angular has the anchor links disabled by default (at least when the routing is enabled).
+
+Refactoring the module responsible for routing in a given app as follows:
+```ts
+[...]
+const routerOptions: ExtraOptions = {
+    useHash: false,
+    anchorScrolling: 'enabled',
+};
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes, routerOptions)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+will enable this functionality.
+
+Source: [an answer on Stack Overflow](https://stackoverflow.com/a/52724769/4249875)
