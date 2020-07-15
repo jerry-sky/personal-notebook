@@ -52,6 +52,9 @@ alias n="-- nemo"
 alias n.="-- nemo ."
 alias nh="-- nemo ."
 
+# opening another terminal from terminal (in the same directory)
+alias t="gnome-terminal"
+
 # adds `.blend` if not present in the filename provided when launching a file using blender
 function b() {
     if [ $(echo $1 | grep .blend) ]; then
