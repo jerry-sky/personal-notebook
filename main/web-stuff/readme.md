@@ -6,6 +6,7 @@
   - [Useful](#useful)
   - [Entertainment-like](#entertainment-like)
 - [Freeing a TCP port](#freeing-a-tcp-port)
+- [Classes and Interfaces in TypeScript](#classes-and-interfaces-in-typescript)
 
 ## Index
 
@@ -50,3 +51,55 @@ sudo fuser 80/tcp
 ```
 to see the all of the process listening to HTTP requests on port 80. Add a `-k` option to kill them.
 [Source](https://stackoverflow.com/a/750705/4249875)
+
+---
+
+## Classes and Interfaces in TypeScript
+
+Without defining a constructor there is no way to check if a given attribute (of actual type `string`) is in a certain object (that is a member of some given class) if the object is empty. TypeScript doesn't include the properties of a class in the compiled program; to check if a given prop is in a certain object type (in a class definition one can say) you have to use an ad-hoc generated staple object that is a member of this class – this way the constructor will be called and it will initialize all the properties thus `Object.keys` will not return an empty array but an array with all properties initialized by the constructor.
+
+Below is an example class with a constructor that initializes all class’ attributes.
+
+```ts
+class Example {
+    one: string;
+    two: number;
+    three: number[];
+
+    constructor() {
+        this.one = 'some';
+        this.two = 'example';
+        this.three = 'data';
+    }
+}
+```
+
+Now, to check if a given string is an attribute use:
+```ts
+if (attr in new Example) {
+    console.log(attr, 'is a property in `Example`');
+}
+```
+
+If the `constructor` isn’t defined in the `Example` class, the condition in the above `if` statement will always reject any `string` property.
+
+To allow creating objects with custom initializing values you could improve `constructor` by adding an optional argument:
+```ts
+constructor(example: Partial<Example> = {}) {
+    this.one = example.one || 'some';
+    this.two = example.two || 'example';
+    this.three = example.three || 'data';
+}
+```
+This way you could create a new instance of this class with some custom parameters. However, this argument is optional so it can be omitted: `new Example()`.
+
+It is important to note that defining the argument as optional using the `?` symbol won’t work.
+```ts
+constructor(example?: Partial<Example>) {...}
+```
+If the `constructor` is defined as above then creating a new object (`new Example()`) will result in an error of a `TypeError`:
+```
+TypeError: Cannot read property '...' of undefined
+```
+as the argument object hasn’t been provided.\
+**Setting the default value to `{}` resolves this issue.**
