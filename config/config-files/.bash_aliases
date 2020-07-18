@@ -31,6 +31,7 @@ alias gpl="git pull"
 alias gplr="git pull --rebase"
 alias gf="git fetch"
 alias gdf="git diff HEAD"
+alias gdfst="git diff HEAD --staged"
 alias gl="git log"
 # discarding changes
 alias gd="git checkout --"
@@ -38,6 +39,10 @@ alias gdi="git checkout -p"
 # unstaging changes
 alias gu="git reset --"
 alias gui="git reset -p"
+# stashing
+alias gsth="git stash"
+# stashing only staged files
+alias gsthst="git stash -- $(git diff --staged --name-only)"
 
 # VS Code shortcuts
 alias ccx="code . && exit"
