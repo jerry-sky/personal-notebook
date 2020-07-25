@@ -29,6 +29,7 @@
   - [Software issues](main/software-issues.md)
   - [Blender Notes](main/blender-notes.md)
   - [Web stuff](main/web-stuff/readme.md)
+  - [Software Engineering](main/software-engineering/readme.md)
   - [Linguistics of Computer Science related matters](main/linguistics-related-to-cs.md)
   - [$\LaTeX$](main/latex-notes.md)
   - [Colours](main/colour-notes.md)
