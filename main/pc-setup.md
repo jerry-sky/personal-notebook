@@ -16,8 +16,8 @@
 Following statements are crucial to perform [steps from the next section](#steps-to-reproduce).
 
 1. OS $\equiv$ [Linux Mint Cinnamon](linux-mint-setup.md)
-2. Cloud $\equiv$ InSync
-3. Internet Browser $\equiv$ Opera/Vivaldi
+2. Cloud $\equiv$ [InSync](https://www.insynchq.com/)
+3. Internet Browser $\equiv$ [Opera](https://www.opera.com/de/download)
 
 ## Steps to reproduce
 
@@ -57,13 +57,13 @@ See [config](../config/readme.md).
 3. Install [`snap`](https://snapcraft.io/docs/installing-snap-on-linux-mint)
 
 4. Install Git
-   1. `sudo apt install git`
+   1. `apt install git`
    2. Install [credentials manager](https://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo/40312117#40312117)
    3. Create new [personal github access token](https://github.com/settings/tokens)
    4. At first login provide the token as the password
 
-5. Install [VS Code](https://code.visualstudio.com/)
-    - *Note: __don't__ install it through `apt` or any other package manager as those are not as frequently updated as it is on the official website*.
+5. Install [VS Code](https://code.visualstudio.com/)\
+   `apt install code` or `apt install code-insiders`
 
 6. Install Blender
     ```bash
@@ -71,7 +71,7 @@ See [config](../config/readme.md).
     ```
     with all the [addons](blender-notes.md#addons).
 
-7. Install GParted `sudo apt install gparted`
+7. Install GParted `apt install gparted`
 
 8.  Install the rest of programs from the [software list](software-list.md).
 
