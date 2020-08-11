@@ -33,3 +33,4 @@
 ## Grammar
 
 - [ます form](ます.md)
+- [た (past)](た.md)
