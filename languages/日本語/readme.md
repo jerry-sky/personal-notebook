@@ -7,6 +7,7 @@
   - [Tae Kim’s guide](#tae-kims-guide)
   - [Anime](#anime)
 - [Grammar](#grammar)
+- [Text analysis](#text-analysis)
 
 ---
 
@@ -34,3 +35,10 @@
 
 - [ます form](ます.md)
 - [た (past)](た.md)
+
+---
+
+## Text analysis
+
+- **ソードアート・オンライン**
+  - [Season 1, Episode 1](text-analysis/ソードアート・オンライン-season-1-episode-1.md)
