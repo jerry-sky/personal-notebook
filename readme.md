@@ -44,6 +44,7 @@
   - [English](languages/english/readme.md)
   - [German](languages/german/readme.md)
   - [French](languages/french/readme.md)
+  - [Japanese](languages/日本語/readme.md)
 
 ### Ideas (Ω)
   - [Calendar app](private/ideas/calendar-app.md)
