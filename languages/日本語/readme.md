@@ -41,6 +41,7 @@
 ### Particles
 
 - [は and が](grammar/は-and-が.md)
+- [の (possessive)](grammar/の.md)
 
 ---
 
