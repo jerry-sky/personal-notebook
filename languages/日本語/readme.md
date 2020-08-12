@@ -33,9 +33,9 @@
 
 ## Grammar
 
-- [ます form](ます.md)
-- [た (past)](た.md)
-- [て (command)]
+- [ます form](grammar/ます.md)
+- [た (past) form](grammar/た.md)
+- [て (command) form](grammar/て.md)
 
 ---
 
