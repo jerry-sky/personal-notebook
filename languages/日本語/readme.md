@@ -7,6 +7,7 @@
   - [Tae Kim’s guide](#tae-kims-guide)
   - [Anime](#anime)
 - [Grammar](#grammar)
+  - [Particles](#particles)
 - [Text analysis](#text-analysis)
 
 ---
@@ -36,6 +37,10 @@
 - [ます form](grammar/ます.md)
 - [た (past) form](grammar/た.md)
 - [て (command) form](grammar/て.md)
+
+### Particles
+
+- [は and が](grammar/は-and-が.md)
 
 ---
 
