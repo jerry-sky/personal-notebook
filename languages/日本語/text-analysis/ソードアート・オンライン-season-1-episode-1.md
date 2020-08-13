@@ -9,6 +9,9 @@
 - [It’s time for this week’s MMO Stream.](#its-time-for-this-weeks-mmo-stream)
 - [We began with a promotional video.](#we-began-with-a-promotional-video)
 - [Was this the day of last week’s launch?](#was-this-the-day-of-last-weeks-launch)
+- [What were all these people waiting in line for?](#what-were-all-these-people-waiting-in-line-for)
+- [Sword Art Online!](#sword-art-online)
+- [The one at the front of the line waited for three days prior to launch.](#the-one-at-the-front-of-the-line-waited-for-three-days-prior-to-launch)
 
 ---
 
@@ -75,3 +78,70 @@
 3. [発売日の様子](https://jisho.org/word/発売日)\
     Meaning: **appearance (様子) of the launch, release date (発売日)**\
     Hiragana: はつ・ばい・び
+
+## What were all these people waiting in line for?
+
+> 行列を作った彼らのお目当ては
+
+1. [行列](https://jisho.org/word/行列)\
+    Meaning: **line, queue**\
+    Hiragana: ぎょう・れつ
+
+2. [作った](https://jisho.org/word/作る)\
+    Meaning: **form [a line]**\
+    Hiragana: つく・った\
+    Conjugation: [た (past) form](../grammar/た.md)
+
+3. [彼ら](https://jisho.org/word/彼ら)\
+    Meaning: **they**, them\
+    Hiragana: かれ・ら
+
+4. [お目](https://jisho.org/word/お目)\
+    Meaning: eyes, vision, sight, looking\
+    Hiragana: お・め
+
+5. [当て](https://jisho.org/word/当て)\
+    Meaning: aim, expectations, hopes, prospects\
+    Hiragana: あ・て
+
+6. 彼らのお目当て\
+    Meaning: their expectations, their hopes, *their aim*\
+    Hiragana: かれ・ら・の・お目・あて
+
+## Sword Art Online!
+
+> 《ソードアート･オンライン》！
+
+Romaji: sō-do-ā-to o-n-ra-i-n\
+
+## The one at the front of the line waited for three days prior to launch.
+
+> 先頭の人は３日前から並んでたんだって！
+
+1. [先頭](https://jisho.org/word/先頭)\
+    Meaning: **head, lead, first**\
+    Hiragana: せん・とう
+
+2. 先頭の人\
+    Meaning: **the one (person) at the front**\
+    Hiragana: せん・とう・の・ひと
+
+3. [3日 (三日)](https://jisho.org/word/三日)\
+    Meaning: **three days**\
+    Hiragana: みっ・にち
+
+4. [前](https://jisho.org/word/前-1)\
+    Meaning: **prior**\
+    Hiragana: まえ
+
+5. [並んで](https://jisho.org/word/並んで)\
+    Meaning: *alongside, side-by-side, abreast*\
+    Hiragana: なら・んで
+
+6. 並んでたん\
+    Meaning: **lined up**\
+    Hiragana: なら・んで・たん\
+    Possible conjugation used: [た (past) form](../grammar/た.md)
+
+7. [だって](https://jisho.org/word/だって)\
+    Meaning: *even [for three days] (emphasis)*\
