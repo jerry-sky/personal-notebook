@@ -42,7 +42,11 @@ alias gui="git reset -p"
 # stashing
 alias gsth="git stash"
 # stashing only staged files
-alias gsthst="git stash -- $(git diff --staged --name-only)"
+alias gsthst="git diff --staged --name-only | git stash"
+# other stash commands
+alias gsthp="git stash pop"
+alias gstha="git stash apply"
+alias gsthl="git stash list"
 
 # VS Code shortcuts
 alias ccx="code . && exit"
