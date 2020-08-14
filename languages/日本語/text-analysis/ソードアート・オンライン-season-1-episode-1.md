@@ -22,21 +22,21 @@
 > 今週の「ＭＭＯストリーム」
 
 1. [司会](https://jisho.org/word/司会)\
-    Hiragana: しかい\
+    Hiragana: し・かい\
     Meaning: **Presenter**, leading a meeting
 
 2. [さあ](https://jisho.org/word/さあ)\
     Meaning: *come now, well, who knows, all right, about that, you see*
 
-3. [始まる](https://jisho.org/word/始まる)\
-    Hiragana: はじまる\
+3. [始まる (始まりました)](https://jisho.org/word/始まる)\
+    Hiragana: はじ・まる\
     Meaning: **to begin**, to start, to commence\
     Conjugation:
     - [ます (formal) form](../grammar/ます.md)
     - [た (past) form](../grammar/た.md)
 
 4. [今週](https://jisho.org/word/今週)\
-    Hiragana: こんしゅう\
+    Hiragana: こん・しゅう\
     Meaning: **this week**
 
 5. 「ＭＭＯストリーム」\
@@ -58,7 +58,7 @@
 4. [見てもらいました](https://jisho.org/word/見る)\
     *Meaning: to assess, to examine, to see, to experience*\
     Estimated role: *we are seeing, experiencing, examining a 「ＰＶ」.*\
-    Hiragana: みてもらいました\
+    Hiragana: み・てもらいました\
     Conjugation:
     - [ます (formal) form](../grammar/ます.md)
     - [た (past) form](../grammar/た.md)
@@ -145,3 +145,13 @@ Romaji: sō-do-ā-to o-n-ra-i-n\
 
 7. [だって](https://jisho.org/word/だって)\
     Meaning: *even [for three days] (emphasis)*\
+
+## Amazing!
+
+> すごいね
+
+1. [すごい](https://jisho.org/word/凄い)\
+    Meaning: Amazing!
+
+2. [ね](https://jisho.org/word/ね)\
+    Meaning: *right?*
