@@ -29,7 +29,7 @@
     Meaning: *come now, well, who knows, all right, about that, you see*
 
 3. [始まる (始まりました)](https://jisho.org/word/始まる)\
-    Hiragana: はじ・まる\
+    Hiragana: はじ・まる (はじ・まりました)\
     Meaning: **to begin**, to start, to commence\
     Conjugation:
     - [ます (formal) form](../grammar/ます.md)
@@ -52,13 +52,10 @@
 2. [ＰＶ](https://jisho.org/word/ＰＶ)\
     Meaning: **promotional video**, music video, *page view*
 
-3. [を](https://jisho.org/word/を)\
-    Role: indicates **direct object of action**
-
-4. [見てもらいました](https://jisho.org/word/見る)\
+3. [見る (見てもらいました)](https://jisho.org/word/見る)\
     *Meaning: to assess, to examine, to see, to experience*\
     Estimated role: *we are seeing, experiencing, examining a 「ＰＶ」.*\
-    Hiragana: み・てもらいました\
+    Hiragana: み・る (み・てもらいました)\
     Conjugation:
     - [ます (formal) form](../grammar/ます.md)
     - [た (past) form](../grammar/た.md)
@@ -75,9 +72,13 @@
     Meaning: **last week**\
     Hiragana: せん・しゅう
 
-3. [発売日の様子](https://jisho.org/word/発売日)\
-    Meaning: **appearance (様子) of the launch, release date (発売日)**\
+3. [発売日](https://jisho.org/word/発売日)\
+    Meaning: **launch date, release date**\
     Hiragana: はつ・ばい・び
+
+4. [様子](https://jisho.org/word/様子)\
+    Meaning: *appearance, state, situation, sign, indication*\
+    Hiragana: よう・す
 
 ## What were all these people waiting in line for?
 
@@ -87,9 +88,9 @@
     Meaning: **line, queue**\
     Hiragana: ぎょう・れつ
 
-2. [作った](https://jisho.org/word/作る)\
+2. [作る (作った)](https://jisho.org/word/作る)\
     Meaning: **form [a line]**\
-    Hiragana: つく・った\
+    Hiragana: つく・る (つく・った)\
     Conjugation: [た (past) form](../grammar/た.md)
 
 3. [彼ら](https://jisho.org/word/彼ら)\
