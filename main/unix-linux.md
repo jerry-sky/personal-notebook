@@ -8,6 +8,8 @@
 - [Downloading a whole website using `wget`](#downloading-a-whole-website-using-wget)
 - [Permanently setting the DNS server](#permanently-setting-the-dns-server)
 
+---
+
 ## Keeping some script/program alive
 
 If you want to keep some script/program alive (e.g. a node.js script) you need to use `crontab`.
@@ -22,6 +24,7 @@ You can add a reference to a bash script that runs desired script/program or nor
 
 It is advised that the program is shut down before running it again.
 
+---
 
 ## ANSI Text Attributes
 
@@ -79,15 +82,22 @@ To get even more colours use `\033[38;2;R;G;Bm` to use full RGB spectrum by repl
 
 [Source](https://stackoverflow.com/a/33206814/4249875)
 
+---
+
 ## Customizing `bash` prompt
 
 When configuring the `bash` prompt you would use ANSI escape sequences to enhance the [text formatting](#ansi-text-attributes) to make it more visually appealing. However, inserting an ANSI escape sequence is a lot of characters that amount to special usage and *no physical characters*. That's why we need to mark these sequences as *zero-length* to prevent the bash from being confused where does the actual prompt end.\
-Every time you insert an ANSI escape sequence wrap it inside `\[<prompt>\]`.\
+Every time you insert an ANSI escape sequence wrap it inside `\[«ANSI escape sequence»\]`.
+
 [Source](https://unix.stackexchange.com/a/28828)
+
+---
 
 ## Redirecting `stdout` to `stderr`
 
-To redirect `stdout` to `stderr` just do `>&2 echo 'error`.
+To redirect `stdout` to `stderr` just add `>&2 echo 'error` at the end of the command you want to execute.
+
+---
 
 ## Downloading a whole website using `wget`
 
@@ -105,6 +115,8 @@ There is a possibility that above command will not work on first try. For exampl
 wget -r -p -U Mozilla --wait=1 --limit-rate=2M --tries=3 -l 1 --base=https://example.com/subpage --force-html --relative -i example.com/subpage/index.html
 ```
 Executing above command will download all resources that appear on this subpage. All relative links will be preceded with the URL provided with the `--base` option.
+
+---
 
 ## Permanently setting the DNS server
 
@@ -124,3 +136,5 @@ nameserver 1.1.1.1
 ```
 
 [Source](https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/)
+
+---
