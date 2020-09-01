@@ -40,6 +40,8 @@ This note contains all the settings related to Linux Mint setup. These settings 
     <!-- spellchecker: disable-next-line -->
 12. *Optional* [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)
 
+13. *Optional* Change default font ( System Settings $\to$ Font Selection )
+
 ## Issues
 
 1. The Cinnamon Desktop Environment currently doesn't support more than four keyboard layouts for some odd reason ([the issue on GitHub](https://github.com/linuxmint/cinnamon/issues/3212#issuecomment-337725452)).
