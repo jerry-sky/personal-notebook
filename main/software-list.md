@@ -19,11 +19,10 @@
    - [**Blender**](https://www.blender.org/download/)
    - [Notepad++](https://notepad-plus-plus.org/downloads/)
    - ~~JetBrains Webstorm~~
-   - [Adobe CC](https://creativecloud.adobe.com/apps/all/desktop)
 3. Utilities
    - **PuTTY** `sudo apt install putty`
    - FileZilla `sudo apt install filezilla`
-   - [**InSync + GDrive**](https://www.insynchq.com/downloads) (*Primary Cloud solution*)
+   - [**InSync + GDrive**](https://www.insynchq.com/downloads) (*Primary Cloud Solution*)
    - [TeamViewer](https://www.teamviewer.com/en/download/)
    - [**NVM**](https://github.com/nvm-sh/nvm#installing-and-updating)
    - [Etcher.io](https://etcher.io)
@@ -34,7 +33,7 @@
      <!-- spellchecker: disable-next-line -->
    - Java Source `sudo apt install openjdk-11-source`
 5. Communication
-   - [Discord](https://discordapp.com/download)
+   - [Discord](https://discord.com/channels/@me)
    - [WhatsApp Web](https://web.whatsapp.com/)
    - [FB Messenger](https://www.messenger.com)
    - ~~Slack~~
@@ -48,14 +47,17 @@
 ## $Windows$
 
 1. Utilities
-   - [Input Director](https://inputdirector.com/downloads.html)
-   - ~~Resource Hacker~~
    - [**7-Zip**](https://www.7-zip.org/download.html)
    - [AutoHotkey](https://www.autohotkey.com/download/)
+   - ~~[Input Director](https://inputdirector.com/downloads.html)~~
+   - ~~Resource Hacker~~
 2. Productivity
+   - [Adobe CC](https://creativecloud.adobe.com/apps/all/desktop)
    - [*Paint&#46;NET*](https://www.getpaint.net/download.html)
-   - $Microsoft$ $Office$
+   - $\textit{Microsoft Office}$
 3. Entertainment
+   - Origin
+   - Steam
    - The Settlers 2: The 10th Anniversary
    - Colin McRae Rally 2005
    - NFS Carbon

@@ -1,29 +1,38 @@
 # PC Setup
-*A personal guide for setting up all programs, tools and configurations for personal use be it work or rest.*
+
+*A personal guide for setting up all programs, tools and configuration files for personal use.*
 
 - [Definitions](#definitions)
-- [Steps to reproduce](#steps-to-reproduce)
+- [Guide](#guide)
   - [Installing the OS](#installing-the-os)
-  - [Configuring the Internet browser](#configuring-the-internet-browser)
   - [Configuration](#configuration)
+  - [Configuring the Internet browser](#configuring-the-internet-browser)
   - [Programs](#programs)
   - [Configuring the user experience](#configuring-the-user-experience)
-  - [Keyboard layout settings](#keyboard-layout-settings)
-  - [Additional packages](#additional-packages)
+  - [Keyboard layouts](#keyboard-layouts)
+  - [Fonts](#fonts)
   - [Other system settings](#other-system-settings)
 
 ## Definitions
-Following statements are crucial to perform [steps from the next section](#steps-to-reproduce).
 
-1. OS $\equiv$ [Linux Mint Cinnamon](linux-mint-setup.md)
+*Software solutions currently used.*
+
+1. OS $\equiv$ Linux Mint Cinnamon ([OS-specific setup](linux-mint-setup.md))
 2. Cloud $\equiv$ [InSync](https://www.insynchq.com/)
 3. Internet Browser $\equiv$ [Opera](https://www.opera.com/de/download)
 
-## Steps to reproduce
+## Guide
 
 ### Installing the OS
 
 Please see the OS-specific instructions in a separate note. See [definitions](#definitions).
+
+### Configuration
+
+Copy this repository to `~/notebooks/personal-notebook` using `git clone`.
+
+Run the `setup.sh` script from the `/config` directory of this repository to copy various config files to the system.\
+See [«config»](../config/readme.md).
 
 ### Configuring the Internet browser
 
@@ -41,14 +50,9 @@ Please see the OS-specific instructions in a separate note. See [definitions](#d
       - [Enable DRM to view DRM-content such as Prime Video or Netflix etc.](https://forums.opera.com/topic/28663/widevine-and-opera/29)
       - [Fix `libffmpeg.so`](https://forums.opera.com/topic/30254/solved-video-playback-issues/7)
 
-### Configuration
-
-Run the `setup.sh` script from the `/config` directory of this repository to copy various config files to the system.\
-See [config](../config/readme.md).
-
 ### Programs
 
-1. Install the [Cloud](#definitions) Desktop app.
+1. Install the [Cloud](#definitions) desktop app.
 
 2. Enable Redshift
    1. Install `redshift` if it is not already installed.
@@ -56,20 +60,34 @@ See [config](../config/readme.md).
 
 3. Install [`snap`](https://snapcraft.io/docs/installing-snap-on-linux-mint)
 
-4. Install Git
-   1. `apt install git`
-   2. Install [credentials manager](https://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo/40312117#40312117)
-   3. Create new [personal github access token](https://github.com/settings/tokens)
-   4. At first login provide the token as the password
+4. Configure Git
+   1. Install the [credentials manager](https://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo/40312117#40312117).
+   2. Create a new [personal github access token](https://github.com/settings/tokens).
+   3. At first login provide the newly generated token as the password.
 
-5. Install [VS Code](https://code.visualstudio.com/)\
-   `apt install code` or `apt install code-insiders`
+5. Install VS Code\
+   Using
+   ```sh
+   apt list -a code-insiders | less
+   ```
+   and
+   ```sh
+   apt install code-insiders=«version from the list; e.g. “1.48.0-1596120937”»
+   ```
+   establish what version is currently free of irritating Electron-related issues (e.g. white flashes) and install it.
 
 6. Install Blender
-    ```bash
-    sudo snap install blender --classic
+    1. Download it from the [downloads page](https://www.blender.org/download/).
+    2. Unpack it:
+    ```sh
+    tar -xf «archive filename»
     ```
-    with all the [addons](blender-notes.md#addons).
+    3. Move the contents to `/opt/blender`.
+    4. Link the executable:
+    ```sh
+    ln -s /opt/blender/blender /usr/bin/blender
+    ```
+    5. Install the [addons](blender-notes.md#addons) if necessary.
 
 7. Install GParted `apt install gparted`
 
@@ -97,7 +115,7 @@ See [config](../config/readme.md).
     <!-- spellchecker: disable-next-line -->
 6. *Optional* [Setup listening to line-in audio at startup `pacmd load-module module-loopback latency_msec=5`](https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio)
 
-### Keyboard layout settings
+### Keyboard layouts
 
 1. Install [IBus](https://forums.linuxmint.com/viewtopic.php?t=160272) to allow using non-western keyboard layouts and allow using more than 4 keyboard layouts at once.
     1.  Should any issues arise, follow instructions provided in [this askubuntu.com answer](https://askubuntu.com/a/793046).
@@ -110,7 +128,7 @@ See [config](../config/readme.md).
     To view list of all keycodes use `xmodmap -pk`.
     To make this behaviour persistent use [config](../config/readme.md) found in this repository.
 
-### Additional packages
+### Fonts
 
 1. Install additional fonts into `/usr/share/fonts/truetype/`
     1.  Fira Sans
@@ -118,7 +136,6 @@ See [config](../config/readme.md).
     3.  Fira Mono
     4.  [All above as a package here from Google Fonts](https://fonts.google.com/selection?query=fira&selection.family=Fira+Code%7CFira+Mono%7CFira+Sans)
     5.  [Drogowskaz Classic](http://www.drogowskazclassic.pl/pismo.php)
-    6.  *Optional* Change default font ( System Settings $\to$ Font Selection )
 
 ### Other system settings
 
