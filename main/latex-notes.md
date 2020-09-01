@@ -2,10 +2,13 @@
 
 - [Links](#links)
 - [Using SVG files with `inkscape`](#using-svg-files-with-inkscape)
+- [Installing TeX Live](#installing-tex-live)
 
 ## Links
 
   - [Can't locate perl dependencies issue](https://github.com/cmhughes/latexindent.pl/issues/104)
+
+---
 
 ## Using SVG files with `inkscape`
 
