@@ -43,6 +43,7 @@
 - [は and が](grammar/は-and-が.md)
 - [の (possessive)](grammar/の.md)
 - [な](grammar/な.md)
+- [べき](grammar/べき.md)
 
 ---
 
