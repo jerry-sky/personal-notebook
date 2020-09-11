@@ -3,11 +3,11 @@
 *Japanese language*
 
 - [Resources](#resources)
-  - [Dictionaries](#dictionaries)
-  - [Tae Kim’s guide](#tae-kims-guide)
-  - [Anime](#anime)
+    - [Dictionaries](#dictionaries)
+    - [Tae Kim’s guide](#tae-kims-guide)
+    - [Anime](#anime)
 - [Grammar](#grammar)
-  - [Particles](#particles)
+    - [Particles](#particles)
 - [Text analysis](#text-analysis)
 
 ---
