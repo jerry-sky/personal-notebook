@@ -12,6 +12,9 @@
 - [What were all these people waiting in line for?](#what-were-all-these-people-waiting-in-line-for)
 - [Sword Art Online!](#sword-art-online)
 - [The one at the front of the line waited for three days prior to launch.](#the-one-at-the-front-of-the-line-waited-for-three-days-prior-to-launch)
+- [Amazing!](#amazing)
+- [Or is this just what any real gamer would do?](#or-is-this-just-what-any-real-gamer-would-do)
+- [The whole world is watching.](#the-whole-world-is-watching)
 
 ---
 
@@ -156,3 +159,56 @@ Romaji: sō-do-ā-to o-n-ra-i-n\
 
 2. [ね](https://jisho.org/word/ね)\
     Meaning: *right?*
+
+## Or is this just what any real gamer would do?
+
+> いや真のゲーマーなら当然と言うべきか？
+
+1. [いや](https://jisho.org/word/いや)\
+    Dictionary: *why, oh, quit it!, stop!, no!*\
+    Role: [filler word](https://japanese.stackexchange.com/a/24975), as in *“well, you know”*
+
+2. [真の](https://jisho.org/word/真の)\
+    Meaning: **true, real, genuine, proper**\
+    Hiragana: しん・の
+
+3. [ゲーマー](https://jisho.org/word/ゲーマー)\
+    Meaning: gamer\
+    Romaji: gēmā
+
+4. [なら](https://jisho.org/word/なら)\
+    Meaning: *if, in case, if it is true that*\
+    Estimated role: **is this** what gamer **would do**?
+
+5. [当然](https://jisho.org/word/当然)\
+    Meaning: *natural, as a matter of course, justified, deserved, reasonable*\
+    Estimated role: **is this *natural* to that gamer to do?** as in *that would be reasonable for a ゲーマー to do
+
+6. [と](https://japanese.stackexchange.com/a/15364)+[言う](https://jisho.org/word/言う)\
+    Meaning: と — quotation indicator; 言う — *to say, to call*\
+    Estimated role: **to say it is reasonable for a ゲーマー to do**
+
+7. [べき](../grammar/べき.md)\
+    Meaning: *must to do something, ought to do something, have to do something*\
+    Estimated role: **that’s exactly what would a ゲーマー has to do, would do**
+
+8. [か](https://www.tofugu.com/japanese-grammar/particle-ka/#for-asking-questions)\
+    Role: *makes the sentence a question* + *alternative (‘or’ at the beginning)*
+
+## The whole world is watching.
+
+> 世界中が大注目
+
+1. [世界中](https://jisho.org/word/世界中)\
+    Meaning: *around the world, throughout the world*\
+    Hiragana: せ・かい・じゅう
+
+2. [大](https://jisho.org/word/大-1)\
+    Meaning: *large, big, great, huge, vast*\
+    Estimated role: **whole**[ wide world]\
+    Hiragana: だい
+
+3. [注目](https://jisho.org/word/注目)\
+    Meaning: *notice, attention,* **observation**\
+    Estimated role: **is watching**\
+    Hiragana: ちゅうもく
