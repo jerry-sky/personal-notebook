@@ -148,7 +148,7 @@ Romaji: sō-do-ā-to o-n-ra-i-n\
     Possible conjugation used: [た (past) form](../grammar/た.md)
 
 7. [だって](https://jisho.org/word/だって)\
-    Meaning: *even [for three days] (emphasis)*\
+    Meaning: *even [for three days] (emphasis)*
 
 ## Amazing!
 
@@ -182,11 +182,13 @@ Romaji: sō-do-ā-to o-n-ra-i-n\
 
 5. [当然](https://jisho.org/word/当然)\
     Meaning: *natural, as a matter of course, justified, deserved, reasonable*\
-    Estimated role: **is this *natural* to that gamer to do?** as in *that would be reasonable for a ゲーマー to do
+    Estimated role: **is this *natural* to that gamer to do?** as in *that would be reasonable for a ゲーマー to do\
+    Hiragana: とう・ぜん
 
 6. [と](https://japanese.stackexchange.com/a/15364)+[言う](https://jisho.org/word/言う)\
     Meaning: と — quotation indicator; 言う — *to say, to call*\
-    Estimated role: **to say it is reasonable for a ゲーマー to do**
+    Estimated role: **to say it is reasonable for a ゲーマー to do**\
+    Hiragana: と・いう
 
 7. [べき](../grammar/べき.md)\
     Meaning: *must to do something, ought to do something, have to do something*\
@@ -211,4 +213,4 @@ Romaji: sō-do-ā-to o-n-ra-i-n\
 3. [注目](https://jisho.org/word/注目)\
     Meaning: *notice, attention,* **observation**\
     Estimated role: **is watching**\
-    Hiragana: ちゅうもく
+    Hiragana: ちゅう・もく
