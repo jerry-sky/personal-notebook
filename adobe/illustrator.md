@@ -5,8 +5,8 @@
 
 ## Links
 
-  - [How to Easily create a Laurel](https://youtu.be/XoueFohrhn4)
-  - [Create a Seamless Pattern Brush](https://youtu.be/_UsvbhSjcaw)
+- [How to Easily create a Laurel](https://youtu.be/XoueFohrhn4)
+- [Create a Seamless Pattern Brush](https://youtu.be/_UsvbhSjcaw)
 
 ## Notes
 

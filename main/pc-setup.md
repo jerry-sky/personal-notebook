@@ -13,9 +13,11 @@
   - [Fonts](#fonts)
   - [Other system settings](#other-system-settings)
 
+---
+
 ## Definitions
 
-*Software solutions currently used.*
+*Currently used software solutions.*
 
 1. OS $\equiv$ Linux Mint Cinnamon ([OS-specific setup](linux-mint-setup.md))
 2. Cloud $\equiv$ [InSync](https://www.insynchq.com/)
@@ -36,45 +38,45 @@ See [«config»](../config/readme.md).
 
 ### Configuring the Internet browser
 
-   1. Install the [Internet Browser](#definitions).
-   2. Install [Bitwarden](https://bitwarden.com/#download).
-   3. Install [Dark Reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh).
-   4. Log in to all online services
-      1. [**Google**](accounts.google.com/)
-      2. [**GitHub**](https://github.com/login)
-      3. [WhatsApp](https://web.whatsapp.com/)
-      4. [Discord](https://discordapp.com/channels/@me)
-      5. [*Facebook Messenger*](https://www.messenger.com/)
-   5. Change default browser to the [Internet Browser](#definitions).
-   6. *(Opera-only) – if Opera doesn't play some video content use one of these solutions:*
-      - [Enable DRM to view DRM-content such as Prime Video or Netflix etc.](https://forums.opera.com/topic/28663/widevine-and-opera/29)
-      - [Fix `libffmpeg.so`](https://forums.opera.com/topic/30254/solved-video-playback-issues/7)
+1. Install the [Internet Browser](#definitions).
+2. Install [Bitwarden](https://bitwarden.com/#download).
+3. Install [Dark Reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh).
+4. Log in to all online services
+    1. [**Google**](accounts.google.com/)
+    2. [**GitHub**](https://github.com/login)
+    3. [WhatsApp](https://web.whatsapp.com/)
+    4. [Discord](https://discordapp.com/channels/@me)
+    5. [*Facebook Messenger*](https://www.messenger.com/)
+5. Change default browser to the [Internet Browser](#definitions).
+6. *(Opera-only) — if Opera doesn't play some video content use one of these solutions:*
+    - [Enable DRM to view DRM-content such as Prime Video or Netflix etc.](https://forums.opera.com/topic/28663/widevine-and-opera/29)
+    - [Fix `libffmpeg.so`](https://forums.opera.com/topic/30254/solved-video-playback-issues/7)
 
 ### Programs
 
 1. Install the [Cloud](#definitions) desktop app.
 
 2. Enable Redshift
-   1. Install `redshift` if it is not already installed.
-   2. Enable autostart.
+    1. Install `redshift` if it is not already installed.
+    1. Enable autostart.
 
 3. Install [`snap`](https://snapcraft.io/docs/installing-snap-on-linux-mint)
 
 4. Configure Git
-   1. Install the [credentials manager](https://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo/40312117#40312117).
-   2. Create a new [personal github access token](https://github.com/settings/tokens).
-   3. At first login provide the newly generated token as the password.
+    1. Install the [credentials manager](https://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo/40312117#40312117).
+    2. Create a new [personal github access token](https://github.com/settings/tokens).
+    3. At first login provide the newly generated token as the password.
 
 5. Install VS Code\
-   Using
-   ```sh
-   apt list -a code-insiders | less
-   ```
-   and
-   ```sh
-   apt install code-insiders=«version from the list; e.g. “1.48.0-1596120937”»
-   ```
-   establish what version is currently free of irritating Electron-related issues (e.g. white flashes) and install it.
+    Using
+    ```sh
+    apt list -a code-insiders | less
+    ```
+    and
+    ```sh
+    apt install code-insiders=«version from the list; e.g. “1.48.0-1596120937”»
+    ```
+    to establish what version is currently free of irritating Electron-related issues (e.g. white flashes) and install it.
 
 6. Install Blender
     1. Download it from the [downloads page](https://www.blender.org/download/).
@@ -99,12 +101,12 @@ See [«config»](../config/readme.md).
 
 2.  Install themes and cursor packs
     1. Install [Canta theme](https://github.com/vinceliuice/Canta-theme)
-       1. *__Important note__: If used with sudo the theme will install in /usr/share/themes, not in ~/.themes - this will allow GUI apps (e.g. Files, Terminal) to use that theme when running in the elevated privileges mode.*
+        1. *__Important note__: If used with sudo the theme will install in /usr/share/themes, not in ~/.themes - this will allow GUI apps (e.g. Files, Terminal) to use that theme when running in the elevated privileges mode.*
     2. Install icon themes *[how-to](https://itsfoss.com/install-icon-linux-mint/)*
-       1. [Flat remix](https://drasite.com/flat-remix )
-       2. [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
+        1. [Flat remix](https://drasite.com/flat-remix )
+        2. [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
           <!-- spellchecker: disable-next-line -->
-       3. [Quintom Cursors](https://www.gnome-look.org/p/1329799/)
+        3. [Quintom Cursors](https://www.gnome-look.org/p/1329799/)
 
 3. Adjust mouse *(and touchpad)* settings.
 

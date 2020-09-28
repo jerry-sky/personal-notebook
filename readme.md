@@ -5,14 +5,14 @@
 ---
 
 - [Index](#index)
-  - [Main](#main)
-  - [Life (Ω)](#life-ω)
-  - [Languages](#languages)
-  - [Ideas (Ω)](#ideas-ω)
-  - [The arbitrary collection](#the-arbitrary-collection)
-  - [Adobe](#adobe)
-  - [Videos](#videos)
-  - [Other (Ω)](#other-ω)
+    - [Main](#main)
+    - [Life (Ω)](#life-ω)
+    - [Languages](#languages)
+    - [Ideas (Ω)](#ideas-ω)
+    - [The arbitrary collection](#the-arbitrary-collection)
+    - [Adobe](#adobe)
+    - [Videos](#videos)
+    - [Other (Ω)](#other-ω)
 - [Some remarks](#some-remarks)
 
 *Please note: to view some private notes (marked with (Ω)) you need to have access to the private part of this repository.*
@@ -20,46 +20,46 @@
 ## Index
 
 ### Main
-  - [**PC Setup**](main/pc-setup.md)
-  - [Software List](main/software-list.md)
-  - [Config](config/readme.md)
-  - [Unix & Linux](main/unix-linux.md)
-  - [Git](main/git-notes.md)
-  - [VS Code](main/vs-code.md)
-  - [Software issues](main/software-issues.md)
-  - [Blender Notes](main/blender-notes.md)
-  - [Web stuff](main/web-stuff/readme.md)
-  - [Software Engineering](main/software-engineering/readme.md)
-  - [Curriculum Vitae](cv/readme.md)
-  - [Linguistics of Computer Science related matters](main/linguistics-related-to-cs.md)
-  - [$\LaTeX$](main/latex-notes.md)
-  - [Colours](main/colour-notes.md)
+- [**PC Setup**](main/pc-setup.md)
+- [Software List](main/software-list.md)
+- [Config](config/readme.md)
+- [Unix & Linux](main/unix-linux.md)
+- [Git](main/git-notes.md)
+- [VS Code](main/vs-code.md)
+- [Software issues](main/software-issues.md)
+- [Blender Notes](main/blender-notes.md)
+- [Web stuff](main/web-stuff/readme.md)
+- [Software Engineering](main/software-engineering/readme.md)
+- [Curriculum Vitae](cv/readme.md)
+- [Linguistics of Computer Science related matters](main/linguistics-related-to-cs.md)
+- [$\LaTeX$](main/latex-notes.md)
+- [Colours](main/colour-notes.md)
 
 ### Life (Ω)
-  - [Thoughts](private/life/thoughts/readme.md)
-  - [Books](private/life/books/readme.md)
-  - [Journal](private/life/journal/readme.md)
+- [Thoughts](private/life/thoughts/readme.md)
+- [Books](private/life/books/readme.md)
+- [Journal](private/life/journal/readme.md)
 
 ### Languages
-  - [English](languages/english/readme.md)
-  - [German](languages/deutsch/readme.md)
-  - [French](languages/français/readme.md)
-  - [Japanese](languages/日本語/readme.md)
+- [English](languages/english/readme.md)
+- [German](languages/deutsch/readme.md)
+- [French](languages/français/readme.md)
+- [Japanese](languages/日本語/readme.md)
 
 ### Ideas (Ω)
-  - [Calendar app](private/ideas/calendar-app.md)
-  - [Todo app](private/ideas/todo-app.md)
-  - [Notes app](private/ideas/notes-app.md)
+- [Calendar app](private/ideas/calendar-app.md)
+- [Todo app](private/ideas/todo-app.md)
+- [Notes app](private/ideas/notes-app.md)
 
 ### The arbitrary collection
-  - [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
-  - [Music](the-arbitrary-collection/arbitrary-music-things.md)
-  - [Hilarious IT stories](the-arbitrary-collection/hilarious-it-stories.md)
-  - [2D Animation](the-arbitrary-collection/2d-animation.md)
+- [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
+- [Music](the-arbitrary-collection/arbitrary-music-things.md)
+- [Hilarious IT stories](the-arbitrary-collection/hilarious-it-stories.md)
+- [2D Animation](the-arbitrary-collection/2d-animation.md)
 
 ### Adobe
-  - [After Effects](adobe/after-effects.md)
-  - [Illustrator](adobe/illustrator.md)
+- [After Effects](adobe/after-effects.md)
+- [Illustrator](adobe/illustrator.md)
 
 ### [Videos](videos/readme.md)
 
@@ -70,10 +70,10 @@
 ## Some remarks
 
 The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
-  - *very poor performance of the browser-based app*
-  - *no Linux-based app*
-  - *proprietary technology*
-  - *very error-prone exporting tools*
+- *very poor performance of the browser-based app*
+- *no Linux-based app*
+- *proprietary technology*
+- *very error-prone exporting tools*
 
 ---
 
