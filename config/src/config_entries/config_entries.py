@@ -131,5 +131,11 @@ config_entries = [
             '/usr/bin/gsettings set org.freedesktop.ibus.panel xkb-icon-rgba "#cfcfcf"')
     ),
 
+    ConfigEntry(
+        description='copy the keyboard volume knob scripts (more in «readme»)',
+        shorthand='ckvb',
+        execute=lambda: cp(
+            CD + '/config-files/keyboard_volume_knob', HD)
+    )
 
 ]
