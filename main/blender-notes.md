@@ -1,9 +1,9 @@
 # Blender Notes
 
 - [Links](#links)
-  - [Useful](#useful)
-  - [Cool](#cool)
-  - [TODO](#todo)
+    - [Useful](#useful)
+    - [Cool](#cool)
+    - [TODO](#todo)
 - [Addons](#addons)
 - [Geometry node](#geometry-node)
 - [Objects reusing mesh data](#objects-reusing-mesh-data)
@@ -21,30 +21,30 @@
 ## Links
 
 ### Useful
-  - [Creating Realistic Wetmaps](https://youtu.be/f3yzwql_2nw)
-  - [NormalMap-Online](http://cpetry.github.io/NormalMap-Online/)
-  - [Avoiding pinching when subsurface modeling](https://youtu.be/3rlMzsBWtPY)
-  - [How to Work with Blender Lighting](http://www.blenderguru.com/tutorials/make-atmospheric-lighting-blender/#.VIN68vl5N8F)
-  - [18 Ways to Speed Up Cycles Rendering](https://youtu.be/8gSyEpt4-60)
-  - [The Secret Ingredient to Photorealism](https://youtu.be/m9AT7H4GGrA)
-  - [Pro-lighting Studio](https://youtu.be/QVb3261tywQ)
-  - [Baking introduction](https://youtu.be/sB09T--_ZvU)
+- [Creating Realistic Wetmaps](https://youtu.be/f3yzwql_2nw)
+- [NormalMap-Online](http://cpetry.github.io/NormalMap-Online/)
+- [Avoiding pinching when subsurface modeling](https://youtu.be/3rlMzsBWtPY)
+- [How to Work with Blender Lighting](http://www.blenderguru.com/tutorials/make-atmospheric-lighting-blender/#.VIN68vl5N8F)
+- [18 Ways to Speed Up Cycles Rendering](https://youtu.be/8gSyEpt4-60)
+- [The Secret Ingredient to Photorealism](https://youtu.be/m9AT7H4GGrA)
+- [Pro-lighting Studio](https://youtu.be/QVb3261tywQ)
+- [Baking introduction](https://youtu.be/sB09T--_ZvU)
 
 ### Cool
 
-  - [Blender 2.8 EEVEE Volumetric Disco Disco](https://youtu.be/mRKUou0zLoA)
-  - [Disintegration effect](https://youtu.be/YzKR8QtcozM)
-  - [How to Create Toon Style Animation](https://youtu.be/ZiqrCRqyLzE)
-  - [How to Create a Paint Splash](https://youtu.be/I0Tz1U6A5vI)
-  - [Colorful particles](http://3.bp.blogspot.com/-Gy_rDI34zBw/UN_1NZmoQfI/AAAAAAAAiEI/cYEmEreB-W0/s1600/particleInfo_010.png)
-  - [10 Tips for Filming Visual Effects](https://youtu.be/xF0SypG7q8c)
-  - [Create a Subway in 20 minutes](https://youtu.be/nb6rSMAooDs)
+- [Blender 2.8 EEVEE Volumetric Disco Disco](https://youtu.be/mRKUou0zLoA)
+- [Disintegration effect](https://youtu.be/YzKR8QtcozM)
+- [How to Create Toon Style Animation](https://youtu.be/ZiqrCRqyLzE)
+- [How to Create a Paint Splash](https://youtu.be/I0Tz1U6A5vI)
+- [Colorful particles](http://3.bp.blogspot.com/-Gy_rDI34zBw/UN_1NZmoQfI/AAAAAAAAiEI/cYEmEreB-W0/s1600/particleInfo_010.png)
+- [10 Tips for Filming Visual Effects](https://youtu.be/xF0SypG7q8c)
+- [Create a Subway in 20 minutes](https://youtu.be/nb6rSMAooDs)
 
 ### TODO
 
-  - [**UV mapping tutorial //TODO-note**](https://youtu.be/L3654VGZObg)
-  - [**Primary, secondary and tertiary shapes //TODO-note**](http://www.neilblevins.com/cg_education/primary_secondary_and_tertiary_shapes/primary_secondary_and_tertiary_shapes.htm)
-  - [**Easy cushion model //TODO-note**](https://twitter.com/andrewpprice/status/1224544692143964161)
+- [**UV mapping tutorial //TODO-note**](https://youtu.be/L3654VGZObg)
+- [**Primary, secondary and tertiary shapes //TODO-note**](http://www.neilblevins.com/cg_education/primary_secondary_and_tertiary_shapes/primary_secondary_and_tertiary_shapes.htm)
+- [**Easy cushion model //TODO-note**](https://twitter.com/andrewpprice/status/1224544692143964161)
 
 
 ## Addons
