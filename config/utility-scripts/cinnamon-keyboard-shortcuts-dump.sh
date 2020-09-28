@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dconf dump /org/cinnamon/desktop/keybindings/ > ../cinnamon-keyboard-shortcuts.conf
+dconf dump /org/cinnamon/desktop/keybindings/ > ../config-files/cinnamon-keyboard-shortcuts.conf
