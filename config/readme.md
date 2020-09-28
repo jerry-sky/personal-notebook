@@ -3,6 +3,8 @@
 - [Setup](#setup)
 - [Utility scripts](#utility-scripts)
 
+---
+
 ## Setup
 
 In the same directory as this document there is a file called `setup.sh` which copies various config files into all sorts of locations.
@@ -11,6 +13,14 @@ Execute it whilst being in the `/config` directory to setup a proper workspace.
 ```bash
 ./setup.sh
 ```
+
+---
+
+### Keyboard volume knob configuration
+
+The config setup script allows to copy some utility scripts that enable to override the default behaviour of Volume Media keys. Some keyboards have a scrollable knob that normally controls the volume. Because of these scripts (and properly configured keyboard shortcuts to these scripts) this volume knob can be utilised as mouse scroll wheel or volume knob. The *mute* button switches between `scroll` and `volume` modes.
+
+---
 
 ## Utility scripts
 
