@@ -5,7 +5,7 @@
 - [Resources](#resources)
     - [News articles](#news-articles)
     - [Toms Deutschseite](#toms-deutschseite)
-    - [Andere](#andere)
+- [Notizen](#notizen)
 - [Handy](#handy)
 - [Text analysis](#text-analysis)
 
@@ -20,19 +20,21 @@
 ### Toms Deutschseite
 - [Toms Deutschseite](http://www.deutschseite.de/inhalt.html)
 
-### Andere
-- [**Präpositionen**](präpositionen.md)
-- [Verb conjugation](verb-conjugation.md)
-- [Expression map](expressions.md)
-- [Words](words.md)
+---
+
+## Notizen
+- [**Präpositionen**](notizen/präpositionen.md)
+- [Verb conjugation](notizen/verben-konjugation.md)
+- [Expression map](notizen/ausdrücke.md)
+- [Words](notizen/wörter.md)
 
 ---
 
 ## Handy
 
-![keyboard layout](keyboard-layout-de.png)
-![possessive](possessive.png)
-![articles](articles.png)
+![keyboard layout](handy/deutsche-tastaturbelegung.png)
+![possessive](handy/possessiv.png)
+![articles](handy/artikel.png)
 
 ---
 
