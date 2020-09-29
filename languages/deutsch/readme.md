@@ -24,6 +24,7 @@
 
 ## Notizen
 - [**Präpositionen**](notizen/präpositionen.md)
+- [**„Zu“ Regeln**](notizen/zu-regeln.md)
 - [Verb conjugation](notizen/verben-konjugation.md)
 - [Expression map](notizen/ausdrücke.md)
 - [Words](notizen/wörter.md)
