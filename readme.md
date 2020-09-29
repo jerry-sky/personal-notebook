@@ -1,4 +1,4 @@
-# Jerry Sky's personal notebook
+# Jerry Sky’s personal notebook
 
 *This notebook consists of all personal notes of Jerry Sky including those not related to programming or computer science.*
 
@@ -69,17 +69,17 @@
 
 ## Some remarks
 
-The reason this repository came to exist is all the shortcomings of OneNote. Here's a couple:
+The reason this repository came to exist is all the shortcomings of OneNote. Here’s a couple:
 - *very poor performance of the browser-based app*
 - *no Linux-based app*
 - *proprietary technology*
 - *very error-prone exporting tools*
 
----
-
 The only area in which OneNote is better than any other note-taking app is **handwriting**. Unfortunately, there is no other solution that has all the capabilities of OneNote and a nice, performant Linux app.
 
-**The solution is to use Github repositories, just like this one, as the main solution for note-taking.**
+The partial solution would be to use Github repositories, just like this one, as the main solution for note taking. However, plain text is not always enough to create good notes. Visual aids and math equations are very often crucial for a given note.
 
-As this flavour of Markdown supports $\LaTeX$ syntax OneNote is redundant as far as taking notes is concerned. When it comes to graph drawing or any type of graphical endevor it can be done with OneNote. However, if it can be done with e.g. GIMP or any other graphics program software *OneNote should **not** be used*.\
-An alternative for sketching simple and quick graphs is to use `code blocks`. Characters such as `\`, `|`, `/` and `_` all can be used as strokes while regular latin alphabet characters as e.g. graph nodes.
+Some Markdown renderers allow $\LaTeX$ in Markdown documents — e.g. the [Markdown All-in-one extension](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) for VS Code renders Markdown documents with $\LaTeX$ math when previewing Markdown documents in VS Code. This extension uses the [`markdown-it`](https://www.npmjs.com/package/markdown-it) package with a plugin that supports $\LaTeX$ syntax. The package uses the [‘CommonMark’ spec](https://commonmark.org/) which is the preferred Markdown spec. Which means VS Code (with appropriate extensions) is *the* program to use for note taking.
+
+When it comes to graph drawing or any type of graphical figures it can be done with OneNote. However, if it can be done with e.g. GIMP or any other graphics program *OneNote should not be used*.\
+An alternative to this is to use `code blocks`. Characters such as `\`, `|`, `/`, `_`, `<`, `>`, `／`, `＼`, `＿`, `ー`, `「`, `」`, `＜`, and `＞` (Japanese characters) all can be used as strokes while regular latin alphabet characters as e.g. graph nodes.
