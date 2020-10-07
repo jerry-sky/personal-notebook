@@ -5,6 +5,7 @@
 - [Resources](#resources)
     - [News articles](#news-articles)
     - [Toms Deutschseite](#toms-deutschseite)
+    - [Important](#important)
 - [Notizen](#notizen)
 - [Handy](#handy)
 - [Text analysis](#text-analysis)
@@ -19,6 +20,9 @@
 
 ### Toms Deutschseite
 - [Toms Deutschseite](http://www.deutschseite.de/inhalt.html)
+
+### Important
+- [“Da” words in German](https://yourdailygerman.com/da-words-meaning-german/)
 
 ---
 
