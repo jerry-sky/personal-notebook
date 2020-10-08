@@ -11,14 +11,18 @@ CD = str(pathlib.Path().absolute())
 
 # shorthanded copy function
 def cp(source, target, create_dirs=False, tree=False):
-    if create_dirs:
+    if tree:
         try:
-            os.makedirs(target)
+            shutil.rmtree(target)
         except:
             pass
-    if tree:
         shutil.copytree(source, target, copy_function=shutil.copy2)
     else:
+        if create_dirs:
+            try:
+                os.makedirs(target)
+            except:
+                pass
         shutil.copy2(source, target)
 
 
