@@ -5,7 +5,6 @@
 - [Resources](#resources)
     - [News articles](#news-articles)
     - [Toms Deutschseite](#toms-deutschseite)
-    - [Important](#important)
 - [Notizen](#notizen)
 - [Handy](#handy)
 - [Text analysis](#text-analysis)
@@ -21,15 +20,13 @@
 ### Toms Deutschseite
 - [Toms Deutschseite](http://www.deutschseite.de/inhalt.html)
 
-### Important
-- [“Da” words in German](https://yourdailygerman.com/da-words-meaning-german/)
-
 ---
 
 ## Notizen
 - [**Präpositionen**](notizen/präpositionen.md)
 - [**„Zu“ Regeln**](notizen/zu-regeln.md)
 - [Rektion](notizen/rektion.md)
+- [„Da“ Wörter](notizen/da-wörter.md)
 
 - [Verb conjugation](notizen/verben-konjugation.md)
 - [Expression map](notizen/ausdrücke.md)
