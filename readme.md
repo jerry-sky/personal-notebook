@@ -39,6 +39,7 @@
 - [Thoughts](private/life/thoughts/readme.md)
 - [Books](private/life/books/readme.md)
 - [Journal](private/life/journal/readme.md)
+- [Life Programming](private/life/life-programming/readme.md)
 
 ### Languages
 - [English](languages/english/readme.md)
