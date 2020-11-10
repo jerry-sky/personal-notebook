@@ -31,6 +31,8 @@
 - [How to stop me harvesting credit card numbers and passwords from your site](https://hackernoon.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9)
 - [PHP Cookies security](https://www.simonholywell.com/post/2013/05/improve-php-session-cookie-security/)
 - [Remember me Safely](http://wayback.archive.org/web/20150204143440/https://resonantcore.net/blog/2015/02/remember-me-safely-secure-long-term-authentication-strategies)
+- [A tale of webpage speed, or throwing away React](https://solovyov.net/blog/2020/a-tale-of-webpage-speed-or-throwing-away-react/)\
+    — efficient web app that is not bloated
 
 ### Useful
 
