@@ -1,7 +1,16 @@
 from typing import NamedTuple
 from types import FunctionType
+from dataclasses import dataclass
+from enum import Enum
 
-class ConfigEntry(NamedTuple):
+class Status(Enum):
+    NotInstalled = 0
+    Installed = 1
+    Unknown = 2
+
+
+@dataclass
+class ConfigEntry:
     '''
     Attributes:
     - description: short description of the config entry
@@ -12,4 +21,4 @@ class ConfigEntry(NamedTuple):
     description: str
     shorthand: str
     execute: FunctionType
-
+    is_installed: FunctionType = lambda: Status.Unknown
