@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo ./src/setup.py "$@"
+./src/setup.py "$@"
