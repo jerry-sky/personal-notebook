@@ -19,13 +19,16 @@ alias p="pwd"
 
 alias reload=". ~/.bashrc"
 
+alias audloop="pacmd load-module module-loopback latency_msec=5"
+
 # Git
 alias ga="git add"
 alias gaa="git add ."
 alias gai="git add -p"
 alias gts="git status"
 alias gcm="git commit -m"
-alias gcmamend="git commit --amend -m"
+alias gcmam="git commit --amend -m"
+alias gcam="git commit --amend"
 alias gph="git push"
 alias gpl="git pull"
 alias gplr="git pull --rebase"
@@ -33,6 +36,8 @@ alias gf="git fetch"
 alias gdf="git diff HEAD"
 alias gdfst="git diff HEAD --staged"
 alias gl="git log"
+alias gg="git grep -n -I"
+alias ggi="git grep -n -I -i"
 # discarding changes
 alias gd="git checkout --"
 alias gdi="git checkout -p"
