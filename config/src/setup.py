@@ -14,31 +14,32 @@ UNKNOWN_STATUS_CHARACTER = '\033[38;2;242;234;78m?'
 
 def print_available_options():
 
+    # first see which command is the longest to adjust the space padding for the other commands
     command_length = 0
     for ce in config_entries:
         t = len(ce.shorthand)
         if t > command_length:
             command_length = len(ce.shorthand)
 
-    print(command_length)
-
+    # print available config entries
     print('\n\033[1mAvailable configs:\033[0m')
     for ce in config_entries:
 
+        # check if the entry has been installed
         is_installed = NOT_INSTALLED_CHARACTER
         if ce.is_installed() == Status.Installed:
             is_installed = INSTALLED_CHARACTER
         elif ce.is_installed() == Status.Unknown:
             is_installed = UNKNOWN_STATUS_CHARACTER
 
+        # print its command, install status and short description
         print('  \033[38;5;244m•\033[0m \033[38;5;248m[\033[0m \033[38;5;135;1m' + ce.shorthand + (' ' * (command_length - len(ce.shorthand)))\
             + '\033[0m \033[38;5;248m] '\
             + is_installed\
             + '\033[0m \033[38;5;244m→\033[0m \033[38;5;205m' + ce.description + '\033[0m')
 
-    print()
     print(
-        'Type the [ commands in brackets ] you want to execute splitted with whitespace or type `quit` to terminate this program.\n'\
+        '\nType the [ commands in brackets ] you want to execute splitted with whitespace or type `quit` to terminate this program.\n'\
         + 'Type `l`, or `list` to view all available commands.\n'
     )
     print(
