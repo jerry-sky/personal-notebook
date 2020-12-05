@@ -86,3 +86,10 @@ function puref() {
         -- PureRef $1.pur "${@:2}"
     fi
 }
+
+# converts a SVG file to a format that is digestible by LaTeX
+function inktex() {
+    bn="$1"
+    bn="${bn%.*}"
+    inkscape -D -z --file="$bn.svg" --export-pdf="$bn.pdf" --export-latex
+}
