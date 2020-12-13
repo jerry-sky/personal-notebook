@@ -28,7 +28,7 @@ alias gai="git add -p"
 alias gts="git status"
 alias gcm="git commit -m"
 alias gcmam="git commit --amend -m"
-alias gcam="git commit --amend"
+alias gcam="git commit --amend --no-edit"
 function gph() {
     printf "\033[1;7m pushing to $(git remote)/$(git branch --show-current) \033[0m\n"
     printf "\033[1;38;5;249m press RETURN to continue \033[0m"
