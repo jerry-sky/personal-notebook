@@ -34,7 +34,7 @@ function gph() {
     printf "\033[1;38;5;249m press RETURN to continue \033[0m"
     # give user chance to abort pushing
     read
-    git push "$(git remote)" "$(git branch --show-current)"
+    git push "$@" "$(git remote)" "$(git branch --show-current)"
 }
 alias gpl="git pull"
 alias gplr="git pull --rebase"
