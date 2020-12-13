@@ -16,6 +16,7 @@ class ConfigEntry:
     - description: short description of the config entry
     - shorthand: command-like short string that will invoke this config entry
     - execute: the function to execute
+    - is_installed: indicator whether the entry is already installed
     '''
 
     description: str
