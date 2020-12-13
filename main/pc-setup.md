@@ -66,6 +66,10 @@ See [«config»](../config/readme.md).
     1. Install the [credentials manager](https://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo/40312117#40312117).
     2. Create a new [personal github access token](https://github.com/settings/tokens).
     3. At first login provide the newly generated token as the password.
+    4. Added commit (and tag) signing:
+        1. import GPG keys with `gpg --import ‹file with the private key›`,
+        2. use `git config --global user.signingKey ‹key ID›` to tell `git` which key to use for signing,
+        3. run `git config --global commit.gpgSign true` and `git config --global tag.gpgSign true` to enforce signing every commit and every tag with that key.
 
 5. Install VS Code\
     Using
@@ -84,12 +88,12 @@ See [«config»](../config/readme.md).
     ```sh
     tar -xf «archive filename»
     ```
-    3. Move the contents to `/opt/blender`.
-    4. Link the executable:
+    1. Move the contents to `/opt/blender`.
+    2. Link the executable:
     ```sh
     ln -s /opt/blender/blender /usr/bin/blender
     ```
-    5. Install the [addons](blender-notes.md#addons) if necessary.
+    1. Install the [addons](blender-notes.md#addons) if necessary.
 
 7. Install GParted `apt install gparted`
 
