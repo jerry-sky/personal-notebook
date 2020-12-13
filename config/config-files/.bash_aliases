@@ -29,7 +29,13 @@ alias gts="git status"
 alias gcm="git commit -m"
 alias gcmam="git commit --amend -m"
 alias gcam="git commit --amend"
-alias gph="git push"
+function gph() {
+    printf "\033[1;7m pushing to $(git remote)/$(git branch --show-current) \033[0m\n"
+    printf "\033[1;38;5;249m press RETURN to continue \033[0m"
+    # give user chance to abort pushing
+    read
+    git push "$(git remote)" "$(git branch --show-current)"
+}
 alias gpl="git pull"
 alias gplr="git pull --rebase"
 alias gf="git fetch"
