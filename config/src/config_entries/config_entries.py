@@ -58,24 +58,27 @@ def bash_aliases_insiders_is_installed():
     Special case of `is_installed` for the `insiders` version of
     the bash aliases file.
     '''
-    with open(CD + '/config-files/.bash_aliases', 'r') as forg, open(HD + '/.bash_aliases', 'r') as fcur:
-        original_lines = forg.readlines()
-        insiders_lines = []
-        for line in original_lines:
-            insiders_lines.append(
-                re.sub(
-                    # replace all occurrences that aren't file paths
-                    r'code(?!\/)',
-                    'code-insiders',
-                    line
+    try:
+        with open(CD + '/config-files/.bash_aliases', 'r') as forg, open(HD + '/.bash_aliases', 'r') as fcur:
+            original_lines = forg.readlines()
+            insiders_lines = []
+            for line in original_lines:
+                insiders_lines.append(
+                    re.sub(
+                        # replace all occurrences that aren't file paths
+                        r'code(?!\/)',
+                        'code-insiders',
+                        line
+                    )
                 )
-            )
 
-        current_lines = fcur.readlines()
-        if do_lists_overlap(insiders_lines, current_lines):
-            return Status.Installed
-        else:
-            return Status.NotInstalled
+            current_lines = fcur.readlines()
+            if do_lists_overlap(insiders_lines, current_lines):
+                return Status.Installed
+            else:
+                return Status.NotInstalled
+    except:
+        return Status.NotInstalled
 
 
 config_entries = [
