@@ -106,7 +106,7 @@ See [«config»](../config/readme.md).
 2.  Install themes and cursor packs
     1. Install [Canta theme](https://github.com/vinceliuice/Canta-theme)
         1. *__Important note__: If used with sudo the theme will install in /usr/share/themes, not in ~/.themes - this will allow GUI apps (e.g. Files, Terminal) to use that theme when running in the elevated privileges mode.*
-    2. Install icon themes *[how-to](https://itsfoss.com/install-icon-linux-mint/)*
+    2. Install icon themes *[how-to](https://snwh.org/paper/download)*
         1. [Flat remix](https://drasite.com/flat-remix )
         2. [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
           <!-- spellchecker: disable-next-line -->
@@ -137,11 +137,11 @@ See [«config»](../config/readme.md).
 ### Fonts
 
 1. Install additional fonts into `/usr/share/fonts/truetype/`
-    1.  Fira Sans
-    2.  Fira Code
-    3.  Fira Mono
-    4.  [All above as a package here from Google Fonts](https://fonts.google.com/selection?query=fira&selection.family=Fira+Code%7CFira+Mono%7CFira+Sans)
-    5.  [Drogowskaz Classic](http://www.drogowskazclassic.pl/pismo.php)
+    1. Fira Sans
+    2. Fira Code
+    3. Fira Mono
+    4. Merriweather
+    5. [Drogowskaz Classic](http://www.drogowskazclassic.pl/pismo.php)
 
 ### Other system settings
 
