@@ -21,7 +21,7 @@
 
 1. OS $\equiv$ Linux Mint Cinnamon ([OS-specific setup](linux-mint-setup.md))
 2. Cloud $\equiv$ [InSync](https://www.insynchq.com/)
-3. Internet Browser $\equiv$ [Opera](https://www.opera.com/de/download)
+3. Internet Browser $\equiv$ [Chrome](https://www.google.com/chrome/)
 
 ## Guide
 
