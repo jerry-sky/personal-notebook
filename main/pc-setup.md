@@ -60,7 +60,7 @@ See [«config»](../config/readme.md).
     1. Install `redshift` if it is not already installed.
     1. Enable autostart.
 
-3. Install [`snap`](https://snapcraft.io/docs/installing-snap-on-linux-mint)
+3. ~~Install [`snap`](https://snapcraft.io/docs/installing-snap-on-linux-mint)~~ *why*
 
 4. Configure Git
     1. Install the [credentials manager](https://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo/40312117#40312117).
