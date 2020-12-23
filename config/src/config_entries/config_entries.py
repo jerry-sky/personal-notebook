@@ -122,7 +122,7 @@ config_entries = [
         description='copy neovim init file',
         shorthand='nvi',
         execute=lambda: cp(CD + '/config-files/nvim/init.vim',
-                           HD + '/.config/nvim/init.vim', create_dirs=True),
+                           HD + '/.config/nvim/', create_dirs=True),
         is_installed=lambda: Status.Installed if do_files_overlap(CD + '/config-files/nvim/init.vim', HD + '/.config/nvim/init.vim') else Status.NotInstalled
     ),
 
@@ -137,8 +137,7 @@ config_entries = [
     ConfigEntry(
         description='copy menu icon file',
         shorthand='men',
-        execute=lambda: cp(
-            CD + '/config-files/menu-icon.png', '/usr/share/icons/menu-icon.png'),
+        execute=lambda: ex('sudo cp ' + CD + '/config-files/menu-icon.png /usr/share/icons/'),
         is_installed=lambda: Status.Installed if os.path.exists('/usr/share/icons/menu-icon.png') else Status.NotInstalled
     ),
 
@@ -153,8 +152,7 @@ config_entries = [
     ConfigEntry(
         description='copy utility scripts',
         shorthand='cus',
-        execute=lambda: cp(CD + '/utility-scripts',
-                           '/opt/utility-scripts', tree=True),
+        execute=lambda: ex('sudo cp -r ' + CD + '/utility-scripts /opt/'),
         is_installed=lambda: Status.Installed if os.path.exists('/opt/utility-scripts') else Status.NotInstalled
     ),
 
