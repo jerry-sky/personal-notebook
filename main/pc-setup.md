@@ -22,6 +22,14 @@
 1. OS $\equiv$ Linux Mint Cinnamon ([OS-specific setup](linux-mint-setup.md))
 2. Cloud $\equiv$ [InSync](https://www.insynchq.com/)
 3. Internet Browser $\equiv$ [Chrome](https://www.google.com/chrome/)
+4. Date format to use in the clock part of the taskbar:
+    ```
+    %t%A%t%B %e%t%Y-%m-%d%t %H:%M:%S %t %Z: GMT%z
+    ```
+    Example:
+    ```
+    Thursday    December 24    2020-12-24    12:00:01 CET: GMT+0100
+    ```
 
 ## Guide
 
