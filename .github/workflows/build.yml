@@ -25,7 +25,8 @@ jobs:
 
       - name: 'Copy all documents (and other files with it) to the `dist` directory'
         run: | # copy all files that are not the `dist` directory itself or the `.git` directory
-          for fd in "$(ls -A | grep -v 'dist' | grep -v '^.git$')"; do
+          ls -A | grep -v 'dist' | grep -v '^.git$' |
+          while read fd; do
             cp -r $fd "./dist"
           done
 
@@ -33,12 +34,15 @@ jobs:
         working-directory: 'dist'
         run: |
           find ./ -type f | grep .md |
-          while read file; do deployment/pandoc.sh "$file" > "${file%???}"".html"; done
+          while read file; do
+            deployment/pandoc.sh "$file" > "${file%???}"".html"
+          done
 
       - name: 'Remove all raw Markdown documents (HTML documents are already generated)'
         working-directory: 'dist'
         run: |
-          for file in "$(find ./ -type f) | grep .md)"; do
+          find ./ -type f | grep .md |
+          while read file; do
             rm "$file"
           done
 
@@ -46,7 +50,8 @@ jobs:
         working-directory: 'dist'
         # links are without the `.html` at the end — GH Pages handles it
         run: |
-          for file in "$(find ./ -type f)"; do
+          find ./ -type f |
+          while read file; do
             perl -i -pe 's/(")([^"]+)(\.md")/"$2"/gm' $file
           done
 
