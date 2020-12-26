@@ -1,0 +1,21 @@
+* {
+    font-family: Merriweather, serif;
+}
+
+header#title-block-header > .author {
+    font-size: .75em;
+    margin: 0;
+    font-style: italic;
+}
+
+header#title-block-header > .author > span.author::after {
+    content: ','
+}
+
+header#title-block-header > .author > span.author:last-child::after {
+    content: ''
+}
+
+p#document-description {
+
+}
