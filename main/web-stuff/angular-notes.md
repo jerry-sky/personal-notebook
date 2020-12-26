@@ -1,4 +1,12 @@
-# Angular Notes
+---
+lang: 'en-GB'
+title: 'Angular Notes'
+author: 'Jerry Sky'
+description: 'Notes on Angular (non JS).'
+keywords: 'Angular, TypeScript, node, Router, htaccess, observable, file, model, app, program, npm'
+---
+
+---
 
 - [Links](#links)
 - [Deploying an app](#deploying-an-app)

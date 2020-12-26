@@ -1,4 +1,12 @@
-# $\LaTeX$ Notes
+---
+lang: 'en-GB'
+title: 'LaTeX Notes'
+author: 'Jerry Sky'
+description: 'Notes on using LaTeX.'
+keywords: 'LaTeX, linux, svg, installing, installation, tex live, notes'
+---
+
+---
 
 - [Links](#links)
 - [Using SVG files with `inkscape`](#using-svg-files-with-inkscape)

@@ -1,7 +1,16 @@
-# Hilarious IT stories
+---
+lang: 'en-GB'
+title: 'Hilarious IT stories'
+author: 'Jerry Sky'
+keywords: 'story time, mongodb, web scale, 500-mile, email'
+---
+
+---
 
 - [The case of the 500-mile email](#the-case-of-the-500-mile-email)
 - [*MongoDB is web scale*](#mongodb-is-web-scale)
+
+---
 
 ## The case of the 500-mile email
 

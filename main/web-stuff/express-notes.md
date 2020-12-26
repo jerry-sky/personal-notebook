@@ -1,15 +1,23 @@
-# Express.js Notes
+---
+lang: 'en-GB'
+title: 'Express.js Notes'
+author: 'Jerry Sky'
+description: 'Notes on ExpressJS.'
+keywords: 'ExpressJS, notes, web, development, JavaScript, TypeScript, authentication'
+---
+
+---
 
 - [Links](#links)
 - [Server error and listening](#server-error-and-listening)
 - [Using TypeScript with Express.js](#using-typescript-with-expressjs)
-  - [Starter repository](#starter-repository)
-  - [Setup it manually](#setup-it-manually)
+    - [Starter repository](#starter-repository)
+    - [Setup it manually](#setup-it-manually)
 
 ## Links
 
-  - [Your NodeJS authentication tutorial is (probably) wrong](https://hackernoon.com/your-node-js-authentication-tutorial-is-wrong-f1a3bf831a46)
-  - [Repository of `secure-password`](https://github.com/emilbayes/secure-password)
+- [Your NodeJS authentication tutorial is (probably) wrong](https://hackernoon.com/your-node-js-authentication-tutorial-is-wrong-f1a3bf831a46)
+- [Repository of `secure-password`](https://github.com/emilbayes/secure-password)
 
 ## Server error and listening
 

@@ -1,4 +1,12 @@
-# Unix & Linux
+---
+lang: 'en-GB'
+title: 'Unix & Linux'
+author: 'Jerry Sky'
+description: 'Notes related to Unix-based operating systems.'
+keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customization, script, program, dns, server'
+---
+
+---
 
 - [Keeping some script/program alive](#keeping-some-scriptprogram-alive)
 - [ANSI Text Attributes](#ansi-text-attributes)

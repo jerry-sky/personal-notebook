@@ -1,17 +1,23 @@
-# PC Setup
+---
+lang: 'en-GB'
+title: 'PC Setup'
+author: 'Jerry Sky'
+description: 'A personal guide for setting up all programs, tools and configuration files for personal use.'
+keywords: 'bash, linux, configuring, configuration, keyboard, internet, browser, definitions, system, os, user, experience'
+---
 
-*A personal guide for setting up all programs, tools and configuration files for personal use.*
+---
 
 - [Definitions](#definitions)
 - [Guide](#guide)
-  - [Installing the OS](#installing-the-os)
-  - [Configuration](#configuration)
-  - [Configuring the Internet browser](#configuring-the-internet-browser)
-  - [Programs](#programs)
-  - [Configuring the user experience](#configuring-the-user-experience)
-  - [Keyboard layouts](#keyboard-layouts)
-  - [Fonts](#fonts)
-  - [Other system settings](#other-system-settings)
+    - [Installing the OS](#installing-the-os)
+    - [Configuration](#configuration)
+    - [Configuring the Internet browser](#configuring-the-internet-browser)
+    - [Programs](#programs)
+    - [Configuring the user experience](#configuring-the-user-experience)
+    - [Keyboard layouts](#keyboard-layouts)
+    - [Fonts](#fonts)
+    - [Other system settings](#other-system-settings)
 
 ---
 

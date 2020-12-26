@@ -1,6 +1,12 @@
-# Software List
+---
+lang: 'en-GB'
+title: 'Software List'
+author: 'Jerry Sky'
+description: 'All programs that are deemed necessary for normal use for both work and entertainment.'
+keywords: 'program, work, entertainment, list, linux, unix, windows, internet browser, productivity, packages, communication'
+---
 
-*All programs that are deemed necessary for normal use for both work and entertainment.*
+---
 
 - [Primary](#primary)
 - [$Windows$](#windows)

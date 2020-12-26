@@ -1,6 +1,14 @@
-# Linux Mint Setup
+---
+lang: 'en-GB'
+title: 'Linux Mint Setup'
+author: 'Jerry Sky'
+description: 'A part of the PC Setup that contains steps specific to Linux Mint.'
+keywords: 'linux, linux mint, setup, steps, config, customization'
+---
 
-This note contains all the settings related to Linux Mint setup. These settings are specific to this system. For more see [PC Setup](pc-setup.md).
+---
+
+These settings are specific to Linux Mint system. For more see [PC Setup](pc-setup.md).
 
 ### Install the Linux Mint Cinnamon distribution
 

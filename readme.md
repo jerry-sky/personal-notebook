@@ -1,6 +1,10 @@
-# Jerry Sky’s personal notebook
-
-*This notebook consists of all personal notes of Jerry Sky including those not related to programming or computer science.*
+---
+lang: 'en-GB'
+title: 'Jerry Sky’s personal notebook'
+author: 'Jerry Sky'
+description: 'This notebook consists of all personal notes of Jerry Sky including those not related to programming or computer science.'
+keywords: 'notebook, notes, personal, python, latex, languages, programming, computer science, linux, jerry-sky'
+---
 
 ---
 

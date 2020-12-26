@@ -1,4 +1,12 @@
-# CSS/SCSS + HTML
+---
+lang: 'en-GB'
+title: 'CSS/SCSS + HTML'
+author: 'Jerry Sky'
+description: 'Notes on the static web technologies.'
+keywords: 'html, css, static, web, web-kit, website, design, link, header, development'
+---
+
+---
 
 - [Links](#links)
   - [Animations](#animations)

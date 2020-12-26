@@ -1,4 +1,12 @@
-# Blender Notes
+---
+lang: 'en-GB'
+title: 'Blender Notes'
+author: 'Jerry Sky'
+description: 'Notes on Blender.'
+keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
+---
+
+---
 
 - [Links](#links)
     - [Useful](#useful)

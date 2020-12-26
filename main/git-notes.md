@@ -1,4 +1,12 @@
-# Git notes
+---
+lang: 'en-GB'
+title: 'Git notes'
+author: 'Jerry Sky'
+description: 'Notes on Git.'
+keywords: 'git, commit, files, versioning system, remove, history, fix'
+---
+
+---
 
 - [Removing a commit](#removing-a-commit)
 - [Removing a file from git history](#removing-a-file-from-git-history)

@@ -1,4 +1,11 @@
-# Adobe After Effects
+---
+lang: 'en-GB'
+title: 'Adobe After Effects'
+author: 'Jerry Sky'
+keywords: 'adobe, after effects'
+---
+
+---
 
 - [Links](#links)
     - [Useful](#useful)

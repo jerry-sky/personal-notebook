@@ -1,4 +1,12 @@
-# NodeJS Notes
+---
+lang: 'en-GB'
+title: 'NodeJS Notes'
+author: 'Jerry Sky'
+description: 'Notes on NodeJS (in general).'
+keywords: 'notes, NodeJS'
+---
+
+---
 
 - [Configuring `.htaccess`](#configuring-htaccess)
 

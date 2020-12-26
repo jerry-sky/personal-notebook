@@ -1,4 +1,12 @@
-# „Da“ Wörter
+---
+lang: 'en-GB'
+title: '„Da“ Wörter'
+author: 'Jerry Sky'
+description: 'The “Da” words.'
+keywords: 'German, Deutsch, da, Wörter, examples, stand-in, sentence conjunction'
+---
+
+---
 
 [Artikel]: https://yourdailygerman.com/da-words-meaning-german/
 

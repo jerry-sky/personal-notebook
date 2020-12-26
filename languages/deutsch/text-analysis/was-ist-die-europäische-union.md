@@ -1,4 +1,12 @@
-# Was ist die Europäische Union?
+---
+lang: 'de-DE'
+title: 'Was ist die Europäische Union?'
+author: 'Jerry Sky'
+description: 'Eine Analyse eines deutschen Artikels. (An analysis of a German article.)'
+keywords: 'Deutsch, German, article, translation, analysis, Analyse, Artikel, nachrichtenleicht, europäische Union, EU, european union, countries, country, Land, Länder'
+---
+
+---
 
 [Artikel]: https://www.nachrichtenleicht.de/die-europaeische-union-einfach-erklaert-was-ist-die.3967.de.html?dram:article_id=447203
 

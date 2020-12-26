@@ -1,6 +1,12 @@
-# Deutsch
+---
+lang: 'en-GB'
+title: 'Deutsch'
+author: 'Jerry Sky'
+description: 'Notes on the German language.'
+keywords: 'Deutsch, German, grammar, verbs, vocabulary, text analysis, resources, notes, rules'
+---
 
-*German*
+---
 
 - [Resources](#resources)
     - [News articles](#news-articles)

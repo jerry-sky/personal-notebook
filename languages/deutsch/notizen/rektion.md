@@ -1,4 +1,12 @@
-# Rektion
+---
+lang: 'en-GB'
+title: 'Rektion'
+author: 'Jerry Sky'
+description: 'Definition and a few examples of the ‘Case government’ (Rektion) in the German language.'
+keywords: 'Deutsch, German, Rektion, case government, case, example, definition, preposition, grammar, sentence'
+---
+
+---
 
 - [Definition](#definition)
 - [Beispiele](#beispiele)

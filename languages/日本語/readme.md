@@ -1,6 +1,12 @@
-# 日本語
+---
+lang: 'en-GB'
+title: '日本語'
+author: 'Jerry Sky'
+description: 'Notes on the Japanese language.'
+keywords: 'Japanese, language, 日本語, Tae Kim, text analysis, resources, notes, SAO, grammar, particles'
+---
 
-*Japanese language*
+---
 
 - [Resources](#resources)
     - [Dictionaries](#dictionaries)

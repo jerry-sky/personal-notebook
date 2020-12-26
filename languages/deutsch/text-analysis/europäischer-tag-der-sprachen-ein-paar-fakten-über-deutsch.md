@@ -1,4 +1,12 @@
-# „Europäischer Tag der Sprachen: Ein paar Fakten über Deutsch“
+---
+lang: 'de-DE'
+title: '„Europäischer Tag der Sprachen: Ein paar Fakten über Deutsch“'
+author: 'Jerry Sky'
+description: 'Eine Analyse eines deutschen Artikels. (An analysis of a German article.)'
+keywords: 'Deutsch, German, article, translation, Deutsche Welle, dw, analysis, Artikel, Analyse, sprachen, languages'
+---
+
+---
 
 [Artikel]: https://www.dw.com/de/europäischer-tag-der-sprachen-ein-paar-fakten-über-deutsch/a-55040612
 

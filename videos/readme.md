@@ -1,4 +1,10 @@
-# Video Notes
+---
+lang: 'en-GB'
+title: 'Video Notes'
+author: 'Jerry Sky'
+---
+
+---
 
 1. Don't forget about color mastering :P - *not like in Szklarska Poręba Górna video.*
 
