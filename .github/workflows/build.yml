@@ -1,0 +1,62 @@
+# This workflow renders all the Markdown notes into a HTML website.
+
+name: 'Build the website'
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Install `pandoc`'
+        run: apt install pandoc
+
+      - name: 'Checkout `master`'
+        uses: actions/checkout@v2
+
+      - name: 'Checkout `gh-pages` into a separate directory'
+        uses: actions/checkout@v2
+        with:
+          path: 'dist'
+          ref: 'gh-pages'
+
+      - name: 'Copy all documents (and other files with it) to the `dist` directory'
+        run: 'cp -r ./!(dist) ./.!(git||.) -t ./dist'
+
+      - name: 'Render the Markdown documents'
+        working-directory: 'dist'
+        run: |
+          for file in "$(find ./ -type f | grep .md)"; do
+            deployment/pandoc.sh > ${file%???}.html
+          done
+
+      - name: 'Remove all raw Markdown documents (HTML documents are already generated)'
+        working-directory: 'dist'
+        run: |
+          for file in "$(find ./ -type f) | grep .md)"; do
+            rm "$file"
+          done
+
+      - name: 'Fix all `.md` links'
+        working-directory: 'dist'
+        # links are without the `.html` at the end — GH Pages handles it
+        run: |
+          for file in "$(find ./ -type f)"; do
+            perl -i -pe 's/(")([^"]+)(\.md")/"$2"/gm' $file
+          done
+
+      - name: 'Get current time'
+        uses: gerred/actions/current-time@master
+        id: current-time
+
+      - name: push the changes
+        uses: EndBug/add-and-commit@v4.4.0
+        with:
+          message: "deployed on ${{ steps.current-time.outputs.time }}"
+          ref: 'gh-pages'
+          cwd: './dist/'
+          add: '*'
+
