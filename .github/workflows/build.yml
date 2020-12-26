@@ -32,9 +32,8 @@ jobs:
       - name: 'Render the Markdown documents'
         working-directory: 'dist'
         run: |
-          for file in "$(find ./ -type f | grep .md)"; do
-            deployment/pandoc.sh > ${file%???}.html
-          done
+          find ./ -type f | grep .md |
+          while read file; do deployment/pandoc.sh "$file" > "${file%???}"".html"; done
 
       - name: 'Remove all raw Markdown documents (HTML documents are already generated)'
         working-directory: 'dist'
