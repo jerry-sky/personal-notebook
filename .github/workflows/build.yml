@@ -24,7 +24,10 @@ jobs:
           ref: 'gh-pages'
 
       - name: 'Copy all documents (and other files with it) to the `dist` directory'
-        run: 'cp -r ./!(dist) ./.!(git||.) -t ./dist'
+        run: | # copy all files that are not the `dist` directory itself or the `.git` directory
+          for fd in "$(ls -A | grep -v 'dist' | grep -v '^.git$')"; do
+            cp -r $fd "./dist"
+          done
 
       - name: 'Render the Markdown documents'
         working-directory: 'dist'
