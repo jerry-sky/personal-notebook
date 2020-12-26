@@ -55,6 +55,10 @@ jobs:
             perl -i -pe 's/(")([^"]+)(\.md")/"$2"/gm' $file
           done
 
+      - name: 'Rename the main readme file'
+        working-directory: 'dist'
+        run: 'mv readme.html index.html'
+
       - name: 'Get current time'
         uses: gerred/actions/current-time@master
         id: current-time
