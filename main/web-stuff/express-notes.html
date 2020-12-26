@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="ExpressJS, notes, web, development, JavaScript, TypeScript, authentication" />
+  <meta name="description" content="Notes on ExpressJS." />
+  <title>Express.js Notes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/deployment/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Express.js Notes</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>Notes on ExpressJS.</em></p>
+<hr />
+<ul>
+<li><a href="#links">Links</a></li>
+<li><a href="#server-error-and-listening">Server error and listening</a></li>
+<li><a href="#using-typescript-with-expressjs">Using TypeScript with Express.js</a>
+<ul>
+<li><a href="#starter-repository">Starter repository</a></li>
+<li><a href="#setup-it-manually">Setup it manually</a></li>
+</ul></li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://hackernoon.com/your-node-js-authentication-tutorial-is-wrong-f1a3bf831a46">Your NodeJS authentication tutorial is (probably) wrong</a></li>
+<li><a href="https://github.com/emilbayes/secure-password">Repository of <code>secure-password</code></a></li>
+</ul>
+<h2 id="server-error-and-listening">Server error and listening</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">server_on_error</span>(error) <span class="op">{</span>
+
+    <span class="cf">if</span> (<span class="va">error</span>.<span class="at">syscall</span> <span class="op">!==</span> <span class="st">&#39;listen&#39;</span>) <span class="op">{</span>
+        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)<span class="op">;</span>
+        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)<span class="op">;</span>
+        <span class="va">console</span>.<span class="at">error</span>(error)<span class="op">;</span>
+        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)<span class="op">;</span>
+        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="kw">let</span> bind <span class="op">=</span> <span class="kw">typeof</span> port <span class="op">===</span> <span class="st">&#39;string&#39;</span>
+        <span class="op">?</span> <span class="st">&#39;Pipe &#39;</span> <span class="op">+</span> port
+        : <span class="st">&#39;Port &#39;</span> <span class="op">+</span> port<span class="op">;</span>
+
+    <span class="co">// handle specific listen errors with friendly messages</span>
+    <span class="cf">switch</span> (<span class="va">error</span>.<span class="at">code</span>) <span class="op">{</span>
+        <span class="cf">case</span> <span class="st">&#39;EACCES&#39;</span><span class="op">:</span>
+            <span class="va">console</span>.<span class="at">error</span>(bind <span class="op">+</span> <span class="st">&#39; requires elevated privileges&#39;</span>)<span class="op">;</span>
+            <span class="co">// process.exit(1);</span>
+            <span class="cf">break</span><span class="op">;</span>
+        <span class="cf">case</span> <span class="st">&#39;EADDRINUSE&#39;</span><span class="op">:</span>
+            <span class="va">console</span>.<span class="at">error</span>(bind <span class="op">+</span> <span class="st">&#39; is already in use&#39;</span>)<span class="op">;</span>
+            <span class="co">// process.exit(1);</span>
+            <span class="cf">break</span><span class="op">;</span>
+        <span class="dt">default</span><span class="op">:</span>
+            <span class="cf">throw</span> error<span class="op">;</span>
+    <span class="op">}</span>
+<span class="op">}</span>
+
+<span class="kw">function</span> <span class="at">server_listening</span>() <span class="op">{</span>
+
+    <span class="kw">let</span> addr <span class="op">=</span> <span class="va">server</span>.<span class="at">address</span>()<span class="op">;</span>
+    <span class="kw">let</span> bind <span class="op">=</span> <span class="kw">typeof</span> addr <span class="op">===</span> <span class="st">&#39;string&#39;</span>
+        <span class="op">?</span> <span class="st">&#39;pipe &#39;</span> <span class="op">+</span> addr
+        : <span class="st">&#39;port &#39;</span> <span class="op">+</span> <span class="va">addr</span>.<span class="at">port</span><span class="op">;</span>
+    <span class="at">debug</span>(<span class="st">&#39;Listening on &#39;</span> <span class="op">+</span> bind)<span class="op">;</span>
+
+    <span class="kw">let</span> date <span class="op">=</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">;</span>
+
+    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;--- New server run ---&#39;</span><span class="op">,</span> <span class="st">&#39;</span><span class="sc">\n</span><span class="st">started on&#39;</span><span class="op">,</span> <span class="va">date</span>.<span class="at">toLocaleString</span>()<span class="op">,</span> <span class="st">&#39;</span><span class="sc">\n\n</span><span class="st">&#39;</span>)<span class="op">;</span>
+
+<span class="op">}</span></code></pre></div>
+<h2 id="using-typescript-with-express.js">Using TypeScript with Express.js</h2>
+<p>There are two ways to setup an Express.js app with TypeScript.</p>
+<h3 id="starter-repository">Starter repository</h3>
+<p>Download example <a href="https://github.com/microsoft/TypeScript-Node-Starter">TypeScript Node Starter <em>hackathon-style</em></a> repository and update the packages. There is enough boilerplate to get you running <em>quickly</em>, but probably there are packages you don't really need.</p>
+<h3 id="setup-it-manually">Setup it manually</h3>
+<ol style="list-style-type: decimal">
+<li><code>npm init</code></li>
+<li><code>npm install --save-dev typescript</code></li>
+<li>Run <code>tsc --init</code> to create the <code>tsconfig.json</code> file.</li>
+<li><code>npm install express</code></li>
+<li>For every package you should attempt to download the <code>types</code> package - e.g. for <code>express</code> package install <code>@types/express</code> alongside with the <code>--save-dev</code> option.</li>
+<li><p>A basic starter script would look like:</p>
+<pre class="typescript"><code>import Express from &#39;express&#39;;
+const app = Express();
+
+app.get(&#39;/&#39;, (req, res, next) =&gt; {
+  res.send(&#39;Hello World!&#39;);
+});
+
+app.listen(3000, () =&gt; {
+  console.log(&#39;Example app listening on port 3000!&#39;);
+});</code></pre></li>
+<li><p>To run the app you need to compile it and run:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">tsc</span> <span class="kw">&amp;&amp;</span> <span class="ex">node</span> build/app.js</code></pre></div>
+or run it through <code>nodemon</code> with <code>ts-node</code>: <code>bash    nodemon --watch . ts,json --exec ts-node app.ts</code></li>
+<li><code>npm install --save-dev tslint</code></li>
+<li>Setup a <code>tslint.json</code> config file. An example config file with Angular-recommended rules is attached to this document.</li>
+<li><p>Put above commands into <code>package.json</code> as <code>npm</code> commands.</p></li>
+</ol>
+<p>Sources: - <a href="https://developer.okta.com/blog/2018/11/15/node-express-typescript">An Okta article</a> - <a href="https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d"><em>An article with questionable solutions</em></a> - <em>self</em></p>
+</body>
+</html>

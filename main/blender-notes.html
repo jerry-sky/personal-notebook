@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="Blender, 3D, linux, alpha, addons, colour, geometry, graphics" />
+  <meta name="description" content="Notes on Blender." />
+  <title>Blender Notes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/deployment/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Blender Notes</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>Notes on Blender.</em></p>
+<hr />
+<ul>
+<li><a href="#links">Links</a>
+<ul>
+<li><a href="#useful">Useful</a></li>
+<li><a href="#cool">Cool</a></li>
+<li><a href="#todo">TODO</a></li>
+</ul></li>
+<li><a href="#addons">Addons</a></li>
+<li><a href="#geometry-node">Geometry node</a></li>
+<li><a href="#objects-reusing-mesh-data">Objects reusing mesh data</a></li>
+<li><a href="#adaptive-subdivision">Adaptive subdivision</a></li>
+<li><a href="#alpha-transparency">!Alpha transparency</a></li>
+<li><a href="#hdr-world-backgrounds">HDR world backgrounds</a></li>
+<li><a href="#select-sharp-edges">Select sharp edges</a></li>
+<li><a href="#45-edges-todo-elaborate">45° edges //TODO elaborate</a></li>
+<li><a href="#spherize-tool">Spherize tool</a></li>
+<li><a href="#pie-menus">Pie Menus</a></li>
+<li><a href="#masking-data">Masking data</a></li>
+<li><a href="#applying-a-property-change-to-multiple-objects">Applying a property change to multiple objects</a></li>
+<li><a href="#fixing-linux-mint-cinnamon-keyboard-shortcuts">Fixing Linux Mint Cinnamon keyboard shortcuts</a></li>
+</ul>
+<h2 id="links">Links</h2>
+<h3 id="useful">Useful</h3>
+<ul>
+<li><a href="https://youtu.be/f3yzwql_2nw">Creating Realistic Wetmaps</a></li>
+<li><a href="http://cpetry.github.io/NormalMap-Online/">NormalMap-Online</a></li>
+<li><a href="https://youtu.be/3rlMzsBWtPY">Avoiding pinching when subsurface modeling</a></li>
+<li><a href="http://www.blenderguru.com/tutorials/make-atmospheric-lighting-blender/#.VIN68vl5N8F">How to Work with Blender Lighting</a></li>
+<li><a href="https://youtu.be/8gSyEpt4-60">18 Ways to Speed Up Cycles Rendering</a></li>
+<li><a href="https://youtu.be/m9AT7H4GGrA">The Secret Ingredient to Photorealism</a></li>
+<li><a href="https://youtu.be/QVb3261tywQ">Pro-lighting Studio</a></li>
+<li><a href="https://youtu.be/sB09T--_ZvU">Baking introduction</a></li>
+</ul>
+<h3 id="cool">Cool</h3>
+<ul>
+<li><a href="https://youtu.be/mRKUou0zLoA">Blender 2.8 EEVEE Volumetric Disco Disco</a></li>
+<li><a href="https://youtu.be/YzKR8QtcozM">Disintegration effect</a></li>
+<li><a href="https://youtu.be/ZiqrCRqyLzE">How to Create Toon Style Animation</a></li>
+<li><a href="https://youtu.be/I0Tz1U6A5vI">How to Create a Paint Splash</a></li>
+<li><a href="http://3.bp.blogspot.com/-Gy_rDI34zBw/UN_1NZmoQfI/AAAAAAAAiEI/cYEmEreB-W0/s1600/particleInfo_010.png">Colorful particles</a></li>
+<li><a href="https://youtu.be/xF0SypG7q8c">10 Tips for Filming Visual Effects</a></li>
+<li><a href="https://youtu.be/nb6rSMAooDs">Create a Subway in 20 minutes</a></li>
+</ul>
+<h3 id="todo">TODO</h3>
+<ul>
+<li><a href="https://youtu.be/L3654VGZObg"><strong>UV mapping tutorial //TODO-note</strong></a></li>
+<li><a href="http://www.neilblevins.com/cg_education/primary_secondary_and_tertiary_shapes/primary_secondary_and_tertiary_shapes.htm"><strong>Primary, secondary and tertiary shapes //TODO-note</strong></a></li>
+<li><a href="https://twitter.com/andrewpprice/status/1224544692143964161"><strong>Easy cushion model //TODO-note</strong></a></li>
+</ul>
+<h2 id="addons">Addons</h2>
+<ul>
+<li><a href="https://github.com/uhlik/bpy#time-tracker-for-blender-280">Time Tracker</a></li>
+<li><a href="https://youtu.be/Rbx9DlyddF8">Physical Starlight and Atmosphere</a> <em>$38</em></li>
+</ul>
+<hr />
+<h2 id="geometry-node">Geometry node</h2>
+<p>Can be used to colorize an object according to its position, rotation and such.</p>
+<h2 id="objects-reusing-mesh-data">Objects reusing mesh data</h2>
+<p>Every time you copy an object consider making it a linked copy - meaning to create a new object that uses the mesh from the original object.</p>
+<h2 id="adaptive-subdivision">Adaptive subdivision</h2>
+<p>Use adaptive subdivision to avoid generating too many polygons. Thanks to this method you can save processing power and memory on mesh data by decreasing its detail accordingly to the distance from the camera.</p>
+<h2 id="alpha-transparency">!Alpha transparency</h2>
+<p>Do not use alpha transparency. Instead make a blocky thingy that more or less outlines the alpha texture. The reason this method is better is performance - when using alpha transparency you can double your render time.</p>
+<h2 id="hdr-world-backgrounds">HDR world backgrounds</h2>
+<!-- spellchecker: disable-next-line -->
+<p>When using HDRs as the world background enable option <em>&quot;Multiple importance sampling&quot;</em> in the <em>World settings panel</em></p>
+<h2 id="select-sharp-edges">Select sharp edges</h2>
+<p>SHIFT + G <span class="math inline">\(\equiv\)</span> select sharp edges like these that are selected</p>
+<h2 id="edges-todo-elaborate">45° edges //TODO elaborate</h2>
+<ul>
+<li><code>CTRL + F</code></li>
+<li>Poke faces</li>
+<li>Tris to quads</li>
+</ul>
+<h2 id="spherize-tool">Spherize tool</h2>
+<p><code>ALT + SHIFT + S</code></p>
+<h2 id="pie-menus">Pie Menus</h2>
+<p>Pie Menus can increase productivity significantly, because of the speed at which you can select different options from a given menu. This can be especially seen when you develop a muscle memory over time and remember the direction of mouse movement to perform desired action from the pie menu.</p>
+<h2 id="masking-data">Masking data</h2>
+<p>To clear sculpt masking data use</p>
+<pre class="blender"><code>Mesh: Clear Sculpt-Mask Data</code></pre>
+<h2 id="applying-a-property-change-to-multiple-objects">Applying a property change to multiple objects</h2>
+<p>To change a numeric value on a set of objects, first change the value for one <em>active</em> object and then press the <code>RMB</code> on the value field and choose <code>Copy To Selected</code>. This will apply this change to all the other selected objects that have this property.<br />
+<a href="https://blender.stackexchange.com/questions/6015/applying-numeric-input-attribute-changes-on-multiple-objects-at-the-same-time">Source</a></p>
+<h2 id="fixing-linux-mint-cinnamon-keyboard-shortcuts">Fixing Linux Mint Cinnamon keyboard shortcuts</h2>
+<p>For some reason, by default <code>Alt + Shift + RMB</code> doesn't work as expected (doesn't select multiple edge loops).</p>
+<p><del>The solution is to <em>enable switching between keyboard layouts using <code>Alt + Shift</code> combination provided you're using IBus as the keyboard layout switching solution. Only with one keyboard layout selected <strong>in the system settings (not in IBus settings)</strong>it will not switch keyboard layouts but it will unlock the expected functionality in Blender.</em></del></p>
+<p>The issue got resolved on its own. <strong><em>I have no idea why</em></strong>, which is the worst kind of <em>“resolved”</em>.</p>
+</body>
+</html>

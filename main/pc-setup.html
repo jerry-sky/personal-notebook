@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="bash, linux, configuring, configuration, keyboard, internet, browser, definitions, system, os, user, experience" />
+  <meta name="description" content="A personal guide for setting up all programs, tools and configuration files for personal use." />
+  <title>PC Setup</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/deployment/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">PC Setup</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>A personal guide for setting up all programs, tools and configuration files for personal use.</em></p>
+<hr />
+<ul>
+<li><a href="#definitions">Definitions</a></li>
+<li><a href="#guide">Guide</a>
+<ul>
+<li><a href="#installing-the-os">Installing the OS</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#configuring-the-internet-browser">Configuring the Internet browser</a></li>
+<li><a href="#programs">Programs</a></li>
+<li><a href="#configuring-the-user-experience">Configuring the user experience</a></li>
+<li><a href="#keyboard-layouts">Keyboard layouts</a></li>
+<li><a href="#fonts">Fonts</a></li>
+<li><a href="#other-system-settings">Other system settings</a></li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="definitions">Definitions</h2>
+<p><em>Currently used software solutions.</em></p>
+<ol style="list-style-type: decimal">
+<li>OS <span class="math inline">\(\equiv\)</span> Linux Mint Cinnamon (<a href="linux-mint-setup">OS-specific setup</a>)</li>
+<li>Cloud <span class="math inline">\(\equiv\)</span> <a href="https://www.insynchq.com/">InSync</a></li>
+<li>Internet Browser <span class="math inline">\(\equiv\)</span> <a href="https://www.google.com/chrome/">Chrome</a></li>
+<li><p>Date format to use in the clock part of the taskbar:</p>
+<pre><code>%t%A%t%B %e%t%Y-%m-%d%t %H:%M:%S %t %Z: GMT%z</code></pre>
+<p>Example:</p>
+<pre><code>Thursday    December 24    2020-12-24    12:00:01 CET: GMT+0100</code></pre></li>
+</ol>
+<h2 id="guide">Guide</h2>
+<h3 id="installing-the-os">Installing the OS</h3>
+<p>Please see the OS-specific instructions in a separate note. See <a href="#definitions">definitions</a>.</p>
+<h3 id="configuration">Configuration</h3>
+<p>Copy this repository to <code>~/notebooks/personal-notebook</code> using <code>git clone</code>.</p>
+<p>Run the <code>setup.sh</code> script from the <code>/config</code> directory of this repository to copy various config files to the system.<br />
+See <a href="../config/readme">«config»</a>.</p>
+<h3 id="configuring-the-internet-browser">Configuring the Internet browser</h3>
+<ol style="list-style-type: decimal">
+<li>Install the <a href="#definitions">Internet Browser</a>.</li>
+<li>Install <a href="https://bitwarden.com/#download">Bitwarden</a>.</li>
+<li>Install <a href="https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh">Dark Reader</a>.</li>
+<li>Log in to all online services
+<ol style="list-style-type: decimal">
+<li><a href="accounts.google.com/"><strong>Google</strong></a></li>
+<li><a href="https://github.com/login"><strong>GitHub</strong></a></li>
+<li><a href="https://web.whatsapp.com/">WhatsApp</a></li>
+<li><a href="https://discordapp.com/channels/@me">Discord</a></li>
+<li><a href="https://www.messenger.com/"><em>Facebook Messenger</em></a></li>
+</ol></li>
+<li>Change default browser to the <a href="#definitions">Internet Browser</a>.</li>
+<li><em>(Opera-only) — if Opera doesn't play some video content use one of these solutions:</em>
+<ul>
+<li><a href="https://forums.opera.com/topic/28663/widevine-and-opera/29">Enable DRM to view DRM-content such as Prime Video or Netflix etc.</a></li>
+<li><a href="https://forums.opera.com/topic/30254/solved-video-playback-issues/7">Fix <code>libffmpeg.so</code></a></li>
+</ul></li>
+</ol>
+<h3 id="programs">Programs</h3>
+<ol style="list-style-type: decimal">
+<li><p>Install the <a href="#definitions">Cloud</a> desktop app.</p></li>
+<li>Enable Redshift
+<ol style="list-style-type: decimal">
+<li>Install <code>redshift</code> if it is not already installed.</li>
+<li>Enable autostart.</li>
+</ol></li>
+<li><p><del>Install <a href="https://snapcraft.io/docs/installing-snap-on-linux-mint"><code>snap</code></a></del> <em>why</em></p></li>
+<li>Configure Git
+<ol style="list-style-type: decimal">
+<li>Install the <a href="https://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo/40312117#40312117">credentials manager</a>.</li>
+<li>Create a new <a href="https://github.com/settings/tokens">personal github access token</a>.</li>
+<li>At first login provide the newly generated token as the password.</li>
+<li>Added commit (and tag) signing:
+<ol style="list-style-type: decimal">
+<li>import GPG keys with <code>gpg --import ‹file with the private key›</code>,</li>
+<li>use <code>git config --global user.signingKey ‹key ID›</code> to tell <code>git</code> which key to use for signing,</li>
+<li>run <code>git config --global commit.gpgSign true</code> and <code>git config --global tag.gpgSign true</code> to enforce signing every commit and every tag with that key.</li>
+</ol></li>
+</ol></li>
+<li><p>Install VS Code<br />
+Using</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">apt</span> list -a code-insiders <span class="kw">|</span> <span class="fu">less</span></code></pre></div>
+<p>and</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">apt</span> install code-insiders=«version from the list<span class="kw">;</span> <span class="ex">e.g.</span> “1.48.0-1596120937”»</code></pre></div>
+<p>to establish what version is currently free of irritating Electron-related issues (e.g. white flashes) and install it.</p></li>
+<li>Install Blender
+<ol style="list-style-type: decimal">
+<li>Download it from the <a href="https://www.blender.org/download/">downloads page</a>.</li>
+<li><p>Unpack it:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">tar</span> -xf «archive filename»</code></pre></div></li>
+<li>Move the contents to <code>/opt/blender</code>.</li>
+<li><p>Link the executable:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ln</span> -s /opt/blender/blender /usr/bin/blender</code></pre></div></li>
+<li><p>Install the <a href="blender-notes.md#addons">addons</a> if necessary.</p></li>
+</ol></li>
+<li><p>Install GParted <code>apt install gparted</code></p></li>
+<li><p>Install the rest of programs from the <a href="software-list">software list</a>.</p></li>
+</ol>
+<h3 id="configuring-the-user-experience">Configuring the user experience</h3>
+<ol style="list-style-type: decimal">
+<li><p>Disable icons on the desktop.</p></li>
+<li>Install themes and cursor packs
+<ol style="list-style-type: decimal">
+<li>Install <a href="https://github.com/vinceliuice/Canta-theme">Canta theme</a>
+<ol style="list-style-type: decimal">
+<li><em><strong>Important note</strong>: If used with sudo the theme will install in /usr/share/themes, not in ~/.themes - this will allow GUI apps (e.g. Files, Terminal) to use that theme when running in the elevated privileges mode.</em></li>
+</ol></li>
+<li>Install icon themes <em><a href="https://snwh.org/paper/download">how-to</a></em>
+<ol style="list-style-type: decimal">
+<li><a href="https://drasite.com/flat-remix">Flat remix</a></li>
+<li><a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation">Papirus icon theme</a> <!-- spellchecker: disable-next-line --></li>
+<li><a href="https://www.gnome-look.org/p/1329799/">Quintom Cursors</a></li>
+</ol></li>
+</ol></li>
+<li><p>Adjust mouse <em>(and touchpad)</em> settings.</p></li>
+<li><p>Disable system sounds.</p></li>
+<li><p>Follow the rest of the steps of this section in the OS-specific notes. See <a href="#definitions">definitions</a>.</p>
+<!-- spellchecker: disable-next-line --></li>
+<li><p><em>Optional</em> <a href="https://unix.stackexchange.com/questions/263274/pipe-mix-line-in-to-output-in-pulseaudio">Setup listening to line-in audio at startup <code>pacmd load-module module-loopback latency_msec=5</code></a></p></li>
+</ol>
+<h3 id="keyboard-layouts">Keyboard layouts</h3>
+<ol style="list-style-type: decimal">
+<li>Install <a href="https://forums.linuxmint.com/viewtopic.php?t=160272">IBus</a> to allow using non-western keyboard layouts and allow using more than 4 keyboard layouts at once.
+<ol style="list-style-type: decimal">
+<li>Should any issues arise, follow instructions provided in <a href="https://askubuntu.com/a/793046">this askubuntu.com answer</a>.</li>
+</ol></li>
+<li><p>For laptops with no dedicated <code>Menu</code> key you need to swap <code>Control_R</code> with <code>Menu</code> to use the <code>Control_R</code> key as the <code>Menu</code> key:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">xmodmap</span> -e <span class="st">&quot;keycode 105 = Menu&quot;</span>
+<span class="fu">xmodmap</span> -e <span class="st">&quot;keycode 135 = Control_R&quot;</span></code></pre></div>
+<p>To view list of all keycodes use <code>xmodmap -pk</code>. To make this behaviour persistent use <a href="../config/readme">config</a> found in this repository.</p></li>
+</ol>
+<h3 id="fonts">Fonts</h3>
+<ol style="list-style-type: decimal">
+<li>Install additional fonts into <code>/usr/share/fonts/truetype/</code>
+<ol style="list-style-type: decimal">
+<li>Fira Sans</li>
+<li>Fira Code</li>
+<li>Fira Mono</li>
+<li>Merriweather</li>
+<li><a href="http://www.drogowskazclassic.pl/pismo.php">Drogowskaz Classic</a></li>
+</ol></li>
+</ol>
+<h3 id="other-system-settings">Other system settings</h3>
+<ol style="list-style-type: decimal">
+<li><a href="https://fossbytes.com/how-to-auto-mount-partitions-on-boot-in-linux-easily/">Setup automount for the rest of the drives present in the system.</a></li>
+</ol>
+</body>
+</html>

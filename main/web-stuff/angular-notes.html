@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="Angular, TypeScript, node, Router, htaccess, observable, file, model, app, program, npm" />
+  <meta name="description" content="Notes on Angular (non JS)." />
+  <title>Angular Notes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/deployment/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Angular Notes</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>Notes on Angular (non JS).</em></p>
+<hr />
+<ul>
+<li><a href="#links">Links</a></li>
+<li><a href="#deploying-an-app">Deploying an app</a></li>
+<li><a href="#installing-bootstrap">Installing Bootstrap</a></li>
+<li><a href="#ngmodel-input-element-inside-ngfor">NgModel input element inside ngFor</a></li>
+<li><a href="#router-vs-location"><code>Router</code> vs. <code>Location</code></a></li>
+<li><a href="#ending-an-observable">Ending an <code>Observable</code></a></li>
+<li><a href="#upload-progress">Upload progress</a></li>
+<li><a href="#the-htaccess-file">The <code>.htaccess</code> file</a></li>
+<li><a href="#tracking-many-files">Tracking many files</a></li>
+<li><a href="#testing-components-that-contain-angular-material-components">Testing components that contain Angular Material components</a></li>
+<li><a href="#using-anchor-links">Using anchor links</a></li>
+<li><a href="#using-svg-icons-with-angular-material">Using SVG icons with Angular Material</a></li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://alligator.io/angular/">Alligator.io</a></li>
+</ul>
+<h2 id="deploying-an-app">Deploying an app</h2>
+<ol style="list-style-type: decimal">
+<li>Compile the Angular app <code>bash   ng build --prod</code></li>
+</ol>
+<p><del>2. Now, setup a node.js server using <a href="https://www.npmjs.com/package/express-history-api-fallback">NPM package <code>express-history-api-fallback</code></a></del></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Put it on a simple Apache server or use <a href="https://angular.io/guide/universal"><code>angular-universal</code></a></li>
+</ol>
+<h2 id="installing-bootstrap">Installing Bootstrap</h2>
+<ol style="list-style-type: decimal">
+<li><code>bash    npm install bootstrap</code></li>
+<li>Modify <code>$WORKING_DIRECTORY/angular.json</code>: <code>json    &quot;styles&quot;: [  &quot;node_modules/bootstrap/dist/css/bootstrap.min.css&quot;,  &quot;styles.css&quot;    ]</code></li>
+</ol>
+<h2 id="ngmodel-input-element-inside-ngfor">NgModel input element inside ngFor</h2>
+<p>Nested <code>ngModel</code> input element inside <code>ngFor</code> need to refer to a value inside an <code>Object</code>. If it isn't wrapped in an <code>Object</code> Angular won't compile the app for some odd reason.</p>
+<h2 id="router-vs.-location"><code>Router</code> vs. <code>Location</code></h2>
+<p>When using Angular navigation use the <code>Router</code>'s <code>navigate</code> function. The <code>Location</code>'s <code>go</code> function is meant to interact with URL, not navigate in application routes. <a href="https://stackoverflow.com/a/42858854/4249875">Source</a></p>
+<h2 id="ending-an-observable">Ending an <code>Observable</code></h2>
+<p>To complete the <code>Observable</code> use <code>return of()</code>. It will stop propagating any further notifications as <code>of</code> with no arguments will complete right away and not emit any notifications.</p>
+<h2 id="upload-progress">Upload progress</h2>
+<p>To get notifications about a file being uploaded use <code>reportProgress: true</code> in any <code>HTTP</code> method's additional options object.</p>
+<p><a href="https://stackoverflow.com/a/54899930/4249875">Source</a></p>
+<h2 id="the-.htaccess-file">The <code>.htaccess</code> file</h2>
+<p>For serving a static Angular app on a standard Apache server you need to setup a <code>.htaccess</code> file <a href="web-errors.md#corb--cors">like so</a>.</p>
+<p><a href="https://stackoverflow.com/a/22740184/4249875">StackOverflow answer without <code>https</code> CORB issue solution</a></p>
+<h2 id="tracking-many-files">Tracking many files</h2>
+<p>When dealing with multiple Angular projects or Angular projects mixed with some other opened at once the system can be overwhelmed with the amount of files to track as the code editor is trying to observe every single file in all of the projects. The solution seems to be to alter a default number of files the system is allowed to track.</p>
+<!-- spell-checker: disable-next-line -->
+<ol style="list-style-type: decimal">
+<li>Open <code>/etc/sysctl.conf</code> and add line <code>fs.inotify.max_user_watches=524288</code>. <!-- spell-checker: disable-next-line --></li>
+<li>Execute <code>sudo sysctl -p</code>. <!-- spell-checker: disable-next-line --></li>
+<li>View <code>/proc/sys/fs/inotify/max_user_watches</code> and verify that the output number is equals to <code>524288</code>.</li>
+</ol>
+<h2 id="using-anchor-links">Using anchor links</h2>
+<p>Angular has the anchor links disabled by default (at least when the routing is enabled).</p>
+<p>Refactoring the module responsible for routing in a given app as follows:</p>
+<pre class="ts"><code>[...]
+const routerOptions: ExtraOptions = {
+    useHash: false,
+    anchorScrolling: &#39;enabled&#39;,
+};
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes, routerOptions)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }</code></pre>
+<p>will enable this functionality.</p>
+<p>Source: <a href="https://stackoverflow.com/a/52724769/4249875">an answer on Stack Overflow</a></p>
+<hr />
+<h2 id="using-svg-icons-with-angular-material">Using SVG icons with Angular Material</h2>
+<p>To add a custom SVG icon that can be used throughout the whole app you need to import <code>MatIconRegistry</code>:</p>
+<pre class="ts"><code>import { MatIconRegistry } from &quot;@angular/material/icon&quot;;</code></pre>
+<p>and the <code>DomSanitizer</code>:</p>
+<pre class="ts"><code>import { DomSanitizer } from &quot;@angular/platform-browser&quot;;</code></pre>
+<p>to resolve the path by trusting the local asset file.</p>
+<p>Then, inside of <code>app.module.ts</code> inject said dependencies into the class constructor and add the desired icon(s) to the registry:</p>
+<pre class="ts"><code>constructor(
+    private MIR: MatIconRegistry,
+    private DS: DomSanitizer
+) {
+    this.MIR.addSvgIcon(
+        &#39;custom_icon&#39;,
+        this.DS.bypassSecurityTrustResourceUrl(&quot;assets/custom-icon.svg&quot;)
+    )
+}</code></pre>
+<p>Source: <a href="https://www.digitalocean.com/community/tutorials/angular-custom-svg-icons-angular-material">Digital Ocean Article</a></p>
+</body>
+</html>

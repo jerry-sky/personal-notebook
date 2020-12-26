@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="notes, NodeJS" />
+  <meta name="description" content="Notes on NodeJS (in general)." />
+  <title>NodeJS Notes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/deployment/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">NodeJS Notes</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>Notes on NodeJS (in general).</em></p>
+<hr />
+<ul>
+<li><a href="#configuring-htaccess">Configuring <code>.htaccess</code></a></li>
+</ul>
+<h2 id="configuring-.htaccess">Configuring <code>.htaccess</code></h2>
+<p>To use a NodeJS app on an Apache server you can setup the <code>.htaccess</code> file to redirect any request to the NodeJS server:</p>
+<pre class="htaccess"><code>DirectoryIndex disabled
+RewriteEngine On
+RewriteCond %{HTTPS} on
+RewriteRule ^$ http://127.0.0.1:**PORT**/ [P,L]
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://127.0.0.1:**PORT**/$1 [P,L]
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</code></pre>
+<p>Obviously, you would replace the <code>**PORT**</code> fields with actual port on which the desired NodeJS app runs.</p>
+<p>For WebSocket support use:</p>
+<pre class="htaccess"><code>RewriteCond %{REQUEST_URI} ^/socket.io [NC]
+RewriteCond %{QUERY_STRING} transport=websocket [NC]
+RewriteRule /(.*) ws://localhost:**PORT**/$1 [P,L]</code></pre>
+<p>Again, replace <code>**PORT**</code> with an actual port.</p>
+<p><a href="http://web.archive.org/web/20180625042814/https://www.smarthost.pl/instalacja-i-uruchomienie-nodejs-na-koncie-hostingowym-smarthost">Original Source <em>in polish</em></a></p>
+</body>
+</html>

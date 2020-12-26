@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="JavaScript, node, scroll, Samsung" />
+  <meta name="description" content="Notes on general JS-related stuff." />
+  <title>JS (other) Notes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/deployment/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">JS (other) Notes</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>Notes on general JS-related stuff.</em></p>
+<hr />
+<ul>
+<li><a href="#links">Links</a>
+<ul>
+<li><a href="#archived-sentimental">Archived <em>(sentimental)</em></a></li>
+</ul></li>
+<li><a href="#parsing-numbers-in-bases-other-than-base-10">Parsing numbers in bases other than base-10</a></li>
+<li><a href="#samsung-internet-webpage-scroll-position">Samsung Internet webpage scroll position</a></li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=99Zacm7SsWQ">The Post JavaScript Apocalypse</a></li>
+</ul>
+<h3 id="archived-sentimental">Archived <em>(sentimental)</em></h3>
+<ul>
+<li><a href="http://www.vleo.net/svgpan-a-javascript-svg-panzoomdrag-library/">SVGPan - a JS SVG map-like viewer</a></li>
+</ul>
+<h2 id="parsing-numbers-in-bases-other-than-base-10">Parsing numbers in bases other than base-10</h2>
+<p>To convert a <code>number</code> to a string in the target <code>base</code> use:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">number</span>.<span class="at">toString</span>(base)</code></pre></div>
+<p>To parse a <code>string</code> containing a number in a given <code>base</code> use:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">parseInt</span>(string<span class="op">,</span> base)</code></pre></div>
+<h2 id="samsung-internet-webpage-scroll-position">Samsung Internet webpage scroll position</h2>
+<p>Samsung Internet doesn't output scroll position through <code>document.documentElement.scrollTop</code>, instead use <code>document.body.scrollTop</code>. However, unfortunately the second option isn't supported in other major browsers. Therefore the best implementation of <code>scrollTop</code> would be to check the value from both sources to ensure thorough browser support.</p>
+</body>
+</html>

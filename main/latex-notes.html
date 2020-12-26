@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="LaTeX, linux, svg, installing, installation, tex live, notes" />
+  <meta name="description" content="Notes on using LaTeX." />
+  <title>LaTeX Notes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/deployment/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">LaTeX Notes</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>Notes on using LaTeX.</em></p>
+<hr />
+<ul>
+<li><a href="#links">Links</a></li>
+<li><a href="#using-svg-files-with-inkscape">Using SVG files with <code>inkscape</code></a></li>
+<li><a href="#installing-tex-live">Installing TeX Live</a></li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/cmhughes/latexindent.pl/issues/104">Can't locate perl dependencies issue</a></li>
+</ul>
+<hr />
+<h2 id="using-svg-files-with-inkscape">Using SVG files with <code>inkscape</code></h2>
+<p>To prepare a SVG image to be used in a <span class="math inline">\(\LaTeX\)</span> document use</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">inkscape</span> -D -z --file=image.svg --export-pdf=image.pdf --export-latex</code></pre></div>
+<p>and import it in the document using</p>
+<div class="sourceCode"><pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\input</span>{image.pdf_tex}</code></pre></div>
+<p>inside a <code>figure</code>.</p>
+<p><a href="https://tex.stackexchange.com/a/2107">Source</a></p>
+<hr />
+<h2 id="installing-tex-live">Installing TeX Live</h2>
+<p>Installing <code>texlive</code> packages using <code>apt</code> results in outdated <em>(by some described as ancient)</em> software.</p>
+<p>Instead of that, you should use the official installer that can be acquired from <a href="https://tug.org/texlive/acquire-netinstall.html">the official TUG (TeX Users Group) website</a>.</p>
+<p>After unpacking the installer run</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">perl</span> install-tl</code></pre></div>
+<p>and choose the <code>i</code> option for installing.</p>
+<p><em>Installation takes about an hour to complete.</em></p>
+<p>After it’s done you need to add the directory of TeX Live binaries to your <code>PATH</code>:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">PATH=</span><span class="st">&quot;/usr/local/texlive/2020/bin/x86_64-linux:</span><span class="va">$PATH</span><span class="st">&quot;</span></code></pre></div>
+<p>Source: <a href="https://www.tug.org/texlive/quickinstall.html">Quick install guide on tug.org</a></p>
+</body>
+</html>

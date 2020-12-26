@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="description" content="web, development, errors, CORB, CORS, htaccess" />
+  <title>Web Errors in general</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/deployment/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Web Errors in general</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>web, development, errors, CORB, CORS, htaccess</em></p>
+<hr />
+<ul>
+<li><a href="#corb--cors">CORB &amp; CORS</a></li>
+</ul>
+<h2 id="corb-cors">CORB &amp; CORS</h2>
+<p>CORB might be a potential hiccup when attempting to load resources from different origin (CORS). The problem can appear when a website requests additional data, but the user used different links to the same website: the one with <code>www.</code> prefix and without. Browser then remembers that the resource had the <code>Access-Control-Allow-Origin</code> set to the website link with <code>www.</code> prefix. That’s why when accessing the website without the prefix, browser blocks the CORS connection, because it remembers the resource had the header set to a different value.</p>
+<p><a href="https://www.siteground.com/kb/how_to_redirect_www_urls_to_nonwww/">Further reading</a></p>
+<p>The code attached below is an example <code>.htaccess</code> file from the <code>wroczynski.pl</code> web-server showing redirections from http and/or www to https non-www version of the domain including Angular SPA redirect to main index file:</p>
+<pre class="htaccess"><code>RewriteEngine on
+# all non https links redirected to https non-www domain
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*) https://wroczynski.pl/index.html [NC,L,R=301]
+
+# www https links redirected to https non-www domain
+RewriteCond %{HTTP_HOST} ^www\.wroczynski\.pl [NC]
+RewriteRule ^(.*) https://wroczynski.pl/index.html [NC,L,R=301]
+
+# if the link contains a file that doesn&#39;t exist redirect to index.html (Angular SPA)
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^(.*) /index.html [NC]</code></pre>
+</body>
+</html>
