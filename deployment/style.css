@@ -1,9 +1,13 @@
 * {
-    font-family: Merriweather, serif;
+    font-family: 'Merriweather', serif;
 }
 
 a {
     text-decoration: none;
+}
+
+code {
+    font-family: 'Fira Code', monospace;
 }
 
 header#title-block-header > .author {
