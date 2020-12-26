@@ -1,4 +1,12 @@
-# Software issues
+---
+lang: 'en-GB'
+title: 'Software issues'
+author: 'Jerry Sky'
+description: 'Notes on some of the software issues that I’ve encountered.'
+keywords: 'SQL, MariaDB, issues, database, plugin'
+---
+
+---
 
 - [Fix *MariaDB plugin `unix_socket` is not loaded* issue](#fix-mariadb-plugin-unix_socket-is-not-loaded-issue)
 

@@ -1,4 +1,12 @@
-# Gewitter und Starkregen in Brandenburg erwartet
+---
+lang: 'de-DE'
+title: 'Gewitter und Starkregen in Brandenburg erwartet'
+author: 'Jerry Sky'
+description: 'Eine Analyse eines deutschen Artikels. (An analysis of a German article.)'
+keywords: 'Deutsch, German, article, translation, analysis, Analyse, Artikel, maz-online, Wetter'
+---
+
+---
 
 [Artikel]: https://www.maz-online.de/Brandenburg/Wetterdienst-warnt-vor-Hitze-und-schwerem-Gewitter-in-Brandenburg
 
@@ -243,4 +251,3 @@ Due to danger of storms, the authorities in Burg im Spreewald have called off to
 | heruntergefallene               | fallen down, dropped  |
 | Ast m, ⸚e                       | branch                |
 | Partyzelt nt, -e                | marquee (large tent)  |
-

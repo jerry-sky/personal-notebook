@@ -1,4 +1,12 @@
-# VS Code
+---
+lang: 'en-GB'
+title: 'VS Code'
+author: 'Jerry Sky'
+description: 'Notes on VS Code.'
+keywords: 'VS Code, code, visual studio code, settings, sync, java'
+---
+
+---
 
 - [Settings Sync](#settings-sync)
 - [Java Formatter Settings](#java-formatter-settings)

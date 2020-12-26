@@ -1,4 +1,12 @@
-# Präpositionen
+---
+lang: 'en-GB'
+title: 'Präpositionen'
+author: 'Jerry Sky'
+description: 'When to use Dativ or Akkusativ when using given preposition.'
+keywords: 'Deutsch, German, Präposition, preposition, Dativ, Akkusativ, case, language'
+---
+
+---
 
 ## Akkusativ:
 - für

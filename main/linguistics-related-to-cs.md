@@ -1,4 +1,12 @@
-# Linguistics of Computer Science related matters
+---
+lang: 'en-GB'
+title: 'Linguistics of Computer Science related matters'
+author: 'Jerry Sky'
+description: 'Linguistics of Computer Science related matters that arise all the time when one has to create a program, technical specification and other.'
+keywords: 'linguistics, computer science, cs, quantity, program, code, coding, tech, technical'
+---
+
+---
 
 - [Quantity](#quantity)
 

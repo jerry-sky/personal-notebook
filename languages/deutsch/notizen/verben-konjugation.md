@@ -1,4 +1,12 @@
-# Verb Conjugation
+---
+lang: 'en-GB'
+title: 'Verb Conjugation'
+author: 'Jerry Sky'
+description: 'Conjugation of the German verbs.'
+keywords: 'verbs, Verben, conjugation, Konjugation, grammar, list'
+---
+
+---
 
 [Source](https://www.vistawide.com/german/grammar/strong_and_irregular_german_verbs.htm)
 

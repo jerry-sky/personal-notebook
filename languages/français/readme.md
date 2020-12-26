@@ -1,4 +1,10 @@
-# French
+---
+lang: 'en-GB'
+title: 'French'
+author: 'Jerry Sky'
+---
+
+---
 
 ## Index
 

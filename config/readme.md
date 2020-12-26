@@ -1,4 +1,12 @@
-# Config
+---
+lang: 'en-GB'
+title: 'Config'
+author: 'Jerry Sky'
+description: 'Config files and other utilities that I use every day. Installed automatically using the setup script.'
+keywords: 'bash, config, script, utilities, python3, keyboard, markdown, bash aliases'
+---
+
+---
 
 - [Setup](#setup)
 - [Utility scripts](#utility-scripts)

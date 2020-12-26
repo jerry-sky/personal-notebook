@@ -1,8 +1,10 @@
-# ソードアート・オンライン — Season 1, Episode 1
-
-*Transcript used in notes below was obtained from [アニメ・メロン](https://animelon.com/video/57a81214b9de7414d1ea0825).*
-
-*The transcript is analysed sentence by sentence dissecting every word, every kanji.*
+---
+lang: 'en-GB'
+title: 'ソードアート・オンライン — Season 1, Episode 1'
+author: 'Jerry Sky'
+description: 'An analysis of a the transcript of the first episode of SAO TV series. The transcript is analysed sentence by sentence dissecting every word, every kanji.'
+keywords: 'SAO, text analysis, transcript, episode, series, kanji, Kirito, Asuna'
+---
 
 ---
 

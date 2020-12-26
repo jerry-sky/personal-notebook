@@ -1,9 +1,14 @@
-# Writing technical specification
+---
+lang: 'en-GB'
+title: 'Writing technical specification'
+author: 'Jerry Sky'
+description: 'Writing code before writing a good technical spec document can be disastrous to the project being worked on. The idea of writing code and figuring out the “what and how” of a solution to a given problem is irresponsible.'
+keywords: 'software, engineering, specification, technical, code, document, data, solutions, proposed'
+---
+
+---
 
 *This note is based on [an article by Zara Cooper][article].*
-
-Writing code before writing a good technical spec document can be disastrous to the project being worked on.
-The idea of writing code *and* figuring out the “what and how” of a solution to a given problem is irresponsible.
 
 - [1. Why write such a document](#1-why-write-such-a-document)
 - [2. Benefits](#2-benefits)

@@ -1,4 +1,12 @@
-# Sind alle europäischen Staaten in der EU?
+---
+lang: 'de-DE'
+title: 'Sind alle europäischen Staaten in der EU?'
+author: 'Jerry Sky'
+description: 'Eine Analyse eines deutschen Artikels. (An analysis of a German article.)'
+keywords: 'Deutsch, German, article, translation, nachrichtenleicht, analysis, european union, Artikel, Analyse, europäische Union, EU'
+---
+
+---
 
 [Artikel]: https://www.nachrichtenleicht.de/die-europaeische-union-einfach-erklaert-sind-alle.3967.de.html?dram:article_id=447468
 

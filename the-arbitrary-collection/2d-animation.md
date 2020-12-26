@@ -1,4 +1,12 @@
-# 2D Animation
+---
+lang: 'en-GB'
+title: '2D Animation'
+author: 'Jerry Sky'
+description: 'Notes on 2D animation.'
+keywords: 'Blender, KLAUS, rendering, lightning, light'
+---
+
+---
 
 ## How KLAUS was rendered
 

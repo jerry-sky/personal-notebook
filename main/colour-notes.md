@@ -1,8 +1,12 @@
-# Colour notes
+---
+lang: 'en-GB'
+title: 'Colour notes'
+author: 'Jerry Sky'
+description: 'Colour Resources.'
+keywords: 'colour, links, resources, Vaporwave, material, design, wheel'
+---
 
-- [Links](#links)
-    - [Useful](#useful)
-    - [*Very nice*](#very-nice)
+---
 
 ## Links
 

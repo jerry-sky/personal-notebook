@@ -1,8 +1,15 @@
-# Arbitrary interesting math snippets
+---
+lang: 'en-GB'
+title: 'Arbitrary interesting math snippets'
+author: 'Jerry Sky'
+keywords: 'complex numbers, number, chart, drawing'
+---
 
-## Index
+---
 
-  - [Heart drawn using $\Complex$ numbers](#heart-drawn-using-complex-numbers)
+- [Heart drawn using $\Complex$ numbers](#heart-drawn-using-complex-numbers)
+
+---
 
 ## Heart drawn using $\Complex$ numbers
 

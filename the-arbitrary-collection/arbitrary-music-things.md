@@ -1,4 +1,11 @@
-# Arbitrary Music *Things*
+---
+lang: 'en-GB'
+title: 'Arbitrary Music *Things*'
+author: 'Jerry Sky'
+keywords: 'music, sonic'
+---
+
+---
 
 ## Sonic Pi
 

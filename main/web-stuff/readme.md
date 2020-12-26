@@ -1,4 +1,11 @@
-# Web stuff
+---
+lang: 'en-GB'
+title: 'Web stuff'
+author: 'Jerry Sky'
+description: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScript, SQL, CSS, SCSS, Sass, links, resources, tcp, port'
+---
+
+---
 
 - [Index](#index)
 - [Links](#links)

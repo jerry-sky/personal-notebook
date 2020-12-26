@@ -1,4 +1,12 @@
-# SQL Notes
+---
+lang: 'en-GB'
+title: 'SQL Notes'
+author: 'Jerry Sky'
+description: 'Notes on SQL-related stuff.'
+keywords: 'notes, SQL, query, database'
+---
+
+---
 
 - [Links](#links)
 - [Show columns from a `SELECT` query](#show-columns-from-a-select-query)

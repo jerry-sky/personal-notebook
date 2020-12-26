@@ -1,4 +1,11 @@
-# Adobe Illustrator
+---
+lang: 'en-GB'
+title: 'Adobe Illustrator'
+author: 'Jerry Sky'
+keywords: 'adobe, illustrator, keyboard, shortcuts'
+---
+
+---
 
 - [Links](#links)
 - [Notes](#notes)

@@ -1,4 +1,11 @@
-# Web Errors in general
+---
+lang: 'en-GB'
+title: 'Web Errors in general'
+author: 'Jerry Sky'
+description: 'web, development, errors, CORB, CORS, htaccess'
+---
+
+---
 
 - [CORB & CORS](#corb--cors)
 

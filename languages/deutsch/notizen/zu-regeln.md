@@ -1,4 +1,10 @@
-# „Zu“ Regeln
+---
+lang: 'en-GB'
+title: '„Zu“ Regeln'
+author: 'Jerry Sky'
+description: 'The ‘zu’ use-cases.'
+keywords: 'Detusch, German, zu, example, modal verb, damit, um'
+---
 
 ---
 
