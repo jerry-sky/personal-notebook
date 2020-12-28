@@ -2,7 +2,8 @@
 lang: 'en-GB'
 title: 'Web stuff'
 author: 'Jerry Sky'
-description: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScript, SQL, CSS, SCSS, Sass, links, resources, tcp, port'
+description: 'My notes on various web-dev related matters.'
+keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScript, SQL, CSS, SCSS, Sass, links, resources, tcp, port'
 ---
 
 ---
