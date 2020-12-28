@@ -71,3 +71,13 @@ jobs:
           cwd: './dist/'
           add: '*'
 
+      - name: 'test GH actions'
+        uses: jerry-sky/testing-gh-actions@a-prime
+        with:
+          inp: 'SOME TESTING VARIABLE'
+          working-directory: 'dist'
+
+      - name: 'check ‘test GH actions’'
+        working-directory: 'dist'
+        run: ls -lA && echo "testfile.txt:" && cat testfile.txt && echo "another-testfile.txt:" && cat another-testfile.txt
+        shell: bash
