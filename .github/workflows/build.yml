@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Install `pandoc`'
-        run: sudo apt install pandoc
-
       - name: 'Checkout `master`'
         uses: actions/checkout@v2
 
@@ -23,41 +20,8 @@ jobs:
           path: 'dist'
           ref: 'gh-pages'
 
-      - name: 'Copy all documents (and other files with it) to the `dist` directory'
-        run: | # copy all files that are not the `dist` directory itself or the `.git` directory
-          ls -A | grep -v 'dist' | grep -v '^.git$' |
-          while read fd; do
-            cp -r $fd "./dist"
-          done
-
-      - name: 'Render the Markdown documents'
-        working-directory: 'dist'
-        run: |
-          find ./ -type f | grep .md |
-          while read file; do
-            deployment/pandoc.sh "$file" > "${file%???}"".html"
-          done
-
-      - name: 'Remove all raw Markdown documents (HTML documents are already generated)'
-        working-directory: 'dist'
-        run: |
-          find ./ -type f | grep .md |
-          while read file; do
-            rm "$file"
-          done
-
-      - name: 'Fix all `.md` links'
-        working-directory: 'dist'
-        # links are without the `.html` at the end — GH Pages handles it
-        run: |
-          find ./ -type f |
-          while read file; do
-            perl -i -pe 's/(")([^"]+)(\.md")/"$2"/gm' $file
-          done
-
-      - name: 'Rename the main readme file'
-        working-directory: 'dist'
-        run: 'mv readme.html index.html'
+      - name: 'Render the website'
+        uses: 'jerry-sky/vyrow@v0.3'
 
       - name: 'Get current time'
         uses: gerred/actions/current-time@master
@@ -70,14 +34,3 @@ jobs:
           ref: 'gh-pages'
           cwd: './dist/'
           add: '*'
-
-      - name: 'test GH actions'
-        uses: jerry-sky/testing-gh-actions@a-prime
-        with:
-          inp: 'SOME TESTING VARIABLE'
-          working-directory: 'dist'
-
-      - name: 'check ‘test GH actions’'
-        working-directory: 'dist'
-        run: ls -lA && echo "testfile.txt:" && cat testfile.txt && echo "another-testfile.txt:" && cat another-testfile.txt
-        shell: bash
