@@ -1,0 +1,25 @@
+* {
+    font-family: 'Merriweather', serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+code {
+    font-family: 'Fira Code', monospace;
+}
+
+header#title-block-header > .author {
+    font-size: .75em;
+    margin: 0;
+    font-style: italic;
+}
+
+/* make sure authors are separated with commas */
+header#title-block-header > .author > span.author::after {
+    content: ','
+}
+header#title-block-header > .author > span.author:last-child::after {
+    content: ''
+}
