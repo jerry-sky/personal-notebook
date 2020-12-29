@@ -21,7 +21,7 @@ jobs:
           ref: 'gh-pages'
 
       - name: 'Render the website'
-        uses: 'jerry-sky/vyrow@v0.3'
+        uses: 'jerry-sky/vyrow@v0.3.2'
 
       - name: 'Get current time'
         uses: gerred/actions/current-time@master
