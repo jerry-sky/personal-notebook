@@ -9,7 +9,7 @@ author="Jerry Sky"
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         -l|--lang) lang="$2"; shift ;;
-        -A|--author) author="$2" ;;
+        -A|--author) author="$2"; shift ;;
         *) input_file="$1" ;;
     esac
     shift
