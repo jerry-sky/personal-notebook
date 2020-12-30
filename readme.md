@@ -8,6 +8,10 @@ keywords: 'notebook, notes, personal, python, latex, languages, programming, com
 
 ---
 
+View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](https://github.com/jerry-sky/personal-notebook).
+
+---
+
 - [Index](#index)
     - [Main](#main)
     - [Life (Ω)](#life-ω)
