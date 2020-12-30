@@ -18,6 +18,7 @@ keywords: 'bash, config, script, utilities, python3, keyboard, markdown, bash al
 In the same directory as this document there is a file called `setup.sh` which copies various config files into all sorts of locations.
 It's part of the [standard JRS PC Setup](../main/pc-setup.md) to configure the system and its programs.
 Execute it whilst being in the `/config` directory to setup a proper workspace.
+
 ```bash
 ./setup.sh
 ```

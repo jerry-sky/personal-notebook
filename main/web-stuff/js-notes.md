@@ -24,11 +24,13 @@ keywords: 'JavaScript, node, scroll, Samsung'
 ## Parsing numbers in bases other than base-10
 
 To convert a `number` to a string in the target `base` use:
+
 ```javascript
 number.toString(base)
 ```
 
 To parse a `string` containing a number in a given `base` use:
+
 ```javascript
 parseInt(string, base)
 ```

@@ -21,7 +21,6 @@ keywords: 'Deutsch, German, article, translation, Deutsche Welle, dw, analysis, 
     - [2.2. Grammatik](#22-grammatik)
 - [3. Zweiter Absatz](#3-zweiter-absatz)
     - [3.1. Wörter](#31-wörter)
-    - [3.2. Grammatik](#32-grammatik)
 
 ---
 
@@ -75,7 +74,7 @@ keywords: 'Deutsch, German, article, translation, Deutsche Welle, dw, analysis, 
 
 ---
 
-> 26. September eines jeden Jahres
+> 26\. September eines jeden Jahres
 
 **Genitiv**\
 *ein jedes Jahr → eines jeden Jahres*

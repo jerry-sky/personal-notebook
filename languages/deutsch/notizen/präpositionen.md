@@ -8,7 +8,8 @@ keywords: 'Deutsch, German, Präposition, preposition, Dativ, Akkusativ, case, l
 
 ---
 
-## Akkusativ:
+## Akkusativ
+
 - für
 - durch
 - um
@@ -17,7 +18,8 @@ keywords: 'Deutsch, German, Präposition, preposition, Dativ, Akkusativ, case, l
 - entlang
 - bis
 
-## Dat:
+## Dat
+
 - mit
 - aus
 - außer
@@ -29,7 +31,8 @@ keywords: 'Deutsch, German, Präposition, preposition, Dativ, Akkusativ, case, l
 - von
 - [*ab*](https://german.stackexchange.com/a/44118)
 
-## Akk + Dat:
+## Akk + Dat
+
 - in
 - auf
 - vor

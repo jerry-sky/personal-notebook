@@ -29,6 +29,7 @@ keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
 ## Links
 
 ### Useful
+
 - [Creating Realistic Wetmaps](https://youtu.be/f3yzwql_2nw)
 - [NormalMap-Online](http://cpetry.github.io/NormalMap-Online/)
 - [Avoiding pinching when subsurface modeling](https://youtu.be/3rlMzsBWtPY)
@@ -103,6 +104,7 @@ Pie Menus can increase productivity significantly, because of the speed at which
 ## Masking data
 
 To clear sculpt masking data use
+
 ```blender
 Mesh: Clear Sculpt-Mask Data
 ```

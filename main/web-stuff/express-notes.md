@@ -81,6 +81,7 @@ Download example [TypeScript Node Starter *hackathon-style*](https://github.com/
 4. `npm install express`
 5. For every package you should attempt to download the `types` package - e.g. for `express` package install `@types/express` alongside with the `--save-dev` option.
 6. A basic starter script would look like:
+
     ```typescript
     import Express from 'express';
     const app = Express();
@@ -93,19 +94,25 @@ Download example [TypeScript Node Starter *hackathon-style*](https://github.com/
       console.log('Example app listening on port 3000!');
     });
     ```
+
 7. To run the app you need to compile it and run:
+
     ```bash
     tsc && node build/app.js
     ```
+
    or run it through `nodemon` with `ts-node`:
+
    ```bash
    nodemon --watch . ts,json --exec ts-node app.ts
    ```
+
 8. `npm install --save-dev tslint`
 9. Setup a `tslint.json` config file. An example config file with Angular-recommended rules is attached to this document.
 10. Put above commands into `package.json` as `npm` commands.
 
 Sources:
+
 - [An Okta article](https://developer.okta.com/blog/2018/11/15/node-express-typescript)
 - [*An article with questionable solutions*](https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d)
 - *self*
