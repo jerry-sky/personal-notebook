@@ -20,7 +20,7 @@ keywords: 'SAO, text analysis, transcript, episode, series, kanji, Kirito, Asuna
 
 ---
 
-## It’s time for this week’s MMO Stream.
+## It’s time for this week’s MMO Stream
 
 >（司会Ａ）さあ始まりました
 >
@@ -47,7 +47,7 @@ keywords: 'SAO, text analysis, transcript, episode, series, kanji, Kirito, Asuna
 5. 「ＭＭＯストリーム」\
     Romaji: MMO su-to-ri-mu (MMO Stream)
 
-## We began with a promotional video.
+## We began with a promotional video
 
 > まずはＰＶを見てもらいましたが
 
@@ -114,13 +114,13 @@ keywords: 'SAO, text analysis, transcript, episode, series, kanji, Kirito, Asuna
     Meaning: their expectations, their hopes, *their aim*\
     Hiragana: かれ・ら・の・お目・あて
 
-## Sword Art Online!
+## Sword Art Online
 
 > 《ソードアート･オンライン》！
 
 Romaji: sō-do-ā-to o-n-ra-i-n\
 
-## The one at the front of the line waited for three days prior to launch.
+## The one at the front of the line waited for three days prior to launch
 
 > 先頭の人は３日前から並んでたんだって！
 
@@ -152,7 +152,7 @@ Romaji: sō-do-ā-to o-n-ra-i-n\
 7. [だって](https://jisho.org/word/だって)\
     Meaning: *even [for three days] (emphasis)*
 
-## Amazing!
+## Amazing
 
 > すごいね
 
@@ -199,7 +199,7 @@ Romaji: sō-do-ā-to o-n-ra-i-n\
 8. [か](https://www.tofugu.com/japanese-grammar/particle-ka/#for-asking-questions)\
     Role: *makes the sentence a question* + *alternative (‘or’ at the beginning)*
 
-## The whole world is watching.
+## The whole world is watching
 
 > 世界中が大注目
 

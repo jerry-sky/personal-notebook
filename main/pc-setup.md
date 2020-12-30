@@ -29,11 +29,14 @@ keywords: 'bash, linux, configuring, configuration, keyboard, internet, browser,
 2. Cloud $\equiv$ [InSync](https://www.insynchq.com/)
 3. Internet Browser $\equiv$ [Chrome](https://www.google.com/chrome/)
 4. Date format to use in the clock part of the taskbar:
-    ```
+
+    ```txt
     %t%A%t%B %e%t%Y-%m-%d%t %H:%M:%S %t %Z: GMT%z
     ```
+
     Example:
-    ```
+
+    ```txt
     Thursday    December 24    2020-12-24    12:00:01 CET: GMT+0100
     ```
 
@@ -72,7 +75,7 @@ See [«config»](../config/readme.md).
 
 2. Enable Redshift
     1. Install `redshift` if it is not already installed.
-    1. Enable autostart.
+    2. Enable autostart.
 
 3. ~~Install [`snap`](https://snapcraft.io/docs/installing-snap-on-linux-mint)~~ *why*
 
@@ -87,43 +90,51 @@ See [«config»](../config/readme.md).
 
 5. Install VS Code\
     Using
+
     ```sh
     apt list -a code-insiders | less
     ```
+
     and
+
     ```sh
     apt install code-insiders=«version from the list; e.g. “1.48.0-1596120937”»
     ```
+
     to establish what version is currently free of irritating Electron-related issues (e.g. white flashes) and install it.
 
 6. Install Blender
     1. Download it from the [downloads page](https://www.blender.org/download/).
     2. Unpack it:
+
     ```sh
     tar -xf «archive filename»
     ```
+
     1. Move the contents to `/opt/blender`.
     2. Link the executable:
+
     ```sh
     ln -s /opt/blender/blender /usr/bin/blender
     ```
+
     1. Install the [addons](blender-notes.md#addons) if necessary.
 
 7. Install GParted `apt install gparted`
 
-8.  Install the rest of programs from the [software list](software-list.md).
+8. Install the rest of programs from the [software list](software-list.md).
 
 ### Configuring the user experience
 
 1. Disable icons on the desktop.
 
-2.  Install themes and cursor packs
+2. Install themes and cursor packs
     1. Install [Canta theme](https://github.com/vinceliuice/Canta-theme)
         1. *__Important note__: If used with sudo the theme will install in /usr/share/themes, not in ~/.themes - this will allow GUI apps (e.g. Files, Terminal) to use that theme when running in the elevated privileges mode.*
     2. Install icon themes *[how-to](https://snwh.org/paper/download)*
         1. [Flat remix](https://drasite.com/flat-remix )
         2. [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
-          <!-- spellchecker: disable-next-line -->
+            <!-- spellchecker: disable-next-line -->
         3. [Quintom Cursors](https://www.gnome-look.org/p/1329799/)
 
 3. Adjust mouse *(and touchpad)* settings.
@@ -138,13 +149,15 @@ See [«config»](../config/readme.md).
 ### Keyboard layouts
 
 1. Install [IBus](https://forums.linuxmint.com/viewtopic.php?t=160272) to allow using non-western keyboard layouts and allow using more than 4 keyboard layouts at once.
-    1.  Should any issues arise, follow instructions provided in [this askubuntu.com answer](https://askubuntu.com/a/793046).
+    1. Should any issues arise, follow instructions provided in [this askubuntu.com answer](https://askubuntu.com/a/793046).
 
 2. For laptops with no dedicated `Menu` key you need to swap `Control_R` with `Menu` to use the `Control_R` key as the `Menu` key:
+
     ```bash
     xmodmap -e "keycode 105 = Menu"
     xmodmap -e "keycode 135 = Control_R"
     ```
+
     To view list of all keycodes use `xmodmap -pk`.
     To make this behaviour persistent use [config](../config/readme.md) found in this repository.
 
@@ -159,4 +172,4 @@ See [«config»](../config/readme.md).
 
 ### Other system settings
 
-1.  [Setup automount for the rest of the drives present in the system.](https://fossbytes.com/how-to-auto-mount-partitions-on-boot-in-linux-easily/)
+1. [Setup automount for the rest of the drives present in the system.](https://fossbytes.com/how-to-auto-mount-partitions-on-boot-in-linux-easily/)

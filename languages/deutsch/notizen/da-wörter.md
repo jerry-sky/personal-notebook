@@ -12,25 +12,25 @@ keywords: 'German, Deutsch, da, Wörter, examples, stand-in, sentence conjunctio
 
 [Quelle][Artikel]
 
-- [Stand-ins](#stand-ins)
-    - [Examples](#examples)
-    - [Anti examples](#anti-examples)
-- [Sentence conjunction (Präpositionalobjekt)](#sentence-conjunction-präpositionalobjekt)
-    - [Examples](#examples-1)
+- [1. Stand-ins](#1-stand-ins)
+    - [1.1. Examples](#11-examples)
+    - [1.2. Anti examples](#12-anti-examples)
+- [2. Sentence conjunction (Präpositionalobjekt)](#2-sentence-conjunction-präpositionalobjekt)
+    - [2.1. Examples](#21-examples)
 
 ---
 
-## Stand-ins
+## 1. Stand-ins
 
 First use case for these “da” words is *stand-ins* — simple reference to an object that was mentioned before in the sentence or in the previous sentence.
 
-### Examples
+### 1.1. Examples
 
 1. *Ich träume davon. (der Party)*
 2. *Ich denke daran. (meinen Termin)*
 3. *Ich freue mich darauf. (das Festival)*
 
-### Anti examples
+### 1.2. Anti examples
 
 *“Da” words are **only** used when in reference to non-living beings: e.g. people and animals are not subject to these “da” words.*
 
@@ -40,13 +40,13 @@ First use case for these “da” words is *stand-ins* — simple reference to a
 
 ---
 
-## Sentence conjunction (Präpositionalobjekt)
+## 2. Sentence conjunction (Präpositionalobjekt)
 
 Second use case for these “da” words is to connect two sentences. In other words, the word that needs *eine Präposition* is replaced with a sentence and the preposition serves the function of a conjunction between these two sentences. This preposition is a *pointer* that points to the next sentence.
 
 The following examples clear any possible confusion about these *Präpositionalobjekten*.
 
-### Examples
+### 2.1. Examples
 
 1. *Maria wartet **darauf**, dass der Bus kommt.*\
     Maria waits **for** the bus to come.

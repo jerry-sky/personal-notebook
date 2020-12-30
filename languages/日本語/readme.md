@@ -56,4 +56,4 @@ keywords: 'Japanese, language, 日本語, Tae Kim, text analysis, resources, not
 ## Text analysis
 
 - **ソードアート・オンライン**
-  - [Season 1, Episode 1](text-analysis/ソードアート・オンライン-season-1-episode-1.md)
+    - [Season 1, Episode 1](text-analysis/ソードアート・オンライン-season-1-episode-1.md)

@@ -18,9 +18,11 @@ keywords: 'VS Code, code, visual studio code, settings, sync, java'
 *To keep the settings synced use this addon.*
 
 Install:
+
 ```bash
 ext install Shan.code-settings-sync
 ```
+
 To download/ upload the settings from/ to the Gist use: `SHIFT + ALT + U/D`.
 
 ---

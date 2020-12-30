@@ -20,15 +20,18 @@ keywords: 'Deutsch, German, grammar, verbs, vocabulary, text analysis, resources
 ## Resources
 
 ### News articles
+
 - [NachrichtenLeicht](https://www.nachrichtenleicht.de)
 - [Deutsche Welle](https://www.dw.com/de)
 
 ### Toms Deutschseite
+
 - [Toms Deutschseite](http://www.deutschseite.de/inhalt.html)
 
 ---
 
 ## Notizen
+
 - [**Präpositionen**](notizen/präpositionen.md)
 - [**„Zu“ Regeln**](notizen/zu-regeln.md)
 - [Rektion](notizen/rektion.md)

@@ -1,0 +1,36 @@
+{
+    "heading-style": {
+        "style": "atx"
+    },
+    "ul-style": {
+        "style": "dash"
+    },
+    "ul-indent": {
+        "indent": 4
+    },
+    "no-multiple-blanks": {
+        "maximum": 2
+    },
+    "line-length": false,
+    "ol-prefix": {
+        "style": "ordered"
+    },
+    "no-inline-html": {
+        "allowed_elements": [
+            "img",
+            "details",
+            "summary"
+        ]
+    },
+    "hr-style": {
+        "style": "---"
+    },
+    // emphasis doesn’t necessarily imply heading
+    "no-emphasis-as-heading": false,
+    "code-block-style": {
+        "style": "fenced"
+    },
+    "code-fence-style": {
+        "style": "backtick"
+    }
+}

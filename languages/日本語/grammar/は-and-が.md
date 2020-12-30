@@ -10,8 +10,6 @@ keywords: 'ha, ga, particle, Japanese, grammar, sentence, subject, example'
 
 [source]: http://www.guidetojapanese.org/learn/difference-between-wa-and-ga/#Ok_so_what_does_mean
 
-- [Role of は](#role-of-は)
-    - [Example of は usage](#example-of-は-usage)
 - [Role of が](#role-of-が)
     - [Example of が usage](#example-of-が-usage)
 

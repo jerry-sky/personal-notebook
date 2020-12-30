@@ -13,6 +13,7 @@ keywords: 'Deutsch, German, article, translation, analysis, Analyse, Artikel, ma
 [Quelle][Artikel]
 
 ## Titel
+
 >Die Hitzewelle geht weiter und der Deutsche Wetterdienst warnt zudem vor Unwettern am Nachmittag, in einigen Regionen werden schwere Gewitter mit Hagel und Sturm erwartet. Gegen Mittag gab es die erste amtliche Warnung vor starkem Gewitter.
 
 The heatwaves are keep coming and the German weather services warn of bad weather in the afternoon, in some regions very heavy thunderstorms with hail are expected. Towards noon an official warning of heavy thunderstorms was issued.
@@ -200,6 +201,7 @@ At 3:12PM there was already „thunderstorm warning for heavy thunderstorm with 
 *erweitern etwas* **+ Akk.**
 
 ## Dritte Absatz
+
 > **Babybegrüßungstag abgesagt**\
 > Wegen Unwettergefahr hat das Amt Burg im Spreewald aus Sicherheitsgründen das heutige Fest für Eltern und ihre Babys abgesagt. Das Treffen an einem Sportlerheim in Dissen-Striesow (Spree-Neiße) werde verschoben, teilte das Amt am Mittwochmittag mit. Zu dem "Babybegrüßungstag" hatte das Amt nach eigenen Angaben Eltern mit rund 50 Babys aus umliegenden Dörfern geladen. Bei dem Fest sollte zum Beispiel über Kita-Angebote informiert werden.
 

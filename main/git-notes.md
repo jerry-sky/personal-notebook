@@ -26,6 +26,7 @@ Follow the tutorial [here](https://help.github.com/en/github/authenticating-to-g
 ## Fix displaying file names with unicode characters in them
 
 For some odd reason `git` doesn't properly display non-ASCII characters (exotic characters e.g. ö or ę) in file and directory names. To fix it execute:
+
 ```bash
 git config --global core.quotePath false
 ```

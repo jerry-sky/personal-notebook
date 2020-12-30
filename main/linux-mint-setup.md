@@ -33,7 +33,7 @@ These settings are specific to Linux Mint system. For more see [PC Setup](pc-set
 
 5. Disable auto-rotate ( Settings $\to$ General )
 
-6.  Disable *'Global hotkey for cycling through thumbnail menus'* from Grouped window list. To access that settings panel, click on an icon of multiple windows in the panel, then Preferences, then Configure. [Details here](https://forums.linuxmint.com/viewtopic.php?t=291898)
+6. Disable *'Global hotkey for cycling through thumbnail menus'* from Grouped window list. To access that settings panel, click on an icon of multiple windows in the panel, then Preferences, then Configure. [Details here](https://forums.linuxmint.com/viewtopic.php?t=291898)
 
 7. Change panel opened programs viewing mode to show all titles.
 

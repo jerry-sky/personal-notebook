@@ -10,7 +10,7 @@ keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customizat
 
 - [Keeping some script/program alive](#keeping-some-scriptprogram-alive)
 - [ANSI Text Attributes](#ansi-text-attributes)
-  - [Text effects](#text-effects)
+    - [Text effects](#text-effects)
 - [Customizing `bash` prompt](#customizing-bash-prompt)
 - [Redirecting `stdout` to `stderr`](#redirecting-stdout-to-stderr)
 - [Downloading a whole website using `wget`](#downloading-a-whole-website-using-wget)
@@ -23,9 +23,11 @@ keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customizat
 If you want to keep some script/program alive (e.g. a node.js script) you need to use `crontab`.
 
 The command
+
 ```bash
 crontab -e
 ```
+
 opens a crontab jobs file in the default editor that contains all the cron jobs that are being run for current user.
 
 You can add a reference to a bash script that runs desired script/program or normal reference to the script/program that needs to be run. You can set the time conditions confining the moments in which desired script/program will be run.
@@ -113,15 +115,19 @@ Using `wget` you can download a whole webpage with all of the resources that are
 It can be a very useful tool for archiving websites.
 
 Executing
+
 ```bash
 wget -r -p -U Mozilla --wait=1 --limit-rate=2M --tries=3 -l 1 https://example.com
 ```
+
 will download the webpage and all pdfs, images and other resources that appear on that webpage to a folder called `example.com`.
 
 There is a possibility that above command will not work on first try. For example the HTML file containing the markup may have been downloaded, but the resources that appear on that webpage couldn't have been downloaded. Then, using this website in HTML (or otherwise) form we can download the rest of the resources.
+
 ```bash
 wget -r -p -U Mozilla --wait=1 --limit-rate=2M --tries=3 -l 1 --base=https://example.com/subpage --force-html --relative -i example.com/subpage/index.html
 ```
+
 Executing above command will download all resources that appear on this subpage. All relative links will be preceded with the URL provided with the `--base` option.
 
 ---
@@ -129,17 +135,22 @@ Executing above command will download all resources that appear on this subpage.
 ## Permanently setting the DNS server
 
 First, we need to install the `resolvconf` package:
+
 ```bash
 sudo apt update
 sudo apt install resolvconf
 ```
+
 Now, let's add the IP address of the desired DNS server.\
 Edit following file:
+
 ```bash
 sudo nvim /etc/resolvconf/resolv.conf.d/head
 ```
+
 adding line below to make `1.1.1.1` the DNS server:
-```
+
+```txt
 nameserver 1.1.1.1
 ```
 

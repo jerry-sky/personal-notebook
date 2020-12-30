@@ -28,6 +28,7 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 ## Index
 
 ### Main
+
 - [**PC Setup**](main/pc-setup.md)
 - [Software List](main/software-list.md)
 - [Config](config/readme.md)
@@ -44,29 +45,34 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 - [Colours](main/colour-notes.md)
 
 ### Life (Ω)
+
 - [Thoughts (Ω)](private/life/thoughts/readme.md)
 - [Books (Ω)](private/life/books/readme.md)
 - [Journal (Ω)](private/life/journal/readme.md)
 - [Life Programming (Ω)](private/life/life-programming/readme.md)
 
 ### Languages
+
 - [English](languages/english/readme.md)
 - [German](languages/deutsch/readme.md)
 - [French](languages/français/readme.md)
 - [Japanese](languages/日本語/readme.md)
 
 ### Ideas (Ω)
+
 - [Calendar app (Ω)](private/ideas/calendar-app.md)
 - [Todo app (Ω)](private/ideas/todo-app.md)
 - [Notes app (Ω)](private/ideas/notes-app.md)
 
 ### The arbitrary collection
+
 - [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
 - [Music](the-arbitrary-collection/arbitrary-music-things.md)
 - [Hilarious IT stories](the-arbitrary-collection/hilarious-it-stories.md)
 - [2D Animation](the-arbitrary-collection/2d-animation.md)
 
 ### Adobe
+
 - [After Effects](adobe/after-effects.md)
 - [Illustrator](adobe/illustrator.md)
 
@@ -79,6 +85,7 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 ## Some remarks
 
 The reason this repository came to exist is all the shortcomings of OneNote. Here’s a couple:
+
 - *very poor performance of the browser-based app*
 - *no Linux-based app*
 - *proprietary technology*
@@ -92,3 +99,5 @@ Some Markdown renderers allow $\LaTeX$ in Markdown documents — e.g. the [Markd
 
 When it comes to graph drawing or any type of graphical figures it can be done with OneNote. However, if it can be done with e.g. GIMP or any other graphics program *OneNote should not be used*.\
 An alternative to this is to use `code blocks`. Characters such as `\`, `|`, `/`, `_`, `<`, `>`, `／`, `＼`, `＿`, `ー`, `「`, `」`, `＜`, and `＞` (Japanese characters) all can be used as strokes while regular latin alphabet characters as e.g. graph nodes.
+
+---

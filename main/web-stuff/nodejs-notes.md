@@ -31,6 +31,7 @@ RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ```
+
 Obviously, you would replace the `**PORT**` fields with actual port on which the desired NodeJS app runs.
 
 For WebSocket support use:
@@ -40,6 +41,7 @@ RewriteCond %{REQUEST_URI} ^/socket.io [NC]
 RewriteCond %{QUERY_STRING} transport=websocket [NC]
 RewriteRule /(.*) ws://localhost:**PORT**/$1 [P,L]
 ```
+
 Again, replace `**PORT**` with an actual port.
 
 [Original Source *in polish*](http://web.archive.org/web/20180625042814/https://www.smarthost.pl/instalacja-i-uruchomienie-nodejs-na-koncie-hostingowym-smarthost)
