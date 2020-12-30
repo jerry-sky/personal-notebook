@@ -18,6 +18,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 </head>
 <body>
 <header id="title-block-header">
@@ -70,7 +72,7 @@
 <p>To get notifications about a file being uploaded use <code>reportProgress: true</code> in any <code>HTTP</code> method's additional options object.</p>
 <p><a href="https://stackoverflow.com/a/54899930/4249875">Source</a></p>
 <h2 id="the-.htaccess-file">The <code>.htaccess</code> file</h2>
-<p>For serving a static Angular app on a standard Apache server you need to setup a <code>.htaccess</code> file <a href="web-errors.md#corb--cors">like so</a>.</p>
+<p>For serving a static Angular app on a standard Apache server you need to setup a <code>.htaccess</code> file <a href="web-errors#corb--cors">like so</a>.</p>
 <p><a href="https://stackoverflow.com/a/22740184/4249875">StackOverflow answer without <code>https</code> CORB issue solution</a></p>
 <h2 id="tracking-many-files">Tracking many files</h2>
 <p>When dealing with multiple Angular projects or Angular projects mixed with some other opened at once the system can be overwhelmed with the amount of files to track as the code editor is trying to observe every single file in all of the projects. The solution seems to be to alter a default number of files the system is allowed to track.</p>
