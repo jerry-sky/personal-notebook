@@ -25,7 +25,7 @@ jobs:
         run: perl -i -pe 's/^.*\(Ω\).*$//gmi' "readme.md"
 
       - name: 'Render the website'
-        uses: 'jerry-sky/vyrow@v0.4'
+        uses: 'jerry-sky/vyrow@v0.5'
 
       - name: 'Get current time'
         uses: gerred/actions/current-time@master
