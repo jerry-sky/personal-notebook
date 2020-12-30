@@ -40,10 +40,10 @@ keywords: 'notebook, notes, personal, python, latex, languages, programming, com
 - [Colours](main/colour-notes.md)
 
 ### Life (Ω)
-- [Thoughts](private/life/thoughts/readme.md)
-- [Books](private/life/books/readme.md)
-- [Journal](private/life/journal/readme.md)
-- [Life Programming](private/life/life-programming/readme.md)
+- [Thoughts (Ω)](private/life/thoughts/readme.md)
+- [Books (Ω)](private/life/books/readme.md)
+- [Journal (Ω)](private/life/journal/readme.md)
+- [Life Programming (Ω)](private/life/life-programming/readme.md)
 
 ### Languages
 - [English](languages/english/readme.md)
@@ -52,9 +52,9 @@ keywords: 'notebook, notes, personal, python, latex, languages, programming, com
 - [Japanese](languages/日本語/readme.md)
 
 ### Ideas (Ω)
-- [Calendar app](private/ideas/calendar-app.md)
-- [Todo app](private/ideas/todo-app.md)
-- [Notes app](private/ideas/notes-app.md)
+- [Calendar app (Ω)](private/ideas/calendar-app.md)
+- [Todo app (Ω)](private/ideas/todo-app.md)
+- [Notes app (Ω)](private/ideas/notes-app.md)
 
 ### The arbitrary collection
 - [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
