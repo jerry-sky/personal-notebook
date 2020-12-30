@@ -14,6 +14,43 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="/style.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
@@ -51,17 +88,16 @@
 </ul>
 <h2 id="deploying-an-app">Deploying an app</h2>
 <ol style="list-style-type: decimal">
-<li>Compile the Angular app <code>bash   ng build --prod</code></li>
-</ol>
-<p><del>2. Now, setup a node.js server using <a href="https://www.npmjs.com/package/express-history-api-fallback">NPM package <code>express-history-api-fallback</code></a></del></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Put it on a simple Apache server or use <a href="https://angular.io/guide/universal"><code>angular-universal</code></a></li>
+<li><p>Compile the Angular app</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">ng</span> build --prod</code></pre></div></li>
+<li><p>Put it on a simple Apache server or use <a href="https://angular.io/guide/universal"><code>angular-universal</code></a></p></li>
 </ol>
 <h2 id="installing-bootstrap">Installing Bootstrap</h2>
 <ol style="list-style-type: decimal">
-<li><code>bash    npm install bootstrap</code></li>
-<li>Modify <code>$WORKING_DIRECTORY/angular.json</code>: <code>json    &quot;styles&quot;: [  &quot;node_modules/bootstrap/dist/css/bootstrap.min.css&quot;,  &quot;styles.css&quot;    ]</code></li>
+<li><p><code>bash    npm install bootstrap</code></p></li>
+<li><p>Modify <code>$WORKING_DIRECTORY/angular.json</code>:</p></li>
 </ol>
+<p><code>json    &quot;styles&quot;: [      &quot;node_modules/bootstrap/dist/css/bootstrap.min.css&quot;,      &quot;styles.css&quot;    ]</code></p>
 <h2 id="ngmodel-input-element-inside-ngfor">NgModel input element inside ngFor</h2>
 <p>Nested <code>ngModel</code> input element inside <code>ngFor</code> need to refer to a value inside an <code>Object</code>. If it isn't wrapped in an <code>Object</code> Angular won't compile the app for some odd reason.</p>
 <h2 id="router-vs.-location"><code>Router</code> vs. <code>Location</code></h2>
@@ -82,6 +118,58 @@
 <li>Execute <code>sudo sysctl -p</code>. <!-- spell-checker: disable-next-line --></li>
 <li>View <code>/proc/sys/fs/inotify/max_user_watches</code> and verify that the output number is equals to <code>524288</code>.</li>
 </ol>
+<hr />
+<h2 id="testing-components-that-contain-angular-material-components">Testing components that contain Angular Material components</h2>
+<p>When testing a component with some components from Angular Material (e.g. <code>MatButton</code> or <code>MatCard</code>) you have to include appropriate Angular Material modules to your tests.<br />
+For example, when the component contains a <code>mat-button</code> you should add to the <code>imports</code> of the test a reference to the <code>MatButtonModule</code>:</p>
+<pre class="ts"><code>beforeEach(async(() =&gt; {
+    TestBed.configureTestingModule({
+        imports: [
+            MatButtonModule, // said reference
+        ],
+        declarations: [
+            ...
+        ],
+    }).compileComponents();
+}));</code></pre>
+<p>otherwise, the test will complain about unidentifiable components.</p>
+<p>Secondly, if it is necessary to test the interaction with an Angular Material component (instead of e.g. testing only the function that is invoked by this component) it is advised to use Angular Material's component harnesses. This method prevents from possible issues due to change in the internal API of Angular Material.</p>
+<blockquote>
+<p><em>“Relying on implementation details of third party libraries is cumbersome because you are vulnerable to refactorings and you need to understand implementation details.”</em></p>
+</blockquote>
+<p>Instead of accessing the components in the HTML through invoking the <code>query</code> method use mentioned earlier Angular Material's component harnesses.</p>
+<p>Setup:</p>
+<pre class="ts"><code>let loader: HarnessLoader;
+let component: [...];
+
+beforeEach(() =&gt; {
+    fixture = TestBed.createComponent([...]);
+    component = fixture.componentInstance;
+    loader = TestBedHarnessEnvironment.loader(fixture); // (1)
+    fixture.detectedChanges();
+})</code></pre>
+<p>Here we are preparing the <code>TestBed</code> for our testing purposes. Notice the <code>(1)</code> additional line that loads the harness environment.</p>
+<p>Now we can test Angular Material components. Here is an example from the <a href="https://medium.com/@kevinkreuzer/test-your-components-using-angular-materials-component-harnesses-f9c1deebdf5d">source article</a>:</p>
+<pre class="ts"><code>it(&#39;should filter out the alive characters if we set filter to dead&#39;, async () =&gt; {
+
+    const deadRadioButton = await loader.getHarness&lt;MatRadioButtonHarness&gt;(
+        MatRadioButtonHarness.with({
+            label: &#39;Dead&#39;
+        })
+    );
+    const table = await loader.getHarness&lt;MatTableHarness&gt;(MathTableHarness);
+
+    await deadRadioButton.check();
+    const rows = await table.getRows();
+    expect(rows.length).toBe(5);
+
+});</code></pre>
+<p>Sources:</p>
+<ul>
+<li><a href="https://material.angular.io/guide/using-component-harnesses">Angular Material guide on component harnesses</a></li>
+<li><a href="https://medium.com/@kevinkreuzer/test-your-components-using-angular-materials-component-harnesses-f9c1deebdf5d">The original article on Medium by Kevin Kreuzer</a></li>
+</ul>
+<hr />
 <h2 id="using-anchor-links">Using anchor links</h2>
 <p>Angular has the anchor links disabled by default (at least when the routing is enabled).</p>
 <p>Refactoring the module responsible for routing in a given app as follows:</p>

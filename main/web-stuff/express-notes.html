@@ -147,12 +147,20 @@ app.listen(3000, () =&gt; {
   console.log(&#39;Example app listening on port 3000!&#39;);
 });</code></pre></li>
 <li><p>To run the app you need to compile it and run:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">tsc</span> <span class="kw">&amp;&amp;</span> <span class="ex">node</span> build/app.js</code></pre></div>
-or run it through <code>nodemon</code> with <code>ts-node</code>: <code>bash    nodemon --watch . ts,json --exec ts-node app.ts</code></li>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">tsc</span> <span class="kw">&amp;&amp;</span> <span class="ex">node</span> build/app.js</code></pre></div></li>
+</ol>
+<p>or run it through <code>nodemon</code> with <code>ts-node</code>:</p>
+<p><code>bash    nodemon --watch . ts,json --exec ts-node app.ts</code></p>
+<ol start="8" style="list-style-type: decimal">
 <li><code>npm install --save-dev tslint</code></li>
 <li>Setup a <code>tslint.json</code> config file. An example config file with Angular-recommended rules is attached to this document.</li>
-<li><p>Put above commands into <code>package.json</code> as <code>npm</code> commands.</p></li>
+<li>Put above commands into <code>package.json</code> as <code>npm</code> commands.</li>
 </ol>
-<p>Sources: - <a href="https://developer.okta.com/blog/2018/11/15/node-express-typescript">An Okta article</a> - <a href="https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d"><em>An article with questionable solutions</em></a> - <em>self</em></p>
+<p>Sources:</p>
+<ul>
+<li><a href="https://developer.okta.com/blog/2018/11/15/node-express-typescript">An Okta article</a></li>
+<li><a href="https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d"><em>An article with questionable solutions</em></a></li>
+<li><em>self</em></li>
+</ul>
 </body>
 </html>

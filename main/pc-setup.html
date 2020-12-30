@@ -90,9 +90,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Cloud <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≡</mo></mrow><annotation encoding="application/x-tex">\equiv</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46375em;vertical-align:0em;"></span><span class="mrel">≡</span></span></span></span> <a href="https://www.insynchq.com/">InSync</a></li>
 <li>Internet Browser <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≡</mo></mrow><annotation encoding="application/x-tex">\equiv</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46375em;vertical-align:0em;"></span><span class="mrel">≡</span></span></span></span> <a href="https://www.google.com/chrome/">Chrome</a></li>
 <li><p>Date format to use in the clock part of the taskbar:</p>
-<pre><code>%t%A%t%B %e%t%Y-%m-%d%t %H:%M:%S %t %Z: GMT%z</code></pre>
+<pre class="txt"><code>%t%A%t%B %e%t%Y-%m-%d%t %H:%M:%S %t %Z: GMT%z</code></pre>
 <p>Example:</p>
-<pre><code>Thursday    December 24    2020-12-24    12:00:01 CET: GMT+0100</code></pre></li>
+<pre class="txt"><code>Thursday    December 24    2020-12-24    12:00:01 CET: GMT+0100</code></pre></li>
 </ol>
 <h2 id="guide">Guide</h2>
 <h3 id="installing-the-os">Installing the OS</h3>
@@ -151,12 +151,16 @@ Using</p>
 <li>Install Blender
 <ol style="list-style-type: decimal">
 <li>Download it from the <a href="https://www.blender.org/download/">downloads page</a>.</li>
-<li><p>Unpack it:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">tar</span> -xf «archive filename»</code></pre></div></li>
+<li>Unpack it:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">tar</span> -xf «archive filename»</code></pre></div>
+<ol style="list-style-type: decimal">
 <li>Move the contents to <code>/opt/blender</code>.</li>
-<li><p>Link the executable:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ln</span> -s /opt/blender/blender /usr/bin/blender</code></pre></div></li>
-<li><p>Install the <a href="blender-notes#addons">addons</a> if necessary.</p></li>
+<li>Link the executable:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ln</span> -s /opt/blender/blender /usr/bin/blender</code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Install the <a href="blender-notes#addons">addons</a> if necessary.</li>
 </ol></li>
 <li><p>Install GParted <code>apt install gparted</code></p></li>
 <li><p>Install the rest of programs from the <a href="software-list">software list</a>.</p></li>

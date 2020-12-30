@@ -150,7 +150,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>It is important to note that defining the argument as optional using the <code>?</code> symbol won’t work.</p>
 <pre class="ts"><code>constructor(example?: Partial&lt;Example&gt;) {...}</code></pre>
 <p>If the <code>constructor</code> is defined as above then creating a new object (<code>new Example()</code>) will result in an error of a <code>TypeError</code>:</p>
-<pre><code>TypeError: Cannot read property &#39;...&#39; of undefined</code></pre>
+<pre class="log"><code>TypeError: Cannot read property &#39;...&#39; of undefined</code></pre>
 <p>as the argument object hasn’t been provided.<br />
 <strong>Setting the default value to <code>{}</code> resolves this issue.</strong></p>
 <h2 id="extracting-a-property-from-a-derived-class-a-proposal">Extracting a property from a derived class (a proposal)</h2>

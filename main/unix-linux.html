@@ -70,8 +70,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <hr />
 <ul>
 <li><a href="#keeping-some-scriptprogram-alive">Keeping some script/program alive</a></li>
-<li><a href="#ansi-text-attributes">ANSI Text Attributes</a></li>
+<li><a href="#ansi-text-attributes">ANSI Text Attributes</a>
+<ul>
 <li><a href="#text-effects">Text effects</a></li>
+</ul></li>
 <li><a href="#customizing-bash-prompt">Customizing <code>bash</code> prompt</a></li>
 <li><a href="#redirecting-stdout-to-stderr">Redirecting <code>stdout</code> to <code>stderr</code></a></li>
 <li><a href="#downloading-a-whole-website-using-wget">Downloading a whole website using <code>wget</code></a></li>
@@ -335,7 +337,7 @@ Every time you insert an ANSI escape sequence wrap it inside <code>\[«ANSI esca
 Edit following file:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> nvim /etc/resolvconf/resolv.conf.d/head</code></pre></div>
 <p>adding line below to make <code>1.1.1.1</code> the DNS server:</p>
-<pre><code>nameserver 1.1.1.1</code></pre>
+<pre class="txt"><code>nameserver 1.1.1.1</code></pre>
 <p><a href="https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/">Source</a></p>
 <hr />
 </body>

@@ -36,8 +36,13 @@ function gph() {
     read
     git push "$@" "$(git remote)" "$(git branch --show-current)"
 }
-alias gpl="git pull"
-alias gplr="git pull --rebase"
+function gpl() {
+    printf "\033[1;7m pulling from $(git remote)/$(git branch --show-current) \033[0m\n"
+    printf "\033[1;38;5;249m press RETURN to continue \033[0m"
+    # give user change to abort pulling
+    read
+    git pull --rebase "$@" "$(git remote)" "$(git branch --show-current)"
+}
 alias gf="git fetch"
 alias gdf="git diff HEAD"
 alias gdfst="git diff HEAD --staged"
