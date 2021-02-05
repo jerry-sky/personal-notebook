@@ -2,7 +2,6 @@
 from sys import stdin, exit, argv
 from config_entries.config_entries import config_entries
 from config_entries.config_entry import Status, ConfigEntry
-import pathlib
 import os
 
 EXIT_MESSAGE = '\033[3mbye\033[0m'
@@ -14,13 +13,16 @@ UNKNOWN_STATUS_CHARACTER = '\033[38;2;242;234;78m?'
 INSTALLED = '\033[1minstalled\033[0m'
 ABORTED = '\033[1maborted\033[0m'
 UNINSTALLED = '\033[1muninstalled\033[0m'
-REINSTALLED = '\033[1m(re)installed\033[0m'
+UNCHANGED = '\033[1munchanged\033[0m'
 
 # first see which command is the longest to adjust the space padding for the other commands
 COMMAND_LENGTH = max([len(ce.shorthand) for ce in config_entries])
 
 
 def print_available_options():
+    '''
+    Prints all available entries as a list.
+    '''
 
     # print available config entries
     print('\n\033[1mAvailable configs:\033[0m')
@@ -28,7 +30,7 @@ def print_available_options():
         print_entry(ce)
 
     print(
-        '\nType the [ commands in brackets ] you want to execute splitted with whitespace or type `quit` to terminate this program.\n'
+        '\nType the [ commands in brackets ] you want to execute splitted with whitespace or input `^D` to terminate this program.\n'
         + 'Type `l`, or `list` to view all available commands.\n'
     )
     print(
@@ -41,6 +43,9 @@ def print_available_options():
 
 
 def print_entry(ce: ConfigEntry) -> None:
+    '''
+    Prints all information about given entry.
+    '''
     # check if the entry has been installed
     is_installed = NOT_INSTALLED_CHARACTER
     if ce.is_installed() == Status.Installed:
@@ -54,90 +59,116 @@ def print_entry(ce: ConfigEntry) -> None:
             + '\033[0m \033[38;5;244m→\033[0m \033[38;5;205m' + ce.description + '\033[0m')
 
 
-def entry_execute(ce: ConfigEntry) -> bool:
+def execute_entry(ce: ConfigEntry) -> bool:
+    '''
+    Executes the function(s) provided by the given entry.
+    '''
     try:
-        ce.execute()
+        if type(ce.execute) == list:
+            for c in ce.execute:
+                c()
+        else:
+            ce.execute()
         return True
+
     except Exception as e:
         print(command + ': ' + str(e))
         return False
 
 
-def ask_for_input() -> str:
+def ask_for_confirmation(msg: str) -> bool:
+    '''
+    Requires an explicit binary input from the user.
+
+    The user needs to input either `y` or `n`.
+    '''
+    y = 'y'
+    n = 'n'
+
+    print(msg + ': y|n')
+
     i = ''
-    try:
-        i = input()
-    except EOFError:
-        print(EXIT_MESSAGE)
-        exit(0)
-    return i
+    while i not in [y, n]:
+        try:
+            i = input()  # [:-1] # remove the newline at the end
+        except EOFError:
+            print(EXIT_MESSAGE)
+            exit(0)
+
+    return i == y
+
 
 if __name__ == '__main__':
-
-    config_entries_shorthands = list(
-        map(lambda x: x.shorthand, config_entries))
-
-    _exit = False
 
     if '-i' in argv:
         # interactive mode
         print('\033[1mInteractive mode')
 
         for ce in config_entries:
-
+            # for each entry:
+            # print its information
             print_entry(ce)
+
+            # give user a choice to install/uninstall/reinstall the entry
             if ce.is_installed() == Status.NotInstalled:
                 # entry is not installed
-                print('press RETURN to install')
-                line = ask_for_input()
-                if line == '':
+                if ask_for_confirmation('Install?'):
                     print(INSTALLED)
-                    entry_execute(ce)
+                    execute_entry(ce)
                 else:
                     print(ABORTED)
+
             elif ce.is_installed() == Status.Installed:
                 # entry is installed
-                print('type u and press RETURN to uninstall')
-                line = ask_for_input()
-                if line == 'u':
+                if ask_for_confirmation('Keep installed?'):
                     print(UNINSTALLED)
-                    entry_execute(ce)
+                    execute_entry(ce)
                 else:
                     print(ABORTED)
-            else: # Status.Unknown
-                print('type i and press RETURN to (re)install')
-                line = ask_for_input()
-                if line == 'i':
-                    print(REINSTALLED)
-                    entry_execute(ce)
+
+            else:  # Status.Unknown
+                if ask_for_confirmation('Keep entry’s state?'):
+                    print(UNCHANGED)
+                    execute_entry(ce)
                 else:
                     print(ABORTED)
 
     else:
+        # list mode
+
+        # premap all entries with their respective shorthands
+        config_entries_shorthands = list(
+            map(lambda x: x.shorthand, config_entries))
+
         print_available_options()
 
         for line in stdin:
+            # analyze every line of the standard input
+
             commands = line.split()
 
             count = 0
             for command in commands:
+                # for every command:
 
                 if command in config_entries_shorthands:
+                    # the command refers to one of the entries on the list
                     index = config_entries_shorthands.index(command)
-                    count += entry_execute(config_entries[index])
+                    count += execute_entry(config_entries[index])
 
-                elif command in ['quit', 'q']:
-                    _exit = True
                 elif command in ['list', 'l', 'a']:
+                    # user wants to see all available entries
                     print_available_options()
+
                 else:
+                    # unrecognized command given
                     print(command + ': unknown command')
 
             if count > 0:
+                # indicate number of successfully ran operations
                 print('\033[38;5;41m' + str(count)
                       + '\033[38;5;248m operation' + ('s' if count != 1 else '') + ' performed successfully\033[0m')
-            if _exit:
-                break
 
+    # bye
     print(EXIT_MESSAGE)
     exit(0)
