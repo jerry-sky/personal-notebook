@@ -65,11 +65,11 @@ alias gstha="git stash apply"
 alias gsthl="git stash list"
 
 # VS Code shortcuts
-alias ccx="code . && exit"
-alias c="code"
-alias ch="code ."
+alias ccx="code-insiders . && exit"
+alias c="code-insiders"
+alias ch="code-insiders ."
 function cx() {
-  code $@ && exit
+  code-insiders $@ && exit
 }
 
 # Nemo (file explorer) aliases
