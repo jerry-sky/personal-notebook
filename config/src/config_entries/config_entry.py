@@ -1,4 +1,4 @@
-from typing import NamedTuple
+from typing import NamedTuple, Union, List
 from types import FunctionType
 from dataclasses import dataclass
 from enum import Enum
@@ -21,5 +21,5 @@ class ConfigEntry:
 
     description: str
     shorthand: str
-    execute: FunctionType
+    execute: Union[FunctionType, List[FunctionType]]
     is_installed: FunctionType = lambda: Status.Unknown

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/${USER}/.audloop
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name=Audio Loopback
+X-GNOME-Autostart-Delay=3
