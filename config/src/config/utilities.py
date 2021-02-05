@@ -1,6 +1,6 @@
 from typing import List, Tuple
 import os
-from config_entries.config_entry import ConfigEntry
+from config.config_entry import ConfigEntry
 
 
 def SCRIPT_INITIATOR(source_file, target_file):

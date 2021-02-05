@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from sys import stdin, exit, argv
-from config_entries.config_entries import config_entries
-from config_entries.config_entry import Status, ConfigEntry
+from config.config_entries import config_entries
+from config.config_entry import Status, ConfigEntry
 import os
 
 EXIT_MESSAGE = '\033[3mbye\033[0m'
@@ -48,9 +48,9 @@ def print_entry(ce: ConfigEntry) -> None:
     '''
     # check if the entry has been installed
     is_installed = NOT_INSTALLED_CHARACTER
-    if ce.is_installed() == Status.Installed:
+    if ce.is_installed == Status.Installed:
         is_installed = INSTALLED_CHARACTER
-    elif ce.is_installed() == Status.Unknown:
+    elif ce.is_installed == Status.Unknown:
         is_installed = UNKNOWN_STATUS_CHARACTER
     # print its command, install status and short description
     print('  \033[38;5;244m•\033[0m \033[38;5;248m[\033[0m \033[38;5;135;1m' + ce.shorthand + (' ' * (COMMAND_LENGTH - len(ce.shorthand)))
@@ -64,11 +64,7 @@ def execute_entry(ce: ConfigEntry) -> bool:
     Executes the function(s) provided by the given entry.
     '''
     try:
-        if type(ce.execute) == list:
-            for c in ce.execute:
-                c()
-        else:
-            ce.execute()
+        ce.execute()
         return True
 
     except Exception as e:
@@ -110,7 +106,7 @@ if __name__ == '__main__':
             print_entry(ce)
 
             # give user a choice to install/uninstall/reinstall the entry
-            if ce.is_installed() == Status.NotInstalled:
+            if ce.is_installed == Status.NotInstalled:
                 # entry is not installed
                 if ask_for_confirmation('Install?'):
                     print(INSTALLED)
@@ -118,7 +114,7 @@ if __name__ == '__main__':
                 else:
                     print(ABORTED)
 
-            elif ce.is_installed() == Status.Installed:
+            elif ce.is_installed == Status.Installed:
                 # entry is installed
                 if ask_for_confirmation('Keep installed?'):
                     print(UNINSTALLED)
