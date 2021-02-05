@@ -5,9 +5,12 @@ import shutil
 import os
 import pathlib
 import re
+from config_entries.file_special_variables import copy_file_with_special_variables
+import getpass
 
 HD = os.path.expanduser('~')
 CD = str(pathlib.Path().absolute())
+USER = getpass.getuser()
 
 print(HD)
 
@@ -173,6 +176,18 @@ config_entries = [
         execute=lambda: cp(
             CD + '/config-files/keyboard_volume_knob', HD + '/keyboard_volume_knob', tree=True),
         is_installed=lambda: Status.Installed if os.path.exists(HD + '/keyboard_volume_knob') else Status.NotInstalled
+    ),
+
+    ConfigEntry(
+        description='enable start on boot for the Audio Loopback program',
+        shorthand='alp',
+        execute=lambda: copy_file_with_special_variables(
+            CD + '/config-files/autostart/audio-loopback.desktop',
+            HD + '/.config/autostart/audio-loopback.desktop', (r'USER', USER))\
+        or cp(
+            CD + '/config-files/.audloop',
+            HD + '/'),
+        is_installed=lambda: Status.Unknown
     )
 
 ]
