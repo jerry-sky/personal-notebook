@@ -9,11 +9,26 @@ keywords: 'bash, config, script, utilities, python3, keyboard, markdown, bash al
 ---
 
 - [Setup](#setup)
+    - [First time setup](#first-time-setup)
+    - [The rest of the setup](#the-rest-of-the-setup)
+    - [Keyboard volume knob configuration](#keyboard-volume-knob-configuration)
 - [Utility scripts](#utility-scripts)
 
 ---
 
 ## Setup
+
+### First time setup
+
+To run the script for setting up the most basic of environments run:
+
+```bash
+bash -c "$(curl -s https://raw.githubusercontent.com/jerry-sky/personal-notebook/master/config/first-time-setup.sh)"
+```
+
+---
+
+### The rest of the setup
 
 In the same directory as this document there is a file called `setup.sh` which copies various config files into all sorts of locations.
 It's part of the [standard JRS PC Setup](../main/pc-setup.md) to configure the system and its programs.
