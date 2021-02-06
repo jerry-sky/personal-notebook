@@ -32,6 +32,9 @@ git config --global user.email "$email"
 $APTI "libsecret-1-0 libsecret-1-dev"
 cd /usr/share/doc/git/contrib/credential/libsecret
 sudo make
+if [ $? = "1" ]; then
+    exit 1
+fi
 cd "$cur_dir"
 ## configure git to use the password manager
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret

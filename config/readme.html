@@ -81,7 +81,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="setup">Setup</h2>
 <h3 id="first-time-setup">First time setup</h3>
 <p>To run the script for setting up the most basic of environments run:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">curl</span> -s https://raw.githubusercontent.com/jerry-sky/personal-notebook/master/config/first-time-setup.sh <span class="kw">|</span> <span class="fu">bash</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> -c <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> -s https://raw.githubusercontent.com/jerry-sky/personal-notebook/master/config/first-time-setup.sh<span class="va">)</span><span class="st">&quot;</span></code></pre></div>
 <hr />
 <h3 id="the-rest-of-the-setup">The rest of the setup</h3>
 <p>In the same directory as this document there is a file called <code>setup.sh</code> which copies various config files into all sorts of locations. It's part of the <a href="../main/pc-setup">standard JRS PC Setup</a> to configure the system and its programs. Execute it whilst being in the <code>/config</code> directory to setup a proper workspace.</p>
