@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 
 # the installation commands
 APT="sudo apt-get"
