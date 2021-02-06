@@ -1,7 +1,7 @@
-#!/bin/bash -i
+#!/bin/bash
 
 # the installation commands
-APT="sudo apt-get"
+APT="sudo apt-get -y"
 APTI="$APT install"
 DPKG="sudo dpkg -i"
 
