@@ -32,7 +32,7 @@ git config --global user.email "$email"
 $APTI "libsecret-1-0 libsecret-1-dev"
 cd /usr/share/doc/git/contrib/credential/libsecret
 sudo make
-if [ $? = "1" ]; then
+if [ $? != "0" ]; then
     exit 1
 fi
 cd "$cur_dir"
