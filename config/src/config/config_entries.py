@@ -73,6 +73,49 @@ def sf(bool_val: Union[bool, List[bool]], if_true: Status = Status.Installed, if
 
 config_entries = [
 
+    # Blender
+    ConfigEntry(
+        description='install Blender',
+        shorthand='bld',
+        execute=[
+            lambda: ex(CD + '/src/scripts/install-blender.sh')
+        ],
+        is_installed=[
+            lambda: sf(
+                ex('command -v blender >/dev/null') == 0
+            )
+        ],
+        toggable=False
+    ),
+
+    # Telegram
+    ConfigEntry(
+        description='install Telegram',
+        shorthand='tlg',
+        execute=[
+            lambda: ex(CD + '/src/scripts/install-telegram.sh')
+        ],
+        is_installed=[
+            lambda: sf(
+                ex('ls ' + HD + '/.local/share/applications | grep -i telegram.desktop >/dev/null') == 0
+            )
+        ]
+    ),
+
+    # Discord
+    ConfigEntry(
+        description='install Discord',
+        shorthand='dsc',
+        execute=[
+            lambda: ex(CD + '/src/scripts/install-discord.sh')
+        ],
+        is_installed=[
+            lambda: sf(
+                ex('command -v discord >/dev/null') == 0
+            )
+        ]
+    ),
+
     # load Bash config
     ConfigEntry(
         description='load Bash config',
