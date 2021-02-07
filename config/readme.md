@@ -11,8 +11,9 @@ keywords: 'bash, config, script, utilities, python3, keyboard, markdown, bash al
 - [Setup](#setup)
     - [First time setup](#first-time-setup)
     - [The rest of the setup](#the-rest-of-the-setup)
+- [The setup includes things as:](#the-setup-includes-things-as)
     - [Keyboard volume knob configuration](#keyboard-volume-knob-configuration)
-- [Utility scripts](#utility-scripts)
+    - [Utility scripts](#utility-scripts)
 
 ---
 
@@ -32,7 +33,7 @@ bash -c "$(curl -s https://raw.githubusercontent.com/jerry-sky/personal-notebook
 
 In the same directory as this document there is a file called `setup.sh` which copies various config files into all sorts of locations.
 It's part of the [standard JRS PC Setup](../main/pc-setup.md) to configure the system and its programs.
-Execute it whilst being in the `/config` directory to setup a proper workspace.
+Execute it whilst being in the `/config` directory to set up a proper workspace.
 
 ```bash
 ./setup.sh
@@ -40,13 +41,15 @@ Execute it whilst being in the `/config` directory to setup a proper workspace.
 
 ---
 
+## The setup includes things as:
+
 ### Keyboard volume knob configuration
 
-The config setup script allows to copy some utility scripts that enable to override the default behaviour of Volume Media keys. Some keyboards have a scrollable knob that normally controls the volume. Because of these scripts (and properly configured keyboard shortcuts to these scripts) this volume knob can be utilised as mouse scroll wheel or volume knob. The *mute* button switches between `scroll` and `volume` modes.
+The config setup script allows to copy some utility scripts that enable to override the default behaviour of Volume Media keys. Some keyboards have a scrollable knob that normally controls the volume. Because of these scripts (and properly configured keyboard shortcuts to these scripts) this volume knob can be utilized as mouse scroll wheel or volume knob. The *mute* button switches between `scroll` and `volume` modes.
 
 ---
 
-## Utility scripts
+### Utility scripts
 
 The `utility-scripts` directory contains some very specific but useful scripts that are sometimes very handy.
 
