@@ -22,6 +22,12 @@ sudo mkdir -p /usr/share/icons/Capitaine-Cursors-Light
 sudo mv dist/* /usr/share/icons/Capitaine-Cursors-Light
 cd "$cur_dir"
 
+printf "\n\033[1mInstalling icon theme…\033[0m\n"
+# install icon theme
+cd /usr/share/icons
+sudo git clone 'https://github.com/keeferrourke/la-capitaine-icon-theme'
+cd "$cur_dir"
+
 printf "\n\033[1mConfiguring Cinnamon…\033[0m\n"
 # load appropriate Cinnamon interface settings
 dconf load /org/cinnamon/desktop/interface/ < "$cur_dir/../../config-files/cinnamon-theme/interface.conf"
