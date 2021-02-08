@@ -99,7 +99,8 @@ config_entries = [
             lambda: sf(
                 ex('ls ' + HD + '/.local/share/applications | grep -i telegram.desktop >/dev/null') == 0
             )
-        ]
+        ],
+        toggable=False
     ),
 
     # Discord
@@ -113,7 +114,8 @@ config_entries = [
             lambda: sf(
                 ex('command -v discord >/dev/null') == 0
             )
-        ]
+        ],
+        toggable=False
     ),
 
     # Insync
@@ -127,9 +129,11 @@ config_entries = [
             lambda: sf(
                 ex('command -v insync >/dev/null') == 0
             )
-        ]
+        ],
+        toggable=False
     ),
 
+    # GPG signing for Git
     ConfigEntry(
         description='enable GPG signing in Git',
         shorthand='gpg',
@@ -140,7 +144,8 @@ config_entries = [
             lambda: sf(
                 ex('[ -n "$(git config --global user.signingKey)" ]') == 0
             )
-        ]
+        ],
+        toggable=False
     ),
 
     # load Bash config
@@ -256,6 +261,7 @@ config_entries = [
         toggable=False
     ),
 
+    # theme for Cinnamon DE
     ConfigEntry(
         description='Cinnamon: install theme',
         shorthand='thm',
@@ -266,9 +272,11 @@ config_entries = [
         ],
         is_installed=[
             lambda: Status.Unknown
-        ]
+        ],
+        toggable=False
     ),
 
+    # other settings for Cinnamon DE
     ConfigEntry(
         description='Cinnamon: load other DE settings',
         shorthand='cos',
@@ -279,9 +287,11 @@ config_entries = [
         ],
         is_installed=[
             lambda: Status.Unknown
-        ]
+        ],
+        toggable=False
     ),
 
+    # additional fonts
     ConfigEntry(
         description='install additional fonts',
         shorthand='fnt',
@@ -298,7 +308,8 @@ config_entries = [
                     ) for x in ['merriweather', 'fira-code', 'fira-sans']
                 ]
             )
-        ]
+        ],
+        toggable=False
     ),
 
     # copy utility scripts
