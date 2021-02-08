@@ -223,7 +223,7 @@ config_entries = [
 
     # load Cinnamon keyboard shortcuts
     ConfigEntry(
-        description='load Cinnamon keyboard shortcuts',
+        description='Cinnamon: load keyboard shortcuts',
         shorthand='cks',
         execute=[
             lambda: ex(
@@ -240,6 +240,19 @@ config_entries = [
             )
         ],
         toggable=False
+    ),
+
+    ConfigEntry(
+        description='Cinnamon: install theme',
+        shorthand='thm',
+        execute=[
+            lambda: ex(
+                CD + '/src/scripts/cinnamon-install-theme.sh'
+            )
+        ],
+        is_installed=[
+            lambda: Status.Unknown
+        ]
     ),
 
     # copy utility scripts
