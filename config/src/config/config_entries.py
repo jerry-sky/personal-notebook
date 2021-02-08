@@ -227,7 +227,7 @@ config_entries = [
         shorthand='cks',
         execute=[
             lambda: ex(
-                'dconf load /org/cinnamon/desktop/keybindings/ < ./config-files/cinnamon-keyboard-shortcuts.conf'
+                'dconf load / < ' + CD + '/config-files/cinnamon/keyboard-shortcuts.conf'
             ),
             lambda: toggle_file(
                 CD + '/config-files/keyboard_volume_knob', HD + '/keyboard_volume_knob'
@@ -248,6 +248,19 @@ config_entries = [
         execute=[
             lambda: ex(
                 CD + '/src/scripts/cinnamon-install-theme.sh'
+            )
+        ],
+        is_installed=[
+            lambda: Status.Unknown
+        ]
+    ),
+
+    ConfigEntry(
+        description='Cinnamon: load other DE settings',
+        shorthand='cos',
+        execute=[
+            lambda: ex(
+                'dconf load / < ' + CD + '/config-files/cinnamon/other-settings.conf'
             )
         ],
         is_installed=[
