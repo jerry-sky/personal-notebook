@@ -13,6 +13,7 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 ---
 
 - [Index](#index)
+    - [Environment](#environment)
     - [Main](#main)
     - [Life (Ω)](#life-ω)
     - [Languages](#languages)
@@ -27,11 +28,14 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 
 ## Index
 
+### Environment
+
+- [PC Setup](main/pc-setup.md)
+- [*Software List (deprecated, to-be-deleted)*](main/software-list.md)
+- [Config](config/readme.md)
+
 ### Main
 
-- [**PC Setup**](main/pc-setup.md)
-- [Software List](main/software-list.md)
-- [Config](config/readme.md)
 - [Unix & Linux](main/unix-linux.md)
 - [Git](main/git-notes.md)
 - [VS Code](main/vs-code.md)
