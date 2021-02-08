@@ -268,6 +268,25 @@ config_entries = [
         ]
     ),
 
+    ConfigEntry(
+        description='install additional fonts',
+        shorthand='fnt',
+        execute=[
+            lambda: ex(
+                CD + '/src/scripts/install-additional-fonts.sh'
+            )
+        ],
+        is_installed=[
+            lambda: sf(
+                [
+                    os.path.exists(
+                        '/usr/share/fonts/truetype/' + x
+                    ) for x in ['merriweather', 'fira-code', 'fira-sans']
+                ]
+            )
+        ]
+    ),
+
     # copy utility scripts
     ConfigEntry(
         description='copy utility scripts',
