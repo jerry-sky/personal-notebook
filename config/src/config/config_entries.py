@@ -116,6 +116,20 @@ config_entries = [
         ]
     ),
 
+    # Insync
+    ConfigEntry(
+        description='install Insync',
+        shorthand='ins',
+        execute=[
+            lambda: ex(CD + '/src/scripts/install-insync.sh')
+        ],
+        is_installed=[
+            lambda: sf(
+                ex('command -v insync >/dev/null') == 0
+            )
+        ]
+    ),
+
     ConfigEntry(
         description='enable GPG signing in Git',
         shorthand='gpg',
