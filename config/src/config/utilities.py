@@ -99,7 +99,7 @@ def does_contain_file_block(source_file: str, target_file: str):
         return False
 
 
-def copy_file_with_special_variables(source: str, target: str, *vars: List[Tuple[str]]) -> None:
+def copy_file_with_special_variables(source: str, target: str, vars: List[Tuple[str]]) -> None:
     '''
     Replaces variable placeholders with given values in the source
     file and copies the file to a new location.
