@@ -377,6 +377,25 @@ config_entries = [
                 )
             )
         ]
+    ),
+
+    ConfigEntry(
+        description='enable start on boot for the second keyboard program (make sure the exec is ready)',
+        shorthand='skb',
+        execute=[
+            lambda: toggle_file(
+                CD + '/config-files/autostart/second-keyboard.desktop',
+                HD + '/.config/autostart/second-keyboard.desktop',
+                variables=[(r'USER', USER)]
+            )
+        ],
+        is_installed=[
+            lambda: sf(
+                os.path.exists(
+                    HD + '/.config/autostart/second-keyboard.desktop'
+                )
+            )
+        ]
     )
 
 ]
