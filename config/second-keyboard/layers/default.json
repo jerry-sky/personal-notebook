@@ -1,0 +1,14 @@
+{
+   "KEY_X": "exec:discord-mute.sh",
+   "KEY_Z": "exec:discord-deafen.sh",
+   "KEY_UP": "exec:test.sh",
+   "KEY_DOWN": "exec:test.sh",
+   "KEY_KP9": "exec:test.sh",
+   "KEY_KP3": "exec:test.sh",
+   "KEY_KPPLUS": "exec:test.sh",
+   "KEY_KPENTER": "exec:test.sh",
+   "KEY_NUMLOCK": "exec:test.sh",
+   "KEY_PAUSE": "exec:test.sh",
+   "KEY_F12": "exec:test.sh",
+   "KEY_A+KEY_LEFTSHIFT": "exec:test.sh"
+}

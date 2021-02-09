@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/${USER}/notebooks/personal-notebook/config/second-keyboard/run.sh
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name=Second keyboard (Keebie)
+X-GNOME-Autostart-Delay=0
