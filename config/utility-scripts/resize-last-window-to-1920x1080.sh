@@ -9,7 +9,7 @@ fi
 # get the list of open windows
 wins_list="$(wmctrl -l -G)"
 # calc number of open windows
-num_wins="$(printf "$wins_list" | wc -l)"
+num_wins="$(printf "$wins_list\n" | wc -l)"
 # also calc the width of the max number
 num_wins_width="${#num_wins}"
 
