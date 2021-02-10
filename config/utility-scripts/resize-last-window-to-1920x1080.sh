@@ -6,18 +6,30 @@ if [ ! "$(command -v wmctrl)" ]; then
     exit
 fi
 
-# ask the user if the last window is actually
-# the one they want to resize
-## print the last opened window
-wmctrl -l | tail -n 1
+# get the list of open windows
+wins_list="$(wmctrl -l -G)"
+# calc number of open windows
+num_wins="$(printf "$wins_list" | wc -l)"
+# also calc the width of the max number
+num_wins_width="${#num_wins}"
 
-echo "resize this window? (type anything to cancel or leave the line empty to resize)"
+# print all available options
+for i in $(seq 1 $num_wins); do
+    printf "\033[1m$i.\033[0m"
+    # adjust the whitespace accordingly
+    cur_width="${#i}"
+    ((offset=num_wins_width-cur_width+1))
+    printf "%0.s " $(seq 1 $offset)
+    printf "$wins_list" | head -n"$i" | tail -n1
+done
+
+printf "\n\033[1mType the number of the window to resize\033[0m\n"
 
 read tmp
-if [ ! "$tmp" ]; then
-    ## get the id of the window (substitution)
-    ## resize the window by using the id (-i option)
-    wmctrl -i -r "$(wmctrl -l | tail -n 1 | cut -d' ' -f1)" -e "0,-1,-1,1920,1080"
+if [ "1" -le "$tmp" -a "$tmp" -le "$num_wins" ] 2>/dev/null; then
+    # get the id of the window (substitution)
+    # resize the window by using the id (-i option)
+    wmctrl -i -r "$(printf "$wins_list" | head -n"$tmp" | tail -n1 | cut -d' ' -f1)" -e "0,-1,-1,1920,1080"
     echo "resized"
 else
     echo "cancelled"

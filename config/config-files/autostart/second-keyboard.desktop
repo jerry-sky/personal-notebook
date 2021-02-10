@@ -5,4 +5,4 @@ X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
 Name=Second keyboard (Keebie)
-X-GNOME-Autostart-Delay=0
+X-GNOME-Autostart-Delay=10
