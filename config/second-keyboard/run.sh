@@ -2,7 +2,7 @@
 
 cur_dir="${BASH_SOURCE%/*}"
 
-if [ ! -f "$cur_dir/keebie.py"]; then
+if [ ! -f "$cur_dir/keebie.py" ]; then
     notify-send 'Second keyboard: no executable found!'
     exit 1
 fi
@@ -15,4 +15,5 @@ if [ "$?" = "1" ]; then
     exit 1
 fi
 
-"$cur_dir/keebie.py"
+printf -- "\n\n---\nNew Run on $(date)\n---\n\n" >> ~/.second-keyboard.log
+"$cur_dir/keebie.py" &>> ~/.second-keyboard.log
