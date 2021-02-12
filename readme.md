@@ -80,7 +80,7 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 - [After Effects](adobe/after-effects.md)
 - [Illustrator](adobe/illustrator.md)
 
-### [Videos](videos/readme.md)
+### [Videos](private/videos/readme.md)
 
 ### [Other (Ω)](private/other/readme.md)
 
