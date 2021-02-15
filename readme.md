@@ -72,7 +72,7 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 
 - [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
 - [Music](the-arbitrary-collection/arbitrary-music-things.md)
-- [Hilarious IT stories](the-arbitrary-collection/hilarious-it-stories.md)
+- [Hilarious stories](the-arbitrary-collection/hilarious-stories.md)
 - [2D Animation](the-arbitrary-collection/2d-animation.md)
 
 ### Adobe

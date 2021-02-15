@@ -1,6 +1,6 @@
 ---
 lang: 'en-GB'
-title: 'Hilarious IT stories'
+title: 'Hilarious stories'
 author: 'Jerry Sky'
 keywords: 'story time, mongodb, web scale, 500-mile, email'
 ---
@@ -19,3 +19,7 @@ keywords: 'story time, mongodb, web scale, 500-mile, email'
 ## *MongoDB is web scale*
 
 [The legendary dialogue](http://mongodb-is-web-scale.com/)
+
+## Structured Procrastination — how to fool yourself
+
+[The article](http://www.structuredprocrastination.com/)
