@@ -20,7 +20,7 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
     - [Ideas (Ω)](#ideas-ω)
     - [The arbitrary collection](#the-arbitrary-collection)
     - [Adobe](#adobe)
-    - [Videos](#videos)
+    - [Videos (Ω)](#videos-ω)
     - [Other (Ω)](#other-ω)
 - [Some remarks](#some-remarks)
 
@@ -80,7 +80,7 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 - [After Effects](adobe/after-effects.md)
 - [Illustrator](adobe/illustrator.md)
 
-### [Videos](private/videos/readme.md)
+### [Videos (Ω)](private/videos/readme.md)
 
 ### [Other (Ω)](private/other/readme.md)
 
