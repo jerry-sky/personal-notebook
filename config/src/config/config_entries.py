@@ -29,21 +29,22 @@ def lns(source: str, target: str, sudo: bool = False):
     Creates a symbolic link in the target directory to the file
     in the source directory.
     '''
-    os.makedirs(os.path.dirname(target), exist_ok=True)
 
     if os.path.isdir(source):
         # file is a directory
+        ex('mkdir -p -- ' + target, sudo)
         ex(
             'find '  # find all files in the source directory
             + source
-            + ' -type f | while read f; do ln -s "$f"'
+            + ' -type f | while read f; do sudo ln -s "$f"'
             + ' ' + target
             # and create links to the in the target directory
             + '/${f##*/}; done'
         )
     else:
         # file is not a directory
-        ex('ln -s ' + source + ' ' + target)
+        ex('mkdir -p -- ' + os.path.dirname(target), sudo)
+        ex('ln -s ' + source + ' ' + target, sudo)
 
 
 def toggle_file_links(source: str, target: str, sudo: bool = False):
@@ -55,7 +56,7 @@ def toggle_file_links(source: str, target: str, sudo: bool = False):
     '''
     return InstallationPackage(
         install_func=lambda: lns(source, target, sudo),
-        uninstall_func=lambda: ex('rm -r ' + target),
+        uninstall_func=lambda: ex('rm -r ' + target, sudo),
         is_installed=lambda: True if os.path.exists(target) else False
     )
 

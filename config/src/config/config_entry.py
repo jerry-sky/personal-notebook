@@ -40,13 +40,13 @@ class InstallationPackage(object):
         '''
         Runs the function that install this package.
         '''
-        self.__install
+        self.__install()
 
     def uninstall(self) -> None:
         '''
         Runs the functions that uninstall this package.
         '''
-        self.__uninstall
+        self.__uninstall()
 
     @property
     def is_installed(self) -> None:
