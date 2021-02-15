@@ -19,12 +19,17 @@ def SCRIPT_TERMINATOR(source_file, target_file):
         source_file + ' -> ' + target_file + '\n'
 
 
-def toggle_fileblock(source_file: str, target_file: str):
+def toggle_fileblock(source_file: str, target_file: str, state=None):
     '''
     Copies all contents of the source file and appends them
     to the target file as a “file block”.
     If the file block is already present in the target file
     the function removes it.
+
+    `state` argument:
+        - `None` — toggle
+        - `True` — (re)install
+        - `False` — uninstall (do nothing)
 
     Copied lines are wrapped with additional special lines that
     indicate where the file block begins and ends.
@@ -64,18 +69,40 @@ def toggle_fileblock(source_file: str, target_file: str):
         # read the source file
         fileblock = f.readlines()
 
-    if si in fileblock and st in fileblock:
-        # if the source fileblock is already there, remove it
-        begin_index = fileblock.index(si)
-        end_index = fileblock.index(st)
-        fileblock = fileblock[:begin_index] + fileblock[end_index+1:]
+    fileblock_present = si in fileblock and st in fileblock
 
+    # compute state
+    if state is None:
+        # toggle
+        if fileblock_present:
+            state = False
+        else:
+            state = True
+    elif state:
+        # install
+        if fileblock_present:
+            state = None
+        else:
+            state = True
     else:
+        # uninstall
+        if fileblock_present:
+            state = False
+        else:
+            state = None
+
+    if state == True:  # explicit — state can be `None`
         # add the fileblock to the target file
         with open(source_file, 'r') as fi:
             fileblock += [si]
             fileblock += fi.readlines()
             fileblock += [st]
+
+    elif state == False:  # explicit — state can be `None`
+        # remove the fileblock
+        begin_index = fileblock.index(si)
+        end_index = fileblock.index(st)
+        fileblock = fileblock[:begin_index] + fileblock[end_index+1:]
 
     # write the changes ot the target file
     with open(target_file, 'w') as fo:

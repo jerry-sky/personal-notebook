@@ -6,9 +6,12 @@ import os
 
 EXIT_MESSAGE = '\033[3mbye\033[0m'
 
-INSTALLED_CHARACTER = '\033[38;2;95;217;97m✓'
-NOT_INSTALLED_CHARACTER = '\033[38;2;200;40;24m×'
-UNKNOWN_STATUS_CHARACTER = '\033[38;2;242;234;78m?'
+INSTALLED_COLOUR = '\033[38;2;95;217;97m'
+INSTALLED_CHARACTER = INSTALLED_COLOUR + '✓'
+NOT_INSTALLED_COLOUR = '\033[38;2;200;40;24m'
+NOT_INSTALLED_CHARACTER = NOT_INSTALLED_COLOUR + '×'
+UNKNOWN_STATUS_COLOUR = '\033[38;2;242;234;78m'
+UNKNOWN_STATUS_CHARACTER = UNKNOWN_STATUS_COLOUR + '?'
 
 INSTALLED = '\033[1minstalled\033[0m'
 ABORTED = '\033[1maborted\033[0m'
@@ -42,7 +45,7 @@ def print_available_options():
     )
 
 
-def print_entry(ce: ConfigEntry) -> None:
+def print_entry(ce: ConfigEntry, single=False) -> None:
     '''
     Prints all information about given entry.
     '''
@@ -52,46 +55,81 @@ def print_entry(ce: ConfigEntry) -> None:
         is_installed = INSTALLED_CHARACTER
     elif ce.is_installed == Status.Unknown:
         is_installed = UNKNOWN_STATUS_CHARACTER
-    # print its command, install status and short description
-    print('  \033[38;5;244m•\033[0m \033[38;5;248m[\033[0m \033[38;5;135;1m' + ce.shorthand + (' ' * (COMMAND_LENGTH - len(ce.shorthand)))
-          + '\033[0m \033[38;5;248m] '
+
+    if single:
+        print(
+            '\033[0;38;5;205m' + ce.description + '\033[0m'
+        )
+    else:
+        # print its command, install status and short description
+        print(
+            '  \033[38;5;244m•\033[0m \033[38;5;248m[\033[0m \033[38;5;135;1m'
+            + ce.shorthand
+            + (' ' * (COMMAND_LENGTH - len(ce.shorthand)))
+            + '\033[0m \033[38;5;248m] '
             + is_installed
-            + '\033[0m \033[38;5;244m→\033[0m \033[38;5;205m' + ce.description + '\033[0m')
+            + '\033[0m \033[38;5;244m→\033[0m \033[38;5;205m'
+            + ce.description + '\033[0m')
 
 
 def execute_entry(ce: ConfigEntry) -> bool:
     '''
-    Executes the function(s) provided by the given entry.
+    Requires an explicit input from the user based on the current state
+    of the given Config Entry.
+
+    The user needs to choose between options to:
+    - install,
+    - uninstall,
+    - reinstall,
+    - do nothing
+    with the given Config Entry.
+
+    Availability of these options depends on each Config Entry.
     '''
-    try:
-        ce.execute()
+
+    reinstall = 'reinstall'
+    install = 'install'
+    uninstall = 'uninstall'
+    nothing = 'nothing'
+
+    available_options = [nothing, install]
+
+    if not ce.is_immutable:
+        available_options += [reinstall, uninstall]
+
+    # print the status of the config entry
+    print_entry(ce, single=True)
+    # ask the user what he wants to do with the entry
+    print('\033[1mChoose between:')
+    for o in available_options:
+        print('  \033[4m' + o[:2] + '\033[0;1m' + o[2:])
+
+    # take only first two letters from the names of the options
+    # — user has to input these two letters of their chosen option
+    available_options_cmds = [x[:2] for x in available_options]
+    cmd_index = 0
+    x = input()
+    while x not in available_options_cmds:
+        x = input('\033[0mplease choose one of the options listed above\033[1m\n')
+
+    cmd_index = available_options_cmds.index(x)
+    chosen_option = available_options[cmd_index]
+
+    # clean up
+    print('\033[0m', end='')
+
+    if chosen_option == install:
+        ce.install()
+        return True
+    elif chosen_option == reinstall:
+        ce.uninstall()
+        ce.install()
+        return True
+    elif chosen_option == uninstall:
+        ce.uninstall()
         return True
 
-    except Exception as e:
-        print(command + ': ' + str(e))
-        return False
-
-
-def ask_for_confirmation(msg: str) -> bool:
-    '''
-    Requires an explicit binary input from the user.
-
-    The user needs to input either `y` or `n`.
-    '''
-    y = 'y'
-    n = 'n'
-
-    print(msg + ': y|n')
-
-    i = ''
-    while i not in [y, n]:
-        try:
-            i = input()  # [:-1] # remove the newline at the end
-        except EOFError:
-            print(EXIT_MESSAGE)
-            exit(0)
-
-    return i == y
+    return False
 
 
 if __name__ == '__main__':
@@ -101,33 +139,9 @@ if __name__ == '__main__':
         print('\033[1mInteractive mode')
 
         for ce in config_entries:
-            # for each entry:
-            # print its information
-            print_entry(ce)
-
-            # give user a choice to install/uninstall/reinstall the entry
-            if ce.is_installed == Status.NotInstalled:
-                # entry is not installed
-                if ask_for_confirmation('Install?'):
-                    print(INSTALLED)
-                    execute_entry(ce)
-                else:
-                    print(ABORTED)
-
-            elif ce.is_installed == Status.Installed:
-                # entry is installed
-                if ask_for_confirmation('Keep installed?'):
-                    print(UNINSTALLED)
-                    execute_entry(ce)
-                else:
-                    print(ABORTED)
-
-            else:  # Status.Unknown
-                if ask_for_confirmation('Keep entry’s state?'):
-                    print(UNCHANGED)
-                    execute_entry(ce)
-                else:
-                    print(ABORTED)
+            # for each entry give the user an option to do nothing,
+            # uninstall, reinstall, or install
+            execute_entry(ce)
 
     else:
         # list mode
@@ -162,8 +176,12 @@ if __name__ == '__main__':
 
             if count > 0:
                 # indicate number of successfully ran operations
-                print('\033[38;5;41m' + str(count)
+                print(INSTALLED_COLOUR + str(count)
                       + '\033[38;5;248m operation' + ('s' if count != 1 else '') + ' performed successfully\033[0m')
+            else:
+                print(
+                    UNKNOWN_STATUS_COLOUR + '0 \033[38;5;248moperations performed'
+                )
 
     # bye
     print(EXIT_MESSAGE)

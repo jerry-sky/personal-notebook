@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/${USER}/notebooks/personal-notebook/config/second-keyboard/run.sh
+Exec=/home/jerry-sky/notebooks/personal-notebook/config/second-keyboard/run.sh
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
