@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/${USER}/.audloop
+Exec=/home/jerry-sky/.audloop
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
