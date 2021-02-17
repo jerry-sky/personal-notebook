@@ -23,6 +23,7 @@ keywords: 'html, css, static, web, web-kit, website, design, link, header, devel
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Easings cheatsheet](https://easings.net/)
 - [CSS Grid Changes EVERYTHING](https://www.youtube.com/watch?v=7kVeCqQCxlk)
+- [Loading 3rd-party fonts — `font-display`](https://calendar.perfplanet.com/2020/a-font-display-setting-for-slow-connections/)
 
 ### Animations
 
