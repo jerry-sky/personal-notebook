@@ -72,6 +72,12 @@ function cx() {
   code-insiders $@ && exit
 }
 
+# Google Chrome browser
+alias gc="google-chrome-stable"
+
+# Quick local directory server (hsh stands for HTTP server here)
+alias hsh="python3 -m http.server --bind localhost 4200"
+
 # Nemo (file explorer) aliases
 alias n="-- nemo"
 alias n.="-- nemo ."
@@ -79,6 +85,13 @@ alias nh="-- nemo ."
 
 # opening another terminal from terminal (in the same directory)
 alias t="gnome-terminal"
+
+# leave the last viewed page in the terminal after exit
+alias lx="less -X"
+
+function lxp() {
+    $@ | less -X
+}
 
 # adds `.blend` if not present in the filename provided when launching a file using blender
 function b() {
