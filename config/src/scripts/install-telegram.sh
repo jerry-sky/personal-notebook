@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # download the archive
-cd '/tmp'
-curl -L --output telegram.tar.xz 'https://telegram.org/dl/desktop/linux'
+cd '/opt'
+sudo curl -L --output telegram.tar.xz 'https://telegram.org/dl/desktop/linux'
 
-# unpack the archive
-tar -xf telegram.tar.xz
+# unpack and remove the archive
+sudo tar -xf telegram.tar.xz
+sudo rm telegram.tar.xz
 
 # run the program in the background
 Telegram/Telegram &>/dev/null &
