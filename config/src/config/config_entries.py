@@ -300,6 +300,21 @@ config_entries = [
                 HD + '/.config/autostart/second-keyboard.desktop',
             )
         ]
+    ),
+
+    ConfigEntry(
+        description='install Unity Hub, .NET SDK+Runtime, and Mono',
+        shorthand='unt',
+        installation_packages=[
+            InstallationPackage(
+                install_func=lambda: ex(CD + '/src/scripts/install-unity.sh'),
+                is_installed=lambda: [
+                    ex('command -v unity-hub >/dev/null') == 0,
+                    ex('command -v mono >/dev/null') == 0,
+                    ex('command -v dotnet >/dev/null') == 0,
+                ]
+            )
+        ]
     )
 
 ]
