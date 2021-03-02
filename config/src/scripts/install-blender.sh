@@ -25,13 +25,14 @@ curl --output "$archive" "$ftp_url$rem_dir/$rem_arc"
 printf "\n\033[1mInstalling…\033[0m\n"
 # unpack the archive
 cd "/tmp"
-unpacked="/tmp/$rem_arc"
+unpacked="/tmp/${rem_arc%\.tar\.xz}"
 tar -xf "$archive"
 # copy the program (application) metadata
 sudo cp "$unpacked/blender.desktop" "/usr/share/applications/blender.desktop"
+sudo update-desktop-database /usr/share/applications
 # copy the program data
 sudo mkdir -p "/opt/blender"
-cp -r -- "$unpacked/*" "/opt/blender/"
+sudo cp -r -- $unpacked/* "/opt/blender/"
 # link the executable
-cd "/usr/share"
-sudo ln -s "/opt/blender/blender" "blender"
+cd "/usr/bin"
+sudo ln -fs "/opt/blender/blender" "blender"
