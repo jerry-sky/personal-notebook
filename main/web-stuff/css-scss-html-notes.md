@@ -24,6 +24,8 @@ keywords: 'html, css, static, web, web-kit, website, design, link, header, devel
 - [Easings cheatsheet](https://easings.net/)
 - [CSS Grid Changes EVERYTHING](https://www.youtube.com/watch?v=7kVeCqQCxlk)
 - [Loading 3rd-party fonts — `font-display`](https://calendar.perfplanet.com/2020/a-font-display-setting-for-slow-connections/)
+- [Hexagonal grid](https://ninjarockstar.dev/css-hex-grids/)
+- [Pattern generator](https://doodad.dev/pattern-generator/)
 
 ### Animations
 
