@@ -23,13 +23,16 @@ for i in $(seq 1 $num_wins); do
     printf "$wins_list" | head -n"$i" | tail -n1
 done
 
-printf "\n\033[1mType the number of the window to resize\033[0m\n"
+printf "\n\n\033[1mType the number of the window to alter\033[0m\n"
+read win_num
 
-read tmp
-if [ "1" -le "$tmp" -a "$tmp" -le "$num_wins" ] 2>/dev/null; then
+printf "\n\033[1mInput the desired geometry of the window (x,y,w,h)\033[0m\n"
+read geometry
+
+if [ "1" -le "$win_num" -a "$win_num" -le "$num_wins" ] 2>/dev/null; then
     # get the id of the window (substitution)
     # resize the window by using the id (-i option)
-    wmctrl -i -r "$(printf "$wins_list" | head -n"$tmp" | tail -n1 | cut -d' ' -f1)" -e "0,-1,-1,1920,1080"
+    wmctrl -i -r "$(printf "$wins_list" | head -n"$win_num" | tail -n1 | cut -d' ' -f1)" -e "0,$geometry"
     echo "resized"
 else
     echo "cancelled"
