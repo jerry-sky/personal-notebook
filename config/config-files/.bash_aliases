@@ -75,6 +75,12 @@ function cx() {
 # Google Chrome browser
 alias gc="google-chrome-stable"
 
+alias mdpdf="pandoc \
+    --from markdown-blank_before_header-implicit_figures+lists_without_preceding_blankline+gfm_auto_identifiers \
+    --to pdf \
+    -V geometry:margin=2cm \
+    -H ~/notebooks/personal-notebook/config/config-files/head.tex"
+
 # Quick local directory server (hsh stands for HTTP server here)
 alias hsh="python3 -m http.server --bind localhost 4200"
 

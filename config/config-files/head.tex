@@ -1,0 +1,35 @@
+\usepackage{csquotes}
+\usepackage{framed}
+
+\renewenvironment{leftbar}[1][\hsize]
+{%
+    \def\FrameCommand
+    {%
+        {\color{lightgray}\vrule width 1.3pt}%
+        \hspace{10pt}%
+        \fboxsep=\FrameSep%
+    }%
+    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}
+{\endMakeFramed}
+
+\AtBeginEnvironment{quote}{\vspace{1em}\itshape\leftbar}
+\AtEndEnvironment{quote}{\vspace{1em}\endleftbar}
+
+\setlength{\parskip}{1.3em}
+
+\usepackage{titlesec}
+\titlespacing*{\subsection}
+{0pt}{1.5em plus 1em minus .2em}{1.5em plus .2em}
+
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+\let\oldrule\rule
+\renewcommand{\rule}[2]{\color{gray}\oldrule{\linewidth}{0.1pt}}
