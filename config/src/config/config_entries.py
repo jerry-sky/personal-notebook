@@ -44,7 +44,7 @@ def lns(source: str, target: str, sudo: bool = False):
     else:
         # file is not a directory
         ex('mkdir -p -- ' + os.path.dirname(target), sudo)
-        ex('ln -s ' + source + ' ' + target, sudo)
+        ex('ln -fs ' + source + ' ' + target, sudo)
 
 
 def toggle_file_links(source: str, target: str, sudo: bool = False):
@@ -74,247 +74,290 @@ def toggle_fileblock(source: str, target: str, sudo: bool = False):
 
 config_entries = [
 
-    # Blender
-    ConfigEntry(
-        description='install Blender',
-        shorthand='bld',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(
-                    CD + '/src/scripts/install-blender.sh'),
-                uninstall_func=False,
-                is_installed=lambda: ex('command -v blender >/dev/null') == 0
-            )
-        ]
-    ),
-
-    # Telegram
-    ConfigEntry(
-        description='install Telegram',
-        shorthand='tlg',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(
-                    CD + '/src/scripts/install-telegram.sh'),
-                is_installed=lambda: ex(
-                    'ls ' + HD + '/.local/share/applications | grep -i telegram.desktop >/dev/null') == 0
-            )
-        ]
-    ),
-
-    # Discord
-    ConfigEntry(
-        description='install Discord',
-        shorthand='dsc',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(
-                    CD + '/src/scripts/install-discord.sh'),
-                is_installed=lambda: ex('command -v discord >/dev/null') == 0
-            )
-        ]
-    ),
-
-    # Insync
-    ConfigEntry(
-        description='install Insync',
-        shorthand='ins',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(CD + '/src/scripts/install-insync.sh'),
-                is_installed=lambda: ex('command -v insync >/dev/null') == 0
-            )
-        ]
-    ),
-
-    # GPG signing for Git
-    ConfigEntry(
-        description='enable GPG signing in Git',
-        shorthand='gpg',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(
-                    CD + '/src/scripts/enable-git-signing.sh'),
-                is_installed=lambda: ex(
-                    '[ -n "$(git config --global user.signingKey)" ]') == 0
-            )
-        ]
-    ),
-
-    # load Bash config
-    ConfigEntry(
-        description='load Bash config',
-        shorthand='brc',
-        installation_packages=[
-            toggle_fileblock(
-                CD + '/config-files/.bashrc',
-                HD + '/.bashrc'
+    {
+        'name': 'Programs and utilities',
+        'list': [
+            # Blender
+            ConfigEntry(
+                description='install Blender',
+                shorthand='bld',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/install-blender.sh'),
+                        uninstall_func=False,
+                        is_installed=lambda: ex(
+                            'command -v blender >/dev/null') == 0
+                    )
+                ]
             ),
-            toggle_file_links(
-                CD + '/config-files/.bash_aliases',
-                HD + '/.bash_aliases'
-            )
-        ]
-    ),
 
-    # swap Control_R and Menu keys
-    ConfigEntry(
-        description='swap Control_R and Menu keys (good for keyboards without a dedicated Menu key)',
-        shorthand='kym',
-        installation_packages=[
-            toggle_fileblock(
-                CD + '/config-files/.key_remap',
-                HD + '/.bashrc'
-            )
-        ]
-    ),
-
-    # install config files
-    ConfigEntry(
-        description='install config files for: RedShift, Java formatter, and Neovim',
-        shorthand='rds',
-        installation_packages=[
-            toggle_file_links(
-                CD + '/config-files/redshift.conf',
-                HD + '/.config/redshift.conf'
+            # Telegram
+            ConfigEntry(
+                description='install Telegram',
+                shorthand='tlg',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/install-telegram.sh'),
+                        is_installed=lambda: ex(
+                            'ls ' + HD + '/.local/share/applications | grep -i telegram.desktop >/dev/null') == 0
+                    )
+                ]
             ),
-            toggle_file_links(
-                CD + '/config-files/nvim/init.vim',
-                HD + '/.config/nvim/'
+
+            # Discord
+            ConfigEntry(
+                description='install Discord',
+                shorthand='dsc',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/install-discord.sh'),
+                        is_installed=lambda: ex(
+                            'command -v discord >/dev/null') == 0
+                    )
+                ]
             ),
-            toggle_file_links(
-                CD + '/config-files/java-formatter.xml',
-                HD + '/.config/java-formatter.xml'
-            )
-        ]
-    ),
 
-    # load Cinnamon keyboard shortcuts
-    ConfigEntry(
-        description='Cinnamon: load keyboard shortcuts',
-        shorthand='cks',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(
-                    'dconf load / < ' + CD + '/config-files/cinnamon/keyboard-shortcuts.conf'
-                )
+            # Insync
+            ConfigEntry(
+                description='install Insync',
+                shorthand='ins',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/install-insync.sh'),
+                        is_installed=lambda: ex(
+                            'command -v insync >/dev/null') == 0
+                    )
+                ]
             ),
-            toggle_file_links(
-                CD + '/config-files/keyboard_volume_knob', HD + '/keyboard_volume_knob'
-            )
-        ]
-    ),
 
-    # theme for Cinnamon DE
-    ConfigEntry(
-        description='Cinnamon: install theme',
-        shorthand='thm',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(
-                    CD + '/src/scripts/cinnamon-install-theme.sh'
-                )
-            )
-        ]
-    ),
-
-    # other settings for Cinnamon DE
-    ConfigEntry(
-        description='Cinnamon: load other DE settings',
-        shorthand='cos',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(
-                    'dconf load / < ' + CD + '/config-files/cinnamon/other-settings.conf'
-                )
-            )
-        ]
-    ),
-
-    # additional fonts
-    ConfigEntry(
-        description='install additional fonts',
-        shorthand='fnt',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(
-                    CD + '/src/scripts/install-additional-fonts.sh'
-                ),
-                is_installed=lambda: [
-                    os.path.exists(
-                        '/usr/share/fonts/truetype/' + x
-                    ) for x in ['merriweather', 'fira-code', 'fira-sans']
+            # Unity 3D
+            ConfigEntry(
+                description='install Unity Hub, .NET SDK+Runtime, and Mono',
+                shorthand='unt',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/install-unity.sh'),
+                        is_installed=lambda: [
+                            ex('command -v unity-hub >/dev/null') == 0,
+                            ex('command -v mono >/dev/null') == 0,
+                            ex('command -v dotnet >/dev/null') == 0,
+                        ]
+                    )
                 ]
             )
-        ]
-    ),
 
-    # copy utility scripts
-    ConfigEntry(
-        description='copy utility scripts',
-        shorthand='cus',
-        installation_packages=[
-            toggle_file_links(
-                CD + '/utility-scripts',
-                '/opt/utility-scripts',
-                sudo=True
-            )
         ]
-    ),
+    },
 
-    # set IBus icon colour
-    ConfigEntry(
-        description='set IBus icon colour',
-        shorthand='ibu',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(
-                    '/usr/bin/gsettings set org.freedesktop.ibus.panel xkb-icon-rgba "#c0c0c0"'
-                )
-            )
-        ]
-    ),
+    {
+        'name': 'General config',
+        'list': [
 
-    # enable start on boot for the Audio Loopback program
-    ConfigEntry(
-        description='enable start on boot for the Audio Loopback program',
-        shorthand='alp',
-        installation_packages=[
-            toggle_file_links(
-                CD + '/config-files/autostart/audio-loopback.desktop',
-                HD + '/.config/autostart/audio-loopback.desktop',
+            # GPG signing for Git
+            ConfigEntry(
+                description='enable GPG signing in Git',
+                shorthand='gpg',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/enable-git-signing.sh'),
+                        is_installed=lambda: ex(
+                            '[ -n "$(git config --global user.signingKey)" ]') == 0
+                    )
+                ]
             ),
-            toggle_file_links(
-                CD + '/config-files/.audloop',
-                HD + '/.audloop'
-            )
-        ]
-    ),
 
-    ConfigEntry(
-        description='enable start on boot for the second keyboard program (make sure the exec is ready)',
-        shorthand='skb',
-        installation_packages=[
-            toggle_file_links(
-                CD + '/config-files/autostart/second-keyboard.desktop',
-                HD + '/.config/autostart/second-keyboard.desktop',
-            )
-        ]
-    ),
+            # load Bash config
+            ConfigEntry(
+                description='load Bash config',
+                shorthand='brc',
+                installation_packages=[
+                    toggle_fileblock(
+                        CD + '/config-files/.bashrc',
+                        HD + '/.bashrc'
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/.bash_aliases',
+                        HD + '/.bash_aliases'
+                    )
+                ]
+            ),
 
-    ConfigEntry(
-        description='install Unity Hub, .NET SDK+Runtime, and Mono',
-        shorthand='unt',
-        installation_packages=[
-            InstallationPackage(
-                install_func=lambda: ex(CD + '/src/scripts/install-unity.sh'),
-                is_installed=lambda: [
-                    ex('command -v unity-hub >/dev/null') == 0,
-                    ex('command -v mono >/dev/null') == 0,
-                    ex('command -v dotnet >/dev/null') == 0,
+            # swap Control_R and Menu keys
+            ConfigEntry(
+                description='swap Control_R and Menu keys (good for keyboards without a dedicated Menu key)',
+                shorthand='kym',
+                installation_packages=[
+                    toggle_fileblock(
+                        CD + '/config-files/.key_remap',
+                        HD + '/.bashrc'
+                    )
+                ]
+            ),
+
+            # install config files
+            ConfigEntry(
+                description='install config files for: RedShift, Java formatter, and Neovim',
+                shorthand='rds',
+                installation_packages=[
+                    toggle_file_links(
+                        CD + '/config-files/redshift.conf',
+                        HD + '/.config/redshift.conf'
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/nvim/init.vim',
+                        HD + '/.config/nvim/'
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/java-formatter.xml',
+                        HD + '/.config/java-formatter.xml'
+                    )
+                ]
+            ),
+
+        ]
+    },
+
+    {
+        'name': 'i3',
+        'list': [
+
+            # theme
+            ConfigEntry(
+                description='i3 and Cinnamon: install theme',
+                shorthand='thm',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/cinnamon-install-theme.sh'
+                        )
+                    )
+                ]
+            ),
+
+        ]
+    },
+
+    {
+        'name': 'Cinnamon only',
+        'list': [
+
+            # load Cinnamon keyboard shortcuts
+            ConfigEntry(
+                description='Cinnamon: load keyboard shortcuts',
+                shorthand='cks',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            'dconf load / < ' + CD + '/config-files/cinnamon/keyboard-shortcuts.conf'
+                        )
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/keyboard_volume_knob', HD + '/keyboard_volume_knob'
+                    )
+                ]
+            ),
+
+            # other settings for Cinnamon DE
+            ConfigEntry(
+                description='Cinnamon: load other DE settings',
+                shorthand='cos',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            'dconf load / < ' + CD + '/config-files/cinnamon/other-settings.conf'
+                        )
+                    )
+                ]
+            ),
+
+            # enable start on boot for the Audio Loopback program
+            ConfigEntry(
+                description='Cinnamon: enable start on boot for the Audio Loopback program',
+                shorthand='alp',
+                installation_packages=[
+                    toggle_file_links(
+                        CD + '/config-files/autostart/audio-loopback.desktop',
+                        HD + '/.config/autostart/audio-loopback.desktop',
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/.audloop',
+                        HD + '/.audloop'
+                    )
+                ]
+            ),
+
+            ConfigEntry(
+                description='Cinnamon: enable start on boot for the second keyboard program (make sure the exec is ready)',
+                shorthand='skb',
+                installation_packages=[
+                    toggle_file_links(
+                        CD + '/config-files/autostart/second-keyboard.desktop',
+                        HD + '/.config/autostart/second-keyboard.desktop',
+                    )
+                ]
+            ),
+
+        ]
+    },
+
+    {
+        'name': 'Other',
+        'list': [
+
+            # additional fonts
+            ConfigEntry(
+                description='install additional fonts',
+                shorthand='fnt',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/install-additional-fonts.sh'
+                        ),
+                        is_installed=lambda: [
+                            os.path.exists(
+                                '/usr/share/fonts/truetype/' + x
+                            ) for x in ['merriweather', 'fira-code', 'fira-sans']
+                        ]
+                    )
+                ]
+            ),
+
+            # copy utility scripts
+            ConfigEntry(
+                description='copy utility scripts',
+                shorthand='cus',
+                installation_packages=[
+                    toggle_file_links(
+                        CD + '/utility-scripts',
+                        '/opt/utility-scripts',
+                        sudo=True
+                    )
+                ]
+            ),
+
+            # set IBus icon colour
+            ConfigEntry(
+                description='set IBus icon colour',
+                shorthand='ibu',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            '/usr/bin/gsettings set org.freedesktop.ibus.panel xkb-icon-rgba "#c0c0c0"'
+                        )
+                    )
                 ]
             )
+
         ]
-    )
+    }
 
 ]
+
+# flatten the list
+config_entries_flat = [ce for group in config_entries for ce in group['list']]
