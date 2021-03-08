@@ -240,6 +240,26 @@ config_entries = [
                 ]
             ),
 
+            # i3 and i3status
+            ConfigEntry(
+                description='i3: base config',
+                shorthand='i3c',
+                installation_packages=[
+                    toggle_file_links(
+                        CD + '/config-files/i3/i3/config',
+                        HD + '/.config/i3/config'
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/i3/i3status/config',
+                        HD + '/.config/i3status/config'
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/i3/dunst/dunstrc',
+                        HD + '/.config/dunst/dunstrc'
+                    )
+                ]
+            )
+
         ]
     },
 
