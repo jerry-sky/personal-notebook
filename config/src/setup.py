@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from sys import stdin, exit, argv
-from config.config_entries import config_entries
+from config.config_entries import config_entries, config_entries_flat
 from config.config_entry import Status, ConfigEntry
 import os
 
@@ -19,7 +19,7 @@ UNINSTALLED = '\033[1muninstalled\033[0m'
 UNCHANGED = '\033[1munchanged\033[0m'
 
 # first see which command is the longest to adjust the space padding for the other commands
-COMMAND_LENGTH = max([len(ce.shorthand) for ce in config_entries])
+COMMAND_LENGTH = max([len(ce.shorthand) for ce in config_entries_flat])
 
 
 def print_available_options():
@@ -28,9 +28,13 @@ def print_available_options():
     '''
 
     # print available config entries
-    print('\n\033[1mAvailable configs:\033[0m')
-    for ce in config_entries:
-        print_entry(ce)
+    print('\n\033[1mAvailable configs:\033[0m\n')
+    for group in config_entries:
+        print(group['name'])
+        for ce in group['list']:
+            print_entry(ce)
+
+        print()
 
     print(
         '\nType the [ commands in brackets ] you want to execute splitted with whitespace or input `^D` to terminate this program.\n'
@@ -138,17 +142,19 @@ if __name__ == '__main__':
         # interactive mode
         print('\033[1mInteractive mode')
 
-        for ce in config_entries:
-            # for each entry give the user an option to do nothing,
-            # uninstall, reinstall, or install
-            execute_entry(ce)
+        for group in config_entries:
+            print(group['name'])
+            for ce in group:
+                # for each entry give the user an option to do nothing,
+                # uninstall, reinstall, or install
+                execute_entry(ce)
 
     else:
         # list mode
 
         # premap all entries with their respective shorthands
         config_entries_shorthands = list(
-            map(lambda x: x.shorthand, config_entries))
+            map(lambda x: x.shorthand, config_entries_flat))
 
         print_available_options()
 
@@ -164,7 +170,7 @@ if __name__ == '__main__':
                 if command in config_entries_shorthands:
                     # the command refers to one of the entries on the list
                     index = config_entries_shorthands.index(command)
-                    count += execute_entry(config_entries[index])
+                    count += execute_entry(config_entries_flat[index])
 
                 elif command in ['list', 'l', 'a']:
                     # user wants to see all available entries
