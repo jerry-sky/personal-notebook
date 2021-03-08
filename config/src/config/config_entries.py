@@ -71,12 +71,36 @@ def toggle_fileblock(source: str, target: str, sudo: bool = False):
         is_installed=lambda: does_contain_file_block(source, target)
     )
 
+# list of all utility programs
+utilities_default_installer = 'sudo apt-get install'
+utilities_default_verifier = 'command -v >/dev/null'
+utilities = [
+    # screenshots
+    (utilities_default_installer, utilities_default_verifier, 'maim xclip xdotool')
+]
 
 config_entries = [
 
     {
         'name': 'Programs and utilities',
         'list': [
+
+            # various utilities
+            ConfigEntry(
+                description='install utilities',
+                shorthand='utl',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: [
+                            ex(util[0] + ' ' + util[2], sudo=True) for util in utilities
+                        ],
+                        is_installed=lambda: [
+                            ex(util[1] + ' ' + sub_util) == 0 for util in utilities for sub_util in util[2].split(' ')
+                        ]
+                    )
+                ]
+            ),
+
             # Blender
             ConfigEntry(
                 description='install Blender',
