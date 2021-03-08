@@ -29,19 +29,43 @@ alias gts="git status"
 alias gcm="git commit -m"
 alias gcmam="git commit --amend -m"
 alias gcam="git commit --amend --no-edit"
+function __git_remote() {
+    # this function gets the default origin for the branch
+    branch=$(git branch --show-current)
+    remote=$(git config branch."$branch".remote)
+    if [ -z "$remote" ]; then
+        remote="origin"
+    fi
+    echo $remote
+}
+function __git_remote_parse() {
+    # this function parses given remote and branch target
+    dest="$1"
+    if [ -z "$dest" ] || [[ "$dest" == -* ]]; then
+        dest="$(__git_remote)"
+    fi
+    if [[ "$dest" != */* ]]; then
+        dest="$dest/$(git branch --show-current)"
+    fi
+    echo $dest | tr '/' ' '
+}
 function gph() {
-    printf "\033[1;7m pushing to $(git remote)/$(git branch --show-current) \033[0m\n"
+    dest=$(__git_remote_parse "$1")
+    printf "\033[1;7m pushing to $dest \033[0m\n"
     printf "\033[1;38;5;249m press RETURN to continue \033[0m"
     # give user chance to abort pushing
     read
-    git push "$@" "$(git remote)" "$(git branch --show-current)"
+    shift # remove the original argument
+    git push $dest "$@"
 }
 function gpl() {
-    printf "\033[1;7m pulling from $(git remote)/$(git branch --show-current) \033[0m\n"
+    dest=$(__git_remote_parse "$1")
+    printf "\033[1;7m pulling from $dest \033[0m\n"
     printf "\033[1;38;5;249m press RETURN to continue \033[0m"
     # give user change to abort pulling
     read
-    git pull --rebase "$@" "$(git remote)" "$(git branch --show-current)"
+    shift # remove the original argument
+    git pull --rebase $dest "$@"
 }
 alias gf="git fetch"
 alias gdf="git diff HEAD"
