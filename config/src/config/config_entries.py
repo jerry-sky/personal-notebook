@@ -76,7 +76,9 @@ utilities_default_installer = 'sudo apt-get install'
 utilities_default_verifier = 'command -v >/dev/null'
 utilities = [
     # screenshots
-    (utilities_default_installer, utilities_default_verifier, 'maim xclip xdotool')
+    (utilities_default_installer, utilities_default_verifier, 'maim xclip xdotool'),
+    # file management
+    (utilities_default_installer, utilities_default_verifier, 'filezilla')
 ]
 
 config_entries = [
