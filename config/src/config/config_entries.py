@@ -71,6 +71,7 @@ def toggle_fileblock(source: str, target: str, sudo: bool = False):
         is_installed=lambda: does_contain_file_block(source, target)
     )
 
+
 # list of all utility programs
 utilities_default_installer = 'sudo apt-get install'
 utilities_default_verifier = 'command -v >/dev/null'
@@ -250,12 +251,12 @@ config_entries = [
     },
 
     {
-        'name': 'i3',
+        'name': 'i3 and Cinnamon',
         'list': [
 
             # theme
             ConfigEntry(
-                description='i3 and Cinnamon: install theme',
+                description='install theme',
                 shorthand='thm',
                 installation_packages=[
                     InstallationPackage(
@@ -268,7 +269,7 @@ config_entries = [
 
             # i3 and i3status
             ConfigEntry(
-                description='i3: base config',
+                description='base config',
                 shorthand='i3c',
                 installation_packages=[
                     toggle_file_links(
@@ -284,7 +285,57 @@ config_entries = [
                         HD + '/.config/dunst/dunstrc'
                     )
                 ]
-            )
+            ),
+
+            # enable start on boot for the Audio Loopback program
+            ConfigEntry(
+                description='enable start on boot for the Audio Loopback program',
+                shorthand='alp',
+                installation_packages=[
+                    toggle_file_links(
+                        CD + '/config-files/autostart/audio-loopback.desktop',
+                        HD + '/.config/autostart/audio-loopback.desktop',
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/.audloop',
+                        HD + '/.audloop'
+                    )
+                ]
+            ),
+
+            ConfigEntry(
+                description='enable start on boot for the second keyboard program (make sure the exec is ready)',
+                shorthand='skb',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: [
+                            # copy the sudoers file
+                            ex(
+                                'sudo cp ' + CD + '/config-files/sudoers.d/second-keyboard /etc/sudoers.d/second-keyboard && '
+                                + 'sudo chown root:root /etc/sudoers.d/second-keyboard'
+                            ),
+                            # make room for the ‘gain access’ script
+                            ex(
+                                'mkdir -p ' + HD + '/second-keyboard'
+                            ),
+                            # copy the script
+                            ex(
+                                'sudo cp ' + CD + '/second-keyboard/gain-access.sh ' + HD + '/second-keyboard/gain-access.sh'
+                            ),
+                            # give root access to it
+                            ex(
+                                'sudo chown root:root ' + HD + '/second-keyboard/gain-access.sh && '
+                                + 'sudo chmod 4755 ' + HD + '/second-keyboard/gain-access.sh'
+                            )
+                        ],
+                        is_installed=lambda: ex('test -f ' + HD + '/second-keyboard/gain-access.sh') == 0
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/autostart/second-keyboard.desktop',
+                        HD + '/.config/autostart/second-keyboard.desktop',
+                    )
+                ]
+            ),
 
         ]
     },
@@ -295,7 +346,7 @@ config_entries = [
 
             # load Cinnamon keyboard shortcuts
             ConfigEntry(
-                description='Cinnamon: load keyboard shortcuts',
+                description='load keyboard shortcuts',
                 shorthand='cks',
                 installation_packages=[
                     InstallationPackage(
@@ -311,40 +362,13 @@ config_entries = [
 
             # other settings for Cinnamon DE
             ConfigEntry(
-                description='Cinnamon: load other DE settings',
+                description='load other DE settings',
                 shorthand='cos',
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
                             'dconf load / < ' + CD + '/config-files/cinnamon/other-settings.conf'
                         )
-                    )
-                ]
-            ),
-
-            # enable start on boot for the Audio Loopback program
-            ConfigEntry(
-                description='Cinnamon: enable start on boot for the Audio Loopback program',
-                shorthand='alp',
-                installation_packages=[
-                    toggle_file_links(
-                        CD + '/config-files/autostart/audio-loopback.desktop',
-                        HD + '/.config/autostart/audio-loopback.desktop',
-                    ),
-                    toggle_file_links(
-                        CD + '/config-files/.audloop',
-                        HD + '/.audloop'
-                    )
-                ]
-            ),
-
-            ConfigEntry(
-                description='Cinnamon: enable start on boot for the second keyboard program (make sure the exec is ready)',
-                shorthand='skb',
-                installation_packages=[
-                    toggle_file_links(
-                        CD + '/config-files/autostart/second-keyboard.desktop',
-                        HD + '/.config/autostart/second-keyboard.desktop',
                     )
                 ]
             ),
