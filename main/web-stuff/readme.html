@@ -15,41 +15,67 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="/style.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -93,10 +119,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="links">Links</h2>
 <h3 id="interesting-reads">Interesting reads</h3>
 <ul>
-<li><a href="https://medium.com/edge-coders/you-dont-hate-javascript-62cd6c609d43">You don't hate JavaScript</a></li>
-<li><a href="http://web.archive.org/web/20150208203207/http://blog.ircmaxell.com/2014/11/its-all-about-time.html">It's all about time</a></li>
+<li><a href="https://medium.com/edge-coders/you-dont-hate-javascript-62cd6c609d43">You don’t hate JavaScript</a></li>
+<li><a href="http://web.archive.org/web/20150208203207/http://blog.ircmaxell.com/2014/11/its-all-about-time.html">It’s all about time</a></li>
 <li><a href="https://fdietz.github.io/2015/04/13/day-1-how-to-build-your-own-team-chat-in-five-days.html">How to build your own team chat in five days</a></li>
-<li><a href="https://simpleprogrammer.com/2015/09/11/a-programmers-guide-to-managing-stress/?utm_source=facebook.com&amp;utm_medium=referral&amp;utm_campaign=i-love-coding">A Programmer's Guide to Managing Stress</a></li>
+<li><a href="https://simpleprogrammer.com/2015/09/11/a-programmers-guide-to-managing-stress/?utm_source=facebook.com&amp;utm_medium=referral&amp;utm_campaign=i-love-coding">A Programmer’s Guide to Managing Stress</a></li>
 <li><a href="http://mysql.rjweb.org/doc.php/pivot">Pivoting in MySQL</a></li>
 <li><a href="https://hackernoon.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9">How to stop me harvesting credit card numbers and passwords from your site</a></li>
 <li><a href="https://www.simonholywell.com/post/2013/05/improve-php-session-cookie-security/">PHP Cookies security</a></li>
@@ -118,37 +144,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <h2 id="freeing-a-tcp-port">Freeing a TCP port</h2>
 <p>Execute bash command</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> fuser 80/tcp</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> fuser 80/tcp</a></code></pre></div>
 <p>to see the all of the process listening to HTTP requests on port 80. Add a <code>-k</code> option to kill them. <a href="https://stackoverflow.com/a/750705/4249875">Source</a></p>
 <hr />
 <h2 id="classes-and-interfaces-in-typescript">Classes and Interfaces in TypeScript</h2>
-<p>Without defining a constructor there is no way to check if a given attribute (of actual type <code>string</code>) is in a certain object (that is a member of some given class) if the object is empty. TypeScript doesn't include the properties of a class in the compiled program; to check if a given prop is in a certain object type (in a class definition one can say) you have to use an ad-hoc generated staple object that is a member of this class – this way the constructor will be called and it will initialize all the properties thus <code>Object.keys</code> will not return an empty array but an array with all properties initialized by the constructor.</p>
+<p>Without defining a constructor there is no way to check if a given attribute (of actual type <code>string</code>) is in a certain object (that is a member of some given class) if the object is empty. TypeScript doesn’t include the properties of a class in the compiled program; to check if a given prop is in a certain object type (in a class definition one can say) you have to use an ad-hoc generated staple object that is a member of this class – this way the constructor will be called and it will initialize all the properties thus <code>Object.keys</code> will not return an empty array but an array with all properties initialized by the constructor.</p>
 <p>Below is an example class with a constructor that initializes all class’ attributes.</p>
-<pre class="ts"><code>class Example {
-    one: string;
-    two: number;
-    three: number[];
-
-    constructor() {
-        this.one = &#39;some&#39;;
-        this.two = &#39;example&#39;;
-        this.three = &#39;data&#39;;
-    }
-}</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">class</span> Example <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-2" title="2">    one<span class="op">:</span> <span class="dt">string</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    two<span class="op">:</span> <span class="dt">number</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">    three<span class="op">:</span> <span class="dt">number</span><span class="op">[];</span></a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="kw">constructor</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-7" title="7">        <span class="va">this</span><span class="op">.</span><span class="at">one</span> <span class="op">=</span> <span class="st">&#39;some&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">        <span class="va">this</span><span class="op">.</span><span class="at">two</span> <span class="op">=</span> <span class="st">&#39;example&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">        <span class="va">this</span><span class="op">.</span><span class="at">three</span> <span class="op">=</span> <span class="st">&#39;data&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="op">}</span></a></code></pre></div>
 <p>Now, to check if a given string is an attribute use:</p>
-<pre class="ts"><code>if (attr in new Example) {
-    console.log(attr, &#39;is a property in `Example`&#39;);
-}</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">if</span> (attr <span class="kw">in</span> <span class="kw">new</span> Example) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-2" title="2">    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(attr<span class="op">,</span> <span class="st">&#39;is a property in `Example`&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="op">}</span></a></code></pre></div>
 <p>If the <code>constructor</code> isn’t defined in the <code>Example</code> class, the condition in the above <code>if</code> statement will always reject any <code>string</code> property.</p>
 <p>To allow creating objects with custom initializing values you could improve <code>constructor</code> by adding an optional argument:</p>
-<pre class="ts"><code>constructor(example: Partial&lt;Example&gt; = {}) {
-    this.one = example.one || &#39;some&#39;;
-    this.two = example.two || &#39;example&#39;;
-    this.three = example.three || &#39;data&#39;;
-}</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">constructor</span>(example<span class="op">:</span> Partial<span class="op">&lt;</span>Example<span class="op">&gt;</span> <span class="op">=</span> <span class="op">{}</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-2" title="2">    <span class="va">this</span><span class="op">.</span><span class="at">one</span> <span class="op">=</span> <span class="va">example</span><span class="op">.</span><span class="at">one</span> <span class="op">||</span> <span class="st">&#39;some&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="va">this</span><span class="op">.</span><span class="at">two</span> <span class="op">=</span> <span class="va">example</span><span class="op">.</span><span class="at">two</span> <span class="op">||</span> <span class="st">&#39;example&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="va">this</span><span class="op">.</span><span class="at">three</span> <span class="op">=</span> <span class="va">example</span><span class="op">.</span><span class="at">three</span> <span class="op">||</span> <span class="st">&#39;data&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="op">}</span></a></code></pre></div>
 <p>This way you could create a new instance of this class with some custom parameters. However, this argument is optional so it can be omitted: <code>new Example()</code>.</p>
 <p>It is important to note that defining the argument as optional using the <code>?</code> symbol won’t work.</p>
-<pre class="ts"><code>constructor(example?: Partial&lt;Example&gt;) {...}</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">constructor</span>(example<span class="op">?:</span> Partial<span class="op">&lt;</span>Example<span class="op">&gt;</span>) <span class="op">{...}</span></a></code></pre></div>
 <p>If the <code>constructor</code> is defined as above then creating a new object (<code>new Example()</code>) will result in an error of a <code>TypeError</code>:</p>
 <pre class="log"><code>TypeError: Cannot read property &#39;...&#39; of undefined</code></pre>
 <p>as the argument object hasn’t been provided.<br />
@@ -156,58 +182,58 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="extracting-a-property-from-a-derived-class-a-proposal">Extracting a property from a derived class (a proposal)</h2>
 <p><em>This describes a very obscure issue, but it is still important to consider the resolution of this issue.</em></p>
 <p>We have two classes of which one is derived from the other:</p>
-<pre class="ts"><code>class Base {
-    one: string;
-
-    constructor() {
-        this.one = &#39;data&#39;;
-    }
-}
-
-class Derived extends Base {
-    two: number;
-
-    constructor() {
-        super();
-        this.two = 27;
-    }
-}</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">class</span> Base <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-2" title="2">    one<span class="op">:</span> <span class="dt">string</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="kw">constructor</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-5" title="5">        <span class="va">this</span><span class="op">.</span><span class="at">one</span> <span class="op">=</span> <span class="st">&#39;data&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-6" title="6">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="op">}</span></a>
+<a class="sourceLine" id="cb7-8" title="8"></a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="kw">class</span> Derived <span class="kw">extends</span> Base <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-10" title="10">    two<span class="op">:</span> <span class="dt">number</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-11" title="11"></a>
+<a class="sourceLine" id="cb7-12" title="12">    <span class="kw">constructor</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-13" title="13">        <span class="fu">super</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-14" title="14">        <span class="va">this</span><span class="op">.</span><span class="at">two</span> <span class="op">=</span> <span class="dv">27</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-15" title="15">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb7-16" title="16"><span class="op">}</span></a></code></pre></div>
 <p>an instance of the <code>Derived</code> class:</p>
-<pre class="ts"><code>const object: Derived = new Derived();</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">const</span> object<span class="op">:</span> Derived <span class="op">=</span> <span class="kw">new</span> <span class="fu">Derived</span>()<span class="op">;</span></a></code></pre></div>
 <p>We want to extract properties that are defined by <code>Base</code> class from this <code>object</code> and remove all that are defined by the <code>Derived</code> class. In this case we want to get an object with only the <code>one</code> property.</p>
-<pre class="ts"><code>const objectExtracted: Base = new Base();</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">const</span> objectExtracted<span class="op">:</span> Base <span class="op">=</span> <span class="kw">new</span> <span class="fu">Base</span>()<span class="op">;</span></a></code></pre></div>
 <p>The first solution would be to loop through all properties of the <code>object</code> properties and assign all values to properties that exist in <code>objectExtracted</code>’s type which is the <code>Base</code> class.</p>
 <p>We need to define a <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#using-type-predicates"><em>predicate function</em></a> that states whether a given string property name is an actual property name:</p>
-<pre class="ts"><code>class Base {
-    ...
-
-    public static hasKey(val: any): val is keyof Base {
-        return val in new Base();
-    }
-}</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">class</span> Base <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-2" title="2">    <span class="op">...</span></a>
+<a class="sourceLine" id="cb10-3" title="3"></a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="kw">public</span> <span class="kw">static</span> <span class="fu">hasKey</span>(val<span class="op">:</span> <span class="dt">any</span>)<span class="op">:</span> val is <span class="kw">keyof</span> Base <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-5" title="5">        <span class="cf">return</span> val <span class="kw">in</span> <span class="kw">new</span> <span class="fu">Base</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-6" title="6">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb10-7" title="7"><span class="op">}</span></a></code></pre></div>
 <p>This function creates a staple instance of the <code>Base</code> class that contains all of its properties (it is important to define a proper <code>constructor</code> for this class – more <a href="#classes-and-interfaces-in-typescript">here</a>) and checks whether the provided string is an actual object key.</p>
 <p>However, the following code isn’t enough:</p>
-<pre class="ts"><code>for (const prop in object) {
-    if(Base.hasKey(prop)) {
-        objectExtracted[prop] = object[prop];
-    }
-}</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb11-1" title="1"><span class="fu">for</span> (<span class="kw">const</span> prop <span class="kw">in</span> <span class="kw">object</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb11-2" title="2">    <span class="fu">if</span>(<span class="va">Base</span><span class="op">.</span><span class="fu">hasKey</span>(prop)) <span class="op">{</span></a>
+<a class="sourceLine" id="cb11-3" title="3">        objectExtracted<span class="op">[</span>prop<span class="op">]</span> <span class="op">=</span> <span class="kw">object</span><span class="op">[</span>prop<span class="op">];</span></a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="op">}</span></a></code></pre></div>
 <p>as it will bring up an error that some type can’t be cast to the type “<code>never</code>”. This type exists because of uncertainty which type should be used here when accessing a property of <code>objectExtracted</code>.</p>
 <p>The solution is to define a function which <em>extracts</em> a given property from one object to another whilst at the same time <strong>being type-safe</strong>:</p>
-<pre class="ts"><code>export function ExtractProperty&lt;T1, T2 extends T1, K extends keyof T2&gt;(
-  target: T1, source: T2, property: K, hasKey: (val: any) =&gt; val is keyof T1): void {
-  if (hasKey(property)) {
-    target[property] = source[property];
-  }
-}</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb12-1" title="1"><span class="im">export</span> <span class="kw">function</span> <span class="fu">ExtractProperty</span><span class="op">&lt;</span>T1<span class="op">,</span> T2 <span class="kw">extends</span> T1<span class="op">,</span> K <span class="kw">extends</span> <span class="kw">keyof</span> T2<span class="op">&gt;</span>(</a>
+<a class="sourceLine" id="cb12-2" title="2">  target<span class="op">:</span> T1<span class="op">,</span> source<span class="op">:</span> T2<span class="op">,</span> property<span class="op">:</span> K<span class="op">,</span> hasKey<span class="op">:</span> (val<span class="op">:</span> <span class="dt">any</span>) <span class="kw">=&gt;</span> val is <span class="kw">keyof</span> T1)<span class="op">:</span> <span class="dt">void</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-3" title="3">  <span class="fu">if</span> (<span class="fu">hasKey</span>(property)) <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-4" title="4">    target<span class="op">[</span>property<span class="op">]</span> <span class="op">=</span> source<span class="op">[</span>property<span class="op">];</span></a>
+<a class="sourceLine" id="cb12-5" title="5">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb12-6" title="6"><span class="op">}</span></a></code></pre></div>
 <p>This function assigns the property value from the <code>source</code> object to <code>target</code> only if <code>target</code> has a property of the same name. This function requires using a predicate which makes sure the object keys are handled properly.</p>
 <p><em>This function essentially moves the problem to an abstract level at which it resolves the type uncertainty issue.</em></p>
 <p>Now, we can rewrite our loop:</p>
-<pre class="ts"><code>for (const prop in object) {
-    if(Base.hasKey(prop)) {
-        ExtractProperty(objectExtracted, object, prop, Base.hasKey);
-    }
-}</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb13-1" title="1"><span class="fu">for</span> (<span class="kw">const</span> prop <span class="kw">in</span> <span class="kw">object</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-2" title="2">    <span class="fu">if</span>(<span class="va">Base</span><span class="op">.</span><span class="fu">hasKey</span>(prop)) <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-3" title="3">        <span class="fu">ExtractProperty</span>(objectExtracted<span class="op">,</span> <span class="kw">object</span><span class="op">,</span> prop<span class="op">,</span> <span class="va">Base</span><span class="op">.</span><span class="at">hasKey</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-4" title="4">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="op">}</span></a></code></pre></div>
 <p>so it uses the <code>ExtractProperty</code> function.</p>
 </body>
 </html>
