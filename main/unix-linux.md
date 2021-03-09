@@ -15,6 +15,7 @@ keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customizat
 - [Redirecting `stdout` to `stderr`](#redirecting-stdout-to-stderr)
 - [Downloading a whole website using `wget`](#downloading-a-whole-website-using-wget)
 - [Permanently setting the DNS server](#permanently-setting-the-dns-server)
+- [Fixing broken packages (downloaded from an external PPA) by forcefully overwriting `apt` packages](#fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages)
 
 ---
 
@@ -155,5 +156,29 @@ nameserver 1.1.1.1
 ```
 
 [Source](https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/)
+
+---
+
+## Fixing broken packages (downloaded from an external PPA) by forcefully overwriting `apt` packages
+
+Sometimes adding external PPAs results in broken packages and the infamous error:
+
+```log
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+```
+
+One solution would be to remove that PPA
+
+```bash
+sudo add-apt-repository --remove ‹PPA›
+```
+
+and to forcefully overwrite the broken packages from software sources that were already present in the system.
+
+```bash
+sudo apt install -o Dpkg::Options::="--force-overwrite" --fix-broken
+```
+
+[Source](https://unix.stackexchange.com/a/624842)
 
 ---
