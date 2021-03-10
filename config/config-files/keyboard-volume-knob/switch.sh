@@ -3,7 +3,7 @@
 # this script allows switching between two modes of the keyboard volume knob
 # this is done via creating and deleting two files simply named `scroll` and `volume`
 
-prefix="$HOME/keyboard_volume_knob"
+prefix="$HOME/keyboard-volume-knob"
 
 if [ -f "$prefix/scroll" ]; then
   rm -f "$prefix/scroll"

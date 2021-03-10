@@ -283,6 +283,11 @@ config_entries = [
                     toggle_file_links(
                         CD + '/config-files/i3/dunst/dunstrc',
                         HD + '/.config/dunst/dunstrc'
+                    ),
+                    # keyboard knob switcher
+                    toggle_file_links(
+                        CD + '/config-files/keyboard-volume-knob',
+                        HD + '/keyboard-volume-knob'
                     )
                 ]
             ),
@@ -355,7 +360,8 @@ config_entries = [
                         )
                     ),
                     toggle_file_links(
-                        CD + '/config-files/keyboard_volume_knob', HD + '/keyboard_volume_knob'
+                        CD + '/config-files/keyboard-volume-knob',
+                        HD + '/keyboard-volume-knob'
                     )
                 ]
             ),

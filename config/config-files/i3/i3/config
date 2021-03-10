@@ -22,14 +22,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment–independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# use pactl to adjust volume in PulseAudio.
-set $volume_step 2%
+# use pactl to adjust volume in PulseAudio or to scroll
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +$volume_step && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -$volume_step && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id /home/$USER/keyboard-volume-knob/knob-up.sh && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id /home/$USER/keyboard-volume-knob/knob-down.sh && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id /home/$USER/keyboard-volume-knob/switch.sh && $refresh_i3status
+
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86AudioPlay exec playerctl play-pause
 
 # use `playerctl` to control media
 bindsym XF86AudioPause exec playerctl play-pause
