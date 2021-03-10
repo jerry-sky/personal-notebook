@@ -44,7 +44,7 @@ def lns(source: str, target: str, sudo: bool = False):
     else:
         # file is not a directory
         ex('mkdir -p -- ' + os.path.dirname(target), sudo)
-        ex('ln -fs ' + source + ' ' + target, sudo)
+        ex('ln -fs -- ' + source + ' ' + target, sudo)
 
 
 def toggle_file_links(source: str, target: str, sudo: bool = False):
@@ -56,7 +56,7 @@ def toggle_file_links(source: str, target: str, sudo: bool = False):
     '''
     return InstallationPackage(
         install_func=lambda: lns(source, target, sudo),
-        uninstall_func=lambda: ex('rm -r ' + target, sudo),
+        uninstall_func=lambda: ex('rm -rf -- ' + target, sudo),
         is_installed=lambda: True if os.path.exists(target) else False
     )
 
@@ -316,7 +316,7 @@ config_entries = [
                         install_func=lambda: [
                             # copy the sudoers file
                             ex(
-                                'sudo cp ' + CD + '/config-files/sudoers.d/second-keyboard /etc/sudoers.d/second-keyboard && '
+                                'sudo cp ' + CD + '/config-files/sudoers.d/second-keyboard /etc/sudoers.d/second-keyboard && ' \
                                 + 'sudo chown root:root /etc/sudoers.d/second-keyboard'
                             ),
                             # make room for the ‘gain access’ script
@@ -325,15 +325,18 @@ config_entries = [
                             ),
                             # copy the script
                             ex(
-                                'sudo cp ' + CD + '/second-keyboard/gain-access.sh ' + HD + '/second-keyboard/gain-access.sh'
+                                'sudo cp ' + CD + '/second-keyboard/gain-access.sh ' \
+                                + HD + '/second-keyboard/gain-access.sh'
                             ),
                             # give root access to it
                             ex(
-                                'sudo chown root:root ' + HD + '/second-keyboard/gain-access.sh && '
+                                'sudo chown root:root ' + HD + '/second-keyboard/gain-access.sh && ' \
                                 + 'sudo chmod 4755 ' + HD + '/second-keyboard/gain-access.sh'
                             )
                         ],
-                        is_installed=lambda: ex('test -f ' + HD + '/second-keyboard/gain-access.sh') == 0
+                        is_installed=lambda: ex(
+                            'test -f ' + HD + '/second-keyboard/gain-access.sh'
+                        ) == 0
                     ),
                     toggle_file_links(
                         CD + '/config-files/autostart/second-keyboard.desktop',
