@@ -118,6 +118,25 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# toggle sticky mode for the selected floating window
+bindsym $mod+Ctrl+Shift+space sticky toggle
+
+# set size to 1920x1080
+bindsym $mod+y exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1,1920,1080'"
+# horizontal position: first, second, or third screen
+bindsym $mod+u exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '0,-1,-1,-1'"
+bindsym $mod+i exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '1920,-1,-1,-1'"
+bindsym $mod+o exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '3840,-1,-1,-1'"
+# horizontal position: almost off the third screen
+bindsym $mod+p exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '5740,-1,-1,-1'"
+# vertical position: center, or almost off the screen to the top
+bindsym $mod+Shift+u exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,0,-1,-1'"
+bindsym $mod+Shift+i exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,120,-1,-1'"
+bindsym $mod+Shift+o exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-940,-1,-1'"
+bindsym $mod+Shift+p exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1060,-1,-1'"
+# vertical position: barely on the screen (only 5 pixels visible + border pixels)
+bindsym $mod+Shift+rightbracket exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1075,-1,-1'"
+
 # focus the parent container
 bindsym $mod+a focus parent
 
