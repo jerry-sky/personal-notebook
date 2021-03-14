@@ -264,11 +264,11 @@ assign [class="(?i)Telegram"] workspace number $ws4
 assign [class="(?i)cinnamon-settings sound"] workspace number $ws5
 assign [class="(?i)pavucontrol"] workspace number $ws5
 # OBS virtual projector — keep it always visible (sticky) but hidden from sight (moved 1080 pixels upwards)
-set $obs_projector "(Windowed|Fullscreen)[[:blank:]]Projector.*"
-assign [title=$obs_projector] workspace number $ws5
-for_window [title=$obs_projector] floating enable
-for_window [title=$obs_projector] sticky enable
-for_window [title=$obs_projector] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh 'Projector (Preview)' '3840,-1080,1920,1080'"
+set $obs_projector (Windowed|Fullscreen)[[:blank:]]Projector.*
+assign [title="$obs_projector"] workspace number $ws5
+for_window [title="$obs_projector"] floating enable
+for_window [title="$obs_projector"] sticky enable
+for_window [title="$obs_projector"] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '$obs_projector' '5740,-1060,1920,1080'"
 
 # don’t steal focus
 no_focus [class="(?i)jetbrains-studio"]
