@@ -296,12 +296,7 @@ no_focus [class="(?i)discord"]
 
 # gaps
 gaps inner 35
-for_window [class=".*"] border pixel 1
-
-# border colours
-client.focused #ff0000 #00ff00 #0000ff #AB2941 #AB2941
-client.unfocused #ff0000 #00ff00 #0000ff #000000 #000000
-client.focused_inactive #ff0000 #00ff00 #0000ff #524E48 #524E48
+for_window [class=".*"] border pixel 0
 
 # fonts
 font pango:Fira Code Medium
@@ -329,3 +324,5 @@ exec --no-startup-id /home/$USER/.audloop
 exec --no-startup-id insync start
 # second keyboard
 exec --no-startup-id /home/$USER/notebooks/personal-notebook/config/second-keyboard/run.sh
+# compton
+exec --no-startup-id compton
