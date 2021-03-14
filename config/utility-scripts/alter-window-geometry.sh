@@ -43,8 +43,7 @@ fi
 if [ "1" -le "$win_num" -a "$win_num" -le "$num_wins" ] 2>/dev/null; then
     # get the id of the window (substitution)
     # resize the window by using the id (-i option)
-    wmctrl -i -r "$(printf "$wins_list" | head -n"$win_num" | tail -n1 | cut -d' ' -f1)" -e "0,$geometry" 2> /tmp/log
-    printf "$(printf "$wins_list" | head -n"$win_num" | tail -n1 | cut -d' ' -f1)\n"
+    wmctrl -i -r "$(printf "$wins_list" | head -n"$win_num" | tail -n1 | cut -d' ' -f1)" -e "0,$geometry"
     printf "\nresized\n"
 else
     printf "\ncancelled\n"

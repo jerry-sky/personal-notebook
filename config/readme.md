@@ -53,6 +53,6 @@ The config setup script allows to copy some utility scripts that enable to overr
 
 The `utility-scripts` directory contains some very specific but useful scripts that are sometimes very handy.
 
+- [`alter-window-geometry.sh`](utility-scripts/alter-window-geometry.sh) — resizes and moves selected window (requires `wmctrl`)
 - [`fix-iso-date-file-contents.sh`](utility-scripts/fix-iso-date-file-contents.sh) & [`fix-iso-date-filenames.sh`](utility-scripts/fix-iso-date-filenames.sh) – these scripts fix all pseudo ISO-like dates that don't have a leading zero before a single-digit day number (e.g. 2020-04-**4** instead of 2020-04-**04**)
-- [`resize-last-window-to-1920x1080.sh`](utility-scripts/resize-last-window-to-1920x1080.sh) — resizes the last open window to a standard resolution of 1920×1080 (requires `wmctrl`)
 - [`front-matter-ify-markdown-document.sh`](utility-scripts/front-matter-ify-markdown-document.sh) — converts a document that has a header at the beginning with the title of the document and converts it into a front matter metadata block with some additional metadata like date and description that may be within the first five lines of the document
