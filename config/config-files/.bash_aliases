@@ -41,21 +41,28 @@ function __git_remote() {
 function __git_remote_parse() {
     # this function parses given remote and branch target
     dest="$1"
+    # return status
+    status=0
     if [ -z "$dest" ] || [[ "$dest" == -* ]]; then
         dest="$(__git_remote)"
+        status=2
     fi
     if [[ "$dest" != */* ]]; then
         dest="$dest/$(git branch --show-current)"
     fi
     echo $dest | tr '/' ' '
+    return $status
 }
 function gph() {
     dest=$(__git_remote_parse "$1")
+    empty=$?
     printf "\033[1;7m pushing to $dest \033[0m\n"
     printf "\033[1;38;5;249m press RETURN to continue \033[0m"
     # give user chance to abort pushing
     read
-    shift # remove the original argument
+    if [ "$empty" = "0" ]; then
+        shift # remove the original argument
+    fi
     git push $dest "$@"
 }
 function gpl() {
@@ -64,7 +71,9 @@ function gpl() {
     printf "\033[1;38;5;249m press RETURN to continue \033[0m"
     # give user change to abort pulling
     read
-    shift # remove the original argument
+    if [ "$empty" = "0" ]; then
+        shift # remove the original argument
+    fi
     git pull --rebase $dest "$@"
 }
 alias gf="git fetch"
