@@ -60,7 +60,7 @@ function gph() {
     printf "\033[1;38;5;249m press RETURN to continue \033[0m"
     # give user chance to abort pushing
     read
-    if [ "$empty" != "0" ]; then
+    if [ "$empty" = "0" ]; then
         shift # remove the original argument
     fi
     git push $dest "$@"
@@ -71,7 +71,7 @@ function gpl() {
     printf "\033[1;38;5;249m press RETURN to continue \033[0m"
     # give user change to abort pulling
     read
-    if [ "$empty" != "0" ]; then
+    if [ "$empty" = "0" ]; then
         shift # remove the original argument
     fi
     git pull --rebase $dest "$@"
