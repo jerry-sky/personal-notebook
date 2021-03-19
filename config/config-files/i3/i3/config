@@ -259,14 +259,32 @@ bindsym $mod+Shift+mod2+KP_Up move container to workspace number $ws18
 bindsym $mod+Shift+mod2+KP_Prior move container to workspace number $ws19
 bindsym $mod+Shift+mod2+KP_Insert move container to workspace number $ws20
 
-# move workspaces between screens
-bindsym $mod+Ctrl+Right move workspace to output right
-bindsym $mod+Ctrl+Left move workspace to output left
+workspace_auto_back_and_forth yes
 
-# assign workspaces to screens
+bindsym $mod+Prior workspace prev_on_output
+bindsym $mod+Next workspace next_on_output
+
+# monitor setup definition (xrandr)
 set $screen_one HDMI-0
 set $screen_two DP-1
 set $screen_three DVI-I-1
+
+# switch between monitors linearly
+bindsym $mod+Ctrl+Right focus output right
+bindsym $mod+Ctrl+Left focus output left
+# …and directly
+bindsym $mod+KP_Divide focus output $screen_one
+bindsym $mod+KP_Multiply focus output $screen_two
+bindsym $mod+KP_Subtract focus output $screen_three
+# move workspaces between screens
+bindsym $mod+Ctrl+Shift+Right move workspace to output right
+bindsym $mod+Ctrl+Shift+Left move workspace to output left
+# …and directly
+bindsym $mod+Shift+KP_Divide move workspace to output $screen_one
+bindsym $mod+Shift+KP_Multiply move workspace to output $screen_two
+bindsym $mod+Shift+KP_Subtract move workspace to output $screen_three
+
+# assign workspaces to screens
 workspace $ws1 output $screen_one
 workspace $ws2 output $screen_two
 workspace $ws4 output $screen_two
@@ -293,6 +311,8 @@ for_window [title="$obs_projector"] exec --no-startup-id "/opt/utility-scripts/a
 no_focus [class="(?i)jetbrains-studio"]
 no_focus [class="(?i)Telegram"]
 no_focus [class="(?i)discord"]
+no_focus [title="(?i).*zoom.*"]
+no_focus [class="(?i).*zoom.*"]
 
 # gaps
 gaps inner 35
