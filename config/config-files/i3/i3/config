@@ -293,6 +293,8 @@ for_window [title="$obs_projector"] exec --no-startup-id "/opt/utility-scripts/a
 no_focus [class="(?i)jetbrains-studio"]
 no_focus [class="(?i)Telegram"]
 no_focus [class="(?i)discord"]
+no_focus [title="(?i).*zoom.*"]
+no_focus [class="(?i).*zoom.*"]
 
 # gaps
 gaps inner 35
