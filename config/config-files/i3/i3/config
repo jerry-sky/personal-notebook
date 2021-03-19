@@ -259,14 +259,27 @@ bindsym $mod+Shift+mod2+KP_Up move container to workspace number $ws18
 bindsym $mod+Shift+mod2+KP_Prior move container to workspace number $ws19
 bindsym $mod+Shift+mod2+KP_Insert move container to workspace number $ws20
 
-# move workspaces between screens
-bindsym $mod+Ctrl+Right move workspace to output right
-bindsym $mod+Ctrl+Left move workspace to output left
-
-# assign workspaces to screens
+# monitor setup definition (xrandr)
 set $screen_one HDMI-0
 set $screen_two DP-1
 set $screen_three DVI-I-1
+
+# switch between monitors linearly
+bindsym $mod+Ctrl+Right focus output right
+bindsym $mod+Ctrl+Left focus output left
+# …and directly
+bindsym $mod+Delete focus output $screen_one
+bindsym $mod+End focus output $screen_two
+bindsym $mod+Next focus output $screen_three
+# move workspaces between screens
+bindsym $mod+Ctrl+Shift+Right move workspace to output right
+bindsym $mod+Ctrl+Shift+Left move workspace to output left
+# …and directly
+bindsym $mod+Shift+Delete move workspace to output $screen_one
+bindsym $mod+Shift+End move workspace to output $screen_two
+bindsym $mod+Shift+Next move workspace to output $screen_three
+
+# assign workspaces to screens
 workspace $ws1 output $screen_one
 workspace $ws2 output $screen_two
 workspace $ws4 output $screen_two
