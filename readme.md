@@ -48,6 +48,8 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 - [$\LaTeX$](main/latex-notes.md)
 - [Colours](main/colour-notes.md)
 
+- [Some preparatory notes (Ω)](private/preparatory/readme.md)
+
 ### Life (Ω)
 
 - [Thoughts (Ω)](private/life/thoughts/readme.md)
