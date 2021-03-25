@@ -58,7 +58,9 @@ keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
 
 ## Addons
 
-- [Time Tracker](https://github.com/uhlik/bpy#time-tracker-for-blender-280)
+- [Blender Discord Presence](https://github.com/Protinon/Blender-rpc/releases)
+- [WakaTime](https://github.com/allista/WakatimeBlender)
+
 - [Physical Starlight and Atmosphere](https://youtu.be/Rbx9DlyddF8) *$38*
 
 ---
