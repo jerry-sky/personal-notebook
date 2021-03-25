@@ -25,6 +25,7 @@ keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
 - [Masking data](#masking-data)
 - [Applying a property change to multiple objects](#applying-a-property-change-to-multiple-objects)
 - [Fixing Linux Mint Cinnamon keyboard shortcuts](#fixing-linux-mint-cinnamon-keyboard-shortcuts)
+- [Fixing normals](#fixing-normals)
 
 ## Links
 
@@ -121,3 +122,12 @@ For some reason, by default `Alt + Shift + RMB` doesn't work as expected (doesn'
 ~~The solution is to *enable switching between keyboard layouts using `Alt + Shift` combination provided you're using IBus as the keyboard layout switching solution. Only with one keyboard layout selected **in the system settings (not in IBus settings)**it will not switch keyboard layouts but it will unlock the expected functionality in Blender.*~~
 
 The issue got resolved on its own. ***I have no idea why***, which is the worst kind of *“resolved”*.
+
+---
+
+## Fixing normals
+
+Very useful: fixing normals by using `Set from faces` option.
+This may be very helpful when the normals are completely messed up.
+
+---
