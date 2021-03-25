@@ -13,19 +13,17 @@ keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
     - [Cool](#cool)
     - [TODO](#todo)
 - [Addons](#addons)
-- [Geometry node](#geometry-node)
 - [Objects reusing mesh data](#objects-reusing-mesh-data)
 - [Adaptive subdivision](#adaptive-subdivision)
-- [!Alpha transparency](#alpha-transparency)
+- [Alpha transparency](#alpha-transparency)
 - [HDR world backgrounds](#hdr-world-backgrounds)
-- [Select sharp edges](#select-sharp-edges)
-- [45° edges //TODO elaborate](#45-edges-todo-elaborate)
-- [Spherize tool](#spherize-tool)
-- [Pie Menus](#pie-menus)
+- [Select similar vertices/edges/faces](#select-similar-verticesedgesfaces)
+- [*To sphere* tool](#to-sphere-tool)
 - [Masking data](#masking-data)
 - [Applying a property change to multiple objects](#applying-a-property-change-to-multiple-objects)
-- [Fixing Linux Mint Cinnamon keyboard shortcuts](#fixing-linux-mint-cinnamon-keyboard-shortcuts)
 - [Fixing normals](#fixing-normals)
+
+---
 
 ## Links
 
@@ -56,6 +54,7 @@ keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
 - [**Primary, secondary and tertiary shapes //TODO-note**](http://www.neilblevins.com/cg_education/primary_secondary_and_tertiary_shapes/primary_secondary_and_tertiary_shapes.htm)
 - [**Easy cushion model //TODO-note**](https://twitter.com/andrewpprice/status/1224544692143964161)
 
+---
 
 ## Addons
 
@@ -64,64 +63,59 @@ keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
 
 ---
 
-## Geometry node
-
-Can be used to colorize an object according to its position, rotation and such.
-
 ## Objects reusing mesh data
 
-Every time you copy an object consider making it a linked copy - meaning to create a new object that uses the mesh from the original object.
+Every time you copy an object consider making it a linked copy — it will create a new object that uses the mesh from the source object.
+
+---
 
 ## Adaptive subdivision
 
-Use adaptive subdivision to avoid generating too many polygons. Thanks to this method you can save processing power and memory on mesh data by decreasing its detail accordingly to the distance from the camera.
+Use adaptive subdivision to avoid generating too many polygons.
+Thanks to this method you can save processing power and memory on mesh data by decreasing its detail accordingly to the distance from the camera.
 
-## !Alpha transparency
+---
 
-Do not use alpha transparency. Instead make a blocky thingy that more or less outlines the alpha texture. The reason this method is better is performance - when using alpha transparency you can double your render time.
+## Alpha transparency
+
+Do not use alpha transparency.
+Instead, make a blocky thingy that more or less outlines the alpha texture.
+The reason this method is better is performance — when using alpha transparency you can *double your render time*.
+
+---
 
 ## HDR world backgrounds
-<!-- spellchecker: disable-next-line -->
-When using HDRs as the world background enable option *"Multiple importance sampling"* in the *World settings panel*
 
-## Select sharp edges
+When using HDRs as the world background enable option *Multiple importance sampling* in the *World settings panel*.
 
-SHIFT + G $\equiv$ select sharp edges like these that are selected
+---
 
-## 45° edges //TODO elaborate
+## Select similar vertices/edges/faces
 
-- `CTRL + F`
-- Poke faces
-- Tris to quads
+`SHIFT + G` — select vertices/edges/faces like the ones that are selected based on selected property like normals.
 
-## Spherize tool
+---
+
+## *To sphere* tool
 
 `ALT + SHIFT + S`
 
-## Pie Menus
+“Spherise” selected area.
 
-Pie Menus can increase productivity significantly, because of the speed at which you can select different options from a given menu. This can be especially seen when you develop a muscle memory over time and remember the direction of mouse movement to perform desired action from the pie menu.
+---
 
 ## Masking data
 
-To clear sculpt masking data use
+To clear sculpt masking data use *Mesh: Clear Sculpt-Mask Data*.
 
-```blender
-Mesh: Clear Sculpt-Mask Data
-```
+---
 
 ## Applying a property change to multiple objects
 
-To change a numeric value on a set of objects, first change the value for one *active* object and then press the `RMB` on the value field and choose `Copy To Selected`. This will apply this change to all the other selected objects that have this property.\
+To change a numeric value on a set of objects, first change the value for one *active* object and then press `RMB` on the value field and choose *Copy to selected*.
+This will apply this change to all the other selected objects that have this property.
+
 [Source](https://blender.stackexchange.com/questions/6015/applying-numeric-input-attribute-changes-on-multiple-objects-at-the-same-time)
-
-## Fixing Linux Mint Cinnamon keyboard shortcuts
-
-For some reason, by default `Alt + Shift + RMB` doesn't work as expected (doesn't select multiple edge loops).
-
-~~The solution is to *enable switching between keyboard layouts using `Alt + Shift` combination provided you're using IBus as the keyboard layout switching solution. Only with one keyboard layout selected **in the system settings (not in IBus settings)**it will not switch keyboard layouts but it will unlock the expected functionality in Blender.*~~
-
-The issue got resolved on its own. ***I have no idea why***, which is the worst kind of *“resolved”*.
 
 ---
 
