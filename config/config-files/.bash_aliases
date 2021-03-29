@@ -126,10 +126,10 @@ alias nh="-- nemo ."
 alias t="gnome-terminal"
 
 # leave the last viewed page in the terminal after exit
-alias lx="less -X"
+alias lx="less -Xr"
 
 function lxp() {
-    $@ | less -X
+    $@ | less -Xr
 }
 
 # adds `.blend` if not present in the filename provided when launching a file using blender

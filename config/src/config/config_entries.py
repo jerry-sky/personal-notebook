@@ -79,7 +79,9 @@ utilities = [
     # screenshots
     (utilities_default_installer, utilities_default_verifier, 'maim xclip xdotool'),
     # file management
-    (utilities_default_installer, utilities_default_verifier, 'filezilla')
+    (utilities_default_installer, utilities_default_verifier, 'filezilla'),
+    # window management
+    (utilities_default_installer, utilities_default_verifier, 'wmctrl')
 ]
 
 config_entries = [
@@ -283,6 +285,10 @@ config_entries = [
                     toggle_file_links(
                         CD + '/config-files/i3/dunst/dunstrc',
                         HD + '/.config/dunst/dunstrc'
+                    ),
+                    toggle_file_links(
+                        CD + '/config-files/i3/compton/compton.conf',
+                        HD + '/.config/compton.conf'
                     ),
                     # keyboard knob switcher
                     toggle_file_links(
