@@ -33,3 +33,48 @@
 
 \let\oldrule\rule
 \renewcommand{\rule}[2]{\color{gray}\oldrule{\linewidth}{0.1pt}}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\makeatletter
+\let\latexl@section\l@section
+
+\def\dottednumberline#1{}
+
+% \hb@xt@\@tempdima{\S#1.\hfil}
+
+\renewcommand{\l@section}[2]{
+    {
+        \begingroup
+        \let\numberline\@gobble\latexl@section{#1}{#2}
+        \endgroup
+    }
+}
+
+\renewcommand{\l@subsection}[2]{
+    {
+        \begingroup
+        \let\numberline\dottednumberline\@dottedtocline{2}{2.4em}{2.6em}{#1}{#2}
+        \endgroup
+    }
+}
+
+\renewcommand{\l@subsubsection}[2]{
+    {
+        \begingroup
+        \let\numberline\dottednumberline\@dottedtocline{3}{5.2em}{2.6em}{#1}{#2}
+        \endgroup
+    }
+}
+
+\renewcommand{\l@paragraph}[2]{
+    {
+        \begingroup
+        \let\numberline\dottednumberline\@dottedtocline{3}{7.2em}{2.6em}{#1}{#2}
+        \endgroup
+    }
+}
+
+\makeatother
