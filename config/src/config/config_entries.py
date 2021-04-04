@@ -81,7 +81,9 @@ utilities = [
     # file management
     (utilities_default_installer, utilities_default_verifier, 'filezilla'),
     # window management
-    (utilities_default_installer, utilities_default_verifier, 'wmctrl')
+    (utilities_default_installer, utilities_default_verifier, 'wmctrl'),
+    # desktop environment
+    (utilities_default_installer, utilities_default_verifier, 'compton feh')
 ]
 
 config_entries = [
@@ -435,6 +437,19 @@ config_entries = [
                         install_func=lambda: ex(
                             '/usr/bin/gsettings set org.freedesktop.ibus.panel xkb-icon-rgba "#c0c0c0"'
                         )
+                    )
+                ]
+            ),
+
+            # Intel related graphical settings
+            ConfigEntry(
+                description='use ‘no tearing’ option for Intel graphics drivers',
+                shorthand='int',
+                installation_packages=[
+                    toggle_file_links(
+                        CD + '/config-files/20-intel.conf',
+                        '/etc/X11/xorg.conf.d/20-intel.conf',
+                        sudo=True
                     )
                 ]
             )
