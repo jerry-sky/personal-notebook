@@ -81,7 +81,9 @@ utilities = [
     # file management
     (utilities_default_installer, utilities_default_verifier, 'filezilla'),
     # window management
-    (utilities_default_installer, utilities_default_verifier, 'wmctrl')
+    (utilities_default_installer, utilities_default_verifier, 'wmctrl'),
+    # desktop environment
+    (utilities_default_installer, utilities_default_verifier, 'compton feh')
 ]
 
 config_entries = [
