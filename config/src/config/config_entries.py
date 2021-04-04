@@ -437,6 +437,19 @@ config_entries = [
                         )
                     )
                 ]
+            ),
+
+            # Intel related graphical settings
+            ConfigEntry(
+                description='use ‘no tearing’ option for Intel graphics drivers',
+                shorthand='int',
+                installation_packages=[
+                    toggle_file_links(
+                        CD + '/config-files/20-intel.conf',
+                        '/etc/X11/xorg.conf.d/20-intel.conf',
+                        sudo=True
+                    )
+                ]
             )
 
         ]
