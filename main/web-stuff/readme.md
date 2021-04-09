@@ -48,6 +48,7 @@ keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScr
 - [anime.js](https://animejs.com/documentation/)
 - [Updating XAMPP from MariaDB 10.1 to 10.2](https://stackoverflow.com/a/47490206/4249875)
 - [NPM - overriding nested NPM dependency versions](https://stackoverflow.com/a/48524488/4249875)
+- [Makefile over NPM scripts](https://spin.atomicobject.com/2021/03/22/makefiles-vs-package-json-scripts/)
 
 ### Entertainment-like
 
