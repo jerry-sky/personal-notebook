@@ -321,7 +321,17 @@ no_focus [class="(?i).*zoom.*"]
 
 # gaps
 gaps inner 35
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
+set $colour #38678F
+set $alpha 00
+# class                 border    backgr.   text    indicator child_border
+client.focused          $colour   $colour   #ffffff $colour   $colour
+client.focused_inactive #333333$alpha #5f676a$alpha #ffffff #484e50$alpha #5f676a$alpha
+client.unfocused        #333333$alpha #222222$alpha #888888 #292d2e$alpha #222222$alpha
+client.urgent           #2f343a$alpha #900000$alpha #ffffff #900000$alpha #900000$alpha
+client.placeholder      #000000$alpha #0c0c0c$alpha #ffffff #000000$alpha #0c0c0c$alpha
+
+client.background       #000000
 
 # fonts
 font pango:Fira Code Medium
