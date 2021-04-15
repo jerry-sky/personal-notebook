@@ -291,12 +291,15 @@ workspace $ws4 output $screen_two
 workspace $ws3 output $screen_three
 workspace $ws5 output $screen_three
 workspace $ws6 output $screen_three
+workspace $ws19 output $screen_one
 workspace $ws20 output $screen_one
 
 # assign programs to workspaces
-# communication: Discord, Telegram
+# communication: Discord, Telegram, Zoom
 assign [class="(?i)discord"] workspace number $ws4
 assign [class="(?i)Telegram"] workspace number $ws4
+assign [class="(?i).*zoom.*"] workspace number $ws19
+for_window [class="(?i).*zoom.*"] floating enable
 # sound management
 assign [class="(?i)cinnamon-settings sound"] workspace number $ws5
 assign [class="(?i)pavucontrol"] workspace number $ws5
@@ -306,6 +309,8 @@ assign [title="$obs_projector"] workspace number $ws5
 for_window [title="$obs_projector"] floating enable
 for_window [title="$obs_projector"] sticky enable
 for_window [title="$obs_projector"] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '$obs_projector' '5740,-1060,1920,1080'"
+# disable auto-focus in screen sharing
+no_focus [title="$obs_projector"]
 
 # don’t steal focus
 no_focus [class="(?i)jetbrains-studio"]
