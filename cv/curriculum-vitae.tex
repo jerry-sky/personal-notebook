@@ -28,7 +28,7 @@
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
 
 % Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=1cm,bottom=0.3cm,columnsep=1cm}
+\geometry{left=1cm,right=1cm,top=0.7cm,bottom=0.3cm,columnsep=1cm}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -41,7 +41,13 @@
   \setmainfont{Lato}
 \else
   % If using pdflatex:
-  \usepackage[default]{lato}
+  \usepackage[T1]{fontenc}
+
+  \usepackage{merriweather}
+%   \usepackage[sfdefault, default]{FiraSans}
+%   \renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+
+  \usepackage{FiraMono}
 \fi
 
 % Change the colours if you want to
@@ -71,14 +77,16 @@
 \photoL{2.5cm}{picture}
 \begin{document}
 \name{Jerzy Wroczyński}
-\tagline{Computer Science Student}
+\tagline{Computer science student}
 \personalinfo{%
   % Not all of these are required!
   % You can add your own with \printinfo{symbol}{detail}
   \email{jwroczynski@gmail.com}
   \homepage{jerry-sky.me}
   \github{jerry-sky}
-  \location{Wrocław, Poland}
+%   \linkedin{jerzy-wroczy\%C5\%84ski-bb0333205}
+  \printinfo{\faLinkedin}{LinkedIn}[https://www.linkedin.com/in/jerzy-wroczy\%C5\%84ski-bb0333205/]
+  \printinfo{\faMapMarker}{Wrocław, Poland}[https://goo.gl/maps/trCpuWtcrPC6neNq9]
   %% You can add your own arbitrary detail with
   %% \printinfo{symbol}{detail}[optional hyperlink prefix]
   % \printinfo{\faPaw}{Hey ho!}
@@ -113,16 +121,16 @@
 
 \divider
 
-\cvachievement{Scholarship}{Received scholarship from the City of Wrocław for the first academic year (2018–2019)}
+\cvachievement{\href{https://wca.wroc.pl/studencki-program-stypendialny-stypendium-dla-studentow-bedacych-laureatami-ogolnopolskich-olimpiad-przedmiotowych-i-konkursow-lista-stypendystow}{Scholarship}}{Received scholarship from the City of Wrocław for the first academic year (2018–2019)}
 
 \divider
 
-\cvachievement{“Studium Talent”}{Completed a study program (with grade 5.0 on scale from 2.0 to 5.5) for High School students (organised by WUST) that granted a place in the University (skipping the normal university admission process); attended the program 2017–2018}
+\cvachievement{“Studium Talent”}{Completed a study program (with grade 5.0 on scale from 2.0 to 5.5) for High School students (organized by WUST) that granted a place in the University (skipping the normal university admission process); attended the program 2017–2018}
 
 
 \cvsection{Projects and Experiences}
 
-\cvevent{E-commerce website}{Angular, Express.js (with TypeScript), MySQL}{2019–2020}{}
+\cvevent{E-commerce website}{Angular (2+), ExpressJS (with TypeScript), MySQL, NodeJS with NPM, Linux, Bash}{2019–2020}{}
 
 \small Krzemień Wroczyński (previous version) — simple e-commerce website I have built for my father’s business
 \smallskip
@@ -131,14 +139,15 @@
 \item Used Angular (2+) for the front-end SPAs (for both the admin panel and the store website).
 \item Implemented an API in Express.js that connects to a MySQL database that stores information about available products and pending orders.
 \item Created (thanks to TypeScript) a strict model to greatly improve type-safety across the whole system.
+\item Set up a Linux server using Bash and various NPM packages/ programs.
 \end{itemize}
 
 \divider
 
-\cvevent{Repository notebooks, \href{https://github.com/marketplace/actions/vyrow}{VYROW}}{Git, Markdown, Python, Bash, Pandoc, GitHub Actions}{2020–Present}{}
+\cvevent{Repository notebooks, \href{https://github.com/marketplace/actions/vyrow}{\textit{VYROW}}}{Git, Markdown, \LaTeX, Python, Bash, Pandoc, GitHub Actions}{2020–Present}{}
 \begin{itemize}
 \item Created special repositories for collecting programs, scripts and notes
-\item Actively using my \href{https://personal.jerry-sky.me}{Personal Notebook repository} as a way to organise config files, scripts and, perhaps most importantly, notes on various subjects.
+\item Actively using my \href{https://personal.jerry-sky.me}{Personal Notebook repository} as a way to organize my config files, scripts and, perhaps most importantly, notes on various subjects.
 \item Actively using (during academic year) my \href{https://academic.jerry-sky.me}{Academic Notebook repository} for collecting all of my programs and notes that I have written during my studies.
 \item Created a GitHub Action that automatically renders all Markdown documents into HTML documents; (\href{https://github.com/marketplace/actions/vyrow}{VYROW — View Your Repository On the Web})
 \end{itemize}
@@ -157,7 +166,7 @@
 
 \begin{itemize}
 \item Linux, Bash
-\item Web dev: TypeScript, JavaScript, ExpressJS, Angular (2+)
+\item Web dev: TypeScript, JavaScript, ExpressJS, Angular (2+), NodeJS, NPM
 \item MySQL
 \item Python
 \item Java
@@ -170,9 +179,10 @@
 \cvsection{Interests}
 
 \begin{itemize}
-  \item Solutions for note-taking and organisation
+  \item Solutions for note-taking and organization
   \item Unix-like OSes
-  \item Web Development
+  \item Web development
+  \item Language learning
   \item Blender 3D — designing everyday objects and creating still scene images
 \end{itemize}
 
@@ -193,17 +203,17 @@
 
 \bigskip
 
-\cvevent{Creating 3D assets for a video game}{Blender}{2019–2020}{}
+\cvevent{Creating 3D assets for a video game}{Blender 3D}{2019–2020}{}
 \small\href{https://github.com/Qarian/Restaurant-rush}{Restaurant Rush (unreleased)}
 \smallskip
 
 \begin{itemize}
-    \item Used Blender to create 3D assets for the game.
+    \item Used Blender to create 3D assets for said game.
 \end{itemize}
 
 \divider
 
-\cvevent{Web development (small projects)}{PHP, JavaScript, AngularJS, HTML, CSS}{2014–2017}{}
+\cvevent{Web development (small projects)}{HTML, CSS, JavaScript, PHP, AngularJS, }{2014–2017}{}
 \begin{itemize}
     \item Remote Timer — a small program that controls a timer on another computer
     \item A web application that I created for my classmates and myself; its purpose was to keep us informed about homework etc.
