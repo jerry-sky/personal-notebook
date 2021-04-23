@@ -104,29 +104,11 @@
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
 \AtBeginEnvironment{itemize}{\small}
 
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+\columnratio{0.55}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
 \begin{paracol}{2}
-
-\cvsection{Education}
-
-\cvachievement{\href{https://pwr.edu.pl/en}{Wrocław University of Science and Technology}}{Computer Science (B.Eng.) 2018–Present}
-
-\divider
-
-\cvachievement{\href{https://liceum.pwr.edu.pl/}{Academic High School of Wrocław University of Science and Technology (ALO PWr)}}{Mathematics, Physics, IT; attended 2015–2018}
-
-\divider
-
-\cvachievement{\href{https://wca.wroc.pl/studencki-program-stypendialny-stypendium-dla-studentow-bedacych-laureatami-ogolnopolskich-olimpiad-przedmiotowych-i-konkursow-lista-stypendystow}{Scholarship}}{Received scholarship from the City of Wrocław for the first academic year (2018–2019)}
-
-\divider
-
-\cvachievement{“Studium Talent”}{Completed a study program (with grade 5.0 on scale from 2.0 to 5.5) for High School students (organized by WUST) that granted a place in the University (skipping the normal university admission process); attended the program 2017–2018}
-
 
 \cvsection{Projects and Experiences}
 
@@ -154,27 +136,70 @@
 
 \divider
 
+\cvevent{Creating 3D assets for a video game}{Blender 3D}{2019–2020}{}
+\small\href{https://github.com/Qarian/Restaurant-rush}{Restaurant Rush (unreleased)}
+\smallskip
+
+\begin{itemize}
+    \item Used Blender to create 3D assets for said game.
+\end{itemize}
+
+\divider
+
+\cvevent{Web development (small projects)}{HTML, CSS, JavaScript, PHP, AngularJS, }{2014–2017}{}
+\begin{itemize}
+    \item Remote Timer — a small program that controls a timer on another computer
+    \item A web application that I created for my classmates and myself; its purpose was to keep us informed about homework etc.
+    \item Some other projects that haven’t been archived
+\end{itemize}
+
+\divider
 %% Switch to the right column. This will now automatically move to the second
 %% page if the content is too long.
 \switchcolumn
 
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-% \switchcolumn
-
 \cvsection{Familiar with}
 
-\begin{itemize}
-\item Linux, Bash
-\item Web dev: TypeScript, JavaScript, ExpressJS, Angular (2+), NodeJS, NPM
-\item MySQL
-\item Python
-\item Java
-\item C/C++
-\item Git
-\item Markdown, LaTeX, Pandoc
-\item Blender 3D
-\end{itemize}
+{
+    \bfseries
+    \begin{itemize}
+        \item Linux, Bash
+        \item Web dev: TypeScript, JavaScript, ExpressJS, Angular (2+), NodeJS, NPM
+        \item MySQL
+        \item Python
+        \item Java
+        \item C/C++
+        \item Git
+        \item Markdown, LaTeX, Pandoc
+        \item Blender 3D
+    \end{itemize}
+}
+
+\cvsection{Education}
+
+\cvachievement{\href{https://pwr.edu.pl/en}{Wrocław University of Science and Technology}}{Computer Science (B.Eng.) 2018–Present}
+
+\divider
+
+\cvachievement{\href{https://liceum.pwr.edu.pl/}{Academic High School of Wrocław University of Science and Technology (ALO PWr)}}
+{Mathematics, Physics, IT\newline\smallskip
+attended 2015–2018}
+
+\divider
+
+\cvachievement{\href{https://wca.wroc.pl/studencki-program-stypendialny-stypendium-dla-studentow-bedacych-laureatami-ogolnopolskich-olimpiad-przedmiotowych-i-konkursow-lista-stypendystow}{Scholarship}}{Received scholarship from the City \newline
+of Wrocław for the first academic year (2018–2019)}
+
+\divider
+
+\cvachievement{“Studium Talent”}
+{Completed a study program (with grade 5.0 on scale from 2.0 to 5.5)
+for High School students (organized by WUST)
+that granted a place in the University
+(skipping the standard university admission process)
+\newline \smallskip
+attended the program 2017–2018}
+
 
 \cvsection{Interests}
 
@@ -197,34 +222,11 @@
 \cvskill{Polish \textit{(native)}}{5}
 % \divider
 
-\bigskip
-
-{\color{headingrule}\rule{\linewidth}{2pt}\par}
-
-\bigskip
-
-\cvevent{Creating 3D assets for a video game}{Blender 3D}{2019–2020}{}
-\small\href{https://github.com/Qarian/Restaurant-rush}{Restaurant Rush (unreleased)}
-\smallskip
-
-\begin{itemize}
-    \item Used Blender to create 3D assets for said game.
-\end{itemize}
-
-\divider
-
-\cvevent{Web development (small projects)}{HTML, CSS, JavaScript, PHP, AngularJS, }{2014–2017}{}
-\begin{itemize}
-    \item Remote Timer — a small program that controls a timer on another computer
-    \item A web application that I created for my classmates and myself; its purpose was to keep us informed about homework etc.
-    \item Some other projects that haven’t been archived
-\end{itemize}
-
 \divider
 
 \end{paracol}
 
-\vspace{8pt}
+\smallskip
 
 \small\textit{I hereby give consent for my personal data included in the application to be processed for the purposes of the recruitment process in accordance with Art. 6 paragraph 1 letter a of the Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).}
 
