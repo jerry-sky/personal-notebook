@@ -22,6 +22,7 @@ keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
 - [Masking data](#masking-data)
 - [Applying a property change to multiple objects](#applying-a-property-change-to-multiple-objects)
 - [Fixing normals](#fixing-normals)
+- [Baking a particle system animation](#baking-a-particle-system-animation)
 
 ---
 
@@ -125,5 +126,11 @@ This will apply this change to all the other selected objects that have this pro
 
 Very useful: fixing normals by using `Set from faces` option.
 This may be very helpful when the normals are completely messed up.
+
+---
+
+## Baking a particle system animation
+
+To bake a particle system animation for later use in e.g. Unity use [this script](https://blender.stackexchange.com/a/167633/48990).
 
 ---
