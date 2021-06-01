@@ -72,9 +72,13 @@ def toggle_fileblock(source: str, target: str, sudo: bool = False):
     )
 
 
-# list of all utility programs
-utilities_default_installer = 'sudo apt-get install'
+# default installer/ verifier commands
+utilities_default_installer = 'sudo apt-get install -y'
 utilities_default_verifier = 'command -v >/dev/null'
+utilities_python_installer = 'python3 -m pip install'
+utilities_python_verifier = 'python3 -m pip list | grep >/dev/null'
+
+# list of all utility programs
 utilities = [
     # screenshots
     (utilities_default_installer, utilities_default_verifier, 'maim xclip xdotool'),
@@ -83,7 +87,9 @@ utilities = [
     # window management
     (utilities_default_installer, utilities_default_verifier, 'wmctrl'),
     # desktop environment
-    (utilities_default_installer, utilities_default_verifier, 'compton feh')
+    (utilities_default_installer, utilities_default_verifier, 'compton feh'),
+    # python3 base (PIP)
+    (utilities_default_installer, 'apt list 2>/dev/null | grep >/dev/null', 'python3-pip'),
 ]
 
 config_entries = [
