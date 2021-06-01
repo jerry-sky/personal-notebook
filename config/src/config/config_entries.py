@@ -89,7 +89,7 @@ utilities = [
     # desktop environment
     (utilities_default_installer, utilities_default_verifier, 'compton feh'),
     # python3 base (PIP)
-    (utilities_default_installer, 'apt list 2>/tmp/null | grep >/dev/null', 'python3-pip'),
+    (utilities_default_installer, 'apt list 2>/dev/null | grep >/dev/null', 'python3-pip'),
 ]
 
 config_entries = [
