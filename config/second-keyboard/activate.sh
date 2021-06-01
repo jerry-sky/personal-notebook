@@ -7,3 +7,4 @@ sed -i '1s/.*/#!\/usr\/bin\/env python3/' keebie.py
 rm -rf tmp
 
 sudo apt-get install xdotool x11-utils
+python3 -m pip install evdev
