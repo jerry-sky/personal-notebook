@@ -6,4 +6,4 @@
 device="$(cat /home/jerry-sky/notebooks/personal-notebook/config/second-keyboard/config | head -n1)"
 
 # give read access to it
-chmod a+r "$device"
+chmod a+rw "$device"
