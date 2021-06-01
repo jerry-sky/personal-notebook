@@ -17,4 +17,3 @@ nnoremap } }zz
 nnoremap G Gzz
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
-nnoremap <S-w> 7w

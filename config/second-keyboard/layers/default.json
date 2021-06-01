@@ -16,5 +16,6 @@
    "KEY_KP2": "exec:obs-switch-scene.py 'Zoom (Fullscreen)' &",
    "KEY_KP3": "exec:obs-switch-scene.py 'Blender' &",
    "KEY_KP0": "exec:obs-switch-scene.py 'Blank' &",
-   "KEY_KPENTER": "exec:test.sh"
+   "KEY_KPENTER": "exec:test.sh",
+   "leds": []
 }
