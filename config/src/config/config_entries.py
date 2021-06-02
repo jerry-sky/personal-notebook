@@ -129,6 +129,21 @@ config_entries = [
                 ]
             ),
 
+            # OBS
+            ConfigEntry(
+                description='install OBS',
+                shorthand='obs',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/install-obs.sh'),
+                        uninstall_func=False,
+                        is_installed=lambda: ex(
+                            'command -v obs >/dev/null') == 0
+                    )
+                ]
+            ),
+
             # Telegram
             ConfigEntry(
                 description='install Telegram',
