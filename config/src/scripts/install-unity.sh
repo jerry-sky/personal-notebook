@@ -4,7 +4,7 @@ printf "\033[1mUnity\n\nInstalling Unity Hub…\033[0m\n\n"
 
 # download Unity Hub AppImage
 sudo curl -L --output '/opt/UnityHub.AppImage' 'https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage'
-chmod +x /opt/UnityHub.AppImage
+sudo chmod +x /opt/UnityHub.AppImage
 
 # create a link to the executable
 sudo ln -fs /opt/UnityHub.AppImage /usr/bin/unity-hub
