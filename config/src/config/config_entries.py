@@ -86,8 +86,8 @@ utilities = [
     (utilities_default_installer, utilities_default_verifier, 'filezilla'),
     # window management
     (utilities_default_installer, utilities_default_verifier, 'wmctrl'),
-    # desktop environment
-    (utilities_default_installer, utilities_default_verifier, 'compton feh'),
+    # audio management
+    (utilities_default_installer, utilities_default_verifier, 'pavucontrol'),
     # python3 base (PIP)
     (utilities_default_installer, 'apt list 2>/dev/null | grep >/dev/null', 'python3-pip'),
 ]
@@ -276,8 +276,24 @@ config_entries = [
     },
 
     {
-        'name': 'i3 and Cinnamon',
+        'name': 'Desktop environment',
         'list': [
+
+            # i3-gaps
+            ConfigEntry(
+                description='install i3 WM',
+                shorthand='i3w',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            CD + '/src/scripts/install-i3.sh'
+                        ),
+                        is_installed=lambda: ex(
+                            'command -v i3 >/dev/null'
+                        ) == 0
+                    )
+                ]
+            ),
 
             # theme
             ConfigEntry(
