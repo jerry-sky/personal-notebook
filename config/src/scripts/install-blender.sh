@@ -8,7 +8,7 @@ ftp_url="https://ftp.nluug.nl/pub/graphics/blender/release/"
 rem_dir="$(curl -s $ftp_url | perl -nle 'print $& if /Blender\d\.\d{2}/g' | tail -n 1)"
 
 # get the name of the remote archive
-rem_arc="$(curl -s -L $ftp_url$rem_dir | perl -nle 'print $& if /blender\-\d\.\d{2}\.\d{1,2}\-linux64\.tar\.xz/g' | tail -n 1)"
+rem_arc="$(curl -s -L $ftp_url$rem_dir | perl -nle 'print $& if /blender\-\d+\.\d+\.\d+\-linux64\.tar\.xz/g' | tail -n 1)"
 
 printf "\n\033[1mDownloading…\033[0m\n"
 echo "Archive: $rem_arc"

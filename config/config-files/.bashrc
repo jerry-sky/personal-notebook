@@ -7,3 +7,4 @@ PATH="$PATH:/opt/utility-scripts/"
 EDITOR="/usr/bin/vi"
 
 git config --global core.editor /usr/bin/vi
+git config --global core.quotepath false
