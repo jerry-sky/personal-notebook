@@ -286,7 +286,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/cinnamon-install-theme.sh'
+                            CD + '/src/scripts/install-theme.sh'
                         )
                     )
                 ]
