@@ -4,17 +4,19 @@
 # It redirects the output to `/dev/null` to avoid unnecessary clutter in the terminal window.
 # It can be used for e.g. Blender
 function --() {
-    $@ &> /dev/null &
+    nohup $@ &> /dev/null &
 }
 
 # directory shortcuts
 alias an="cd ~/notebooks/academic-notebook/"
 alias pn="cd ~/notebooks/personal-notebook/"
-# projects directory
-alias cdd="cd ~/code/"
+# code projects directory
+alias my="cd ~/code/"
+# Google Drive directory
+alias cloud="cd ~/gdrive/"
 # other useful shortcuts
 alias cd..="cd .."
-alias cdu="cd .."
+alias up="cd .."
 alias p="pwd"
 
 alias reload=". ~/.bashrc"
@@ -27,8 +29,10 @@ alias gaa="git add ."
 alias gai="git add -p"
 alias gts="git status"
 alias gcm="git commit -m"
+alias gce="git commit --edit"
 alias gcmam="git commit --amend -m"
 alias gcam="git commit --amend --no-edit"
+alias gcame="git commit --amend"
 function __git_remote() {
     # this function gets the default origin for the branch
     branch=$(git branch --show-current)
@@ -100,9 +104,9 @@ alias gsthl="git stash list"
 # VS Code shortcuts
 alias ccx="code-insiders . && exit"
 alias c="code-insiders"
-alias ch="code-insiders ."
+alias c.="code-insiders ."
 function cx() {
-  code-insiders $@ && exit
+    code-insiders $@ && exit
 }
 
 # Google Chrome browser
@@ -124,7 +128,6 @@ alias hsh="python3 -m http.server --bind localhost 4200"
 # Nemo (file explorer) aliases
 alias n="-- nemo"
 alias n.="-- nemo ."
-alias nh="-- nemo ."
 
 # opening another terminal from terminal (in the same directory)
 alias t="gnome-terminal"

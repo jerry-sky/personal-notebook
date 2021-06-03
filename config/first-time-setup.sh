@@ -35,6 +35,10 @@ $APT update
 # install the program
 $APTI code-insiders
 
+# install Neovim
+printf "\n\033[1mNeovim\nInstalling…\033[0m\n"
+$APTI neovim
+
 # install Git
 printf "\033[1m\nGit\nInstalling…\033[0m\n"
 $APTI "git"
