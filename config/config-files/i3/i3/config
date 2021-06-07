@@ -56,11 +56,11 @@ bindsym --release button2 kill
 bindsym --whole-window $mod+button2 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+g exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+g exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # screen lock
 bindsym $mod+l exec i3lock -i ~/current-wallpaper-scaled -c 000000 -t -u
@@ -313,6 +313,7 @@ no_focus [class="(?i)Telegram"]
 no_focus [class="(?i)discord"]
 no_focus [title="(?i).*zoom.*"]
 no_focus [class="(?i).*zoom.*"]
+no_focus [class="(?i).*unity.*"]
 
 # gaps
 gaps inner 35
