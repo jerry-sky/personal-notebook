@@ -90,6 +90,8 @@ utilities = [
     (utilities_default_installer, utilities_default_verifier, 'pavucontrol'),
     # python3 base (PIP)
     (utilities_default_installer, 'apt list 2>/dev/null | grep >/dev/null', 'python3-pip'),
+    # numlock auto on
+    (utilities_default_installer, utilities_default_verifier, 'numlockx'),
 ]
 
 config_entries = [

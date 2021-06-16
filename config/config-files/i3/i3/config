@@ -335,6 +335,10 @@ font pango:Fira Code Medium
 # autostart
 # apply themes (from Cinnamon)
 exec --no-startup-id csd-xsettings
+# disable screen auto–turning off
+exec --no-startup-id xset s off && xset s noblank && xset -dpms && xset dpms 0 0 0
+# turn on numlock
+exec --no-startup-id numlockx on
 # set wallpaper
 exec --no-startup-id feh --bg-fill ~/current-wallpaper
 # redshift
@@ -355,5 +359,5 @@ exec --no-startup-id /home/$USER/.audloop
 exec --no-startup-id insync start
 # second keyboard
 exec --no-startup-id /home/$USER/notebooks/personal-notebook/config/second-keyboard/run.sh
-# compton
+# window compositor
 exec --no-startup-id compton
