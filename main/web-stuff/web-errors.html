@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 </head>
 <body>
@@ -33,7 +33,7 @@
 <ul>
 <li><a href="#corb--cors">CORB &amp; CORS</a></li>
 </ul>
-<h2 id="corb-cors">CORB &amp; CORS</h2>
+<h2 id="corb--cors">CORB &amp; CORS</h2>
 <p>CORB might be a potential hiccup when attempting to load resources from different origin (CORS). The problem can appear when a website requests additional data, but the user used different links to the same website: the one with <code>www.</code> prefix and without. Browser then remembers that the resource had the <code>Access-Control-Allow-Origin</code> set to the website link with <code>www.</code> prefix. That’s why when accessing the website without the prefix, browser blocks the CORS connection, because it remembers the resource had the header set to a different value.</p>
 <p><a href="https://www.siteground.com/kb/how_to_redirect_www_urls_to_nonwww/">Further reading</a></p>
 <p>The code attached below is an example <code>.htaccess</code> file from the <code>wroczynski.pl</code> web-server showing redirections from http and/or www to https non-www version of the domain including Angular SPA redirect to main index file:</p>

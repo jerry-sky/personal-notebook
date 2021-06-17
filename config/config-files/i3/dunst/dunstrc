@@ -37,7 +37,7 @@ frame_color = "#8EC07C"
 [shortcuts]
 close = ctrl+space
 close_all = ctrl+shift+space
-#history = ctrl+grave
+history = ctrl+shift+F1
 context = ctrl+shift+period
 
 [urgency_low]

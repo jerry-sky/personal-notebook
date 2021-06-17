@@ -15,26 +15,28 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -43,9 +45,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -81,7 +83,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 </head>
 <body>
@@ -110,7 +112,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="keeping-some-scriptprogram-alive">Keeping some script/program alive</h2>
 <p>If you want to keep some script/program alive (e.g. a node.js script) you need to use <code>crontab</code>.</p>
 <p>The command</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">crontab</span> -e</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">crontab</span> <span class="at">-e</span></span></code></pre></div>
 <p>opens a crontab jobs file in the default editor that contains all the cron jobs that are being run for current user.</p>
 <p>You can add a reference to a bash script that runs desired script/program or normal reference to the script/program that needs to be run. You can set the time conditions confining the moments in which desired script/program will be run.</p>
 <p>It is advised that the program is shut down before running it again.</p>
@@ -350,30 +352,30 @@ Every time you insert an ANSI escape sequence wrap it inside <code>\[«ANSI esca
 <h2 id="downloading-a-whole-website-using-wget">Downloading a whole website using <code>wget</code></h2>
 <p>Using <code>wget</code> you can download a whole webpage with all of the resources that are referenced through links on that webpage. It can be a very useful tool for archiving websites.</p>
 <p>Executing</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">wget</span> -r -p -U Mozilla --wait=1 --limit-rate=2M --tries=3 -l 1 https://example.com</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-r</span> <span class="at">-p</span> <span class="at">-U</span> Mozilla <span class="at">--wait</span><span class="op">=</span>1 <span class="at">--limit-rate</span><span class="op">=</span>2M <span class="at">--tries</span><span class="op">=</span>3 <span class="at">-l</span> 1 https://example.com</span></code></pre></div>
 <p>will download the webpage and all pdfs, images and other resources that appear on that webpage to a folder called <code>example.com</code>.</p>
 <p>There is a possibility that above command will not work on first try. For example the HTML file containing the markup may have been downloaded, but the resources that appear on that webpage couldn’t have been downloaded. Then, using this website in HTML (or otherwise) form we can download the rest of the resources.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">wget</span> -r -p -U Mozilla --wait=1 --limit-rate=2M --tries=3 -l 1 --base=https://example.com/subpage --force-html --relative -i example.com/subpage/index.html</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-r</span> <span class="at">-p</span> <span class="at">-U</span> Mozilla <span class="at">--wait</span><span class="op">=</span>1 <span class="at">--limit-rate</span><span class="op">=</span>2M <span class="at">--tries</span><span class="op">=</span>3 <span class="at">-l</span> 1 <span class="at">--base</span><span class="op">=</span>https://example.com/subpage <span class="at">--force-html</span> <span class="at">--relative</span> <span class="at">-i</span> example.com/subpage/index.html</span></code></pre></div>
 <p>Executing above command will download all resources that appear on this subpage. All relative links will be preceded with the URL provided with the <code>--base</code> option.</p>
 <hr />
 <h2 id="permanently-setting-the-dns-server">Permanently setting the DNS server</h2>
 <p>First, we need to install the <code>resolvconf</code> package:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">sudo</span> apt update</a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="fu">sudo</span> apt install resolvconf</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install resolvconf</span></code></pre></div>
 <p>Now, let’s add the IP address of the desired DNS server.<br />
 Edit following file:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">sudo</span> nvim /etc/resolvconf/resolv.conf.d/head</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nvim /etc/resolvconf/resolv.conf.d/head</span></code></pre></div>
 <p>adding line below to make <code>1.1.1.1</code> the DNS server:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode txt"><code class="sourceCode default"><a class="sourceLine" id="cb6-1" title="1">nameserver 1.1.1.1</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nameserver 1.1.1.1</span></code></pre></div>
 <p><a href="https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/">Source</a></p>
 <hr />
 <h2 id="fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages">Fixing broken packages (downloaded from an external PPA) by forcefully overwriting <code>apt</code> packages</h2>
 <p>Sometimes adding external PPAs results in broken packages and the infamous error:</p>
 <pre class="log"><code>E: Unmet dependencies. Try &#39;apt --fix-broken install&#39; with no packages (or specify a solution).</code></pre>
 <p>One solution would be to remove that PPA</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">sudo</span> add-apt-repository --remove ‹PPA›</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">--remove</span> ‹PPA›</span></code></pre></div>
 <p>and to forcefully overwrite the broken packages from software sources that were already present in the system.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">sudo</span> apt install -o Dpkg::Options::=<span class="st">&quot;--force-overwrite&quot;</span> --fix-broken</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-o</span> Dpkg::Options::=<span class="st">&quot;--force-overwrite&quot;</span> <span class="at">--fix-broken</span></span></code></pre></div>
 <p><a href="https://unix.stackexchange.com/a/624842">Source</a></p>
 <hr />
 </body>

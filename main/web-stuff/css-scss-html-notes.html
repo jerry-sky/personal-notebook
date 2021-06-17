@@ -15,26 +15,28 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -43,9 +45,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -81,7 +83,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 </head>
 <body>
@@ -151,16 +153,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ::-webkit-resizer {
   background: lighten(#333, 8%);
 }</code></pre>
-<h2 id="bootstrap-sass">Bootstrap &amp; Sass</h2>
+<h2 id="bootstrap--sass">Bootstrap &amp; Sass</h2>
 <p>The idea is to not use the <em>classic</em> Bootstrap classes on HTML elements, but rather to compose a singular class of an element from Bootstrap’s <code>@mixin</code>s.</p>
 <p>Instead of attaching these <code>col</code> classes like so:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;banana col-sm-6 col-md-4&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb2-4" title="4">      <span class="kw">&lt;p&gt;</span>banana 🍌 content<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb2-5" title="5">    <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb2-6" title="6">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;banana col-sm-6 col-md-4&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;p&gt;</span>banana 🍌 content<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code></pre></div>
 <p>create a class that defines that element by using <code>@mixin</code>s:</p>
 <pre class="scss"><code>.banana {
   @include make-col-ready;
@@ -181,7 +183,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 @import &quot;~bootstrap/scss/variables&quot;;
 @import &quot;~bootstrap/scss/mixins&quot;;</code></pre>
 <p>Since there is no need for these <em>classic</em> classes to be used in HTML you can turn them off by changing a variable in the <code>_variables.css</code> file:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb5-1" title="1">$enable-grid-classes<span class="in">: false</span> !default;</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>$enable-grid-classes<span class="in">: false</span> !default;</span></code></pre></div>
 <p>or just not to include the Bootstrap css file in your app config e.g. Angular (<code>angular.json</code>).</p>
 <p>Read more in the <a href="https://medium.com/@erik_flowers/how-youve-been-getting-the-bootstrap-grid-all-wrong-and-how-to-fix-it-6d97b920aa40">source</a>.</p>
 <h2 id="nested-layered-links">Nested (layered) links</h2>
@@ -216,7 +218,7 @@ Essentially, the header of, in this case, an article is stretched over a <code>d
 }</code></pre>
 <h2 id="website-design-with-respect-to-keyboard-users">Website design with respect to keyboard users</h2>
 <p>Most website designs are not optimized for keyboard users that facilitate the Tab key for navigating websites. The problem is, many websites have redundant links (multiple links referring to the same resource) that generate excess Tab keystrokes to navigate through e.g. articles on a website, as described <a href="https://www.sarasoueidan.com/blog/keyboard-friendlier-article-listings/">here by Sara Soueidan</a>. However, a fix to this problem is quite simple:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;cool-subpage.html&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>Cool subpage<span class="kw">&lt;/a&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;cool-subpage.html&quot;</span> <span class="er">tabindex</span><span class="ot">=</span><span class="st">&quot;-1&quot;</span> <span class="er">aria-hidden</span><span class="ot">=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>Cool subpage<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
 <p>The <code>tabindex</code> attribute set to <code>-1</code> renders this element invisible to keyboard users navigating using the Tab key. This element will be skipped.<br />
 The <code>aria-hidden</code> attribute set to <code>true</code> makes this element invisible to screen readers thus preventing from exposing this unreachable element to the user.</p>
 <hr />
@@ -224,7 +226,7 @@ The <code>aria-hidden</code> attribute set to <code>true</code> makes this eleme
 <p>When a fixed header (an HTML element that is always visible – scroll position doesn’t matter) is present on the webpage the standard anchor links don’t work as expected. The targeted anchor element is not fully visible as the fixed header covers some of the target element.</p>
 <p>The solution is to create a special anchor element that is offset by the fixed header’s height.</p>
 <p>The anchor target element:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;anchor&quot;</span><span class="ot"> id=</span><span class="st">&quot;target&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;anchor&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;target&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span></code></pre></div>
 <p>and its styling:</p>
 <pre class="scss"><code>.anchor {
     margin-top: -$header-height;// - $additional-offset;

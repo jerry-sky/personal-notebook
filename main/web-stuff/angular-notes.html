@@ -15,26 +15,28 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -43,9 +45,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -81,7 +83,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 </head>
 <body>
@@ -115,28 +117,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="deploying-an-app">Deploying an app</h2>
 <ol type="1">
 <li><p>Compile the Angular app</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">ng</span> build --prod</a></code></pre></div></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ng</span> build <span class="at">--prod</span></span></code></pre></div></li>
 <li><p>Put it on a simple Apache server or use <a href="https://angular.io/guide/universal"><code>angular-universal</code></a></p></li>
 </ol>
 <h2 id="installing-bootstrap">Installing Bootstrap</h2>
 <ol type="1">
-<li><div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">npm</span> install bootstrap</a></code></pre></div></li>
+<li><div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">npm</span> install bootstrap</span></code></pre></div></li>
 <li><p>Modify <code>$WORKING_DIRECTORY/angular.json</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb3-1" title="1"><span class="er">&quot;styles&quot;:</span> <span class="ot">[</span></a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="st">&quot;node_modules/bootstrap/dist/css/bootstrap.min.css&quot;</span><span class="ot">,</span></a>
-<a class="sourceLine" id="cb3-3" title="3">  <span class="st">&quot;styles.css&quot;</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="ot">]</span></a></code></pre></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="er">&quot;styles&quot;:</span> <span class="ot">[</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;node_modules/bootstrap/dist/css/bootstrap.min.css&quot;</span><span class="ot">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;styles.css&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ot">]</span></span></code></pre></div></li>
 </ol>
 <h2 id="ngmodel-input-element-inside-ngfor">NgModel input element inside ngFor</h2>
 <p>Nested <code>ngModel</code> input element inside <code>ngFor</code> need to refer to a value inside an <code>Object</code>. If it isn’t wrapped in an <code>Object</code> Angular won’t compile the app for some odd reason.</p>
-<h2 id="router-vs.-location"><code>Router</code> vs. <code>Location</code></h2>
+<h2 id="router-vs-location"><code>Router</code> vs. <code>Location</code></h2>
 <p>When using Angular navigation use the <code>Router</code>’s <code>navigate</code> function. The <code>Location</code>’s <code>go</code> function is meant to interact with URL, not navigate in application routes. <a href="https://stackoverflow.com/a/42858854/4249875">Source</a></p>
 <h2 id="ending-an-observable">Ending an <code>Observable</code></h2>
 <p>To complete the <code>Observable</code> use <code>return of()</code>. It will stop propagating any further notifications as <code>of</code> with no arguments will complete right away and not emit any notifications.</p>
 <h2 id="upload-progress">Upload progress</h2>
 <p>To get notifications about a file being uploaded use <code>reportProgress: true</code> in any <code>HTTP</code> method’s additional options object.</p>
 <p><a href="https://stackoverflow.com/a/54899930/4249875">Source</a></p>
-<h2 id="the-.htaccess-file">The <code>.htaccess</code> file</h2>
+<h2 id="the-htaccess-file">The <code>.htaccess</code> file</h2>
 <p>For serving a static Angular app on a standard Apache server you need to setup a <code>.htaccess</code> file <a href="web-errors#corb--cors">like so</a>.</p>
 <p><a href="https://stackoverflow.com/a/22740184/4249875">StackOverflow answer without <code>https</code> CORB issue solution</a></p>
 <h2 id="tracking-many-files">Tracking many files</h2>
@@ -151,16 +153,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="testing-components-that-contain-angular-material-components">Testing components that contain Angular Material components</h2>
 <p>When testing a component with some components from Angular Material (e.g. <code>MatButton</code> or <code>MatCard</code>) you have to include appropriate Angular Material modules to your tests.<br />
 For example, when the component contains a <code>mat-button</code> you should add to the <code>imports</code> of the test a reference to the <code>MatButtonModule</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">beforeEach</span>(<span class="fu">async</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-2" title="2">    <span class="va">TestBed</span><span class="op">.</span><span class="fu">configureTestingModule</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb4-3" title="3">        imports<span class="op">:</span> <span class="op">[</span></a>
-<a class="sourceLine" id="cb4-4" title="4">            MatButtonModule<span class="op">,</span> <span class="co">// said reference</span></a>
-<a class="sourceLine" id="cb4-5" title="5">        <span class="op">],</span></a>
-<a class="sourceLine" id="cb4-6" title="6">        declarations<span class="op">:</span> <span class="op">[</span></a>
-<a class="sourceLine" id="cb4-7" title="7">            <span class="op">...</span></a>
-<a class="sourceLine" id="cb4-8" title="8">        <span class="op">],</span></a>
-<a class="sourceLine" id="cb4-9" title="9">    <span class="op">}</span>).<span class="fu">compileComponents</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">beforeEach</span>(<span class="fu">async</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    TestBed<span class="op">.</span><span class="fu">configureTestingModule</span>({</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        imports<span class="op">:</span> [</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            MatButtonModule<span class="op">,</span> <span class="co">// said reference</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        ]<span class="op">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        declarations<span class="op">:</span> [</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            <span class="op">...</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        ]<span class="op">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    })<span class="op">.</span><span class="fu">compileComponents</span>()<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}))<span class="op">;</span></span></code></pre></div>
 <p>otherwise, the test will complain about unidentifiable components.</p>
 <p>Secondly, if it is necessary to test the interaction with an Angular Material component (instead of e.g. testing only the function that is invoked by this component) it is advised to use Angular Material’s component harnesses. This method prevents from possible issues due to change in the internal API of Angular Material.</p>
 <blockquote>
@@ -168,31 +170,31 @@ For example, when the component contains a <code>mat-button</code> you should ad
 </blockquote>
 <p>Instead of accessing the components in the HTML through invoking the <code>query</code> method use mentioned earlier Angular Material’s component harnesses.</p>
 <p>Setup:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">let</span> loader<span class="op">:</span> HarnessLoader<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="kw">let</span> component<span class="op">:</span> <span class="op">[...];</span></a>
-<a class="sourceLine" id="cb5-3" title="3"></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="fu">beforeEach</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb5-5" title="5">    fixture <span class="op">=</span> <span class="va">TestBed</span><span class="op">.</span><span class="fu">createComponent</span>(<span class="op">[...]</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-6" title="6">    component <span class="op">=</span> <span class="va">fixture</span><span class="op">.</span><span class="at">componentInstance</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb5-7" title="7">    loader <span class="op">=</span> <span class="va">TestBedHarnessEnvironment</span><span class="op">.</span><span class="fu">loader</span>(fixture)<span class="op">;</span> <span class="co">// (1)</span></a>
-<a class="sourceLine" id="cb5-8" title="8">    <span class="va">fixture</span><span class="op">.</span><span class="fu">detectedChanges</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="op">}</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>let loader<span class="op">:</span> HarnessLoader<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>let component<span class="op">:</span> [<span class="op">...</span>]<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">beforeEach</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    fixture <span class="op">=</span> TestBed<span class="op">.</span><span class="fu">createComponent</span>([<span class="op">...</span>])<span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    component <span class="op">=</span> fixture<span class="op">.</span><span class="at">componentInstance</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    loader <span class="op">=</span> TestBedHarnessEnvironment<span class="op">.</span><span class="fu">loader</span>(fixture)<span class="op">;</span> <span class="co">// (1)</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    fixture<span class="op">.</span><span class="fu">detectedChanges</span>()<span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
 <p>Here we are preparing the <code>TestBed</code> for our testing purposes. Notice the <code>(1)</code> additional line that loads the harness environment.</p>
 <p>Now we can test Angular Material components. Here is an example from the <a href="https://medium.com/@kevinkreuzer/test-your-components-using-angular-materials-component-harnesses-f9c1deebdf5d">source article</a>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">it</span>(<span class="st">&#39;should filter out the alive characters if we set filter to dead&#39;</span><span class="op">,</span> <span class="fu">async</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-2" title="2"></a>
-<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">const</span> deadRadioButton <span class="op">=</span> <span class="cf">await</span> <span class="va">loader</span><span class="op">.</span><span class="fu">getHarness</span><span class="op">&lt;</span>MatRadioButtonHarness<span class="op">&gt;</span>(</a>
-<a class="sourceLine" id="cb6-4" title="4">        <span class="va">MatRadioButtonHarness</span><span class="op">.</span><span class="fu">with</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb6-5" title="5">            label<span class="op">:</span> <span class="st">&#39;Dead&#39;</span></a>
-<a class="sourceLine" id="cb6-6" title="6">        <span class="op">}</span>)</a>
-<a class="sourceLine" id="cb6-7" title="7">    )<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-8" title="8">    <span class="kw">const</span> table <span class="op">=</span> <span class="cf">await</span> <span class="va">loader</span><span class="op">.</span><span class="fu">getHarness</span><span class="op">&lt;</span>MatTableHarness<span class="op">&gt;</span>(MathTableHarness)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-9" title="9"></a>
-<a class="sourceLine" id="cb6-10" title="10">    <span class="cf">await</span> <span class="va">deadRadioButton</span><span class="op">.</span><span class="fu">check</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-11" title="11">    <span class="kw">const</span> rows <span class="op">=</span> <span class="cf">await</span> <span class="va">table</span><span class="op">.</span><span class="fu">getRows</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-12" title="12">    <span class="fu">expect</span>(<span class="va">rows</span><span class="op">.</span><span class="at">length</span>).<span class="fu">toBe</span>(<span class="dv">5</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-13" title="13"></a>
-<a class="sourceLine" id="cb6-14" title="14"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">it</span>(<span class="st">&#39;should filter out the alive characters if we set filter to dead&#39;</span><span class="op">,</span> <span class="fu">async</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    const deadRadioButton <span class="op">=</span> await loader<span class="op">.</span><span class="fu">getHarness</span><span class="op">&lt;</span>MatRadioButtonHarness<span class="op">&gt;</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        MatRadioButtonHarness<span class="op">.</span><span class="fu">with</span>({</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            label<span class="op">:</span> <span class="st">&#39;Dead&#39;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    const table <span class="op">=</span> await loader<span class="op">.</span><span class="fu">getHarness</span><span class="op">&lt;</span>MatTableHarness<span class="op">&gt;</span>(MathTableHarness)<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    await deadRadioButton<span class="op">.</span><span class="fu">check</span>()<span class="op">;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    const rows <span class="op">=</span> await table<span class="op">.</span><span class="fu">getRows</span>()<span class="op">;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expect</span>(rows<span class="op">.</span><span class="at">length</span>)<span class="op">.</span><span class="fu">toBe</span>(<span class="dv">5</span>)<span class="op">;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
 <p>Sources:</p>
 <ul>
 <li><a href="https://material.angular.io/guide/using-component-harnesses">Angular Material guide on component harnesses</a></li>
@@ -202,36 +204,36 @@ For example, when the component contains a <code>mat-button</code> you should ad
 <h2 id="using-anchor-links">Using anchor links</h2>
 <p>Angular has the anchor links disabled by default (at least when the routing is enabled).</p>
 <p>Refactoring the module responsible for routing in a given app as follows:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb7-1" title="1"><span class="op">[...]</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="kw">const</span> routerOptions<span class="op">:</span> ExtraOptions <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-3" title="3">    useHash<span class="op">:</span> <span class="kw">false</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb7-4" title="4">    anchorScrolling<span class="op">:</span> <span class="st">&#39;enabled&#39;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="op">};</span></a>
-<a class="sourceLine" id="cb7-6" title="6"></a>
-<a class="sourceLine" id="cb7-7" title="7">@<span class="fu">NgModule</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb7-8" title="8">    imports<span class="op">:</span> <span class="op">[</span><span class="va">RouterModule</span><span class="op">.</span><span class="fu">forRoot</span>(routes<span class="op">,</span> routerOptions)<span class="op">],</span></a>
-<a class="sourceLine" id="cb7-9" title="9">    exports<span class="op">:</span> <span class="op">[</span>RouterModule<span class="op">]</span></a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="op">}</span>)</a>
-<a class="sourceLine" id="cb7-11" title="11"><span class="im">export</span> <span class="kw">class</span> AppRoutingModule <span class="op">{</span> <span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[<span class="op">...</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>const routerOptions<span class="op">:</span> ExtraOptions <span class="op">=</span> {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    useHash<span class="op">:</span> false<span class="op">,</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    anchorScrolling<span class="op">:</span> <span class="st">&#39;enabled&#39;</span><span class="op">,</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>@<span class="fu">NgModule</span>({</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    imports<span class="op">:</span> [RouterModule<span class="op">.</span><span class="fu">forRoot</span>(routes<span class="op">,</span> routerOptions)]<span class="op">,</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    exports<span class="op">:</span> [RouterModule]</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>export class AppRoutingModule { }</span></code></pre></div>
 <p>will enable this functionality.</p>
 <p>Source: <a href="https://stackoverflow.com/a/52724769/4249875">an answer on Stack Overflow</a></p>
 <hr />
 <h2 id="using-svg-icons-with-angular-material">Using SVG icons with Angular Material</h2>
 <p>To add a custom SVG icon that can be used throughout the whole app you need to import <code>MatIconRegistry</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb8-1" title="1"><span class="im">import</span> <span class="op">{</span> MatIconRegistry <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;@angular/material/icon&quot;</span><span class="op">;</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { MatIconRegistry } from <span class="st">&quot;@angular/material/icon&quot;</span><span class="op">;</span></span></code></pre></div>
 <p>and the <code>DomSanitizer</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb9-1" title="1"><span class="im">import</span> <span class="op">{</span> DomSanitizer <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;@angular/platform-browser&quot;</span><span class="op">;</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { DomSanitizer } from <span class="st">&quot;@angular/platform-browser&quot;</span><span class="op">;</span></span></code></pre></div>
 <p>to resolve the path by trusting the local asset file.</p>
 <p>Then, inside of <code>app.module.ts</code> inject said dependencies into the class constructor and add the desired icon(s) to the registry:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">constructor</span>(</a>
-<a class="sourceLine" id="cb10-2" title="2">    <span class="kw">private</span> MIR<span class="op">:</span> MatIconRegistry<span class="op">,</span></a>
-<a class="sourceLine" id="cb10-3" title="3">    <span class="kw">private</span> DS<span class="op">:</span> DomSanitizer</a>
-<a class="sourceLine" id="cb10-4" title="4">) <span class="op">{</span></a>
-<a class="sourceLine" id="cb10-5" title="5">    <span class="va">this</span><span class="op">.</span><span class="va">MIR</span><span class="op">.</span><span class="fu">addSvgIcon</span>(</a>
-<a class="sourceLine" id="cb10-6" title="6">        <span class="st">&#39;custom_icon&#39;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb10-7" title="7">        <span class="va">this</span><span class="op">.</span><span class="va">DS</span><span class="op">.</span><span class="fu">bypassSecurityTrustResourceUrl</span>(<span class="st">&quot;assets/custom-icon.svg&quot;</span>)</a>
-<a class="sourceLine" id="cb10-8" title="8">    )</a>
-<a class="sourceLine" id="cb10-9" title="9"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">constructor</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    private MIR<span class="op">:</span> MatIconRegistry<span class="op">,</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    private DS<span class="op">:</span> DomSanitizer</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    this<span class="op">.</span><span class="at">MIR</span><span class="op">.</span><span class="fu">addSvgIcon</span>(</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;custom_icon&#39;</span><span class="op">,</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        this<span class="op">.</span><span class="at">DS</span><span class="op">.</span><span class="fu">bypassSecurityTrustResourceUrl</span>(<span class="st">&quot;assets/custom-icon.svg&quot;</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Source: <a href="https://www.digitalocean.com/community/tutorials/angular-custom-svg-icons-angular-material">Digital Ocean Article</a></p>
 </body>
 </html>
