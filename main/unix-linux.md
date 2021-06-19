@@ -16,6 +16,7 @@ keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customizat
 - [Downloading a whole website using `wget`](#downloading-a-whole-website-using-wget)
 - [Permanently setting the DNS server](#permanently-setting-the-dns-server)
 - [Fixing broken packages (downloaded from an external PPA) by forcefully overwriting `apt` packages](#fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages)
+- [Useful PDF tools](#useful-pdf-tools)
 
 ---
 
@@ -180,5 +181,21 @@ sudo apt install -o Dpkg::Options::="--force-overwrite" --fix-broken
 ```
 
 [Source](https://unix.stackexchange.com/a/624842)
+
+---
+
+## Useful PDF tools
+
+1. PDF to PNG:
+    ```bash
+    pdftoppm pdf.pdf result -png
+    ```
+    [Source](https://askubuntu.com/a/50180)
+
+2. Merge two PDFs side-by-side:
+    ```bash
+    pdfjam one.pdf two.pdf --nup 2x1 --landscape --outfile merged.pdf
+    ```
+    [Source](https://superuser.com/q/917190/746117)
 
 ---
