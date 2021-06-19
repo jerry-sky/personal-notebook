@@ -107,6 +107,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#downloading-a-whole-website-using-wget">Downloading a whole website using <code>wget</code></a></li>
 <li><a href="#permanently-setting-the-dns-server">Permanently setting the DNS server</a></li>
 <li><a href="#fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages">Fixing broken packages (downloaded from an external PPA) by forcefully overwriting <code>apt</code> packages</a></li>
+<li><a href="#useful-pdf-tools">Useful PDF tools</a></li>
 </ul>
 <hr />
 <h2 id="keeping-some-scriptprogram-alive">Keeping some script/program alive</h2>
@@ -377,6 +378,12 @@ Edit following file:</p>
 <p>and to forcefully overwrite the broken packages from software sources that were already present in the system.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-o</span> Dpkg::Options::=<span class="st">&quot;--force-overwrite&quot;</span> <span class="at">--fix-broken</span></span></code></pre></div>
 <p><a href="https://unix.stackexchange.com/a/624842">Source</a></p>
+<hr />
+<h2 id="useful-pdf-tools">Useful PDF tools</h2>
+<ol type="1">
+<li><p>PDF to PNG: <code>bash     pdftoppm pdf.pdf result -png</code> <a href="https://askubuntu.com/a/50180">Source</a></p></li>
+<li><p>Merge two PDFs side-by-side: <code>bash     pdfjam one.pdf two.pdf --nup 2x1 --landscape --outfile merged.pdf</code> <a href="https://superuser.com/q/917190/746117">Source</a></p></li>
+</ol>
 <hr />
 </body>
 </html>
