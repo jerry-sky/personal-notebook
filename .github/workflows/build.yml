@@ -25,12 +25,12 @@ jobs:
         run: perl -i -pe 's/^.*\(Ω\).*$//gmi' "readme.md"
 
       - name: 'Render the website'
-        uses: 'jerry-sky/vyrow@v0.6.0'
+        uses: 'jerry-sky/vyrow@v0.7.0'
         with:
-          copy-master: 'true'
+          copy-from: '.'
 
       - name: 'Get current time'
-        uses: gerred/actions/current-time@master
+        uses: gerred/current-time@v1.0.0
         id: current-time
 
       - name: push the changes
