@@ -3,7 +3,7 @@
 cur_dir="${BASH_SOURCE%/*}"
 
 if [ ! -f "$cur_dir/keebie.py" ]; then
-    notify-send -u critical 'Second keyboard: no executable found!'
+    notify-send -u low 'Second keyboard: no executable found!'
     exit 1
 fi
 
@@ -15,7 +15,11 @@ fi
 # this script needs to be marked as `NOPASSWD` in the `sudoers.d` file
 sudo ~/second-keyboard/gain-access.sh
 
-test -r /dev/input/by-id/usb-SEM_USB_Keyboard-event-kbd
+# get the path of the device
+device="$(cat $cur_dir/config | head -n1)"
+
+# check if read-write access is granted
+test -rw "$device"
 if [ "$?" = "1" ]; then
     notify-send -u critical 'Second keyboard: permission denied!'
     exit 1

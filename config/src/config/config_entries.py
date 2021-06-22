@@ -92,6 +92,8 @@ utilities = [
     (utilities_default_installer, 'apt list 2>/dev/null | grep >/dev/null', 'python3-pip'),
     # numlock auto on
     (utilities_default_installer, utilities_default_verifier, 'numlockx'),
+    # `xte` and such `xautomation` tools
+    (utilities_default_installer, utilities_default_verifier, 'xautomation'),
 ]
 
 config_entries = [
