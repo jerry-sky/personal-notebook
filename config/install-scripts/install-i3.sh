@@ -15,3 +15,5 @@ printf "\n\033[1mInstalling utilities…\033[0m\n"
 sudo apt-get install -y dex
 # window compositor and background viewer
 sudo apt-get install -y compton feh
+# YAD — yet another dialog program
+sudo apt-get install -y yad

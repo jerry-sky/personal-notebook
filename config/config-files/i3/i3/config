@@ -105,7 +105,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -118,18 +118,18 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Ctrl+Shift+space sticky toggle
 
 # set size to 1920x1080
-bindsym $mod+y exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1,1920,1080'"
+bindsym $mod+Shift+y exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1,1920,1080'"
 # horizontal position: first, second, or third screen
-bindsym $mod+u exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '0,-1,-1,-1'"
-bindsym $mod+i exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '1920,-1,-1,-1'"
-bindsym $mod+o exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '3840,-1,-1,-1'"
+bindsym $mod+Shift+u exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '0,-1,-1,-1'"
+bindsym $mod+Shift+i exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '1920,-1,-1,-1'"
+bindsym $mod+Shift+o exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '3840,-1,-1,-1'"
 # horizontal position: almost off the third screen
-bindsym $mod+p exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '5740,-1,-1,-1'"
+bindsym $mod+Shift+p exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '5740,-1,-1,-1'"
 # vertical position: center, or almost off the screen to the top
-bindsym $mod+Shift+u exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,0,-1,-1'"
-bindsym $mod+Shift+i exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,120,-1,-1'"
-bindsym $mod+Shift+o exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-940,-1,-1'"
-bindsym $mod+Shift+p exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1060,-1,-1'"
+bindsym $mod+Ctrl+Shift+u exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,0,-1,-1'"
+bindsym $mod+Ctrl+Shift+i exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,120,-1,-1'"
+bindsym $mod+Ctrl+Shift+o exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-940,-1,-1'"
+bindsym $mod+Ctrl+Shift+p exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1060,-1,-1'"
 # vertical position: barely on the screen (only 5 pixels visible + border pixels)
 bindsym $mod+Shift+rightbracket exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1075,-1,-1'"
 
@@ -319,6 +319,8 @@ for_window [title="$obs_projector"] floating enable
 for_window [title="$obs_projector"] sticky enable
 for_window [title="$obs_projector"] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '$obs_projector' '5740,-1060,1920,1080'"
 
+for_window [class="pop-up"] floating enable
+
 # **never** steal focus, at most mark as ‘urgent’
 focus_on_window_activation urgent
 
@@ -368,3 +370,6 @@ exec --no-startup-id insync start
 exec --no-startup-id /home/$USER/notebooks/personal-notebook/config/second-keyboard/run.sh
 # window compositor
 exec --no-startup-id compton
+
+# quick run
+bindsym $mod+o exec --no-startup-id dex /usr/share/applications/quick-open.desktop
