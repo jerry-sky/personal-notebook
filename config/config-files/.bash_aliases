@@ -117,7 +117,7 @@ alias mdpdf="pandoc \
     --from markdown-blank_before_header-implicit_figures+lists_without_preceding_blankline+gfm_auto_identifiers \
     --to pdf \
     -V geometry:margin=2cm \
-    -H ~/notebooks/personal-notebook/config/config-files/head.tex \
+    -H ~/notebooks/personal-notebook/config/config-files/pandoc/head.tex \
     --number-sections \
     --toc-depth 4 \
     --shift-heading-level-by=-1"

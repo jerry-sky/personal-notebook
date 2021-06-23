@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./src/setup.py "$@"
+./src/main.py "$@"
