@@ -4,7 +4,7 @@ import os
 
 from model import ConfigEntry, Status, InstallationPackage
 from helper.files import toggle_fileblock
-from helper.links import toggle_file_links
+from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
 
 # home directory
@@ -295,7 +295,7 @@ config_entries = [
             ),
 
             ConfigEntry(
-                description='enable second-keyboard',
+                description='install ‘second-keyboard’',
                 shorthand='skb',
                 installation_packages=[
                     InstallationPackage(
@@ -309,6 +309,21 @@ config_entries = [
                             'test -f ' + HD + '/second-keyboard/gain-access.sh'
                         ) == 0
                     ),
+                    toggle_desktop_file_links(
+                        SKD + '/second-keyboard.desktop',
+                        '/usr/share/applications/second-keyboard.desktop',
+                    )
+                ]
+            ),
+
+            ConfigEntry(
+                description='install ‘audio loopback’',
+                shorthand='aud',
+                installation_packages=[
+                    toggle_desktop_file_links(
+                        AUD + '/audio-loopback.desktop',
+                        '/usr/share/applications/audio-loopback.desktop',
+                    )
                 ]
             ),
 
