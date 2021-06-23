@@ -295,29 +295,14 @@ config_entries = [
             ),
 
             ConfigEntry(
-                description='enable start on boot for the second keyboard program (make sure the exec is ready)',
+                description='enable second-keyboard',
                 shorthand='skb',
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: [
-                            # copy the sudoers file
                             ex(
-                                'sudo cp ' + CD + '/config-files/sudoers.d/second-keyboard /etc/sudoers.d/second-keyboard && ' \
-                                + 'sudo chown root:root /etc/sudoers.d/second-keyboard'
-                            ),
-                            # make room for the ‘gain access’ script
-                            ex(
-                                'mkdir -p ' + HD + '/second-keyboard'
-                            ),
-                            # copy the script
-                            ex(
-                                'sudo cp ' + CD + '/second-keyboard/gain-access.sh ' \
-                                + HD + '/second-keyboard/gain-access.sh'
-                            ),
-                            # give root access to it
-                            ex(
-                                'sudo chown root:root ' + HD + '/second-keyboard/gain-access.sh && ' \
-                                + 'sudo chmod 4755 ' + HD + '/second-keyboard/gain-access.sh'
+                                SKD + '/activate.sh ' + CD,
+                                sudo=True
                             )
                         ],
                         is_installed=lambda: ex(
