@@ -38,3 +38,15 @@ def toggle_file_links(source: str, target: str, sudo: bool = False):
         uninstall_func=lambda: ex('rm -rf -- ' + target, sudo),
         is_installed=lambda: True if os.path.exists(target) else False
     )
+
+
+def toggle_desktop_file_links(source: str, target: str):
+    '''
+    Does the same thing as `toggle_file_links` and updated the desktop database.
+    '''
+    sudo = True
+    return InstallationPackage(
+        install_func=lambda: __toggle_file_links(source, target, sudo) and ex('sudo update-desktop-database'),
+        uninstall_func=lambda: ex('rm -rf -- ' + target, sudo) and ex('sudo update-desktop-database'),
+        is_installed=lambda: True if os.path.exists(target) else False
+    )
