@@ -1,82 +1,35 @@
 import getpass
-import re
 import pathlib
 import os
-import shutil
-from types import FunctionType
-from typing import List, Tuple, Union
 
-from config.config_entry import ConfigEntry, Status, InstallationPackage
-from config.utilities import toggle_fileblock as __toggle_fileblock, does_contain_file_block, do_files_partially_overlap, do_lists_partially_overlap, copy_file_with_special_variables
+from model import ConfigEntry, Status, InstallationPackage
+from helper.files import toggle_fileblock
+from helper.links import toggle_file_links
+from helper.ex import ex
 
+# home directory
 HD = os.path.expanduser('~')
+# root config directory
 CD = str(pathlib.Path().absolute())
+# installation script directory
+ISD = CD + '/install-scripts'
+# config files directory
+CFD = CD + '/config-files'
+# utility scripts directory
+USD = CD + '/utility-scripts'
+# second-keyboard directory
+SKD = CD + '/second-keyboard'
+# audio directory
+AUD = CD + '/audio'
+
+# username
 USER = getpass.getuser()
 
-
-def ex(command: str, sudo: bool = False):
-    '''
-    Executes given command using the system shell.
-    '''
-    return os.system(
-        ('sudo ' if sudo else '')
-        + command
-    )
-
-
-def lns(source: str, target: str, sudo: bool = False):
-    '''
-    Creates a symbolic link in the target directory to the file
-    in the source directory.
-    '''
-
-    if os.path.isdir(source):
-        # file is a directory
-        ex('mkdir -p -- ' + target, sudo)
-        ex(
-            'find '  # find all files in the source directory
-            + source
-            + ' -type f | while read f; do sudo ln -s "$f"'
-            + ' ' + target
-            # and create links to the in the target directory
-            + '/${f##*/}; done'
-        )
-    else:
-        # file is not a directory
-        ex('mkdir -p -- ' + os.path.dirname(target), sudo)
-        ex('ln -fs -- ' + source + ' ' + target, sudo)
-
-
-def toggle_file_links(source: str, target: str, sudo: bool = False):
-    '''
-    Creates links to a provided file or files in a directory or deletes
-    them if they exist.
-
-    Returns an `InstallationPackage`.
-    '''
-    return InstallationPackage(
-        install_func=lambda: lns(source, target, sudo),
-        uninstall_func=lambda: ex('rm -rf -- ' + target, sudo),
-        is_installed=lambda: True if os.path.exists(target) else False
-    )
-
-
-def toggle_fileblock(source: str, target: str, sudo: bool = False):
-    '''
-    An `InstallationPackage` wrapper around `utilities.toggle_file`.
-    '''
-    return InstallationPackage(
-        install_func=lambda: __toggle_fileblock(source, target, True),
-        uninstall_func=lambda: __toggle_fileblock(source, target, False),
-        is_installed=lambda: does_contain_file_block(source, target)
-    )
-
-
 # default installer/ verifier commands
-utilities_default_installer = 'sudo apt-get install -y'
-utilities_default_verifier = 'command -v >/dev/null'
-utilities_python_installer = 'python3 -m pip install'
-utilities_python_verifier = 'python3 -m pip list | grep >/dev/null'
+utilities_default_installer = 'sudo apt-get install -y {}'
+utilities_default_verifier = 'dpkg -l {} >/dev/null'
+utilities_python_installer = 'python3 -m pip install {}'
+utilities_python_verifier = 'python3 -m pip list | grep {} >/dev/null'
 
 # list of all utility programs
 utilities = [
@@ -89,7 +42,7 @@ utilities = [
     # audio management
     (utilities_default_installer, utilities_default_verifier, 'pavucontrol'),
     # python3 base (PIP)
-    (utilities_default_installer, 'apt list 2>/dev/null | grep >/dev/null', 'python3-pip'),
+    (utilities_default_installer, utilities_default_verifier, 'python3-pip'),
     # numlock auto on
     (utilities_default_installer, utilities_default_verifier, 'numlockx'),
     # `xte` and such `xautomation` tools
@@ -109,10 +62,10 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: [
-                            ex(util[0] + ' ' + util[2], sudo=True) for util in utilities
+                            ex(util[0].format(util[2]), sudo=True) for util in utilities
                         ],
                         is_installed=lambda: [
-                            ex(util[1] + ' ' + sub_util) == 0 for util in utilities for sub_util in util[2].split(' ')
+                            ex(util[1].format(sub_util)) == 0 for util in utilities for sub_util in util[2].split(' ')
                         ]
                     )
                 ]
@@ -125,7 +78,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/install-blender.sh'),
+                            ISD + '/install-blender.sh'),
                         uninstall_func=False,
                         is_installed=lambda: ex(
                             'command -v blender >/dev/null') == 0
@@ -140,7 +93,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/install-obs.sh'),
+                            ISD + '/install-obs.sh'),
                         uninstall_func=False,
                         is_installed=lambda: ex(
                             'command -v obs >/dev/null') == 0
@@ -155,7 +108,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/install-telegram.sh'),
+                            ISD + '/install-telegram.sh'),
                         is_installed=lambda: ex(
                             'ls ' + HD + '/.local/share/applications | grep -i telegram.desktop >/dev/null') == 0
                     )
@@ -169,7 +122,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/install-discord.sh'),
+                            ISD + '/install-discord.sh'),
                         is_installed=lambda: ex(
                             'command -v discord >/dev/null') == 0
                     )
@@ -183,7 +136,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/install-insync.sh'),
+                            ISD + '/install-insync.sh'),
                         is_installed=lambda: ex(
                             'command -v insync >/dev/null') == 0
                     )
@@ -197,7 +150,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/install-unity.sh'),
+                            ISD + '/install-unity.sh'),
                         is_installed=lambda: [
                             ex('command -v unity-hub >/dev/null') == 0,
                             ex('command -v mono >/dev/null') == 0,
@@ -221,7 +174,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/enable-git-signing.sh'),
+                            ISD + '/enable-git-signing.sh'),
                         is_installed=lambda: ex(
                             '[ -n "$(git config --global user.signingKey)" ]') == 0
                     )
@@ -234,11 +187,11 @@ config_entries = [
                 shorthand='brc',
                 installation_packages=[
                     toggle_fileblock(
-                        CD + '/config-files/.bashrc',
+                        CFD + '/.bashrc',
                         HD + '/.bashrc'
                     ),
                     toggle_file_links(
-                        CD + '/config-files/.bash_aliases',
+                        CFD + '/.bash_aliases',
                         HD + '/.bash_aliases'
                     )
                 ]
@@ -250,7 +203,7 @@ config_entries = [
                 shorthand='kym',
                 installation_packages=[
                     toggle_fileblock(
-                        CD + '/config-files/.key_remap',
+                        CFD + '/.key_remap',
                         HD + '/.bashrc'
                     )
                 ]
@@ -262,15 +215,15 @@ config_entries = [
                 shorthand='rds',
                 installation_packages=[
                     toggle_file_links(
-                        CD + '/config-files/redshift.conf',
+                        CFD + '/redshift/redshift.conf',
                         HD + '/.config/redshift.conf'
                     ),
                     toggle_file_links(
-                        CD + '/config-files/nvim/init.vim',
+                        CFD + '/nvim/init.vim',
                         HD + '/.config/nvim/'
                     ),
                     toggle_file_links(
-                        CD + '/config-files/java-formatter.xml',
+                        CFD + '/java/java-formatter.xml',
                         HD + '/.config/java-formatter.xml'
                     )
                 ]
@@ -318,41 +271,25 @@ config_entries = [
                 shorthand='i3c',
                 installation_packages=[
                     toggle_file_links(
-                        CD + '/config-files/i3/i3/config',
+                        CFD + '/i3/i3/config',
                         HD + '/.config/i3/config'
                     ),
                     toggle_file_links(
-                        CD + '/config-files/i3/i3status/config',
+                        CFD + '/i3/i3status/config',
                         HD + '/.config/i3status/config'
                     ),
                     toggle_file_links(
-                        CD + '/config-files/i3/dunst/dunstrc',
+                        CFD + '/i3/dunst/dunstrc',
                         HD + '/.config/dunst/dunstrc'
                     ),
                     toggle_file_links(
-                        CD + '/config-files/i3/compton/compton.conf',
+                        CFD + '/i3/compton/compton.conf',
                         HD + '/.config/compton.conf'
                     ),
                     # keyboard knob switcher
                     toggle_file_links(
-                        CD + '/config-files/keyboard-volume-knob',
+                        CFD + '/keyboard-volume-knob',
                         HD + '/keyboard-volume-knob'
-                    )
-                ]
-            ),
-
-            # enable start on boot for the Audio Loopback program
-            ConfigEntry(
-                description='enable start on boot for the Audio Loopback program',
-                shorthand='alp',
-                installation_packages=[
-                    toggle_file_links(
-                        CD + '/config-files/autostart/audio-loopback.desktop',
-                        HD + '/.config/autostart/audio-loopback.desktop',
-                    ),
-                    toggle_file_links(
-                        CD + '/config-files/.audloop',
-                        HD + '/.audloop'
                     )
                 ]
             ),
@@ -387,47 +324,6 @@ config_entries = [
                             'test -f ' + HD + '/second-keyboard/gain-access.sh'
                         ) == 0
                     ),
-                    toggle_file_links(
-                        CD + '/config-files/autostart/second-keyboard.desktop',
-                        HD + '/.config/autostart/second-keyboard.desktop',
-                    )
-                ]
-            ),
-
-        ]
-    },
-
-    {
-        'name': 'Cinnamon only',
-        'list': [
-
-            # load Cinnamon keyboard shortcuts
-            ConfigEntry(
-                description='load keyboard shortcuts',
-                shorthand='cks',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: ex(
-                            'dconf load / < ' + CD + '/config-files/cinnamon/keyboard-shortcuts.conf'
-                        )
-                    ),
-                    toggle_file_links(
-                        CD + '/config-files/keyboard-volume-knob',
-                        HD + '/keyboard-volume-knob'
-                    )
-                ]
-            ),
-
-            # other settings for Cinnamon DE
-            ConfigEntry(
-                description='load other DE settings',
-                shorthand='cos',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: ex(
-                            'dconf load / < ' + CD + '/config-files/cinnamon/other-settings.conf'
-                        )
-                    )
                 ]
             ),
 
@@ -445,7 +341,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/install-additional-fonts.sh'
+                            ISD + '/install-additional-fonts.sh'
                         ),
                         is_installed=lambda: [
                             os.path.exists(
@@ -462,7 +358,7 @@ config_entries = [
                 shorthand='cus',
                 installation_packages=[
                     toggle_file_links(
-                        CD + '/utility-scripts',
+                        USD,
                         '/opt/utility-scripts',
                         sudo=True
                     )
@@ -488,7 +384,7 @@ config_entries = [
                 shorthand='int',
                 installation_packages=[
                     toggle_file_links(
-                        CD + '/config-files/20-intel.conf',
+                        CFD + '/graphics/20-intel.conf',
                         '/etc/X11/xorg.conf.d/20-intel.conf',
                         sudo=True
                     )

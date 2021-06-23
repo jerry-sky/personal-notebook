@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from sys import stdin, exit, argv
-from config.config_entries import config_entries, config_entries_flat
-from config.config_entry import Status, ConfigEntry
+from config_entries import config_entries, config_entries_flat
+from model import Status, ConfigEntry
 import os
 
 EXIT_MESSAGE = '\033[3mbye\033[0m'

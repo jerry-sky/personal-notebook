@@ -1,8 +1,7 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/jerry-sky/.audloop
+Exec=/home/jerry-sky/notebooks/personal-notebook/config/audio/audloop.sh
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
 Name=Audio Loopback
-X-GNOME-Autostart-Delay=3
