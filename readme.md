@@ -31,7 +31,6 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 ### Environment
 
 - [PC Setup](main/pc-setup.md)
-- [*Software List (deprecated, to-be-deleted)*](main/software-list.md)
 - [Config](config/readme.md)
 
 ### Main
