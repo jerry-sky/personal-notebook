@@ -108,6 +108,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#permanently-setting-the-dns-server">Permanently setting the DNS server</a></li>
 <li><a href="#fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages">Fixing broken packages (downloaded from an external PPA) by forcefully overwriting <code>apt</code> packages</a></li>
 <li><a href="#useful-pdf-tools">Useful PDF tools</a></li>
+<li><a href="#pass-url-file-argument-to-program-defined-by-a-desktop-file">Pass URL/ file argument to program defined by a <code>.desktop</code> file</a></li>
 </ul>
 <hr />
 <h2 id="keeping-some-scriptprogram-alive">Keeping some script/program alive</h2>
@@ -351,12 +352,12 @@ Every time you insert an ANSI escape sequence wrap it inside <code>\[«ANSI esca
 <p>To redirect <code>stdout</code> to <code>stderr</code> just add <code>&gt;&amp;2 echo 'error</code> at the end of the command you want to execute.</p>
 <hr />
 <h2 id="downloading-a-whole-website-using-wget">Downloading a whole website using <code>wget</code></h2>
-<p>Using <code>wget</code> you can download a whole webpage with all of the resources that are referenced through links on that webpage. It can be a very useful tool for archiving websites.</p>
+<p>Using <code>wget</code> you can download a whole webpage with all the resources that are referenced through links on that webpage. It can be a very useful tool for archiving websites.</p>
 <p>Executing</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-r</span> <span class="at">-p</span> <span class="at">-U</span> Mozilla <span class="at">--wait</span><span class="op">=</span>1 <span class="at">--limit-rate</span><span class="op">=</span>2M <span class="at">--tries</span><span class="op">=</span>3 <span class="at">-l</span> 1 https://example.com</span></code></pre></div>
-<p>will download the webpage and all pdfs, images and other resources that appear on that webpage to a folder called <code>example.com</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-rpl1</span> <span class="at">--tries</span><span class="op">=</span>3 https://example.com</span></code></pre></div>
+<p>will download the webpage and all PDFs, images and other resources that appear on that webpage to a folder called <code>example.com</code>.</p>
 <p>There is a possibility that above command will not work on first try. For example the HTML file containing the markup may have been downloaded, but the resources that appear on that webpage couldn’t have been downloaded. Then, using this website in HTML (or otherwise) form we can download the rest of the resources.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-r</span> <span class="at">-p</span> <span class="at">-U</span> Mozilla <span class="at">--wait</span><span class="op">=</span>1 <span class="at">--limit-rate</span><span class="op">=</span>2M <span class="at">--tries</span><span class="op">=</span>3 <span class="at">-l</span> 1 <span class="at">--base</span><span class="op">=</span>https://example.com/subpage <span class="at">--force-html</span> <span class="at">--relative</span> <span class="at">-i</span> example.com/subpage/index.html</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-rpl1</span> <span class="at">--tries</span><span class="op">=</span>3 <span class="at">--base</span><span class="op">=</span>https://example.com/subpage <span class="at">--force-html</span> <span class="at">--relative</span> <span class="at">-i</span> example.com/subpage/index.html</span></code></pre></div>
 <p>Executing above command will download all resources that appear on this subpage. All relative links will be preceded with the URL provided with the <code>--base</code> option.</p>
 <hr />
 <h2 id="permanently-setting-the-dns-server">Permanently setting the DNS server</h2>
@@ -384,6 +385,21 @@ Edit following file:</p>
 <li><p>PDF to PNG: <code>bash     pdftoppm pdf.pdf result -png</code> <a href="https://askubuntu.com/a/50180">Source</a></p></li>
 <li><p>Merge two PDFs side-by-side: <code>bash     pdfjam one.pdf two.pdf --nup 2x1 --landscape --outfile merged.pdf</code> <a href="https://superuser.com/q/917190/746117">Source</a></p></li>
 </ol>
+<hr />
+<h2 id="pass-url-file-argument-to-program-defined-by-a-desktop-file">Pass URL/ file argument to program defined by a <code>.desktop</code> file</h2>
+<p>Programs can accept links/ paths to remote/ local files as arguments. The <code>.desktop</code> files handles that by adding <code>%u</code> or <code>%U</code> at the end of the <code>Exec</code> parameter.</p>
+<ul>
+<li><code>%u</code> — only one URL can be passed</li>
+<li><code>%U</code> — multiple URLs can be passed</li>
+</ul>
+<p>Usage example:</p>
+<pre class="desktop"><code>[Desktop Entry]
+Name=Google Chrome
+Exec=/usr/bin/google-chrome-stable %U
+Type=Application
+Categories=Network;WebBrowser;
+# […]</code></pre>
+<p>Source: <a href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s07.html">Desktop specification — The Exec key</a></p>
 <hr />
 </body>
 </html>

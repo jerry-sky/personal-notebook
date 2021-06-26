@@ -42,7 +42,7 @@ $APTI neovim
 # install Git
 printf "\033[1m\nGit\nInstalling…\033[0m\n"
 $APTI "git"
-# configure git
+# configure Git
 printf "\n\033[1mConfiguring…\033[0m\n"
 printf "\033[1mProvide your GitHub username:\033[0m\n"
 read username
@@ -60,7 +60,7 @@ if [ $? != "0" ]; then
     exit 1
 fi
 cd "$cur_dir"
-# configure git to use the password manager
+# configure Git to use the password manager
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 # try to download a private repository
 # this is needed to invoke password input so a newly generated access token can be used and remembered
