@@ -17,6 +17,7 @@ keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customizat
 - [Permanently setting the DNS server](#permanently-setting-the-dns-server)
 - [Fixing broken packages (downloaded from an external PPA) by forcefully overwriting `apt` packages](#fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages)
 - [Useful PDF tools](#useful-pdf-tools)
+- [Pass URL/ file argument to program defined by a `.desktop` file](#pass-url-file-argument-to-program-defined-by-a-desktop-file)
 
 ---
 
@@ -201,5 +202,28 @@ sudo apt install -o Dpkg::Options::="--force-overwrite" --fix-broken
     pdfjam one.pdf two.pdf --nup 2x1 --landscape --outfile merged.pdf
     ```
     [Source](https://superuser.com/q/917190/746117)
+
+---
+
+## Pass URL/ file argument to program defined by a `.desktop` file
+
+Programs can accept links/ paths to remote/ local files as arguments.
+The `.desktop` files handles that by adding `%u` or `%U` at the end of the `Exec` parameter.
+
+- `%u` — only one URL can be passed
+- `%U` — multiple URLs can be passed
+
+Usage example:
+
+```desktop
+[Desktop Entry]
+Name=Google Chrome
+Exec=/usr/bin/google-chrome-stable %U
+Type=Application
+Categories=Network;WebBrowser;
+# […]
+```
+
+Source: [Desktop specification — The Exec key](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s07.html)
 
 ---

@@ -30,7 +30,7 @@ View this repository on [the web](https://personal.jerry-sky.me) or on [GitHub](
 
 ### Environment
 
-- [PC Setup](main/pc-setup.md)
+- [PC Setup — deprecated, to be refactored and moved to ‘Config’](main/pc-setup.md)
 - [Config](config/readme.md)
 
 ### Main

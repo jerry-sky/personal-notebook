@@ -160,7 +160,24 @@ config_entries = [
                         ]
                     )
                 ]
-            )
+            ),
+
+            # iBus
+            ConfigEntry(
+                description='install iBus, iBus-Anthy, iBus-Hangul',
+                shorthand='ibu',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/install-ibus.sh'
+                        ),
+                        is_installed=lambda: [
+                            ex('command -v ibus >/dev/null') == 0,
+                            ex('command -v gnome-language-selector >/dev/null') == 0,
+                        ],
+                    )
+                ]
+            ),
 
         ]
     },
@@ -374,19 +391,6 @@ config_entries = [
                         USD,
                         '/opt/utility-scripts',
                         sudo=True
-                    )
-                ]
-            ),
-
-            # set IBus icon colour
-            ConfigEntry(
-                description='set IBus icon colour',
-                shorthand='ibu',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: ex(
-                            '/usr/bin/gsettings set org.freedesktop.ibus.panel xkb-icon-rgba "#c0c0c0"'
-                        )
                     )
                 ]
             ),
