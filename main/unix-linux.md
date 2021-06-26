@@ -113,24 +113,28 @@ To redirect `stdout` to `stderr` just add `>&2 echo 'error` at the end of the co
 
 ## Downloading a whole website using `wget`
 
-Using `wget` you can download a whole webpage with all of the resources that are referenced through links on that webpage.
+Using `wget` you can download a whole webpage with all the resources that are referenced through links on that webpage.
 It can be a very useful tool for archiving websites.
 
 Executing
 
 ```bash
-wget -r -p -U Mozilla --wait=1 --limit-rate=2M --tries=3 -l 1 https://example.com
+wget -rpl1 --tries=3 https://example.com
 ```
 
-will download the webpage and all pdfs, images and other resources that appear on that webpage to a folder called `example.com`.
+will download the webpage and all PDFs, images and other resources that appear on that webpage to a folder called `example.com`.
 
-There is a possibility that above command will not work on first try. For example the HTML file containing the markup may have been downloaded, but the resources that appear on that webpage couldn't have been downloaded. Then, using this website in HTML (or otherwise) form we can download the rest of the resources.
+There is a possibility that above command will not work on first try.
+For example the HTML file containing the markup may have been downloaded,
+but the resources that appear on that webpage couldn't have been downloaded.
+Then, using this website in HTML (or otherwise) form we can download the rest of the resources.
 
 ```bash
-wget -r -p -U Mozilla --wait=1 --limit-rate=2M --tries=3 -l 1 --base=https://example.com/subpage --force-html --relative -i example.com/subpage/index.html
+wget -rpl1 --tries=3 --base=https://example.com/subpage --force-html --relative -i example.com/subpage/index.html
 ```
 
-Executing above command will download all resources that appear on this subpage. All relative links will be preceded with the URL provided with the `--base` option.
+Executing above command will download all resources that appear on this subpage.
+All relative links will be preceded with the URL provided with the `--base` option.
 
 ---
 
