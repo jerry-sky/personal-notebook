@@ -10,8 +10,8 @@ sudo apt-get install -y ibus ibus-anthy ibus-hangul
 # language settings system-wide
 sudo apt-get install -y language-selector-gnome
 
-# configure taskbar icon colour
-/usr/bin/gsettings set org.freedesktop.ibus.panel xkb-icon-rgba "#c0c0c0"
+# load the default config
+dconf load /desktop/ibus < config-files/ibus/ibus.conf
 
 # run the program
 zenity --question --text "Do you want to run the language selector program now?"
