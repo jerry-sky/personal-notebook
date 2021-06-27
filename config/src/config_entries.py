@@ -406,7 +406,19 @@ config_entries = [
                         sudo=True
                     )
                 ]
-            )
+            ),
+
+            ConfigEntry(
+                description='enable automount on boot for a drive',
+                shorthand='mnt',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/automount.sh'
+                        ),
+                    ),
+                ],
+            ),
 
         ]
     }
