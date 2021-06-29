@@ -10,7 +10,7 @@ keywords: 'Japanese, language, 日本語, Tae Kim, text analysis, resources, not
 
 - [Resources](#resources)
     - [Dictionaries](#dictionaries)
-    - [Tae Kim’s guide](#tae-kims-guide)
+    - [漢字 and 仮名](#漢字-and-仮名)
     - [Anime](#anime)
 - [Grammar](#grammar)
     - [Particles](#particles)
@@ -27,9 +27,11 @@ keywords: 'Japanese, language, 日本語, Tae Kim, text analysis, resources, not
 - [ジショ](https://jisho.org/)
 - [タンゴリン](https://tangorin.com/)
 
-### Tae Kim’s guide
+### 漢字 and 仮名
 
-- [感じ readings](http://www.guidetojapanese.org/learn/complete/kanji#Kanji_Readings)
+- [Tae Kim’s guide](http://www.guidetojapanese.org/learn/complete/kanji#Kanji_Readings)
+- [WaniKani](https://www.wanikani.com/dashboard)
+- [Tofugu’s Learn Kana Quiz](https://kana-quiz.tofugu.com/)
 
 ### Anime
 
