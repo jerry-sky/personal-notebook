@@ -18,6 +18,8 @@ link=$(curl -sL https://github.com/Palakis/obs-websocket/releases/latest \
 wget -q https://github.com$link -O /tmp/obs-websocket.deb
 # install
 sudo dpkg -i /tmp/obs-websocket.deb
+# install Python3 dependency
+sudo python3 -m pip install simpleobsws
 
 printf "\n\033[1mInstalling OBS StreamFX plugin…\033[0m\n"
 # find the link to the latest version
