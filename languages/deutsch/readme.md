@@ -8,12 +8,26 @@ keywords: 'Deutsch, German, grammar, verbs, vocabulary, text analysis, resources
 
 ---
 
+- [Learning strategy](#learning-strategy)
 - [Resources](#resources)
     - [News articles](#news-articles)
     - [Toms Deutschseite](#toms-deutschseite)
 - [Notizen](#notizen)
 - [Handy](#handy)
 - [Text analysis](#text-analysis)
+
+---
+
+## Learning strategy
+
+[Language learning strategy](../ll-strategy.md) implementation
+
+- ~~Duolingo~~
+- Changing the computer interface display language to German.
+- Watching more content in German.
+- [Article analysis](#text-analysis)
+- [Duome.eu](https://duome.eu/tips/en/de)
+- [Notes on grammar](#notizen)
 
 ---
 
