@@ -2,20 +2,27 @@
 lang: 'en-GB'
 title: 'は vs が'
 author: 'Jerry Sky'
-description: 'The 「は」 particle is used to indicate that a new topic (subject, object) has been introduced to the conversation. A pointer that emphasises an object to focus on during later parts of the conversation. This is the “topic” particle.'
 keywords: 'ha, ga, particle, Japanese, grammar, sentence, subject, example'
 ---
 
 ---
 
-[source]: http://www.guidetojapanese.org/learn/difference-between-wa-and-ga/#Ok_so_what_does_mean
-
+- [Role of は](#role-of-は)
+    - [Example of は usage](#example-of-は-usage)
 - [Role of が](#role-of-が)
     - [Example of が usage](#example-of-が-usage)
 
+[source]: http://www.guidetojapanese.org/learn/difference-between-wa-and-ga/#Ok_so_what_does_mean
 [Source][source]
 
 ---
+
+## Role of は
+
+The 「は」 particle is used to indicate that a new topic (subject, object)
+has been introduced to the conversation.
+A pointer that emphasises an object to focus on during later parts of the conversation.
+This is the “topic” particle.
 
 ### Example of は usage
 

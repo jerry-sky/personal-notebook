@@ -8,15 +8,15 @@ keywords: 'SAO, text analysis, transcript, episode, series, kanji, Kirito, Asuna
 
 ---
 
-- [It’s time for this week’s MMO Stream.](#its-time-for-this-weeks-mmo-stream)
-- [We began with a promotional video.](#we-began-with-a-promotional-video)
+- [It’s time for this week’s MMO Stream](#its-time-for-this-weeks-mmo-stream)
+- [We began with a promotional video](#we-began-with-a-promotional-video)
 - [Was this the day of last week’s launch?](#was-this-the-day-of-last-weeks-launch)
 - [What were all these people waiting in line for?](#what-were-all-these-people-waiting-in-line-for)
-- [Sword Art Online!](#sword-art-online)
-- [The one at the front of the line waited for three days prior to launch.](#the-one-at-the-front-of-the-line-waited-for-three-days-prior-to-launch)
-- [Amazing!](#amazing)
+- [Sword Art Online](#sword-art-online)
+- [The one at the front of the line waited for three days prior to launch](#the-one-at-the-front-of-the-line-waited-for-three-days-prior-to-launch)
+- [Amazing](#amazing)
 - [Or is this just what any real gamer would do?](#or-is-this-just-what-any-real-gamer-would-do)
-- [The whole world is watching.](#the-whole-world-is-watching)
+- [The whole world is watching](#the-whole-world-is-watching)
 
 ---
 
@@ -134,7 +134,7 @@ Romaji: sō-do-ā-to o-n-ra-i-n\
 
 3. [3日 (三日)](https://jisho.org/word/三日)\
     Meaning: **three days**\
-    Hiragana: みっ・にち
+    Hiragana: みっ・か
 
 4. [前](https://jisho.org/word/前-1)\
     Meaning: **prior**\
