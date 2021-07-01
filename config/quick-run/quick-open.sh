@@ -47,19 +47,19 @@ case "${directory:0:1}" in
 
     # evaluate (e.g. an alias)
     'e')
-        eval "$inherent"
+        eval -- "$inherent"
     ;;
 
     # open a directory in the home directory
     'h')
         cd ~
-        cd "$inherent"
+        cd -- "$inherent"
     ;;
 
     # open a directory in the code directory
     'c')
         cd ~/code
-        cd "$inherent"
+        cd -- "$inherent"
     ;;
 
     # open given directory

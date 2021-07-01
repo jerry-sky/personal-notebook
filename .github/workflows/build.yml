@@ -22,7 +22,7 @@ jobs:
 
       - name: 'Remove all references to the private part of this repository'
         shell: bash
-        run: perl -i -pe 's/^.*\(Ω\).*$//gmi' "readme.md"
+        run: perl -i -pe 's/^.*\(Ω\).*\n//gmi' "readme.md"
 
       - name: 'Render the website'
         uses: 'jerry-sky/vyrow@v0.7.0'
