@@ -41,3 +41,4 @@ stimmt so | (for waiter to keep the change) it’s ok
 der Zug ist schon abgefahren | that ship has sailed
 eigentlich schon, aber… | I agree, but *uhh…*
 mach’s gut | have a good one
+egal was passiert, alles wird gut | no matter what happens, we’ll be ok

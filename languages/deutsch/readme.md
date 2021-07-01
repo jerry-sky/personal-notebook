@@ -46,8 +46,8 @@ keywords: 'Deutsch, German, grammar, verbs, vocabulary, text analysis, resources
 
 ## Notizen
 
-- [**Präpositionen**](notizen/präpositionen.md)
-- [**„Zu“ Regeln**](notizen/zu-regeln.md)
+- [Präpositionen](notizen/präpositionen.md)
+- [„Zu“ Regeln](notizen/zu-regeln.md)
 - [Rektion](notizen/rektion.md)
 - [„Da“ Wörter](notizen/da-wörter.md)
 
@@ -69,7 +69,8 @@ keywords: 'Deutsch, German, grammar, verbs, vocabulary, text analysis, resources
 
 *Dokument, Artikeln und andere Texten kann man analysieren, um ihn Sprachkenntnisse zu bessern.*
 
-- [**„Europäischer Tag der Sprachen: Ein paar Fakten über Deutsch“**](text-analysis/europäischer-tag-der-sprachen-ein-paar-fakten-über-deutsch.md)
-- [**Sind alle europäischen Staaten in der EU?**](text-analysis/sind-alle-europäischen-staaten-in-der-eu.md)
-- [**Was ist die Europäische Union?**](text-analysis/was-ist-die-europäische-union.md)
-- [**Gewitter und Starkregen in Brandenburg erwartet**](text-analysis/gewitter-und-starkregen-in-brandenburg-erwartet.md)
+- [Merkel lehnt erneute Grenzschließungen ab](text-analysis/merkel-lehnt-erneute-grenzschließungen-ab.md)
+- [Europäischer Tag der Sprachen: Ein paar Fakten über Deutsch](text-analysis/europäischer-tag-der-sprachen-ein-paar-fakten-über-deutsch.md)
+- [Sind alle europäischen Staaten in der EU?](text-analysis/sind-alle-europäischen-staaten-in-der-eu.md)
+- [Was ist die Europäische Union?](text-analysis/was-ist-die-europäische-union.md)
+- [Gewitter und Starkregen in Brandenburg erwartet](text-analysis/gewitter-und-starkregen-in-brandenburg-erwartet.md)
