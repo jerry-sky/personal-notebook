@@ -97,37 +97,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p id="document-description"><em>Config files and other utilities that I use every day. Installed automatically using the setup script.</em></p>
 <hr />
 <ul>
-<li><a href="#setup">Setup</a>
-<ul>
 <li><a href="#first-time-setup">First time setup</a></li>
-<li><a href="#config-files-and-other-programs">Config files and other programs</a></li>
-</ul></li>
-<li><a href="#the-setup-includes-things-as">The setup includes things as:</a>
-<ul>
-<li><a href="#keyboard-volume-knob-configuration">Keyboard volume knob configuration</a></li>
-<li><a href="#utility-scripts">Utility scripts</a></li>
-</ul></li>
+<li><a href="#standard-setup">Standard setup</a></li>
 </ul>
 <hr />
-<h2 id="setup">Setup</h2>
-<h3 id="first-time-setup">First time setup</h3>
-<p>To run the script for setting up the most basic of environments run:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="at">-c</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-s</span> https://raw.githubusercontent.com/jerry-sky/personal-notebook/master/config/first-time-setup.sh<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
+<h2 id="first-time-setup">First time setup</h2>
+<p>First time setup includes some basic things such as:</p>
+<ul>
+<li>Internet browser (Google Chrome),</li>
+<li>IDE (VS Code),</li>
+<li>NeoVim,</li>
+<li>Git (with GitHub configuration).</li>
+</ul>
+<p>Run</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> fts.jerry-sky.me <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div>
+<p>whilst being the <code>config</code> directory.</p>
 <hr />
-<h3 id="config-files-and-other-programs">Config files and other programs</h3>
-<p>In the same directory as this document there is a file called <code>setup.sh</code> which copies various config files into all sorts of locations. It’s part of the <a href="../main/pc-setup">standard JRS PC Setup</a> to configure the system and its programs. Execute it whilst being in the <code>config</code> directory to set up a proper workspace.</p>
+<h2 id="standard-setup">Standard setup</h2>
+<p>Standard setup is not as crucial as the first time setup, but still includes some very much necessary things such as a proper desktop environment.</p>
+<p>It also includes a list of various scripts that:</p>
+<ul>
+<li>install programs,</li>
+<li>install utilities,</li>
+<li>link or copy config files,</li>
+<li>set up environment extensions.</li>
+</ul>
+<p>Run</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./setup.sh</span></span></code></pre></div>
+<p>whilst being in the <code>config</code> directory.</p>
 <hr />
-<h2 id="the-setup-includes-things-as">The setup includes things as:</h2>
-<h3 id="keyboard-volume-knob-configuration">Keyboard volume knob configuration</h3>
-<p>The config setup script allows to copy some utility scripts that enable to override the default behaviour of Volume Media keys. Some keyboards have a scrollable knob that normally controls the volume. Because of these scripts (and properly configured keyboard shortcuts to these scripts) this volume knob can be utilized as mouse scroll wheel or volume knob. The <em>mute</em> button switches between <code>scroll</code> and <code>volume</code> modes.</p>
-<hr />
-<h3 id="utility-scripts">Utility scripts</h3>
-<p>The <code>utility-scripts</code> directory contains some very specific but useful scripts that are sometimes very handy.</p>
-<ul>
-<li><a href="utility-scripts/alter-window-geometry.sh"><code>alter-window-geometry.sh</code></a> — resizes and moves selected window (requires <code>wmctrl</code>)</li>
-<li><a href="utility-scripts/fix-iso-date-file-contents.sh"><code>fix-iso-date-file-contents.sh</code></a> &amp; <a href="utility-scripts/fix-iso-date-filenames.sh"><code>fix-iso-date-filenames.sh</code></a> – these scripts fix all pseudo ISO-like dates that don’t have a leading zero before a single-digit day number (e.g. 2020-04-<strong>4</strong> instead of 2020-04-<strong>04</strong>)</li>
-<li><a href="utility-scripts/front-matter-ify-markdown-document.sh"><code>front-matter-ify-markdown-document.sh</code></a> — converts a document that has a header at the beginning with the title of the document and converts it into a front matter metadata block with some additional metadata like date and description that may be within the first five lines of the document</li>
-</ul>
 </body>
 </html>
