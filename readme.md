@@ -15,11 +15,14 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 ---
 
 - [Index](#index)
-    - [Environment](#environment)
-    - [Main](#main)
+    - [Computer Science](#computer-science)
+        - [General](#general)
+        - [Web-dev](#web-dev)
+        - [Abstract](#abstract)
+    - [Curriculum Vitae](#curriculum-vitae)
+    - [Arts](#arts)
     - [Life (Ω)](#life-ω)
     - [Languages](#languages)
-    - [Ideas (Ω)](#ideas-ω)
     - [The arbitrary collection](#the-arbitrary-collection)
     - [Adobe](#adobe)
     - [Videos (Ω)](#videos-ω)
@@ -35,32 +38,41 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 ## Index
 
-### Environment
+### Computer Science
 
-- [Config](config/readme.md)
+#### General
 
-### Main
-
+- [Environment configuration](config/readme.md)
 - [Unix & Linux](main/unix-linux.md)
 - [Git](main/git-notes.md)
-- [VS Code](main/vs-code.md)
-- [Software issues](main/software-issues.md)
-- [Blender Notes](main/blender-notes.md)
-- [Web stuff](main/web-stuff/readme.md)
-- [Software Engineering](main/software-engineering/readme.md)
-- [Curriculum Vitae](cv/readme.md)
-- [Linguistics of Computer Science related matters](main/linguistics-related-to-cs.md)
 - [$\LaTeX$](main/latex-notes.md)
-- [Colours](main/colour-notes.md)
+- [Software issues](main/software-issues.md)
 
+#### Web-dev
+
+- [VS Code](main/vs-code.md)
+- [Web stuff](main/web-stuff/readme.md)
+
+#### Abstract
+
+- [Software Engineering](main/software-engineering/readme.md)
+- [Linguistics of Computer Science related matters](main/linguistics-related-to-cs.md)
 - [Some preparatory notes (Ω)](private/preparatory/readme.md)
+
+### Curriculum Vitae
+
+- [Curriculum Vitae](cv/readme.md)
+
+### Arts
+
+- [Blender Notes](main/blender-notes.md)
+- [Colours](main/colour-notes.md)
 
 ### Life (Ω)
 
 - [Thoughts (Ω)](private/life/thoughts/readme.md)
 - [Books (Ω)](private/life/books/readme.md)
 - [Journal (Ω)](private/life/journal/readme.md)
-- [Life Programming (Ω)](private/life/life-programming/readme.md)
 
 ### Languages
 
@@ -68,12 +80,6 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 - [German](languages/deutsch/readme.md)
 - [French](languages/français/readme.md)
 - [Japanese](languages/日本語/readme.md)
-
-### Ideas (Ω)
-
-- [Calendar app (Ω)](private/ideas/calendar-app.md)
-- [Todo app (Ω)](private/ideas/todo-app.md)
-- [Notes app (Ω)](private/ideas/notes-app.md)
 
 ### The arbitrary collection
 
