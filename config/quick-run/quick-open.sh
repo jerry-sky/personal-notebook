@@ -39,6 +39,16 @@ if [ -z "$directory" ]; then
     exit 3
 fi
 
+# opens given directory or lets the use choose when provided path is empty
+function open_dir() {
+    dir="$1"
+    if [ -z "$dir" ]; then
+        # let the user decide
+        dir=$(zenity --file-selection --directory)
+    fi
+    cd -- "$dir"
+}
+
 # extract the value of the command
 inherent="${directory:1}"
 
@@ -47,19 +57,22 @@ case "${directory:0:1}" in
 
     # evaluate (e.g. an alias)
     'e')
+        if [ -z "$inherent" ]; then
+            exit 4
+        fi
         eval -- "$inherent"
     ;;
 
     # open a directory in the home directory
     'h')
         cd ~
-        cd -- "$inherent"
+        open_dir "$inherent"
     ;;
 
     # open a directory in the code directory
     'c')
         cd ~/code
-        cd -- "$inherent"
+        open_dir "$inherent"
     ;;
 
     # open given directory
