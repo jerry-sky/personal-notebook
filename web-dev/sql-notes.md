@@ -8,16 +8,21 @@ keywords: 'notes, SQL, query, database'
 
 ---
 
-- [Links](#links)
+- [Resources](#resources)
 - [Show columns from a `SELECT` query](#show-columns-from-a-select-query)
 - [`TRUNCATE` all tables in a database](#truncate-all-tables-in-a-database)
 
-## Links
+---
+
+## Resources
 
 - [`GROUP_CONCAT` and `DISTINCT`](https://stackoverflow.com/questions/3083499/mysql-distinct-on-a-group-concat)
 - [Replacing `NULL` with a different value](https://database.guide/4-ways-to-replace-null-with-a-different-value-in-mysql/)
-- [Performance tuning - Query Caching](https://logicalread.com/2015/09/28/mysql-with-query-caching-mc13/#.Xh9i-nWYXmF)
-- [TypeORM - Databases with TypeScript](https://www.infoq.com/articles/typescript-mysql/)
+- [Pivoting in MySQL](http://mysql.rjweb.org/doc.php/pivot)
+- [Performance tuning — Query Caching](https://logicalread.com/2015/09/28/mysql-with-query-caching-mc13/#.Xh9i-nWYXmF)
+- [TypeORM — Databases with TypeScript](https://www.infoq.com/articles/typescript-mysql/)
+
+---
 
 ## Show columns from a `SELECT` query
 

@@ -8,8 +8,7 @@ keywords: 'Angular, TypeScript, node, Router, htaccess, observable, file, model,
 
 ---
 
-- [Links](#links)
-- [Deploying an app](#deploying-an-app)
+- [Resources](#resources)
 - [Installing Bootstrap](#installing-bootstrap)
 - [NgModel input element inside ngFor](#ngmodel-input-element-inside-ngfor)
 - [`Router` vs. `Location`](#router-vs-location)
@@ -21,19 +20,13 @@ keywords: 'Angular, TypeScript, node, Router, htaccess, observable, file, model,
 - [Using anchor links](#using-anchor-links)
 - [Using SVG icons with Angular Material](#using-svg-icons-with-angular-material)
 
-## Links
+---
+
+## Resources
 
 - [Alligator.io](https://alligator.io/angular/)
 
-## Deploying an app
-
-1. Compile the Angular app
-
-    ```bash
-    ng build --prod
-    ```
-
-2. Put it on a simple Apache server or use [`angular-universal`](https://angular.io/guide/universal)
+---
 
 ## Installing Bootstrap
 
@@ -50,18 +43,31 @@ keywords: 'Angular, TypeScript, node, Router, htaccess, observable, file, model,
    ]
    ```
 
+---
+
 ## NgModel input element inside ngFor
 
-Nested `ngModel` input element inside `ngFor` need to refer to a value inside an `Object`. If it isn't wrapped in an `Object` Angular won't compile the app for some odd reason.
+Nested `ngModel` input element inside `ngFor` need to refer to a value inside an `Object`.
+If it isn't wrapped in an `Object` Angular won't compile the app for some odd reason.
+
+---
 
 ## `Router` vs. `Location`
 
-When using Angular navigation use the `Router`'s `navigate` function. The `Location`'s `go` function is meant to interact with URL, not navigate in application routes.
+When using Angular navigation use the `Router`'s `navigate` function.
+The `Location`’s `go` function is meant to interact with URL, not to navigate in application routes.
+
 [Source](https://stackoverflow.com/a/42858854/4249875)
+
+---
 
 ## Ending an `Observable`
 
-To complete the `Observable` use `return of()`. It will stop propagating any further notifications as `of` with no arguments will complete right away and not emit any notifications.
+To complete the `Observable` use `return of()`.
+It will stop propagating any further notifications as `of` with no
+arguments will complete right away and not emit any notifications.
+
+---
 
 ## Upload progress
 
@@ -69,11 +75,16 @@ To get notifications about a file being uploaded use `reportProgress: true` in a
 
 [Source](https://stackoverflow.com/a/54899930/4249875)
 
+---
+
 ## The `.htaccess` file
 
-For serving a static Angular app on a standard Apache server you need to setup a `.htaccess` file [like so](web-errors.md#corb--cors).
+For serving a static Angular app on a standard Apache server
+you need to setup a `.htaccess` file [like so](general.md#corb--cors).
 
-[StackOverflow answer without `https` CORB issue solution](https://stackoverflow.com/a/22740184/4249875)
+[Source](https://stackoverflow.com/a/22740184/4249875)
+
+---
 
 ## Tracking many files
 
@@ -92,8 +103,11 @@ When dealing with multiple Angular projects or Angular projects mixed with some 
 
 [ng-material-harnesses]: https://medium.com/@kevinkreuzer/test-your-components-using-angular-materials-component-harnesses-f9c1deebdf5d
 
-When testing a component with some components from Angular Material (e.g. `MatButton` or `MatCard`) you have to include appropriate Angular Material modules to your tests.\
-For example, when the component contains a `mat-button` you should add to the `imports` of the test a reference to the `MatButtonModule`:
+When testing a component with some components from Angular Material
+(e.g. `MatButton` or `MatCard`) you have to include appropriate
+Angular Material modules to your tests.\
+For example, when the component contains a `mat-button` you should add
+to the `imports` of the test a reference to the `MatButtonModule`:
 
 ```ts
 beforeEach(async(() => {
@@ -110,12 +124,17 @@ beforeEach(async(() => {
 
 otherwise, the test will complain about unidentifiable components.
 
-Secondly, if it is necessary to test the interaction with an Angular Material component (instead of e.g. testing only the function that is invoked by this component) it is advised to use Angular Material's component harnesses.
+Secondly, if it is necessary to test the interaction with
+an Angular Material component (instead of e.g. testing only the function
+that is invoked by this component) it is advised to use Angular Material's component harnesses.
 This method prevents from possible issues due to change in the internal API of Angular Material.
 
-> *“Relying on implementation details of third party libraries is cumbersome because you are vulnerable to refactorings and you need to understand implementation details.”*
+> *“Relying on implementation details of third party libraries*
+> *is cumbersome because you are vulnerable to refactorings,*
+> *and you need to understand implementation details.”*
 
-Instead of accessing the components in the HTML through invoking the `query` method use mentioned earlier Angular Material's component harnesses.
+Instead of accessing the components in the HTML through invoking
+the `query` method use mentioned earlier Angular Material's component harnesses.
 
 Setup:
 
@@ -131,7 +150,8 @@ beforeEach(() => {
 })
 ```
 
-Here we are preparing the `TestBed` for our testing purposes. Notice the `(1)` additional line that loads the harness environment.
+Here we are preparing the `TestBed` for our testing purposes.
+Notice the `(1)` additional line that loads the harness environment.
 
 Now we can test Angular Material components. Here is an example from the [source article][ng-material-harnesses]:
 
@@ -156,7 +176,6 @@ Sources:
 
 - [Angular Material guide on component harnesses](https://material.angular.io/guide/using-component-harnesses)
 - [The original article on Medium by Kevin Kreuzer][ng-material-harnesses]
-
 
 ---
 
@@ -202,7 +221,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 
 to resolve the path by trusting the local asset file.
 
-Then, inside of `app.module.ts` inject said dependencies into the class constructor and add the desired icon(s) to the registry:
+Then, inside of `app.module.ts` inject said dependencies into
+the class constructor and add the desired icon(s) to the registry:
 
 ```ts
 constructor(
@@ -217,3 +237,5 @@ constructor(
 ```
 
 Source: [Digital Ocean Article](https://www.digitalocean.com/community/tutorials/angular-custom-svg-icons-angular-material)
+
+---

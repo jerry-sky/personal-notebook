@@ -48,7 +48,10 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 ### Web-dev
 
-- [Web stuff](web-dev/readme.md)
+- [General (TypeScript, NodeJS)](web-dev/general.md)
+- [Angular Notes](web-dev/angular-notes.md)
+- [CSS/SCSS + HTML](web-dev/css-scss-html-notes.md)
+- [SQL](web-dev/sql-notes.md)
 
 ### Abstract
 

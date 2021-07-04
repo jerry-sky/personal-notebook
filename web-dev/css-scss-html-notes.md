@@ -8,7 +8,8 @@ keywords: 'html, css, static, web, web-kit, website, design, link, header, devel
 
 ---
 
-- [Links](#links)
+- [Resources](#resources)
+    - [General](#general)
     - [Animations](#animations)
     - [Archived *(sentimental)*](#archived-sentimental)
 - [Web-kit scrollbar styling](#web-kit-scrollbar-styling)
@@ -17,7 +18,11 @@ keywords: 'html, css, static, web, web-kit, website, design, link, header, devel
 - [Website design with respect to keyboard users](#website-design-with-respect-to-keyboard-users)
 - [Anchor links and fixed headers](#anchor-links-and-fixed-headers)
 
-## Links
+---
+
+## Resources
+
+### General
 
 - [Practical CSS Scroll Snapping](https://css-tricks.com/practical-css-scroll-snapping/)
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
@@ -31,14 +36,17 @@ keywords: 'html, css, static, web, web-kit, website, design, link, header, devel
 ### Animations
 
 - [Animate.css](https://daneden.github.io/animate.css/)
+- [anime.js](https://animejs.com/documentation/)
 - [Magic Animations CSS3](https://www.minimamente.com/project/magic/)
 - [AniJS](http://anijs.github.io/)
 - [Motion UI](https://zurb.com/playground/motion-ui)
-- [vivus.js - SVG animations](http://maxwellito.github.io/vivus/)
+- [vivus.js — SVG animations](http://maxwellito.github.io/vivus/)
 
 ### Archived *(sentimental)*
 
 - [The Shapes of CSS](https://css-tricks.com/the-shapes-of-css/)
+
+---
 
 ## Web-kit scrollbar styling
 
@@ -200,3 +208,5 @@ and its styling:
 where `$header-height` is the height of the fixed header and the optional `$additional-offset` variable can be used to move the view even further to improve readability.
 
 Source: [an answer on Stack Overflow][anchor-links-fixed-headers]
+
+---
