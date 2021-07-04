@@ -73,6 +73,23 @@ config_entries = [
                 ]
             ),
 
+            # TeX Live
+            ConfigEntry(
+                description='install TeX Live',
+                shorthand='tex',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/install-tex-live.sh'
+                        ),
+                        uninstall_func=False,
+                        is_installed=lambda: ex(
+                            '. ~/.bashrc && printf $PATH | grep texlive >/dev/null'
+                        ) == 0
+                    ),
+                ]
+            ),
+
             # Blender
             ConfigEntry(
                 description='install Blender',
