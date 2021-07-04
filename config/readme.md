@@ -28,7 +28,7 @@ Run
 curl -L fts.jerry-sky.me | bash
 ```
 
-whilst being the `config` directory.
+to download the script and run it on a new system.
 
 ---
 
