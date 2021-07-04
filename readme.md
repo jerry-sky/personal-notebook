@@ -14,19 +14,19 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 ---
 
-- [Index](#index)
-    - [Computer Science](#computer-science)
-        - [General](#general)
-        - [Web-dev](#web-dev)
-        - [Abstract](#abstract)
-    - [Curriculum Vitae](#curriculum-vitae)
-    - [Arts](#arts)
-    - [Life (Ω)](#life-ω)
-    - [Languages](#languages)
-    - [The arbitrary collection](#the-arbitrary-collection)
+- [Computer Science](#computer-science)
+    - [General](#general)
+    - [Web-dev](#web-dev)
+    - [Abstract](#abstract)
+- [Curriculum Vitae](#curriculum-vitae)
+- [Arts](#arts)
+    - [General](#general-1)
     - [Adobe](#adobe)
-    - [Videos (Ω)](#videos-ω)
-    - [Other (Ω)](#other-ω)
+- [Languages](#languages)
+- [The arbitrary collection](#the-arbitrary-collection)
+- [Life (Ω)](#life-ω)
+- [Videos (Ω)](#videos-ω)
+- [Other (Ω)](#other-ω)
 - [Some remarks](#some-remarks)
     - [OneNote](#onenote)
     - [Markdown and $\LaTeX$](#markdown-and-latex)
@@ -36,65 +36,78 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 *Please note: to view some private notes (marked with (Ω)) you need to have access to the private part of this repository.*
 
-## Index
+## Computer Science
 
-### Computer Science
-
-#### General
+### General
 
 - [Environment configuration](config/readme.md)
-- [Unix & Linux](main/unix-linux.md)
-- [Git](main/git-notes.md)
-- [Software issues](main/software-issues.md)
+- [Unix & Linux](general/unix-linux.md)
+- [Git](general/git-notes.md)
+- [Software issues](general/software-issues.md)
+- [VS Code](general/vs-code.md)
 
-#### Web-dev
+### Web-dev
 
-- [VS Code](main/vs-code.md)
-- [Web stuff](main/web-stuff/readme.md)
+- [Web stuff](web-dev/readme.md)
 
-#### Abstract
+### Abstract
 
-- [Software Engineering](main/software-engineering/readme.md)
-- [Linguistics of Computer Science related matters](main/linguistics-related-to-cs.md)
+- [Linguistics of Computer Science related matters](general/linguistics-related-to-cs.md)
+- [Technical specification](general/technical-specification.md)
 - [Some preparatory notes (Ω)](private/preparatory/readme.md)
 
-### Curriculum Vitae
+---
 
-- [Curriculum Vitae](cv/readme.md)
+## Curriculum Vitae
 
-### Arts
+*Based on the [AltaCV template](https://www.overleaf.com/latex/templates/altacv-template/trgqjpwnmtgv).*
 
-- [Blender Notes](main/blender-notes.md)
-- [Colours](main/colour-notes.md)
+- [PDF](cv/curriculum-vitae.pdf)
+- [`.tex`](cv/.curriculum-vitae.tex)
 
-### Life (Ω)
+---
 
-- [Thoughts (Ω)](private/life/thoughts/readme.md)
-- [Books (Ω)](private/life/books/readme.md)
-- [Journal (Ω)](private/life/journal/readme.md)
+## Arts
 
-### Languages
+### General
+
+- [Blender Notes](arts/blender-notes.md)
+- [Colours](arts/colour-notes.md)
+
+### Adobe
+
+- [After Effects](arts/adobe/after-effects.md)
+- [Illustrator](arts/adobe/illustrator.md)
+
+---
+
+## Languages
 
 - [English](languages/english/readme.md)
 - [German](languages/deutsch/readme.md)
 - [French](languages/français/readme.md)
 - [Japanese](languages/日本語/readme.md)
 
-### The arbitrary collection
+---
+
+## The arbitrary collection
 
 - [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
 - [Music](the-arbitrary-collection/arbitrary-music-things.md)
 - [Hilarious stories](the-arbitrary-collection/hilarious-stories.md)
 - [2D Animation](the-arbitrary-collection/2d-animation.md)
 
-### Adobe
+---
 
-- [After Effects](adobe/after-effects.md)
-- [Illustrator](adobe/illustrator.md)
+## Life (Ω)
 
-### [Videos (Ω)](private/videos/readme.md)
+- [Thoughts (Ω)](private/life/thoughts/readme.md)
+- [Books (Ω)](private/life/books/readme.md)
+- [Journal (Ω)](private/life/journal/readme.md)
 
-### [Other (Ω)](private/other/readme.md)
+## [Videos (Ω)](private/videos/readme.md)
+
+## [Other (Ω)](private/other/readme.md)
 
 ---
 
