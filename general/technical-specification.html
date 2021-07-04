@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="software, engineering, specification, technical, code, document, data, solutions, proposed" />
+  <meta name="description" content="Writing code before writing a good technical spec document can be disastrous to the project being worked on. The idea of writing code and figuring out the “what and how” of a solution to a given problem is irresponsible." />
+  <title>Writing technical specification</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Writing technical specification</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>Writing code before writing a good technical spec document can be disastrous to the project being worked on. The idea of writing code and figuring out the “what and how” of a solution to a given problem is irresponsible.</em></p>
+<hr />
+<p><em>This note is based on <a href="https://stackoverflow.blog/2020/04/06/a-practical-guide-to-writing-technical-specs/">an article by Zara Cooper</a>.</em></p>
+<ul>
+<li><a href="#1-why-write-such-a-document">1. Why write such a document</a></li>
+<li><a href="#2-benefits">2. Benefits</a></li>
+<li><a href="#3-gathering-data">3. Gathering data</a></li>
+<li><a href="#4-document-contents">4. Document contents</a>
+<ul>
+<li><a href="#41-front-cover">4.1. Front cover</a></li>
+<li><a href="#42-introduction">4.2. Introduction</a>
+<ul>
+<li><a href="#421-overview">4.2.1. Overview</a></li>
+<li><a href="#422-terminology">4.2.2. Terminology</a></li>
+<li><a href="#423-context">4.2.3. Context</a></li>
+<li><a href="#424-technical-requirements">4.2.4. Technical requirements</a></li>
+<li><a href="#425-user-wish-list">4.2.5. User wish-list</a></li>
+<li><a href="#426-out-of-scope">4.2.6. Out of scope</a></li>
+<li><a href="#427-future-goals">4.2.7. Future goals</a></li>
+</ul></li>
+<li><a href="#43-solutions">4.3. Solutions</a>
+<ul>
+<li><a href="#431-current-handling-of-the-problem">4.3.1. Current handling of the problem</a></li>
+<li><a href="#432-proposed-solution">4.3.2. Proposed solution</a></li>
+<li><a href="#433-test-plan">4.3.3. Test Plan</a></li>
+<li><a href="#434-monitoring-and-altering-plans">4.3.4. Monitoring and altering plans</a></li>
+<li><a href="#435-deployment-plans">4.3.5. Deployment plans</a></li>
+<li><a href="#436-rollback-plan">4.3.6. Rollback plan</a></li>
+<li><a href="#437-alternate-solutions">4.3.7. Alternate solutions</a></li>
+</ul></li>
+<li><a href="#44-further-considerations">4.4. Further Considerations</a>
+<ul>
+<li><a href="#441-impact-on-other-teams">4.4.1. Impact on other teams</a></li>
+<li><a href="#442-third-party-services-and-platforms-considerations">4.4.2. Third-party services and platforms considerations</a></li>
+<li><a href="#443-cost-analysis">4.4.3. Cost analysis</a></li>
+<li><a href="#444-security-considerations">4.4.4. Security considerations</a></li>
+<li><a href="#445-privacy-considerations">4.4.5. Privacy considerations</a></li>
+<li><a href="#446-regional-considerations">4.4.6. Regional considerations</a></li>
+<li><a href="#447-accessibility-considerations">4.4.7. Accessibility considerations</a></li>
+<li><a href="#448-operational-considerations">4.4.8. Operational considerations</a></li>
+<li><a href="#449-risks">4.4.9. Risks</a></li>
+<li><a href="#4410-support-considerations">4.4.10. Support considerations</a></li>
+</ul></li>
+<li><a href="#45-success-evaluation">4.5. Success Evaluation</a>
+<ul>
+<li><a href="#451-impact">4.5.1. Impact</a></li>
+<li><a href="#452-metrics">4.5.2. Metrics</a></li>
+</ul></li>
+<li><a href="#46-work-cost">4.6. Work cost</a>
+<ul>
+<li><a href="#461-work-estimates-and-timelines">4.6.1. Work estimates and timelines</a></li>
+<li><a href="#462-prioritization">4.6.2. Prioritization</a></li>
+<li><a href="#463-milestones">4.6.3. Milestones</a></li>
+<li><a href="#464-future-work">4.6.4. Future work</a></li>
+</ul></li>
+<li><a href="#47-deliberation">4.7. Deliberation</a>
+<ul>
+<li><a href="#471-discussion">4.7.1. Discussion</a></li>
+<li><a href="#472-open-questions">4.7.2. Open questions</a></li>
+</ul></li>
+<li><a href="#48-end-cover">4.8. End cover</a>
+<ul>
+<li><a href="#481-related-work">4.8.1. Related work</a></li>
+<li><a href="#482-references">4.8.2. References</a></li>
+<li><a href="#483-acknowledgements">4.8.3. Acknowledgements</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#5-source">5. Source</a></li>
+</ul>
+<h2 id="1-why-write-such-a-document">1. Why write such a document</h2>
+<p>One can think of such spec document as the <em>model</em> of the solution to the given problem, meaning the shape of the programs and other utilities that will be crafted during the implementation process. It is the first mock-up that is the foundation of later iterations of a proposed solution. A draft that is later perfected, <em>a first input solution that we inject into the metaheuristic algorithm that the team working on a solution is.</em></p>
+<p>In simpler terms: a set of guidelines that enables the creators of the project to converge towards the perfect solution.</p>
+<h2 id="2-benefits">2. Benefits</h2>
+<p>This spec document can be beneficial to <em>all</em> members of the team working on given project.</p>
+<p>Engineers are forced to fully understand the topic and better prepare for creating an appropriate solution.</p>
+<p>It is still a technical way of describing given problem, but much more understandable (human-readable text instead of pure code) for the other non-engineer members of the team.</p>
+<p>The document sums up the purpose of the project and the proposed solution to the problem.</p>
+<h2 id="3-gathering-data">3. Gathering data</h2>
+<p>The spec document also gives an opportunity to gather as much vital (both about the problem and about possible solutions) information, compile it and avail it to all members of the team.</p>
+<p>Afterwards, feedback can be acquired from members of the team or from external sources.</p>
+<h2 id="4-document-contents">4. Document contents</h2>
+<h3 id="41-front-cover">4.1. Front cover</h3>
+<ul>
+<li>Title</li>
+<li>Author(s)</li>
+<li>Team</li>
+<li>Reviewers</li>
+<li>Date (creation and last modification)</li>
+</ul>
+<h3 id="42-introduction">4.2. Introduction</h3>
+<h4 id="421-overview">4.2.1. Overview</h4>
+<p><em>Problem description, summary, abstract</em></p>
+<p>High-level abstract description (from the perspective of a standard user). Gives information about the “what and how” in simple terms, the context and a proposed solution to the problem.</p>
+<h4 id="422-terminology">4.2.2. Terminology</h4>
+<p><em>Set of definitions specific to this project</em></p>
+<p>For better communication between various users and creators of the solution a set of terms and their clear definitions should be established.</p>
+<h4 id="423-context">4.2.3. Context</h4>
+<ul>
+<li>Reason(s) to why the problem is worth solving</li>
+<li>Origin of the problem</li>
+<li>How the problem affects others</li>
+<li>If there were any: past efforts made to solve the solution and why they were not sufficient</li>
+<li>How the proposed solution fits the problem</li>
+</ul>
+<h4 id="424-technical-requirements">4.2.4. Technical requirements</h4>
+<p>List of all technical utilities that are necessary to create a solution to the problem. These include both what hardware and software has to be used to accomplish tasks set out in the proposed solution.</p>
+<h4 id="425-user-wish-list">4.2.5. User wish-list</h4>
+<p>A set of stories, requirements and wish-lists of the actual to-be-users of this solution.</p>
+<h4 id="426-out-of-scope">4.2.6. Out of scope</h4>
+<p>List of all goals that will not be achieved.</p>
+<h4 id="427-future-goals">4.2.7. Future goals</h4>
+<p>Future research that can be conducted on the problem and list of all concerns that may be a problem after the solution is implemented.</p>
+<h3 id="43-solutions">4.3. Solutions</h3>
+<h4 id="431-current-handling-of-the-problem">4.3.1. Current handling of the problem</h4>
+<ul>
+<li>Current solution description</li>
+<li>Advantages and drawbacks of the currently utilised solution or half-solution</li>
+</ul>
+<h4 id="432-proposed-solution">4.3.2. Proposed solution</h4>
+<ul>
+<li>External components that the solution will interact with and that it will alter</li>
+<li>Advantages and drawbacks of the proposed solution</li>
+<li>Data model/schemas
+<ul>
+<li>Data model definition</li>
+<li>Data validation methods</li>
+</ul></li>
+<li>Business Logic
+<ul>
+<li>API changes</li>
+<li>Pseudocode</li>
+<li>Flowcharts</li>
+<li>Error states</li>
+<li>Failure scenarios</li>
+<li>Conditions that lead to errors and failures</li>
+<li>Limitations</li>
+</ul></li>
+<li>Presentation layer
+<ul>
+<li>User requirements</li>
+<li>UX and UI changes</li>
+<li>Wireframes with descriptions</li>
+<li>Links to UI/UX designer’s work</li>
+<li>Concerns about usability on other platforms e.g. mobile, web</li>
+<li>UI states</li>
+<li>Error handling</li>
+</ul></li>
+<li>Questionnaire
+<ul>
+<li>How will the solution scale?</li>
+<li>What are the limitations of the solution?</li>
+<li>How ill it recover in the event of a failure?</li>
+<li>How will it cope with future requirements?
+<ul>
+<li>Is it maintainable?</li>
+<li>Is it modular? (easy upgrades step-by-step)</li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 id="433-test-plan">4.3.3. Test Plan</h4>
+<ul>
+<li>Explanations of how the tests will make sure user requirements are met</li>
+<li>Unit tests</li>
+<li>Integration tests</li>
+<li>Quality Assurance</li>
+</ul>
+<h4 id="434-monitoring-and-altering-plans">4.3.4. Monitoring and altering plans</h4>
+<ul>
+<li>Logging and monitoring plans and tools</li>
+<li>Metrics to be used to measure health</li>
+<li>How to ensure observability?</li>
+<li>Altering plan and tools</li>
+</ul>
+<h4 id="435-deployment-plans">4.3.5. Deployment plans</h4>
+<ul>
+<li>Deployment architecture</li>
+<li>Deployment environments</li>
+<li>Phased roll-out plan e.g. using feature flags</li>
+<li>Plan outlining how to communicate changes to the users, for example, with release notes</li>
+</ul>
+<h4 id="436-rollback-plan">4.3.6. Rollback plan</h4>
+<ul>
+<li>Detailed and specific liabilities</li>
+<li>Plan to reduce liabilities</li>
+<li>Plan describing how to prevent other components, services, and systems from being affected</li>
+</ul>
+<h4 id="437-alternate-solutions">4.3.7. Alternate solutions</h4>
+<ul>
+<li>Short summery statement for each alternative solution</li>
+<li>Advantages and drawback for each alternative solution</li>
+<li>Reasons why each solution is not applicable</li>
+<li>Ways in which alternatives were inferior to the proposed solution</li>
+<li>Migration plan to next best alternative in case the proposed solution isn’t sufficient</li>
+</ul>
+<h3 id="44-further-considerations">4.4. Further Considerations</h3>
+<h4 id="441-impact-on-other-teams">4.4.1. Impact on other teams</h4>
+<p>How will this increase the work of other people?</p>
+<h4 id="442-third-party-services-and-platforms-considerations">4.4.2. Third-party services and platforms considerations</h4>
+<ul>
+<li>Is it really worth i compared to building the service in-house?</li>
+<li>What are some of the security and privacy concerns associated with the services/platoforms?</li>
+<li>How much will it cost?</li>
+<li>How will it scale?</li>
+<li>What possible future issues are anticipated?</li>
+</ul>
+<h4 id="443-cost-analysis">4.4.3. Cost analysis</h4>
+<ul>
+<li>What is the cost to run the solution per day?</li>
+<li>What does it cost to roll it out?</li>
+</ul>
+<h4 id="444-security-considerations">4.4.4. Security considerations</h4>
+<ul>
+<li>What are the potential threats?</li>
+<li>How will they be mitigated?</li>
+<li>How will the solution affect the security of other components, services and systems?</li>
+</ul>
+<h4 id="445-privacy-considerations">4.4.5. Privacy considerations</h4>
+<ul>
+<li>Does the solution follow local laws and legal policies on data privacy?</li>
+<li>How does the solution protect users’ data privacy?</li>
+<li>What are some of the trade-offs between personalization and privacy in the solution?</li>
+</ul>
+<h4 id="446-regional-considerations">4.4.6. Regional considerations</h4>
+<ul>
+<li>What is the impact of the internationalization and localization on the solution?</li>
+<li>What are the latency issues?</li>
+<li>What are the legal concerns?</li>
+<li>What is the state of service availability?</li>
+<li>How will data transfer across regions be achieved and what are the concerns here?</li>
+</ul>
+<h4 id="447-accessibility-considerations">4.4.7. Accessibility considerations</h4>
+<ul>
+<li>How accessible is the solution?</li>
+<li>What tools will you use the evaluate its accessibility?</li>
+<li>Are there users that will need other means of communicating/interacting with the proposed solution?</li>
+</ul>
+<h4 id="448-operational-considerations">4.4.8. Operational considerations</h4>
+<ul>
+<li>Does this solution cause adverse after-effects?</li>
+<li>How will data be recovered in case of failure?</li>
+<li>How will the solution recover in case of a failure?</li>
+<li>How will operational costs be kept low while delivering increased value to the users?</li>
+</ul>
+<h4 id="449-risks">4.4.9. Risks</h4>
+<ul>
+<li>What risks are being undertaken with this solution?</li>
+<li>Are there risks once taken can’t be walked back?</li>
+<li>What is the cost-benefit analysis of taking these risks?</li>
+</ul>
+<h4 id="4410-support-considerations">4.4.10. Support considerations</h4>
+<ul>
+<li>How will the support team get across information to users about common issue they may face while interacting with the changes?</li>
+<li>How will we ensure that the users are satisfied with the solution and can interact with it with minimal support?</li>
+<li>Who is responsible for the maintenance of the solution?</li>
+<li>How will knowledge transfer be accomplished if the project owner is unavailable?</li>
+</ul>
+<h3 id="45-success-evaluation">4.5. Success Evaluation</h3>
+<h4 id="451-impact">4.5.1. Impact</h4>
+<ul>
+<li>Security impact</li>
+<li>Performance impact</li>
+<li>Cost impact</li>
+<li>Impact on other components and services</li>
+</ul>
+<h4 id="452-metrics">4.5.2. Metrics</h4>
+<ul>
+<li>List of metrics to capture</li>
+<li>Tools to capture and measure metrics</li>
+</ul>
+<h3 id="46-work-cost">4.6. Work cost</h3>
+<h4 id="461-work-estimates-and-timelines">4.6.1. Work estimates and timelines</h4>
+<ul>
+<li>List of specific, measurable and time-bound tasks</li>
+<li>Resource needed to finish each task</li>
+<li>Time estimates for how long each task needs to be completed</li>
+</ul>
+<h4 id="462-prioritization">4.6.2. Prioritization</h4>
+<p>Categorization of tasks by urgency and impact</p>
+<h4 id="463-milestones">4.6.3. Milestones</h4>
+<ul>
+<li>Dated checkpoints when significant chunks of work will have been completed</li>
+<li>Metrics to indicate the passing of the milestone</li>
+</ul>
+<h4 id="464-future-work">4.6.4. Future work</h4>
+<p>List of tasks that will be completed in the future.</p>
+<h3 id="47-deliberation">4.7. Deliberation</h3>
+<h4 id="471-discussion">4.7.1. Discussion</h4>
+<p>Elements of the solution that members of the team do not agree on and need to be debated further to reach a consensus.</p>
+<h4 id="472-open-questions">4.7.2. Open questions</h4>
+<p>Questions about things you do not know the answers to or are unsure that you pose to the team and stakeholders for their input. These may include aspects of the problem you don’t know how to resolve yet.</p>
+<h3 id="48-end-cover">4.8. End cover</h3>
+<h4 id="481-related-work">4.8.1. Related work</h4>
+<p>Any work external to the proposed solution that is similar to i in some way is worked on by different teams. It’s important to know this to enable knowledge sharing between such teams when faced with related problems.</p>
+<h4 id="482-references">4.8.2. References</h4>
+<p>Links to documents and resources that were used when coming up with the desing and wish to credit.</p>
+<h4 id="483-acknowledgements">4.8.3. Acknowledgements</h4>
+<p>Credit people who have contributed to the desing that you wish to reorganize.</p>
+<hr />
+<h2 id="5-source">5. Source</h2>
+<p><a href="https://stackoverflow.blog/2020/04/06/a-practical-guide-to-writing-technical-specs/">Original article by Zara Cooper</a></p>
+<p>This note is mainly based on the above mentioned article with some minor modifications.</p>
+</body>
+</html>

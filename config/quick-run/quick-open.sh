@@ -46,6 +46,10 @@ function open_dir() {
         # let the user decide
         dir=$(zenity --file-selection --directory)
     fi
+    if [ -z "$dir" ]; then
+        # cancelled
+        exit 4
+    fi
     cd -- "$dir"
 }
 

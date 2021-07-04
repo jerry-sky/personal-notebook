@@ -5,9 +5,9 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Jerry Sky" />
-  <meta name="keywords" content="bash, config, script, utilities, python3, keyboard, markdown, bash aliases" />
-  <meta name="description" content="Config files and other utilities that I use every day. Installed automatically using the setup script." />
-  <title>Config</title>
+  <meta name="keywords" content="VS Code, code, visual studio code, settings, sync, java" />
+  <meta name="description" content="Notes on VS Code." />
+  <title>VS Code</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -88,43 +88,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Config</h1>
+<h1 class="title">VS Code</h1>
 <p class="author">
     <span>by </span>
     <span class="author">Jerry Sky</span>
 </p>
 </header>
-<p id="document-description"><em>Config files and other utilities that I use every day. Installed automatically using the setup script.</em></p>
+<p id="document-description"><em>Notes on VS Code.</em></p>
 <hr />
 <ul>
-<li><a href="#first-time-setup">First time setup</a></li>
-<li><a href="#standard-setup">Standard setup</a></li>
+<li><a href="#settings-sync">Settings Sync</a></li>
+<li><a href="#java-formatter-settings">Java Formatter Settings</a></li>
 </ul>
 <hr />
-<h2 id="first-time-setup">First time setup</h2>
-<p>First time setup includes some basic things such as:</p>
-<ul>
-<li>Internet browser (Google Chrome),</li>
-<li>IDE (VS Code),</li>
-<li>NeoVim,</li>
-<li>Git (with GitHub configuration).</li>
-</ul>
-<p>Run</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> fts.jerry-sky.me <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div>
-<p>to download the script and run it on a new system.</p>
+<h2 id="settings-sync">Settings Sync</h2>
+<p><em>To keep the settings synced use this addon.</em></p>
+<p>Install:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ext</span> install Shan.code-settings-sync</span></code></pre></div>
+<p>To download/ upload the settings from/ to the Gist use: <code>SHIFT + ALT + U/D</code>.</p>
 <hr />
-<h2 id="standard-setup">Standard setup</h2>
-<p>Standard setup is not as crucial as the first time setup, but still includes some very much necessary things such as a proper desktop environment.</p>
-<p>It also includes a list of various scripts that:</p>
-<ul>
-<li>install programs,</li>
-<li>install utilities,</li>
-<li>link or copy config files,</li>
-<li>set up environment extensions.</li>
-</ul>
-<p>Run</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./setup.sh</span></span></code></pre></div>
-<p>whilst being in the <code>config</code> directory.</p>
-<hr />
+<h2 id="java-formatter-settings">Java Formatter Settings</h2>
+<p>The Java formatter for VS Code is currently a joke. According to <a href="https://github.com/redhat-developer/vscode-java/wiki/Formatter-settings">the official guide</a> on how to change the settings of the formatter it is advised to use Eclipse to alter the settings.</p>
+<p>The default settings are atrocious - formatter doesn’t allow for additional newlines that enable code readability or doesn’t align the <code>case</code> statements with the <code>switch</code> statement properly.</p>
+<p>I keep my personal formatter settings file with the rest of the config files in <a href="../config/readme">«config»</a>.</p>
 </body>
 </html>

@@ -5,9 +5,9 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Jerry Sky" />
-  <meta name="keywords" content="bash, config, script, utilities, python3, keyboard, markdown, bash aliases" />
-  <meta name="description" content="Config files and other utilities that I use every day. Installed automatically using the setup script." />
-  <title>Config</title>
+  <meta name="keywords" content="SQL, MariaDB, issues, database, plugin" />
+  <meta name="description" content="Notes on some of the software issues that I’ve encountered." />
+  <title>Software issues</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -88,43 +88,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Config</h1>
+<h1 class="title">Software issues</h1>
 <p class="author">
     <span>by </span>
     <span class="author">Jerry Sky</span>
 </p>
 </header>
-<p id="document-description"><em>Config files and other utilities that I use every day. Installed automatically using the setup script.</em></p>
+<p id="document-description"><em>Notes on some of the software issues that I’ve encountered.</em></p>
 <hr />
 <ul>
-<li><a href="#first-time-setup">First time setup</a></li>
-<li><a href="#standard-setup">Standard setup</a></li>
+<li><a href="#fix-mariadb-plugin-unix_socket-is-not-loaded-issue">Fix <em>MariaDB plugin <code>unix_socket</code> is not loaded</em> issue</a></li>
 </ul>
-<hr />
-<h2 id="first-time-setup">First time setup</h2>
-<p>First time setup includes some basic things such as:</p>
-<ul>
-<li>Internet browser (Google Chrome),</li>
-<li>IDE (VS Code),</li>
-<li>NeoVim,</li>
-<li>Git (with GitHub configuration).</li>
-</ul>
-<p>Run</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> fts.jerry-sky.me <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div>
-<p>to download the script and run it on a new system.</p>
-<hr />
-<h2 id="standard-setup">Standard setup</h2>
-<p>Standard setup is not as crucial as the first time setup, but still includes some very much necessary things such as a proper desktop environment.</p>
-<p>It also includes a list of various scripts that:</p>
-<ul>
-<li>install programs,</li>
-<li>install utilities,</li>
-<li>link or copy config files,</li>
-<li>set up environment extensions.</li>
-</ul>
-<p>Run</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./setup.sh</span></span></code></pre></div>
-<p>whilst being in the <code>config</code> directory.</p>
-<hr />
+<h2 id="fix-mariadb-plugin-unix_socket-is-not-loaded-issue">Fix <em>MariaDB plugin <code>unix_socket</code> is not loaded</em> issue</h2>
+<p>Add</p>
+<pre class="config"><code>plugin-load-add = auth_socket.so</code></pre>
+<p>under <code>[mysqld]</code> section in file</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/etc/mysql/mariadb.conf.d/50-server.cnf</span></span></code></pre></div>
+<p>Then, restart the MariaDB service</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart mariadb.service</span></code></pre></div>
+<p><a href="https://websiteforstudents.com/fix-mariadb-plugin-unix_socket-is-not-loaded-error-on-ubuntu-17-04-17-10/">Source</a></p>
 </body>
 </html>

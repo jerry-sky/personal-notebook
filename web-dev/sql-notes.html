@@ -5,9 +5,9 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Jerry Sky" />
-  <meta name="keywords" content="bash, config, script, utilities, python3, keyboard, markdown, bash aliases" />
-  <meta name="description" content="Config files and other utilities that I use every day. Installed automatically using the setup script." />
-  <title>Config</title>
+  <meta name="keywords" content="notes, SQL, query, database" />
+  <meta name="description" content="Notes on SQL-related stuff." />
+  <title>SQL Notes</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -88,43 +88,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Config</h1>
+<h1 class="title">SQL Notes</h1>
 <p class="author">
     <span>by </span>
     <span class="author">Jerry Sky</span>
 </p>
 </header>
-<p id="document-description"><em>Config files and other utilities that I use every day. Installed automatically using the setup script.</em></p>
+<p id="document-description"><em>Notes on SQL-related stuff.</em></p>
 <hr />
 <ul>
-<li><a href="#first-time-setup">First time setup</a></li>
-<li><a href="#standard-setup">Standard setup</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#show-columns-from-a-select-query">Show columns from a <code>SELECT</code> query</a></li>
+<li><a href="#truncate-all-tables-in-a-database"><code>TRUNCATE</code> all tables in a database</a></li>
 </ul>
 <hr />
-<h2 id="first-time-setup">First time setup</h2>
-<p>First time setup includes some basic things such as:</p>
+<h2 id="resources">Resources</h2>
 <ul>
-<li>Internet browser (Google Chrome),</li>
-<li>IDE (VS Code),</li>
-<li>NeoVim,</li>
-<li>Git (with GitHub configuration).</li>
+<li><a href="https://stackoverflow.com/questions/3083499/mysql-distinct-on-a-group-concat"><code>GROUP_CONCAT</code> and <code>DISTINCT</code></a></li>
+<li><a href="https://database.guide/4-ways-to-replace-null-with-a-different-value-in-mysql/">Replacing <code>NULL</code> with a different value</a></li>
+<li><a href="http://mysql.rjweb.org/doc.php/pivot">Pivoting in MySQL</a></li>
+<li><a href="https://logicalread.com/2015/09/28/mysql-with-query-caching-mc13/#.Xh9i-nWYXmF">Performance tuning — Query Caching</a></li>
+<li><a href="https://www.infoq.com/articles/typescript-mysql/">TypeORM — Databases with TypeScript</a></li>
 </ul>
-<p>Run</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> fts.jerry-sky.me <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div>
-<p>to download the script and run it on a new system.</p>
 <hr />
-<h2 id="standard-setup">Standard setup</h2>
-<p>Standard setup is not as crucial as the first time setup, but still includes some very much necessary things such as a proper desktop environment.</p>
-<p>It also includes a list of various scripts that:</p>
-<ul>
-<li>install programs,</li>
-<li>install utilities,</li>
-<li>link or copy config files,</li>
-<li>set up environment extensions.</li>
-</ul>
-<p>Run</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./setup.sh</span></span></code></pre></div>
-<p>whilst being in the <code>config</code> directory.</p>
-<hr />
+<h2 id="show-columns-from-a-select-query">Show columns from a <code>SELECT</code> query</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- create a temporary table</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TEMPORARY</span> <span class="kw">TABLE</span> exportTable <span class="kw">AS</span> (your_query);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- show the columns</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>SHOW <span class="kw">COLUMNS</span> <span class="kw">FROM</span> exportTable;</span></code></pre></div>
+<p><a href="https://stackoverflow.com/a/38816005/4249875">Source</a></p>
+<h2 id="truncate-all-tables-in-a-database"><code>TRUNCATE</code> all tables in a database</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> FOREIGN_KEY_CHECKS <span class="op">=</span> <span class="dv">0</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">truncate</span> <span class="kw">table</span> <span class="ot">&quot;yourTableName&quot;</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> FOREIGN_KEY_CHECKS <span class="op">=</span> <span class="dv">1</span>;</span></code></pre></div>
+<p><a href="https://stackoverflow.com/a/45597248/4249875">Source</a></p>
 </body>
 </html>
