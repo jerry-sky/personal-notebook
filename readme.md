@@ -36,6 +36,8 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 *Please note: to view some private notes (marked with (Ω)) you need to have access to the private part of this repository.*
 
+---
+
 ## Computer Science
 
 ### General
@@ -66,7 +68,7 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 *Based on the [AltaCV template](https://www.overleaf.com/latex/templates/altacv-template/trgqjpwnmtgv).*
 
 - [PDF](cv/curriculum-vitae.pdf)
-- [`.tex`](cv/.curriculum-vitae.tex)
+- [`.tex`](cv/curriculum-vitae.tex)
 
 ---
 
@@ -86,6 +88,7 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 ## Languages
 
+- [Language learning strategy](languages/ll-strategy.md)
 - [English](languages/english/readme.md)
 - [German](languages/deutsch/readme.md)
 - [French](languages/français/readme.md)
