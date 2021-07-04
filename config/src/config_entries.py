@@ -196,6 +196,22 @@ config_entries = [
                 ]
             ),
 
+            # Node environment
+            ConfigEntry(
+                description='install NVM, NodeJS, NPM',
+                shorthand='nvm',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/install-node.sh'
+                        ),
+                        is_installed=lambda: [
+                            ex('command -v node >/dev/null') == 0,
+                        ]
+                    ),
+                ]
+            ),
+
         ]
     },
 
