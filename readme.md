@@ -45,7 +45,6 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 - [Environment configuration](config/readme.md)
 - [Unix & Linux](main/unix-linux.md)
 - [Git](main/git-notes.md)
-- [$\LaTeX$](main/latex-notes.md)
 - [Software issues](main/software-issues.md)
 
 #### Web-dev
