@@ -17,5 +17,6 @@
    "KEY_KP3": "exec:obs-switch-scene.py 'Blender' &",
    "KEY_KP0": "exec:obs-switch-scene.py 'Blank' &",
    "KEY_KPENTER": "exec:test.sh",
+   "KEY_M": "exec:microphone-toggle.sh",
    "leds": []
 }
