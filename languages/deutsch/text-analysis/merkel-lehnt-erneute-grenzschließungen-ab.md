@@ -322,3 +322,69 @@ aufheben | cancel, nullify
     > Diese sei in ihrer geltenden Fassung…
 
 ---
+
+## Achter Absatz
+
+### Original
+
+Auch Niedersachsens Ministerpräsident Stephan Weil (SPD) sprach
+sich für eine Änderung der Corona-Einreiseverordnung aus.
+„Ich plädiere für eine zweifache Testpflicht für alle Rückkehrenden,
+die noch nicht vollständig geimpft sind“,
+sagte der Regierungschef der „Welt“.
+
+### Übersetzt nach Englisch
+
+Also the primer minister of Lower saxony Stephan Weil (SPD) spoke in favour
+for the changes in the Corona entry regulation.
+“I plead for the double test to be mandatory for all returnees,
+who have not yet been fully vaccinated”,
+the head of government told the “Welt”.
+
+### Wörter
+
+Deutsch | Englisch
+-| -|
+plädieren | to plead
+zweifach | double, dual, twofold,
+Pflicht (f) -en | obligation
+
+---
+
+## Neunter Absatz
+
+### Original
+
+Bayerns Ministerpräsident Markus Söder (CSU) forderte vom Bund klare Vorgaben für Urlaubsrückkehrer.
+Mit Blick auf die gerade begonnene Hauptreisezeit sagte Söder,
+„der Bund sollte jetzt noch einmal deutlich eine Ferienempfehlung durchgeben.“
+Die vorhandenen Pflichten, sich nach dem Urlaub testen zu lassen, müssten nun auch kontrolliert werden.
+
+### Übersetzt nach Englisch
+
+The primer minister of Bayern Markus Söder (CSU) demanded from the federal government
+clear guidelines for the vacation returnees.
+Looking at the currently beginning holiday season, Söder said,
+“the federal government should now once again clearly issue a holiday recommendation.”
+The present obligations to get tested after the holiday must now also be controlled.
+
+### Wörter
+
+Deutsch | Englisch
+-| -|
+fordern | to demand
+Vorgabe (f) -n | guideline, specification, requirement
+mit blick auf | with a view to, *looking at the…*
+deutlich | clear, explicit, *proper*
+durchgeben | to give
+vorhanden | available, existing, *present*
+
+### Grammatik
+
+- Plural Subjunktiv II: müssen
+
+    > müssten nun auch kontrolliert werden
+
+    Speaking of something that must happen in the future, something has to be regulated.
+
+---
