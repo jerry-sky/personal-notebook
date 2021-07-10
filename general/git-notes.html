@@ -106,6 +106,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a href="https://stackoverflow.com/a/448929">Further reading</a></p>
 <h2 id="removing-a-file-from-git-history">Removing a file from git history</h2>
 <p>Follow the tutorial <a href="https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository">here</a>.</p>
+<p>Also consider re-signing the commits as seen <a href="https://stackoverflow.com/a/41883164">here</a>.</p>
 <h2 id="fix-displaying-file-names-with-unicode-characters-in-them">Fix displaying file names with unicode characters in them</h2>
 <p>For some odd reason <code>git</code> doesn’t properly display non-ASCII characters (exotic characters e.g. ö or ę) in file and directory names. To fix it execute:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.quotePath false</span></code></pre></div>

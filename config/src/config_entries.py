@@ -219,20 +219,6 @@ config_entries = [
         'name': 'General config',
         'list': [
 
-            # GPG signing for Git
-            ConfigEntry(
-                description='enable GPG signing in Git',
-                shorthand='gpg',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: ex(
-                            ISD + '/enable-git-signing.sh'),
-                        is_installed=lambda: ex(
-                            '[ -n "$(git config --global user.signingKey)" ]') == 0
-                    )
-                ]
-            ),
-
             # load Bash config
             ConfigEntry(
                 description='load Bash config',
