@@ -24,17 +24,42 @@ alias reload=". ~/.bashrc"
 alias audloop="pacmd load-module module-loopback latency_msec=5"
 
 # Git
+function __git_prompt() {
+    # gives user change to abort pulling
+    printf "\033[1;38;5;249m press RETURN to continue \033[0m"
+    read
+}
+
+function gci() {
+    # tells user what identity is going to be used before $1 (committing or tagging)
+    [ -n "$1" ] && printf "\033[1m $1 as "
+    printf '\033[1;7m '
+    git config --global user.name | tr -d '\n'
+    printf ' <'
+    git config --global user.email | tr -d '\n'
+    printf '> ('
+    git config --global user.signingKey | tr -d '\n'
+    printf ') \033[0m\n'
+    __git_prompt
+}
+
 alias ga="git add"
 alias gaa="git add ."
 alias gai="git add -p"
+
 alias gts="git status"
-alias gcm="git commit -m"
-alias gce="git commit --edit"
-alias gcmam="git commit --amend -m"
-alias gcam="git commit --amend --no-edit"
-alias gcame="git commit --amend"
+
+alias gc="gci committing && git commit"
+alias gcm="gc -m"
+alias gce="gc --edit"
+alias gcmam="gc --amend -m"
+alias gcam="gc --amend --no-edit"
+alias gcame="gc --amend"
+
+alias gt="gci tagging && git tag"
+
 function __git_remote() {
-    # this function gets the default origin for the branch
+    # gets the default origin for the branch
     branch=$(git branch --show-current)
     remote=$(git config branch."$branch".remote)
     if [ -z "$remote" ]; then
@@ -43,7 +68,7 @@ function __git_remote() {
     echo $remote
 }
 function __git_remote_parse() {
-    # this function parses given remote and branch target
+    # parses given remote and branch target
     dest="$1"
     # return status
     status=0
@@ -57,13 +82,12 @@ function __git_remote_parse() {
     echo $dest | tr '/' ' '
     return $status
 }
+
 function gph() {
     dest=$(__git_remote_parse "$1")
     empty=$?
     printf "\033[1;7m pushing to $dest \033[0m\n"
-    printf "\033[1;38;5;249m press RETURN to continue \033[0m"
-    # give user chance to abort pushing
-    read
+    __git_prompt
     if [ "$empty" = "0" ]; then
         shift # remove the original argument
     fi
@@ -71,31 +95,40 @@ function gph() {
 }
 function gpl() {
     dest=$(__git_remote_parse "$1")
+    empty=$?
     printf "\033[1;7m pulling from $dest \033[0m\n"
-    printf "\033[1;38;5;249m press RETURN to continue \033[0m"
-    # give user change to abort pulling
-    read
+    __git_prompt
     if [ "$empty" = "0" ]; then
         shift # remove the original argument
     fi
     git pull --rebase $dest "$@"
 }
+
 alias gf="git fetch"
+
 alias gdf="git diff HEAD"
 alias gdfst="git diff HEAD --staged"
+
 alias gl="git log"
+
+# simple text search
 alias gg="git grep -n -I"
 alias ggi="git grep -n -I -i"
+
 # discarding changes
 alias gd="git checkout --"
 alias gdi="git checkout -p"
+
 # unstaging changes
 alias gu="git reset --"
 alias gui="git reset -p"
+
 # stashing
 alias gsth="git stash"
+
 # stashing only staged files
 alias gsthst="git diff --staged --name-only | git stash"
+
 # other stash commands
 alias gsthp="git stash pop"
 alias gstha="git stash apply"
@@ -109,8 +142,8 @@ function cx() {
     code-insiders $@ && exit
 }
 
-# Google Chrome browser
-alias gc="google-chrome-stable"
+# Internet browser
+alias op="google-chrome-stable"
 
 # from Markdown to PDF converter
 alias mdpdf="pandoc \
