@@ -295,7 +295,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/install-i3.sh'
+                            ISD + '/install-i3.sh'
                         ),
                         is_installed=lambda: ex(
                             'command -v i3 >/dev/null'
@@ -311,7 +311,7 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            CD + '/src/scripts/install-theme.sh'
+                            ISD + '/install-theme.sh'
                         )
                     )
                 ]
