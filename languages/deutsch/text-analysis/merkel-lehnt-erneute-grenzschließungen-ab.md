@@ -23,6 +23,33 @@ title: 'Merkel lehnt erneute Grenzschließungen ab'
 - [Vierter Absatz](#vierter-absatz)
     - [Übersetzt nach Englisch](#übersetzt-nach-englisch-4)
     - [Wörter](#wörter-4)
+- [Fünfter Absatz](#fünfter-absatz)
+    - [Original](#original-3)
+    - [Übersetzt nach Englisch](#übersetzt-nach-englisch-5)
+    - [Wörter](#wörter-5)
+- [Sechster Absatz](#sechster-absatz)
+    - [Original](#original-4)
+    - [Übersetzt nach Englisch](#übersetzt-nach-englisch-6)
+    - [Wörter](#wörter-6)
+    - [Grammatik](#grammatik-2)
+- [Siebter Absatz](#siebter-absatz)
+    - [Original](#original-5)
+    - [Übersetzt nach Englisch](#übersetzt-nach-englisch-7)
+    - [Wörter](#wörter-7)
+    - [Grammatik](#grammatik-3)
+- [Achter Absatz](#achter-absatz)
+    - [Original](#original-6)
+    - [Übersetzt nach Englisch](#übersetzt-nach-englisch-8)
+    - [Wörter](#wörter-8)
+- [Neunter Absatz](#neunter-absatz)
+    - [Original](#original-7)
+    - [Übersetzt nach Englisch](#übersetzt-nach-englisch-9)
+    - [Wörter](#wörter-9)
+    - [Grammatik](#grammatik-4)
+- [Letzte Absatz](#letzte-absatz)
+    - [Original](#original-8)
+    - [Übersetzt nach Englisch](#übersetzt-nach-englisch-10)
+    - [Wörter](#wörter-10)
 
 [Quelle]: https://www.dw.com/de/merkel-lehnt-erneute-grenzschlie%C3%9Fungen-ab/a-58082262
 
@@ -362,7 +389,7 @@ Die vorhandenen Pflichten, sich nach dem Urlaub testen zu lassen, müssten nun a
 
 ### Übersetzt nach Englisch
 
-The primer minister of Bayern Markus Söder (CSU) demanded from the federal government
+The prime minister of Bayern Markus Söder (CSU) demanded from the federal government
 clear guidelines for the vacation returnees.
 Looking at the currently beginning holiday season, Söder said,
 “the federal government should now once again clearly issue a holiday recommendation.”
@@ -386,5 +413,63 @@ vorhanden | available, existing, *present*
     > müssten nun auch kontrolliert werden
 
     Speaking of something that must happen in the future, something has to be regulated.
+
+---
+
+## Letzte Absatz
+
+### Original
+
+**„Weltweit einzigartige binationale Parlamentskammer“**
+
+Der 2019 ins Leben gerufenen Deutsch-Französischen Parlamentarischen Versammlung
+— die eigentlich alle zwei Jahre, einmal in Paris und einmal in Berlin,
+tagen sollte — gehören jeweils 50 Abgeordnete des Bundestags und der Nationalversammlung an.
+Bei der Online-Sitzung an diesem Montag stellten sich die Kanzlerin
+und Frankreichs Premierminister Jean Castex den Fragen der Parlamentarier
+nicht nur zur Pandemiebewältigung.
+Themen waren auch die Klima-, Flüchtlings-, Außen- und Wirtschaftspolitik.
+
+Bundestagspräsident Schäuble bezeichnete diese
+„weltweit einzigartige binationale Parlamentskammer“ als Erfolg.
+Gerade in der Corona-Krise habe die parlamentarische
+Zusammenarbeit der beiden Länder ihren Wert bewiesen.
+
+### Übersetzt nach Englisch
+
+**“World’s first binational parliamentary chamber”**
+
+Launched in 2019, the Franco-German Parliamentary Assembly should actually
+meet every two years, once in Paris and once in Berlin.
+The Assembly is made up of 50 members of the Bundestag and 50 members
+of the National Assembly.
+At this Monday’s online session, the chancellor and French Prime Minister
+Jean Castex answered questions from the parliamentarians’ questions
+not only about pandemic management.
+Topics also included climate, refugee, foreign and economic policy.
+
+Bundestag President Schäuble described this
+“world’s first binational parliamentary chamber” as a success.
+Especially in the Corona crisis, the parliamentary cooperation
+of the two countries had proven its value.
+
+### Wörter
+
+Deutsch | Englisch
+-| -|
+einzigartig | unique, singular
+Parlamentskammer (f) -n | parliamentary chamber
+gerufen | called, summoned
+ins Leben rufen etw. | to: start, originate, initiate, PL: wprowadzić w życie
+angehören | to: belong to, be part of
+jeweils | in each case
+Abgeordnete (f) - | parliamentarian, delegate, deputy, representative
+Fragen stellen | ask questions
+Wirtschaft (f) -en | economy
+bezeichnen | to: describe, name, call, designate
+Erfolg (m), -e | success, achievement
+gerade | especially (adverb)
+beweisen | to: prove sth.
+Wert (m) -e | value, worth
 
 ---
