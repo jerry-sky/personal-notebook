@@ -59,46 +59,38 @@ alias gcame="gc --amend"
 alias gt="gci tagging && git tag"
 
 function __git_remote() {
-    # gets the default origin for the branch
+    remote="$1"
     branch=$(git branch --show-current)
-    remote=$(git config branch."$branch".remote)
-    if [ -z "$remote" ]; then
-        remote="origin"
-    fi
-    echo $remote
-}
-function __git_remote_parse() {
     # parses given remote and branch target
-    dest="$1"
-    # return status
-    status=0
-    if [ -z "$dest" ] || [[ "$dest" == -* ]]; then
-        dest="$(__git_remote)"
-        status=2
+    if [ -z "$remote" ] || [[ "$remote" == -* ]]; then
+        # get the default origin for the current branch
+        remote=$(git config branch."$branch".remote)
+        if [ -z "$remote" ]; then
+            remote="origin"
+        fi
+        echo $remote $branch
+        return 2
     fi
-    if [[ "$dest" != */* ]]; then
-        dest="$dest/$(git branch --show-current)"
-    fi
-    echo $dest | tr '/' ' '
-    return $status
+    echo $remote $branch
+    return 0
 }
 
 function gph() {
-    dest=$(__git_remote_parse "$1")
-    empty=$?
+    dest=$(__git_remote "$1")
+    given_remote=$?
     printf "\033[1;7m pushing to $dest \033[0m\n"
     __git_prompt
-    if [ "$empty" = "0" ]; then
+    if [ "$given_remote" = "0" ]; then
         shift # remove the original argument
     fi
     git push $dest "$@"
 }
 function gpl() {
-    dest=$(__git_remote_parse "$1")
-    empty=$?
+    dest=$(__git_remote "$1")
+    given_remote=$?
     printf "\033[1;7m pulling from $dest \033[0m\n"
     __git_prompt
-    if [ "$empty" = "0" ]; then
+    if [ "$given_remote" = "0" ]; then
         shift # remove the original argument
     fi
     git pull --rebase $dest "$@"
