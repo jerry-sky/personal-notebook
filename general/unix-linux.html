@@ -109,6 +109,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages">Fixing broken packages (downloaded from an external PPA) by forcefully overwriting <code>apt</code> packages</a></li>
 <li><a href="#useful-pdf-tools">Useful PDF tools</a></li>
 <li><a href="#pass-url-file-argument-to-program-defined-by-a-desktop-file">Pass URL/ file argument to program defined by a <code>.desktop</code> file</a></li>
+<li><a href="#routing-vlc-audio-output-to-a-specific-pulseaudio-sink">Routing VLC audio output to a specific PulseAudio sink</a></li>
 </ul>
 <hr />
 <h2 id="keeping-some-scriptprogram-alive">Keeping some script/program alive</h2>
@@ -400,6 +401,11 @@ Type=Application
 Categories=Network;WebBrowser;
 # […]</code></pre>
 <p>Source: <a href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s07.html">Desktop specification — The Exec key</a></p>
+<hr />
+<h2 id="routing-vlc-audio-output-to-a-specific-pulseaudio-sink">Routing VLC audio output to a specific PulseAudio sink</h2>
+<p>To force VLC to play audio to a device different from the default one run it with temporarily set Pulse sink variable like so:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">PULSE_SINK</span><span class="op">=</span><span class="va">$sink_id</span> <span class="ex">cvlc</span> file.mp3</span></code></pre></div>
+<p>Source: <a href="https://superuser.com/a/494404">Answer on SuperUser</a></p>
 <hr />
 </body>
 </html>
