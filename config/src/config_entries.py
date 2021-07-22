@@ -366,6 +366,17 @@ config_entries = [
             ),
 
             ConfigEntry(
+                description='install PulseAudio config file',
+                shorthand='pul',
+                installation_packages=[
+                    toggle_file_links(
+                        CFD + '/pulse/default.pa',
+                        HD + '/.config/pulse/default.pa',
+                    ),
+                ],
+            ),
+
+            ConfigEntry(
                 description='install ‘quick run’',
                 shorthand='qru',
                 installation_packages=[
