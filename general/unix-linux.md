@@ -18,6 +18,7 @@ keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customizat
 - [Fixing broken packages (downloaded from an external PPA) by forcefully overwriting `apt` packages](#fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages)
 - [Useful PDF tools](#useful-pdf-tools)
 - [Pass URL/ file argument to program defined by a `.desktop` file](#pass-url-file-argument-to-program-defined-by-a-desktop-file)
+- [Routing VLC audio output to a specific PulseAudio sink](#routing-vlc-audio-output-to-a-specific-pulseaudio-sink)
 
 ---
 
@@ -225,5 +226,18 @@ Categories=Network;WebBrowser;
 ```
 
 Source: [Desktop specification — The Exec key](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s07.html)
+
+---
+
+## Routing VLC audio output to a specific PulseAudio sink
+
+To force VLC to play audio to a device different from the default one
+run it with temporarily set Pulse sink variable like so:
+
+```bash
+PULSE_SINK=$sink_id cvlc file.mp3
+```
+
+Source: [Answer on SuperUser](https://superuser.com/a/494404)
 
 ---
