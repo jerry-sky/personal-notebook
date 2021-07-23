@@ -110,6 +110,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#useful-pdf-tools">Useful PDF tools</a></li>
 <li><a href="#pass-url-file-argument-to-program-defined-by-a-desktop-file">Pass URL/ file argument to program defined by a <code>.desktop</code> file</a></li>
 <li><a href="#routing-vlc-audio-output-to-a-specific-pulseaudio-sink">Routing VLC audio output to a specific PulseAudio sink</a></li>
+<li><a href="#pretty-printing-json-data">Pretty printing JSON data</a></li>
 </ul>
 <hr />
 <h2 id="keeping-some-scriptprogram-alive">Keeping some script/program alive</h2>
@@ -406,6 +407,30 @@ Categories=Network;WebBrowser;
 <p>To force VLC to play audio to a device different from the default one run it with temporarily set Pulse sink variable like so:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">PULSE_SINK</span><span class="op">=</span><span class="va">$sink_id</span> <span class="ex">cvlc</span> file.mp3</span></code></pre></div>
 <p>Source: <a href="https://superuser.com/a/494404">Answer on SuperUser</a></p>
+<hr />
+<h2 id="pretty-printing-json-data">Pretty printing JSON data</h2>
+<p>Example:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;{</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">    &quot;items&quot;: [</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">        {</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;name&quot;: &quot;One&quot;,</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;description&quot;: &quot;the one and only&quot;,</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;labels&quot;: [</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="st">                &quot;Not funny&quot;,</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="st">                &quot;A label&quot;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="st">            ]</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="st">        },</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="st">        {</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;name&quot;: &quot;Two&quot;,</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;description&quot;: &quot;the sequel&quot;,</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;labels&quot;: [</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="st">                &quot;Yup&quot;</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="st">            ]</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="st">        }</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="st">    ]</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="st">}&#39;</span> <span class="dt">\</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="ex">jq</span> <span class="at">-j</span> <span class="st">&#39;.items[] | .name, &quot; (&quot;, .description, &quot;) [ &quot;, (.labels | join(&quot;, &quot;)), &quot; ]\n&quot;&#39;</span></span></code></pre></div>
+<p>Sources: self, <a href="https://unix.stackexchange.com/a/451499">Answer on Unix StackExchange</a></p>
 <hr />
 </body>
 </html>
