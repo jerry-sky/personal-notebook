@@ -19,6 +19,7 @@ keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customizat
 - [Useful PDF tools](#useful-pdf-tools)
 - [Pass URL/ file argument to program defined by a `.desktop` file](#pass-url-file-argument-to-program-defined-by-a-desktop-file)
 - [Routing VLC audio output to a specific PulseAudio sink](#routing-vlc-audio-output-to-a-specific-pulseaudio-sink)
+- [Pretty printing JSON data](#pretty-printing-json-data)
 
 ---
 
@@ -239,5 +240,36 @@ PULSE_SINK=$sink_id cvlc file.mp3
 ```
 
 Source: [Answer on SuperUser](https://superuser.com/a/494404)
+
+---
+
+## Pretty printing JSON data
+
+Example:
+
+```bash
+echo '{
+    "items": [
+        {
+            "name": "One",
+            "description": "the one and only",
+            "labels": [
+                "Not funny",
+                "A label"
+            ]
+        },
+        {
+            "name": "Two",
+            "description": "the sequel",
+            "labels": [
+                "Yup"
+            ]
+        }
+    ]
+}' \
+| jq -j '.items[] | .name, " (", .description, ") [ ", (.labels | join(", ")), " ]\n"'
+```
+
+Sources: self, [Answer on Unix StackExchange](https://unix.stackexchange.com/a/451499)
 
 ---
