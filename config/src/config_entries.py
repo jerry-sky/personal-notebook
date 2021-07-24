@@ -90,6 +90,28 @@ config_entries = [
                 ]
             ),
 
+            # Docker
+            ConfigEntry(
+                description='install Docker and Docker-Compose',
+                shorthand='dck',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/install-docker.sh',
+                        ),
+                        uninstall_func=False,
+                        is_installed=lambda: [
+                            ex(
+                                'command -v docker >/dev/null',
+                            ) == 0,
+                            ex(
+                                'command -v docker-compose >/dev/null',
+                            ) == 0,
+                        ],
+                    ),
+                ],
+            ),
+
             # Blender
             ConfigEntry(
                 description='install Blender',
