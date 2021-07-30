@@ -28,6 +28,10 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# use `xbacklight` to control screen brightness (laptop)
+bindsym XF86MonBrightnessUp exec xbrightness +10 && notify-send merdas
+bindsym XF86MonBrightnessDown exec xbrightness -10
+
 # screenshots
 # default maim command
 set $maim maim --color=0.67,0.0,0.87,0.04 -l

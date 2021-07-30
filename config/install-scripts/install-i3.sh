@@ -17,3 +17,5 @@ sudo apt-get install -y dex
 sudo apt-get install -y compton feh
 # YAD — yet another dialog program
 sudo apt-get install -y yad
+# control monitor backlight (laptop)
+sudo apt-get install -y xbacklight
