@@ -114,9 +114,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -383,3 +383,5 @@ exec --no-startup-id compton
 
 # quick run
 bindsym $mod+o exec --no-startup-id dex /usr/share/applications/quick-open.desktop
+# file explorer
+bindsym $mod+e exec --no-startup-id nemo
