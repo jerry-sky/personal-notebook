@@ -20,10 +20,12 @@ load-module module-virtual-source source_name="VIRTUAL_MICROPHONE" master="__VIR
 update-source-proplist VIRTUAL_MICROPHONE device.description="VIRTUAL MICROPHONE"
 
 # route default microphone to the main sink
-load-module module-loopback sink="__VIRTUAL_MICROPHONE_SINK"
+load-module module-loopback sink="__VIRTUAL_MICROPHONE_SINK" source_dont_move=1
 # route pre sink into the main sink
-load-module module-loopback source="__VIRTUAL_MICROPHONE_PRE_SINK.monitor" sink="__VIRTUAL_MICROPHONE_SINK"
+load-module module-loopback source="__VIRTUAL_MICROPHONE_PRE_SINK.monitor" sink="__VIRTUAL_MICROPHONE_SINK" source_dont_move=1
 # route the additional layer to the default output device of the user
-load-module module-loopback source="__VIRTUAL_MICROPHONE_PRE_SINK.monitor"
+load-module module-loopback source="__VIRTUAL_MICROPHONE_PRE_SINK.monitor" source_dont_move=1
+# set the virtual microphone as the default input device
+set-default-source VIRTUAL_MICROPHONE
 
 # end of virtual microphone namespace
