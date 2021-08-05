@@ -302,8 +302,6 @@ workspace $ws3 output $screen_three
 workspace $ws4 output $screen_three
 # organisation
 workspace $ws5 output $screen_three
-# Zoom punishment closet
-workspace $ws19 output $screen_one
 # entertainment or presentation dump workspace
 workspace $ws20 output $screen_one
 
@@ -329,10 +327,16 @@ for_window [title="$obs_projector"] floating enable
 for_window [title="$obs_projector"] sticky enable
 for_window [title="$obs_projector"] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '$obs_projector' '5740,-1060,1920,1080'"
 
+# move the annoying Discord Updater window that contains a very nauseating animation
+for_window [title="Discord Updater"] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh 'Discord Updater' '2860,-220,-1,-1'"
+
 for_window [class="pop-up"] floating enable
 
 # **never** steal focus, at most mark as ‘urgent’
 focus_on_window_activation urgent
+
+mouse_warping none
+focus_follows_mouse no
 
 # gaps
 gaps inner 20
