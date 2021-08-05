@@ -35,14 +35,20 @@ bindsym XF86MonBrightnessDown exec xbrightness -10
 # screenshots
 # default maim command
 set $maim maim --color=0.67,0.0,0.87,0.04 -l
+set $screenshot_filepath /home/$USER/Bilder/$(date +'%Y-%m-%d_%H:%M:%S').png
 # file screenshots
-bindsym Print exec --no-startup-id "$maim \\"/home/$USER/Bilder/$(date)\\""
-bindsym $mod+Print exec --no-startup-id "$maim --window $(xdotool getactivewindow) \\"/home/$USER/Bilder/$(date)\\""
-bindsym Shift+Print exec --no-startup-id "$maim --select \\"/home/$USER/Bilder/$(date)\\""
+bindsym Print exec --no-startup-id "$maim $screenshot_filepath"
+bindsym $mod+Print exec --no-startup-id "$maim --window $(xdotool getactivewindow) $screenshot_filepath"
+bindsym Shift+Print exec --no-startup-id "$maim --select $screenshot_filepath"
 # clipboard screenshots
 bindsym Ctrl+Print exec --no-startup-id "$maim | xclip -selection clipboard -t image/png"
 bindsym Ctrl+$mod+Print exec --no-startup-id "$maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
 bindsym Ctrl+Shift+Print exec --no-startup-id "$maim --select | xclip -selection clipboard -t image/png"
+# take a screenshot and edit it immediately
+set $screenshot_editor gimp -a
+bindsym Ctrl+Scroll_Lock exec --no-startup-id "$maim /tmp/t.png && $screenshot_editor /tmp/t.png"
+bindsym Ctrl+$mod+Scroll_Lock exec --no-startup-id "$maim --window $(xdotool getactivewindow) /tmp/t.png && $screenshot_editor /tmp/t.png"
+bindsym Ctrl+Shift+Scroll_Lock exec --no-startup-id "$maim --select /tmp/t.png && $screenshot_editor /tmp/t.png"
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
