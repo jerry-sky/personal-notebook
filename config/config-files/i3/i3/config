@@ -35,14 +35,20 @@ bindsym XF86MonBrightnessDown exec xbrightness -10
 # screenshots
 # default maim command
 set $maim maim --color=0.67,0.0,0.87,0.04 -l
+set $screenshot_filepath /home/$USER/Bilder/$(date +'%Y-%m-%d_%H:%M:%S').png
 # file screenshots
-bindsym Print exec --no-startup-id "$maim \\"/home/$USER/Bilder/$(date)\\""
-bindsym $mod+Print exec --no-startup-id "$maim --window $(xdotool getactivewindow) \\"/home/$USER/Bilder/$(date)\\""
-bindsym Shift+Print exec --no-startup-id "$maim --select \\"/home/$USER/Bilder/$(date)\\""
+bindsym Print exec --no-startup-id "$maim $screenshot_filepath"
+bindsym $mod+Print exec --no-startup-id "$maim --window $(xdotool getactivewindow) $screenshot_filepath"
+bindsym Shift+Print exec --no-startup-id "$maim --select $screenshot_filepath"
 # clipboard screenshots
 bindsym Ctrl+Print exec --no-startup-id "$maim | xclip -selection clipboard -t image/png"
 bindsym Ctrl+$mod+Print exec --no-startup-id "$maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
 bindsym Ctrl+Shift+Print exec --no-startup-id "$maim --select | xclip -selection clipboard -t image/png"
+# take a screenshot and edit it immediately
+set $screenshot_editor gimp -a
+bindsym Ctrl+Scroll_Lock exec --no-startup-id "$maim /tmp/t.png && $screenshot_editor /tmp/t.png"
+bindsym Ctrl+$mod+Scroll_Lock exec --no-startup-id "$maim --window $(xdotool getactivewindow) /tmp/t.png && $screenshot_editor /tmp/t.png"
+bindsym Ctrl+Shift+Scroll_Lock exec --no-startup-id "$maim --select /tmp/t.png && $screenshot_editor /tmp/t.png"
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -108,9 +114,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -296,8 +302,6 @@ workspace $ws3 output $screen_three
 workspace $ws4 output $screen_three
 # organisation
 workspace $ws5 output $screen_three
-# Zoom punishment closet
-workspace $ws19 output $screen_one
 # entertainment or presentation dump workspace
 workspace $ws20 output $screen_one
 
@@ -323,10 +327,16 @@ for_window [title="$obs_projector"] floating enable
 for_window [title="$obs_projector"] sticky enable
 for_window [title="$obs_projector"] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '$obs_projector' '5740,-1060,1920,1080'"
 
+# move the annoying Discord Updater window that contains a very nauseating animation
+for_window [title="Discord Updater"] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh 'Discord Updater' '2860,-220,-1,-1'"
+
 for_window [class="pop-up"] floating enable
 
 # **never** steal focus, at most mark as ‘urgent’
 focus_on_window_activation urgent
+
+mouse_warping none
+focus_follows_mouse no
 
 # gaps
 gaps inner 20
@@ -377,3 +387,5 @@ exec --no-startup-id compton
 
 # quick run
 bindsym $mod+o exec --no-startup-id dex /usr/share/applications/quick-open.desktop
+# file explorer
+bindsym $mod+e exec --no-startup-id nemo
