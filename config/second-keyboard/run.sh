@@ -3,7 +3,7 @@
 cur_dir="${BASH_SOURCE%/*}"
 
 if [ ! -f "$cur_dir/keebie.py" ]; then
-    notify-send -u low 'Second keyboard: no executable found!'
+    notify-send -u low 'Second keyboard not activated.'
     exit 1
 fi
 
