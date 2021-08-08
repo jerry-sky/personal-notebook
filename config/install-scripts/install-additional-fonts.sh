@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /tmp
+
 mkdir -p fira-code
 cd fira-code
 printf "\n\033[1mAdditional font packs\nDownloading and installing Fira Code…\033[0m\n"
@@ -27,3 +28,12 @@ unzip merriweather.zip
 rm merriweather.zip
 cd ..
 sudo mv merriweather /usr/share/fonts/truetype
+
+mkdir -p merriweather-sans
+cd merriweather-sans
+printf "\n\033[1mDownloading and installing Merriweather Sans…\033[0m\n"
+curl -L --output merriweather-sans.zip 'https://fonts.google.com/download?family=Merriweather%20Sans'
+unzip merriweather-sans.zip
+rm merriweather-sans.zip
+cd ..
+sudo mv merriweather-sans /usr/share/fonts/truetype
