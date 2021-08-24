@@ -192,8 +192,9 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command exec i3status | /home/$USER/notebooks/personal-notebook/config/config-files/i3/i3status/wrapper.py
-        font pango:Fira Code Medium 9
+    status_command exec i3status | /home/$USER/notebooks/personal-notebook/config/config-files/i3/i3status/wrapper.py
+    font pango:Fira Code Medium 9
+    tray_output primary
 }
 
 bindsym $mod+n $refresh_i3status
@@ -279,6 +280,8 @@ set $screen_three DVI-I-1
 # switch between monitors linearly
 bindsym $mod+Ctrl+Right focus output right
 bindsym $mod+Ctrl+Left focus output left
+bindsym $mod+Ctrl+Up focus output up
+bindsym $mod+Ctrl+Down focus output down
 # …and directly
 bindsym $mod+KP_Divide focus output $screen_one
 bindsym $mod+KP_Multiply focus output $screen_two
@@ -286,6 +289,8 @@ bindsym $mod+KP_Subtract focus output $screen_three
 # move workspaces between monitors linearly
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
+bindsym $mod+Ctrl+Shift+Up move workspace to output up
+bindsym $mod+Ctrl+Shift+Down move workspace to output down
 # …and directly
 bindsym $mod+Shift+KP_Divide move workspace to output $screen_one
 bindsym $mod+Shift+KP_Multiply move workspace to output $screen_two
