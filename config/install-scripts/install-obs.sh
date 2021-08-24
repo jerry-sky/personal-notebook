@@ -7,6 +7,7 @@ sudo apt-get install -y ffmpeg
 
 printf "\n\033[1mInstalling OBS…\033[0m\n"
 sudo add-apt-repository -y ppa:obsproject/obs-studio
+sudo apt-get update
 sudo apt-get install -y obs-studio
 
 printf "\n\033[1mInstalling OBS WebSockets plugin…\033[0m\n"
