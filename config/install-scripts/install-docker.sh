@@ -1,6 +1,8 @@
 #!/bin/bash
 
-printf "\n\033[1m%s\033[0m\n\n" "Docker\nInstalling Docker…"
+printf '\n'
+printf '\033[1m%s\033[0m\n' 'Docker' 'Installing Docker…'
+printf '\n'
 
 sudo apt-get update
 sudo apt-get install -y \
@@ -13,16 +15,21 @@ sudo apt-get install -y \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
     | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
+ubuntu_codename=$(cat /etc/upstream-release/lsb-release | grep -i codename | awk -F'=' '{print $2}')
+
 echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  $ubuntu_codename stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
+egrep '^docker:' /etc/group >/dev/null
+if [ $? -eq 1 ]; then
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    newgrp docker
+fi
 
 
 printf "\n\033[1m%s\033[0m\n\n" "Verifying Docker installation…"
