@@ -20,6 +20,7 @@ keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customizat
 - [Pass URL/ file argument to program defined by a `.desktop` file](#pass-url-file-argument-to-program-defined-by-a-desktop-file)
 - [Routing VLC audio output to a specific PulseAudio sink](#routing-vlc-audio-output-to-a-specific-pulseaudio-sink)
 - [Pretty printing JSON data](#pretty-printing-json-data)
+- [Compressing images](#compressing-images)
 
 ---
 
@@ -271,5 +272,17 @@ echo '{
 ```
 
 Sources: self, [Answer on Unix StackExchange](https://unix.stackexchange.com/a/451499)
+
+---
+
+## Compressing images
+
+```bash
+convert -strip -interlace Plane -gaussian-blur 0.05 -quality 85% source.jpg result.jpg
+```
+
+Using `convert` from the `imagemagick` package you can cut down on size for image files.
+
+Source: [Answer on StackOverflow](https://stackoverflow.com/a/7262050)
 
 ---
