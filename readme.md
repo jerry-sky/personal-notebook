@@ -15,6 +15,7 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 ---
 
 - [Computer Science](#computer-science)
+    - [Learning platforms](#learning-platforms)
     - [General](#general)
     - [Web-dev](#web-dev)
     - [Abstract](#abstract)
@@ -39,6 +40,14 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 ---
 
 ## Computer Science
+
+### Learning platforms
+
+- [foo.bar \(restricted access\)](https://foobar.withgoogle.com/)
+- [Exercism](https://exercism.io/)
+- [Front-end Mentor](https://www.frontendmentor.io/)
+- [Hacker Earth](https://www.hackerearth.com/practice/)
+- [Code Wars](https://www.codewars.com/)
 
 ### General
 
