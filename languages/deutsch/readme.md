@@ -12,6 +12,7 @@ keywords: 'Deutsch, German, grammar, verbs, vocabulary, text analysis, resources
 - [Resources](#resources)
     - [News articles](#news-articles)
     - [Toms Deutschseite](#toms-deutschseite)
+    - [Learning platforms](#learning-platforms)
 - [Notizen](#notizen)
 - [Handy](#handy)
 - [Text analysis](#text-analysis)
@@ -41,6 +42,10 @@ keywords: 'Deutsch, German, grammar, verbs, vocabulary, text analysis, resources
 ### Toms Deutschseite
 
 - [Toms Deutschseite](http://www.deutschseite.de/inhalt.html)
+
+### Learning platforms
+
+- [Memrise](https://www.memrise.com/)
 
 ---
 

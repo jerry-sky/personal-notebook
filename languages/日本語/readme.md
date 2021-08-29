@@ -37,6 +37,8 @@ keywords: 'Japanese, language, 日本語, Tae Kim, text analysis, resources, not
 
 - [アニメ・メロン](https://animelon.com/)
 - [クランチ・ロル](https://www.crunchyroll.com/)
+- [lingq.com](https://www.google.com/search?q=site%3Alingq.com+%E3%82%BD%E3%83%BC%E3%83%89%E3%82%A2%E3%83%BC%E3%83%88%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3)
+    - [ソードアート・オンライン](https://www.lingq.com/ja/learn-japanese-online/courses/580207/sword-art-online-episode-1-3586144/)
 
 ---
 

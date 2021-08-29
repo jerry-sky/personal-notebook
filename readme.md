@@ -111,6 +111,7 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 - [Music](the-arbitrary-collection/arbitrary-music-things.md)
 - [Hilarious stories](the-arbitrary-collection/hilarious-stories.md)
 - [2D Animation](the-arbitrary-collection/2d-animation.md)
+- [Lifehacks Stack Exchange](https://lifehacks.stackexchange.com/)
 
 ---
 
