@@ -26,6 +26,10 @@ keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScr
 
 ## Resources
 
+### **Crucial**
+
+- [Strict mode in TypeScript \|\| help your compiler help you — an article by Andrey Goncharov](https://blog.goncharov.page/strict-mode-in-typescript-or-help-your-compiler-help-you)
+
 ### Security
 
 - [Your NodeJS authentication tutorial is (probably) wrong](https://hackernoon.com/your-node-js-authentication-tutorial-is-wrong-f1a3bf831a46)
