@@ -455,7 +455,19 @@ config_entries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            ISD + '/automount.sh'
+                            ISD + '/automount.sh',
+                        ),
+                    ),
+                ],
+            ),
+
+            ConfigEntry(
+                description='“fix” VS Code so it does not display toast notifications (dirty)',
+                shorthand='fcd',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/fix-vscode.sh',
                         ),
                     ),
                 ],
