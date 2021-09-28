@@ -19,10 +19,7 @@ fi
 
 # download the script
 cd second-keyboard
-git clone --depth 1 'https://github.com/robinuniverse/Keebie' tmp
-mv tmp/keebie.py ./
-sed -i '1s/.*/#!\/usr\/bin\/env python3/' keebie.py
-rm -rf tmp
+curl -L https://raw.githubusercontent.com/robinuniverse/Keebie/a2b8154366ce2d358741d713746ea24822feb39a/keebie.py -o keebie.py
 
 # install necessary packages
 sudo apt-get install -y xdotool x11-utils

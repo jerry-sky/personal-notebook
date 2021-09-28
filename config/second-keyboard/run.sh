@@ -19,7 +19,7 @@ sudo ~/second-keyboard/gain-access.sh
 device="$(cat $cur_dir/config | head -n1)"
 
 # check if read-write access is granted
-test -rw "$device"
+test -r "$device" && test -w "$device"
 if [ "$?" = "1" ]; then
     notify-send -u critical 'Second keyboard: permission denied!'
     exit 1
