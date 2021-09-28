@@ -29,8 +29,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # use `xbacklight` to control screen brightness (laptop)
-bindsym XF86MonBrightnessUp exec xbrightness +10 && notify-send merdas
-bindsym XF86MonBrightnessDown exec xbrightness -10
+bindsym XF86MonBrightnessUp exec xbacklight +10
+bindsym XF86MonBrightnessDown exec xbacklight -10
 
 # screenshots
 # default maim command
