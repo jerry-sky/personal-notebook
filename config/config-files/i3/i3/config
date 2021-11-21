@@ -344,8 +344,8 @@ mouse_warping none
 focus_follows_mouse no
 
 # gaps
-gaps inner 20
-for_window [class=".*"] border pixel 1
+gaps inner 0
+for_window [class=".*"] border pixel 0
 set $colour #38678F
 set $alpha 00
 # class                 border        background    text    indicator     child_border
