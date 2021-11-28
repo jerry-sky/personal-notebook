@@ -19,7 +19,7 @@ exec --no-startup-id nm-applet
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id /home/$USER/keyboard-volume-knob/knob-up.sh && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id /home/$USER/keyboard-volume-knob/knob-down.sh && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id /home/$USER/keyboard-volume-knob/switch.sh && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -35,8 +35,15 @@ bindsym XF86MonBrightnessDown exec xbacklight -10
 # decrease the step for greater precision
 set $precision "höher Genauigkeit"
 mode $precision {
+    # screen brightness
     bindsym XF86MonBrightnessUp exec xbacklight +1
     bindsym XF86MonBrightnessDown exec xbacklight -1
+
+    # volume
+    bindsym XF86AudioRaiseVolume exec --no-startup-id /home/$USER/keyboard-volume-knob/knob-up.sh 1 && $refresh_i3status
+    bindsym XF86AudioLowerVolume exec --no-startup-id /home/$USER/keyboard-volume-knob/knob-down.sh 1 && $refresh_i3status
+    # toggle between scrolling and volume control
+    bindsym XF86AudioMute exec --no-startup-id /home/$USER/keyboard-volume-knob/switch.sh && $refresh_i3status
 
     bindsym q mode "default"
     bindsym Escape mode "default"

@@ -2,8 +2,10 @@
 
 prefix="$HOME/keyboard-volume-knob"
 
+step=${1:-5}
+
 if [ -f "$prefix/volume" ]; then
-    pactl set-sink-volume @DEFAULT_SINK@ -2%
+    pactl set-sink-volume @DEFAULT_SINK@ -$step%
 else
     xte "mouseclick 5"
 fi
