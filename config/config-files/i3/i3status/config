@@ -28,7 +28,7 @@ volume master {
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
-	format = " <span color='#efdfef'>Lautstärke %volume</span> "
+	format = " Lautstärke %volume "
 }
 
 wireless _first_ {
