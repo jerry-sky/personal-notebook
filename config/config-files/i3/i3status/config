@@ -1,15 +1,16 @@
 
 general {
     colors = true
-    color_good = "#999999"
-    color_bad = "#CC1616"
-    color_degraded = "#55858E"
+    color_good = "#a095a1"
+    color_bad = "#FC1656"
+    color_degraded = "#df408f"
+    color_separator = "#000000"
     interval = 5
     output_format = "i3bar"
+    markup = "pango"
 }
 
 #order += "ipv6"
-#order += "disk /"
 #order += "run_watch DHCP"
 #order += "run_watch VPNC"
 #order += "path_exists VPN"
@@ -18,43 +19,73 @@ order += "wireless _first_"
 order += "ethernet eth0"
 order += "battery 0"
 order += "cpu_temperature 0"
-order += "load"
+order += "cpu_usage 0"
 order += "memory"
+order += "disk /"
 order += "tztime local"
 
 volume master {
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
-	format = " %volumeV "
-}
-
-cpu_temperature 0 {
-    format = " %degrees°"
-    path = "/sys/class/thermal/thermal_zone0/temp"
-    max_threshold = 95
+	format = " <span color='#efdfef'>Lautstärke %volume</span> "
 }
 
 wireless _first_ {
-    format_up = " WLAN %ip "
+    format_up = " WLAN (%frequency) %ip "
     format_down = ""
 }
 
 ethernet eth0 {
-    format_up = "E: %ip (%speed)"
+    format_up = " Ethernet %ip "
     format_down = ""
 }
 
 battery 0 {
-    format = " %status %percentage %remaining %emptytime "
+    format = " %status (%percentage), %remaining verbleibende (um %emptytime Uhr) "
     format_down = ""
-    status_chr = "CHR"
-    status_bat = "BAT"
-    status_unk = "UNK"
-    status_full = "FULL"
+    status_chr = "lädt"
+    status_bat = "Akku"
+    status_unk = "bitte warten…"
+    status_full = "Voll"
     path = "/sys/class/power_supply/BAT%d/uevent"
     low_threshold = 10
 }
+
+tztime local {
+    format = " %A %Y-%m-%d %H:%M:%S %Z "
+}
+
+load {
+    format = " Belastung %1min "
+}
+
+cpu_temperature 0 {
+    format = " CPU %degrees°C "
+    max_threshold = "95"
+    path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+cpu_usage {
+    format = " %usage "
+    max_threshold = "90"
+    degraded_threshold = "75"
+}
+
+memory {
+    format = " Arbeitspeicher %percentage_used (%used) "
+    format_degraded = " Arbeitspeicher %percentage_used (%used) "
+    threshold_degraded = "10%"
+    threshold_critical = "5%"
+}
+
+disk "/" {
+    format = " Speicherplatz %percentage_used (%used) "
+    format_below_threshold = " Speicherplatz %percentage_used (%used) "
+    low_threshold = "8"
+    threshold_type = "percentage_free"
+}
+
 
 run_watch DHCP {
     pidfile = "/var/run/dhclient*.pid"
@@ -68,27 +99,4 @@ run_watch VPNC {
 path_exists VPN {
     # path exists when a VPN tunnel launched by nmcli/nm-applet is active
     path = "/proc/sys/net/ipv4/conf/tun0"
-}
-
-tztime local {
-    format = " %A %Y-%m-%d %H:%M:%S %Z "
-}
-
-load {
-    format = " %5min "
-}
-
-cpu_temperature 0 {
-    format = " %degrees°C "
-    path = "/sys/class/thermal/thermal_zone0/temp"
-}
-
-memory {
-    format = " %used "
-    # threshold_degraded = "10%"
-    # format_degraded = "MEMORY: %free"
-}
-
-disk "/" {
-    format = " %free "
 }

@@ -29,6 +29,8 @@
 import sys
 import subprocess
 import json
+from typing import List
+import re
 
 
 def is_mic_muted():
@@ -85,13 +87,35 @@ if __name__ == '__main__':
         if line.startswith(','):
             line, prefix = line[1:], ','
 
-        j = json.loads(line)
+        data: List = json.loads(line)
         # insert information into the start of the json, but could be anywhere
         # CHANGE THIS LINE TO INSERT SOMETHING ELSE
-        j.insert(0, {
+        data.insert(0, {
             'full_text': '%s' % ' Mikrofon ist stummgeschaltet ' if is_mic_muted() else '',
             'color': '#ae1133',
             'name': 'mic'
         })
+
+        # find all -ibi values and convert them to decimal
+        expression = r'([0-9]+(,|\.)[0-9])+\s?(.)iB'
+        for i, item in enumerate(data):
+            match = re.findall(expression, item['full_text'])
+            if match:
+                # extract the numerical value
+                value = float(match[0][0].replace(',', '.'))
+                # extract the separator (the comma or the dot)
+                separator = match[0][1]
+                # extract the order of magnitude
+                order = match[0][2]
+                # convert to decimal
+                decimal = value * 1.074
+                # update the visible text
+                data[i]['full_text'] = re.sub(
+                    expression,
+                    format(decimal, '.2f').replace('.', separator) + ' ' + order + 'B',
+                    item['full_text'],
+                )
+
+
         # and echo back new encoded json
-        print_line(prefix+json.dumps(j))
+        print_line(prefix+json.dumps(data))
