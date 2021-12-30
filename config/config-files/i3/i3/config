@@ -213,6 +213,16 @@ bar {
     status_command exec i3status | /home/$USER/notebooks/personal-notebook/config/config-files/i3/i3status/wrapper.py
     font pango:Fira Code Medium 9
     tray_output primary
+    colors {
+        statusline #a095a1
+        separator #556655
+        background #00000000
+        set $foreground #FF9B89
+        set $background #101D27
+        # colorclass       <border>    <background> <text>
+        focused_workspace  $background $foreground $background
+        inactive_workspace $background $background $foreground
+    }
 }
 
 bindsym $mod+n $refresh_i3status
