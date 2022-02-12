@@ -21,8 +21,6 @@ USD = CD + '/utility-scripts'
 SKD = CD + '/second-keyboard'
 # audio directory
 AUD = CD + '/audio'
-# quick run directory
-QRD = CD + '/quick-run'
 
 # username
 USER = getpass.getuser()
@@ -386,17 +384,6 @@ config_entries = [
                     )
                 ]
             ),
-
-            ConfigEntry(
-                description='install ‘quick run’',
-                shorthand='qru',
-                installation_packages=[
-                    toggle_desktop_file_links(
-                        QRD + '/quick-open.desktop',
-                        '/usr/share/applications/quick-open.desktop'
-                    )
-                ]
-            )
 
         ]
     },
