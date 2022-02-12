@@ -387,17 +387,6 @@ config_entries = [
                 ]
             ),
 
-            ConfigEntry(
-                description='install ‘quick run’',
-                shorthand='qru',
-                installation_packages=[
-                    toggle_desktop_file_links(
-                        QRD + '/quick-open.desktop',
-                        '/usr/share/applications/quick-open.desktop'
-                    )
-                ]
-            )
-
         ]
     },
 
