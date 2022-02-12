@@ -9,6 +9,7 @@ keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScr
 ---
 
 - [Resources](#resources)
+    - [**Crucial**](#crucial)
     - [Security](#security)
     - [Interesting](#interesting)
     - [Building](#building)
@@ -21,6 +22,7 @@ keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScr
 - [Samsung Internet browser webpage scroll position](#samsung-internet-browser-webpage-scroll-position)
 - [Classes and Interfaces in TypeScript](#classes-and-interfaces-in-typescript)
 - [Extracting a property from a derived class (a proposal)](#extracting-a-property-from-a-derived-class-a-proposal)
+- [Type hierarchy, difference between `void`, `null`, etc.](#type-hierarchy-difference-between-void-null-etc)
 
 ---
 
@@ -339,5 +341,43 @@ for (const prop in object) {
 ```
 
 so it uses the `ExtractProperty` function.
+
+---
+
+## Type hierarchy, difference between `void`, `null`, etc.
+
+TypeScript introduces a set of rules that define relationships between all
+types found in the language.
+
+![TS type relations tree](TS-type-relations-tree.png)\
+_The main spine of the type relations tree._
+
+Apart from the “truthy” values, there are also “negative” values in JS.
+TypeScript introduces a few more of these and also establishes a set of
+relations between all of them.
+
+---
+
+|             | `any` | `unknown` | `object` | `void` | `undefined` | `null` | `never` |
+| ----------- | ----- | --------- | -------- | ------ | ----------- | ------ | ------- |
+| `any`       |       | Y         | Y        | Y      | Y           | Y      | N       |
+| `unknown`   | Y     |           | N        | N      | N           | N      | N       | N
+| `object`    | Y     | Y         |          | N      | N           | N      | N       |
+| `void`      | Y     | Y         | N        |        | N           | N      | N       |
+| `undefined` | Y     | Y         | Y'       | Y      |             | Y'     | N       |
+| `null`      | Y     | Y         | Y'       | Y'     | Y'          |        | N       |
+| `never`     | Y     | Y         | Y        | Y      | Y           | Y      |         |
+
+- Y — _row_ is assignable to _column_
+- Y' — same as Y but only when `strictNullChecks` is turned off
+- N — _row_ is not assignable to _column_
+
+_The table of relations between various “negative” values in TS._
+_It shows types of variables (columns) that accept types of values (rows)._
+
+
+Sources:
+- [The type hierarchy tree — zhenghao.io](https://www.zhenghao.io/posts/type-hierarchy-tree)
+- [TypeScript Documentation — Type compatibility](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability)
 
 ---
