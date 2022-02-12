@@ -21,8 +21,6 @@ USD = CD + '/utility-scripts'
 SKD = CD + '/second-keyboard'
 # audio directory
 AUD = CD + '/audio'
-# quick run directory
-QRD = CD + '/quick-run'
 
 # username
 USER = getpass.getuser()
