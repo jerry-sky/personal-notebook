@@ -344,11 +344,6 @@ config_entries = [
                         CFD + '/i3/compton/compton.conf',
                         HD + '/.config/compton.conf'
                     ),
-                    # keyboard knob switcher
-                    toggle_file_links(
-                        CFD + '/keyboard-volume-knob',
-                        HD + '/keyboard-volume-knob'
-                    )
                 ]
             ),
 
