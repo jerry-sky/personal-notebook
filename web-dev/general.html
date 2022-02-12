@@ -99,6 +99,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="#resources">Resources</a>
 <ul>
+<li><a href="#crucial"><strong>Crucial</strong></a></li>
 <li><a href="#security">Security</a></li>
 <li><a href="#interesting">Interesting</a></li>
 <li><a href="#building">Building</a></li>
@@ -112,6 +113,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#samsung-internet-browser-webpage-scroll-position">Samsung Internet browser webpage scroll position</a></li>
 <li><a href="#classes-and-interfaces-in-typescript">Classes and Interfaces in TypeScript</a></li>
 <li><a href="#extracting-a-property-from-a-derived-class-a-proposal">Extracting a property from a derived class (a proposal)</a></li>
+<li><a href="#type-hierarchy-difference-between-void-null-etc">Type hierarchy, difference between <code>void</code>, <code>null</code>, etc.</a></li>
 </ul>
 <hr />
 <h2 id="resources">Resources</h2>
@@ -298,6 +300,110 @@ RewriteRule ^(.*) /index.html [NC]</code></pre>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>so it uses the <code>ExtractProperty</code> function.</p>
+<hr />
+<h2 id="type-hierarchy-difference-between-void-null-etc">Type hierarchy, difference between <code>void</code>, <code>null</code>, etc.</h2>
+<p>TypeScript introduces a set of rules that define relationships between all types found in the language.</p>
+<p><img src="TS-type-relations-tree.png" alt="TS type relations tree" /><br />
+<em>The main spine of the type relations tree.</em></p>
+<p>Apart from the “truthy” values, there are also “negative” values in JS. TypeScript introduces a few more of these and also establishes a set of relations between all of them.</p>
+<hr />
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><code>any</code></th>
+<th><code>unknown</code></th>
+<th><code>object</code></th>
+<th><code>void</code></th>
+<th><code>undefined</code></th>
+<th><code>null</code></th>
+<th><code>never</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>any</code></td>
+<td></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td><code>unknown</code></td>
+<td>Y</td>
+<td></td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr class="odd">
+<td><code>object</code></td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td><code>void</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td></td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr class="odd">
+<td><code>undefined</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y’</td>
+<td>Y</td>
+<td></td>
+<td>Y’</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td><code>null</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y’</td>
+<td>Y’</td>
+<td>Y’</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr class="odd">
+<td><code>never</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Y — <em>row</em> is assignable to <em>column</em></li>
+<li>Y’ — same as Y but only when <code>strictNullChecks</code> is turned off</li>
+<li>N — <em>row</em> is not assignable to <em>column</em></li>
+</ul>
+<p><em>The table of relations between various “negative” values in TS.</em> <em>It shows types of variables (columns) that accept types of values (rows).</em></p>
+<p>Sources:</p>
+<ul>
+<li><a href="https://www.zhenghao.io/posts/type-hierarchy-tree">The type hierarchy tree — zhenghao.io</a></li>
+<li><a href="https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability">TypeScript Documentation — Type compatibility</a></li>
+</ul>
 <hr />
 </body>
 </html>

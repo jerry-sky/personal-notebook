@@ -23,7 +23,7 @@ chosen=$(echo "$all_keys" | $grep -m$chosen_no -A2 | tail -n3)
 key_id=$(echo "$chosen" | perl -lne 'print $2 if /(rsa[0-9]{4}\/)([A-Z0-9]+)/g')
 
 # extract the username and the email
-user_id=$(echo "$chosen" | perl -lne 'print "$2;$4" if /(uid\s*\[.*\]\s*)([A-z0-9-_]+)(\s*<)(.*)(>)/g')
+user_id=$(echo "$chosen" | perl -lne 'print "$2;$4" if /(uid\s*\[.*\]\s+)(.+)(\s+<)(.*)(>)/g')
 
 username=$(echo "$user_id" | perl -lne 'print $1 if /(.*)(;)(.*)/g')
 email=$(echo "$user_id" | perl -lne 'print $3 if /(.*)(;)(.*)/g')
