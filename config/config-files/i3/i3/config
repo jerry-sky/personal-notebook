@@ -15,13 +15,22 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment–independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+
+set $HOME /home/$USER
+set $PN /home/$USER/notebooks/personal-notebook
+set $CFG /home/$USER/notebooks/personal-notebook/config
+set $HK /home/$USER/notebooks/personal-notebook/config/hotkeys
+
+
 # use pactl to adjust volume in PulseAudio or to scroll
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +$step% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +$step% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# artificial microphone (un)mute
+bindsym $mod+m exec --no-startup-id $HK/microphone-toggle.sh
 
 # use `playerctl` to control media
 bindsym XF86AudioPause exec playerctl play-pause
@@ -32,17 +41,62 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86MonBrightnessDown exec xbacklight -10
 
-# decrease the step for greater precision
-set $precision "höher Genauigkeit"
-mode $precision {
+# second keyboard layer
+set $skl "zweite Tastaturebene"
+mode $skl {
+    # decrease the step for greater precision {
     # screen brightness
     bindsym XF86MonBrightnessUp exec xbacklight +1
     bindsym XF86MonBrightnessDown exec xbacklight -1
 
+    # volume
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+    # }
+
+    # useful special commands {
+
+    # microphone toggle
+    bindsym space exec --no-startup-id $HK/microphone-toggle.sh
+
+    # Discord
+    bindsym x exec --no-startup-id $HK/discord-mute.sh
+    bindsym c exec --no-startup-id $HK/discord-deafen.sh
+
+    # OBS scene switcher
+    bindsym 1 exec --no-startup-id $HK/obs-switch-scene.py '1'
+    bindsym 2 exec --no-startup-id $HK/obs-switch-scene.py '2'
+    bindsym 3 exec --no-startup-id $HK/obs-switch-scene.py '3'
+    bindsym 4 exec --no-startup-id $HK/obs-switch-scene.py '4'
+    bindsym 5 exec --no-startup-id $HK/obs-switch-scene.py '5'
+    bindsym 6 exec --no-startup-id $HK/obs-switch-scene.py '6'
+    bindsym 7 exec --no-startup-id $HK/obs-switch-scene.py '7'
+    bindsym 8 exec --no-startup-id $HK/obs-switch-scene.py '8'
+    bindsym 9 exec --no-startup-id $HK/obs-switch-scene.py '9'
+    bindsym 0 exec --no-startup-id $HK/obs-switch-scene.py '0'
+    bindsym q exec --no-startup-id $HK/obs-switch-scene.py 'q'
+    bindsym w exec --no-startup-id $HK/obs-switch-scene.py 'w'
+    bindsym e exec --no-startup-id $HK/obs-switch-scene.py 'e'
+    bindsym r exec --no-startup-id $HK/obs-switch-scene.py 'r'
+    bindsym t exec --no-startup-id $HK/obs-switch-scene.py 't'
+    bindsym y exec --no-startup-id $HK/obs-switch-scene.py 'y'
+    bindsym u exec --no-startup-id $HK/obs-switch-scene.py 'u'
+    bindsym i exec --no-startup-id $HK/obs-switch-scene.py 'i'
+    bindsym o exec --no-startup-id $HK/obs-switch-scene.py 'o'
+    bindsym p exec --no-startup-id $HK/obs-switch-scene.py 'p'
+
+    # OBS transitions
+    bindsym m exec --no-startup-id $HK/obs-transitions.py 'm'
+    bindsym comma exec --no-startup-id $HK/obs-transitions.py 'comma'
+    bindsym period exec --no-startup-id $HK/obs-transitions.py 'period'
+    bindsym slash exec --no-startup-id $HK/obs-transitions.py 'slash'
+    #}
+
     bindsym q mode "default"
+    bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Ctrl+Shift+l mode $precision
+bindsym $mod+p mode $skl
 
 # screenshots
 # default maim command

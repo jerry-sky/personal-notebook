@@ -6,13 +6,22 @@ from sys import argv, exit
 import os
 
 f = open(os.path.dirname(os.path.realpath(__file__)) + '/.ws')
-password = f.read()
+password = f.readline()[:-1]
 f.close()
 
 loop = asyncio.get_event_loop()
 ws = simpleobsws.obsws(host='127.0.0.1', port=4444, password=password, loop=loop)
 
-transition = argv[1]
+
+t = argv[1]
+transition = 'Stinger'
+if t == 'm':
+    transition = 'Cut'
+elif t == 'comma':
+    transition = 'Fade'
+elif t == 'period':
+    transition = 'Luma Wipe'
+
 
 async def make_request():
     await ws.connect()

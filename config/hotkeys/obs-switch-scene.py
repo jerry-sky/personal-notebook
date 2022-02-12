@@ -6,7 +6,8 @@ from sys import argv, exit
 import os
 
 f = open(os.path.dirname(os.path.realpath(__file__)) + '/.ws')
-password = f.read()
+# read the first line (without newline at the end)
+password = f.readline()[:-1]
 f.close()
 
 loop = asyncio.get_event_loop()
