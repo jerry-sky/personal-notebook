@@ -5,25 +5,30 @@ set $mod Mod4
 # add a second modifier key (Pause/Break key)
 exec --no-startup-id xmodmap -e 'keysym Pause = Super_L'
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment–independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
 
+# default paths
 set $HOME /home/$USER
 set $PN /home/$USER/notebooks/personal-notebook
-set $CFG /home/$USER/notebooks/personal-notebook/config
 set $HK /home/$USER/notebooks/personal-notebook/config/hotkeys
+set $UTS /home/$USER/notebooks/personal-notebook/config/utility-scripts
+set $IMG /home/$USER/Bilder
 
 
-# use pactl to adjust volume in PulseAudio or to scroll
+# refresh the i3 bar
 set $refresh_i3status killall -SIGUSR1 i3status
+
+
+# volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
@@ -32,16 +37,19 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # artificial microphone (un)mute
 bindsym $mod+m exec --no-startup-id $HK/microphone-toggle.sh
 
-# use `playerctl` to control media
+
+# media control
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# use `xbacklight` to control screen brightness (laptop)
+
+# screen brightness
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86MonBrightnessDown exec xbacklight -10
 
-# second keyboard layer
+
+# second keyboard layer (SKL)
 set $skl "zweite Tastaturebene"
 mode $skl {
     # decrease the step for greater precision {
@@ -98,23 +106,20 @@ mode $skl {
 }
 bindsym $mod+p mode $skl
 
+
 # screenshots
 # default maim command
 set $maim maim --color=0.67,0.0,0.87,0.04 -l
-set $screenshot_filepath /home/$USER/Bilder/$(date +'%Y-%m-%d_%H:%M:%S').png
 # file screenshots
-bindsym Print exec --no-startup-id "$maim $screenshot_filepath"
-bindsym $mod+Print exec --no-startup-id "$maim --window $(xdotool getactivewindow) $screenshot_filepath"
-bindsym Shift+Print exec --no-startup-id "$maim --select $screenshot_filepath"
+set $screenshot_filename $(date +'%Y-%m-%d_%H:%M:%S').png
+bindsym Print exec --no-startup-id "$maim $IMG/$screenshot_filename"
+bindsym $mod+Print exec --no-startup-id "$maim --window $(xdotool getactivewindow) $IMG/$screenshot_filename"
+bindsym Shift+Print exec --no-startup-id "$maim --select $IMG/$screenshot_filename"
 # clipboard screenshots
 bindsym Ctrl+Print exec --no-startup-id "$maim | xclip -selection clipboard -t image/png"
 bindsym Ctrl+$mod+Print exec --no-startup-id "$maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
 bindsym Ctrl+Shift+Print exec --no-startup-id "$maim --select | xclip -selection clipboard -t image/png"
-# take a screenshot and edit it immediately
-set $screenshot_editor gimp -a
-bindsym Ctrl+Scroll_Lock exec --no-startup-id "$maim /tmp/t.png && $screenshot_editor /tmp/t.png"
-bindsym Ctrl+$mod+Scroll_Lock exec --no-startup-id "$maim --window $(xdotool getactivewindow) /tmp/t.png && $screenshot_editor /tmp/t.png"
-bindsym Ctrl+Shift+Scroll_Lock exec --no-startup-id "$maim --select /tmp/t.png && $screenshot_editor /tmp/t.png"
+
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -153,22 +158,12 @@ mode  $session {
 }
 bindsym $mod+Shift+x mode $session
 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -194,20 +189,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Ctrl+Shift+space sticky toggle
 
 # set size to 1920x1080
-bindsym $mod+Shift+y exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1,1920,1080'"
-# horizontal position: first, second, or third screen
-bindsym $mod+Shift+u exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '0,-1,-1,-1'"
-bindsym $mod+Shift+i exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '1920,-1,-1,-1'"
-bindsym $mod+Shift+o exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '3840,-1,-1,-1'"
-# horizontal position: almost off the third screen
-bindsym $mod+Shift+p exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '5740,-1,-1,-1'"
-# vertical position: center, or almost off the screen to the top
-bindsym $mod+Ctrl+Shift+u exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,0,-1,-1'"
-bindsym $mod+Ctrl+Shift+i exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,120,-1,-1'"
-bindsym $mod+Ctrl+Shift+o exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-940,-1,-1'"
-bindsym $mod+Ctrl+Shift+p exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1060,-1,-1'"
-# vertical position: barely on the screen (only 5 pixels visible + border pixels)
-bindsym $mod+Shift+rightbracket exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '__FOCUSED' '-1,-1075,-1,-1'"
+bindsym $mod+Shift+y exec --no-startup-id "$UTS/alter-window-geometry.sh '__FOCUSED' '-1,-1,1920,1080'"
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -252,7 +234,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -289,6 +270,18 @@ bar {
 
 bindsym $mod+n $refresh_i3status
 
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -301,16 +294,6 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-set $ws11 "11"
-set $ws12 "12"
-set $ws13 "13"
-set $ws14 "14"
-set $ws15 "15"
-set $ws16 "16"
-set $ws17 "17"
-set $ws18 "18"
-set $ws19 "19"
-set $ws20 "20"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -323,16 +306,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+mod2+KP_1 workspace number $ws11
-bindsym $mod+mod2+KP_2 workspace number $ws12
-bindsym $mod+mod2+KP_3 workspace number $ws13
-bindsym $mod+mod2+KP_4 workspace number $ws14
-bindsym $mod+mod2+KP_5 workspace number $ws15
-bindsym $mod+mod2+KP_6 workspace number $ws16
-bindsym $mod+mod2+KP_7 workspace number $ws17
-bindsym $mod+mod2+KP_8 workspace number $ws18
-bindsym $mod+mod2+KP_9 workspace number $ws19
-bindsym $mod+mod2+KP_0 workspace number $ws20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -345,16 +318,85 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-bindsym $mod+Shift+mod2+KP_End move container to workspace number $ws11
-bindsym $mod+Shift+mod2+KP_Down move container to workspace number $ws12
-bindsym $mod+Shift+mod2+KP_Next move container to workspace number $ws13
-bindsym $mod+Shift+mod2+KP_Left move container to workspace number $ws14
-bindsym $mod+Shift+mod2+KP_Begin move container to workspace number $ws15
-bindsym $mod+Shift+mod2+KP_Right move container to workspace number $ws16
-bindsym $mod+Shift+mod2+KP_Home move container to workspace number $ws17
-bindsym $mod+Shift+mod2+KP_Up move container to workspace number $ws18
-bindsym $mod+Shift+mod2+KP_Prior move container to workspace number $ws19
-bindsym $mod+Shift+mod2+KP_Insert move container to workspace number $ws20
+
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+
+set $workspace "Arbeitsflächen"
+mode $workspace {
+
+    # change focus
+    bindsym Left focus left
+    bindsym Down focus down
+    bindsym Up focus up
+    bindsym Right focus right
+
+    # move focused window
+    bindsym Shift+Left move left
+    bindsym Shift+Down move down
+    bindsym Shift+Up move up
+    bindsym Shift+Right move right
+
+    # switch to workspace
+    bindsym 1 workspace number $ws1
+    bindsym 2 workspace number $ws2
+    bindsym 3 workspace number $ws3
+    bindsym 4 workspace number $ws4
+    bindsym 5 workspace number $ws5
+    bindsym 6 workspace number $ws6
+    bindsym 7 workspace number $ws7
+    bindsym 8 workspace number $ws8
+    bindsym 9 workspace number $ws9
+    bindsym 0 workspace number $ws10
+
+    bindsym $mod+1 workspace number $ws11
+    bindsym $mod+2 workspace number $ws12
+    bindsym $mod+3 workspace number $ws13
+    bindsym $mod+4 workspace number $ws14
+    bindsym $mod+5 workspace number $ws15
+    bindsym $mod+6 workspace number $ws16
+    bindsym $mod+7 workspace number $ws17
+    bindsym $mod+8 workspace number $ws18
+    bindsym $mod+9 workspace number $ws19
+    bindsym $mod+0 workspace number $ws20
+
+    # move focused container to workspace
+    bindsym Shift+1 move container to workspace number $ws1
+    bindsym Shift+2 move container to workspace number $ws2
+    bindsym Shift+3 move container to workspace number $ws3
+    bindsym Shift+4 move container to workspace number $ws4
+    bindsym Shift+5 move container to workspace number $ws5
+    bindsym Shift+6 move container to workspace number $ws6
+    bindsym Shift+7 move container to workspace number $ws7
+    bindsym Shift+8 move container to workspace number $ws8
+    bindsym Shift+9 move container to workspace number $ws9
+    bindsym Shift+0 move container to workspace number $ws10
+
+    bindsym $mod+Shift+1 move container to workspace number $ws11
+    bindsym $mod+Shift+2 move container to workspace number $ws12
+    bindsym $mod+Shift+3 move container to workspace number $ws13
+    bindsym $mod+Shift+4 move container to workspace number $ws14
+    bindsym $mod+Shift+5 move container to workspace number $ws15
+    bindsym $mod+Shift+6 move container to workspace number $ws16
+    bindsym $mod+Shift+7 move container to workspace number $ws17
+    bindsym $mod+Shift+8 move container to workspace number $ws18
+    bindsym $mod+Shift+9 move container to workspace number $ws19
+    bindsym $mod+Shift+0 move container to workspace number $ws20
+
+    bindsym q mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+o mode $workspace
+
 
 # switch back between two recently opened workspaces
 workspace_auto_back_and_forth yes
@@ -362,49 +404,25 @@ workspace_auto_back_and_forth yes
 bindsym $mod+Prior workspace prev_on_output
 bindsym $mod+Next workspace next_on_output
 
-# monitor setup definition (`xrandr`)
-set $screen_one HDMI-0
-set $screen_two DP-1
-set $screen_three DVI-I-1
-
-# switch between monitors linearly
+# switch between monitors
 bindsym $mod+Ctrl+Right focus output right
 bindsym $mod+Ctrl+Left focus output left
 bindsym $mod+Ctrl+Up focus output up
 bindsym $mod+Ctrl+Down focus output down
-# …and directly
-bindsym $mod+KP_Divide focus output $screen_one
-bindsym $mod+KP_Multiply focus output $screen_two
-bindsym $mod+KP_Subtract focus output $screen_three
-# move workspaces between monitors linearly
+# move workspaces between monitors
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Up move workspace to output up
 bindsym $mod+Ctrl+Shift+Down move workspace to output down
-# …and directly
-bindsym $mod+Shift+KP_Divide move workspace to output $screen_one
-bindsym $mod+Shift+KP_Multiply move workspace to output $screen_two
-bindsym $mod+Shift+KP_Subtract move workspace to output $screen_three
 
-# assign workspaces to screens
-# main
-workspace $ws1 output $screen_one
-# communication
-workspace $ws2 output $screen_two
-# music and such
-workspace $ws3 output $screen_three
-# audio management and OBS
-workspace $ws4 output $screen_three
-# organisation
-workspace $ws5 output $screen_three
-# entertainment or presentation dump workspace
-workspace $ws20 output $screen_one
 
 # assign programs to workspaces
 
 # communication: Discord, Telegram, Zoom
 assign [class="(?i)discord"] workspace number $ws2
+for_window [class="(?i)discord"] layout tabbed
 assign [class="(?i)Telegram"] workspace number $ws2
+for_window [class="(?i)Telegram"] layout tabbed
 # send Zoom to its punishment closet for very poor behaviour
 assign [class="(?i).*zoom.*"] workspace number $ws19
 # Zoom is not aligned with standard WM guidelines
@@ -420,10 +438,9 @@ set $obs_projector (Windowed|Fullscreen)[[:blank:]]Projector.*
 assign [title="$obs_projector"] workspace number $ws4
 for_window [title="$obs_projector"] floating enable
 for_window [title="$obs_projector"] sticky enable
-for_window [title="$obs_projector"] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh '$obs_projector' '5740,-1060,1920,1080'"
 
 # move the annoying Discord Updater window that contains a very nauseating animation
-for_window [title="Discord Updater"] exec --no-startup-id "/opt/utility-scripts/alter-window-geometry.sh 'Discord Updater' '2860,-220,-1,-1'"
+for_window [title="Discord Updater"] exec --no-startup-id "$ULT/alter-window-geometry.sh 'Discord Updater' '2860,-220,-1,-1'"
 
 for_window [class="pop-up"] floating enable
 
@@ -436,8 +453,9 @@ focus_follows_mouse no
 # gaps
 gaps inner 0
 for_window [class=".*"] border pixel 0
-set $colour #38678F
-set $alpha 00
+for_window [class=".*"] title_format " %title"
+set $colour #8F2883
+set $alpha e0
 # class                 border        background    text    indicator     child_border
 client.focused          $colour       $colour       #ffffff $colour       $colour
 client.focused_inactive #333333$alpha #5f676a$alpha #ffffff #484e50$alpha #5f676a$alpha
@@ -475,12 +493,8 @@ exec --no-startup-id cinnamon-settings sound
 exec --no-startup-id /home/$USER/.audloop
 # cloud sync
 exec --no-startup-id insync start
-# second keyboard
-exec --no-startup-id /home/$USER/notebooks/personal-notebook/config/second-keyboard/run.sh
 # window compositor
 exec --no-startup-id compton
 
-# quick run
-bindsym $mod+o exec --no-startup-id dex /usr/share/applications/quick-open.desktop
 # file explorer
 bindsym $mod+e exec --no-startup-id nemo
