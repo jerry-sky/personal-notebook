@@ -236,40 +236,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    status_command exec i3status --transparency | /home/$USER/notebooks/personal-notebook/config/config-files/i3/i3status/wrapper.py
-    font pango:Fira Code Medium 9
-    tray_output primary
-    colors {
-        # inactive monitor
-        separator #ffffff2f
-        statusline #a095a1af
-        background #00000000
-        # active monitor
-        focused_separator #ffffff4a
-        focused_statusline #a095a1
-        focused_background #E8727210
-        # workspace indicators
-        set $primary #FF9B89
-        set $primary_t #FF9B898a
-        set $primary_r #FF9B892b
-        set $secondary #101D27
-        set $warn #FF4F5E
-        set $mode #79FF95EE
-        # colorclass       <border>   <background> <text>
-        focused_workspace  $secondary $primary     $secondary
-        active_workspace   $primary_t $primary_r   $primary
-        inactive_workspace $secondary $secondary   $primary
-        urgent_workspace   $secondary $secondary   $primary
-        urgent_workspace   $warn      $warn        $secondary
-        binding_mode       $mode      $mode        $secondary
-    }
-}
-
-bindsym $mod+n $refresh_i3status
-
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -414,6 +380,39 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Up move workspace to output up
 bindsym $mod+Ctrl+Shift+Down move workspace to output down
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    status_command exec i3status --transparency | /home/$USER/notebooks/personal-notebook/config/config-files/i3/i3status/wrapper.py
+    font pango:Fira Code Medium 10.5
+    tray_output primary
+    colors {
+        # inactive monitor
+        separator #ffffff2f
+        statusline #a095a1af
+        background #00000000
+        # active monitor
+        focused_separator #ffffff4a
+        focused_statusline #a095a1
+        focused_background #E8727210
+        # workspace indicators
+        set $primary #21CF89
+        set $primary_t #21CF898a
+        set $primary_r #21CF892b
+        set $secondary #101D27
+        set $warn #efefef
+        set $mode #FF572B
+        # colorclass       <border>   <background> <text>
+        focused_workspace  $secondary $primary     $secondary
+        active_workspace   $primary_t $primary_r   $primary
+        inactive_workspace $secondary $secondary   $primary
+        urgent_workspace   $secondary $secondary   $primary
+        urgent_workspace   $warn      $warn        $secondary
+        binding_mode       $secondary $secondary   $mode
+    }
+}
 
 
 # assign programs to workspaces

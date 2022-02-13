@@ -15,7 +15,7 @@ general {
 #order += "run_watch VPNC"
 #order += "path_exists VPN"
 order += "volume master"
-order += "wireless _first_"
+# order += "wireless _first_"
 order += "ethernet eth0"
 order += "battery 0"
 order += "cpu_temperature 0"
@@ -42,11 +42,11 @@ ethernet eth0 {
 }
 
 battery 0 {
-    format = " %status (%percentage), %remaining verbleibende (um %emptytime Uhr) "
+    format = " %status %percentage (%remaining) "
     format_down = ""
     status_chr = "lädt"
     status_bat = "Akku"
-    status_unk = "bitte warten…"
+    status_unk = "…  …"
     status_full = "Voll"
     path = "/sys/class/power_supply/BAT%d/uevent"
     low_threshold = 10
