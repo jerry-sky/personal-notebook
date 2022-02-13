@@ -366,11 +366,14 @@ bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Up move workspace to output up
 bindsym $mod+Ctrl+Shift+Down move workspace to output down
 
+
 # assign programs to workspaces
 
 # communication: Discord, Telegram, Zoom
 assign [class="(?i)discord"] workspace number $ws2
+for_window [class="(?i)discord"] layout tabbed
 assign [class="(?i)Telegram"] workspace number $ws2
+for_window [class="(?i)Telegram"] layout tabbed
 # send Zoom to its punishment closet for very poor behaviour
 assign [class="(?i).*zoom.*"] workspace number $ws19
 # Zoom is not aligned with standard WM guidelines
@@ -401,8 +404,9 @@ focus_follows_mouse no
 # gaps
 gaps inner 0
 for_window [class=".*"] border pixel 0
-set $colour #38678F
-set $alpha 00
+for_window [class=".*"] title_format " %title"
+set $colour #8F2883
+set $alpha e0
 # class                 border        background    text    indicator     child_border
 client.focused          $colour       $colour       #ffffff $colour       $colour
 client.focused_inactive #333333$alpha #5f676a$alpha #ffffff #484e50$alpha #5f676a$alpha
