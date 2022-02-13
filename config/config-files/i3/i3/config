@@ -165,18 +165,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 
-# change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -282,6 +270,18 @@ bar {
 
 bindsym $mod+n $refresh_i3status
 
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -294,16 +294,6 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-set $ws11 "11"
-set $ws12 "12"
-set $ws13 "13"
-set $ws14 "14"
-set $ws15 "15"
-set $ws16 "16"
-set $ws17 "17"
-set $ws18 "18"
-set $ws19 "19"
-set $ws20 "20"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -316,16 +306,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+mod2+KP_1 workspace number $ws11
-bindsym $mod+mod2+KP_2 workspace number $ws12
-bindsym $mod+mod2+KP_3 workspace number $ws13
-bindsym $mod+mod2+KP_4 workspace number $ws14
-bindsym $mod+mod2+KP_5 workspace number $ws15
-bindsym $mod+mod2+KP_6 workspace number $ws16
-bindsym $mod+mod2+KP_7 workspace number $ws17
-bindsym $mod+mod2+KP_8 workspace number $ws18
-bindsym $mod+mod2+KP_9 workspace number $ws19
-bindsym $mod+mod2+KP_0 workspace number $ws20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -338,16 +318,85 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-bindsym $mod+Shift+mod2+KP_End move container to workspace number $ws11
-bindsym $mod+Shift+mod2+KP_Down move container to workspace number $ws12
-bindsym $mod+Shift+mod2+KP_Next move container to workspace number $ws13
-bindsym $mod+Shift+mod2+KP_Left move container to workspace number $ws14
-bindsym $mod+Shift+mod2+KP_Begin move container to workspace number $ws15
-bindsym $mod+Shift+mod2+KP_Right move container to workspace number $ws16
-bindsym $mod+Shift+mod2+KP_Home move container to workspace number $ws17
-bindsym $mod+Shift+mod2+KP_Up move container to workspace number $ws18
-bindsym $mod+Shift+mod2+KP_Prior move container to workspace number $ws19
-bindsym $mod+Shift+mod2+KP_Insert move container to workspace number $ws20
+
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+
+set $workspace "Arbeitsflächen"
+mode $workspace {
+
+    # change focus
+    bindsym Left focus left
+    bindsym Down focus down
+    bindsym Up focus up
+    bindsym Right focus right
+
+    # move focused window
+    bindsym Shift+Left move left
+    bindsym Shift+Down move down
+    bindsym Shift+Up move up
+    bindsym Shift+Right move right
+
+    # switch to workspace
+    bindsym 1 workspace number $ws1
+    bindsym 2 workspace number $ws2
+    bindsym 3 workspace number $ws3
+    bindsym 4 workspace number $ws4
+    bindsym 5 workspace number $ws5
+    bindsym 6 workspace number $ws6
+    bindsym 7 workspace number $ws7
+    bindsym 8 workspace number $ws8
+    bindsym 9 workspace number $ws9
+    bindsym 0 workspace number $ws10
+
+    bindsym $mod+1 workspace number $ws11
+    bindsym $mod+2 workspace number $ws12
+    bindsym $mod+3 workspace number $ws13
+    bindsym $mod+4 workspace number $ws14
+    bindsym $mod+5 workspace number $ws15
+    bindsym $mod+6 workspace number $ws16
+    bindsym $mod+7 workspace number $ws17
+    bindsym $mod+8 workspace number $ws18
+    bindsym $mod+9 workspace number $ws19
+    bindsym $mod+0 workspace number $ws20
+
+    # move focused container to workspace
+    bindsym Shift+1 move container to workspace number $ws1
+    bindsym Shift+2 move container to workspace number $ws2
+    bindsym Shift+3 move container to workspace number $ws3
+    bindsym Shift+4 move container to workspace number $ws4
+    bindsym Shift+5 move container to workspace number $ws5
+    bindsym Shift+6 move container to workspace number $ws6
+    bindsym Shift+7 move container to workspace number $ws7
+    bindsym Shift+8 move container to workspace number $ws8
+    bindsym Shift+9 move container to workspace number $ws9
+    bindsym Shift+0 move container to workspace number $ws10
+
+    bindsym $mod+Shift+1 move container to workspace number $ws11
+    bindsym $mod+Shift+2 move container to workspace number $ws12
+    bindsym $mod+Shift+3 move container to workspace number $ws13
+    bindsym $mod+Shift+4 move container to workspace number $ws14
+    bindsym $mod+Shift+5 move container to workspace number $ws15
+    bindsym $mod+Shift+6 move container to workspace number $ws16
+    bindsym $mod+Shift+7 move container to workspace number $ws17
+    bindsym $mod+Shift+8 move container to workspace number $ws18
+    bindsym $mod+Shift+9 move container to workspace number $ws19
+    bindsym $mod+Shift+0 move container to workspace number $ws20
+
+    bindsym q mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+o mode $workspace
+
 
 # switch back between two recently opened workspaces
 workspace_auto_back_and_forth yes
