@@ -92,7 +92,7 @@ if __name__ == '__main__':
         # CHANGE THIS LINE TO INSERT SOMETHING ELSE
         data.insert(0, {
             'full_text': '%s' % ' Mikrofon ist stummgeschaltet ' if is_mic_muted() else '',
-            'color': '#ae1133',
+            'color': '#efefef',
             'name': 'mic'
         })
 
