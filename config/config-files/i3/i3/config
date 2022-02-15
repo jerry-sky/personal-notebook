@@ -100,9 +100,10 @@ mode $skl {
     bindsym slash exec --no-startup-id $HK/obs-transitions.py 'slash'
     #}
 
-    bindsym q mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+p mode "default"
+    bindsym $mod+o mode $workspace
 }
 bindsym $mod+p mode $skl
 
@@ -153,8 +154,9 @@ mode  $session {
     bindsym h exec shutdown now; mode "default"
     bindsym n exec shutdown -r now; mode "default"
 
-    bindsym q mode "default"
+    bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+Shift+x mode "default"
 }
 bindsym $mod+Shift+x mode $session
 
@@ -357,9 +359,10 @@ mode $workspace {
     bindsym $mod+Shift+9 move container to workspace number $ws19
     bindsym $mod+Shift+0 move container to workspace number $ws20
 
-    bindsym q mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+o mode "default"
+    bindsym $mod+p mode $skl
 }
 bindsym $mod+o mode $workspace
 
