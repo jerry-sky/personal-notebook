@@ -56,6 +56,7 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 - [Git](general/git-notes.md)
 - [Software issues](general/software-issues.md)
 - [VS Code](general/vs-code.md)
+- [Cloud](general/cloud.md)
 
 ### Web-dev
 
