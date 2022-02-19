@@ -1,39 +1,25 @@
 #!/bin/bash
 
-cd /tmp
+GOOGLE_FONTS="https://fonts.google.com/download?family="
 
-mkdir -p fira-code
-cd fira-code
-printf "\n\033[1mAdditional font packs\nDownloading and installing Fira Code…\033[0m\n"
-curl -L --output fira-code.zip 'https://fonts.google.com/download?family=Fira%20Code'
-unzip fira-code.zip
-rm fira-code.zip
-cd ..
-sudo mv fira-code /usr/share/fonts/truetype/
 
-mkdir -p fira-sans
-cd fira-sans
-printf "\n\033[1mDownloading and installing Fira Sans…\033[0m\n"
-curl -L --output fira-sans.zip 'https://fonts.google.com/download?family=Fira%20Sans'
-unzip fira-sans.zip
-rm fira-sans.zip
-cd ..
-sudo mv fira-sans /usr/share/fonts/truetype/
+function download_font_family {
+    address="$1"
+    name="$2"
 
-mkdir -p merriweather
-cd merriweather
-printf "\n\033[1mDownloading and installing Merriweather…\033[0m\n"
-curl -L --output merriweather.zip 'https://fonts.google.com/download?family=Merriweather'
-unzip merriweather.zip
-rm merriweather.zip
-cd ..
-sudo mv merriweather /usr/share/fonts/truetype
+    cd /tmp
+    printf "\n\033[1mDownloading and installing $name…\033[0m\n"
+    curl -L --output "$name".zip "$address"
+    unzip "$name".zip -d "$name"
+    rm "$name".zip
+    sudo mv "$name" /usr/share/fonts/truetype/
+}
 
-mkdir -p merriweather-sans
-cd merriweather-sans
-printf "\n\033[1mDownloading and installing Merriweather Sans…\033[0m\n"
-curl -L --output merriweather-sans.zip 'https://fonts.google.com/download?family=Merriweather%20Sans'
-unzip merriweather-sans.zip
-rm merriweather-sans.zip
-cd ..
-sudo mv merriweather-sans /usr/share/fonts/truetype
+
+printf "\n\033[1mAdditional font packs\033[0m\n"
+
+download_font_family "${GOOGLE_FONTS}Fira%20Code" "Fira Code"
+download_font_family "${GOOGLE_FONTS}Fira%20Sans" "Fira Sans"
+download_font_family "${GOOGLE_FONTS}Merriweather" "Merriweather"
+download_font_family "${GOOGLE_FONTS}Merriweather%20Sans" "Merriweather Sans"
+download_font_family "https://use.fontawesome.com/releases/v6.0.0/fontawesome-free-6.0.0-desktop.zip" "Font Awesome"
