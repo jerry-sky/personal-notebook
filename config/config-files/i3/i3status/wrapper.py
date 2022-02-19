@@ -89,12 +89,18 @@ if __name__ == '__main__':
 
         data: List = json.loads(line)
         # insert information into the start of the json, but could be anywhere
-        # CHANGE THIS LINE TO INSERT SOMETHING ELSE
-        data.insert(0, {
-            'full_text': '%s' % ' Mikrofon ist stummgeschaltet ' if is_mic_muted() else '',
-            'color': '#efefef',
-            'name': 'mic'
-        })
+        if is_mic_muted():
+            data.insert(0, {
+                'full_text': '%s' % '  aus ',
+                'color': '#efefef',
+                'name': 'mic'
+            })
+        else:
+            data.insert(0, {
+                'full_text': '%s' % '   ein ',
+                # 'color': '#efefef',
+                'name': 'mic'
+            })
 
         # find all -ibi values and convert them to decimal
         expression = r'([0-9]+(,|\.)[0-9])+\s?(.)iB'

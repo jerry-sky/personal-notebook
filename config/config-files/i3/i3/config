@@ -389,7 +389,7 @@ bindsym $mod+Ctrl+Shift+Down move workspace to output down
 # finds out, if available)
 bar {
     status_command exec i3status --transparency | /home/$USER/notebooks/personal-notebook/config/config-files/i3/i3status/wrapper.py
-    font pango:Fira Code Medium 10.5
+    font pango:FontAwesome, Fira Code Semibold 10.5
     tray_output primary
     colors {
         # inactive monitor
@@ -420,39 +420,46 @@ bar {
 
 # assign programs to workspaces
 
-# communication: Discord, Telegram, Zoom
-assign [class="(?i)discord"] workspace number $ws2
+# WS-1, communication: Discord, Telegram
+assign [class="(?i)discord"] workspace number $ws1
 for_window [class="(?i)discord"] layout tabbed
-assign [class="(?i)Telegram"] workspace number $ws2
+assign [class="(?i)Telegram"] workspace number $ws1
 for_window [class="(?i)Telegram"] layout tabbed
+
+# WS-2, sound management
+assign [class="(?i)cinnamon-settings sound"] workspace number $ws2
+assign [class="(?i)pavucontrol"] workspace number $ws2
+# OBS virtual projector
+# — keep it always visible (sticky) so it can be used for screen-sharing
+set $obs_projector (Windowed|Fullscreen)[[:blank:]]Projector.*
+assign [title="$obs_projector"] workspace number $ws2
+for_window [title="$obs_projector"] floating enable
+for_window [title="$obs_projector"] sticky enable
+
+# WS-19
 # send Zoom to its punishment closet for very poor behaviour
 assign [class="(?i).*zoom.*"] workspace number $ws19
 # Zoom is not aligned with standard WM guidelines
 for_window [class="(?i).*zoom.*"] floating enable
 
-# sound management
-assign [class="(?i)cinnamon-settings sound"] workspace number $ws4
-assign [class="(?i)pavucontrol"] workspace number $ws4
-
-# OBS virtual projector — keep it always visible (sticky) but hidden from sight
-# (moved almost entirely off screen)
-set $obs_projector (Windowed|Fullscreen)[[:blank:]]Projector.*
-assign [title="$obs_projector"] workspace number $ws4
-for_window [title="$obs_projector"] floating enable
-for_window [title="$obs_projector"] sticky enable
-
 # move the annoying Discord Updater window that contains a very nauseating animation
-for_window [title="Discord Updater"] exec --no-startup-id "$ULT/alter-window-geometry.sh 'Discord Updater' '2860,-220,-1,-1'"
+for_window [title="Discord Updater"] exec --no-startup-id "$ULT/alter-window-geometry.sh 'Discord Updater' '-10000,-10000,-1,-1'"
 
 for_window [class="pop-up"] floating enable
+
+
+# launch the third workspace (1–2 are used as utility workspaces)
+exec --no-startup-id i3-msg workspace $ws3
 
 # **never** steal focus, at most mark as ‘urgent’
 focus_on_window_activation urgent
 
+# degrade mouse importance
 mouse_warping none
 focus_follows_mouse no
 
-# gaps
+
+# gaps nad colours
 gaps inner 0
 for_window [class=".*"] border pixel 0
 for_window [class=".*"] title_format " %title"
@@ -467,8 +474,10 @@ client.placeholder      #000000$alpha #0c0c0c$alpha #ffffff #000000$alpha #0c0c0
 
 client.background       #000000
 
+
 # fonts
 font pango:Fira Code Medium
+
 
 # autostart
 # apply themes (from Cinnamon)
@@ -483,7 +492,7 @@ exec --no-startup-id feh --bg-fill ~/current-wallpaper
 exec --no-startup-id redshift-gtk
 # allow “GUI sudo” — `pkexec` and such
 exec --no-startup-id dex /etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
-# ---
+
 # browser
 exec --no-startup-id google-chrome-stable
 # communication
@@ -498,5 +507,6 @@ exec --no-startup-id insync start
 # window compositor
 exec --no-startup-id compton
 
+# common GUI programs
 # file explorer
 bindsym $mod+e exec --no-startup-id nemo

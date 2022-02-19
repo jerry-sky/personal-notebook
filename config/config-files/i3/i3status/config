@@ -25,10 +25,11 @@ order += "disk /"
 order += "tztime local"
 
 volume master {
-	device = "default"
-	mixer = "Master"
-	mixer_idx = 0
-	format = " Lautstärke %volume "
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+    format =       "  Lautstärke %volume "
+    format_muted = "  Lautlos       "
 }
 
 wireless _first_ {
@@ -46,14 +47,14 @@ battery 0 {
     format_down = ""
     status_chr = "lädt"
     status_bat = "Akku"
-    status_unk = "…  …"
+    status_unk = "…………"
     status_full = "Voll"
     path = "/sys/class/power_supply/BAT%d/uevent"
     low_threshold = 10
 }
 
 tztime local {
-    format = " %A %Y-%m-%d %H:%M:%S %Z "
+    format = "  %A %Y-%m-%d %H:%M:%S %Z "
 }
 
 load {
