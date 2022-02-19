@@ -389,7 +389,7 @@ bindsym $mod+Ctrl+Shift+Down move workspace to output down
 # finds out, if available)
 bar {
     status_command exec i3status --transparency | /home/$USER/notebooks/personal-notebook/config/config-files/i3/i3status/wrapper.py
-    font pango:Fira Code Medium 10.5
+    font pango:FontAwesome, Fira Code Semibold 10.5
     tray_output primary
     colors {
         # inactive monitor

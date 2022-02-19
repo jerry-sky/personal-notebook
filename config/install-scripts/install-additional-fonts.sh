@@ -12,6 +12,7 @@ function download_font_family {
     curl -L --output "$name".zip "$address"
     unzip "$name".zip -d "$name"
     rm "$name".zip
+    sudo rm -rf /usr/share/fonts/truetype/"$name"
     sudo mv "$name" /usr/share/fonts/truetype/
 }
 
@@ -22,4 +23,4 @@ download_font_family "${GOOGLE_FONTS}Fira%20Code" "Fira Code"
 download_font_family "${GOOGLE_FONTS}Fira%20Sans" "Fira Sans"
 download_font_family "${GOOGLE_FONTS}Merriweather" "Merriweather"
 download_font_family "${GOOGLE_FONTS}Merriweather%20Sans" "Merriweather Sans"
-download_font_family "https://use.fontawesome.com/releases/v6.0.0/fontawesome-free-6.0.0-desktop.zip" "Font Awesome"
+download_font_family "https://use.fontawesome.com/releases/v5.15.4/fontawesome-free-5.15.4-desktop.zip" "Font Awesome"
