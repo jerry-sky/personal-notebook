@@ -74,6 +74,51 @@ def read_line():
         sys.exit()
 
 
+def parse_space_units(item):
+    '''
+    Finds all -ibi values and convert them to decimal
+    '''
+    expression = r'([0-9]+(,|\.)[0-9])+\s?(.)iB'
+    match = re.findall(expression, item['full_text'])
+    if match:
+        # extract the numerical value
+        value = float(match[0][0].replace(',', '.'))
+        # extract the separator (the comma or the dot)
+        separator = match[0][1]
+        # extract the order of magnitude
+        order = match[0][2]
+        # convert to decimal
+        decimal = value * 1.074
+        # update the visible text
+        item['full_text'] = re.sub(
+            expression,
+            format(decimal, '.2f').replace('.', separator) + ' ' + order + 'B',
+            item['full_text'],
+        )
+
+
+def pad_decimal_values(item, width=3):
+    '''
+    Adds visual padding to number values.
+    '''
+    if width < 2:
+        raise Exception('pad width has to be at least `2`')
+    # match a number prefixed by a blank or a parenthesis
+    expression = r'(\s|\(+)([0-9]{1,' + str(width-1) + r'})([^0-9:])'
+    match = re.findall(expression, item['full_text'])
+    while match:
+        m = match[0]
+        number: str = m[1]
+        value = m[0] + number.rjust(width, '•') + m[2]
+        item['full_text'] = re.sub(
+            expression,
+            value,
+            item['full_text'],
+            count=1,
+        )
+        match = re.findall(expression, item['full_text'])
+
+
 if __name__ == '__main__':
     # Skip the first line which contains the version header.
     print_line(read_line())
@@ -102,26 +147,10 @@ if __name__ == '__main__':
                 'name': 'mic'
             })
 
-        # find all -ibi values and convert them to decimal
-        expression = r'([0-9]+(,|\.)[0-9])+\s?(.)iB'
-        for i, item in enumerate(data):
-            match = re.findall(expression, item['full_text'])
-            if match:
-                # extract the numerical value
-                value = float(match[0][0].replace(',', '.'))
-                # extract the separator (the comma or the dot)
-                separator = match[0][1]
-                # extract the order of magnitude
-                order = match[0][2]
-                # convert to decimal
-                decimal = value * 1.074
-                # update the visible text
-                data[i]['full_text'] = re.sub(
-                    expression,
-                    format(decimal, '.2f').replace('.', separator) + ' ' + order + 'B',
-                    item['full_text'],
-                )
-
+        for item in data:
+            parse_space_units(item)
+            if item['name'] != 'tztime':
+                pad_decimal_values(item)
 
         # and echo back new encoded json
         print_line(prefix+json.dumps(data))

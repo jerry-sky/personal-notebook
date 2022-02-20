@@ -29,7 +29,7 @@ volume master {
     mixer = "Master"
     mixer_idx = 0
     format =       "  Lautstärke %volume "
-    format_muted = "  Lautlos       "
+    format_muted = "  Lautlos         "
 }
 
 wireless _first_ {
@@ -54,7 +54,7 @@ battery 0 {
 }
 
 tztime local {
-    format = "  %A %Y-%m-%d %H:%M:%S %Z "
+    format = "  %A %Y-%m-%d %k:%M:%S %Z "
 }
 
 load {
