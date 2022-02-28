@@ -1,8 +1,9 @@
 import getpass
 import pathlib
 import os
+from helper.utilities import install_apt_utility
 
-from model import ConfigEntry, Status, InstallationPackage
+from model import ConfigEntry, InstallationPackage
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
@@ -25,29 +26,6 @@ AUD = CD + '/audio'
 # username
 USER = getpass.getuser()
 
-# default installer/ verifier commands
-utilities_default_installer = 'sudo apt-get install -y {}'
-utilities_default_verifier = 'dpkg -l {} >/dev/null'
-utilities_python_installer = 'python3 -m pip install {}'
-utilities_python_verifier = 'python3 -m pip list | grep {} >/dev/null'
-
-# list of all utility programs
-utilities = [
-    # screenshots
-    (utilities_default_installer, utilities_default_verifier, 'maim xclip xdotool'),
-    # file management
-    (utilities_default_installer, utilities_default_verifier, 'filezilla'),
-    # window management
-    (utilities_default_installer, utilities_default_verifier, 'wmctrl'),
-    # audio management
-    (utilities_default_installer, utilities_default_verifier, 'pavucontrol'),
-    # python3 base (PIP)
-    (utilities_default_installer, utilities_default_verifier, 'python3-pip'),
-    # numlock auto on
-    (utilities_default_installer, utilities_default_verifier, 'numlockx'),
-    # `xte` and such `xautomation` tools
-    (utilities_default_installer, utilities_default_verifier, 'xautomation'),
-]
 
 config_entries = [
 
@@ -60,15 +38,11 @@ config_entries = [
                 description='install utilities',
                 shorthand='utl',
                 installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: [
-                            ex(util[0].format(util[2]), sudo=True) for util in utilities
-                        ],
-                        is_installed=lambda: [
-                            ex(util[1].format(sub_util)) == 0 for util in utilities for sub_util in util[2].split(' ')
-                        ]
-                    )
-                ]
+                    install_apt_utility([
+                        'python3-pip',
+                        'filezilla',
+                    ]),
+                ],
             ),
 
             # TeX Live
@@ -306,8 +280,27 @@ config_entries = [
                         is_installed=lambda: ex(
                             'command -v i3 >/dev/null'
                         ) == 0
-                    )
-                ]
+                    ),
+                    # install some utilities needed for making i3 more towards an actual DE
+                    install_apt_utility([
+                        # dex is needed for the GUI authentication prompt program (see the i3 config)
+                        'dex',
+                        # compton is a window compositor and background viewer
+                        'compton',
+                        # wallpaper program
+                        'feh',
+                        # control monitor backlight (laptop)
+                        'brightnessctl',
+                        # screenshots
+                        'maim',
+                        'xclip',
+                        'xdotool',
+                        # automatically turn the num lock
+                        'numlockx',
+                        # advanced (per-program) audio management utility
+                        'pavucontrol',
+                    ]),
+                ],
             ),
 
             # theme
@@ -414,7 +407,8 @@ config_entries = [
                         USD,
                         '/opt/utility-scripts',
                         sudo=True
-                    )
+                    ),
+                    install_apt_utility('wmctrl'),
                 ]
             ),
 
