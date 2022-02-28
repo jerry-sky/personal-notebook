@@ -341,28 +341,6 @@ config_entries = [
             ),
 
             ConfigEntry(
-                description='install ‘second-keyboard’',
-                shorthand='skb',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: [
-                            ex(
-                                SKD + '/activate.sh ' + CD,
-                                sudo=True
-                            )
-                        ],
-                        is_installed=lambda: ex(
-                            'test -f ' + HD + '/second-keyboard/gain-access.sh'
-                        ) == 0
-                    ),
-                    toggle_desktop_file_links(
-                        SKD + '/second-keyboard.desktop',
-                        '/usr/share/applications/second-keyboard.desktop',
-                    )
-                ]
-            ),
-
-            ConfigEntry(
                 description='install ‘audio loopback’',
                 shorthand='aud',
                 installation_packages=[
@@ -392,7 +370,7 @@ config_entries = [
                         is_installed=lambda: [
                             os.path.exists(
                                 '/usr/share/fonts/truetype/' + x
-                            ) for x in ['merriweather', 'fira-code', 'fira-sans']
+                            ) for x in ['Merriweather', 'Fira Code', 'Fira Sans']
                         ]
                     )
                 ]
