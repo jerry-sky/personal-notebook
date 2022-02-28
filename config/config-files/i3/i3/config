@@ -2,8 +2,6 @@
 
 # primary modifier key (Super_L, left “Windows” key)
 set $mod Mod4
-# add a second modifier key (Pause/Break key)
-exec --no-startup-id xmodmap -e 'keysym Pause = Super_L'
 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -45,8 +43,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight +10
-bindsym XF86MonBrightnessDown exec xbacklight -10
+bindsym XF86MonBrightnessUp exec sudo brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec sudo brightnessctl s 10%-
 
 
 # second keyboard layer (SKL)
@@ -54,8 +52,8 @@ set $skl "zweite Tastaturebene"
 mode $skl {
     # decrease the step for greater precision {
     # screen brightness
-    bindsym XF86MonBrightnessUp exec xbacklight +1
-    bindsym XF86MonBrightnessDown exec xbacklight -1
+    bindsym XF86MonBrightnessUp exec sudo brightnessctl s 1%+
+    bindsym XF86MonBrightnessDown exec sudo brightnessctl s 1%-
 
     # volume
     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
@@ -480,14 +478,12 @@ font pango:Fira Code Medium
 
 
 # autostart
-# apply themes (from Cinnamon)
-exec --no-startup-id csd-xsettings
 # disable screen auto–turning off
 exec --no-startup-id xset s off && xset s noblank && xset -dpms && xset dpms 0 0 0
 # turn on numlock
 exec --no-startup-id numlockx on
 # set wallpaper
-exec --no-startup-id feh --bg-fill ~/current-wallpaper
+exec_always --no-startup-id feh --bg-fill ~/current-wallpaper
 # redshift
 exec --no-startup-id redshift-gtk
 # allow “GUI sudo” — `pkexec` and such

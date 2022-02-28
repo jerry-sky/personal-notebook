@@ -299,6 +299,9 @@ config_entries = [
                         'numlockx',
                         # advanced (per-program) audio management utility
                         'pavucontrol',
+                        # system-wide theme management
+                        'lxappearance',
+                        'qt5ct',
                     ]),
                 ],
             ),
