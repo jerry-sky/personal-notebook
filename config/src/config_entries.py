@@ -22,6 +22,8 @@ USD = CD + '/utility-scripts'
 SKD = CD + '/second-keyboard'
 # audio directory
 AUD = CD + '/audio'
+# Xinput configs
+XIN = CD + '/xinput'
 
 # username
 USER = getpass.getuser()
@@ -341,6 +343,17 @@ config_entries = [
                         HD + '/.config/compton.conf'
                     ),
                 ]
+            ),
+
+            ConfigEntry(
+                description='set Xinput prop values for PCS touchpad (//TODO selectable item list)',
+                shorthand='pcs',
+                installation_packages=[
+                    toggle_fileblock(
+                        XIN + '/pcs-touchpad.sh',
+                        HD + '/.bashrc',
+                    ),
+                ],
             ),
 
             ConfigEntry(
