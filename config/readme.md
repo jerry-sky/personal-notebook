@@ -52,4 +52,7 @@ Run
 
 whilst being in the `config` directory.
 
+_Please note: this setup assumes the Cinnamon desktop environment_
+_is installed in the system._
+
 ---
