@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 printf "\n\033[1mi3-gaps\033[0m\n"
 

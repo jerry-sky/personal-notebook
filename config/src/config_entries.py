@@ -344,6 +344,23 @@ config_entries = [
                 ],
             ),
 
+            # KBCT — key remapping
+            ConfigEntry(
+                description='install KBCT (key remapping tool)',
+                shorthand='kbc',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/install-kbct.sh'
+                        ),
+                        is_installed=lambda: ex(
+                            'command -v kbct >/dev/null'
+                        ) == 0,
+                    ),
+                    sudoers_nopasswd('kbct'),
+                ]
+            ),
+
             ConfigEntry(
                 description='install ‘audio loopback’',
                 shorthand='aud',

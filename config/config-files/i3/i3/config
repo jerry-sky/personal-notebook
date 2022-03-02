@@ -17,6 +17,7 @@ exec --no-startup-id nm-applet
 # default paths
 set $HOME /home/$USER
 set $PN /home/$USER/notebooks/personal-notebook
+set $CFD /home/$USER/notebooks/personal-notebook/config/config-files
 set $HK /home/$USER/notebooks/personal-notebook/config/hotkeys
 set $UTS /home/$USER/notebooks/personal-notebook/config/utility-scripts
 set $IMG /home/$USER/Bilder
@@ -491,6 +492,10 @@ exec --no-startup-id dex /etc/xdg/autostart/polkit-gnome-authentication-agent-1.
 
 # CPU power management
 exec --no-startup-id indicator-cpufreq
+# KBCT — key remap
+# (restart always, when the program has stopped)
+exec_always --no-startup-id ps aux | grep -v grep | grep /usr/bin/kbct || sudo kbct remap --config $CFD/kbct/config.yml
+
 # browser
 exec --no-startup-id google-chrome-stable
 # communication
