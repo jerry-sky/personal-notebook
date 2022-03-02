@@ -1,53 +1,13 @@
-import getpass
-import pathlib
 import os
+from helper.sudoers import sudoers_nopasswd
+from helper.utilities import install_apt_utility
 
-from model import ConfigEntry, Status, InstallationPackage
+from model import ConfigEntry, InstallationPackage
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
+from env import AUD, CFD, HD, ISD, USD, XIN
 
-# home directory
-HD = os.path.expanduser('~')
-# root config directory
-CD = str(pathlib.Path().absolute())
-# installation script directory
-ISD = CD + '/install-scripts'
-# config files directory
-CFD = CD + '/config-files'
-# utility scripts directory
-USD = CD + '/utility-scripts'
-# second-keyboard directory
-SKD = CD + '/second-keyboard'
-# audio directory
-AUD = CD + '/audio'
-
-# username
-USER = getpass.getuser()
-
-# default installer/ verifier commands
-utilities_default_installer = 'sudo apt-get install -y {}'
-utilities_default_verifier = 'dpkg -l {} >/dev/null'
-utilities_python_installer = 'python3 -m pip install {}'
-utilities_python_verifier = 'python3 -m pip list | grep {} >/dev/null'
-
-# list of all utility programs
-utilities = [
-    # screenshots
-    (utilities_default_installer, utilities_default_verifier, 'maim xclip xdotool'),
-    # file management
-    (utilities_default_installer, utilities_default_verifier, 'filezilla'),
-    # window management
-    (utilities_default_installer, utilities_default_verifier, 'wmctrl'),
-    # audio management
-    (utilities_default_installer, utilities_default_verifier, 'pavucontrol'),
-    # python3 base (PIP)
-    (utilities_default_installer, utilities_default_verifier, 'python3-pip'),
-    # numlock auto on
-    (utilities_default_installer, utilities_default_verifier, 'numlockx'),
-    # `xte` and such `xautomation` tools
-    (utilities_default_installer, utilities_default_verifier, 'xautomation'),
-]
 
 config_entries = [
 
@@ -60,15 +20,11 @@ config_entries = [
                 description='install utilities',
                 shorthand='utl',
                 installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: [
-                            ex(util[0].format(util[2]), sudo=True) for util in utilities
-                        ],
-                        is_installed=lambda: [
-                            ex(util[1].format(sub_util)) == 0 for util in utilities for sub_util in util[2].split(' ')
-                        ]
-                    )
-                ]
+                    install_apt_utility([
+                        'python3-pip',
+                        'filezilla',
+                    ]),
+                ],
             ),
 
             # TeX Live
@@ -306,8 +262,38 @@ config_entries = [
                         is_installed=lambda: ex(
                             'command -v i3 >/dev/null'
                         ) == 0
-                    )
-                ]
+                    ),
+                    # install some utilities needed for making i3 more towards an actual DE
+                    install_apt_utility([
+                        # dex is needed for the GUI authentication prompt program (see the i3 config)
+                        'dex',
+                        # compton is a window compositor and background viewer
+                        'compton',
+                        # wallpaper program
+                        'feh',
+                        # control monitor backlight (laptop)
+                        'brightnessctl',
+                        # screenshots
+                        'maim',
+                        'xclip',
+                        'xdotool',
+                        # automatically turn the num lock
+                        'numlockx',
+                        # advanced (per-program) audio management utility
+                        'pavucontrol',
+                        # system-wide theme management
+                        'lxappearance',
+                        'qt5ct',
+                        # CPU power management
+                        'indicator-cpufreq',
+                        # media control
+                        'playerctl',
+                        # night mode
+                        'redshift',
+                        'redshift-gtk',
+                    ]),
+                    sudoers_nopasswd('brightnessctl'),
+                ],
             ),
 
             # theme
@@ -348,24 +334,30 @@ config_entries = [
             ),
 
             ConfigEntry(
-                description='install ‘second-keyboard’',
-                shorthand='skb',
+                description='set Xinput prop values for PCS touchpad (//TODO selectable item list)',
+                shorthand='pcs',
+                installation_packages=[
+                    toggle_fileblock(
+                        XIN + '/pcs-touchpad.sh',
+                        HD + '/.bashrc',
+                    ),
+                ],
+            ),
+
+            # KBCT — key remapping
+            ConfigEntry(
+                description='install KBCT (key remapping tool)',
+                shorthand='kbc',
                 installation_packages=[
                     InstallationPackage(
-                        install_func=lambda: [
-                            ex(
-                                SKD + '/activate.sh ' + CD,
-                                sudo=True
-                            )
-                        ],
+                        install_func=lambda: ex(
+                            ISD + '/install-kbct.sh'
+                        ),
                         is_installed=lambda: ex(
-                            'test -f ' + HD + '/second-keyboard/gain-access.sh'
-                        ) == 0
+                            'command -v kbct >/dev/null'
+                        ) == 0,
                     ),
-                    toggle_desktop_file_links(
-                        SKD + '/second-keyboard.desktop',
-                        '/usr/share/applications/second-keyboard.desktop',
-                    )
+                    sudoers_nopasswd('kbct'),
                 ]
             ),
 
@@ -399,7 +391,7 @@ config_entries = [
                         is_installed=lambda: [
                             os.path.exists(
                                 '/usr/share/fonts/truetype/' + x
-                            ) for x in ['merriweather', 'fira-code', 'fira-sans']
+                            ) for x in ['Merriweather', 'Fira Code', 'Fira Sans']
                         ]
                     )
                 ]
@@ -414,7 +406,8 @@ config_entries = [
                         USD,
                         '/opt/utility-scripts',
                         sudo=True
-                    )
+                    ),
+                    install_apt_utility('wmctrl'),
                 ]
             ),
 

@@ -2,8 +2,6 @@
 
 # primary modifier key (Super_L, left “Windows” key)
 set $mod Mod4
-# add a second modifier key (Pause/Break key)
-exec --no-startup-id xmodmap -e 'keysym Pause = Super_L'
 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -19,6 +17,7 @@ exec --no-startup-id nm-applet
 # default paths
 set $HOME /home/$USER
 set $PN /home/$USER/notebooks/personal-notebook
+set $CFD /home/$USER/notebooks/personal-notebook/config/config-files
 set $HK /home/$USER/notebooks/personal-notebook/config/hotkeys
 set $UTS /home/$USER/notebooks/personal-notebook/config/utility-scripts
 set $IMG /home/$USER/Bilder
@@ -45,8 +44,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight +10
-bindsym XF86MonBrightnessDown exec xbacklight -10
+bindsym XF86MonBrightnessUp exec sudo brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec sudo brightnessctl s 10%-
 
 
 # second keyboard layer (SKL)
@@ -54,8 +53,8 @@ set $skl "zweite Tastaturebene"
 mode $skl {
     # decrease the step for greater precision {
     # screen brightness
-    bindsym XF86MonBrightnessUp exec xbacklight +1
-    bindsym XF86MonBrightnessDown exec xbacklight -1
+    bindsym XF86MonBrightnessUp exec sudo brightnessctl s 1%+
+    bindsym XF86MonBrightnessDown exec sudo brightnessctl s 1%-
 
     # volume
     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
@@ -420,21 +419,21 @@ bar {
 
 # assign programs to workspaces
 
-# WS-1, communication: Discord, Telegram
-assign [class="(?i)discord"] workspace number $ws1
-for_window [class="(?i)discord"] layout tabbed
-assign [class="(?i)Telegram"] workspace number $ws1
-for_window [class="(?i)Telegram"] layout tabbed
-
-# WS-2, sound management
-assign [class="(?i)cinnamon-settings sound"] workspace number $ws2
-assign [class="(?i)pavucontrol"] workspace number $ws2
+# WS-1, sound management
+assign [class="(?i)cinnamon-settings sound"] workspace number $ws1
+assign [class="(?i)pavucontrol"] workspace number $ws1
 # OBS virtual projector
 # — keep it always visible (sticky) so it can be used for screen-sharing
 set $obs_projector (Windowed|Fullscreen)[[:blank:]]Projector.*
-assign [title="$obs_projector"] workspace number $ws2
+assign [title="$obs_projector"] workspace number $ws1
 for_window [title="$obs_projector"] floating enable
 for_window [title="$obs_projector"] sticky enable
+
+# WS-2, communication: Discord, Telegram
+assign [class="(?i)discord"] workspace number $ws2
+for_window [class="(?i)discord"] layout tabbed
+assign [class="(?i)Telegram"] workspace number $ws2
+for_window [class="(?i)Telegram"] layout tabbed
 
 # WS-19
 # send Zoom to its punishment closet for very poor behaviour
@@ -480,18 +479,22 @@ font pango:Fira Code Medium
 
 
 # autostart
-# apply themes (from Cinnamon)
-exec --no-startup-id csd-xsettings
 # disable screen auto–turning off
 exec --no-startup-id xset s off && xset s noblank && xset -dpms && xset dpms 0 0 0
 # turn on numlock
 exec --no-startup-id numlockx on
 # set wallpaper
-exec --no-startup-id feh --bg-fill ~/current-wallpaper
+exec_always --no-startup-id feh --bg-fill ~/current-wallpaper
 # redshift
 exec --no-startup-id redshift-gtk
 # allow “GUI sudo” — `pkexec` and such
 exec --no-startup-id dex /etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
+
+# CPU power management
+exec --no-startup-id indicator-cpufreq
+# KBCT — key remap
+# (restart always, when the program has stopped)
+exec_always --no-startup-id ps aux | grep -v grep | grep /usr/bin/kbct || sudo kbct remap --config $CFD/kbct/config.yml
 
 # browser
 exec --no-startup-id google-chrome-stable

@@ -15,7 +15,7 @@ sudo apt-get install -y \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
     | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
-ubuntu_codename=$(cat /etc/upstream-release/lsb-release | grep -i codename | awk -F'=' '{print $2}')
+ubuntu_codename=$(lsb_release -cs)
 
 echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
