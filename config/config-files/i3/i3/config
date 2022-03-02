@@ -489,6 +489,8 @@ exec --no-startup-id redshift-gtk
 # allow “GUI sudo” — `pkexec` and such
 exec --no-startup-id dex /etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
 
+# CPU power management
+exec --no-startup-id indicator-cpufreq
 # browser
 exec --no-startup-id google-chrome-stable
 # communication

@@ -304,6 +304,13 @@ config_entries = [
                         # system-wide theme management
                         'lxappearance',
                         'qt5ct',
+                        # CPU power management
+                        'indicator-cpufreq',
+                        # media control
+                        'playerctl',
+                        # night mode
+                        'redshift',
+                        'redshift-gtk',
                     ]),
                 ],
             ),
