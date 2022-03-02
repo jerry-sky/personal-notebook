@@ -1,4 +1,5 @@
 import os
+from helper.sudoers import sudoers_nopasswd
 from helper.utilities import install_apt_utility
 
 from model import ConfigEntry, InstallationPackage
@@ -291,6 +292,7 @@ config_entries = [
                         'redshift',
                         'redshift-gtk',
                     ]),
+                    sudoers_nopasswd('brightnessctl'),
                 ],
             ),
 
