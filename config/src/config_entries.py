@@ -1,5 +1,3 @@
-import getpass
-import pathlib
 import os
 from helper.utilities import install_apt_utility
 
@@ -7,26 +5,7 @@ from model import ConfigEntry, InstallationPackage
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
-
-# home directory
-HD = os.path.expanduser('~')
-# root config directory
-CD = str(pathlib.Path().absolute())
-# installation script directory
-ISD = CD + '/install-scripts'
-# config files directory
-CFD = CD + '/config-files'
-# utility scripts directory
-USD = CD + '/utility-scripts'
-# second-keyboard directory
-SKD = CD + '/second-keyboard'
-# audio directory
-AUD = CD + '/audio'
-# Xinput configs
-XIN = CD + '/xinput'
-
-# username
-USER = getpass.getuser()
+from env import AUD, CFD, HD, ISD, USD, XIN
 
 
 config_entries = [
