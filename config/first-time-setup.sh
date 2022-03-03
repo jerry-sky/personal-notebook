@@ -52,7 +52,7 @@ read email
 git config --global user.email "$email"
 # install password manager
 printf "\033[1m\nInstalling Git password manager…\033[0m\n"
-$APTI "libsecret-1-0" "libsecret-1-dev"
+$APTI "libsecret-1-0" "libsecret-1-dev" gcc make
 cd /usr/share/doc/git/contrib/credential/libsecret
 sudo make
 if [ $? != "0" ]; then
