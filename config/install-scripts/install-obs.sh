@@ -1,5 +1,7 @@
 #!/bin/bash
 
+CD="${BASH_SOURCE%/*}"
+
 printf "\n\033[1mOBS\033[0m\n"
 
 printf "\n\033[1mInstalling necessary dependencies…\033[0m\n"
@@ -11,16 +13,12 @@ sudo apt-get update
 sudo apt-get install -y obs-studio
 
 printf "\n\033[1mInstalling OBS WebSockets plugin…\033[0m\n"
-# find the link to the latest DEB installation package
-link=$(curl -sL https://github.com/Palakis/obs-websocket/releases/latest \
-    | perl -nle 'print $& if /\/Palakis\/.+\/download\/.+\.deb/g' \
-    | head -n1)
 # download the DEB package
-wget -q https://github.com$link -O /tmp/obs-websocket.deb
+wget -q https://github.com/obsproject/obs-websocket/releases/download/5.0.0-beta1/obs-websocket-5.0.0-beta1-Ubuntu64.deb -O /tmp/obs-websocket.deb
 # install
 sudo dpkg -i /tmp/obs-websocket.deb
-# install Python3 dependency
-sudo python3 -m pip install simpleobsws
+# install Python3 dependencies
+sudo python3 -m pip install -r $CD/../hotkeys/obs/requirements.txt
 
 printf "\n\033[1mInstalling OBS StreamFX plugin…\033[0m\n"
 # find the link to the latest version
