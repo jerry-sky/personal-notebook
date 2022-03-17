@@ -68,7 +68,7 @@ They define how a given program or environment behaves.
 The most notable one would be the configuration file for the i3 window manager.
 I use i3wm (and a few utility programs) as my main desktop environment.
 
-Details:
+Notes:
 - [KBCT](doc/kbct.md)
 
 
@@ -78,7 +78,7 @@ Contains a set of scripts that are dispatched using key combinations.
 
 1. Discord-specific scripts to activate the _deafen_ and _mute_ modes.
 2. Microphone toggle for turning on or off the microphone system-wide.
-3. OBS-specific scripts for switching between scenes and transitions.
+3. [OBS-specific scripts for switching between scenes and transitions](doc/obsws.md).
 
 
 ### Install scripts
