@@ -52,7 +52,44 @@ Run
 
 whilst being in the `config` directory.
 
-_Please note: this setup assumes the Cinnamon desktop environment_
-_is installed in the system._
+_Please note: this setup assumes the Cinnamon desktop environment is installed in the system._
+
+---
+
+
+## _Config_ components
+
+
+### Config files
+
+Contains all configuration files that are not programs or scripts.
+They define how a given program or environment behaves.
+
+The most notable one would be the configuration file for the i3 window manager.
+I use i3wm (and a few utility programs) as my main desktop environment.
+
+
+### Hotkeys
+
+Contains a set of scripts that are dispatched using key combinations.
+
+1. Discord-specific scripts to activate the _deafen_ and _mute_ modes.
+2. Microphone toggle for turning on or off the microphone system-wide.
+3. OBS-specific scripts for switching between scenes and transitions.
+
+
+### Install scripts
+
+Concerns scripts that install certain programs or environments.
+
+
+### Utility scripts
+
+Other scripts that do not fit the other categories.
+
+
+### Xinput
+
+Contains scripts for configuring peripheral devices such as mice and keyboards.
 
 ---
