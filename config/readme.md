@@ -68,6 +68,9 @@ They define how a given program or environment behaves.
 The most notable one would be the configuration file for the i3 window manager.
 I use i3wm (and a few utility programs) as my main desktop environment.
 
+Details:
+- [KBCT](doc/kbct.md)
+
 
 ### Hotkeys
 
@@ -81,6 +84,11 @@ Contains a set of scripts that are dispatched using key combinations.
 ### Install scripts
 
 Concerns scripts that install certain programs or environments.
+
+
+### Source files
+
+_Config Entries_ break the whole setup into easy-to-install pieces.
 
 
 ### Utility scripts
