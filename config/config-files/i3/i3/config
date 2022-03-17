@@ -71,36 +71,37 @@ mode $skl {
     bindsym c exec --no-startup-id $HK/discord-deafen.sh
 
     # OBS scene switcher
-    bindsym 1 exec --no-startup-id $HK/obs-switch-scene.py '1'
-    bindsym 2 exec --no-startup-id $HK/obs-switch-scene.py '2'
-    bindsym 3 exec --no-startup-id $HK/obs-switch-scene.py '3'
-    bindsym 4 exec --no-startup-id $HK/obs-switch-scene.py '4'
-    bindsym 5 exec --no-startup-id $HK/obs-switch-scene.py '5'
-    bindsym 6 exec --no-startup-id $HK/obs-switch-scene.py '6'
-    bindsym 7 exec --no-startup-id $HK/obs-switch-scene.py '7'
-    bindsym 8 exec --no-startup-id $HK/obs-switch-scene.py '8'
-    bindsym 9 exec --no-startup-id $HK/obs-switch-scene.py '9'
-    bindsym 0 exec --no-startup-id $HK/obs-switch-scene.py '0'
-    bindsym q exec --no-startup-id $HK/obs-switch-scene.py 'q'
-    bindsym w exec --no-startup-id $HK/obs-switch-scene.py 'w'
-    bindsym e exec --no-startup-id $HK/obs-switch-scene.py 'e'
-    bindsym r exec --no-startup-id $HK/obs-switch-scene.py 'r'
-    bindsym t exec --no-startup-id $HK/obs-switch-scene.py 't'
-    bindsym y exec --no-startup-id $HK/obs-switch-scene.py 'y'
-    bindsym u exec --no-startup-id $HK/obs-switch-scene.py 'u'
-    bindsym i exec --no-startup-id $HK/obs-switch-scene.py 'i'
-    bindsym o exec --no-startup-id $HK/obs-switch-scene.py 'o'
-    bindsym p exec --no-startup-id $HK/obs-switch-scene.py 'p'
+    bindsym 1 exec --no-startup-id $HK/obs/switch-scene.py '1'
+    bindsym 2 exec --no-startup-id $HK/obs/switch-scene.py '2'
+    bindsym 3 exec --no-startup-id $HK/obs/switch-scene.py '3'
+    bindsym 4 exec --no-startup-id $HK/obs/switch-scene.py '4'
+    bindsym 5 exec --no-startup-id $HK/obs/switch-scene.py '5'
+    bindsym 6 exec --no-startup-id $HK/obs/switch-scene.py '6'
+    bindsym 7 exec --no-startup-id $HK/obs/switch-scene.py '7'
+    bindsym 8 exec --no-startup-id $HK/obs/switch-scene.py '8'
+    bindsym 9 exec --no-startup-id $HK/obs/switch-scene.py '9'
+    bindsym 0 exec --no-startup-id $HK/obs/switch-scene.py '0'
+    bindsym q exec --no-startup-id $HK/obs/switch-scene.py 'q'
+    bindsym w exec --no-startup-id $HK/obs/switch-scene.py 'w'
+    bindsym e exec --no-startup-id $HK/obs/switch-scene.py 'e'
+    bindsym r exec --no-startup-id $HK/obs/switch-scene.py 'r'
+    bindsym t exec --no-startup-id $HK/obs/switch-scene.py 't'
+    bindsym y exec --no-startup-id $HK/obs/switch-scene.py 'y'
+    bindsym u exec --no-startup-id $HK/obs/switch-scene.py 'u'
+    bindsym i exec --no-startup-id $HK/obs/switch-scene.py 'i'
+    bindsym o exec --no-startup-id $HK/obs/switch-scene.py 'o'
+    bindsym p exec --no-startup-id $HK/obs/switch-scene.py 'p'
 
     # OBS transitions
-    bindsym m exec --no-startup-id $HK/obs-transitions.py 'm'
-    bindsym comma exec --no-startup-id $HK/obs-transitions.py 'comma'
-    bindsym period exec --no-startup-id $HK/obs-transitions.py 'period'
-    bindsym slash exec --no-startup-id $HK/obs-transitions.py 'slash'
+    bindsym m exec --no-startup-id $HK/obs/set-transition.py 'm'
+    bindsym comma exec --no-startup-id $HK/obs/set-transition.py 'comma'
+    bindsym period exec --no-startup-id $HK/obs/set-transition.py 'period'
+    bindsym slash exec --no-startup-id $HK/obs/set-transition.py 'slash'
     #}
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+Escape mode "default"
     bindsym $mod+p mode "default"
     bindsym $mod+o mode $workspace
 }
@@ -233,6 +234,7 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym $mod+Escape mode "default"
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
