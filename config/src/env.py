@@ -4,6 +4,7 @@ import pathlib
 
 # home directory
 HD = os.path.expanduser('~')
+RHD = '/root'
 # root config directory
 CD = str(pathlib.Path().absolute())
 # installation script directory

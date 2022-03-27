@@ -6,7 +6,7 @@ from model import ConfigEntry, InstallationPackage
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
-from env import AUD, CFD, HD, ISD, USD, XIN
+from env import AUD, CFD, HD, ISD, USD, XIN, RHD
 
 
 config_entries = [
@@ -328,6 +328,10 @@ config_entries = [
                     toggle_file_links(
                         CFD + '/i3/dunst/dunstrc',
                         HD + '/.config/dunst/dunstrc'
+                    ),
+                    toggle_file_links(
+                        CFD + '/i3/dunst/dunstrc',
+                        RHD + '/.config/dunst/dunstrc'
                     ),
                     toggle_file_links(
                         CFD + '/i3/compton/compton.conf',
