@@ -46,3 +46,12 @@ SET FOREIGN_KEY_CHECKS = 1;
 ```
 
 [Source](https://stackoverflow.com/a/45597248/4249875)
+
+
+## Big data
+
+A data set of 9 million tuples is nothing for a relational database.
+For maintaining sufficient performance as always use indexes
+and all will be well.
+
+[Source](https://connor-mcdonald.com/2021/11/13/when-does-a-table-become-too-big)
