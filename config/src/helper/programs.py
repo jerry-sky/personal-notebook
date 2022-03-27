@@ -1,4 +1,3 @@
-from heapq import merge
 from typing import List, Union
 from model import InstallationPackage
 from helper.ex import ex
@@ -15,7 +14,7 @@ def __gen_ex(merge: bool, command: str, program_name):
                         for p in program_name]
 
 
-def __install_utility(
+def __install_program(
     program_name: PROGRAM_NAME,
     install_command: str,
     uninstall_command: str,
@@ -50,11 +49,11 @@ def __install_utility(
         )
 
 
-def install_apt_utility(program_name: PROGRAM_NAME) -> InstallationPackage:
+def install_apt_program(program_name: PROGRAM_NAME) -> InstallationPackage:
     '''
     Installs given program(s) through Aptitude.
     '''
-    return __install_utility(
+    return __install_program(
         program_name=program_name,
         install_command='sudo apt install -y {0}',
         uninstall_command='sudo apt remove -y {0}',
@@ -63,11 +62,11 @@ def install_apt_utility(program_name: PROGRAM_NAME) -> InstallationPackage:
     )
 
 
-def install_python_utility(program_name: PROGRAM_NAME) -> InstallationPackage:
+def install_python_program(program_name: PROGRAM_NAME) -> InstallationPackage:
     '''
     Installs given program(s) through Python installer (PIP).
     '''
-    return __install_utility(
+    return __install_program(
         program_name=program_name,
         install_command='python3 -m pip install {0}',
         uninstall_command='python3 -m pip uninstall {0}',
