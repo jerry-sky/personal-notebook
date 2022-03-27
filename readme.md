@@ -63,7 +63,7 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 - [General (TypeScript, NodeJS)](web-dev/general.md)
 - [Angular Notes](web-dev/angular-notes.md)
 - [CSS/SCSS + HTML](web-dev/css-scss-html-notes.md)
-- [SQL](web-dev/sql-notes.md)
+- [Database notes](web-dev/database-notes.md)
 
 ### Abstract
 
