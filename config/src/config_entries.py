@@ -1,15 +1,15 @@
 import os
 from helper.sudoers import sudoers_nopasswd
-from config.src.helper.programs import install_apt_program, install_python_program
+from helper.programs import install_apt_program, install_python_program
 
-from model import ConfigEntry, InstallationPackage
+from model import ConfigEntries, ConfigEntry, InstallationPackage
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
 from env import AUD, CFD, HD, ISD, USD, XIN, RHD
 
 
-config_entries = [
+config_entries: ConfigEntries = [
 
     {
         'name': 'Programs and utilities',
@@ -459,6 +459,3 @@ config_entries = [
     }
 
 ]
-
-# flatten the list
-config_entries_flat = [ce for group in config_entries for ce in group['list']]

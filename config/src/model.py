@@ -1,7 +1,6 @@
 from typing import Union, List
 from types import FunctionType
 from enum import Enum
-from typing_extensions import Self
 
 
 class Status(Enum):
@@ -81,14 +80,14 @@ class ConfigEntry(object):
     __description: str
     __shorthand: str
     __installation_packages: List[InstallationPackage]
-    __child_entries: List[Self] = []
+    __child_entries: List = []
 
     def __init__(
         self,
         description: str,
         shorthand: str,
         installation_packages: Union[List[InstallationPackage], InstallationPackage],
-        child_entries: Self = []
+        child_entries: List = [],
     ):
         self.__description = description
         self.__shorthand = shorthand
@@ -163,3 +162,11 @@ class ConfigEntry(object):
         else:
             for i in self.__installation_packages:
                 i.uninstall()
+
+
+class ConfigEntryGroup(object):
+    name: str
+    list: List[ConfigEntry]
+
+
+ConfigEntries = List[ConfigEntryGroup]
