@@ -1,3 +1,4 @@
+from heapq import merge
 from typing import List, Union
 from model import InstallationPackage
 from helper.ex import ex
@@ -58,5 +59,18 @@ def install_apt_utility(program_name: PROGRAM_NAME) -> InstallationPackage:
         install_command='sudo apt install -y {0}',
         uninstall_command='sudo apt remove -y {0}',
         verify_installation='command -v {0} >/dev/null || dpkg -s {0} 2>/dev/null >/dev/null',
+        merge_map=[True, True, False],
+    )
+
+
+def install_python_utility(program_name: PROGRAM_NAME) -> InstallationPackage:
+    '''
+    Installs given program(s) through Python installer (PIP).
+    '''
+    return __install_utility(
+        program_name=program_name,
+        install_command='python3 -m pip install {0}',
+        uninstall_command='python3 -m pip uninstall {0}',
+        verify_installation='python3 -m pip show {0} 2>/dev/null >/dev/null',
         merge_map=[True, True, False],
     )

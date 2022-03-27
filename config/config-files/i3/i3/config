@@ -165,6 +165,7 @@ bindsym $mod+Shift+x mode $session
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+bindsym $mod+Ctrl+Shift+r exec --no-startup-id autorandr --change
 
 
 # split in horizontal orientation

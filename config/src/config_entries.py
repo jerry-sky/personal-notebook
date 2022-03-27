@@ -1,12 +1,12 @@
 import os
 from helper.sudoers import sudoers_nopasswd
-from helper.utilities import install_apt_utility
+from helper.utilities import install_apt_utility, install_python_utility
 
 from model import ConfigEntry, InstallationPackage
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
-from env import AUD, CFD, HD, ISD, USD, XIN
+from env import AUD, CFD, HD, ISD, USD, XIN, RHD
 
 
 config_entries = [
@@ -250,7 +250,7 @@ config_entries = [
         'name': 'Desktop environment',
         'list': [
 
-            # i3-gaps
+            # i3 WM
             ConfigEntry(
                 description='install i3 WM',
                 shorthand='i3w',
@@ -293,6 +293,9 @@ config_entries = [
                         'redshift-gtk',
                     ]),
                     sudoers_nopasswd('brightnessctl'),
+                    install_python_utility([
+                        'autorandr',
+                    ])
                 ],
             ),
 
@@ -325,6 +328,10 @@ config_entries = [
                     toggle_file_links(
                         CFD + '/i3/dunst/dunstrc',
                         HD + '/.config/dunst/dunstrc'
+                    ),
+                    toggle_file_links(
+                        CFD + '/i3/dunst/dunstrc',
+                        RHD + '/.config/dunst/dunstrc'
                     ),
                     toggle_file_links(
                         CFD + '/i3/compton/compton.conf',
