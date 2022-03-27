@@ -1,6 +1,6 @@
 import os
 from helper.sudoers import sudoers_nopasswd
-from helper.utilities import install_apt_utility
+from helper.utilities import install_apt_utility, install_python_utility
 
 from model import ConfigEntry, InstallationPackage
 from helper.files import toggle_fileblock
@@ -250,7 +250,7 @@ config_entries = [
         'name': 'Desktop environment',
         'list': [
 
-            # i3-gaps
+            # i3 WM
             ConfigEntry(
                 description='install i3 WM',
                 shorthand='i3w',
@@ -293,6 +293,9 @@ config_entries = [
                         'redshift-gtk',
                     ]),
                     sudoers_nopasswd('brightnessctl'),
+                    install_python_utility([
+                        'autorandr',
+                    ])
                 ],
             ),
 
