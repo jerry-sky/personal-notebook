@@ -1,6 +1,7 @@
 from typing import Union, List
 from types import FunctionType
 from enum import Enum
+from typing_extensions import Self
 
 
 class Status(Enum):
@@ -80,10 +81,18 @@ class ConfigEntry(object):
     __description: str
     __shorthand: str
     __installation_packages: List[InstallationPackage]
+    __child_entries: List[Self] = []
 
-    def __init__(self, description: str, shorthand: str, installation_packages: Union[List[InstallationPackage], InstallationPackage]):
+    def __init__(
+        self,
+        description: str,
+        shorthand: str,
+        installation_packages: Union[List[InstallationPackage], InstallationPackage],
+        child_entries: Self = []
+    ):
         self.__description = description
         self.__shorthand = shorthand
+        self.__child_entries = child_entries
 
         # ensure it is a list of installation packages
         if type(installation_packages) is list:
@@ -145,8 +154,12 @@ class ConfigEntry(object):
         '''
         Uninstalls all installation packages related to this config entry.
         '''
+        # uninstall child entries first
+        for c in self.__child_entries:
+            c.uninstall()
+        # uninstall self
         if self.is_immutable:
             return
-
-        for i in self.__installation_packages:
-            i.uninstall()
+        else:
+            for i in self.__installation_packages:
+                i.uninstall()
