@@ -1,15 +1,15 @@
 import os
 from helper.sudoers import sudoers_nopasswd
-from helper.utilities import install_apt_utility, install_python_utility
+from helper.programs import install_apt_program, install_python_program
 
-from model import ConfigEntry, InstallationPackage
+from model import ConfigEntries, ConfigEntry, InstallationPackage
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
 from env import AUD, CFD, HD, ISD, USD, XIN, RHD
 
 
-config_entries = [
+config_entries: ConfigEntries = [
 
     {
         'name': 'Programs and utilities',
@@ -20,7 +20,7 @@ config_entries = [
                 description='install utilities',
                 shorthand='utl',
                 installation_packages=[
-                    install_apt_utility([
+                    install_apt_program([
                         'python3-pip',
                         'filezilla',
                     ]),
@@ -264,7 +264,7 @@ config_entries = [
                         ) == 0
                     ),
                     # install some utilities needed for making i3 more towards an actual DE
-                    install_apt_utility([
+                    install_apt_program([
                         # dex is needed for the GUI authentication prompt program (see the i3 config)
                         'dex',
                         # compton is a window compositor and background viewer
@@ -293,7 +293,7 @@ config_entries = [
                         'redshift-gtk',
                     ]),
                     sudoers_nopasswd('brightnessctl'),
-                    install_python_utility([
+                    install_python_program([
                         'autorandr',
                     ])
                 ],
@@ -414,7 +414,7 @@ config_entries = [
                         '/opt/utility-scripts',
                         sudo=True
                     ),
-                    install_apt_utility('wmctrl'),
+                    install_apt_program('wmctrl'),
                 ]
             ),
 
@@ -459,6 +459,3 @@ config_entries = [
     }
 
 ]
-
-# flatten the list
-config_entries_flat = [ce for group in config_entries for ce in group['list']]
