@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
                 elif command in ['list', 'l', 'a']:
                     # user wants to see all available entries
-                    print_available_options()
+                    print_available_options(config_entries)
 
                 else:
                     # unrecognized command given

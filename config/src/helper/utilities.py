@@ -111,7 +111,7 @@ def execute_entry(config_entry: ConfigEntry) -> bool:
     # ask the user what he wants to do with the entry
     print('\033[1mChoose between:')
     for o in available_options:
-        print('  \033[4m' + o[:1] + '\033[0;1m' + o[2:])
+        print('  \033[4m' + o[:1] + '\033[0;1m' + o[1:])
 
     # take only first two letters from the names of the options
     # — user has to input these two letters of their chosen option
