@@ -48,66 +48,6 @@ bindsym XF86MonBrightnessUp exec sudo brightnessctl s 10%+
 bindsym XF86MonBrightnessDown exec sudo brightnessctl s 10%-
 
 
-# second keyboard layer (SKL)
-set $skl "zweite Tastaturebene"
-mode $skl {
-    # decrease the step for greater precision {
-    # screen brightness
-    bindsym XF86MonBrightnessUp exec sudo brightnessctl s 1%+
-    bindsym XF86MonBrightnessDown exec sudo brightnessctl s 1%-
-
-    # volume
-    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
-    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
-    # }
-
-    # useful special commands {
-
-    # microphone toggle
-    bindsym space exec --no-startup-id $HK/microphone-toggle.sh
-
-    # Discord
-    bindsym x exec --no-startup-id $HK/discord-mute.sh
-    bindsym c exec --no-startup-id $HK/discord-deafen.sh
-
-    # OBS scene switcher
-    bindsym 1 exec --no-startup-id $HK/obs/switch-scene.py '1'
-    bindsym 2 exec --no-startup-id $HK/obs/switch-scene.py '2'
-    bindsym 3 exec --no-startup-id $HK/obs/switch-scene.py '3'
-    bindsym 4 exec --no-startup-id $HK/obs/switch-scene.py '4'
-    bindsym 5 exec --no-startup-id $HK/obs/switch-scene.py '5'
-    bindsym 6 exec --no-startup-id $HK/obs/switch-scene.py '6'
-    bindsym 7 exec --no-startup-id $HK/obs/switch-scene.py '7'
-    bindsym 8 exec --no-startup-id $HK/obs/switch-scene.py '8'
-    bindsym 9 exec --no-startup-id $HK/obs/switch-scene.py '9'
-    bindsym 0 exec --no-startup-id $HK/obs/switch-scene.py '0'
-    bindsym q exec --no-startup-id $HK/obs/switch-scene.py 'q'
-    bindsym w exec --no-startup-id $HK/obs/switch-scene.py 'w'
-    bindsym e exec --no-startup-id $HK/obs/switch-scene.py 'e'
-    bindsym r exec --no-startup-id $HK/obs/switch-scene.py 'r'
-    bindsym t exec --no-startup-id $HK/obs/switch-scene.py 't'
-    bindsym y exec --no-startup-id $HK/obs/switch-scene.py 'y'
-    bindsym u exec --no-startup-id $HK/obs/switch-scene.py 'u'
-    bindsym i exec --no-startup-id $HK/obs/switch-scene.py 'i'
-    bindsym o exec --no-startup-id $HK/obs/switch-scene.py 'o'
-    bindsym p exec --no-startup-id $HK/obs/switch-scene.py 'p'
-
-    # OBS transitions
-    bindsym m exec --no-startup-id $HK/obs/set-transition.py 'm'
-    bindsym comma exec --no-startup-id $HK/obs/set-transition.py 'comma'
-    bindsym period exec --no-startup-id $HK/obs/set-transition.py 'period'
-    bindsym slash exec --no-startup-id $HK/obs/set-transition.py 'slash'
-    #}
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+Escape mode "default"
-    bindsym $mod+p mode "default"
-    bindsym $mod+o mode $workspace
-}
-bindsym $mod+p mode $skl
-
-
 # screenshots
 # default maim command
 set $maim maim --color=0.67,0.0,0.87,0.04 -l
@@ -264,6 +204,18 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+set $ws21 "21"
+set $ws22 "22"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -276,6 +228,18 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+bindsym $mod+F1 workspace number $ws11
+bindsym $mod+F2 workspace number $ws12
+bindsym $mod+F3 workspace number $ws13
+bindsym $mod+F4 workspace number $ws14
+bindsym $mod+F5 workspace number $ws15
+bindsym $mod+F6 workspace number $ws16
+bindsym $mod+F7 workspace number $ws17
+bindsym $mod+F8 workspace number $ws18
+bindsym $mod+F9 workspace number $ws19
+bindsym $mod+F10 workspace number $ws20
+bindsym $mod+F11 workspace number $ws21
+bindsym $mod+F12 workspace number $ws22
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -288,89 +252,18 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-
-set $ws11 "11"
-set $ws12 "12"
-set $ws13 "13"
-set $ws14 "14"
-set $ws15 "15"
-set $ws16 "16"
-set $ws17 "17"
-set $ws18 "18"
-set $ws19 "19"
-set $ws20 "20"
-
-set $workspace "Arbeitsflächen"
-mode $workspace {
-
-    # change focus
-    bindsym Left focus left
-    bindsym Down focus down
-    bindsym Up focus up
-    bindsym Right focus right
-
-    # move focused window
-    bindsym Shift+Left move left
-    bindsym Shift+Down move down
-    bindsym Shift+Up move up
-    bindsym Shift+Right move right
-
-    # switch to workspace
-    bindsym 1 workspace number $ws1
-    bindsym 2 workspace number $ws2
-    bindsym 3 workspace number $ws3
-    bindsym 4 workspace number $ws4
-    bindsym 5 workspace number $ws5
-    bindsym 6 workspace number $ws6
-    bindsym 7 workspace number $ws7
-    bindsym 8 workspace number $ws8
-    bindsym 9 workspace number $ws9
-    bindsym 0 workspace number $ws10
-
-    bindsym $mod+1 workspace number $ws11
-    bindsym $mod+2 workspace number $ws12
-    bindsym $mod+3 workspace number $ws13
-    bindsym $mod+4 workspace number $ws14
-    bindsym $mod+5 workspace number $ws15
-    bindsym $mod+6 workspace number $ws16
-    bindsym $mod+7 workspace number $ws17
-    bindsym $mod+8 workspace number $ws18
-    bindsym $mod+9 workspace number $ws19
-    bindsym $mod+0 workspace number $ws20
-
-    # move focused container to workspace
-    bindsym Shift+1 move container to workspace number $ws1
-    bindsym Shift+2 move container to workspace number $ws2
-    bindsym Shift+3 move container to workspace number $ws3
-    bindsym Shift+4 move container to workspace number $ws4
-    bindsym Shift+5 move container to workspace number $ws5
-    bindsym Shift+6 move container to workspace number $ws6
-    bindsym Shift+7 move container to workspace number $ws7
-    bindsym Shift+8 move container to workspace number $ws8
-    bindsym Shift+9 move container to workspace number $ws9
-    bindsym Shift+0 move container to workspace number $ws10
-
-    bindsym $mod+Shift+1 move container to workspace number $ws11
-    bindsym $mod+Shift+2 move container to workspace number $ws12
-    bindsym $mod+Shift+3 move container to workspace number $ws13
-    bindsym $mod+Shift+4 move container to workspace number $ws14
-    bindsym $mod+Shift+5 move container to workspace number $ws15
-    bindsym $mod+Shift+6 move container to workspace number $ws16
-    bindsym $mod+Shift+7 move container to workspace number $ws17
-    bindsym $mod+Shift+8 move container to workspace number $ws18
-    bindsym $mod+Shift+9 move container to workspace number $ws19
-    bindsym $mod+Shift+0 move container to workspace number $ws20
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+o mode "default"
-    bindsym $mod+p mode $skl
-}
-bindsym $mod+o mode $workspace
-
-
-# switch back between two recently opened workspaces
-workspace_auto_back_and_forth yes
+bindsym $mod+Shift+F1 workspace number $ws11
+bindsym $mod+Shift+F2 workspace number $ws12
+bindsym $mod+Shift+F3 workspace number $ws13
+bindsym $mod+Shift+F4 workspace number $ws14
+bindsym $mod+Shift+F5 workspace number $ws15
+bindsym $mod+Shift+F6 workspace number $ws16
+bindsym $mod+Shift+F7 workspace number $ws17
+bindsym $mod+Shift+F8 workspace number $ws18
+bindsym $mod+Shift+F9 workspace number $ws19
+bindsym $mod+Shift+F10 workspace number $ws20
+bindsym $mod+Shift+F11 workspace number $ws21
+bindsym $mod+Shift+F12 workspace number $ws22
 
 bindsym $mod+Prior workspace prev_on_output
 bindsym $mod+Next workspace next_on_output
@@ -385,6 +278,132 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Up move workspace to output up
 bindsym $mod+Ctrl+Shift+Down move workspace to output down
+
+# switch back and forth between two recently opened workspaces
+workspace_auto_back_and_forth yes
+
+
+# second keyboard layer (SKL)
+set $skl "zweite Tastaturebene"
+mode $skl {
+    # decrease the step for greater precision {
+    # screen brightness
+    bindsym XF86MonBrightnessUp exec sudo brightnessctl s 1%+
+    bindsym XF86MonBrightnessDown exec sudo brightnessctl s 1%-
+
+    # volume
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+    # }
+
+    # useful special commands {
+
+    # microphone toggle
+    bindsym space exec --no-startup-id $HK/microphone-toggle.sh
+    bindsym $mod+space exec --no-startup-id $HK/microphone-toggle.sh
+    bindsym $mod+m exec --no-startup-id $HK/microphone-toggle.sh
+
+    # Discord
+    bindsym x exec
+    bindsym c exec --no-startup-id $HK/discord-deafen.sh
+
+    # OBS scene switcher
+    bindsym 1 exec --no-startup-id $HK/obs/switch-scene.py '1'
+    bindsym 2 exec --no-startup-id $HK/obs/switch-scene.py '2'
+    bindsym 3 exec --no-startup-id $HK/obs/switch-scene.py '3'
+    bindsym 4 exec --no-startup-id $HK/obs/switch-scene.py '4'
+    bindsym 5 exec --no-startup-id $HK/obs/switch-scene.py '5'
+    bindsym 6 exec --no-startup-id $HK/obs/switch-scene.py '6'
+    bindsym 7 exec --no-startup-id $HK/obs/switch-scene.py '7'
+    bindsym 8 exec --no-startup-id $HK/obs/switch-scene.py '8'
+    bindsym 9 exec --no-startup-id $HK/obs/switch-scene.py '9'
+    bindsym 0 exec --no-startup-id $HK/obs/switch-scene.py '0'
+    bindsym q exec --no-startup-id $HK/obs/switch-scene.py 'q'
+    bindsym w exec --no-startup-id $HK/obs/switch-scene.py 'w'
+    bindsym e exec --no-startup-id $HK/obs/switch-scene.py 'e'
+    bindsym r exec --no-startup-id $HK/obs/switch-scene.py 'r'
+    bindsym t exec --no-startup-id $HK/obs/switch-scene.py 't'
+    bindsym y exec --no-startup-id $HK/obs/switch-scene.py 'y'
+    bindsym u exec --no-startup-id $HK/obs/switch-scene.py 'u'
+    bindsym i exec --no-startup-id $HK/obs/switch-scene.py 'i'
+    bindsym o exec --no-startup-id $HK/obs/switch-scene.py 'o'
+    bindsym p exec --no-startup-id $HK/obs/switch-scene.py 'p'
+
+    # OBS transitions
+    bindsym m exec --no-startup-id $HK/obs/set-transition.py 'm'
+    bindsym comma exec --no-startup-id $HK/obs/set-transition.py 'comma'
+    bindsym period exec --no-startup-id $HK/obs/set-transition.py 'period'
+    bindsym slash exec --no-startup-id $HK/obs/set-transition.py 'slash'
+    #}
+
+    # switch to workspace
+    bindsym $mod+1 workspace number $ws1
+    bindsym $mod+2 workspace number $ws2
+    bindsym $mod+3 workspace number $ws3
+    bindsym $mod+4 workspace number $ws4
+    bindsym $mod+5 workspace number $ws5
+    bindsym $mod+6 workspace number $ws6
+    bindsym $mod+7 workspace number $ws7
+    bindsym $mod+8 workspace number $ws8
+    bindsym $mod+9 workspace number $ws9
+    bindsym $mod+0 workspace number $ws10
+    bindsym $mod+F1 workspace number $ws11
+    bindsym $mod+F2 workspace number $ws12
+    bindsym $mod+F3 workspace number $ws13
+    bindsym $mod+F4 workspace number $ws14
+    bindsym $mod+F5 workspace number $ws15
+    bindsym $mod+F6 workspace number $ws16
+    bindsym $mod+F7 workspace number $ws17
+    bindsym $mod+F8 workspace number $ws18
+    bindsym $mod+F9 workspace number $ws19
+    bindsym $mod+F10 workspace number $ws20
+    bindsym $mod+F11 workspace number $ws21
+    bindsym $mod+F12 workspace number $ws22
+
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number $ws1
+    bindsym $mod+Shift+2 move container to workspace number $ws2
+    bindsym $mod+Shift+3 move container to workspace number $ws3
+    bindsym $mod+Shift+4 move container to workspace number $ws4
+    bindsym $mod+Shift+5 move container to workspace number $ws5
+    bindsym $mod+Shift+6 move container to workspace number $ws6
+    bindsym $mod+Shift+7 move container to workspace number $ws7
+    bindsym $mod+Shift+8 move container to workspace number $ws8
+    bindsym $mod+Shift+9 move container to workspace number $ws9
+    bindsym $mod+Shift+0 move container to workspace number $ws10
+    bindsym $mod+Shift+F1 workspace number $ws11
+    bindsym $mod+Shift+F2 workspace number $ws12
+    bindsym $mod+Shift+F3 workspace number $ws13
+    bindsym $mod+Shift+F4 workspace number $ws14
+    bindsym $mod+Shift+F5 workspace number $ws15
+    bindsym $mod+Shift+F6 workspace number $ws16
+    bindsym $mod+Shift+F7 workspace number $ws17
+    bindsym $mod+Shift+F8 workspace number $ws18
+    bindsym $mod+Shift+F9 workspace number $ws19
+    bindsym $mod+Shift+F10 workspace number $ws20
+    bindsym $mod+Shift+F11 workspace number $ws21
+    bindsym $mod+Shift+F12 workspace number $ws22
+
+    bindsym $mod+Prior workspace prev_on_output
+    bindsym $mod+Next workspace next_on_output
+
+    # switch between monitors
+    bindsym $mod+Ctrl+Right focus output right
+    bindsym $mod+Ctrl+Left focus output left
+    bindsym $mod+Ctrl+Up focus output up
+    bindsym $mod+Ctrl+Down focus output down
+    # move workspaces between monitors
+    bindsym $mod+Ctrl+Shift+Right move workspace to output right
+    bindsym $mod+Ctrl+Shift+Left move workspace to output left
+    bindsym $mod+Ctrl+Shift+Up move workspace to output up
+    bindsym $mod+Ctrl+Shift+Down move workspace to output down
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "default"
+    bindsym $mod+p mode "default"
+}
+bindsym $mod+p mode $skl
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
