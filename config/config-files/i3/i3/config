@@ -252,18 +252,18 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-bindsym $mod+Shift+F1 workspace number $ws11
-bindsym $mod+Shift+F2 workspace number $ws12
-bindsym $mod+Shift+F3 workspace number $ws13
-bindsym $mod+Shift+F4 workspace number $ws14
-bindsym $mod+Shift+F5 workspace number $ws15
-bindsym $mod+Shift+F6 workspace number $ws16
-bindsym $mod+Shift+F7 workspace number $ws17
-bindsym $mod+Shift+F8 workspace number $ws18
-bindsym $mod+Shift+F9 workspace number $ws19
-bindsym $mod+Shift+F10 workspace number $ws20
-bindsym $mod+Shift+F11 workspace number $ws21
-bindsym $mod+Shift+F12 workspace number $ws22
+bindsym $mod+Shift+F1 move container to workspace number $ws11
+bindsym $mod+Shift+F2 move container to workspace number $ws12
+bindsym $mod+Shift+F3 move container to workspace number $ws13
+bindsym $mod+Shift+F4 move container to workspace number $ws14
+bindsym $mod+Shift+F5 move container to workspace number $ws15
+bindsym $mod+Shift+F6 move container to workspace number $ws16
+bindsym $mod+Shift+F7 move container to workspace number $ws17
+bindsym $mod+Shift+F8 move container to workspace number $ws18
+bindsym $mod+Shift+F9 move container to workspace number $ws19
+bindsym $mod+Shift+F10 move container to workspace number $ws20
+bindsym $mod+Shift+F11 move container to workspace number $ws21
+bindsym $mod+Shift+F12 move container to workspace number $ws22
 
 bindsym $mod+Prior workspace prev_on_output
 bindsym $mod+Next workspace next_on_output
@@ -371,18 +371,18 @@ mode $skl {
     bindsym $mod+Shift+8 move container to workspace number $ws8
     bindsym $mod+Shift+9 move container to workspace number $ws9
     bindsym $mod+Shift+0 move container to workspace number $ws10
-    bindsym $mod+Shift+F1 workspace number $ws11
-    bindsym $mod+Shift+F2 workspace number $ws12
-    bindsym $mod+Shift+F3 workspace number $ws13
-    bindsym $mod+Shift+F4 workspace number $ws14
-    bindsym $mod+Shift+F5 workspace number $ws15
-    bindsym $mod+Shift+F6 workspace number $ws16
-    bindsym $mod+Shift+F7 workspace number $ws17
-    bindsym $mod+Shift+F8 workspace number $ws18
-    bindsym $mod+Shift+F9 workspace number $ws19
-    bindsym $mod+Shift+F10 workspace number $ws20
-    bindsym $mod+Shift+F11 workspace number $ws21
-    bindsym $mod+Shift+F12 workspace number $ws22
+    bindsym $mod+Shift+F1 move container to workspace number $ws11
+    bindsym $mod+Shift+F2 move container to workspace number $ws12
+    bindsym $mod+Shift+F3 move container to workspace number $ws13
+    bindsym $mod+Shift+F4 move container to workspace number $ws14
+    bindsym $mod+Shift+F5 move container to workspace number $ws15
+    bindsym $mod+Shift+F6 move container to workspace number $ws16
+    bindsym $mod+Shift+F7 move container to workspace number $ws17
+    bindsym $mod+Shift+F8 move container to workspace number $ws18
+    bindsym $mod+Shift+F9 move container to workspace number $ws19
+    bindsym $mod+Shift+F10 move container to workspace number $ws20
+    bindsym $mod+Shift+F11 move container to workspace number $ws21
+    bindsym $mod+Shift+F12 move container to workspace number $ws22
 
     bindsym $mod+Prior workspace prev_on_output
     bindsym $mod+Next workspace next_on_output
