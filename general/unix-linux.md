@@ -286,3 +286,33 @@ Using `convert` from the `imagemagick` package you can cut down on size for imag
 Source: [Answer on StackOverflow](https://stackoverflow.com/a/7262050)
 
 ---
+
+
+
+## Nvidia + Intel flickering
+
+To resolve flickering for laptops with Nvidia+Intel graphics turn off PSR.
+
+PSR is Intel’s Panel Self Refresh setting which caches some frames to display them later.
+This functionality may cause these flickering problems because of some
+memory leaking from the frame buffer, causing the display to show unsynced content.
+
+To verify PSR is turned on run
+```bash
+cat /sys/kernel/debug/dri/0/i915_edp_psr_status
+```
+with root privileges.
+
+If it is indeed turned on, modify `/etc/default/grub`:
+```diff
+-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
++GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i915.enable_psr=0"
+```
+and run
+```bash
+update-grub
+```
+with root privileges to turn this feature off and reboot the computer to apply the changes.
+
+
+Source: [Lj Miranda](https://ljvmiranda921.github.io/notebook/2021/09/01/linux-thinkpad-screen-flicker/)
