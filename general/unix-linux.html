@@ -438,5 +438,18 @@ Categories=Network;WebBrowser;
 <p>Using <code>convert</code> from the <code>imagemagick</code> package you can cut down on size for image files.</p>
 <p>Source: <a href="https://stackoverflow.com/a/7262050">Answer on StackOverflow</a></p>
 <hr />
+<h2 id="nvidia--intel-flickering">Nvidia + Intel flickering</h2>
+<p>To resolve flickering for laptops with Nvidia+Intel graphics turn off PSR.</p>
+<p>PSR is Intel’s Panel Self Refresh setting which caches some frames to display them later. This functionality may cause these flickering problems because of some memory leaking from the frame buffer, causing the display to show unsynced content.</p>
+<p>To verify PSR is turned on run</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /sys/kernel/debug/dri/0/i915_edp_psr_status</span></code></pre></div>
+<p>with root privileges.</p>
+<p>If it is indeed turned on, modify <code>/etc/default/grub</code>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode diff"><code class="sourceCode diff"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="st">-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash i915.enable_psr=0&quot;</span></span></code></pre></div>
+<p>and run</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">update-grub</span></span></code></pre></div>
+<p>with root privileges to turn this feature off and reboot the computer to apply the changes.</p>
+<p>Source: <a href="https://ljvmiranda921.github.io/notebook/2021/09/01/linux-thinkpad-screen-flicker/">Lj Miranda</a></p>
 </body>
 </html>
