@@ -1,0 +1,11 @@
+[Unit]
+Description=KBCT key mapper
+
+[Service]
+User=root
+WorkingDirectory=/usr/bin
+ExecStart=kbct remap --config /etc/kbct/config.yml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
