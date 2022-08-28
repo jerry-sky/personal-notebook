@@ -2,11 +2,11 @@ import os
 from helper.sudoers import sudoers_nopasswd
 from helper.programs import install_apt_program, install_python_program
 
-from model import ConfigEntries, ConfigEntry, InstallationPackage
+from model import ConfigEntries, ConfigEntry, InstallationPackage, Status
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
-from env import AUD, CFD, HD, ISD, USD, XIN, RHD
+from env import AUD, CFD, HD, ISD, UBU, USD, XIN, RHD
 
 
 config_entries: ConfigEntries = [
@@ -14,6 +14,21 @@ config_entries: ConfigEntries = [
     {
         'name': 'Programs and utilities',
         'list': [
+
+            # desktop environment configuration
+            ConfigEntry(
+                description='load DE configuration (dconf)',
+                shorthand='dco',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            'dconf load <'
+                            + UBU + '/dconf.conf'
+                        ),
+                        is_installed=lambda: Status.Unknown,
+                    ),
+                ],
+            ),
 
             # various utilities
             ConfigEntry(

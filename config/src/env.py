@@ -19,6 +19,8 @@ SKD = CD + '/second-keyboard'
 AUD = CD + '/audio'
 # Xinput configs
 XIN = CD + '/xinput'
+# Ubuntu
+UBU = CD + '/ubuntu'
 
 # username
 USER = getpass.getuser()
