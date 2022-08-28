@@ -1,18 +1,17 @@
 import os
-from helper.sudoers import sudoers_nopasswd
-from helper.programs import install_apt_program, install_python_program
+from helper.programs import install_apt_program
 
 from model import ConfigEntries, ConfigEntry, InstallationPackage, Status
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
-from env import AUD, CFD, HD, ISD, UBU, USD, XIN, RHD
+from env import AUD, CFD, HD, ISD, UBU, USD
 
 
 config_entries: ConfigEntries = [
 
     {
-        'name': 'Programs and utilities',
+        'name': 'Desktop environment',
         'list': [
 
             # desktop environment configuration
@@ -30,10 +29,73 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
+            # complimentary programs that are part of the desktop environment
+            ConfigEntry(
+                description='install utilities',
+                shorthand='deu',
+                installation_packages=[
+                    install_apt_program([
+                        # advanced (per-program) audio management utility
+                        'pavucontrol',
+                        # CPU power management
+                        'indicator-cpufreq',
+                        # night mode
+                        'redshift',
+                        'redshift-gtk',
+                    ]),
+                ],
+            ),
+
+            # KBCT — key remapping
+            ConfigEntry(
+                description='install KBCT (key remapping tool)',
+                shorthand='kbc',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/install-kbct.sh'
+                        ),
+                        is_installed=lambda: ex(
+                            'command -v kbct >/dev/null'
+                        ) == 0,
+                    ),
+                ]
+            ),
+
+            ConfigEntry(
+                description='install ‘audio loopback’',
+                shorthand='aud',
+                installation_packages=[
+                    toggle_desktop_file_links(
+                        AUD + '/audio-loopback.desktop',
+                        '/usr/share/applications/audio-loopback.desktop',
+                    ),
+                ],
+            ),
+
+            # iBus
+            ConfigEntry(
+                description='install iBus-Anthy, iBus-Hangul',
+                shorthand='ibu',
+                installation_packages=[
+                    install_apt_program([
+                        'ibus-anthy',
+                        'ibus-hangul',
+                    ]),
+                ],
+            ),
+
+        ],
+    },
+
+    {
+        'name': 'Programs',
+        'list': [
+
             # various utilities
             ConfigEntry(
                 description='install utilities',
-                shorthand='utl',
+                shorthand='put',
                 installation_packages=[
                     install_apt_program([
                         'python3-pip',
@@ -170,23 +232,6 @@ config_entries: ConfigEntries = [
                 ]
             ),
 
-            # iBus
-            ConfigEntry(
-                description='install iBus, iBus-Anthy, iBus-Hangul',
-                shorthand='ibu',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: ex(
-                            ISD + '/install-ibus.sh'
-                        ),
-                        is_installed=lambda: [
-                            ex('command -v ibus >/dev/null') == 0,
-                            ex('command -v gnome-language-selector >/dev/null') == 0,
-                        ],
-                    )
-                ]
-            ),
-
             # Node environment
             ConfigEntry(
                 description='install NVM, NodeJS, NPM',
@@ -226,18 +271,6 @@ config_entries: ConfigEntries = [
                 ]
             ),
 
-            # swap Control_R and Menu keys
-            ConfigEntry(
-                description='swap Control_R and Menu keys (good for keyboards without a dedicated Menu key)',
-                shorthand='kym',
-                installation_packages=[
-                    toggle_fileblock(
-                        CFD + '/.key_remap',
-                        HD + '/.bashrc'
-                    )
-                ]
-            ),
-
             # install config files
             ConfigEntry(
                 description='install config files for: RedShift, Java formatter, and Neovim',
@@ -254,142 +287,6 @@ config_entries: ConfigEntries = [
                     toggle_file_links(
                         CFD + '/java/java-formatter.xml',
                         HD + '/.config/java-formatter.xml'
-                    )
-                ]
-            ),
-
-        ]
-    },
-
-    {
-        'name': 'Desktop environment',
-        'list': [
-
-            # i3 WM
-            ConfigEntry(
-                description='install i3 WM',
-                shorthand='i3w',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: ex(
-                            ISD + '/install-i3.sh'
-                        ),
-                        is_installed=lambda: ex(
-                            'command -v i3 >/dev/null'
-                        ) == 0
-                    ),
-                    # install some utilities needed for making i3 more towards an actual DE
-                    install_apt_program([
-                        # dex is needed for the GUI authentication prompt program (see the i3 config)
-                        'dex',
-                        # compton is a window compositor and background viewer
-                        'compton',
-                        # wallpaper program
-                        'feh',
-                        # control monitor backlight (laptop)
-                        'brightnessctl',
-                        # screenshots
-                        'maim',
-                        'xclip',
-                        'xdotool',
-                        # automatically turn the num lock
-                        'numlockx',
-                        # advanced (per-program) audio management utility
-                        'pavucontrol',
-                        # system-wide theme management
-                        'lxappearance',
-                        'qt5ct',
-                        # CPU power management
-                        'indicator-cpufreq',
-                        # media control
-                        'playerctl',
-                        # night mode
-                        'redshift',
-                        'redshift-gtk',
-                    ]),
-                    sudoers_nopasswd('brightnessctl'),
-                    install_python_program([
-                        'autorandr',
-                    ])
-                ],
-            ),
-
-            # theme
-            ConfigEntry(
-                description='install theme',
-                shorthand='thm',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: ex(
-                            ISD + '/install-theme.sh'
-                        )
-                    )
-                ]
-            ),
-
-            # i3 and i3status
-            ConfigEntry(
-                description='base config',
-                shorthand='i3c',
-                installation_packages=[
-                    toggle_file_links(
-                        CFD + '/i3/i3/config',
-                        HD + '/.config/i3/config'
-                    ),
-                    toggle_file_links(
-                        CFD + '/i3/i3status/config',
-                        HD + '/.config/i3status/config'
-                    ),
-                    toggle_file_links(
-                        CFD + '/i3/dunst/dunstrc',
-                        HD + '/.config/dunst/dunstrc'
-                    ),
-                    toggle_file_links(
-                        CFD + '/i3/dunst/dunstrc',
-                        RHD + '/.config/dunst/dunstrc'
-                    ),
-                    toggle_file_links(
-                        CFD + '/i3/compton/compton.conf',
-                        HD + '/.config/compton.conf'
-                    ),
-                ]
-            ),
-
-            ConfigEntry(
-                description='set Xinput prop values for PCS touchpad (//TODO selectable item list)',
-                shorthand='pcs',
-                installation_packages=[
-                    toggle_fileblock(
-                        XIN + '/pcs-touchpad.sh',
-                        HD + '/.bashrc',
-                    ),
-                ],
-            ),
-
-            # KBCT — key remapping
-            ConfigEntry(
-                description='install KBCT (key remapping tool)',
-                shorthand='kbc',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: ex(
-                            ISD + '/install-kbct.sh'
-                        ),
-                        is_installed=lambda: ex(
-                            'command -v kbct >/dev/null'
-                        ) == 0,
-                    ),
-                    sudoers_nopasswd('kbct'),
-                ]
-            ),
-
-            ConfigEntry(
-                description='install ‘audio loopback’',
-                shorthand='aud',
-                installation_packages=[
-                    toggle_desktop_file_links(
-                        AUD + '/audio-loopback.desktop',
-                        '/usr/share/applications/audio-loopback.desktop',
                     )
                 ]
             ),
