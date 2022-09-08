@@ -4,6 +4,8 @@ import pathlib
 
 # home directory
 HD = os.path.expanduser('~')
+# user’s config directory
+HDC = HD + '/.config'
 RHD = '/root'
 # root config directory
 CD = str(pathlib.Path().absolute())
@@ -19,6 +21,8 @@ SKD = CD + '/second-keyboard'
 AUD = CD + '/audio'
 # Xinput configs
 XIN = CD + '/xinput'
+# Ubuntu
+UBU = CD + '/ubuntu'
 
 # username
 USER = getpass.getuser()

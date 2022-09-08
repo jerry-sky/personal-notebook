@@ -1,5 +1,5 @@
-from typing import Union, List
-from types import FunctionType
+from dataclasses import dataclass
+from typing import Callable, Union, List
 from enum import Enum
 
 
@@ -9,7 +9,8 @@ class Status(Enum):
     Unknown = 2
 
 
-class InstallationPackage(object):
+@dataclass
+class InstallationPackage:
     '''
     This class is essentially a named tuple of three functions:
     - `install`,
@@ -19,12 +20,12 @@ class InstallationPackage(object):
     a config file or installation of a program.
     '''
 
-    __install: FunctionType
-    __uninstall: FunctionType
-    __is_installed: FunctionType
+    __install: Callable
+    __uninstall: Callable
+    __is_installed: Callable
     __is_immutable: bool
 
-    def __init__(self, install_func: FunctionType, uninstall_func: FunctionType = None, is_installed: FunctionType = None):
+    def __init__(self, install_func: Callable, uninstall_func: Callable = lambda: None, is_installed: Callable = lambda: None):
         self.__install = install_func
         self.__is_installed = is_installed
 
@@ -49,7 +50,7 @@ class InstallationPackage(object):
         self.__uninstall()
 
     @property
-    def is_installed(self) -> None:
+    def is_installed(self) -> Status:
         '''
         Returns the status of the package.
         '''
@@ -71,7 +72,7 @@ class InstallationPackage(object):
         return self.__is_immutable
 
 
-class ConfigEntry(object):
+class ConfigEntry:
     '''
     A config entry that describes installation of a particular component
     of the user’s environment.
@@ -96,7 +97,7 @@ class ConfigEntry(object):
         # ensure it is a list of installation packages
         if type(installation_packages) is list:
             self.__installation_packages = installation_packages
-        else:
+        elif type(installation_packages) is InstallationPackage:
             self.__installation_packages = [installation_packages]
 
     @property
@@ -164,7 +165,8 @@ class ConfigEntry(object):
                 i.uninstall()
 
 
-class ConfigEntryGroup(object):
+@dataclass
+class ConfigEntryGroup:
     name: str
     list: List[ConfigEntry]
 
