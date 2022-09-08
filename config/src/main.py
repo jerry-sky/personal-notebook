@@ -16,8 +16,8 @@ if __name__ == '__main__':
         print('\033[1mInteractive mode')
 
         for group in config_entries:
-            print(group['name'])
-            for ce in group:
+            print(group.name)
+            for ce in group.list:
                 # for each entry give the user an option to do nothing,
                 # uninstall, reinstall, or install
                 execute_entry(ce)

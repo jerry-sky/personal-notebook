@@ -1,7 +1,7 @@
 import os
 from helper.programs import install_apt_program
 
-from model import ConfigEntries, ConfigEntry, InstallationPackage, Status
+from model import ConfigEntries, ConfigEntry, ConfigEntryGroup, InstallationPackage, Status
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
@@ -10,9 +10,9 @@ from env import AUD, CFD, HD, ISD, UBU, USD
 
 config_entries: ConfigEntries = [
 
-    {
-        'name': 'Desktop environment',
-        'list': [
+    ConfigEntryGroup(
+        name='Desktop environment',
+        list=[
 
             # desktop environment configuration
             ConfigEntry(
@@ -86,11 +86,11 @@ config_entries: ConfigEntries = [
             ),
 
         ],
-    },
+    ),
 
-    {
-        'name': 'Programs',
-        'list': [
+    ConfigEntryGroup(
+        name='Programs',
+        list=[
 
             # various utilities
             ConfigEntry(
@@ -113,7 +113,6 @@ config_entries: ConfigEntries = [
                         install_func=lambda: ex(
                             ISD + '/install-tex-live.sh'
                         ),
-                        uninstall_func=False,
                         is_installed=lambda: ex(
                             '. ~/.bashrc && printf $PATH | grep texlive >/dev/null'
                         ) == 0
@@ -130,7 +129,6 @@ config_entries: ConfigEntries = [
                         install_func=lambda: ex(
                             ISD + '/install-docker.sh',
                         ),
-                        uninstall_func=False,
                         is_installed=lambda: [
                             ex(
                                 'command -v docker >/dev/null',
@@ -151,7 +149,6 @@ config_entries: ConfigEntries = [
                     InstallationPackage(
                         install_func=lambda: ex(
                             ISD + '/install-blender.sh'),
-                        uninstall_func=False,
                         is_installed=lambda: ex(
                             'command -v blender >/dev/null') == 0
                     )
@@ -166,7 +163,6 @@ config_entries: ConfigEntries = [
                     InstallationPackage(
                         install_func=lambda: ex(
                             ISD + '/install-obs.sh'),
-                        uninstall_func=False,
                         is_installed=lambda: ex(
                             'command -v obs >/dev/null') == 0
                     )
@@ -249,11 +245,11 @@ config_entries: ConfigEntries = [
             ),
 
         ]
-    },
+    ),
 
-    {
-        'name': 'General config',
-        'list': [
+    ConfigEntryGroup(
+        name='General config',
+        list=[
 
             # load Bash config
             ConfigEntry(
@@ -292,11 +288,11 @@ config_entries: ConfigEntries = [
             ),
 
         ]
-    },
+    ),
 
-    {
-        'name': 'Other',
-        'list': [
+    ConfigEntryGroup(
+        name='Other',
+        list=[
 
             # additional fonts
             ConfigEntry(
@@ -367,7 +363,7 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
-        ]
-    }
+        ],
+    ),
 
 ]
