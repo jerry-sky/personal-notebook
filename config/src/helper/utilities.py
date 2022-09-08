@@ -22,7 +22,7 @@ def max_shorthand_length(config_entries: ConfigEntries):
 
 
 def flatten_config_entries(config_entries: ConfigEntries):
-    return [ce for group in config_entries for ce in group['list']]
+    return [ce for group in config_entries for ce in group.list]
 
 
 def print_available_options(config_entries: ConfigEntries):
@@ -35,8 +35,8 @@ def print_available_options(config_entries: ConfigEntries):
     # print available config entries
     print('\n\033[1mAvailable configs:\033[0m\n')
     for group in config_entries:
-        print(group['name'])
-        for ce in group['list']:
+        print(group.name)
+        for ce in group.list:
             print_entry(ce, command_length=command_length)
 
         print()
