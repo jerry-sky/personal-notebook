@@ -4,6 +4,8 @@ import pathlib
 
 # home directory
 HD = os.path.expanduser('~')
+# user’s config directory
+HDC = HD + '/.config'
 RHD = '/root'
 # root config directory
 CD = str(pathlib.Path().absolute())

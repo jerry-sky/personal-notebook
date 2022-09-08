@@ -5,7 +5,7 @@ from model import ConfigEntries, ConfigEntry, ConfigEntryGroup, InstallationPack
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
-from env import AUD, CFD, HD, ISD, UBU, USD
+from env import AUD, CFD, HD, HDC, ISD, UBU, USD
 
 
 config_entries: ConfigEntries = [
@@ -82,6 +82,25 @@ config_entries: ConfigEntries = [
                         'ibus-anthy',
                         'ibus-hangul',
                     ]),
+                ],
+            ),
+
+            ConfigEntry(
+                description='install Touchégg (touchpad gestures)',
+                shorthand='tou',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/install-touchégg.sh'
+                        ),
+                        is_installed=lambda: ex(
+                            'command -v touchegg >/dev/null'
+                        ) == 0,
+                    ),
+                    toggle_file_links(
+                        source=CFD + '/touchégg/touchegg.conf',
+                        target=HDC + '/touchegg/touchegg.conf',
+                    ),
                 ],
             ),
 
