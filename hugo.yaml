@@ -1,0 +1,15 @@
+baseURL: 'https://personal.jerry-sky.me'
+languageCode: en-gb
+title: Personal Notebook
+
+theme: github.com/theNewDynamic/gohugo-theme-ananke
+
+archetypeDir: hugo/archetypes
+assetDir: hugo/assets
+contentDir: .
+dataDir: hugo/data
+publishDir: hugo/dist
+themesDir: hugo/themes
+
+ignoreFiles:
+  - hugo/
