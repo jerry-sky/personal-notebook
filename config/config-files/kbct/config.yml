@@ -3,8 +3,6 @@
   keymap:
     # elongate shift on US international keyboard layout
     102nd: leftshift
-    # elongate enter on US international keyboard layout
-    backslash: enter
     # F7–F12 are rarely used, replace with more frequently used keys
     f12: insert
     f10: pageup
@@ -16,13 +14,9 @@
     # make replaced keys available under secondary mini-layer
     - modifiers: ['rightalt']
       keymap:
-        backslash: backslash
         f12: f12
         f10: f10
         f11: f11
         f7: f7
         f8: f8
         f9: f9
-    - modifiers: ['rightshift']
-      keymap:
-        backslash: backslash
