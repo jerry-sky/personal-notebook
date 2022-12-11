@@ -66,7 +66,6 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 - [Linguistics of Computer Science related matters](general/linguistics-related-to-cs.md)
 - [Technical specification](general/technical-specification.md)
-- [Some preparatory notes (Ω)](private/preparatory/readme.md)
 
 ---
 
