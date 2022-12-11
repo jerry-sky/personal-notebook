@@ -25,9 +25,6 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
     - [Adobe](#adobe)
 - [Languages](#languages)
 - [The arbitrary collection](#the-arbitrary-collection)
-- [Life (Ω)](#life-ω)
-- [Videos (Ω)](#videos-ω)
-- [Other (Ω)](#other-ω)
 - [Some remarks](#some-remarks)
     - [OneNote](#onenote)
     - [Markdown and $\LaTeX$](#markdown-and-latex)
@@ -35,9 +32,9 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
     - [Website pipeline](#website-pipeline)
     - [Figures](#figures)
 
-*Please note: to view some private notes (marked with (Ω)) you need to have access to the private part of this repository.*
-
 ---
+
+
 
 ## Computer Science
 
@@ -73,6 +70,8 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 ---
 
+
+
 ## Curriculum Vitae
 
 *Based on the [AltaCV template](https://www.overleaf.com/latex/templates/altacv-template/trgqjpwnmtgv).*
@@ -81,6 +80,8 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 - [`.tex`](cv/curriculum-vitae.tex)
 
 ---
+
+
 
 ## Arts
 
@@ -96,6 +97,8 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 ---
 
+
+
 ## Languages
 
 - [Language learning strategy](languages/ll-strategy.md)
@@ -105,6 +108,8 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 - [Japanese](languages/日本語/readme.md)
 
 ---
+
+
 
 ## The arbitrary collection
 
@@ -116,17 +121,7 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 ---
 
-## Life (Ω)
 
-- [Thoughts (Ω)](private/life/thoughts/readme.md)
-- [Books (Ω)](private/life/books/readme.md)
-- [Journal (Ω)](private/life/journal/readme.md)
-
-## [Videos (Ω)](private/videos/readme.md)
-
-## [Other (Ω)](private/other/readme.md)
-
----
 
 ## Some remarks
 
