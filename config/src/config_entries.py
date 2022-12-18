@@ -119,6 +119,7 @@ config_entries: ConfigEntries = [
                     install_apt_program([
                         'python3-pip',
                         'filezilla',
+                        'bat',
                     ]),
                 ],
             ),
