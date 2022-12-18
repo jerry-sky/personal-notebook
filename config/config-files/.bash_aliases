@@ -137,12 +137,19 @@ function cx() {
 # Internet browser
 alias op="google-chrome-stable"
 
+pandoc_config_dir="~/notebooks/personal-notebook/config/config-files/pandoc"
+# Pandoc (https://github.com/jgm/pandoc) through Pandocker (https://github.com/dalibo/pandocker)
+if docker image ls | grep pandocker >/dev/null; then
+    alias pandoc="docker run --rm -u `id -u`:`id -g` -v $pandoc_config_dir:/pandoc-config -v `pwd`:/pandoc dalibo/pandocker:stable"
+    pandoc_config_dir="/pandoc-config"
+fi
+
 # from Markdown to PDF converter
 alias mdpdf="pandoc \
     --from markdown-blank_before_header-implicit_figures+lists_without_preceding_blankline+gfm_auto_identifiers \
     --to pdf \
     -V geometry:margin=2cm \
-    -H ~/notebooks/personal-notebook/config/config-files/pandoc/head.tex \
+    -H $pandoc_config_dir/head.tex \
     --number-sections \
     --toc-depth 4 \
     --shift-heading-level-by=-1"
