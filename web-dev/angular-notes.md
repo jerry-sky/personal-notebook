@@ -95,7 +95,7 @@ When dealing with multiple Angular projects or Angular projects mixed with some 
     <!-- spell-checker: disable-next-line -->
 2. Execute `sudo sysctl -p`.
     <!-- spell-checker: disable-next-line -->
-3. View `/proc/sys/fs/inotify/max_user_watches` and verify that the output number is equals to `524288`.
+3. View `/proc/sys/fs/inotify/max_user_watches` and verify that the output number equals to `524288`.
 
 ---
 

@@ -110,7 +110,7 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 
 
-### [Archive](archive/README.md)
+## [Archive](archive/README.md)
 
 Archived notes.
 
