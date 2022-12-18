@@ -73,3 +73,16 @@ def install_python_program(program_name: PROGRAM_NAME) -> InstallationPackage:
         verify_installation='python3 -m pip show {0} 2>/dev/null >/dev/null',
         merge_map=[True, True, False],
     )
+
+
+def install_global_javascript_program(program_name: PROGRAM_NAME) -> InstallationPackage:
+    '''
+    Installs given program(s) through the default JavaScript package manager (NPM).
+    '''
+    return __install_program(
+        program_name=program_name,
+        install_command='npm install -g {0}',
+        uninstall_command='npm uninstall -g {0}',
+        verify_installation='npm ls -g 2>/dev/null | grep {0} >/dev/null',
+        merge_map=[True, True, False],
+    )
