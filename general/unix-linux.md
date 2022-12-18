@@ -24,6 +24,12 @@ keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customizat
 
 ---
 
+## Resources
+
+- [The Cyber Plumber's Handbook - The definitive guide to Secure Shell (SSH) tunneling, port redirection, and bending traffic like a boss](https://github.com/opsdisk/the_cyber_plumbers_handbook)
+
+---
+
 ## Keeping some script/program alive
 
 If you want to keep some script/program alive (e.g. a node.js script) you need to use `crontab`.
