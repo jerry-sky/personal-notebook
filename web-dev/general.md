@@ -361,7 +361,7 @@ relations between all of them.
 |             | `any` | `unknown` | `object` | `void` | `undefined` | `null` | `never` |
 | ----------- | ----- | --------- | -------- | ------ | ----------- | ------ | ------- |
 | `any`       |       | Y         | Y        | Y      | Y           | Y      | N       |
-| `unknown`   | Y     |           | N        | N      | N           | N      | N       | N
+| `unknown`   | Y     |           | N        | N      | N           | N      | N       |
 | `object`    | Y     | Y         |          | N      | N           | N      | N       |
 | `void`      | Y     | Y         | N        |        | N           | N      | N       |
 | `undefined` | Y     | Y         | Y'       | Y      |             | Y'     | N       |
