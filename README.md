@@ -98,18 +98,6 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 
 
 
-## Languages
-
-- [Language learning strategy](languages/ll-strategy.md)
-- [English](languages/english/readme.md)
-- [German](languages/deutsch/readme.md)
-- [French](languages/français/readme.md)
-- [Japanese](languages/日本語/readme.md)
-
----
-
-
-
 ## The arbitrary collection
 
 - [Maths](the-arbitrary-collection/arbitrary-math-snippets.md)
@@ -117,6 +105,14 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 - [Hilarious stories](the-arbitrary-collection/hilarious-stories.md)
 - [2D Animation](the-arbitrary-collection/2d-animation.md)
 - [Lifehacks Stack Exchange](https://lifehacks.stackexchange.com/)
+
+---
+
+
+
+### [Archive](archive/README.md)
+
+Archived notes.
 
 ---
 
@@ -196,8 +192,8 @@ You can view them on the web:
 
 ### Figures
 
-When it comes to graph drawing or any type of graphical figures it can be done with OneNote.
-However, if it can be done with e.g. GIMP or any other graphics program *OneNote should not be used*.
+When it comes to graph drawing or any type of graphical figures it can be done with OneNote,
+GIMP, or Notes on an iPad.
 
 An alternative would be to use `code blocks`.
 Characters such as `\`, `|`, `/`, `_`, `<`, `>`, `／`, `＼`, `＿`, `ー`, `「`, `」`, `＜`, and `＞`
