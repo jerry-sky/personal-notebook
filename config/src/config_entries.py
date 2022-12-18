@@ -46,22 +46,6 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
-            ConfigEntry(
-                description='install JS utilities',
-                shorthand='duj',
-                installation_packages=[
-                    install_global_javascript_program([
-                        # other JavaScript package managers
-                        'pnpm',
-                        'yarn',
-                        # JavaScript daemon
-                        'nodemon',
-                        # updating packages in a project
-                        'npm-check-updates',
-                    ]),
-                ],
-            ),
-
             # KBCT — key remapping
             ConfigEntry(
                 description='install KBCT (key remapping tool)',
@@ -135,6 +119,33 @@ config_entries: ConfigEntries = [
                     install_apt_program([
                         'python3-pip',
                         'filezilla',
+                    ]),
+                ],
+            ),
+
+            ConfigEntry(
+                description='install JS utilities',
+                shorthand='duj',
+                installation_packages=[
+                    install_global_javascript_program([
+                        # other JavaScript package managers
+                        'pnpm',
+                        'yarn',
+                        # JavaScript daemon
+                        'nodemon',
+                        # updating packages in a project
+                        'npm-check-updates',
+                    ]),
+                ],
+            ),
+
+            ConfigEntry(
+                description='install Git utilities',
+                shorthand='duj',
+                installation_packages=[
+                    install_global_javascript_program([
+                        # trimming unnecessary local branches (already merged, deleted from origin)
+                        'git-trim',
                     ]),
                 ],
             ),
