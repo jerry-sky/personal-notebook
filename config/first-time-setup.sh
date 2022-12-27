@@ -59,4 +59,7 @@ mkdir -p ~/Code
 
 
 PRINT "Download this notebook"
+cd ~/Code
+mkdir -p jerry-sky
+cd jerry-sky
 git clone "https://github.com/jerry-sky/personal-notebook"
