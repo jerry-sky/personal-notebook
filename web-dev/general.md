@@ -66,6 +66,7 @@ keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScr
 
 - [IE-11 end of support countdown](https://death-to-ie11.netlify.com/)
 - [Creating Electronic Dance Music with NodeJS](https://www.youtube.com/watch?v=G1bRi4El0iw)
+- [Music Player with physics-based seekbar](https://github.com/samir-dahal/MusicPlayer)
 
 ---
 
