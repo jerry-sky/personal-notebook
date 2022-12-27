@@ -62,17 +62,6 @@ config_entries: ConfigEntries = [
                 ]
             ),
 
-            ConfigEntry(
-                description='install ‘audio loopback’',
-                shorthand='aud',
-                installation_packages=[
-                    toggle_desktop_file_links(
-                        AUD + '/audio-loopback.desktop',
-                        '/usr/share/applications/audio-loopback.desktop',
-                    ),
-                ],
-            ),
-
             # iBus
             ConfigEntry(
                 description='install iBus-Anthy, iBus-Hangul',
@@ -380,6 +369,10 @@ config_entries: ConfigEntries = [
                         sudo=True
                     ),
                     install_apt_program('wmctrl'),
+                    toggle_desktop_file_links(
+                        USD + '/audio-loopback.desktop',
+                        '/usr/share/applications/audio-loopback.desktop',
+                    ),
                 ]
             ),
 
