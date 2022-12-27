@@ -7,11 +7,6 @@ function --() {
     nohup $@ &> /dev/null &
 }
 
-# directory shortcuts
-alias an="cd ~/notebooks/academic-notebook/"
-alias pn="cd ~/notebooks/personal-notebook/"
-# code projects directory
-alias my="cd ~/code/"
 # Google Drive directory
 alias cloud="cd ~/gdrive/"
 # other useful shortcuts
