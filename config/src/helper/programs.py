@@ -86,3 +86,16 @@ def install_global_javascript_program(program_name: PROGRAM_NAME) -> Installatio
         verify_installation='npm ls -g 2>/dev/null | grep {0} >/dev/null',
         merge_map=[True, True, False],
     )
+
+
+def pull_docker_image(program_name: PROGRAM_NAME) -> InstallationPackage:
+    '''
+    “Installs” as in downloads a Docker image with a given program pre-installed.
+    '''
+    return __install_program(
+        program_name=program_name,
+        install_command='docker pull {0}',
+        uninstall_command='docker image rm {0}',
+        verify_installation='docker image ls | grep {0} >/dev/null',
+        merge_map=[False, False, False],
+    )

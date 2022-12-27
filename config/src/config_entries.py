@@ -1,5 +1,5 @@
 import os
-from helper.programs import install_apt_program, install_global_javascript_program
+from helper.programs import install_apt_program, install_global_javascript_program, pull_docker_image
 
 from model import ConfigEntries, ConfigEntry, ConfigEntryGroup, InstallationPackage, Status
 from helper.files import toggle_fileblock
@@ -119,22 +119,7 @@ config_entries: ConfigEntries = [
                     install_apt_program([
                         'python3-pip',
                         'filezilla',
-                    ]),
-                ],
-            ),
-
-            ConfigEntry(
-                description='install JS utilities',
-                shorthand='duj',
-                installation_packages=[
-                    install_global_javascript_program([
-                        # other JavaScript package managers
-                        'pnpm',
-                        'yarn',
-                        # JavaScript daemon
-                        'nodemon',
-                        # updating packages in a project
-                        'npm-check-updates',
+                        'bat',
                     ]),
                 ],
             ),
@@ -215,6 +200,16 @@ config_entries: ConfigEntries = [
                 ]
             ),
 
+            ConfigEntry(
+                description='install Pandoc (through Pandocker)',
+                shorthand='pdk',
+                installation_packages=[
+                    pull_docker_image([
+                        'dalibo/pandocker',
+                    ]),
+                ],
+            ),
+
             # Telegram
             ConfigEntry(
                 description='install Telegram',
@@ -288,6 +283,22 @@ config_entries: ConfigEntries = [
                         ]
                     ),
                 ]
+            ),
+
+            ConfigEntry(
+                description='install JS utilities',
+                shorthand='duj',
+                installation_packages=[
+                    install_global_javascript_program([
+                        # other JavaScript package managers
+                        'pnpm',
+                        'yarn',
+                        # JavaScript daemon
+                        'nodemon',
+                        # updating packages in a project
+                        'npm-check-updates',
+                    ]),
+                ],
             ),
 
         ]
