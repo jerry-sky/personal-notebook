@@ -10,11 +10,6 @@ function PRINT {
 
 # don’t keep any of the temporary files
 cd "/tmp"
-cur_dir="__first-time-setup"
-mkdir -p "$cur_dir"
-cd "$cur_dir"
-cur_dir="/tmp/$cur_dir"
-
 
 
 PRINT "PROGRAMS"
