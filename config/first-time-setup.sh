@@ -52,6 +52,9 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
     && sudo apt update \
     && sudo apt install gh -y
 
+PRINT "Git and GitHub setup"
+gh auth login
+
 
 
 PRINT "Make some default directories"
