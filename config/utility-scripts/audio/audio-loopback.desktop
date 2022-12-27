@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/opt/utility-scripts/audio-loopback.sh
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name=Audio Loopback

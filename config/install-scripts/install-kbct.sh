@@ -12,9 +12,5 @@ chmod +x kbct-x86_64.AppImage
 sudo mv kbct-x86_64.AppImage /opt/kbct
 sudo ln -s /opt/kbct /usr/bin/kbct
 
-sudo mkdir /etc/kbct
-sudo ln -s /home/$USER/notebooks/personal-notebook/config/config-files/kbct/config.yml /etc/kbct/config.yml
-
 # configure it to run on startup, reboot, and after coming back from suspending
-sudo cp /home/$USER/notebooks/personal-notebook/config/config-files/kbct/kbct.service /usr/lib/systemd/system/kbct.service
 sudo systemctl enable kbct.service

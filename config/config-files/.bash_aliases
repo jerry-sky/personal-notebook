@@ -21,8 +21,6 @@ alias p="pwd"
 
 alias reload=". ~/.bashrc"
 
-alias audloop="pacmd load-module module-loopback latency_msec=5"
-
 # Git
 function __git_prompt() {
     # gives user change to abort pulling

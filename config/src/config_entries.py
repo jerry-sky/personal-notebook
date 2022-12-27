@@ -51,6 +51,14 @@ config_entries: ConfigEntries = [
                 description='install KBCT (key remapping tool)',
                 shorthand='kbc',
                 installation_packages=[
+                    toggle_file_links(
+                        CFD + '/kbct/config.yml',
+                        '/etc/kbct/config.yml',
+                    ),
+                    toggle_file_links(
+                        CFD + '/kbct/kbct.service',
+                        '/usr/lib/systemd/system/kbct.service',
+                    ),
                     InstallationPackage(
                         install_func=lambda: ex(
                             ISD + '/install-kbct.sh'
@@ -60,17 +68,6 @@ config_entries: ConfigEntries = [
                         ) == 0,
                     ),
                 ]
-            ),
-
-            ConfigEntry(
-                description='install ‘audio loopback’',
-                shorthand='aud',
-                installation_packages=[
-                    toggle_desktop_file_links(
-                        AUD + '/audio-loopback.desktop',
-                        '/usr/share/applications/audio-loopback.desktop',
-                    ),
-                ],
             ),
 
             # iBus
@@ -380,6 +377,10 @@ config_entries: ConfigEntries = [
                         sudo=True
                     ),
                     install_apt_program('wmctrl'),
+                    toggle_desktop_file_links(
+                        USD + '/audio-loopback.desktop',
+                        '/usr/share/applications/audio-loopback.desktop',
+                    ),
                 ]
             ),
 
