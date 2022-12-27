@@ -51,6 +51,14 @@ config_entries: ConfigEntries = [
                 description='install KBCT (key remapping tool)',
                 shorthand='kbc',
                 installation_packages=[
+                    toggle_file_links(
+                        CFD + '/kbct/config.yml',
+                        '/etc/kbct/config.yml',
+                    ),
+                    toggle_file_links(
+                        CFD + '/kbct/kbct.service',
+                        '/usr/lib/systemd/system/kbct.service',
+                    ),
                     InstallationPackage(
                         install_func=lambda: ex(
                             ISD + '/install-kbct.sh'
