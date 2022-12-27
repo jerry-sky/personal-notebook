@@ -130,7 +130,7 @@ function cx() {
 # Internet browser
 alias op="google-chrome-stable"
 
-pandoc_config_dir="~/notebooks/personal-notebook/config/config-files/pandoc"
+pandoc_config_dir="~/Code/jerry-sky/personal-notebook/config/config-files/pandoc"
 # Pandoc (https://github.com/jgm/pandoc) through Pandocker (https://github.com/dalibo/pandocker)
 if docker image ls | grep pandocker >/dev/null; then
     alias pandoc="docker run --rm -u `id -u`:`id -g` -v $pandoc_config_dir:/pandoc-config -v `pwd`:/pandoc dalibo/pandocker:stable"
