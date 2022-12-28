@@ -21,7 +21,7 @@ config_entries: ConfigEntries = [
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            'dconf load <'
+                            'dconf load /<'
                             + UBU + '/dconf.conf'
                         ),
                         is_installed=lambda: Status.Unknown,
@@ -54,10 +54,12 @@ config_entries: ConfigEntries = [
                     toggle_file_links(
                         CFD + '/kbct/config.yml',
                         '/etc/kbct/config.yml',
+                        sudo=True,
                     ),
                     toggle_file_links(
                         CFD + '/kbct/kbct.service',
                         '/usr/lib/systemd/system/kbct.service',
+                        sudo=True,
                     ),
                     InstallationPackage(
                         install_func=lambda: ex(
