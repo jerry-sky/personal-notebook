@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List, Union, Callable
 from model import InstallationPackage
 from helper.ex import ex
 
@@ -20,6 +20,7 @@ def __install_program(
     uninstall_command: str,
     verify_installation: str,
     merge_map: List[bool] = [False, False, False],
+    additional_operation: Callable = None,
 ) -> InstallationPackage:
 
     if isinstance(program_name, list):
@@ -28,7 +29,7 @@ def __install_program(
                 merge_map[0],
                 install_command,
                 program_name,
-            ),
+            ) and (additional_operation() if additional_operation else True),
             uninstall_func=__gen_ex(
                 merge_map[1],
                 uninstall_command,
@@ -49,16 +50,20 @@ def __install_program(
         )
 
 
-def install_apt_program(program_name: PROGRAM_NAME) -> InstallationPackage:
+def install_apt_program(program_name: PROGRAM_NAME, apt_repository: str = None) -> InstallationPackage:
     '''
     Installs given program(s) through Aptitude.
     '''
+    additional_operation = None
+    if apt_repository is not None:
+        additional_operation=lambda: ex('add-apt-repository ' + apt_repository, sudo=True)
     return __install_program(
         program_name=program_name,
         install_command='sudo apt install -y {0}',
         uninstall_command='sudo apt remove -y {0}',
         verify_installation='command -v {0} >/dev/null || dpkg -s {0} 2>/dev/null >/dev/null',
         merge_map=[True, True, False],
+        additional_operation=additional_operation,
     )
 
 
