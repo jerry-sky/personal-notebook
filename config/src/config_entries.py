@@ -333,9 +333,13 @@ config_entries: ConfigEntries = [
                     ),
                     toggle_file_links(
                         CFD + '/.bash_aliases',
-                        HD + '/.bash_aliases'
-                    )
-                ]
+                        HD + '/.bash_aliases',
+                    ),
+                    toggle_file_links(
+                        CFD + '/.inputrc',
+                        HD + '/.inputrc',
+                    ),
+                ],
             ),
 
             # install config files
