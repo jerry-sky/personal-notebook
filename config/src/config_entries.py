@@ -43,6 +43,10 @@ config_entries: ConfigEntries = [
                         'redshift',
                         'redshift-gtk',
                     ]),
+                    install_apt_program(
+                        'libfuse2',
+                        apt_repository='universe',
+                    ),
                 ],
             ),
 
