@@ -10,4 +10,4 @@ cd /tmp
 wget https://github.com/JoseExposito/touchegg/releases/download/2.0.14/"$file"
 
 printf "\n\033[1m%s\033[0m\n" "Installing…"
-dpkg -i /tmp/"$file"
+sudo dpkg -i /tmp/"$file"

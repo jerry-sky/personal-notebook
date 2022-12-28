@@ -33,12 +33,10 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-egrep '^docker:' /etc/group >/dev/null
-if [ $? -eq 1 ]; then
-    sudo groupadd docker
-    sudo usermod -aG docker $USER
-    newgrp docker
-fi
+# permissions for standard user
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
 
 
 printf "\n\033[1m%s\033[0m\n\n" "Verifying Docker installation…"
