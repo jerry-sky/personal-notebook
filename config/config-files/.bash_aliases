@@ -120,11 +120,11 @@ alias gstha="git stash apply"
 alias gsthl="git stash list"
 
 # VS Code shortcuts
-alias ccx="code-insiders . && exit"
-alias c="code-insiders"
-alias c.="code-insiders ."
+alias ccx="code . && exit"
+alias c="code"
+alias c.="code ."
 function cx() {
-    code-insiders $@ && exit
+    code $@ && exit
 }
 
 # Internet browser
