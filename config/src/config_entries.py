@@ -209,6 +209,21 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
+            ConfigEntry(
+                description='install Signal',
+                shorthand='sgl',
+                installation_packages=[
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/install-signal.sh',
+                        ),
+                        is_installed=lambda: ex(
+                            'command -v signal-desktop >/dev/null',
+                        ) == 0,
+                    ),
+                ],
+            ),
+
             # Telegram
             ConfigEntry(
                 description='install Telegram',
