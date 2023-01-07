@@ -8,9 +8,9 @@ PROGRAM_NAME = Union[str, List[str]]
 
 def __gen_ex(merge: bool, command: str, program_name):
     if merge:
-        return lambda: ex(command.format(' '.join(program_name)))
+        return ex(command.format(' '.join(program_name)))
     else:
-        return lambda: [ex(command.format(p)) == 0
+        return [ex(command.format(p)) == 0
                         for p in program_name]
 
 
@@ -25,17 +25,17 @@ def __install_program(
 
     if isinstance(program_name, list):
         return InstallationPackage(
-            install_func=__gen_ex(
+            install_func=lambda: __gen_ex(
                 merge_map[0],
                 install_command,
                 program_name,
             ) and (additional_operation() if additional_operation else True),
-            uninstall_func=__gen_ex(
+            uninstall_func=lambda: __gen_ex(
                 merge_map[1],
                 uninstall_command,
                 program_name,
             ),
-            is_installed=__gen_ex(
+            is_installed=lambda: __gen_ex(
                 merge_map[2],
                 verify_installation,
                 program_name,

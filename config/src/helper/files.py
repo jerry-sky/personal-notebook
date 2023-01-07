@@ -1,6 +1,6 @@
 from typing import List, Tuple
-import os
-from model import ConfigEntry, InstallationPackage
+from model import InstallationPackage
+from helper.ex import ex
 
 
 def SCRIPT_INITIATOR(source_file, target_file):
@@ -87,17 +87,23 @@ def do_lists_partially_overlap(source_list: List, target_list: List) -> bool:
         return False
 
 
-def __toggle_fileblock(source_file: str, target_file: str, state=None):
-    si = SCRIPT_INITIATOR(source_file, target_file)
-    st = SCRIPT_TERMINATOR(source_file, target_file)
+def __toggle_fileblock(
+    source_file_path: str,
+    target_file_path: str,
+    state: bool = None,
+    sudo: bool = False,
+    line_number_location: int = None
+):
+    si = SCRIPT_INITIATOR(source_file_path, target_file_path)
+    st = SCRIPT_TERMINATOR(source_file_path, target_file_path)
 
-    fileblock = []
+    target_file_contents = []
 
-    with open(target_file, 'r') as f:
+    with open(target_file_path, 'r') as f:
         # read the source file
-        fileblock = f.readlines()
+        target_file_contents = f.readlines()
 
-    fileblock_present = si in fileblock and st in fileblock
+    fileblock_present = si in target_file_contents and st in target_file_contents
 
     # compute state
     if state is None:
@@ -120,24 +126,41 @@ def __toggle_fileblock(source_file: str, target_file: str, state=None):
             state = None
 
     if state == True:  # explicit — state can be `None`
-        # add the fileblock to the target file
-        with open(source_file, 'r') as fi:
+        fileblock = []
+        with open(source_file_path, 'r') as fi:
             fileblock += [si]
             fileblock += fi.readlines()
             fileblock += [st]
+        # add the fileblock to the target file
+        if line_number_location is not None:
+            # inject fileblock at a specific location in the file
+            target_file_contents = target_file_contents[0:line_number_location] \
+                + fileblock \
+                + target_file_contents[line_number_location:]
+        else:
+            target_file_contents += fileblock
 
     elif state == False:  # explicit — state can be `None`
         # remove the fileblock
-        begin_index = fileblock.index(si)
-        end_index = fileblock.index(st)
-        fileblock = fileblock[:begin_index] + fileblock[end_index+1:]
+        begin_index = target_file_contents.index(si)
+        end_index = target_file_contents.index(st)
+        target_file_contents = target_file_contents[:begin_index] + \
+            target_file_contents[end_index+1:]
 
-    # write the changes ot the target file
-    with open(target_file, 'w') as fo:
-        fo.writelines(fileblock)
+    # write the changes to the target file
+    ex(
+        ('sudo ' if sudo else '')
+        + 'cat <<EOF |'
+        + ('sudo ' if sudo else '')
+        + 'tee >/dev/null '
+        + target_file_path
+        + '\n'
+        + ''.join(target_file_contents)
+        + 'EOF'
+    )
 
 
-def toggle_fileblock(source: str, target: str, sudo: bool = False):
+def toggle_fileblock(source: str, target: str, sudo: bool = False, line_number_location: int = None):
     '''
     Copies all contents of the source file and appends them
     to the target file as a “file block”.
@@ -174,7 +197,7 @@ def toggle_fileblock(source: str, target: str, sudo: bool = False):
     '''
 
     return InstallationPackage(
-        install_func=lambda: __toggle_fileblock(source, target, True),
-        uninstall_func=lambda: __toggle_fileblock(source, target, False),
+        install_func=lambda: __toggle_fileblock(source, target, True, sudo=sudo, line_number_location=line_number_location),
+        uninstall_func=lambda: __toggle_fileblock(source, target, False, sudo=sudo),
         is_installed=lambda: does_contain_file_block(source, target)
     )
