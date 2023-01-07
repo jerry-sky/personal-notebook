@@ -23,6 +23,8 @@ AUD = CD + '/audio'
 XIN = CD + '/xinput'
 # Ubuntu
 UBU = CD + '/ubuntu'
+# fixes for external programs and such
+FXD = CD + '/fixes'
 
 # username
 USER = getpass.getuser()

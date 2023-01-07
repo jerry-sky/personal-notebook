@@ -5,7 +5,7 @@ from model import ConfigEntries, ConfigEntry, ConfigEntryGroup, InstallationPack
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
-from env import AUD, CFD, HD, HDC, ISD, UBU, USD
+from env import AUD, CFD, HD, HDC, ISD, UBU, USD, FXD
 
 
 config_entries: ConfigEntries = [
@@ -43,6 +43,13 @@ config_entries: ConfigEntries = [
                         'redshift',
                         'redshift-gtk',
                     ]),
+                    # fix CPU Freq Indicator to work within Gtk 4.0
+                    toggle_fileblock(
+                        FXD + '/indicator_cpufreq.py',
+                        '/usr/lib/python3/dist-packages/indicator_cpufreq/indicator.py',
+                        sudo=True,
+                        line_number_location=17,
+                    ),
                     install_apt_program(
                         'libfuse2',
                         apt_repository='universe',
