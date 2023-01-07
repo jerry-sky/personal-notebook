@@ -67,6 +67,26 @@ or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 - [Linguistics of Computer Science related matters](general/linguistics-related-to-cs.md)
 - [Technical specification](general/technical-specification.md)
 
+### Read
+
+- [Ideas that Created the Future: Classic Papers of Computer Science](http://library.lol/main/614F928EDFE94E5935111EC25AFA6FE4)
+- [FREE PROGRAMMING BOOKS](https://github.com/EbookFoundation/free-programming-books)
+- [ROADMAPS](https://github.com/kamranahmedse/developer-roadmap)
+- [ALGORITHMS](https://github.com/TheAlgorithms/Python)
+- [SYSTEM DESIGN](https://github.com/donnemartin/system-design-primer)
+- [COMPUTER SCIENCE](https://github.com/ossu/computer-science)
+- [DATA SCIENCE](https://github.com/ossu/data-science)
+- [PAPERS WE LOVE](https://github.com/papers-we-love/papers-we-love)
+- [Art of the command line](https://github.com/jlevy/the-art-of-command-line)
+- [Type challenges in TypeScript](https://github.com/type-challenges/type-challenges)
+- [Build your own X](https://github.com/codecrafters-io/build-your-own-x)
+- [AI Roadmap](https://github.com/AMAI-GmbH/AI-Expert-Roadmap)
+- [Coding Interviews](https://github.com/jwasham/coding-interview-university)
+- [JavaScript best practices](https://github.com/goldbergyoni/nodebestpractices)
+- [Machine Learning for software engineers](https://github.com/GokuMohandas/Made-With-ML)
+- [Applied Machine Learning](https://github.com/eugeneyan/applied-ml)
+- [Awesome free machine learning and AI courses with video lectures.](https://github.com/luspr/awesome-ml-courses)
+
 ---
 
 
