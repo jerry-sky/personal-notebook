@@ -54,6 +54,14 @@ config_entries: ConfigEntries = [
                         'libfuse2',
                         apt_repository='universe',
                     ),
+                    InstallationPackage(
+                        install_func=lambda: ex(
+                            ISD + '/install-ubuntu-login-screen-background-tool.sh',
+                        ),
+                        is_installed=lambda: ex(
+                            'command -v ubuntu-gdm-set-background.sh >/dev/null',
+                        ) == 0,
+                    ),
                 ],
             ),
 
