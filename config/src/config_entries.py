@@ -5,7 +5,7 @@ from model import ConfigEntries, ConfigEntry, ConfigEntryGroup, InstallationPack
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links
 from helper.ex import ex
-from env import AUD, CFD, HD, HDC, ISD, UBU, USD, FXD
+from env import CFD, HD, HDC, ISD, UBU, USD, FXD
 
 
 config_entries: ConfigEntries = [
@@ -14,7 +14,6 @@ config_entries: ConfigEntries = [
         name='Desktop environment',
         list=[
 
-            # desktop environment configuration
             ConfigEntry(
                 description='load DE configuration (dconf)',
                 shorthand='dco',
@@ -29,7 +28,6 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
-            # complimentary programs that are part of the desktop environment
             ConfigEntry(
                 description='install utilities',
                 shorthand='deu',
@@ -50,10 +48,12 @@ config_entries: ConfigEntries = [
                         sudo=True,
                         line_number_location=17,
                     ),
+                    # AppImage programs require this utility
                     install_apt_program(
                         'libfuse2',
                         apt_repository='universe',
                     ),
+                    # for changing the background of the login screen in Ubuntu
                     InstallationPackage(
                         install_func=lambda: ex(
                             ISD + '/install-ubuntu-login-screen-background-tool.sh',
@@ -65,7 +65,6 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
-            # KBCT — key remapping
             ConfigEntry(
                 description='install KBCT (key remapping tool)',
                 shorthand='kbc',
@@ -91,7 +90,6 @@ config_entries: ConfigEntries = [
                 ]
             ),
 
-            # iBus
             ConfigEntry(
                 description='install iBus-Anthy, iBus-Hangul',
                 shorthand='ibu',
@@ -129,7 +127,6 @@ config_entries: ConfigEntries = [
         name='Programs',
         list=[
 
-            # various utilities
             ConfigEntry(
                 description='install utilities',
                 shorthand='put',
@@ -153,7 +150,6 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
-            # TeX Live
             ConfigEntry(
                 description='install TeX Live',
                 shorthand='tex',
@@ -169,9 +165,8 @@ config_entries: ConfigEntries = [
                 ]
             ),
 
-            # Docker
             ConfigEntry(
-                description='install Docker and Docker-Compose',
+                description='install Docker',
                 shorthand='dck',
                 installation_packages=[
                     InstallationPackage(
@@ -182,15 +177,11 @@ config_entries: ConfigEntries = [
                             ex(
                                 'command -v docker >/dev/null',
                             ) == 0,
-                            ex(
-                                'command -v docker-compose >/dev/null',
-                            ) == 0,
                         ],
                     ),
                 ],
             ),
 
-            # Blender
             ConfigEntry(
                 description='install Blender',
                 shorthand='bld',
@@ -204,7 +195,6 @@ config_entries: ConfigEntries = [
                 ]
             ),
 
-            # OBS
             ConfigEntry(
                 description='install OBS',
                 shorthand='obs',
@@ -243,7 +233,6 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
-            # Telegram
             ConfigEntry(
                 description='install Telegram',
                 shorthand='tlg',
@@ -252,12 +241,11 @@ config_entries: ConfigEntries = [
                         install_func=lambda: ex(
                             ISD + '/install-telegram.sh'),
                         is_installed=lambda: ex(
-                            'ls ' + HD + '/.local/share/applications | grep -i telegram.desktop >/dev/null') == 0
-                    )
-                ]
+                            'ls ' + HD + '/.local/share/applications | grep -i telegram.desktop >/dev/null') == 0,
+                    ),
+                ],
             ),
 
-            # Discord
             ConfigEntry(
                 description='install Discord',
                 shorthand='dsc',
@@ -266,12 +254,11 @@ config_entries: ConfigEntries = [
                         install_func=lambda: ex(
                             ISD + '/install-discord.sh'),
                         is_installed=lambda: ex(
-                            'command -v discord >/dev/null') == 0
-                    )
-                ]
+                            'command -v discord >/dev/null') == 0,
+                    ),
+                ],
             ),
 
-            # Insync
             ConfigEntry(
                 description='install Insync',
                 shorthand='ins',
@@ -280,12 +267,11 @@ config_entries: ConfigEntries = [
                         install_func=lambda: ex(
                             ISD + '/install-insync.sh'),
                         is_installed=lambda: ex(
-                            'command -v insync >/dev/null') == 0
-                    )
-                ]
+                            'command -v insync >/dev/null') == 0,
+                    ),
+                ],
             ),
 
-            # Unity 3D
             ConfigEntry(
                 description='install Unity Hub, .NET SDK+Runtime, and Mono',
                 shorthand='unt',
@@ -297,12 +283,11 @@ config_entries: ConfigEntries = [
                             ex('command -v unity-hub >/dev/null') == 0,
                             ex('command -v mono >/dev/null') == 0,
                             ex('command -v dotnet >/dev/null') == 0,
-                        ]
-                    )
-                ]
+                        ],
+                    ),
+                ],
             ),
 
-            # Node environment
             ConfigEntry(
                 description='install NVM, NodeJS, NPM',
                 shorthand='nvm',
@@ -315,7 +300,7 @@ config_entries: ConfigEntries = [
                             ex('command -v node >/dev/null') == 0,
                         ]
                     ),
-                ]
+                ],
             ),
 
             ConfigEntry(
@@ -334,14 +319,13 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
-        ]
+        ],
     ),
 
     ConfigEntryGroup(
         name='General config',
         list=[
 
-            # load Bash config
             ConfigEntry(
                 description='load Bash config',
                 shorthand='brc',
@@ -361,52 +345,49 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
-            # install config files
             ConfigEntry(
                 description='install config files for: RedShift, Java formatter, and Neovim',
                 shorthand='rds',
                 installation_packages=[
                     toggle_file_links(
                         CFD + '/redshift/redshift.conf',
-                        HD + '/.config/redshift.conf'
+                        HD + '/.config/redshift.conf',
                     ),
                     toggle_file_links(
                         CFD + '/nvim/init.vim',
-                        HD + '/.config/nvim/'
+                        HD + '/.config/nvim/',
                     ),
                     toggle_file_links(
                         CFD + '/java/java-formatter.xml',
-                        HD + '/.config/java-formatter.xml'
-                    )
-                ]
+                        HD + '/.config/java-formatter.xml',
+                    ),
+                ],
             ),
 
-        ]
+        ],
     ),
 
     ConfigEntryGroup(
         name='Other',
         list=[
 
-            # additional fonts
             ConfigEntry(
                 description='install additional fonts',
                 shorthand='fnt',
                 installation_packages=[
                     InstallationPackage(
                         install_func=lambda: ex(
-                            ISD + '/install-additional-fonts.sh'
+                            ISD + '/install-additional-fonts.sh',
                         ),
                         is_installed=lambda: [
                             os.path.exists(
                                 '/usr/share/fonts/truetype/' + x
                             ) for x in ['Merriweather', 'Fira Code', 'Fira Sans']
-                        ]
-                    )
-                ]
+                        ],
+                    ),
+                ],
             ),
 
-            # copy utility scripts
             ConfigEntry(
                 description='copy utility scripts',
                 shorthand='cus',
@@ -421,20 +402,7 @@ config_entries: ConfigEntries = [
                         USD + '/audio-loopback.desktop',
                         '/usr/share/applications/audio-loopback.desktop',
                     ),
-                ]
-            ),
-
-            # Intel related graphical settings
-            ConfigEntry(
-                description='use ‘no tearing’ option for Intel graphics drivers',
-                shorthand='int',
-                installation_packages=[
-                    toggle_file_links(
-                        CFD + '/graphics/20-intel.conf',
-                        '/etc/X11/xorg.conf.d/20-intel.conf',
-                        sudo=True
-                    )
-                ]
+                ],
             ),
 
             ConfigEntry(
@@ -444,18 +412,6 @@ config_entries: ConfigEntries = [
                     InstallationPackage(
                         install_func=lambda: ex(
                             ISD + '/automount.sh',
-                        ),
-                    ),
-                ],
-            ),
-
-            ConfigEntry(
-                description='“fix” VS Code so it does not display toast notifications (dirty)',
-                shorthand='fcd',
-                installation_packages=[
-                    InstallationPackage(
-                        install_func=lambda: ex(
-                            ISD + '/fix-vscode.sh',
                         ),
                     ),
                 ],
