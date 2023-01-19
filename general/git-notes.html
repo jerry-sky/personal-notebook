@@ -5,7 +5,8 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Jerry Sky" />
-  <meta name="keywords" content="git, commit, files, versioning system, remove, history, fix" />
+  <meta name="keywords" content="git, commit, files, versioning system,
+remove, history, fix" />
   <meta name="description" content="Notes on Git." />
   <title>Git notes</title>
   <style type="text/css">
@@ -53,7 +54,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +67,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -87,6 +88,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 </head>
 <body>
+
 <header id="title-block-header">
 <h1 class="title">Git notes</h1>
 <p class="author">
@@ -95,20 +97,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </header>
 <p id="document-description"><em>Notes on Git.</em></p>
-<hr />
+<nav id="TOC">
+<hr>
 <ul>
-<li><a href="#removing-a-commit">Removing a commit</a></li>
-<li><a href="#removing-a-file-from-git-history">Removing a file from git history</a></li>
-<li><a href="#fix-displaying-file-names-with-unicode-characters-in-them">Fix displaying file names with unicode characters in them</a></li>
+<li><a href="#removing-a-commit" id="toc-removing-a-commit"><span
+class="toc-section-number">1.</span> Removing a commit</a></li>
+<li><a href="#removing-a-file-from-git-history"
+id="toc-removing-a-file-from-git-history"><span
+class="toc-section-number">2.</span> Removing a file from git
+history</a></li>
+<li><a href="#fix-displaying-file-names-with-unicode-characters-in-them"
+id="toc-fix-displaying-file-names-with-unicode-characters-in-them"><span
+class="toc-section-number">3.</span> Fix displaying file names with
+unicode characters in them</a></li>
 </ul>
-<h2 id="removing-a-commit">Removing a commit</h2>
-<p>First, remove the commit from local repository using a command like <code>git reset --soft [commit]^</code>. Then, if necessary force-push to remote repository e.g. GitHub to remove that commit from there as well.</p>
+<hr>
+</nav>
+<h2 data-number="1." id="removing-a-commit"><span
+class="header-section-number">1.</span> Removing a commit</h2>
+<p>First, remove the commit from local repository using a command like
+<code>git reset --soft [commit]^</code>. Then, if necessary force-push
+to remote repository e.g. GitHub to remove that commit from there as
+well.</p>
 <p><a href="https://stackoverflow.com/a/448929">Further reading</a></p>
-<h2 id="removing-a-file-from-git-history">Removing a file from git history</h2>
-<p>Follow the tutorial <a href="https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository">here</a>.</p>
-<p>Also consider re-signing the commits as seen <a href="https://stackoverflow.com/a/41883164">here</a>.</p>
-<h2 id="fix-displaying-file-names-with-unicode-characters-in-them">Fix displaying file names with unicode characters in them</h2>
-<p>For some odd reason <code>git</code> doesn’t properly display non-ASCII characters (exotic characters e.g. ö or ę) in file and directory names. To fix it execute:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.quotePath false</span></code></pre></div>
+<hr />
+<h2 data-number="2." id="removing-a-file-from-git-history"><span
+class="header-section-number">2.</span> Removing a file from git
+history</h2>
+<p>Follow the tutorial <a
+href="https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository">here</a>.</p>
+<p>Also consider re-signing the commits as seen <a
+href="https://stackoverflow.com/a/41883164">here</a>.</p>
+<hr />
+<h2 data-number="3."
+id="fix-displaying-file-names-with-unicode-characters-in-them"><span
+class="header-section-number">3.</span> Fix displaying file names with
+unicode characters in them</h2>
+<p>For some odd reason <code>git</code> doesn’t properly display
+non-ASCII characters (exotic characters e.g. ö or ę) in file and
+directory names. To fix it execute:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.quotePath false</span></code></pre></div>
 </body>
 </html>

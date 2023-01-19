@@ -5,7 +5,9 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Jerry Sky" />
-  <meta name="keywords" content="web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScript, SQL, CSS, SCSS, Sass, links, resources, tcp, port" />
+  <meta name="keywords" content="web, development, Angular, NodeJS,
+ExpressJS, JS, JavaScript, TypeScript, SQL, CSS, SCSS, Sass, links,
+resources, tcp, port" />
   <meta name="description" content="My notes on various web-dev related matters." />
   <title>Web dev</title>
   <style type="text/css">
@@ -53,7 +55,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +68,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -87,6 +89,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 </head>
 <body>
+
 <header id="title-block-header">
 <h1 class="title">Web dev</h1>
 <p class="author">
@@ -94,72 +97,144 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="author">Jerry Sky</span>
 </p>
 </header>
-<p id="document-description"><em>My notes on various web-dev related matters.</em></p>
-<hr />
+<p id="document-description"><em>My notes on various web-dev related
+matters.</em></p>
+<nav id="TOC">
+<hr>
 <ul>
-<li><a href="#resources">Resources</a>
+<li><a href="#resources" id="toc-resources"><span
+class="toc-section-number">1.</span> Resources</a>
 <ul>
-<li><a href="#crucial"><strong>Crucial</strong></a></li>
-<li><a href="#security">Security</a></li>
-<li><a href="#interesting">Interesting</a></li>
-<li><a href="#building">Building</a></li>
-<li><a href="#abstract">Abstract</a></li>
-<li><a href="#useful">Useful</a></li>
-<li><a href="#entertainment-like">Entertainment-like</a></li>
+<li><a href="#crucial" id="toc-crucial"><span
+class="toc-section-number">1.1.</span>
+<strong>Crucial</strong></a></li>
+<li><a href="#security" id="toc-security"><span
+class="toc-section-number">1.2.</span> Security</a></li>
+<li><a href="#interesting" id="toc-interesting"><span
+class="toc-section-number">1.3.</span> Interesting</a></li>
+<li><a href="#building" id="toc-building"><span
+class="toc-section-number">1.4.</span> Building</a></li>
+<li><a href="#abstract" id="toc-abstract"><span
+class="toc-section-number">1.5.</span> Abstract</a></li>
+<li><a href="#useful" id="toc-useful"><span
+class="toc-section-number">1.6.</span> Useful</a></li>
+<li><a href="#entertainment-like" id="toc-entertainment-like"><span
+class="toc-section-number">1.7.</span> Entertainment-like</a></li>
 </ul></li>
-<li><a href="#nodejs--apache-server-htaccess">NodeJS + Apache server (<code>.htaccess</code>)</a></li>
-<li><a href="#freeing-a-tcp-port">Freeing a TCP port</a></li>
-<li><a href="#corb--cors">CORB &amp; CORS</a></li>
-<li><a href="#samsung-internet-browser-webpage-scroll-position">Samsung Internet browser webpage scroll position</a></li>
-<li><a href="#classes-and-interfaces-in-typescript">Classes and Interfaces in TypeScript</a></li>
-<li><a href="#extracting-a-property-from-a-derived-class-a-proposal">Extracting a property from a derived class (a proposal)</a></li>
-<li><a href="#type-hierarchy-difference-between-void-null-etc">Type hierarchy, difference between <code>void</code>, <code>null</code>, etc.</a></li>
+<li><a href="#nodejs--apache-server-htaccess"
+id="toc-nodejs--apache-server-htaccess"><span
+class="toc-section-number">2.</span> NodeJS + Apache server
+(<code>.htaccess</code>)</a></li>
+<li><a href="#freeing-a-tcp-port" id="toc-freeing-a-tcp-port"><span
+class="toc-section-number">3.</span> Freeing a TCP port</a></li>
+<li><a href="#corb--cors" id="toc-corb--cors"><span
+class="toc-section-number">4.</span> CORB &amp; CORS</a></li>
+<li><a href="#samsung-internet-browser-webpage-scroll-position"
+id="toc-samsung-internet-browser-webpage-scroll-position"><span
+class="toc-section-number">5.</span> Samsung Internet browser webpage
+scroll position</a></li>
+<li><a href="#classes-and-interfaces-in-typescript"
+id="toc-classes-and-interfaces-in-typescript"><span
+class="toc-section-number">6.</span> Classes and Interfaces in
+TypeScript</a></li>
+<li><a href="#extracting-a-property-from-a-derived-class-a-proposal"
+id="toc-extracting-a-property-from-a-derived-class-a-proposal"><span
+class="toc-section-number">7.</span> Extracting a property from a
+derived class (a proposal)</a></li>
+<li><a href="#type-hierarchy-difference-between-void-null-etc"
+id="toc-type-hierarchy-difference-between-void-null-etc"><span
+class="toc-section-number">8.</span> Type hierarchy, difference between
+<code>void</code>, <code>null</code>, etc.</a></li>
 </ul>
-<hr />
-<h2 id="resources">Resources</h2>
-<h3 id="crucial"><strong>Crucial</strong></h3>
+<hr>
+</nav>
+<h2 data-number="1." id="resources"><span
+class="header-section-number">1.</span> Resources</h2>
+<h3 data-number="1.1." id="crucial"><span
+class="header-section-number">1.1.</span> <strong>Crucial</strong></h3>
 <ul>
-<li><a href="https://blog.goncharov.page/strict-mode-in-typescript-or-help-your-compiler-help-you">Strict mode in TypeScript || help your compiler help you — an article by Andrey Goncharov</a></li>
+<li><a
+href="https://blog.goncharov.page/strict-mode-in-typescript-or-help-your-compiler-help-you">Strict
+mode in TypeScript || help your compiler help you — an article by Andrey
+Goncharov</a></li>
 </ul>
-<h3 id="security">Security</h3>
+<h3 data-number="1.2." id="security"><span
+class="header-section-number">1.2.</span> Security</h3>
 <ul>
-<li><a href="https://hackernoon.com/your-node-js-authentication-tutorial-is-wrong-f1a3bf831a46">Your NodeJS authentication tutorial is (probably) wrong</a></li>
-<li><a href="https://github.com/emilbayes/secure-password"><code>secure-password</code></a></li>
-<li><a href="https://hackernoon.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9">How to stop me harvesting credit card numbers and passwords from your site</a></li>
-<li><a href="https://www.simonholywell.com/post/2013/05/improve-php-session-cookie-security/">PHP Cookies security</a></li>
-<li><a href="http://wayback.archive.org/web/20150204143440/https://resonantcore.net/blog/2015/02/remember-me-safely-secure-long-term-authentication-strategies">Remember me Safely</a></li>
+<li><a
+href="https://hackernoon.com/your-node-js-authentication-tutorial-is-wrong-f1a3bf831a46">Your
+NodeJS authentication tutorial is (probably) wrong</a></li>
+<li><a
+href="https://github.com/emilbayes/secure-password"><code>secure-password</code></a></li>
+<li><a
+href="https://hackernoon.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9">How
+to stop me harvesting credit card numbers and passwords from your
+site</a></li>
+<li><a
+href="https://www.simonholywell.com/post/2013/05/improve-php-session-cookie-security/">PHP
+Cookies security</a></li>
+<li><a
+href="http://wayback.archive.org/web/20150204143440/https://resonantcore.net/blog/2015/02/remember-me-safely-secure-long-term-authentication-strategies">Remember
+me Safely</a></li>
 </ul>
-<h3 id="interesting">Interesting</h3>
+<h3 data-number="1.3." id="interesting"><span
+class="header-section-number">1.3.</span> Interesting</h3>
 <ul>
-<li><a href="https://medium.com/edge-coders/you-dont-hate-javascript-62cd6c609d43">You don’t hate JavaScript</a></li>
-<li><a href="https://www.youtube.com/watch?v=99Zacm7SsWQ">The Post JavaScript Apocalypse</a></li>
+<li><a
+href="https://medium.com/edge-coders/you-dont-hate-javascript-62cd6c609d43">You
+don’t hate JavaScript</a></li>
+<li><a href="https://www.youtube.com/watch?v=99Zacm7SsWQ">The Post
+JavaScript Apocalypse</a></li>
 </ul>
-<h3 id="building">Building</h3>
+<h3 data-number="1.4." id="building"><span
+class="header-section-number">1.4.</span> Building</h3>
 <ul>
-<li><a href="https://fdietz.github.io/2015/04/13/day-1-how-to-build-your-own-team-chat-in-five-days.html">How to build your own team chat in five days</a></li>
-<li><a href="https://solovyov.net/blog/2020/a-tale-of-webpage-speed-or-throwing-away-react/">A tale of webpage speed, or throwing away React</a><br />
+<li><a
+href="https://fdietz.github.io/2015/04/13/day-1-how-to-build-your-own-team-chat-in-five-days.html">How
+to build your own team chat in five days</a></li>
+<li><a
+href="https://solovyov.net/blog/2020/a-tale-of-webpage-speed-or-throwing-away-react/">A
+tale of webpage speed, or throwing away React</a><br />
 — an efficient web app that is not bloated, <em>imagine that</em></li>
 </ul>
-<h3 id="abstract">Abstract</h3>
+<h3 data-number="1.5." id="abstract"><span
+class="header-section-number">1.5.</span> Abstract</h3>
 <ul>
-<li><a href="https://simpleprogrammer.com/2015/09/11/a-programmers-guide-to-managing-stress/?utm_source=facebook.com&amp;utm_medium=referral&amp;utm_campaign=i-love-coding">A Programmer’s Guide to Managing Stress</a></li>
-<li><a href="http://web.archive.org/web/20150208203207/http://blog.ircmaxell.com/2014/11/its-all-about-time.html">It’s all about time</a></li>
+<li><a
+href="https://simpleprogrammer.com/2015/09/11/a-programmers-guide-to-managing-stress/?utm_source=facebook.com&amp;utm_medium=referral&amp;utm_campaign=i-love-coding">A
+Programmer’s Guide to Managing Stress</a></li>
+<li><a
+href="http://web.archive.org/web/20150208203207/http://blog.ircmaxell.com/2014/11/its-all-about-time.html">It’s
+all about time</a></li>
 </ul>
-<h3 id="useful">Useful</h3>
+<h3 data-number="1.6." id="useful"><span
+class="header-section-number">1.6.</span> Useful</h3>
 <ul>
-<li><a href="https://leafletjs.com/"><strong>Leaflet</strong> — map plugin</a></li>
-<li><a href="https://stackoverflow.com/a/48524488/4249875">NPM — overriding nested NPM dependency versions</a></li>
-<li><a href="https://spin.atomicobject.com/2021/03/22/makefiles-vs-package-json-scripts/">Makefile over NPM scripts</a></li>
+<li><a href="https://leafletjs.com/"><strong>Leaflet</strong> — map
+plugin</a></li>
+<li><a href="https://stackoverflow.com/a/48524488/4249875">NPM —
+overriding nested NPM dependency versions</a></li>
+<li><a
+href="https://spin.atomicobject.com/2021/03/22/makefiles-vs-package-json-scripts/">Makefile
+over NPM scripts</a></li>
 </ul>
-<h3 id="entertainment-like">Entertainment-like</h3>
+<h3 data-number="1.7." id="entertainment-like"><span
+class="header-section-number">1.7.</span> Entertainment-like</h3>
 <ul>
-<li><a href="https://death-to-ie11.netlify.com/">IE-11 end of support countdown</a></li>
-<li><a href="https://www.youtube.com/watch?v=G1bRi4El0iw">Creating Electronic Dance Music with NodeJS</a></li>
-<li><a href="https://github.com/samir-dahal/MusicPlayer">Music Player with physics-based seekbar</a></li>
+<li><a href="https://death-to-ie11.netlify.com/">IE-11 end of support
+countdown</a></li>
+<li><a href="https://www.youtube.com/watch?v=G1bRi4El0iw">Creating
+Electronic Dance Music with NodeJS</a></li>
+<li><a href="https://github.com/samir-dahal/MusicPlayer">Music Player
+with physics-based seekbar</a></li>
 </ul>
 <hr />
-<h2 id="nodejs--apache-server-htaccess">NodeJS + Apache server (<code>.htaccess</code>)</h2>
-<p>To use a NodeJS app on an Apache server you can setup the <code>.htaccess</code> file to redirect any request to the NodeJS server:</p>
+<h2 data-number="2." id="nodejs--apache-server-htaccess"><span
+class="header-section-number">2.</span> NodeJS + Apache server
+(<code>.htaccess</code>)</h2>
+<p>To use a NodeJS app on an Apache server you can setup the
+<code>.htaccess</code> file to redirect any request to the NodeJS
+server:</p>
 <pre class="htaccess"><code>DirectoryIndex disabled
 RewriteEngine On
 RewriteCond %{HTTPS} on
@@ -175,24 +250,46 @@ RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
 RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</code></pre>
-<p>Obviously, you would replace the <code>**PORT**</code> fields with actual port on which the desired NodeJS app runs.</p>
+<p>Obviously, you would replace the <code>**PORT**</code> fields with
+actual port on which the desired NodeJS app runs.</p>
 <p>For WebSocket support use:</p>
 <pre class="htaccess"><code>RewriteCond %{REQUEST_URI} ^/socket.io [NC]
 RewriteCond %{QUERY_STRING} transport=websocket [NC]
 RewriteRule /(.*) ws://localhost:**PORT**/$1 [P,L]</code></pre>
 <p>Again, replace <code>**PORT**</code> with an actual port.</p>
-<p>Source: <a href="http://web.archive.org/web/20180625042814/https://www.smarthost.pl/instalacja-i-uruchomienie-nodejs-na-koncie-hostingowym-smarthost">original article <em>in polish</em></a></p>
+<p>Source: <a
+href="http://web.archive.org/web/20180625042814/https://www.smarthost.pl/instalacja-i-uruchomienie-nodejs-na-koncie-hostingowym-smarthost">original
+article <em>in polish</em></a></p>
 <hr />
-<h2 id="freeing-a-tcp-port">Freeing a TCP port</h2>
+<h2 data-number="3." id="freeing-a-tcp-port"><span
+class="header-section-number">3.</span> Freeing a TCP port</h2>
 <p>Execute bash command</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> fuser 80/tcp</span></code></pre></div>
-<p>to see all the processes listening to HTTP requests on port 80. Add the <code>-k</code> option to kill them.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> fuser 80/tcp</span></code></pre></div>
+<p>to see all the processes listening to HTTP requests on port 80. Add
+the <code>-k</code> option to kill them.</p>
 <p><a href="https://stackoverflow.com/a/750705/4249875">Source</a></p>
 <hr />
-<h2 id="corb--cors">CORB &amp; CORS</h2>
-<p>CORB might be a potential hiccup when attempting to load resources from different origin (CORS). The problem can occur when a website (SPA) requests additional data, but the user accessed the website using two different links one with <code>www.</code> and one without the prefix. Browser then remembers that the resource had the <code>Access-Control-Allow-Origin</code> set to the website link with <code>www.</code> prefix for example. That’s why when accessing the website without the prefix, browser blocks the CORS connection, because it remembers the resource had the header set to a different domain. The domains <code>www.example.com</code> and <code>example.com</code> are two different domains.</p>
-<p><a href="https://www.siteground.com/kb/how_to_redirect_www_urls_to_nonwww/">Further reading</a></p>
-<p>The code snippet attached below is an example <code>.htaccess</code> file implementing necessary redirections from http and/or www addresses to https non-www version of the domain including SPA redirect to the main index file.</p>
+<h2 data-number="4." id="corb--cors"><span
+class="header-section-number">4.</span> CORB &amp; CORS</h2>
+<p>CORB might be a potential hiccup when attempting to load resources
+from different origin (CORS). The problem can occur when a website (SPA)
+requests additional data, but the user accessed the website using two
+different links one with <code>www.</code> and one without the prefix.
+Browser then remembers that the resource had the
+<code>Access-Control-Allow-Origin</code> set to the website link with
+<code>www.</code> prefix for example. That’s why when accessing the
+website without the prefix, browser blocks the CORS connection, because
+it remembers the resource had the header set to a different domain. The
+domains <code>www.example.com</code> and <code>example.com</code> are
+two different domains.</p>
+<p><a
+href="https://www.siteground.com/kb/how_to_redirect_www_urls_to_nonwww/">Further
+reading</a></p>
+<p>The code snippet attached below is an example <code>.htaccess</code>
+file implementing necessary redirections from http and/or www addresses
+to https non-www version of the domain including SPA redirect to the
+main index file.</p>
 <pre class="htaccess"><code>RewriteEngine on
 # redirect all non https links to https non-www domain
 RewriteCond %{HTTPS} off
@@ -209,106 +306,184 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 RewriteRule ^(.*) /index.html [NC]</code></pre>
 <hr />
-<h2 id="samsung-internet-browser-webpage-scroll-position">Samsung Internet browser webpage scroll position</h2>
-<p>Samsung Internet doesn’t output scroll position through <code>document.documentElement.scrollTop</code>, instead use <code>document.body.scrollTop</code>. However, unfortunately the second option isn’t supported in other major browsers. Therefore, the best implementation of <code>scrollTop</code> would be to check the value from both sources to ensure thorough browser support.</p>
+<h2 data-number="5."
+id="samsung-internet-browser-webpage-scroll-position"><span
+class="header-section-number">5.</span> Samsung Internet browser
+webpage scroll position</h2>
+<p>Samsung Internet doesn’t output scroll position through
+<code>document.documentElement.scrollTop</code>, instead use
+<code>document.body.scrollTop</code>. However, unfortunately the second
+option isn’t supported in other major browsers. Therefore, the best
+implementation of <code>scrollTop</code> would be to check the value
+from both sources to ensure thorough browser support.</p>
 <hr />
-<h2 id="classes-and-interfaces-in-typescript">Classes and Interfaces in TypeScript</h2>
-<p>Without defining a constructor there is no way to check if a given attribute (of actual type <code>string</code>) is in a certain object (that is a member of some given class) if the object is empty. TypeScript doesn’t include the properties of a class in the compiled program; to check if a given prop is in a certain object type (in a class definition one can say) you have to use an ad-hoc generated staple object that is a member of this class — this way the constructor will be called and it will initialize all the properties thus <code>Object.keys</code> will not return an empty array but an array with all properties initialized by the constructor.</p>
-<p>Below is an example class with a constructor that initializes all class’ attributes.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>class Example {</span>
+<h2 data-number="6." id="classes-and-interfaces-in-typescript"><span
+class="header-section-number">6.</span> Classes and Interfaces in
+TypeScript</h2>
+<p>Without defining a constructor there is no way to check if a given
+attribute (of actual type <code>string</code>) is in a certain object
+(that is a member of some given class) if the object is empty.
+TypeScript doesn’t include the properties of a class in the compiled
+program; to check if a given prop is in a certain object type (in a
+class definition one can say) you have to use an ad-hoc generated staple
+object that is a member of this class — this way the constructor will be
+called and it will initialize all the properties thus
+<code>Object.keys</code> will not return an empty array but an array
+with all properties initialized by the constructor.</p>
+<p>Below is an example class with a constructor that initializes all
+class’ attributes.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Example {</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    one<span class="op">:</span> <span class="dt">string</span><span class="op">;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    two<span class="op">:</span> <span class="dt">number</span><span class="op">;</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    three<span class="op">:</span> <span class="dt">number</span>[]<span class="op">;</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">constructor</span>() {</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        this<span class="op">.</span><span class="at">one</span> <span class="op">=</span> <span class="st">&#39;some&#39;</span><span class="op">;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        this<span class="op">.</span><span class="at">two</span> <span class="op">=</span> <span class="st">&#39;example&#39;</span><span class="op">;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        this<span class="op">.</span><span class="at">three</span> <span class="op">=</span> <span class="st">&#39;data&#39;</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">one</span> <span class="op">=</span> <span class="st">&#39;some&#39;</span><span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">two</span> <span class="op">=</span> <span class="st">&#39;example&#39;</span><span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">three</span> <span class="op">=</span> <span class="st">&#39;data&#39;</span><span class="op">;</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Now, to check if a given string is an attribute use:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">if</span> (attr in <span class="kw">new</span> Example) {</span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (attr <span class="kw">in</span> <span class="kw">new</span> Example) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(attr<span class="op">,</span> <span class="st">&#39;is a property in `Example`&#39;</span>)<span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>If the <code>constructor</code> isn’t defined in the <code>Example</code> class, the condition in the above <code>if</code> statement will always reject any <code>string</code> property.</p>
-<p>To allow creating objects with custom initializing values you could improve <code>constructor</code> by adding an optional argument:</p>
+<p>If the <code>constructor</code> isn’t defined in the
+<code>Example</code> class, the condition in the above <code>if</code>
+statement will always reject any <code>string</code> property.</p>
+<p>To allow creating objects with custom initializing values you could
+improve <code>constructor</code> by adding an optional argument:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">constructor</span>(example<span class="op">:</span> <span class="bu">Partial</span><span class="op">&lt;</span>Example<span class="op">&gt;</span> <span class="op">=</span> {}) {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    this<span class="op">.</span><span class="at">one</span> <span class="op">=</span> example<span class="op">.</span><span class="at">one</span> <span class="op">||</span> <span class="st">&#39;some&#39;</span><span class="op">;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    this<span class="op">.</span><span class="at">two</span> <span class="op">=</span> example<span class="op">.</span><span class="at">two</span> <span class="op">||</span> <span class="st">&#39;example&#39;</span><span class="op">;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    this<span class="op">.</span><span class="at">three</span> <span class="op">=</span> example<span class="op">.</span><span class="at">three</span> <span class="op">||</span> <span class="st">&#39;data&#39;</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">one</span> <span class="op">=</span> example<span class="op">.</span><span class="at">one</span> <span class="op">||</span> <span class="st">&#39;some&#39;</span><span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">two</span> <span class="op">=</span> example<span class="op">.</span><span class="at">two</span> <span class="op">||</span> <span class="st">&#39;example&#39;</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">three</span> <span class="op">=</span> example<span class="op">.</span><span class="at">three</span> <span class="op">||</span> <span class="st">&#39;data&#39;</span><span class="op">;</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>This way you could create a new instance of this class with some custom parameters. However, this argument is optional so it can be omitted: <code>new Example()</code>.</p>
-<p>It is important to note that defining the argument as optional using the <code>?</code> symbol won’t work.</p>
+<p>This way you could create a new instance of this class with some
+custom parameters. However, this argument is optional so it can be
+omitted: <code>new Example()</code>.</p>
+<p>It is important to note that defining the argument as optional using
+the <code>?</code> symbol won’t work.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">constructor</span>(example<span class="op">?:</span> <span class="bu">Partial</span><span class="op">&lt;</span>Example<span class="op">&gt;</span>) {<span class="op">...</span>}</span></code></pre></div>
-<p>If the <code>constructor</code> is defined as above then creating a new object (<code>new Example()</code>) will result in an error of a <code>TypeError</code>:</p>
+<p>If the <code>constructor</code> is defined as above then creating a
+new object (<code>new Example()</code>) will result in an error of a
+<code>TypeError</code>:</p>
 <pre class="log"><code>TypeError: Cannot read property &#39;...&#39; of undefined</code></pre>
 <p>as the argument object hasn’t been provided.<br />
-<strong>Setting the default value to <code>{}</code> resolves this issue.</strong></p>
+<strong>Setting the default value to <code>{}</code> resolves this
+issue.</strong></p>
 <hr />
-<h2 id="extracting-a-property-from-a-derived-class-a-proposal">Extracting a property from a derived class (a proposal)</h2>
+<h2 data-number="7."
+id="extracting-a-property-from-a-derived-class-a-proposal"><span
+class="header-section-number">7.</span> Extracting a property from a
+derived class (a proposal)</h2>
 <p><em>An obscure issue, but still a valuable one to consider.</em></p>
 <p>We have two classes of which one is derived from the other:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>class Base {</span>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode ts"><code class="sourceCode typescript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Base {</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    one<span class="op">:</span> <span class="dt">string</span><span class="op">;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">constructor</span>() {</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        this<span class="op">.</span><span class="at">one</span> <span class="op">=</span> <span class="st">&#39;data&#39;</span><span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">one</span> <span class="op">=</span> <span class="st">&#39;data&#39;</span><span class="op">;</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>class Derived extends Base {</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Derived <span class="kw">extends</span> Base {</span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    two<span class="op">:</span> <span class="dt">number</span><span class="op">;</span></span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">constructor</span>() {</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">super</span>()<span class="op">;</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        this<span class="op">.</span><span class="at">two</span> <span class="op">=</span> <span class="dv">27</span><span class="op">;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">super</span>()<span class="op">;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">two</span> <span class="op">=</span> <span class="dv">27</span><span class="op">;</span></span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>an instance of the <code>Derived</code> class:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>const object<span class="op">:</span> Derived <span class="op">=</span> <span class="kw">new</span> <span class="fu">Derived</span>()<span class="op">;</span></span></code></pre></div>
-<p>We want to extract properties that are defined by <code>Base</code> class from this <code>object</code> and remove all that are defined by the <code>Derived</code> class. In this case we want to get an object with only the <code>one</code> property.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>const objectExtracted<span class="op">:</span> Base <span class="op">=</span> <span class="kw">new</span> <span class="fu">Base</span>()<span class="op">;</span></span></code></pre></div>
-<p>The first solution would be to loop through all properties of the <code>object</code> properties and assign all values to properties that exist in <code>objectExtracted</code>’s type which is the <code>Base</code> class.</p>
-<p>We need to define a <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#using-type-predicates"><em>predicate function</em></a> that states whether a given string property name is an actual property name:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>class Base {</span>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode ts"><code class="sourceCode typescript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> object<span class="op">:</span> Derived <span class="op">=</span> <span class="kw">new</span> <span class="fu">Derived</span>()<span class="op">;</span></span></code></pre></div>
+<p>We want to extract properties that are defined by <code>Base</code>
+class from this <code>object</code> and remove all that are defined by
+the <code>Derived</code> class. In this case we want to get an object
+with only the <code>one</code> property.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode ts"><code class="sourceCode typescript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objectExtracted<span class="op">:</span> Base <span class="op">=</span> <span class="kw">new</span> <span class="fu">Base</span>()<span class="op">;</span></span></code></pre></div>
+<p>The first solution would be to loop through all properties of the
+<code>object</code> properties and assign all values to properties that
+exist in <code>objectExtracted</code>’s type which is the
+<code>Base</code> class.</p>
+<p>We need to define a <a
+href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#using-type-predicates"><em>predicate
+function</em></a> that states whether a given string property name is an
+actual property name:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode ts"><code class="sourceCode typescript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Base {</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    public static <span class="fu">hasKey</span>(val<span class="op">:</span> <span class="dt">any</span>)<span class="op">:</span> val <span class="kw">is</span> <span class="kw">keyof</span> Base {</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        return val in <span class="kw">new</span> <span class="fu">Base</span>()<span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> <span class="fu">hasKey</span>(val<span class="op">:</span> <span class="dt">any</span>)<span class="op">:</span> val <span class="kw">is</span> <span class="kw">keyof</span> Base {</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> val <span class="kw">in</span> <span class="kw">new</span> <span class="fu">Base</span>()<span class="op">;</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>This function creates a staple instance of the <code>Base</code> class that contains all of its properties (it is important to define a proper <code>constructor</code> for this class — more <a href="#classes-and-interfaces-in-typescript">here</a>) and checks whether the provided string is an actual object key.</p>
+<p>This function creates a staple instance of the <code>Base</code>
+class that contains all of its properties (it is important to define a
+proper <code>constructor</code> for this class — more <a
+href="#classes-and-interfaces-in-typescript">here</a>) and checks
+whether the provided string is an actual object key.</p>
 <p>However, the following code isn’t enough:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">for</span> (const prop in <span class="kw">object</span>) {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">if</span>(Base<span class="op">.</span><span class="fu">hasKey</span>(prop)) {</span>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode ts"><code class="sourceCode typescript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> prop <span class="kw">in</span> <span class="kw">object</span>) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(Base<span class="op">.</span><span class="fu">hasKey</span>(prop)) {</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        objectExtracted[prop] <span class="op">=</span> <span class="kw">object</span>[prop]<span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>as it will bring up an error that some type can’t be cast to the type “<code>never</code>”. This type exists because of uncertainty which type should be used here when accessing a property of <code>objectExtracted</code>.</p>
-<p>The solution is to define a function which <em>extracts</em> a given property from one object to another whilst at the same time <strong>being type-safe</strong>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>export <span class="kw">function</span> <span class="fu">ExtractProperty</span><span class="op">&lt;</span>T1<span class="op">,</span> T2 extends T1<span class="op">,</span> K extends <span class="kw">keyof</span> T2<span class="op">&gt;</span>(</span>
+<p>as it will bring up an error that some type can’t be cast to the type
+“<code>never</code>”. This type exists because of uncertainty which type
+should be used here when accessing a property of
+<code>objectExtracted</code>.</p>
+<p>The solution is to define a function which <em>extracts</em> a given
+property from one object to another whilst at the same time
+<strong>being type-safe</strong>:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode ts"><code class="sourceCode typescript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">function</span> <span class="fu">ExtractProperty</span><span class="op">&lt;</span>T1<span class="op">,</span> T2 <span class="kw">extends</span> T1<span class="op">,</span> K <span class="kw">extends</span> <span class="kw">keyof</span> T2<span class="op">&gt;</span>(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  target<span class="op">:</span> T1<span class="op">,</span> source<span class="op">:</span> T2<span class="op">,</span> property<span class="op">:</span> K<span class="op">,</span> hasKey<span class="op">:</span> (val<span class="op">:</span> <span class="dt">any</span>) <span class="kw">=&gt;</span> val <span class="kw">is</span> <span class="kw">keyof</span> T1)<span class="op">:</span> <span class="dt">void</span> {</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">if</span> (<span class="fu">hasKey</span>(property)) {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">hasKey</span>(property)) {</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    target[property] <span class="op">=</span> source[property]<span class="op">;</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>This function assigns the property value from the <code>source</code> object to <code>target</code> only if <code>target</code> has a property of the same name. This function requires using a predicate which makes sure the object keys are handled properly.</p>
-<p><em>This function essentially moves the problem to an abstract level at which it resolves the type uncertainty issue.</em></p>
+<p>This function assigns the property value from the <code>source</code>
+object to <code>target</code> only if <code>target</code> has a property
+of the same name. This function requires using a predicate which makes
+sure the object keys are handled properly.</p>
+<p><em>This function essentially moves the problem to an abstract level
+at which it resolves the type uncertainty issue.</em></p>
 <p>Now, we can rewrite our loop:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode ts"><code class="sourceCode typescript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">for</span> (const prop in <span class="kw">object</span>) {</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">if</span>(Base<span class="op">.</span><span class="fu">hasKey</span>(prop)) {</span>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode ts"><code class="sourceCode typescript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> prop <span class="kw">in</span> <span class="kw">object</span>) {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(Base<span class="op">.</span><span class="fu">hasKey</span>(prop)) {</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ExtractProperty</span>(objectExtracted<span class="op">,</span> <span class="kw">object</span><span class="op">,</span> prop<span class="op">,</span> Base<span class="op">.</span><span class="at">hasKey</span>)<span class="op">;</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>so it uses the <code>ExtractProperty</code> function.</p>
 <hr />
-<h2 id="type-hierarchy-difference-between-void-null-etc">Type hierarchy, difference between <code>void</code>, <code>null</code>, etc.</h2>
-<p>TypeScript introduces a set of rules that define relationships between all types found in the language.</p>
-<p><img src="TS-type-relations-tree.png" alt="TS type relations tree" /><br />
+<h2 data-number="8."
+id="type-hierarchy-difference-between-void-null-etc"><span
+class="header-section-number">8.</span> Type hierarchy, difference
+between <code>void</code>, <code>null</code>, etc.</h2>
+<p>TypeScript introduces a set of rules that define relationships
+between all types found in the language.</p>
+<p><img src="TS-type-relations-tree.png"
+alt="TS type relations tree" /><br />
 <em>The main spine of the type relations tree.</em></p>
-<p>Apart from the “truthy” values, there are also “negative” values in JS. TypeScript introduces a few more of these and also establishes a set of relations between all of them.</p>
+<p>Apart from the “truthy” values, there are also “negative” values in
+JS. TypeScript introduces a few more of these and also establishes a set
+of relations between all of them.</p>
 <hr />
-<table>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 7%" />
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 17%" />
+<col style="width: 9%" />
+<col style="width: 11%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -396,15 +571,20 @@ RewriteRule ^(.*) /index.html [NC]</code></pre>
 </table>
 <ul>
 <li>Y — <em>row</em> is assignable to <em>column</em></li>
-<li>Y’ — same as Y but only when <code>strictNullChecks</code> is turned off</li>
+<li>Y’ — same as Y but only when <code>strictNullChecks</code> is turned
+off</li>
 <li>N — <em>row</em> is not assignable to <em>column</em></li>
 </ul>
-<p><em>The table of relations between various “negative” values in TS.</em> <em>It shows types of variables (columns) that accept types of values (rows).</em></p>
+<p><em>The table of relations between various “negative” values in
+TS.</em> <em>It shows types of variables (columns) that accept types of
+values (rows).</em></p>
 <p>Sources:</p>
 <ul>
-<li><a href="https://www.zhenghao.io/posts/type-hierarchy-tree">The type hierarchy tree — zhenghao.io</a></li>
-<li><a href="https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability">TypeScript Documentation — Type compatibility</a></li>
+<li><a href="https://www.zhenghao.io/posts/type-hierarchy-tree">The type
+hierarchy tree — zhenghao.io</a></li>
+<li><a
+href="https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability">TypeScript
+Documentation — Type compatibility</a></li>
 </ul>
-<hr />
 </body>
 </html>

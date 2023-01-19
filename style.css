@@ -30,6 +30,10 @@ img {
     margin: auto;
 }
 
+#TOC {
+    margin-bottom: 100px;
+}
+
 /* support most screen sizes */
 /* very large screens (TVs and other) */
 body {

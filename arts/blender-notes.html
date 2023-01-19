@@ -5,7 +5,8 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Jerry Sky" />
-  <meta name="keywords" content="Blender, 3D, linux, alpha, addons, colour, geometry, graphics" />
+  <meta name="keywords" content="Blender, 3D, linux, alpha, addons,
+colour, geometry, graphics" />
   <meta name="description" content="Notes on Blender." />
   <title>Blender Notes</title>
   <style type="text/css">
@@ -22,6 +23,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 </head>
 <body>
+
 <header id="title-block-header">
 <h1 class="title">Blender Notes</h1>
 <p class="author">
@@ -30,94 +32,179 @@
 </p>
 </header>
 <p id="document-description"><em>Notes on Blender.</em></p>
-<hr />
+<nav id="TOC">
+<hr>
 <ul>
-<li><a href="#links">Links</a>
+<li><a href="#links" id="toc-links"><span
+class="toc-section-number">1.</span> Links</a>
 <ul>
-<li><a href="#useful">Useful</a></li>
-<li><a href="#cool">Cool</a></li>
-<li><a href="#todo">TODO</a></li>
+<li><a href="#useful" id="toc-useful"><span
+class="toc-section-number">1.1.</span> Useful</a></li>
+<li><a href="#cool" id="toc-cool"><span
+class="toc-section-number">1.2.</span> Cool</a></li>
+<li><a href="#todo" id="toc-todo"><span
+class="toc-section-number">1.3.</span> TODO</a></li>
 </ul></li>
-<li><a href="#addons">Addons</a></li>
-<li><a href="#objects-reusing-mesh-data">Objects reusing mesh data</a></li>
-<li><a href="#adaptive-subdivision">Adaptive subdivision</a></li>
-<li><a href="#alpha-transparency">Alpha transparency</a></li>
-<li><a href="#hdr-world-backgrounds">HDR world backgrounds</a></li>
-<li><a href="#select-similar-verticesedgesfaces">Select similar vertices/edges/faces</a></li>
-<li><a href="#to-sphere-tool"><em>To sphere</em> tool</a></li>
-<li><a href="#masking-data">Masking data</a></li>
-<li><a href="#applying-a-property-change-to-multiple-objects">Applying a property change to multiple objects</a></li>
-<li><a href="#fixing-normals">Fixing normals</a></li>
-<li><a href="#baking-a-particle-system-animation">Baking a particle system animation</a></li>
+<li><a href="#addons" id="toc-addons"><span
+class="toc-section-number">2.</span> Addons</a></li>
+<li><a href="#objects-reusing-mesh-data"
+id="toc-objects-reusing-mesh-data"><span
+class="toc-section-number">3.</span> Objects reusing mesh data</a></li>
+<li><a href="#adaptive-subdivision" id="toc-adaptive-subdivision"><span
+class="toc-section-number">4.</span> Adaptive subdivision</a></li>
+<li><a href="#alpha-transparency" id="toc-alpha-transparency"><span
+class="toc-section-number">5.</span> Alpha transparency</a></li>
+<li><a href="#hdr-world-backgrounds"
+id="toc-hdr-world-backgrounds"><span
+class="toc-section-number">6.</span> HDR world backgrounds</a></li>
+<li><a href="#select-similar-verticesedgesfaces"
+id="toc-select-similar-verticesedgesfaces"><span
+class="toc-section-number">7.</span> Select similar
+vertices/edges/faces</a></li>
+<li><a href="#to-sphere-tool" id="toc-to-sphere-tool"><span
+class="toc-section-number">8.</span> <em>To sphere</em> tool</a></li>
+<li><a href="#masking-data" id="toc-masking-data"><span
+class="toc-section-number">9.</span> Masking data</a></li>
+<li><a href="#applying-a-property-change-to-multiple-objects"
+id="toc-applying-a-property-change-to-multiple-objects"><span
+class="toc-section-number">10.</span> Applying a property change to
+multiple objects</a></li>
+<li><a href="#fixing-normals" id="toc-fixing-normals"><span
+class="toc-section-number">11.</span> Fixing normals</a></li>
+<li><a href="#baking-a-particle-system-animation"
+id="toc-baking-a-particle-system-animation"><span
+class="toc-section-number">12.</span> Baking a particle system
+animation</a></li>
 </ul>
-<hr />
-<h2 id="links">Links</h2>
-<h3 id="useful">Useful</h3>
+<hr>
+</nav>
+<h2 data-number="1." id="links"><span
+class="header-section-number">1.</span> Links</h2>
+<h3 data-number="1.1." id="useful"><span
+class="header-section-number">1.1.</span> Useful</h3>
 <ul>
-<li><a href="https://youtu.be/f3yzwql_2nw">Creating Realistic Wetmaps</a></li>
-<li><a href="http://cpetry.github.io/NormalMap-Online/">NormalMap-Online</a></li>
-<li><a href="https://youtu.be/3rlMzsBWtPY">Avoiding pinching when subsurface modeling</a></li>
-<li><a href="http://www.blenderguru.com/tutorials/make-atmospheric-lighting-blender/#.VIN68vl5N8F">How to Work with Blender Lighting</a></li>
-<li><a href="https://youtu.be/8gSyEpt4-60">18 Ways to Speed Up Cycles Rendering</a></li>
-<li><a href="https://youtu.be/m9AT7H4GGrA">The Secret Ingredient to Photorealism</a></li>
+<li><a href="https://youtu.be/f3yzwql_2nw">Creating Realistic
+Wetmaps</a></li>
+<li><a
+href="http://cpetry.github.io/NormalMap-Online/">NormalMap-Online</a></li>
+<li><a href="https://youtu.be/3rlMzsBWtPY">Avoiding pinching when
+subsurface modeling</a></li>
+<li><a
+href="http://www.blenderguru.com/tutorials/make-atmospheric-lighting-blender/#.VIN68vl5N8F">How
+to Work with Blender Lighting</a></li>
+<li><a href="https://youtu.be/8gSyEpt4-60">18 Ways to Speed Up Cycles
+Rendering</a></li>
+<li><a href="https://youtu.be/m9AT7H4GGrA">The Secret Ingredient to
+Photorealism</a></li>
 <li><a href="https://youtu.be/QVb3261tywQ">Pro-lighting Studio</a></li>
 <li><a href="https://youtu.be/sB09T--_ZvU">Baking introduction</a></li>
 </ul>
-<h3 id="cool">Cool</h3>
+<h3 data-number="1.2." id="cool"><span
+class="header-section-number">1.2.</span> Cool</h3>
 <ul>
-<li><a href="https://youtu.be/mRKUou0zLoA">Blender 2.8 EEVEE Volumetric Disco Disco</a></li>
-<li><a href="https://youtu.be/YzKR8QtcozM">Disintegration effect</a></li>
-<li><a href="https://youtu.be/ZiqrCRqyLzE">How to Create Toon Style Animation</a></li>
-<li><a href="https://youtu.be/I0Tz1U6A5vI">How to Create a Paint Splash</a></li>
-<li><a href="http://3.bp.blogspot.com/-Gy_rDI34zBw/UN_1NZmoQfI/AAAAAAAAiEI/cYEmEreB-W0/s1600/particleInfo_010.png">Colorful particles</a></li>
-<li><a href="https://youtu.be/xF0SypG7q8c">10 Tips for Filming Visual Effects</a></li>
-<li><a href="https://youtu.be/nb6rSMAooDs">Create a Subway in 20 minutes</a></li>
+<li><a href="https://youtu.be/mRKUou0zLoA">Blender 2.8 EEVEE Volumetric
+Disco Disco</a></li>
+<li><a href="https://youtu.be/YzKR8QtcozM">Disintegration
+effect</a></li>
+<li><a href="https://youtu.be/ZiqrCRqyLzE">How to Create Toon Style
+Animation</a></li>
+<li><a href="https://youtu.be/I0Tz1U6A5vI">How to Create a Paint
+Splash</a></li>
+<li><a
+href="http://3.bp.blogspot.com/-Gy_rDI34zBw/UN_1NZmoQfI/AAAAAAAAiEI/cYEmEreB-W0/s1600/particleInfo_010.png">Colorful
+particles</a></li>
+<li><a href="https://youtu.be/xF0SypG7q8c">10 Tips for Filming Visual
+Effects</a></li>
+<li><a href="https://youtu.be/nb6rSMAooDs">Create a Subway in 20
+minutes</a></li>
 </ul>
-<h3 id="todo">TODO</h3>
+<h3 data-number="1.3." id="todo"><span
+class="header-section-number">1.3.</span> TODO</h3>
 <ul>
-<li><a href="https://youtu.be/L3654VGZObg"><strong>UV mapping tutorial //TODO-note</strong></a></li>
-<li><a href="http://www.neilblevins.com/cg_education/primary_secondary_and_tertiary_shapes/primary_secondary_and_tertiary_shapes.htm"><strong>Primary, secondary and tertiary shapes //TODO-note</strong></a></li>
-<li><a href="https://twitter.com/andrewpprice/status/1224544692143964161"><strong>Easy cushion model //TODO-note</strong></a></li>
+<li><a href="https://youtu.be/L3654VGZObg"><strong>UV mapping tutorial
+//TODO-note</strong></a></li>
+<li><a
+href="http://www.neilblevins.com/cg_education/primary_secondary_and_tertiary_shapes/primary_secondary_and_tertiary_shapes.htm"><strong>Primary,
+secondary and tertiary shapes //TODO-note</strong></a></li>
+<li><a
+href="https://twitter.com/andrewpprice/status/1224544692143964161"><strong>Easy
+cushion model //TODO-note</strong></a></li>
 </ul>
 <hr />
-<h2 id="addons">Addons</h2>
+<h2 data-number="2." id="addons"><span
+class="header-section-number">2.</span> Addons</h2>
 <ul>
-<li><p><a href="https://github.com/Protinon/Blender-rpc/releases">Blender Discord Presence</a></p></li>
-<li><p><a href="https://github.com/allista/WakatimeBlender">WakaTime</a></p></li>
-<li><p><a href="https://youtu.be/Rbx9DlyddF8">Physical Starlight and Atmosphere</a> <em>$38</em></p></li>
+<li><p><a
+href="https://github.com/Protinon/Blender-rpc/releases">Blender Discord
+Presence</a></p></li>
+<li><p><a
+href="https://github.com/allista/WakatimeBlender">WakaTime</a></p></li>
+<li><p><a href="https://youtu.be/Rbx9DlyddF8">Physical Starlight and
+Atmosphere</a> <em>$38</em></p></li>
 </ul>
 <hr />
-<h2 id="objects-reusing-mesh-data">Objects reusing mesh data</h2>
-<p>Every time you copy an object consider making it a linked copy — it will create a new object that uses the mesh from the source object.</p>
+<h2 data-number="3." id="objects-reusing-mesh-data"><span
+class="header-section-number">3.</span> Objects reusing mesh data</h2>
+<p>Every time you copy an object consider making it a linked copy — it
+will create a new object that uses the mesh from the source object.</p>
 <hr />
-<h2 id="adaptive-subdivision">Adaptive subdivision</h2>
-<p>Use adaptive subdivision to avoid generating too many polygons. Thanks to this method you can save processing power and memory on mesh data by decreasing its detail accordingly to the distance from the camera.</p>
+<h2 data-number="4." id="adaptive-subdivision"><span
+class="header-section-number">4.</span> Adaptive subdivision</h2>
+<p>Use adaptive subdivision to avoid generating too many polygons.
+Thanks to this method you can save processing power and memory on mesh
+data by decreasing its detail accordingly to the distance from the
+camera.</p>
 <hr />
-<h2 id="alpha-transparency">Alpha transparency</h2>
-<p>Do not use alpha transparency. Instead, make a blocky thingy that more or less outlines the alpha texture. The reason this method is better is performance — when using alpha transparency you can <em>double your render time</em>.</p>
+<h2 data-number="5." id="alpha-transparency"><span
+class="header-section-number">5.</span> Alpha transparency</h2>
+<p>Do not use alpha transparency. Instead, make a blocky thingy that
+more or less outlines the alpha texture. The reason this method is
+better is performance — when using alpha transparency you can <em>double
+your render time</em>.</p>
 <hr />
-<h2 id="hdr-world-backgrounds">HDR world backgrounds</h2>
-<p>When using HDRs as the world background enable option <em>Multiple importance sampling</em> in the <em>World settings panel</em>.</p>
+<h2 data-number="6." id="hdr-world-backgrounds"><span
+class="header-section-number">6.</span> HDR world backgrounds</h2>
+<p>When using HDRs as the world background enable option <em>Multiple
+importance sampling</em> in the <em>World settings panel</em>.</p>
 <hr />
-<h2 id="select-similar-verticesedgesfaces">Select similar vertices/edges/faces</h2>
-<p><code>SHIFT + G</code> — select vertices/edges/faces like the ones that are selected based on selected property like normals.</p>
+<h2 data-number="7." id="select-similar-verticesedgesfaces"><span
+class="header-section-number">7.</span> Select similar
+vertices/edges/faces</h2>
+<p><code>SHIFT + G</code> — select vertices/edges/faces like the ones
+that are selected based on selected property like normals.</p>
 <hr />
-<h2 id="to-sphere-tool"><em>To sphere</em> tool</h2>
+<h2 data-number="8." id="to-sphere-tool"><span
+class="header-section-number">8.</span> <em>To sphere</em> tool</h2>
 <p><code>ALT + SHIFT + S</code></p>
 <p>“Spherise” selected area.</p>
 <hr />
-<h2 id="masking-data">Masking data</h2>
-<p>To clear sculpt masking data use <em>Mesh: Clear Sculpt-Mask Data</em>.</p>
+<h2 data-number="9." id="masking-data"><span
+class="header-section-number">9.</span> Masking data</h2>
+<p>To clear sculpt masking data use <em>Mesh: Clear Sculpt-Mask
+Data</em>.</p>
 <hr />
-<h2 id="applying-a-property-change-to-multiple-objects">Applying a property change to multiple objects</h2>
-<p>To change a numeric value on a set of objects, first change the value for one <em>active</em> object and then press <code>RMB</code> on the value field and choose <em>Copy to selected</em>. This will apply this change to all the other selected objects that have this property.</p>
-<p><a href="https://blender.stackexchange.com/questions/6015/applying-numeric-input-attribute-changes-on-multiple-objects-at-the-same-time">Source</a></p>
+<h2 data-number="10."
+id="applying-a-property-change-to-multiple-objects"><span
+class="header-section-number">10.</span> Applying a property change to
+multiple objects</h2>
+<p>To change a numeric value on a set of objects, first change the value
+for one <em>active</em> object and then press <code>RMB</code> on the
+value field and choose <em>Copy to selected</em>. This will apply this
+change to all the other selected objects that have this property.</p>
+<p><a
+href="https://blender.stackexchange.com/questions/6015/applying-numeric-input-attribute-changes-on-multiple-objects-at-the-same-time">Source</a></p>
 <hr />
-<h2 id="fixing-normals">Fixing normals</h2>
-<p>Very useful: fixing normals by using <code>Set from faces</code> option. This may be very helpful when the normals are completely messed up.</p>
+<h2 data-number="11." id="fixing-normals"><span
+class="header-section-number">11.</span> Fixing normals</h2>
+<p>Very useful: fixing normals by using <code>Set from faces</code>
+option. This may be very helpful when the normals are completely messed
+up.</p>
 <hr />
-<h2 id="baking-a-particle-system-animation">Baking a particle system animation</h2>
-<p>To bake a particle system animation for later use in e.g. Unity use <a href="https://blender.stackexchange.com/a/167633/48990">this script</a>.</p>
-<hr />
+<h2 data-number="12." id="baking-a-particle-system-animation"><span
+class="header-section-number">12.</span> Baking a particle system
+animation</h2>
+<p>To bake a particle system animation for later use in e.g. Unity use
+<a href="https://blender.stackexchange.com/a/167633/48990">this
+script</a>.</p>
 </body>
 </html>

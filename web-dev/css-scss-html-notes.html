@@ -5,7 +5,8 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Jerry Sky" />
-  <meta name="keywords" content="html, css, static, web, web-kit, website, design, link, header, development" />
+  <meta name="keywords" content="html, css, static, web, web-kit,
+website, design, link, header, development" />
   <meta name="description" content="Notes on the static web technologies." />
   <title>CSS/SCSS + HTML</title>
   <style type="text/css">
@@ -53,7 +54,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +67,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -87,6 +88,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 </head>
 <body>
+
 <header id="title-block-header">
 <h1 class="title">CSS/SCSS + HTML</h1>
 <p class="author">
@@ -94,151 +96,244 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="author">Jerry Sky</span>
 </p>
 </header>
-<p id="document-description"><em>Notes on the static web technologies.</em></p>
-<hr />
+<p id="document-description"><em>Notes on the static web
+technologies.</em></p>
+<nav id="TOC">
+<hr>
 <ul>
-<li><a href="#resources">Resources</a>
+<li><a href="#resources" id="toc-resources"><span
+class="toc-section-number">1.</span> Resources</a>
 <ul>
-<li><a href="#general">General</a></li>
-<li><a href="#animations">Animations</a></li>
-<li><a href="#archived-sentimental">Archived <em>(sentimental)</em></a></li>
+<li><a href="#general" id="toc-general"><span
+class="toc-section-number">1.1.</span> General</a></li>
+<li><a href="#animations" id="toc-animations"><span
+class="toc-section-number">1.2.</span> Animations</a></li>
+<li><a href="#archived-sentimental" id="toc-archived-sentimental"><span
+class="toc-section-number">1.3.</span> Archived
+<em>(sentimental)</em></a></li>
 </ul></li>
-<li><a href="#web-kit-scrollbar-styling">Web-kit scrollbar styling</a></li>
-<li><a href="#bootstrap--sass">Bootstrap &amp; Sass</a></li>
-<li><a href="#nested-layered-links">Nested (layered) links</a></li>
-<li><a href="#website-design-with-respect-to-keyboard-users">Website design with respect to keyboard users</a></li>
-<li><a href="#anchor-links-and-fixed-headers">Anchor links and fixed headers</a></li>
+<li><a href="#web-kit-scrollbar-styling"
+id="toc-web-kit-scrollbar-styling"><span
+class="toc-section-number">2.</span> Web-kit scrollbar styling</a></li>
+<li><a href="#bootstrap--sass" id="toc-bootstrap--sass"><span
+class="toc-section-number">3.</span> Bootstrap &amp; Sass</a></li>
+<li><a href="#nested-layered-links" id="toc-nested-layered-links"><span
+class="toc-section-number">4.</span> Nested (layered) links</a></li>
+<li><a href="#website-design-with-respect-to-keyboard-users"
+id="toc-website-design-with-respect-to-keyboard-users"><span
+class="toc-section-number">5.</span> Website design with respect to
+keyboard users</a></li>
+<li><a href="#anchor-links-and-fixed-headers"
+id="toc-anchor-links-and-fixed-headers"><span
+class="toc-section-number">6.</span> Anchor links and fixed
+headers</a></li>
 </ul>
-<hr />
-<h2 id="resources">Resources</h2>
-<h3 id="general">General</h3>
+<hr>
+</nav>
+<h2 data-number="1." id="resources"><span
+class="header-section-number">1.</span> Resources</h2>
+<h3 data-number="1.1." id="general"><span
+class="header-section-number">1.1.</span> General</h3>
 <ul>
-<li><a href="https://css-tricks.com/practical-css-scroll-snapping/">Practical CSS Scroll Snapping</a></li>
-<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></li>
+<li><a
+href="https://css-tricks.com/practical-css-scroll-snapping/">Practical
+CSS Scroll Snapping</a></li>
+<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A
+Complete Guide to Flexbox</a></li>
 <li><a href="https://easings.net/">Easings cheatsheet</a></li>
-<li><a href="https://www.youtube.com/watch?v=7kVeCqQCxlk">CSS Grid Changes EVERYTHING</a></li>
-<li><a href="https://calendar.perfplanet.com/2020/a-font-display-setting-for-slow-connections/">Loading 3rd-party fonts — <code>font-display</code></a></li>
-<li><a href="https://ninjarockstar.dev/css-hex-grids/">Hexagonal grid</a></li>
-<li><a href="https://doodad.dev/pattern-generator/">Pattern generator</a></li>
-<li><a href="https://calibreapp.com/blog/css-performance">Improving CSS performance</a></li>
+<li><a href="https://www.youtube.com/watch?v=7kVeCqQCxlk">CSS Grid
+Changes EVERYTHING</a></li>
+<li><a
+href="https://calendar.perfplanet.com/2020/a-font-display-setting-for-slow-connections/">Loading
+3rd-party fonts — <code>font-display</code></a></li>
+<li><a href="https://ninjarockstar.dev/css-hex-grids/">Hexagonal
+grid</a></li>
+<li><a href="https://doodad.dev/pattern-generator/">Pattern
+generator</a></li>
+<li><a href="https://calibreapp.com/blog/css-performance">Improving CSS
+performance</a></li>
 </ul>
-<h3 id="animations">Animations</h3>
+<h3 data-number="1.2." id="animations"><span
+class="header-section-number">1.2.</span> Animations</h3>
 <ul>
-<li><a href="https://daneden.github.io/animate.css/">Animate.css</a></li>
+<li><a
+href="https://daneden.github.io/animate.css/">Animate.css</a></li>
 <li><a href="https://animejs.com/documentation/">anime.js</a></li>
-<li><a href="https://www.minimamente.com/project/magic/">Magic Animations CSS3</a></li>
+<li><a href="https://www.minimamente.com/project/magic/">Magic
+Animations CSS3</a></li>
 <li><a href="http://anijs.github.io/">AniJS</a></li>
 <li><a href="https://zurb.com/playground/motion-ui">Motion UI</a></li>
-<li><a href="http://maxwellito.github.io/vivus/">vivus.js — SVG animations</a></li>
+<li><a href="http://maxwellito.github.io/vivus/">vivus.js — SVG
+animations</a></li>
 </ul>
-<h3 id="archived-sentimental">Archived <em>(sentimental)</em></h3>
+<h3 data-number="1.3." id="archived-sentimental"><span
+class="header-section-number">1.3.</span> Archived
+<em>(sentimental)</em></h3>
 <ul>
-<li><a href="https://css-tricks.com/the-shapes-of-css/">The Shapes of CSS</a></li>
+<li><a href="https://css-tricks.com/the-shapes-of-css/">The Shapes of
+CSS</a></li>
 </ul>
 <hr />
-<h2 id="web-kit-scrollbar-styling">Web-kit scrollbar styling</h2>
-<p>As the webkit browser have very ugly scrollbars and there is no front-runner when it comes to JS-based scrollbar frameworks - the best solution seems to just style them using CSS/SCSS directly.</p>
-<pre class="scss"><code>/* width */
-::-webkit-scrollbar {
-  background: lighten(#333, 3.5%);
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: lighten(#333, 9%);
-}
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: lighten(#333, 30%);
-}
-/* Corner */
-::-webkit-scrollbar-corner {
-  background: lighten(#333, 3.5%);
-}
-/* Resizer */
-::-webkit-resizer {
-  background: lighten(#333, 8%);
-}</code></pre>
-<h2 id="bootstrap--sass">Bootstrap &amp; Sass</h2>
-<p>The idea is to not use the <em>classic</em> Bootstrap classes on HTML elements, but rather to compose a singular class of an element from Bootstrap’s <code>@mixin</code>s.</p>
+<h2 data-number="2." id="web-kit-scrollbar-styling"><span
+class="header-section-number">2.</span> Web-kit scrollbar styling</h2>
+<p>As the webkit browser have very ugly scrollbars and there is no
+front-runner when it comes to JS-based scrollbar frameworks - the best
+solution seems to just style them using CSS/SCSS directly.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode scss"><code class="sourceCode scss"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* width */</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">::-webkit-scrollbar</span> {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="fu">lighten(</span><span class="cn">#333</span><span class="op">,</span> <span class="dv">3.5</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">/* Handle */</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">::-webkit-scrollbar-thumb</span> {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="fu">lighten(</span><span class="cn">#333</span><span class="op">,</span> <span class="dv">9</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">/* Handle on hover */</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">::-webkit-scrollbar-thumb:hover</span> {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="fu">lighten(</span><span class="cn">#333</span><span class="op">,</span> <span class="dv">30</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">/* Corner */</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">::-webkit-scrollbar-corner</span> {</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="fu">lighten(</span><span class="cn">#333</span><span class="op">,</span> <span class="dv">3.5</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">/* Resizer */</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">::-webkit-resizer</span> {</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="fu">lighten(</span><span class="cn">#333</span><span class="op">,</span> <span class="dv">8</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<hr />
+<h2 data-number="3." id="bootstrap--sass"><span
+class="header-section-number">3.</span> Bootstrap &amp; Sass</h2>
+<p>The idea is to not use the <em>classic</em> Bootstrap classes on HTML
+elements, but rather to compose a singular class of an element from
+Bootstrap’s <code>@mixin</code>s.</p>
 <p>Instead of attaching these <code>col</code> classes like so:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span></span>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;banana col-sm-6 col-md-4&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;p&gt;</span>banana 🍌 content<span class="kw">&lt;/p&gt;</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/div&gt;</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code></pre></div>
-<p>create a class that defines that element by using <code>@mixin</code>s:</p>
-<pre class="scss"><code>.banana {
-  @include make-col-ready;
-  @include media-breakpoint-up(sm) {
-    @include make-col(6);
-  }
-  @include media-breakpoint-up(md) {
-    @include make-col(4);
-  }
-  p {
-    font-size: 3rem;
-    color: yellow;
-    font-weight: 600;
-  }
-}</code></pre>
-<p>To use these <code>@mixin</code>s and other Bootstrap’s functionalities it is necessary to import them:</p>
-<pre class="scss"><code>@import &quot;~bootstrap/scss/functions&quot;;
-@import &quot;~bootstrap/scss/variables&quot;;
-@import &quot;~bootstrap/scss/mixins&quot;;</code></pre>
-<p>Since there is no need for these <em>classic</em> classes to be used in HTML you can turn them off by changing a variable in the <code>_variables.css</code> file:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>$enable-grid-classes<span class="in">: false</span> !default;</span></code></pre></div>
-<p>or just not to include the Bootstrap css file in your app config e.g. Angular (<code>angular.json</code>).</p>
-<p>Read more in the <a href="https://medium.com/@erik_flowers/how-youve-been-getting-the-bootstrap-grid-all-wrong-and-how-to-fix-it-6d97b920aa40">source</a>.</p>
-<h2 id="nested-layered-links">Nested (layered) links</h2>
-<p>To create a link inside a <code>div</code> (that could be e.g. a post) which itself is a separate link you could use a solution <a href="https://www.sarasoueidan.com/blog/nested-links/#my-implementation">described here by Sara Soueidan</a>.<br />
-Essentially, the header of, in this case, an article is stretched over a <code>div</code> representing a description of a given article. Of course, this header is a link to this article. Now, we can incorporate another link inside this description and making it hover over the article link (using <code>z-index</code>).</p>
-<p>Here is a piece of code <a href="https://www.sarasoueidan.com/blog/nested-links/#my-implementation">from previously mentioned article</a> that presents an example solution to this problem:</p>
-<pre class="scss"><code>.the-post {
-    /* elevate the links up */
-    a {
-        position: relative;
-        z-index: 1;
-    }
-}
-
-.the-post-title {
-    /* ... */
-
-    a {
-        position: static;
-        /* expand the pseudo-element to cover the post area */
-        &amp;::before {
-            content: &quot;&quot;;
-            position: absolute;
-            z-index: 0;
-            top: ...;
-            left: ...;
-            width: ...;
-            height: ...;
-            /* ... */
-        }
-    }
-}</code></pre>
-<h2 id="website-design-with-respect-to-keyboard-users">Website design with respect to keyboard users</h2>
-<p>Most website designs are not optimized for keyboard users that facilitate the Tab key for navigating websites. The problem is, many websites have redundant links (multiple links referring to the same resource) that generate excess Tab keystrokes to navigate through e.g. articles on a website, as described <a href="https://www.sarasoueidan.com/blog/keyboard-friendlier-article-listings/">here by Sara Soueidan</a>. However, a fix to this problem is quite simple:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;cool-subpage.html&quot;</span> <span class="er">tabindex</span><span class="ot">=</span><span class="st">&quot;-1&quot;</span> <span class="er">aria-hidden</span><span class="ot">=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>Cool subpage<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
-<p>The <code>tabindex</code> attribute set to <code>-1</code> renders this element invisible to keyboard users navigating using the Tab key. This element will be skipped.<br />
-The <code>aria-hidden</code> attribute set to <code>true</code> makes this element invisible to screen readers thus preventing from exposing this unreachable element to the user.</p>
+<p>create a class that defines that element by using
+<code>@mixin</code>s:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode scss"><code class="sourceCode scss"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.banana</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="im">@include</span> make-col-ready<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="im">@include</span> <span class="fu">media-breakpoint-up(</span>sm<span class="fu">)</span> {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="im">@include</span> <span class="fu">make-col(</span><span class="dv">6</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="im">@include</span> <span class="fu">media-breakpoint-up(</span>md<span class="fu">)</span> {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="im">@include</span> <span class="fu">make-col(</span><span class="dv">4</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  p {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">3</span><span class="dt">rem</span><span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">yellow</span><span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-weight</span>: <span class="dv">600</span><span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>To use these <code>@mixin</code>s and other Bootstrap’s
+functionalities it is necessary to import them:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode scss"><code class="sourceCode scss"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="st">&quot;~bootstrap/scss/functions&quot;</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="st">&quot;~bootstrap/scss/variables&quot;</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="st">&quot;~bootstrap/scss/mixins&quot;</span><span class="op">;</span></span></code></pre></div>
+<p>Since there is no need for these <em>classic</em> classes to be used
+in HTML you can turn them off by changing a variable in the
+<code>_variables.css</code> file:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>$enable-grid-classes<span class="in">: false</span> !default;</span></code></pre></div>
+<p>or just not to include the Bootstrap css file in your app config
+e.g. Angular (<code>angular.json</code>).</p>
+<p>Read more in the <a
+href="https://medium.com/@erik_flowers/how-youve-been-getting-the-bootstrap-grid-all-wrong-and-how-to-fix-it-6d97b920aa40">source</a>.</p>
 <hr />
-<h2 id="anchor-links-and-fixed-headers">Anchor links and fixed headers</h2>
-<p>When a fixed header (an HTML element that is always visible – scroll position doesn’t matter) is present on the webpage the standard anchor links don’t work as expected. The targeted anchor element is not fully visible as the fixed header covers some of the target element.</p>
-<p>The solution is to create a special anchor element that is offset by the fixed header’s height.</p>
+<h2 data-number="4." id="nested-layered-links"><span
+class="header-section-number">4.</span> Nested (layered) links</h2>
+<p>To create a link inside a <code>div</code> (that could be e.g. a
+post) which itself is a separate link you could use a solution <a
+href="https://www.sarasoueidan.com/blog/nested-links/#my-implementation">described
+here by Sara Soueidan</a>.<br />
+Essentially, the header of, in this case, an article is stretched over a
+<code>div</code> representing a description of a given article. Of
+course, this header is a link to this article. Now, we can incorporate
+another link inside this description and making it hover over the
+article link (using <code>z-index</code>).</p>
+<p>Here is a piece of code <a
+href="https://www.sarasoueidan.com/blog/nested-links/#my-implementation">from
+previously mentioned article</a> that presents an example solution to
+this problem:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode scss"><code class="sourceCode scss"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.the-post</span> {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* elevate the links up */</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    a {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">z-index</span>: <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">.the-post-title</span> {</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* ... */</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    a {</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">position</span>: <span class="dv">static</span><span class="op">;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* expand the pseudo-element to cover the post area */</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">&amp;</span><span class="in">::before</span> {</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">content</span>: <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">z-index</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">top</span>: ...<span class="op">;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">left</span>: ...<span class="op">;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: ...<span class="op">;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: ...<span class="op">;</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* ... */</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<hr />
+<h2 data-number="5."
+id="website-design-with-respect-to-keyboard-users"><span
+class="header-section-number">5.</span> Website design with respect to
+keyboard users</h2>
+<p>Most website designs are not optimized for keyboard users that
+facilitate the Tab key for navigating websites. The problem is, many
+websites have redundant links (multiple links referring to the same
+resource) that generate excess Tab keystrokes to navigate through
+e.g. articles on a website, as described <a
+href="https://www.sarasoueidan.com/blog/keyboard-friendlier-article-listings/">here
+by Sara Soueidan</a>. However, a fix to this problem is quite
+simple:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;cool-subpage.html&quot;</span> <span class="er">tabindex</span><span class="ot">=</span><span class="st">&quot;-1&quot;</span> <span class="er">aria-hidden</span><span class="ot">=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>Cool subpage<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<p>The <code>tabindex</code> attribute set to <code>-1</code> renders
+this element invisible to keyboard users navigating using the Tab key.
+This element will be skipped.<br />
+The <code>aria-hidden</code> attribute set to <code>true</code> makes
+this element invisible to screen readers thus preventing from exposing
+this unreachable element to the user.</p>
+<hr />
+<h2 data-number="6." id="anchor-links-and-fixed-headers"><span
+class="header-section-number">6.</span> Anchor links and fixed
+headers</h2>
+<p>When a fixed header (an HTML element that is always visible – scroll
+position doesn’t matter) is present on the webpage the standard anchor
+links don’t work as expected. The targeted anchor element is not fully
+visible as the fixed header covers some of the target element.</p>
+<p>The solution is to create a special anchor element that is offset by
+the fixed header’s height.</p>
 <p>The anchor target element:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;anchor&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;target&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;anchor&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;target&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span></code></pre></div>
 <p>and its styling:</p>
-<pre class="scss"><code>.anchor {
-    margin-top: -$header-height;// - $additional-offset;
-    padding-top: $header-height;// + $additional-offset;
-}</code></pre>
-<p>where <code>$header-height</code> is the height of the fixed header and the optional <code>$additional-offset</code> variable can be used to move the view even further to improve readability.</p>
-<p>Source: <a href="https://stackoverflow.com/a/11842865/4249875">an answer on Stack Overflow</a></p>
-<hr />
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode scss"><code class="sourceCode scss"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.anchor</span> {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-top</span>: <span class="op">-</span><span class="va">$header-height</span><span class="op">;</span><span class="co">// - $additional-offset;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-top</span>: <span class="va">$header-height</span><span class="op">;</span><span class="co">// + $additional-offset;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>where <code>$header-height</code> is the height of the fixed header
+and the optional <code>$additional-offset</code> variable can be used to
+move the view even further to improve readability.</p>
+<p>Source: <a href="https://stackoverflow.com/a/11842865/4249875">an
+answer on Stack Overflow</a></p>
 </body>
 </html>
