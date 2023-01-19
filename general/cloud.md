@@ -4,25 +4,7 @@ title: 'Cloud'
 author: 'Jerry Sky'
 ---
 
-- [AWS](#aws)
-    - [Compute](#compute)
-    - [Storage](#storage)
-    - [Databases](#databases)
-    - [Migration](#migration)
-    - [Networking & Content Delivery](#networking--content-delivery)
-    - [Developer Tools](#developer-tools)
-    - [Management Tools](#management-tools)
-    - [Analytics](#analytics)
-    - [Security, Identity, and Compliance](#security-identity-and-compliance)
-    - [Application Services](#application-services)
-    - [Mobile Services](#mobile-services)
-    - [Business Productivity](#business-productivity)
-    - [Artificial Intelligence](#artificial-intelligence)
-    - [Customer Engagement](#customer-engagement)
-    - [Game Development](#game-development)
-    - [Internet of Things](#internet-of-things)
 
----
 
 ## AWS
 

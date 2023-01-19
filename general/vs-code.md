@@ -6,11 +6,7 @@ description: 'Notes on VS Code.'
 keywords: 'VS Code, code, visual studio code, settings, sync, java'
 ---
 
----
 
-- [Java Formatter Settings](#java-formatter-settings)
-
----
 
 ## Java Formatter Settings
 

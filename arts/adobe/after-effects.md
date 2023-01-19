@@ -5,13 +5,7 @@ author: 'Jerry Sky'
 keywords: 'adobe, after effects'
 ---
 
----
 
-- [Links](#links)
-    - [Useful](#useful)
-- [Defs](#defs)
-- [Notes](#notes)
-- [Effects](#effects)
 
 ## Links
 

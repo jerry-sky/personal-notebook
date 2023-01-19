@@ -6,23 +6,7 @@ description: 'Notes related to Unix-based operating systems.'
 keywords: 'linux, notes, unix, bash, wget, ansi, customizing, custom, customization, script, program, dns, server'
 ---
 
----
 
-- [Keeping some script/program alive](#keeping-some-scriptprogram-alive)
-- [ANSI Text Attributes](#ansi-text-attributes)
-    - [Text effects](#text-effects)
-- [Customizing `bash` prompt](#customizing-bash-prompt)
-- [Redirecting `stdout` to `stderr`](#redirecting-stdout-to-stderr)
-- [Downloading a whole website using `wget`](#downloading-a-whole-website-using-wget)
-- [Permanently setting the DNS server](#permanently-setting-the-dns-server)
-- [Fixing broken packages (downloaded from an external PPA) by forcefully overwriting `apt` packages](#fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages)
-- [Useful PDF tools](#useful-pdf-tools)
-- [Pass URL/ file argument to program defined by a `.desktop` file](#pass-url-file-argument-to-program-defined-by-a-desktop-file)
-- [Routing VLC audio output to a specific PulseAudio sink](#routing-vlc-audio-output-to-a-specific-pulseaudio-sink)
-- [Pretty printing JSON data](#pretty-printing-json-data)
-- [Compressing images](#compressing-images)
-
----
 
 ## Resources
 
@@ -106,6 +90,8 @@ To get even more colours use `\033[38;2;R;G;Bm` to use full RGB spectrum by repl
 
 ---
 
+
+
 ## Customizing `bash` prompt
 
 When configuring the `bash` prompt you would use ANSI escape sequences to enhance the [text formatting](#ansi-text-attributes) to make it more visually appealing. However, inserting an ANSI escape sequence is a lot of characters that amount to special usage and *no physical characters*. That's why we need to mark these sequences as *zero-length* to prevent the bash from being confused where does the actual prompt end.\
@@ -115,11 +101,15 @@ Every time you insert an ANSI escape sequence wrap it inside `\[«ANSI escape se
 
 ---
 
+
+
 ## Redirecting `stdout` to `stderr`
 
 To redirect `stdout` to `stderr` just add `>&2 echo 'error` at the end of the command you want to execute.
 
 ---
+
+
 
 ## Downloading a whole website using `wget`
 
@@ -148,6 +138,8 @@ All relative links will be preceded with the URL provided with the `--base` opti
 
 ---
 
+
+
 ## Permanently setting the DNS server
 
 First, we need to install the `resolvconf` package:
@@ -174,6 +166,8 @@ nameserver 1.1.1.1
 
 ---
 
+
+
 ## Fixing broken packages (downloaded from an external PPA) by forcefully overwriting `apt` packages
 
 Sometimes adding external PPAs results in broken packages and the infamous error:
@@ -198,6 +192,8 @@ sudo apt install -o Dpkg::Options::="--force-overwrite" --fix-broken
 
 ---
 
+
+
 ## Useful PDF tools
 
 1. PDF to PNG:
@@ -213,6 +209,8 @@ sudo apt install -o Dpkg::Options::="--force-overwrite" --fix-broken
     [Source](https://superuser.com/q/917190/746117)
 
 ---
+
+
 
 ## Pass URL/ file argument to program defined by a `.desktop` file
 
@@ -237,6 +235,8 @@ Source: [Desktop specification — The Exec key](https://specifications.freedesk
 
 ---
 
+
+
 ## Routing VLC audio output to a specific PulseAudio sink
 
 To force VLC to play audio to a device different from the default one
@@ -249,6 +249,8 @@ PULSE_SINK=$sink_id cvlc file.mp3
 Source: [Answer on SuperUser](https://superuser.com/a/494404)
 
 ---
+
+
 
 ## Pretty printing JSON data
 
@@ -280,6 +282,8 @@ echo '{
 Sources: self, [Answer on Unix StackExchange](https://unix.stackexchange.com/a/451499)
 
 ---
+
+
 
 ## Compressing images
 

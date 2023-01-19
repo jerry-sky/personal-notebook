@@ -2,36 +2,12 @@
 lang: 'en-GB'
 title: 'Jerry Sky’s personal notebook'
 author: 'Jerry Sky'
-description: 'This notebook consists of all personal notes of Jerry Sky including those not related to programming or computer science.'
+description: |
+    This notebook consists of all personal notes of Jerry Sky including those not related to programming or computer science. \
+    View this repository on
+    [the web](https://personal.jerry-sky.me)
+    or on [GitHub](https://github.com/jerry-sky/personal-notebook).
 keywords: 'notebook, notes, personal, python, latex, languages, programming, computer science, linux, jerry-sky'
----
-
----
-
-View this repository on
-[the web](https://personal.jerry-sky.me)
-or on [GitHub](https://github.com/jerry-sky/personal-notebook).
-
----
-
-- [Computer Science](#computer-science)
-    - [Learning platforms](#learning-platforms)
-    - [General](#general)
-    - [Web-dev](#web-dev)
-    - [Abstract](#abstract)
-- [Curriculum Vitae](#curriculum-vitae)
-- [Arts](#arts)
-    - [General](#general-1)
-    - [Adobe](#adobe)
-- [Languages](#languages)
-- [The arbitrary collection](#the-arbitrary-collection)
-- [Some remarks](#some-remarks)
-    - [OneNote](#onenote)
-    - [Markdown and $\LaTeX$](#markdown-and-latex)
-    - [Workflow](#workflow)
-    - [Website pipeline](#website-pipeline)
-    - [Figures](#figures)
-
 ---
 
 
@@ -145,6 +121,7 @@ Archived notes.
 [pandoc-katex]: https://github.com/xu-cheng/pandoc-katex#readme
 [vyrow]: https://github.com/jerry-sky/vyrow#readme
 
+
 ### OneNote
 
 This repository serves the purpose of my main note-taking solution.
@@ -157,6 +134,7 @@ I have since abandoned OneNote for a few simple, but compelling reasons:
     a very underwhelming browser app and no desktop program for note-taking,
 - OneNote is Microsoft’s proprietary technology with poor exporting tools,
 - general very slow performance as per usual with Microsoft software.
+
 
 ### Markdown and $\LaTeX$
 
@@ -171,6 +149,7 @@ but that does not change anything.
 So, the solution that enabled maths in Markdown was $\LaTeX$, because what else would I use.
 Of course, $\LaTeX$ is not even mentioned in most specification sheets of various
 Markdown flavours, but that also is not a problem.
+
 
 ### Workflow
 
@@ -188,6 +167,7 @@ For editing Markdown documents I use VS Code with the
 This enables me to see my documents in both their raw and rendered out forms,
 as this extension adds a Markdown preview tab that understands $\LaTeX$ expressions.
 It also gives some useful commands, and automatization tools like auto-generating table of contents.
+
 
 ### Website pipeline
 
@@ -210,6 +190,7 @@ You can view them on the web:
 - <https://personal.jerry-sky.me>
 - <https://academic.jerry-sky.me>
 
+
 ### Figures
 
 When it comes to graph drawing or any type of graphical figures it can be done with OneNote,
@@ -218,5 +199,3 @@ GIMP, or Notes on an iPad.
 An alternative would be to use `code blocks`.
 Characters such as `\`, `|`, `/`, `_`, `<`, `>`, `／`, `＼`, `＿`, `ー`, `「`, `」`, `＜`, and `＞`
 all can be used as strokes while regular Latin alphabet characters as e.g. graph nodes.
-
----

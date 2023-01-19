@@ -2,62 +2,13 @@
 lang: 'en-GB'
 title: 'Writing technical specification'
 author: 'Jerry Sky'
-description: 'Writing code before writing a good technical spec document can be disastrous to the project being worked on. The idea of writing code and figuring out the “what and how” of a solution to a given problem is irresponsible.'
+description: |
+    Writing code before writing a good technical spec document can be disastrous to the project being worked on. The idea of writing code and figuring out the “what and how” of a solution to a given problem is irresponsible.\
+    *This note is based on [an article by Zara Cooper][article].*
 keywords: 'software, engineering, specification, technical, code, document, data, solutions, proposed'
 ---
 
----
 
-*This note is based on [an article by Zara Cooper][article].*
-
-- [1. Why write such a document](#1-why-write-such-a-document)
-- [2. Benefits](#2-benefits)
-- [3. Gathering data](#3-gathering-data)
-- [4. Document contents](#4-document-contents)
-    - [4.1. Front cover](#41-front-cover)
-    - [4.2. Introduction](#42-introduction)
-        - [4.2.1. Overview](#421-overview)
-        - [4.2.2. Terminology](#422-terminology)
-        - [4.2.3. Context](#423-context)
-        - [4.2.4. Technical requirements](#424-technical-requirements)
-        - [4.2.5. User wish-list](#425-user-wish-list)
-        - [4.2.6. Out of scope](#426-out-of-scope)
-        - [4.2.7. Future goals](#427-future-goals)
-    - [4.3. Solutions](#43-solutions)
-        - [4.3.1. Current handling of the problem](#431-current-handling-of-the-problem)
-        - [4.3.2. Proposed solution](#432-proposed-solution)
-        - [4.3.3. Test Plan](#433-test-plan)
-        - [4.3.4. Monitoring and altering plans](#434-monitoring-and-altering-plans)
-        - [4.3.5. Deployment plans](#435-deployment-plans)
-        - [4.3.6. Rollback plan](#436-rollback-plan)
-        - [4.3.7. Alternate solutions](#437-alternate-solutions)
-    - [4.4. Further Considerations](#44-further-considerations)
-        - [4.4.1. Impact on other teams](#441-impact-on-other-teams)
-        - [4.4.2. Third-party services and platforms considerations](#442-third-party-services-and-platforms-considerations)
-        - [4.4.3. Cost analysis](#443-cost-analysis)
-        - [4.4.4. Security considerations](#444-security-considerations)
-        - [4.4.5. Privacy considerations](#445-privacy-considerations)
-        - [4.4.6. Regional considerations](#446-regional-considerations)
-        - [4.4.7. Accessibility considerations](#447-accessibility-considerations)
-        - [4.4.8. Operational considerations](#448-operational-considerations)
-        - [4.4.9. Risks](#449-risks)
-        - [4.4.10. Support considerations](#4410-support-considerations)
-    - [4.5. Success Evaluation](#45-success-evaluation)
-        - [4.5.1. Impact](#451-impact)
-        - [4.5.2. Metrics](#452-metrics)
-    - [4.6. Work cost](#46-work-cost)
-        - [4.6.1. Work estimates and timelines](#461-work-estimates-and-timelines)
-        - [4.6.2. Prioritization](#462-prioritization)
-        - [4.6.3. Milestones](#463-milestones)
-        - [4.6.4. Future work](#464-future-work)
-    - [4.7. Deliberation](#47-deliberation)
-        - [4.7.1. Discussion](#471-discussion)
-        - [4.7.2. Open questions](#472-open-questions)
-    - [4.8. End cover](#48-end-cover)
-        - [4.8.1. Related work](#481-related-work)
-        - [4.8.2. References](#482-references)
-        - [4.8.3. Acknowledgements](#483-acknowledgements)
-- [5. Source](#5-source)
 
 ## 1. Why write such a document
 
@@ -327,6 +278,7 @@ Links to documents and resources that were used when coming up with the desing a
 Credit people who have contributed to the desing that you wish to reorganize.
 
 ---
+
 
 ## 5. Source
 

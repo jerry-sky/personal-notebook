@@ -2,16 +2,11 @@
 lang: 'en-GB'
 title: 'Config'
 author: 'Jerry Sky'
-description: 'Config files and other utilities that I use every day. Installed automatically using the setup script.'
+description: 'Config files and other utilities that I use every day.'
 keywords: 'bash, config, script, utilities, python3, keyboard, markdown, bash aliases'
 ---
 
----
 
-- [First time setup](#first-time-setup)
-- [Standard setup](#standard-setup)
-
----
 
 ## First time setup
 
@@ -31,6 +26,8 @@ curl -L fts.jerry-sky.me | bash
 to download the script and run it on a new system.
 
 ---
+
+
 
 ## Standard setup
 
@@ -55,6 +52,7 @@ whilst being in the `config` directory.
 _Please note: this setup assumes the Cinnamon desktop environment is installed in the system._
 
 ---
+
 
 
 ## _Config_ components

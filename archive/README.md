@@ -4,11 +4,6 @@ title: Archive of Jerry Sky’s Personal Notebook
 description: Archived notes that will not be developed further. Each note has a reason on why it was discontinued.
 ---
 
-- [Languages](#languages)
-
-
----
-
 
 
 ## Languages
@@ -23,7 +18,4 @@ _and processed throughout the learning process._
 - [German](languages/deutsch/readme.md)
 - [French](languages/français/readme.md)
 - [Japanese](languages/日本語/readme.md)
-
----
-
 

@@ -6,19 +6,7 @@ description: 'Notes on the static web technologies.'
 keywords: 'html, css, static, web, web-kit, website, design, link, header, development'
 ---
 
----
 
-- [Resources](#resources)
-    - [General](#general)
-    - [Animations](#animations)
-    - [Archived *(sentimental)*](#archived-sentimental)
-- [Web-kit scrollbar styling](#web-kit-scrollbar-styling)
-- [Bootstrap & Sass](#bootstrap--sass)
-- [Nested (layered) links](#nested-layered-links)
-- [Website design with respect to keyboard users](#website-design-with-respect-to-keyboard-users)
-- [Anchor links and fixed headers](#anchor-links-and-fixed-headers)
-
----
 
 ## Resources
 
@@ -48,6 +36,8 @@ keywords: 'html, css, static, web, web-kit, website, design, link, header, devel
 
 ---
 
+
+
 ## Web-kit scrollbar styling
 
 As the webkit browser have very ugly scrollbars and there is no front-runner when it comes to JS-based scrollbar frameworks - the best solution seems to just style them using CSS/SCSS directly.
@@ -74,6 +64,10 @@ As the webkit browser have very ugly scrollbars and there is no front-runner whe
   background: lighten(#333, 8%);
 }
 ```
+
+---
+
+
 
 ## Bootstrap & Sass
 
@@ -128,6 +122,9 @@ or just not to include the Bootstrap css file in your app config e.g. Angular (`
 
 Read more in the [source](https://medium.com/@erik_flowers/how-youve-been-getting-the-bootstrap-grid-all-wrong-and-how-to-fix-it-6d97b920aa40).
 
+---
+
+
 
 ## Nested (layered) links
 
@@ -167,6 +164,10 @@ Here is a piece of code [from previously mentioned article][nested-links] that p
 }
 ```
 
+---
+
+
+
 ## Website design with respect to keyboard users
 
 [design-respect-to-keyboards]: https://www.sarasoueidan.com/blog/keyboard-friendlier-article-listings/
@@ -181,6 +182,8 @@ The `tabindex` attribute set to `-1` renders this element invisible to keyboard 
 The `aria-hidden` attribute set to `true` makes this element invisible to screen readers thus preventing from exposing this unreachable element to the user.
 
 ---
+
+
 
 ## Anchor links and fixed headers
 
@@ -208,5 +211,3 @@ and its styling:
 where `$header-height` is the height of the fixed header and the optional `$additional-offset` variable can be used to move the view even further to improve readability.
 
 Source: [an answer on Stack Overflow][anchor-links-fixed-headers]
-
----

@@ -6,13 +6,7 @@ description: 'Notes on SQL-related stuff.'
 keywords: 'notes, SQL, query, database'
 ---
 
----
 
-- [Resources](#resources)
-- [Show columns from a `SELECT` query](#show-columns-from-a-select-query)
-- [`TRUNCATE` all tables in a database](#truncate-all-tables-in-a-database)
-
----
 
 ## Resources
 
@@ -23,6 +17,8 @@ keywords: 'notes, SQL, query, database'
 - [TypeORM — Databases with TypeScript](https://www.infoq.com/articles/typescript-mysql/)
 
 ---
+
+
 
 ## Show columns from a `SELECT` query
 
@@ -35,6 +31,10 @@ SHOW COLUMNS FROM exportTable;
 
 [Source](https://stackoverflow.com/a/38816005/4249875)
 
+---
+
+
+
 ## `TRUNCATE` all tables in a database
 
 ```sql
@@ -46,6 +46,9 @@ SET FOREIGN_KEY_CHECKS = 1;
 ```
 
 [Source](https://stackoverflow.com/a/45597248/4249875)
+
+---
+
 
 
 ## Big data

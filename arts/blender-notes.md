@@ -6,25 +6,7 @@ description: 'Notes on Blender.'
 keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
 ---
 
----
 
-- [Links](#links)
-    - [Useful](#useful)
-    - [Cool](#cool)
-    - [TODO](#todo)
-- [Addons](#addons)
-- [Objects reusing mesh data](#objects-reusing-mesh-data)
-- [Adaptive subdivision](#adaptive-subdivision)
-- [Alpha transparency](#alpha-transparency)
-- [HDR world backgrounds](#hdr-world-backgrounds)
-- [Select similar vertices/edges/faces](#select-similar-verticesedgesfaces)
-- [*To sphere* tool](#to-sphere-tool)
-- [Masking data](#masking-data)
-- [Applying a property change to multiple objects](#applying-a-property-change-to-multiple-objects)
-- [Fixing normals](#fixing-normals)
-- [Baking a particle system animation](#baking-a-particle-system-animation)
-
----
 
 ## Links
 
@@ -57,6 +39,8 @@ keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
 
 ---
 
+
+
 ## Addons
 
 - [Blender Discord Presence](https://github.com/Protinon/Blender-rpc/releases)
@@ -66,11 +50,15 @@ keywords: 'Blender, 3D, linux, alpha, addons, colour, geometry, graphics'
 
 ---
 
+
+
 ## Objects reusing mesh data
 
 Every time you copy an object consider making it a linked copy — it will create a new object that uses the mesh from the source object.
 
 ---
+
+
 
 ## Adaptive subdivision
 
@@ -78,6 +66,8 @@ Use adaptive subdivision to avoid generating too many polygons.
 Thanks to this method you can save processing power and memory on mesh data by decreasing its detail accordingly to the distance from the camera.
 
 ---
+
+
 
 ## Alpha transparency
 
@@ -87,17 +77,23 @@ The reason this method is better is performance — when using alpha transparenc
 
 ---
 
+
+
 ## HDR world backgrounds
 
 When using HDRs as the world background enable option *Multiple importance sampling* in the *World settings panel*.
 
 ---
 
+
+
 ## Select similar vertices/edges/faces
 
 `SHIFT + G` — select vertices/edges/faces like the ones that are selected based on selected property like normals.
 
 ---
+
+
 
 ## *To sphere* tool
 
@@ -107,11 +103,15 @@ When using HDRs as the world background enable option *Multiple importance sampl
 
 ---
 
+
+
 ## Masking data
 
 To clear sculpt masking data use *Mesh: Clear Sculpt-Mask Data*.
 
 ---
+
+
 
 ## Applying a property change to multiple objects
 
@@ -122,6 +122,8 @@ This will apply this change to all the other selected objects that have this pro
 
 ---
 
+
+
 ## Fixing normals
 
 Very useful: fixing normals by using `Set from faces` option.
@@ -129,8 +131,8 @@ This may be very helpful when the normals are completely messed up.
 
 ---
 
+
+
 ## Baking a particle system animation
 
 To bake a particle system animation for later use in e.g. Unity use [this script](https://blender.stackexchange.com/a/167633/48990).
-
----

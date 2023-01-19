@@ -5,10 +5,7 @@ author: 'Jerry Sky'
 keywords: 'adobe, illustrator, keyboard, shortcuts'
 ---
 
----
 
-- [Links](#links)
-- [Notes](#notes)
 
 ## Links
 

@@ -4,12 +4,7 @@ title: 'Language learning strategy'
 author: 'Jerry Sky'
 ---
 
-- [Abstract steps](#abstract-steps)
-- [Background tasks](#background-tasks)
-    - [Basic](#basic)
-    - [Advanced](#advanced)
 
----
 
 ## Abstract steps
 

@@ -6,18 +6,7 @@ description: 'Notes on the German language.'
 keywords: 'Deutsch, German, grammar, verbs, vocabulary, text analysis, resources, notes, rules'
 ---
 
----
 
-- [Learning strategy](#learning-strategy)
-- [Resources](#resources)
-    - [News articles](#news-articles)
-    - [Toms Deutschseite](#toms-deutschseite)
-    - [Learning platforms](#learning-platforms)
-- [Notizen](#notizen)
-- [Handy](#handy)
-- [Text analysis](#text-analysis)
-
----
 
 ## Learning strategy
 

@@ -6,27 +6,15 @@ description: 'Notes on Angular (non JS).'
 keywords: 'Angular, TypeScript, node, Router, htaccess, observable, file, model, app, program, npm'
 ---
 
----
 
-- [Resources](#resources)
-- [Installing Bootstrap](#installing-bootstrap)
-- [NgModel input element inside ngFor](#ngmodel-input-element-inside-ngfor)
-- [`Router` vs. `Location`](#router-vs-location)
-- [Ending an `Observable`](#ending-an-observable)
-- [Upload progress](#upload-progress)
-- [The `.htaccess` file](#the-htaccess-file)
-- [Tracking many files](#tracking-many-files)
-- [Testing components that contain Angular Material components](#testing-components-that-contain-angular-material-components)
-- [Using anchor links](#using-anchor-links)
-- [Using SVG icons with Angular Material](#using-svg-icons-with-angular-material)
-
----
 
 ## Resources
 
 - [Alligator.io](https://alligator.io/angular/)
 
 ---
+
+
 
 ## Installing Bootstrap
 
@@ -45,12 +33,16 @@ keywords: 'Angular, TypeScript, node, Router, htaccess, observable, file, model,
 
 ---
 
+
+
 ## NgModel input element inside ngFor
 
 Nested `ngModel` input element inside `ngFor` need to refer to a value inside an `Object`.
 If it isn't wrapped in an `Object` Angular won't compile the app for some odd reason.
 
 ---
+
+
 
 ## `Router` vs. `Location`
 
@@ -61,6 +53,8 @@ The `Location`’s `go` function is meant to interact with URL, not to navigate 
 
 ---
 
+
+
 ## Ending an `Observable`
 
 To complete the `Observable` use `return of()`.
@@ -68,6 +62,8 @@ It will stop propagating any further notifications as `of` with no
 arguments will complete right away and not emit any notifications.
 
 ---
+
+
 
 ## Upload progress
 
@@ -77,6 +73,8 @@ To get notifications about a file being uploaded use `reportProgress: true` in a
 
 ---
 
+
+
 ## The `.htaccess` file
 
 For serving a static Angular app on a standard Apache server
@@ -85,6 +83,8 @@ you need to setup a `.htaccess` file [like so](general.md#corb--cors).
 [Source](https://stackoverflow.com/a/22740184/4249875)
 
 ---
+
+
 
 ## Tracking many files
 
@@ -98,6 +98,8 @@ When dealing with multiple Angular projects or Angular projects mixed with some 
 3. View `/proc/sys/fs/inotify/max_user_watches` and verify that the output number equals to `524288`.
 
 ---
+
+
 
 ## Testing components that contain Angular Material components
 
@@ -179,6 +181,8 @@ Sources:
 
 ---
 
+
+
 ## Using anchor links
 
 Angular has the anchor links disabled by default (at least when the routing is enabled).
@@ -204,6 +208,8 @@ will enable this functionality.
 Source: [an answer on Stack Overflow](https://stackoverflow.com/a/52724769/4249875)
 
 ---
+
+
 
 ## Using SVG icons with Angular Material
 
@@ -237,5 +243,3 @@ constructor(
 ```
 
 Source: [Digital Ocean Article](https://www.digitalocean.com/community/tutorials/angular-custom-svg-icons-angular-material)
-
----

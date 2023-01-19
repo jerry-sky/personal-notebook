@@ -6,7 +6,7 @@ description: 'Notes on 2D animation.'
 keywords: 'Blender, KLAUS, rendering, lightning, light'
 ---
 
----
+
 
 ## How KLAUS was rendered
 

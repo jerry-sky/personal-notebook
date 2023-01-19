@@ -5,11 +5,7 @@ author: 'Jerry Sky'
 keywords: 'complex numbers, number, chart, drawing'
 ---
 
----
 
-- [Heart drawn using $\Complex$ numbers](#heart-drawn-using-complex-numbers)
-
----
 
 ## Heart drawn using $\Complex$ numbers
 

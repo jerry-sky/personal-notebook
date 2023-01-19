@@ -6,31 +6,15 @@ description: 'My notes on various web-dev related matters.'
 keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScript, SQL, CSS, SCSS, Sass, links, resources, tcp, port'
 ---
 
----
 
-- [Resources](#resources)
-    - [**Crucial**](#crucial)
-    - [Security](#security)
-    - [Interesting](#interesting)
-    - [Building](#building)
-    - [Abstract](#abstract)
-    - [Useful](#useful)
-    - [Entertainment-like](#entertainment-like)
-- [NodeJS + Apache server (`.htaccess`)](#nodejs--apache-server-htaccess)
-- [Freeing a TCP port](#freeing-a-tcp-port)
-- [CORB & CORS](#corb--cors)
-- [Samsung Internet browser webpage scroll position](#samsung-internet-browser-webpage-scroll-position)
-- [Classes and Interfaces in TypeScript](#classes-and-interfaces-in-typescript)
-- [Extracting a property from a derived class (a proposal)](#extracting-a-property-from-a-derived-class-a-proposal)
-- [Type hierarchy, difference between `void`, `null`, etc.](#type-hierarchy-difference-between-void-null-etc)
-
----
 
 ## Resources
+
 
 ### **Crucial**
 
 - [Strict mode in TypeScript \|\| help your compiler help you — an article by Andrey Goncharov](https://blog.goncharov.page/strict-mode-in-typescript-or-help-your-compiler-help-you)
+
 
 ### Security
 
@@ -40,10 +24,12 @@ keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScr
 - [PHP Cookies security](https://www.simonholywell.com/post/2013/05/improve-php-session-cookie-security/)
 - [Remember me Safely](http://wayback.archive.org/web/20150204143440/https://resonantcore.net/blog/2015/02/remember-me-safely-secure-long-term-authentication-strategies)
 
+
 ### Interesting
 
 - [You don't hate JavaScript](https://medium.com/edge-coders/you-dont-hate-javascript-62cd6c609d43)
 - [The Post JavaScript Apocalypse](https://www.youtube.com/watch?v=99Zacm7SsWQ)
+
 
 ### Building
 
@@ -51,16 +37,19 @@ keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScr
 - [A tale of webpage speed, or throwing away React](https://solovyov.net/blog/2020/a-tale-of-webpage-speed-or-throwing-away-react/)\
     — an efficient web app that is not bloated, *imagine that*
 
+
 ### Abstract
 
 - [A Programmer's Guide to Managing Stress](https://simpleprogrammer.com/2015/09/11/a-programmers-guide-to-managing-stress/?utm_source=facebook.com&utm_medium=referral&utm_campaign=i-love-coding)
 - [It's all about time](http://web.archive.org/web/20150208203207/http://blog.ircmaxell.com/2014/11/its-all-about-time.html)
+
 
 ### Useful
 
 - [**Leaflet** — map plugin](https://leafletjs.com/)
 - [NPM — overriding nested NPM dependency versions](https://stackoverflow.com/a/48524488/4249875)
 - [Makefile over NPM scripts](https://spin.atomicobject.com/2021/03/22/makefiles-vs-package-json-scripts/)
+
 
 ### Entertainment-like
 
@@ -69,6 +58,8 @@ keywords: 'web, development, Angular, NodeJS, ExpressJS, JS, JavaScript, TypeScr
 - [Music Player with physics-based seekbar](https://github.com/samir-dahal/MusicPlayer)
 
 ---
+
+
 
 ## NodeJS + Apache server (`.htaccess`)
 
@@ -108,6 +99,8 @@ Source: [original article *in polish*](http://web.archive.org/web/20180625042814
 
 ---
 
+
+
 ## Freeing a TCP port
 
 Execute bash command
@@ -122,6 +115,8 @@ Add the `-k` option to kill them.
 [Source](https://stackoverflow.com/a/750705/4249875)
 
 ---
+
+
 
 ## CORB & CORS
 
@@ -160,6 +155,8 @@ RewriteRule ^(.*) /index.html [NC]
 
 ---
 
+
+
 ## Samsung Internet browser webpage scroll position
 
 Samsung Internet doesn't output scroll position through `document.documentElement.scrollTop`,
@@ -169,6 +166,8 @@ Therefore, the best implementation of `scrollTop` would be to check the value
 from both sources to ensure thorough browser support.
 
 ---
+
+
 
 ## Classes and Interfaces in TypeScript
 
@@ -239,6 +238,8 @@ as the argument object hasn’t been provided.\
 **Setting the default value to `{}` resolves this issue.**
 
 ---
+
+
 
 ## Extracting a property from a derived class (a proposal)
 
@@ -345,6 +346,8 @@ so it uses the `ExtractProperty` function.
 
 ---
 
+
+
 ## Type hierarchy, difference between `void`, `null`, etc.
 
 TypeScript introduces a set of rules that define relationships between all
@@ -380,5 +383,3 @@ _It shows types of variables (columns) that accept types of values (rows)._
 Sources:
 - [The type hierarchy tree — zhenghao.io](https://www.zhenghao.io/posts/type-hierarchy-tree)
 - [TypeScript Documentation — Type compatibility](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability)
-
----

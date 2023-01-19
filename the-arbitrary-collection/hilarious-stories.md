@@ -5,13 +5,7 @@ author: 'Jerry Sky'
 keywords: 'story time, mongodb, web scale, 500-mile, email'
 ---
 
----
 
-- [The case of the 500-mile email](#the-case-of-the-500-mile-email)
-- [*MongoDB is web scale*](#mongodb-is-web-scale)
-- [Structured Procrastination — how to fool yourself](#structured-procrastination--how-to-fool-yourself)
-
----
 
 ## The case of the 500-mile email
 

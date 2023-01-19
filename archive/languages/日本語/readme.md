@@ -6,17 +6,7 @@ description: 'Notes on the Japanese language.'
 keywords: 'Japanese, language, 日本語, Tae Kim, text analysis, resources, notes, SAO, grammar, particles'
 ---
 
----
 
-- [Resources](#resources)
-    - [Dictionaries](#dictionaries)
-    - [漢字 and 仮名](#漢字-and-仮名)
-    - [Anime](#anime)
-- [Grammar](#grammar)
-    - [Particles](#particles)
-- [Text analysis](#text-analysis)
-
----
 
 ## Resources
 
