@@ -63,9 +63,6 @@ _Please note: this setup assumes the Cinnamon desktop environment is installed i
 Contains all configuration files that are not programs or scripts.
 They define how a given program or environment behaves.
 
-The most notable one would be the configuration file for the i3 window manager.
-I use i3wm (and a few utility programs) as my main desktop environment.
-
 Notes:
 - [KBCT](doc/kbct.md)
 
