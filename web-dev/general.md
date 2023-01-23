@@ -383,3 +383,71 @@ _It shows types of variables (columns) that accept types of values (rows)._
 Sources:
 - [The type hierarchy tree — zhenghao.io](https://www.zhenghao.io/posts/type-hierarchy-tree)
 - [TypeScript Documentation — Type compatibility](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability)
+
+---
+
+
+
+## `infer`
+
+The `infer` is used for extracting a type that is not directly available
+or has an `import`able definition.
+
+For example, when a function `f` expects an argument of certain type `T`,
+and this type `T` has not been marked for export in this function `f`’s module,
+use `infer` to extract type `T`.
+
+```ts
+import { f } from 'module'
+
+type T = typeof f extends (arg: infer T) => any ? T : never
+
+
+const x: T = {
+    one: 21,
+    two: 37,
+}
+
+// […]
+
+f(x) // no type errors
+```
+
+This way you can extract the exact type given function expects.
+The source article presents an example that benefits greatly from this functionality.
+
+Because
+```ts
+x: number[]
+```
+and
+```ts
+y: [number, number]
+```
+do not have equal types, one `x` cannot be accepted as an `y` substitute.
+
+Thus
+```ts
+const g = (x: {a: [number, number]}) => x.a[0] + ', ' + x.a[1]
+
+
+const a = [2137, 1448]
+
+g({a})
+```
+generates an error.
+
+```log
+TS2322: Type 'number[]' is not assignable to type '[number, number]'.
+Target requires 2 element(s) but source may have fewer.
+```
+
+The _key_ word here is _“may”_ — another example of TS’s great type-safety system.
+
+---
+
+_Source article: [Understanding `infer` in TypeScript](https://blog.logrocket.com/understanding-infer-typescript/)_
+
+---
+
+
