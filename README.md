@@ -33,10 +33,11 @@ keywords: 'notebook, notes, personal, python, latex, languages, programming, com
 
 ### Web-dev
 
-- [General (TypeScript, NodeJS)](web-dev/general.md)
-- [Angular Notes](web-dev/angular-notes.md)
+- [General](web-dev/general.md)
+- [TypeScript](web-dev/typescript.md)
+- [Angular](web-dev/angular-notes.md)
 - [CSS/SCSS + HTML](web-dev/css-scss-html-notes.md)
-- [Database notes](web-dev/database-notes.md)
+- [Database](web-dev/database-notes.md)
 
 ### Abstract
 
