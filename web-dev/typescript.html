@@ -117,7 +117,13 @@ derived class (a proposal)</a></li>
 <li><a href="#type-hierarchy-difference-between-void-null-etc"
 id="toc-type-hierarchy-difference-between-void-null-etc"><span
 class="toc-section-number">4.</span> Type hierarchy, difference between
-<code>void</code>, <code>null</code>, etc.</a></li>
+<code>void</code>, <code>null</code>, etc.</a>
+<ul>
+<li><a href="#assignability" id="toc-assignability"><span
+class="toc-section-number">4.1.</span> Assignability</a></li>
+<li><a href="#types-as-sets" id="toc-types-as-sets"><span
+class="toc-section-number">4.2.</span> Types as sets</a></li>
+</ul></li>
 <li><a href="#infer" id="toc-infer"><span
 class="toc-section-number">5.</span> <code>infer</code></a></li>
 </ul>
@@ -285,6 +291,8 @@ alt="TS type relations tree" /><br />
 JS. TypeScript introduces a few more of these and also establishes a set
 of relations between all of them.</p>
 <hr />
+<h3 data-number="4.1." id="assignability"><span
+class="header-section-number">4.1.</span> Assignability</h3>
 <table style="width:100%;">
 <colgroup>
 <col style="width: 17%" />
@@ -390,10 +398,52 @@ off</li>
 <p><em>The table of relations between various “negative” values in
 TS.</em> <em>It shows types of variables (columns) that accept types of
 values (rows).</em></p>
+<h3 data-number="4.2." id="types-as-sets"><span
+class="header-section-number">4.2.</span> Types as sets</h3>
+<p>Think of types as sets of possible values they can contain.
+<em>Languages</em> in a mathematical sense.</p>
+<p>For example the <code>never</code> type is the equivalent of an
+<strong>empty set</strong>
+(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∅</mi></mrow><annotation encoding="application/x-tex">\emptyset</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">∅</span></span></span></span>),
+an empty <strong>language that has no words</strong>.</p>
+<p>The <code>any</code> type on the other hand is a language that
+contains <strong>every possible value</strong>, the <em>domain</em> of
+the variable system, for any variable
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span>
+that can be represented in TypeScript,
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∈</mo></mrow><annotation encoding="application/x-tex">v \in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span></span></span></span>
+<code>any</code>. An equivalent of a RegEx expression that accepts any
+character that repeats an unlimited number of times
+(<code>.*</code>).</p>
+<hr />
+<p>Type combination works just like operations on sets.</p>
+<ol type="1">
+<li>Set intersection
+(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">C = A \cap B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span>)
+<code>ts     type C = A &amp; B</code>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>∵</mo><mi mathvariant="normal">∅</mi><mo>=</mo><mi mathvariant="normal">∅</mi><mo>∩</mo><mi>A</mi><mspace linebreak="newline"></mspace><mo>∴</mo></mrow><annotation encoding="application/x-tex">
+ \because \emptyset = \emptyset \cap A
+ \\
+ \therefore
+ </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6922em;"></span><span class="mrel amsrm">∵</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">∅</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">∅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6922em;"></span><span class="mrel amsrm">∴</span></span></span></span></span>
+<code>ts     never &amp; A // resolves to `never`.</code></li>
+<li>Set union
+(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">C = A \cup B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span>)
+<code>ts     type C = A | B</code>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>∵</mo><mi>A</mi><mo>=</mo><mi mathvariant="normal">∅</mi><mo>∪</mo><mi>A</mi><mspace linebreak="newline"></mspace><mo>∴</mo></mrow><annotation encoding="application/x-tex">
+ \because A = \emptyset \cup A
+ \\
+ \therefore
+ </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6922em;"></span><span class="mrel amsrm">∵</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">∅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6922em;"></span><span class="mrel amsrm">∴</span></span></span></span></span>
+<code>ts     never | A // resolves to `A`.</code></li>
+</ol>
+<hr />
 <p>Sources:</p>
 <ul>
 <li><a href="https://www.zhenghao.io/posts/type-hierarchy-tree">The type
 hierarchy tree — zhenghao.io</a></li>
+<li><a href="https://www.zhenghao.io/posts/ts-never">A complete guide to
+TypeScripts’s <code>never</code> type</a></li>
 <li><a
 href="https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability">TypeScript
 Documentation — Type compatibility</a></li>
