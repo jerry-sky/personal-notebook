@@ -211,6 +211,8 @@ relations between all of them.
 
 ---
 
+### Assignability
+
 |             | `any` | `unknown` | `object` | `void` | `undefined` | `null` | `never` |
 | ----------- | ----- | --------- | -------- | ------ | ----------- | ------ | ------- |
 | `any`       |       | Y         | Y        | Y      | Y           | Y      | N       |
@@ -229,8 +231,56 @@ _The table of relations between various “negative” values in TS._
 _It shows types of variables (columns) that accept types of values (rows)._
 
 
+### Types as sets
+
+Think of types as sets of possible values they can contain.
+_Languages_ in a mathematical sense.
+
+For example the `never` type is the equivalent of an **empty set** ($\emptyset$),
+an empty **language that has no words**.
+
+The `any` type on the other hand is a language that contains **every possible value**,
+the _domain_ of the variable system, for any variable $v$ that can be represented
+in TypeScript, $v \in$ `any`.
+An equivalent of a RegEx expression that accepts any character that repeats
+an unlimited number of times (`.*`).
+
+---
+
+Type combination works just like operations on sets.
+
+1. Set intersection ($C = A \cap B$)
+    ```ts
+    type C = A & B
+    ```
+    $$
+    \because \emptyset = \emptyset \cap A
+    \\
+    \therefore
+    $$
+    ```ts
+    never & A // resolves to `never`.
+    ```
+2. Set union ($C = A \cup B$)
+    ```ts
+    type C = A | B
+    ```
+    $$
+    \because A = \emptyset \cup A
+    \\
+    \therefore
+    $$
+    ```ts
+    never | A // resolves to `A`.
+    ```
+
+
+---
+
+
 Sources:
 - [The type hierarchy tree — zhenghao.io](https://www.zhenghao.io/posts/type-hierarchy-tree)
+- [A complete guide to TypeScripts’s `never` type](https://www.zhenghao.io/posts/ts-never)
 - [TypeScript Documentation — Type compatibility](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability)
 
 ---
