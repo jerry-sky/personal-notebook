@@ -105,6 +105,9 @@ that I’ve encountered.</em></p>
 id="toc-fix-mariadb-plugin-unix_socket-is-not-loaded-issue"><span
 class="toc-section-number">1.</span> Fix <em>MariaDB plugin
 <code>unix_socket</code> is not loaded</em> issue</a></li>
+<li><a href="#directx-for-older-games"
+id="toc-directx-for-older-games"><span
+class="toc-section-number">2.</span> DirectX for older games</a></li>
 </ul>
 <hr>
 </nav>
@@ -122,5 +125,33 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart mariadb.service</span></code></pre></div>
 <p><a
 href="https://websiteforstudents.com/fix-mariadb-plugin-unix_socket-is-not-loaded-error-on-ubuntu-17-04-17-10/">Source</a></p>
+<hr />
+<h2 data-number="2." id="directx-for-older-games"><span
+class="header-section-number">2.</span> DirectX for older games</h2>
+<p>For running some older games an additional installation of Microsoft
+provided redistributales is required.</p>
+<ul>
+<li><p><a
+href="https://www.microsoft.com/en-us/download/details.aspx?id=35">Microsoft
+DirectX® End-User Runtime</a> &gt; The Microsoft DirectX® End-User
+Runtime installs a number of runtime libraries from the legacy DirectX
+SDK for some games that use D3DX9, D3DX10, D3DX11, XAudio 2.7, XInput
+1.3, XACT, and/or Managed DirectX 1.1. Note that this package does not
+modify the DirectX Runtime installed on your Windows OS in any
+way.</p></li>
+<li><p><a
+href="https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170">Microsoft
+Visual C++ Redistributable latest supported downloads</a> &gt; The
+Visual C++ Redistributable installs Microsoft C and C++ (MSVC) runtime
+libraries. These libraries are required by many applications built by
+using Microsoft C and C++ tools. If your app uses those libraries, a
+Microsoft Visual C++ Redistributable package must be installed on the
+target system before you install your app. The Redistributable package
+architecture must match your app’s target architecture. The
+Redistributable version must be at least as recent as the MSVC build
+toolset used to build your app. We recommend you use the latest
+Redistributable available for your version of Visual Studio, with some
+exceptions noted later in this article.</p></li>
+</ul>
 </body>
 </html>
