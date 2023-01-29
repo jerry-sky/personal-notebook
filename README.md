@@ -102,6 +102,7 @@ keywords: 'notebook, notes, personal, python, latex, languages, programming, com
 - [Hilarious stories](the-arbitrary-collection/hilarious-stories.md)
 - [2D Animation](the-arbitrary-collection/2d-animation.md)
 - [Lifehacks Stack Exchange](https://lifehacks.stackexchange.com/)
+- [Crazy software](the-arbitrary-collection/crazy-software.md)
 
 ---
 
