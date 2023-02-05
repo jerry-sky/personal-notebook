@@ -49,8 +49,6 @@ Run
 
 whilst being in the `config` directory.
 
-_Please note: this setup assumes the Cinnamon desktop environment is installed in the system._
-
 ---
 
 
