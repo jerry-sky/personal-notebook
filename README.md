@@ -24,16 +24,16 @@ keywords: 'notebook, notes, personal, dotfiles, python, latex, languages, progra
 _Notes on various issues that came up during my work_
 _and solutions with applicable tools that help in handling them._
 
-- [Unix & Linux](general/unix-linux.md)
-- [Git](general/git-notes.md)
-- [Software issues](general/software-issues.md)
+- [Unix & Linux](plumbing/unix-linux.md)
+- [Git](plumbing/git-notes.md)
+- [Software issues](plumbing/software-issues.md)
 
 
 ### DevOps
 
 _Sysadmin, Linux, virtual infrastructure, tooling, all that jazz._
 
-- [Cloud](general/cloud.md)
+- [Cloud](devops/cloud.md)
 
 
 ### Web-dev
@@ -47,12 +47,12 @@ _Everything web development._
 - [Database](web-dev/database-notes.md)
 
 
-### Abstract
+### Meta
 
 _Not directly related to a specific technology, meta talk._
 
-- [Linguistics of Computer Science related matters](general/linguistics-related-to-cs.md)
-- [Technical specification](general/technical-specification.md)
+- [Linguistics of Computer Science related matters](meta/linguistics-related-to-cs.md)
+- [Technical specification](meta/technical-specification.md)
 
 
 ### Read
