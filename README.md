@@ -3,35 +3,42 @@ lang: 'en-GB'
 title: 'Jerry Sky’s personal notebook'
 author: 'Jerry Sky'
 description: |
-    This notebook consists of all personal notes of Jerry Sky including those not related to programming or computer science. \
+    Software is cool. \
     View this repository on
     [the web](https://personal.jerry-sky.me)
     or on [GitHub](https://github.com/jerry-sky/personal-notebook).
-keywords: 'notebook, notes, personal, python, latex, languages, programming, computer science, linux, jerry-sky'
+keywords: 'notebook, notes, personal, dotfiles, python, latex, languages, programming, computer science, linux'
 ---
 
 
 
 ## Computer Science
 
-### Learning platforms
+### Environment configuration
 
-- [foo.bar \(restricted access\)](https://foobar.withgoogle.com/)
-- [Exercism](https://exercism.io/)
-- [Front-end Mentor](https://www.frontendmentor.io/)
-- [Hacker Earth](https://www.hackerearth.com/practice/)
-- [Code Wars](https://www.codewars.com/)
+[_My outlook on how to setup a Linux-based Operating System. The “dotfiles” part of this repository._](config/readme.md)
 
-### General
 
-- [Environment configuration](config/readme.md)
+### Plumbing notes
+
+_Notes on various issues that came up during my work_
+_and solutions with applicable tools that help in handling them._
+
 - [Unix & Linux](general/unix-linux.md)
 - [Git](general/git-notes.md)
 - [Software issues](general/software-issues.md)
-- [VS Code](general/vs-code.md)
+
+
+### DevOps
+
+_Sysadmin, Linux, virtual infrastructure, tooling, all that jazz._
+
 - [Cloud](general/cloud.md)
 
+
 ### Web-dev
+
+_Everything web development._
 
 - [General](web-dev/general.md)
 - [TypeScript](web-dev/typescript.md)
@@ -39,12 +46,18 @@ keywords: 'notebook, notes, personal, python, latex, languages, programming, com
 - [CSS/SCSS + HTML](web-dev/css-scss-html-notes.md)
 - [Database](web-dev/database-notes.md)
 
+
 ### Abstract
+
+_Not directly related to a specific technology, meta talk._
 
 - [Linguistics of Computer Science related matters](general/linguistics-related-to-cs.md)
 - [Technical specification](general/technical-specification.md)
 
+
 ### Read
+
+_List of valuable sources of knowledge._
 
 - [Ideas that Created the Future: Classic Papers of Computer Science](http://library.lol/main/614F928EDFE94E5935111EC25AFA6FE4)
 - [FREE PROGRAMMING BOOKS](https://github.com/EbookFoundation/free-programming-books)
@@ -64,16 +77,28 @@ keywords: 'notebook, notes, personal, python, latex, languages, programming, com
 - [Applied Machine Learning](https://github.com/eugeneyan/applied-ml)
 - [Awesome free machine learning and AI courses with video lectures.](https://github.com/luspr/awesome-ml-courses)
 
+
+### Learning platforms
+
+_Interactive way of learning stuff._
+
+- [foo.bar \(restricted access\)](https://foobar.withgoogle.com/)
+- [Exercism](https://exercism.io/)
+- [Front-end Mentor](https://www.frontendmentor.io/)
+- [Hacker Earth](https://www.hackerearth.com/practice/)
+- [Code Wars](https://www.codewars.com/)
+
 ---
 
 
 
 ## Curriculum Vitae
 
-*Based on the [AltaCV template](https://www.overleaf.com/latex/templates/altacv-template/trgqjpwnmtgv).*
+_Based on the_
+_[AltaCV template](https://www.overleaf.com/latex/templates/altacv-template/trgqjpwnmtgv)._
 
-- [PDF](cv/curriculum-vitae.pdf)
-- [`.tex`](cv/curriculum-vitae.tex)
+- [Human readable form (PDF)](cv/curriculum-vitae.pdf)
+- [Source code (TeX)](cv/curriculum-vitae.tex)
 
 ---
 
@@ -81,15 +106,10 @@ keywords: 'notebook, notes, personal, python, latex, languages, programming, com
 
 ## Arts
 
-### General
-
 - [Blender Notes](arts/blender-notes.md)
 - [Colours](arts/colour-notes.md)
-
-### Adobe
-
-- [After Effects](arts/adobe/after-effects.md)
-- [Illustrator](arts/adobe/illustrator.md)
+- [Adobe After Effects](arts/adobe/after-effects.md)
+- [Adobe Illustrator](arts/adobe/illustrator.md)
 
 ---
 
@@ -108,9 +128,9 @@ keywords: 'notebook, notes, personal, python, latex, languages, programming, com
 
 
 
-## [Archive](archive/README.md)
+## Archive
 
-Archived notes.
+[_Archived notes._](archive/README.md)
 
 ---
 
@@ -122,11 +142,25 @@ Archived notes.
 [pandoc]: https://pandoc.org
 [pandoc-katex]: https://github.com/xu-cheng/pandoc-katex#readme
 [vyrow]: https://github.com/jerry-sky/vyrow#readme
+[nebo]: https://www.nebo.app/
+
+
+This repository serves the purpose of one of my main note-taking solutions.
+Almost all notes on the tools I use and issues that I encounter are documented here,
+alongside with multiple lists of valuable external resources.
+
+> For a long time, I thought that this notebook would be my designated
+> final note-taking solution that will replace all the others.
+> I was wrong, as handwritten notes are still better in some use-cases,
+> or they serve the purpose of being a buffer containing raw thoughts that
+> are not article-worthy yet.
+>
+> One field where hand-written notes are better is language learning.
+> Freedom of an open non-linear infinite physical space to save pen strokes
+> is very important to me.
 
 
 ### OneNote
-
-This repository serves the purpose of my main note-taking solution.
 
 A Markdown-based repository is the successor of my previous note-taking solution,
 which was OneNote.
@@ -137,18 +171,20 @@ I have since abandoned OneNote for a few simple, but compelling reasons:
 - OneNote is Microsoft’s proprietary technology with poor exporting tools,
 - general very slow performance as per usual with Microsoft software.
 
+For handwritten notes I use [Nebo][nebo] on my iPad.
+It has excellent set of features amongst which the handwriting recognition feature
+is most appealing to me, as one can search through a notebook contents
+like it was written using a keyboard.
+
 
 ### Markdown and $\LaTeX$
 
-Not to mention this Markdown-based solution is better because it involves
-just normal text documents — basic, but definitely sufficient.
+A Markdown-based solution is better because it involves just normal text documents
+— basic, but in most cases sufficient.
 
 After the switch the only thing I was missing, was the ability to write down mathematical expressions.
-In OneNote, this was done by using the handwriting feature.
-Frankly, my main form of interaction with this program was through handwriting,
-but that does not change anything.
-
-So, the solution that enabled maths in Markdown was $\LaTeX$, because what else would I use.
+So, the solution that enabled maths in Markdown was $\LaTeX$,
+because this is the industry standard when it comes to writing maths using a keyboard.
 Of course, $\LaTeX$ is not even mentioned in most specification sheets of various
 Markdown flavours, but that also is not a problem.
 
@@ -156,7 +192,7 @@ Markdown flavours, but that also is not a problem.
 ### Workflow
 
 Because Markdown is very loosely defined, it is not uncommon
-in the *Markdown world* to add various features that were not
+in the _Markdown world_ to add various features that were not
 intended to be added by the original creator.
 For example [Pandoc][pandoc], a powerful markup conversion tool,
 allows for $\LaTeX$ expressions in Markdown.
@@ -183,7 +219,7 @@ Apart from [Pandoc][pandoc] it also uses [Pandoc-KaTeX][pandoc-katex]
 — a Rust package that renders static HTML pages, instead of leaving
 raw expressions and letting the client browser render the $\LaTeX$ expressions.
 Such solution is elegant and much more performant, as the output HTML documents
-*do not contain any JavaScript*, only CSS that puts the static $\LaTeX$ elements into place.
+_do not contain any JavaScript_, only CSS that puts the static $\LaTeX$ elements into place.
 
 Both of my notebooks (personal notebook and academic notebook) are rendered
 into websites using [VYROW][vyrow] — my GH Action.
@@ -196,7 +232,7 @@ You can view them on the web:
 ### Figures
 
 When it comes to graph drawing or any type of graphical figures it can be done with OneNote,
-GIMP, or Notes on an iPad.
+GIMP, any other graphical program or e.g. a note-taking app on a tablet.
 
 An alternative would be to use `code blocks`.
 Characters such as `\`, `|`, `/`, `_`, `<`, `>`, `／`, `＼`, `＿`, `ー`, `「`, `」`, `＜`, and `＞`

@@ -30,9 +30,21 @@ sudo systemctl restart mariadb.service
 
 [Source](https://websiteforstudents.com/fix-mariadb-plugin-unix_socket-is-not-loaded-error-on-ubuntu-17-04-17-10/)
 
+---
 
+
+
+## Java Formatter Settings for VS Code
+
+The Java formatter for VS Code is currently a joke. According to [the official guide](https://github.com/redhat-developer/vscode-java/wiki/Formatter-settings) on how to change the settings of the formatter it is advised to use Eclipse to alter the settings.
+
+The default settings are atrocious - formatter doesn't allow for additional newlines that enable code readability or doesn't align the `case` statements with the `switch` statement properly.
+
+I keep my personal formatter settings file with the rest of the config files in [«config»](../config/readme.md).
 
 ---
+
+
 
 ## DirectX for older games
 
