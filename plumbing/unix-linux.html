@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="linux, notes, unix, bash, wget, ansi,
+customizing, custom, customization, script, program, dns, server" />
+  <meta name="description" content="Notes related to Unix-based operating systems." />
+  <title>Unix &amp; Linux</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+</head>
+<body>
+
+<header id="title-block-header">
+<h1 class="title">Unix &amp; Linux</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>Notes related to Unix-based operating
+systems.</em></p>
+<nav id="TOC">
+<hr>
+<ul>
+<li><a href="#resources" id="toc-resources"><span
+class="toc-section-number">1.</span> Resources</a></li>
+<li><a href="#keeping-some-scriptprogram-alive"
+id="toc-keeping-some-scriptprogram-alive"><span
+class="toc-section-number">2.</span> Keeping some script/program
+alive</a></li>
+<li><a href="#ansi-text-attributes" id="toc-ansi-text-attributes"><span
+class="toc-section-number">3.</span> ANSI Text Attributes</a>
+<ul>
+<li><a href="#text-effects" id="toc-text-effects"><span
+class="toc-section-number">3.1.</span> Text effects</a></li>
+</ul></li>
+<li><a href="#customizing-bash-prompt"
+id="toc-customizing-bash-prompt"><span
+class="toc-section-number">4.</span> Customizing <code>bash</code>
+prompt</a></li>
+<li><a href="#redirecting-stdout-to-stderr"
+id="toc-redirecting-stdout-to-stderr"><span
+class="toc-section-number">5.</span> Redirecting <code>stdout</code> to
+<code>stderr</code></a></li>
+<li><a href="#downloading-a-whole-website-using-wget"
+id="toc-downloading-a-whole-website-using-wget"><span
+class="toc-section-number">6.</span> Downloading a whole website using
+<code>wget</code></a></li>
+<li><a href="#permanently-setting-the-dns-server"
+id="toc-permanently-setting-the-dns-server"><span
+class="toc-section-number">7.</span> Permanently setting the DNS
+server</a></li>
+<li><a
+href="#fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages"
+id="toc-fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages"><span
+class="toc-section-number">8.</span> Fixing broken packages (downloaded
+from an external PPA) by forcefully overwriting <code>apt</code>
+packages</a></li>
+<li><a href="#useful-pdf-tools" id="toc-useful-pdf-tools"><span
+class="toc-section-number">9.</span> Useful PDF tools</a></li>
+<li><a
+href="#pass-url-file-argument-to-program-defined-by-a-desktop-file"
+id="toc-pass-url-file-argument-to-program-defined-by-a-desktop-file"><span
+class="toc-section-number">10.</span> Pass URL/ file argument to
+program defined by a <code>.desktop</code> file</a></li>
+<li><a href="#routing-vlc-audio-output-to-a-specific-pulseaudio-sink"
+id="toc-routing-vlc-audio-output-to-a-specific-pulseaudio-sink"><span
+class="toc-section-number">11.</span> Routing VLC audio output to a
+specific PulseAudio sink</a></li>
+<li><a href="#pretty-printing-json-data"
+id="toc-pretty-printing-json-data"><span
+class="toc-section-number">12.</span> Pretty printing JSON
+data</a></li>
+<li><a href="#compressing-images" id="toc-compressing-images"><span
+class="toc-section-number">13.</span> Compressing images</a></li>
+<li><a href="#nvidia--intel-flickering"
+id="toc-nvidia--intel-flickering"><span
+class="toc-section-number">14.</span> Nvidia + Intel
+flickering</a></li>
+</ul>
+<hr>
+</nav>
+<h2 data-number="1." id="resources"><span
+class="header-section-number">1.</span> Resources</h2>
+<ul>
+<li><a href="https://github.com/opsdisk/the_cyber_plumbers_handbook">The
+Cyber Plumber’s Handbook - The definitive guide to Secure Shell (SSH)
+tunneling, port redirection, and bending traffic like a boss</a></li>
+</ul>
+<hr />
+<h2 data-number="2." id="keeping-some-scriptprogram-alive"><span
+class="header-section-number">2.</span> Keeping some script/program
+alive</h2>
+<p>If you want to keep some script/program alive (e.g. a node.js script)
+you need to use <code>crontab</code>.</p>
+<p>The command</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crontab</span> <span class="at">-e</span></span></code></pre></div>
+<p>opens a crontab jobs file in the default editor that contains all the
+cron jobs that are being run for current user.</p>
+<p>You can add a reference to a bash script that runs desired
+script/program or normal reference to the script/program that needs to
+be run. You can set the time conditions confining the moments in which
+desired script/program will be run.</p>
+<p>It is advised that the program is shut down before running it
+again.</p>
+<hr />
+<h2 data-number="3." id="ansi-text-attributes"><span
+class="header-section-number">3.</span> ANSI Text Attributes</h2>
+<!-- spellchecker: disable-next-line -->
+<p><code>Esc[Value;...;Valuem</code></p>
+<h3 data-number="3.1." id="text-effects"><span
+class="header-section-number">3.1.</span> Text effects</h3>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 26%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Reset / Normal</td>
+<td>all attributes off</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Bold or increased intensity</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Faint (decreased intensity)</td>
+<td>Not widely supported.</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Italic</td>
+<td>Not widely supported. Sometimes treated as inverse.</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Underline</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Slow Blink</td>
+<td>less than 150 per minute</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>Rapid Blink</td>
+<td>MS-DOS ANSI.SYS; 150+ per minute; not widely supported</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>[[reverse video]]</td>
+<td>swap foreground and background colors</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Conceal</td>
+<td>Not widely supported.</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>Crossed-out</td>
+<td>Characters legible, but marked for deletion. Not widely
+supported.</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>Primary(default) font</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>11–19</td>
+<td>Alternate font</td>
+<td>Select alternate font <code>n-10</code></td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>Fraktur</td>
+<td>hardly ever supported</td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td>Bold off or Double Underline</td>
+<td>Bold off not widely supported; double underline hardly ever
+supported.</td>
+</tr>
+<tr class="odd">
+<td>22</td>
+<td>Normal color or intensity</td>
+<td>Neither bold nor faint</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>Not italic, not Fraktur</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>24</td>
+<td>Underline off</td>
+<td>Not singly or doubly underlined</td>
+</tr>
+<tr class="even">
+<td>25</td>
+<td>Blink off</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>27</td>
+<td>Inverse off</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>28</td>
+<td>Reveal</td>
+<td>conceal off</td>
+</tr>
+<tr class="odd">
+<td>29</td>
+<td>Not crossed out</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>30–37</td>
+<td>Set foreground color</td>
+<td>See color table below</td>
+</tr>
+<tr class="odd">
+<td>38</td>
+<td>Set foreground color</td>
+<td>Next arguments are <code>5;n</code> or <code>2;r;g;b</code>, see
+below</td>
+</tr>
+<tr class="even">
+<td>39</td>
+<td>Default foreground color</td>
+<td>implementation defined (according to standard)</td>
+</tr>
+<tr class="odd">
+<td>40–47</td>
+<td>Set background color</td>
+<td>See color table below</td>
+</tr>
+<tr class="even">
+<td>48</td>
+<td>Set background color</td>
+<td>Next arguments are <code>5;n</code> or <code>2;r;g;b</code>, see
+below</td>
+</tr>
+<tr class="odd">
+<td>49</td>
+<td>Default background color</td>
+<td>implementation defined (according to standard)</td>
+</tr>
+<tr class="even">
+<td>51</td>
+<td>Framed</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>52</td>
+<td>Encircled</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>53</td>
+<td>Overlined</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>54</td>
+<td>Not framed or encircled</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>Not overlined</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>60</td>
+<td>ideogram underline</td>
+<td>hardly ever supported</td>
+</tr>
+<tr class="even">
+<td>61</td>
+<td>ideogram double underline</td>
+<td>hardly ever supported</td>
+</tr>
+<tr class="odd">
+<td>62</td>
+<td>ideogram overline</td>
+<td>hardly ever supported</td>
+</tr>
+<tr class="even">
+<td>63</td>
+<td>ideogram double overline</td>
+<td>hardly ever supported</td>
+</tr>
+<tr class="odd">
+<td>64</td>
+<td>ideogram stress marking</td>
+<td>hardly ever supported</td>
+</tr>
+<tr class="even">
+<td>65</td>
+<td>ideogram attributes off</td>
+<td>reset the effects of all of 60-64</td>
+</tr>
+<tr class="odd">
+<td>90–97</td>
+<td>Set bright foreground color</td>
+<td>aixterm (not in standard)</td>
+</tr>
+<tr class="even">
+<td>100–107</td>
+<td>Set bright background color</td>
+<td>aixterm (not in standard)</td>
+</tr>
+</tbody>
+</table>
+<p>Using <code>\033[38;5;206m</code> you’re accessing the
+256-colour-palette. Replace <code>38</code> with <code>48</code> and
+you’ll be altering the background colour.</p>
+<p>To get even more colours use <code>\033[38;2;R;G;Bm</code> to use
+full RGB spectrum by replacing <code>R</code>, <code>G</code> and
+<code>B</code> with values from range of <code>0-255</code>.</p>
+<p><a href="https://stackoverflow.com/a/33206814/4249875">Source</a></p>
+<hr />
+<h2 data-number="4." id="customizing-bash-prompt"><span
+class="header-section-number">4.</span> Customizing <code>bash</code>
+prompt</h2>
+<p>When configuring the <code>bash</code> prompt you would use ANSI
+escape sequences to enhance the <a href="#ansi-text-attributes">text
+formatting</a> to make it more visually appealing. However, inserting an
+ANSI escape sequence is a lot of characters that amount to special usage
+and <em>no physical characters</em>. That’s why we need to mark these
+sequences as <em>zero-length</em> to prevent the bash from being
+confused where does the actual prompt end.<br />
+Every time you insert an ANSI escape sequence wrap it inside
+<code>\[«ANSI escape sequence»\]</code>.</p>
+<p><a href="https://unix.stackexchange.com/a/28828">Source</a></p>
+<hr />
+<h2 data-number="5." id="redirecting-stdout-to-stderr"><span
+class="header-section-number">5.</span> Redirecting <code>stdout</code>
+to <code>stderr</code></h2>
+<p>To redirect <code>stdout</code> to <code>stderr</code> just add
+<code>&gt;&amp;2 echo 'error</code> at the end of the command you want
+to execute.</p>
+<hr />
+<h2 data-number="6." id="downloading-a-whole-website-using-wget"><span
+class="header-section-number">6.</span> Downloading a whole website
+using <code>wget</code></h2>
+<p>Using <code>wget</code> you can download a whole webpage with all the
+resources that are referenced through links on that webpage. It can be a
+very useful tool for archiving websites.</p>
+<p>Executing</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-rpl1</span> <span class="at">--tries</span><span class="op">=</span>3 https://example.com</span></code></pre></div>
+<p>will download the webpage and all PDFs, images and other resources
+that appear on that webpage to a folder called
+<code>example.com</code>.</p>
+<p>There is a possibility that above command will not work on first try.
+For example the HTML file containing the markup may have been
+downloaded, but the resources that appear on that webpage couldn’t have
+been downloaded. Then, using this website in HTML (or otherwise) form we
+can download the rest of the resources.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-rpl1</span> <span class="at">--tries</span><span class="op">=</span>3 <span class="at">--base</span><span class="op">=</span>https://example.com/subpage <span class="at">--force-html</span> <span class="at">--relative</span> <span class="at">-i</span> example.com/subpage/index.html</span></code></pre></div>
+<p>Executing above command will download all resources that appear on
+this subpage. All relative links will be preceded with the URL provided
+with the <code>--base</code> option.</p>
+<hr />
+<h2 data-number="7." id="permanently-setting-the-dns-server"><span
+class="header-section-number">7.</span> Permanently setting the DNS
+server</h2>
+<p>First, we need to install the <code>resolvconf</code> package:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install resolvconf</span></code></pre></div>
+<p>Now, let’s add the IP address of the desired DNS server.<br />
+Edit following file:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nvim /etc/resolvconf/resolv.conf.d/head</span></code></pre></div>
+<p>adding line below to make <code>1.1.1.1</code> the DNS server:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode txt"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nameserver 1.1.1.1</span></code></pre></div>
+<p><a
+href="https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/">Source</a></p>
+<hr />
+<h2 data-number="8."
+id="fixing-broken-packages-downloaded-from-an-external-ppa-by-forcefully-overwriting-apt-packages"><span
+class="header-section-number">8.</span> Fixing broken packages
+(downloaded from an external PPA) by forcefully overwriting
+<code>apt</code> packages</h2>
+<p>Sometimes adding external PPAs results in broken packages and the
+infamous error:</p>
+<pre class="log"><code>E: Unmet dependencies. Try &#39;apt --fix-broken install&#39; with no packages (or specify a solution).</code></pre>
+<p>One solution would be to remove that PPA</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">--remove</span> ‹PPA›</span></code></pre></div>
+<p>and to forcefully overwrite the broken packages from software sources
+that were already present in the system.</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-o</span> Dpkg::Options::=<span class="st">&quot;--force-overwrite&quot;</span> <span class="at">--fix-broken</span></span></code></pre></div>
+<p><a href="https://unix.stackexchange.com/a/624842">Source</a></p>
+<hr />
+<h2 data-number="9." id="useful-pdf-tools"><span
+class="header-section-number">9.</span> Useful PDF tools</h2>
+<ol type="1">
+<li><p>PDF to PNG: <code>bash     pdftoppm pdf.pdf result -png</code> <a
+href="https://askubuntu.com/a/50180">Source</a></p></li>
+<li><p>Merge two PDFs side-by-side:
+<code>bash     pdfjam one.pdf two.pdf --nup 2x1 --landscape --outfile merged.pdf</code>
+<a href="https://superuser.com/q/917190/746117">Source</a></p></li>
+</ol>
+<hr />
+<h2 data-number="10."
+id="pass-url-file-argument-to-program-defined-by-a-desktop-file"><span
+class="header-section-number">10.</span> Pass URL/ file argument to
+program defined by a <code>.desktop</code> file</h2>
+<p>Programs can accept links/ paths to remote/ local files as arguments.
+The <code>.desktop</code> files handles that by adding <code>%u</code>
+or <code>%U</code> at the end of the <code>Exec</code> parameter.</p>
+<ul>
+<li><code>%u</code> — only one URL can be passed</li>
+<li><code>%U</code> — multiple URLs can be passed</li>
+</ul>
+<p>Usage example:</p>
+<pre class="desktop"><code>[Desktop Entry]
+Name=Google Chrome
+Exec=/usr/bin/google-chrome-stable %U
+Type=Application
+Categories=Network;WebBrowser;
+# […]</code></pre>
+<p>Source: <a
+href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s07.html">Desktop
+specification — The Exec key</a></p>
+<hr />
+<h2 data-number="11."
+id="routing-vlc-audio-output-to-a-specific-pulseaudio-sink"><span
+class="header-section-number">11.</span> Routing VLC audio output to a
+specific PulseAudio sink</h2>
+<p>To force VLC to play audio to a device different from the default one
+run it with temporarily set Pulse sink variable like so:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">PULSE_SINK</span><span class="op">=</span><span class="va">$sink_id</span> <span class="ex">cvlc</span> file.mp3</span></code></pre></div>
+<p>Source: <a href="https://superuser.com/a/494404">Answer on
+SuperUser</a></p>
+<hr />
+<h2 data-number="12." id="pretty-printing-json-data"><span
+class="header-section-number">12.</span> Pretty printing JSON data</h2>
+<p>Example:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;{</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">    &quot;items&quot;: [</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">        {</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;name&quot;: &quot;One&quot;,</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;description&quot;: &quot;the one and only&quot;,</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;labels&quot;: [</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="st">                &quot;Not funny&quot;,</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="st">                &quot;A label&quot;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="st">            ]</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="st">        },</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="st">        {</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;name&quot;: &quot;Two&quot;,</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;description&quot;: &quot;the sequel&quot;,</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;labels&quot;: [</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="st">                &quot;Yup&quot;</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="st">            ]</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="st">        }</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="st">    ]</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="st">}&#39;</span> <span class="dt">\</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="ex">jq</span> <span class="at">-j</span> <span class="st">&#39;.items[] | .name, &quot; (&quot;, .description, &quot;) [ &quot;, (.labels | join(&quot;, &quot;)), &quot; ]\n&quot;&#39;</span></span></code></pre></div>
+<p>Sources: self, <a
+href="https://unix.stackexchange.com/a/451499">Answer on Unix
+StackExchange</a></p>
+<hr />
+<h2 data-number="13." id="compressing-images"><span
+class="header-section-number">13.</span> Compressing images</h2>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">convert</span> <span class="at">-strip</span> <span class="at">-interlace</span> Plane <span class="at">-gaussian-blur</span> 0.05 <span class="at">-quality</span> 85% source.jpg result.jpg</span></code></pre></div>
+<p>Using <code>convert</code> from the <code>imagemagick</code> package
+you can cut down on size for image files.</p>
+<p>Source: <a href="https://stackoverflow.com/a/7262050">Answer on
+StackOverflow</a></p>
+<hr />
+<h2 data-number="14." id="nvidia--intel-flickering"><span
+class="header-section-number">14.</span> Nvidia + Intel flickering</h2>
+<p>To resolve flickering for laptops with Nvidia+Intel graphics turn off
+PSR.</p>
+<p>PSR is Intel’s Panel Self Refresh setting which caches some frames to
+display them later. This functionality may cause these flickering
+problems because of some memory leaking from the frame buffer, causing
+the display to show unsynced content.</p>
+<p>To verify PSR is turned on run</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /sys/kernel/debug/dri/0/i915_edp_psr_status</span></code></pre></div>
+<p>with root privileges.</p>
+<p>If it is indeed turned on, modify <code>/etc/default/grub</code>:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode diff"><code class="sourceCode diff"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="st">-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash i915.enable_psr=0&quot;</span></span></code></pre></div>
+<p>and run</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">update-grub</span></span></code></pre></div>
+<p>with root privileges to turn this feature off and reboot the computer
+to apply the changes.</p>
+<p>Source: <a
+href="https://ljvmiranda921.github.io/notebook/2021/09/01/linux-thinkpad-screen-flicker/">Lj
+Miranda</a></p>
+</body>
+</html>

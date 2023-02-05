@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <title>Cloud</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+</head>
+<body>
+
+<header id="title-block-header">
+<h1 class="title">Cloud</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<nav id="TOC">
+<hr>
+<ul>
+<li><a href="#aws" id="toc-aws"><span
+class="toc-section-number">1.</span> AWS</a>
+<ul>
+<li><a href="#compute" id="toc-compute"><span
+class="toc-section-number">1.1.</span> Compute</a></li>
+<li><a href="#storage" id="toc-storage"><span
+class="toc-section-number">1.2.</span> Storage</a></li>
+<li><a href="#databases" id="toc-databases"><span
+class="toc-section-number">1.3.</span> Databases</a></li>
+<li><a href="#migration" id="toc-migration"><span
+class="toc-section-number">1.4.</span> Migration</a></li>
+<li><a href="#networking--content-delivery"
+id="toc-networking--content-delivery"><span
+class="toc-section-number">1.5.</span> Networking &amp; Content
+Delivery</a></li>
+<li><a href="#developer-tools" id="toc-developer-tools"><span
+class="toc-section-number">1.6.</span> Developer Tools</a></li>
+<li><a href="#management-tools" id="toc-management-tools"><span
+class="toc-section-number">1.7.</span> Management Tools</a></li>
+<li><a href="#analytics" id="toc-analytics"><span
+class="toc-section-number">1.8.</span> Analytics</a></li>
+<li><a href="#security-identity-and-compliance"
+id="toc-security-identity-and-compliance"><span
+class="toc-section-number">1.9.</span> Security, Identity, and
+Compliance</a></li>
+<li><a href="#application-services" id="toc-application-services"><span
+class="toc-section-number">1.10.</span> Application Services</a></li>
+<li><a href="#mobile-services" id="toc-mobile-services"><span
+class="toc-section-number">1.11.</span> Mobile Services</a></li>
+<li><a href="#business-productivity"
+id="toc-business-productivity"><span
+class="toc-section-number">1.12.</span> Business Productivity</a></li>
+<li><a href="#artificial-intelligence"
+id="toc-artificial-intelligence"><span
+class="toc-section-number">1.13.</span> Artificial
+Intelligence</a></li>
+<li><a href="#customer-engagement" id="toc-customer-engagement"><span
+class="toc-section-number">1.14.</span> Customer Engagement</a></li>
+<li><a href="#game-development" id="toc-game-development"><span
+class="toc-section-number">1.15.</span> Game Development</a></li>
+<li><a href="#internet-of-things" id="toc-internet-of-things"><span
+class="toc-section-number">1.16.</span> Internet of Things</a></li>
+</ul></li>
+</ul>
+<hr>
+</nav>
+<h2 data-number="1." id="aws"><span
+class="header-section-number">1.</span> AWS</h2>
+<p><em>List of web services offered by Amazon.</em></p>
+<p><a
+href="https://medium.com/@kunalyadav/what-is-aws-and-what-can-you-do-with-it-395b585b03c">Original
+article</a></p>
+<h3 data-number="1.1." id="compute"><span
+class="header-section-number">1.1.</span> Compute</h3>
+<ol type="1">
+<li>EC2 (Elastic Compute Cloud) — These are just the virtual machines in
+the cloud on which you have the OS level control. You can run whatever
+you want in them.</li>
+<li>LightSail — If you don’t have any prior experience with AWS this is
+for you. It automatically deploys and manages compute, storage and
+networking capabilities required to run your applications.</li>
+<li>ECS (Elastic Container Service) — It is a highly scalable container
+service to allows you to run Docker containers in the cloud.</li>
+<li>EKS (Elastic Container Service for Kubernetes) — Allows you to use
+Kubernetes on AWS without installing and managing your own Kubernetes
+control plane. It is a relatively new service.</li>
+<li>Lambda — AWS’s serverless technology that allows you to run
+functions in the cloud. It’s a huge cost saver as you pay only when your
+functions execute.</li>
+<li>Batch — It enables you to easily and efficiently run batch computing
+workloads of any scale on AWS using Amazon EC2 and EC2 spot fleet.</li>
+<li>Elastic Beanstalk — Allows automated deployment and provisioning of
+resources like a highly scalable production website.</li>
+</ol>
+<h3 data-number="1.2." id="storage"><span
+class="header-section-number">1.2.</span> Storage</h3>
+<ol type="1">
+<li>S3 (Simple Storage Service) — Storage service of AWS in which we can
+store objects like files, folders, images, documents, songs, etc. It
+cannot be used to install software, games or Operating System.</li>
+<li>EFS (Elastic File System) — Provides file storage for use with your
+EC2 instances. It uses NFSv4 protocol and can beused concurrently by
+thousands of instances.</li>
+<li>Glacier — It is an extremely low-cost archival service to store
+files for a long time like a few years or even decades.</li>
+<li>Storage Gateway — It is a virtual machine that you install on your
+on-premise servers. Your on-premise data can be backed up to AWS
+providing more durability.</li>
+</ol>
+<h3 data-number="1.3." id="databases"><span
+class="header-section-number">1.3.</span> Databases</h3>
+<ol type="1">
+<li>RDS (Relational Database Service) — Allows you to run relational
+databases like MySQL, MariaDB, PostgreSQL, Oracle or SQL Server. These
+databases are fully managed by AWS like installing antivirus and
+patches.</li>
+<li>DynamoDB — It is a highly scalable, high-performance NoSQL database.
+It provides single-digit millisecond latency at any scale.</li>
+<li>Elasticache — It is a way of caching data inside the cloud. It can
+be used to take load off of your database by caching most frequent
+queries.</li>
+<li>Neptune — It has been launched recently. It is a fast, reliable and
+scalable graph database service.</li>
+<li>RedShift — It is AWS’s data warehousing solution that can be used to
+run complex OLAP queries.</li>
+</ol>
+<h3 data-number="1.4." id="migration"><span
+class="header-section-number">1.4.</span> Migration</h3>
+<ol type="1">
+<li>DMS (Database Migration Service) — It can be used to migrate on-site
+databases to AWS. It also allows you to migrate from one type of
+database to another. Eg -from Oracle to MySQL.</li>
+<li>SMS (Server Migration Service) — It allows you to migrate on-site
+servers to AWS easily and quickly.</li>
+<li>Snowball — It is a briefcase sized appliance that can be used to
+send terabytes of data inside and outside of AWS.</li>
+</ol>
+<h3 data-number="1.5." id="networking--content-delivery"><span
+class="header-section-number">1.5.</span> Networking &amp; Content
+Delivery</h3>
+<ol type="1">
+<li>VPC (Virtual Private Cloud) — It is simply a data center in the
+cloud in which you deploy all your resources. It allows you to better
+isolate your resources and secure them.</li>
+<li>CloudFront -It is AWS’s Content Delivery Network (CDN) that consists
+of Edge locations that cache resources.</li>
+<li>Route53 — It is AWS’s highly available DNS (Domain Name System)
+service. You can register domain names through it.</li>
+<li>Direct Connect — Using it you can connect your data center to an
+Availability zone using a high speed dedicated line.</li>
+<li>API Gateway — Allows you to create, store and manage APIs at
+scale.</li>
+</ol>
+<h3 data-number="1.6." id="developer-tools"><span
+class="header-section-number">1.6.</span> Developer Tools</h3>
+<ol type="1">
+<li>CodeStar — It is a cloud-based service for creating, managing, and
+working with software development projects on AWS. You can quickly
+develop, build, and deploy applications on AWS with an AWS CodeStar
+project.</li>
+<li>CodeCommit — It is AWS’s version control service that allows you to
+store your code and other assets privately in the cloud.</li>
+<li>CodeBuild — It automates the process of building (compiling) your
+code.</li>
+<li>CodeDeploy — It is a way of deploying your code in EC2 instances
+automatically.</li>
+<li>CodePipeline — Allows you to keep track of different steps in your
+deployment like building, testing, authentication, and deployment on
+development and production environments.</li>
+<li>Cloud9 —It is an IDE (Integrated Development Environment) for
+writing, running, and debugging code in the cloud.</li>
+<li>X-Ray — It makes it easy for developers to analyze the behavior of
+their distributed applications by providing request tracing, exception
+collection, and profiling capabilities.</li>
+</ol>
+<h3 data-number="1.7." id="management-tools"><span
+class="header-section-number">1.7.</span> Management Tools</h3>
+<ol type="1">
+<li>CloudWatch — It can be used to monitor AWS environments like CPU
+utilization of EC2 and RDS instances and trigger alarms based on
+different metrics.</li>
+<li>CloudFormation — It is a way of turning infrastructure into the
+cloud. You can use templates to provision a whole production environment
+in minutes.</li>
+<li>CloudTrail — A way of auditing AWS resources. It logs all changes
+and API calls made to AWS.</li>
+<li>OpsWorks — It helps in automating Chef deployments on AWS.</li>
+<li>Config — It monitors your environment and notifies you when you
+break certain configurations.</li>
+<li>Service Catalog — For larger enterprises, helps to authorize which
+services will be used and which won’t be.</li>
+<li>Trusted Advisor — Gives you recommendations on how to do cost
+optimizations, and secure your environment.</li>
+<li>AWS Auto Scaling — Allows you to automatically scale your resources
+up and down based on CloudWatch metrics.</li>
+<li>Systems Manager — Allows you to group your resources, so you can
+quickly gain insights, identify issues and act on them.</li>
+<li>Managed Services—It provides ongoing management of your AWS
+infrastructure so you can focus on your applications.</li>
+</ol>
+<h3 data-number="1.8." id="analytics"><span
+class="header-section-number">1.8.</span> Analytics</h3>
+<ol type="1">
+<li>Athena — Allows you to run SQL queries on your S3 bucket to find
+files.</li>
+<li>EMR (Elastic Map Reduce) — It is used for big data processing like
+Hadoop, Apache Spark, and Splunk, etc.</li>
+<li>CloudSearch — It can be used to create a fully managed search engine
+for your website.</li>
+<li>ElasticSearch — It is similar to CloudSearch but gives you more
+features like application monitoring.</li>
+<li>Kinesis — A way of streaming and analyzing real-time data at massive
+scale. It can store TBs of data per hour.</li>
+<li>Data Pipeline — Allows you to move data from one place to another.
+Eg: from S3 to DynamoDB or vice versa.</li>
+<li>QuickSight —A business analytics tool that allows you to create
+visualizations in a rich dashboard for data in AWS. Eg: for S3,
+DynamoDB, etc.</li>
+<li>Glue — It is a fully managed ETL (extract, transform, and load)
+service that makes it simple and cost-effective to categorize your data,
+clean it, enrich it, and move it reliably between various data
+stores.</li>
+</ol>
+<h3 data-number="1.9." id="security-identity-and-compliance"><span
+class="header-section-number">1.9.</span> Security, Identity, and
+Compliance</h3>
+<ol type="1">
+<li>IAM (Identity and Access Management) — Allows you to manage users,
+assign policies, create groups to manage multiple users.</li>
+<li>Inspector — It is an agent that you install on our virtual machines,
+which then reports any security vulnerabilities.</li>
+<li>Certificate Manager — It gives free SSL certificates for your
+domains that are managed by Route53.</li>
+<li>Directory Service — A way of using your company’s account to log in
+to AWS.</li>
+<li>WAF (Web Application Firewall) — Gives you application-level
+protection and blocks SQL injection and cross-site scripting
+attacks.</li>
+<li>CloudHSM — It helps you meet corporate, contractual, and regulatory
+compliance requirements for data security by using dedicated Hardware
+Security Module (HSM) appliances within the AWS Cloud.</li>
+<li>Cloud Directory — It enables you to build flexible, cloud-native
+directories for organizing hierarchies of data along multiple
+dimensions.</li>
+<li>KMS (Key Management Service) — It is a managed service that makes it
+easy for you to create and control the encryption keys used to encrypt
+your data.</li>
+<li>Organizations — It allows you to create groups of AWS accounts that
+you can use to more easily manage security and automation settings.</li>
+<li>Shield — A managed DDoS (Distributed Denial of Service) protection
+service that safeguards web applications running on AWS.</li>
+<li>Artifact — It is the place where you can get all your compliance
+certifications.</li>
+<li>Macie — A data visibility security service that helps classify and
+protect your sensitive and business-critical content.</li>
+<li>GuardDuty —Provides intelligent threat detection to protect your AWS
+accounts and workloads</li>
+</ol>
+<h3 data-number="1.10." id="application-services"><span
+class="header-section-number">1.10.</span> Application Services</h3>
+<ol type="1">
+<li>Step Functions — A way of visualizing what’s going inside your
+application and what different microservices it is using.</li>
+<li>SWF (Simple Workflow Service) — A way of coordinating both automated
+tasks and human-led tasks.</li>
+<li>SNS (Simple Notification Service) — Can be used to send you
+notifications in the form of email and SMS regarding your AWS services.
+It is a push-based service.</li>
+<li>SQS (Simple Queue Service) — The first service offered by AWS. It
+can be used to decouple your applications. It is a pull-based
+service.</li>
+<li>Elastic Transcoder — Changes a video’s format and resolution to
+support different devices like tablets, smartphones, and laptops of
+different resolutions.</li>
+</ol>
+<h3 data-number="1.11." id="mobile-services"><span
+class="header-section-number">1.11.</span> Mobile Services</h3>
+<ol type="1">
+<li>Mobile Hub — Allows you to add, configure and design features for
+mobile apps. It is a console for mobile app development.</li>
+<li>Cognito — Allows your users to signup using social identity
+providers.</li>
+<li>Device Farm — Enables you to improve quality of apps by quickly
+testing on hundreds of mobile devices.</li>
+<li>AWS AppSync —It is an enterprise level, fully managed GraphQL
+service with real-time data synchronization and offline programming
+features.</li>
+<li>Mobile Analytics — Allows to simply and cost effectively analyze
+mobile data.</li>
+</ol>
+<h3 data-number="1.12." id="business-productivity"><span
+class="header-section-number">1.12.</span> Business Productivity</h3>
+<ol type="1">
+<li>Alexa for Business — It lets you empower your organization with
+voice, using Alexa. Allows you to build custom voice skills for your
+organization.</li>
+<li>Chime — Can be used for online meeting and video conferencing.</li>
+<li>WorkDocs — Helps to store documents in the cloud</li>
+<li>WorkMail — Allows you to send and receive business emails.</li>
+<li>Desktop &amp; App Streaming</li>
+<li>WorkSpaces — It is a VDI (Virtual Desktop Infrastructure). Allows
+you to use remote desktops in the cloud</li>
+<li>AppStream 2.0 — A way of streaming desktop applications to your
+users in the web browser. Eg: Using MS Word in Google Chrome.</li>
+</ol>
+<h3 data-number="1.13." id="artificial-intelligence"><span
+class="header-section-number">1.13.</span> Artificial Intelligence</h3>
+<ol type="1">
+<li>Lex — Allows you to quickly build chatbots.</li>
+<li>Polly — AWS’s text-to-speech service. You can create audio versions
+of your notes using it.</li>
+<li>Machine learning — You just have to give your dataset and target
+variable and AWS will take care of training your model.</li>
+<li>Rekognition — AWS’s face recognition service. Allows you to
+recognize faces and object in images and videos.</li>
+<li>SageMaker — Helps you to build, train and deploy machine learning
+models at any scale.</li>
+<li>Comprehend — It is a Natural Language Processing (NLP) service that
+uses machine learning to find insights and relationships in text. It can
+be used for sentiment analysis.</li>
+<li>Transcribe — It is the opposite of Polly. It is AWS’s speech-to-text
+service that provides that provides high-quality and affordable
+transcriptions.</li>
+<li>Translate — It is like Google Translate and allows you to translate
+text in one language to another.</li>
+<li>AR &amp; VR (Augmented Reality &amp; Virtual Reality)</li>
+<li>Sumerian — It is a set of tools for creating high-quality virtual
+reality (VR) experiences on the web. You can quickly create interactive
+3D scenes and publish it as a website for users to access.</li>
+</ol>
+<h3 data-number="1.14." id="customer-engagement"><span
+class="header-section-number">1.14.</span> Customer Engagement</h3>
+<ol type="1">
+<li>Amazon Connect — Allows you to create a customer care center in the
+cloud.</li>
+<li>Pinpoint — It is like Google analytics for mobile applications. It
+helps you to understand users and engage with them.</li>
+<li>SES (Simple Email Service) — Allows you to send bulk emails to your
+customers at an extremely low price.</li>
+</ol>
+<h3 data-number="1.15." id="game-development"><span
+class="header-section-number">1.15.</span> Game Development</h3>
+<ol type="1">
+<li>GameLift — It is a service managed by AWS that can used to host
+dedicated game servers. It seamlessly scales without taking your game
+offline.</li>
+</ol>
+<h3 data-number="1.16." id="internet-of-things"><span
+class="header-section-number">1.16.</span> Internet of Things</h3>
+<ol type="1">
+<li>IoT Core— It is a managed cloud platform that lets connected devices
+— cars, light bulbs, sensor grids, and more — easily and securely
+interact with cloud applications and other devices.</li>
+<li>IoT Device Management — Allows you to manage your IoT devices at any
+scale.</li>
+<li>IoT Analytics — Can be used to perform analysis on data collected by
+your IoT devices.</li>
+<li>Greengrass — Lets your IoT devices to process the locally generated
+data while advantage of AWS services.</li>
+<li>Amazon FreeRTOS — It is a real-time operating system for
+microcontrollers that makes it easy to securely connect IoT devices
+locally or to the cloud.</li>
+</ol>
+</body>
+</html>
