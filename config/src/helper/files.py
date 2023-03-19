@@ -149,8 +149,7 @@ def __toggle_fileblock(
 
     # write the changes to the target file
     ex(
-        ('sudo ' if sudo else '')
-        + 'cat <<EOF |'
+        'cat <<\'EOF\' |'
         + ('sudo ' if sudo else '')
         + 'tee >/dev/null '
         + target_file_path
