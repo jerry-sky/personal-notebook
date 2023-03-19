@@ -104,6 +104,14 @@ _[AltaCV template](https://www.overleaf.com/latex/templates/altacv-template/trgq
 
 
 
+## Hardware
+
+- [Car](hardware/car.md)
+
+---
+
+
+
 ## Arts
 
 - [Blender Notes](arts/blender-notes.md)
