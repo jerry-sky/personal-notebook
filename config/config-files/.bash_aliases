@@ -1,20 +1,14 @@
 #!/bin/bash
 
-# General purpose alias for programs with GUIs but that can be run from terminal.
-# It redirects the output to `/dev/null` to avoid unnecessary clutter in the terminal window.
-# It can be used for e.g. Blender
-function --() {
-    nohup $@ &> /dev/null &
-}
 
-# Google Drive directory
-alias cloud="cd ~/gdrive/"
-# other useful shortcuts
 alias cd..="cd .."
-alias up="cd .."
-alias p="pwd"
 
 alias reload=". ~/.bashrc"
+
+# leave the last viewed page in the terminal after exit
+alias lx="less -Xr"
+
+
 
 # Git
 function __git_prompt() {
@@ -119,18 +113,34 @@ alias gsthp="git stash pop"
 alias gstha="git stash apply"
 alias gsthl="git stash list"
 
-# VS Code shortcuts
-alias ccx="code . && exit"
+
+
+# editor shortcuts
 alias c="code"
-alias c.="code ."
 function cx() {
     code $@ && exit
 }
+alias f="fleet"
+function fx() {
+    fleet $@ && exit
+}
+alias s="-- phpstorm"
+function sx() {
+    -- phpstorm $@ && exit
+}
+
+
 
 # Internet browser
-alias op="google-chrome-stable"
+alias op="x-www-browser"
+
+# Quick local directory server (hsh stands for HTTP server here)
+alias hsh="python3 -m http.server --bind localhost 4200"
+
+
 
 pandoc_config_dir="~/Code/jerry-sky/personal-notebook/config/config-files/pandoc"
+alias pandocker="printf '\033[1m%s\033[0m\n' 'warning: Pandocker image not found, running Pandoc instead of Pandocker' && pandoc"
 # Pandoc (https://github.com/jgm/pandoc) through Pandocker (https://github.com/dalibo/pandocker)
 if docker image ls | grep pandocker >/dev/null; then
     alias pandocker="docker run --rm -u `id -u`:`id -g` -v $pandoc_config_dir:/pandoc-config -v `pwd`:/pandoc dalibo/pandocker:stable"
@@ -138,7 +148,7 @@ if docker image ls | grep pandocker >/dev/null; then
 fi
 
 # from Markdown to PDF converter
-alias mdpdf="pandoc \
+alias mdpdf="pandocker \
     --from markdown-blank_before_header-implicit_figures+lists_without_preceding_blankline+gfm_auto_identifiers \
     --to pdf \
     -V geometry:margin=2cm \
@@ -147,21 +157,13 @@ alias mdpdf="pandoc \
     --toc-depth 4 \
     --shift-heading-level-by=-1"
 
-# Quick local directory server (hsh stands for HTTP server here)
-alias hsh="python3 -m http.server --bind localhost 4200"
 
-# Nemo (file explorer) aliases
-alias n="-- nemo"
-alias n.="-- nemo ."
 
-# opening another terminal from terminal (in the same directory)
-alias t="gnome-terminal"
-
-# leave the last viewed page in the terminal after exit
-alias lx="less -Xr"
-
-function lxp() {
-    $@ | less -Xr
+# General purpose alias for programs with GUIs but that can be run from terminal.
+# It redirects the output to `/dev/null` to avoid unnecessary clutter in the terminal window.
+# It can be used for e.g. Blender
+function --() {
+    nohup $@ &> /dev/null &
 }
 
 # adds `.blend` if not present in the filename provided when launching a file using blender
@@ -182,9 +184,3 @@ function puref() {
     fi
 }
 
-# converts a SVG file to a format that is digestible by LaTeX
-function inktex() {
-    bn="$1"
-    bn="${bn%.*}"
-    inkscape -D -z --file="$bn.svg" --export-pdf="$bn.pdf" --export-latex
-}
