@@ -53,6 +53,7 @@ _Not directly related to a specific technology, meta talk._
 
 - [Linguistics of Computer Science related matters](meta/linguistics-related-to-cs.md)
 - [Technical specification](meta/technical-specification.md)
+- [I18n and l10n](meta/i18n-l10n.md)
 
 
 ### Read
