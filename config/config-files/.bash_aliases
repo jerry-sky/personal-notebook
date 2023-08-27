@@ -120,14 +120,8 @@ alias c="code"
 function cx() {
     code $@ && exit
 }
-alias f="fleet"
-function fx() {
-    fleet $@ && exit
-}
-alias s="-- phpstorm"
-function sx() {
-    -- phpstorm $@ && exit
-}
+alias idea="-- jetbrains-idea"
+alias storm="-- jetbrains-phpstorm"
 
 
 

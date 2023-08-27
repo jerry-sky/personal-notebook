@@ -37,9 +37,8 @@ config_entries: ConfigEntries = [
                         'pavucontrol',
                         # CPU power management
                         'indicator-cpufreq',
-                        # night mode
-                        'redshift',
-                        'redshift-gtk',
+                        # execute HUD device commands within X.org window system
+                        'xdotool',
                     ]),
                     # fix CPU Freq Indicator to work within Gtk 4.0
                     toggle_fileblock(
@@ -61,6 +60,26 @@ config_entries: ConfigEntries = [
                         is_installed=lambda: ex(
                             'command -v ubuntu-gdm-set-background.sh >/dev/null',
                         ) == 0,
+                    ),
+                ],
+            ),
+
+            ConfigEntry(
+                description='install (Neo)Vim',
+                shorthand='rds',
+                installation_packages=[
+                    install_apt_program('neovim'),
+                    toggle_file_links(
+                        CFD + '/vim/init.vim',
+                        HD + '/.config/nvim/',
+                    ),
+                    toggle_file_links(
+                        HD + '/.config/nvim',
+                        HD + '/.vimrc',
+                    ),
+                    toggle_file_links(
+                        CFD + '/vim/.ideavimrc',
+                        HD + '/.ideavimrc',
                     ),
                 ],
             ),
@@ -119,6 +138,22 @@ config_entries: ConfigEntries = [
                     ),
                 ],
             ),
+
+            # adapted from: https://github.com/swaywm/sway/issues/595#issuecomment-425888305
+            # JetBrains IDE will stay in focus even though its windows are in background.
+            # This issues happens primarily when having two windows open on two separate workspaces (virtual desktops).
+            # Alt-tab–ing does work without this fix, however switching between apps (META+Tab) does not.
+            ConfigEntry(
+                description='fix Java programs stealing focus (JetBrains)',
+                shorthand='fjp',
+                installation_packages=[
+                    toggle_fileblock(
+                        source=CFD + '/etc/profile',
+                        target='/etc/profile',
+                        sudo=True,
+                    ),
+                ],
+            )
 
         ],
     ),
@@ -341,25 +376,6 @@ config_entries: ConfigEntries = [
                     toggle_file_links(
                         CFD + '/.inputrc',
                         HD + '/.inputrc',
-                    ),
-                ],
-            ),
-
-            ConfigEntry(
-                description='install config files for: RedShift, Java formatter, and Neovim',
-                shorthand='rds',
-                installation_packages=[
-                    toggle_file_links(
-                        CFD + '/redshift/redshift.conf',
-                        HD + '/.config/redshift.conf',
-                    ),
-                    toggle_file_links(
-                        CFD + '/nvim/init.vim',
-                        HD + '/.config/nvim/',
-                    ),
-                    toggle_file_links(
-                        CFD + '/java/java-formatter.xml',
-                        HD + '/.config/java-formatter.xml',
                     ),
                 ],
             ),
