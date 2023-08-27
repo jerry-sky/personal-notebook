@@ -120,6 +120,22 @@ config_entries: ConfigEntries = [
                 ],
             ),
 
+            # adapted from: https://github.com/swaywm/sway/issues/595#issuecomment-425888305
+            # JetBrains IDE will stay in focus even though its windows are in background.
+            # This issues happens primarily when having two windows open on two separate workspaces (virtual desktops).
+            # Alt-tab–ing does work without this fix, however switching between apps (META+Tab) does not.
+            ConfigEntry(
+                description='fix Java programs stealing focus (JetBrains)',
+                shorthand='fjp',
+                installation_packages=[
+                    toggle_fileblock(
+                        source=CFD + '/etc/profile',
+                        target='/etc/profile',
+                        sudo=True,
+                    ),
+                ],
+            )
+
         ],
     ),
 
