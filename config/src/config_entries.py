@@ -37,9 +37,8 @@ config_entries: ConfigEntries = [
                         'pavucontrol',
                         # CPU power management
                         'indicator-cpufreq',
-                        # night mode
-                        'redshift',
-                        'redshift-gtk',
+                        # execute HUD device commands within X.org window system
+                        'xdotool',
                     ]),
                     # fix CPU Freq Indicator to work within Gtk 4.0
                     toggle_fileblock(
@@ -61,6 +60,22 @@ config_entries: ConfigEntries = [
                         is_installed=lambda: ex(
                             'command -v ubuntu-gdm-set-background.sh >/dev/null',
                         ) == 0,
+                    ),
+                ],
+            ),
+
+            ConfigEntry(
+                description='install (Neo)Vim',
+                shorthand='rds',
+                installation_packages=[
+                    install_apt_program('neovim'),
+                    toggle_file_links(
+                        CFD + '/vim/init.vim',
+                        HD + '/.config/nvim/',
+                    ),
+                    toggle_file_links(
+                        HD + '/.config/nvim',
+                        HD + '.vimrc',
                     ),
                 ],
             ),
@@ -357,25 +372,6 @@ config_entries: ConfigEntries = [
                     toggle_file_links(
                         CFD + '/.inputrc',
                         HD + '/.inputrc',
-                    ),
-                ],
-            ),
-
-            ConfigEntry(
-                description='install config files for: RedShift, Java formatter, and Neovim',
-                shorthand='rds',
-                installation_packages=[
-                    toggle_file_links(
-                        CFD + '/redshift/redshift.conf',
-                        HD + '/.config/redshift.conf',
-                    ),
-                    toggle_file_links(
-                        CFD + '/nvim/init.vim',
-                        HD + '/.config/nvim/',
-                    ),
-                    toggle_file_links(
-                        CFD + '/java/java-formatter.xml',
-                        HD + '/.config/java-formatter.xml',
                     ),
                 ],
             ),
