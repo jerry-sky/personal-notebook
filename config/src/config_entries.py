@@ -75,7 +75,11 @@ config_entries: ConfigEntries = [
                     ),
                     toggle_file_links(
                         HD + '/.config/nvim',
-                        HD + '.vimrc',
+                        HD + '/.vimrc',
+                    ),
+                    toggle_file_links(
+                        CFD + '/vim/.ideavimrc',
+                        HD + '/.ideavimrc',
                     ),
                 ],
             ),
