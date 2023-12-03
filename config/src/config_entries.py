@@ -74,7 +74,7 @@ config_entries: ConfigEntries = [
                         HD + '/.config/nvim/',
                     ),
                     toggle_file_links(
-                        HD + '/.config/nvim',
+                        HD + '/.config/nvim/init.vim',
                         HD + '/.vimrc',
                     ),
                     toggle_file_links(
