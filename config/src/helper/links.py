@@ -1,5 +1,6 @@
-from helper.ex import ex
 import os
+
+from helper.ex import ex
 from model import InstallationPackage
 
 
@@ -10,7 +11,6 @@ def __toggle_file_links(source: str, target: str, sudo: bool = False):
     '''
 
     if os.path.isdir(source):
-        # file is a directory
         ex('mkdir -p -- ' + target, sudo)
         ex(
             'find '  # find all files in the source directory
@@ -21,9 +21,21 @@ def __toggle_file_links(source: str, target: str, sudo: bool = False):
             + '/${f##*/}; done'
         )
     else:
-        # file is not a directory
         ex('mkdir -p -- ' + os.path.dirname(target), sudo)
         ex('ln -fs -- ' + source + ' ' + target, sudo)
+
+
+def __remove_file_links(source: str, target: str, sudo: bool = False):
+    '''
+    Removes all symbolic links present in the target directory defined by the source directory.
+    '''
+
+    if os.path.isdir(source) and os.path.isdir(target):
+        for l in os.listdir(source):
+            p = os.path.join(target, l)
+            ex('rm -f -- ' + p, sudo)
+    else:
+        ex('rm -rf -- ' + target, sudo)
 
 
 def toggle_file_links(source: str, target: str, sudo: bool = False):
@@ -47,6 +59,6 @@ def toggle_desktop_file_links(source: str, target: str):
     sudo = True
     return InstallationPackage(
         install_func=lambda: __toggle_file_links(source, target, sudo) and ex('sudo update-desktop-database'),
-        uninstall_func=lambda: ex('rm -rf -- ' + target, sudo) and ex('sudo update-desktop-database'),
+        uninstall_func=lambda: __remove_file_links(source, target, sudo) and ex('sudo update-desktop-database'),
         is_installed=lambda: True if os.path.exists(target) else False
     )

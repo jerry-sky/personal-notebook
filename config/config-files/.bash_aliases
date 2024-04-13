@@ -46,8 +46,8 @@ alias gcame="gc --amend"
 alias gt="gci tagging && git tag"
 
 function __git_remote() {
-    remote="$1"
-    branch=$(git branch --show-current)
+    local remote="$1"
+    local branch=$(git branch --show-current)
     # parses given remote and branch target
     if [ -z "$remote" ] || [[ "$remote" == -* ]]; then
         # get the default origin for the current branch
@@ -55,10 +55,10 @@ function __git_remote() {
         if [ -z "$remote" ]; then
             remote="origin"
         fi
-        echo $remote $branch
+        echo "$remote" "$branch"
         return 2
     fi
-    echo $remote $branch
+    echo "$remote" "$branch"
     return 0
 }
 
@@ -89,6 +89,7 @@ alias gdf="git diff HEAD"
 alias gdfst="git diff HEAD --staged"
 
 alias gl="git log"
+alias glg="git log --graph"
 
 # simple text search
 alias gg="git grep -n -I"
@@ -106,7 +107,7 @@ alias gui="git reset -p"
 alias gsth="git stash"
 
 # stashing only staged files
-alias gsthst="git diff --staged --name-only | git stash"
+alias gsthst="git stash --staged"
 
 # other stash commands
 alias gsthp="git stash pop"
@@ -133,11 +134,11 @@ alias hsh="python3 -m http.server --bind localhost 4200"
 
 
 
-pandoc_config_dir="~/Code/jerry-sky/personal-notebook/config/config-files/pandoc"
+pandoc_config_dir="$HOME/Code/jerry-sky/personal-notebook/config/config-files/pandoc"
 alias pandocker="printf '\033[1m%s\033[0m\n' 'warning: Pandocker image not found, running Pandoc instead of Pandocker' && pandoc"
 # Pandoc (https://github.com/jgm/pandoc) through Pandocker (https://github.com/dalibo/pandocker)
 if docker image ls | grep pandocker >/dev/null; then
-    alias pandocker="docker run --rm -u `id -u`:`id -g` -v $pandoc_config_dir:/pandoc-config -v `pwd`:/pandoc dalibo/pandocker:stable"
+    alias pandocker="docker run --rm -u `id -u`:`id -g` -v $pandoc_config_dir:/pandoc-config -v $(pwd):/pandoc dalibo/pandocker:stable"
     pandoc_config_dir="/pandoc-config"
 fi
 
@@ -162,7 +163,7 @@ function --() {
 
 # adds `.blend` if not present in the filename provided when launching a file using blender
 function b() {
-    if [ $(echo $1 | grep .blend) ]; then
+    if [ "$(echo $1 | grep -q .blend)" ]; then
         -- blender $@
     else
         -- blender $1.blend "${@:2}"
@@ -171,10 +172,10 @@ function b() {
 
 # adds `.pur` if not present in the filename provided when launching a file using PureRef
 function puref() {
-    if [ $(echo $1 | grep .pur) ]; then
+    if [ "$(echo $1 | grep -q .pur)" ]; then
         -- PureRef $@
     else
-        -- PureRef $1.pur "${@:2}"
+        -- PureRef "$1.pur" "${@:2}"
     fi
 }
 
