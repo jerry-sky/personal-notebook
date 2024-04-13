@@ -176,7 +176,7 @@ config_entries: ConfigEntries = [
 
             ConfigEntry(
                 description='install Git utilities',
-                shorthand='duj',
+                shorthand='dug',
                 installation_packages=[
                     install_global_javascript_program([
                         # trimming unnecessary local branches (already merged, deleted from origin)
