@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="pn"
+                  name="Personal Notebook" start-page="README.md">
+
+    <toc-element topic="README.md"/>
+    <toc-element toc-title="devops">
+        <toc-element topic="cloud.md"/>
+    </toc-element>
+    <toc-element toc-title="config">
+        <toc-element topic="readme.md"/>
+        <toc-element toc-title="doc">
+            <toc-element topic="kbct.md"/>
+            <toc-element topic="obsws.md"/>
+        </toc-element>
+    </toc-element>
+    <toc-element toc-title="hardware">
+        <toc-element topic="car.md"/>
+    </toc-element>
+    <toc-element toc-title="web-dev">
+        <toc-element topic="angular-notes.md"/>
+        <toc-element topic="database-notes.md"/>
+        <toc-element topic="typescript.md"/>
+        <toc-element topic="general.md"/>
+        <toc-element topic="css-scss-html-notes.md"/>
+    </toc-element>
+    <toc-element toc-title="meta">
+        <toc-element topic="technical-specification.md"/>
+        <toc-element topic="linguistics-related-to-cs.md"/>
+        <toc-element topic="i18n-l10n.md"/>
+    </toc-element>
+    <toc-element toc-title="plumbing">
+        <toc-element topic="unix-linux.md"/>
+        <toc-element topic="git-notes.md"/>
+        <toc-element topic="software-issues.md"/>
+    </toc-element>
+    <toc-element toc-title="arts">
+        <toc-element topic="colour-notes.md"/>
+        <toc-element topic="blender-notes.md"/>
+        <toc-element toc-title="adobe">
+            <toc-element topic="illustrator.md"/>
+            <toc-element topic="after-effects.md"/>
+        </toc-element>
+    </toc-element>
+    <toc-element toc-title="the-arbitrary-collection">
+        <toc-element topic="arbitrary-math-snippets.md"/>
+        <toc-element topic="crazy-software.md"/>
+        <toc-element topic="2d-animation.md"/>
+        <toc-element topic="hilarious-stories.md"/>
+        <toc-element topic="arbitrary-music-things.md"/>
+    </toc-element>
+</instance-profile>
