@@ -1,5 +1,5 @@
 vim.cmd [[
-  source ./legacy.vim
+  source ~/.config/vim/init.vim
 ]]
 
 require('jrs')
