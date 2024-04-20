@@ -3,7 +3,7 @@ from helper.programs import install_apt_program, install_global_javascript_progr
 
 from model import ConfigEntries, ConfigEntry, ConfigEntryGroup, InstallationPackage, Status
 from helper.files import toggle_fileblock
-from helper.links import toggle_file_links, toggle_desktop_file_links
+from helper.links import toggle_file_links, toggle_desktop_file_links, toggle_dir_link
 from helper.ex import ex
 from env import CFD, HD, HDC, ISD, UBU, USD, FXD
 
@@ -66,15 +66,15 @@ config_entries: ConfigEntries = [
 
             ConfigEntry(
                 description='install (Neo)Vim',
-                shorthand='rds',
+                shorthand='vim',
                 installation_packages=[
                     install_apt_program('neovim'),
-                    toggle_file_links(
-                        CFD + '/vim/init.vim',
-                        HD + '/.config/nvim/',
+                    toggle_dir_link(
+                        CFD + '/nvim',
+                        HD + '/.config/nvim',
                     ),
                     toggle_file_links(
-                        HD + '/.config/nvim/init.vim',
+                        CFD + '/vim/.vimrc',
                         HD + '/.vimrc',
                     ),
                     toggle_file_links(
@@ -170,6 +170,7 @@ config_entries: ConfigEntries = [
                         'python3-pip',
                         'filezilla',
                         'bat',
+                        'ripgrip',
                     ]),
                 ],
             ),

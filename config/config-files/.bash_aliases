@@ -123,6 +123,7 @@ function cx() {
 }
 alias idea="-- jetbrains-idea"
 alias storm="-- jetbrains-phpstorm"
+alias writerside="-- jetbrains-writerside"
 
 
 
