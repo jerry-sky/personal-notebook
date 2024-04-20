@@ -1,62 +1,63 @@
 from typing import List, Union, Callable
-from model import InstallationPackage
+from model import InstallationPackage, ProgramName, RAW_PROGRAM_NAME
 from helper.ex import ex
 
 
-PROGRAM_NAME = Union[str, List[str]]
-
-
-def __gen_ex(merge: bool, command: str, program_name):
+def __gen_ex(merge: bool, command: str, program_name: Union[ProgramName, List[ProgramName]]):
+    program_name = [x.name for x in program_name] if isinstance(program_name, list) else [program_name.name]
     if merge:
         return ex(command.format(' '.join(program_name)))
     else:
         return [ex(command.format(p)) == 0
-                        for p in program_name]
+                for p in program_name]
+
+
+def __gen_is_installed(merge: bool, command: str, program_name: ProgramName):
+    program_name = [x.executable for x in program_name] if isinstance(program_name, list) else [program_name.executable]
+    if merge:
+        return ex(command.format(' '.join(program_name)))
+    else:
+        return [ex(command.format(p)) == 0
+                for p in program_name]
 
 
 def __install_program(
-    program_name: PROGRAM_NAME,
+    program_name: RAW_PROGRAM_NAME,
     install_command: str,
     uninstall_command: str,
     verify_installation: str,
-    merge_map: List[bool] = [False, False, False],
+    merge_map=None,
     additional_operation: Callable = None,
 ) -> InstallationPackage:
-
-    if isinstance(program_name, list):
-        return InstallationPackage(
-            install_func=lambda: __gen_ex(
-                merge_map[0],
-                install_command,
-                program_name,
-            ) and (additional_operation() if additional_operation else True),
-            uninstall_func=lambda: __gen_ex(
-                merge_map[1],
-                uninstall_command,
-                program_name,
-            ),
-            is_installed=lambda: __gen_ex(
-                merge_map[2],
-                verify_installation,
-                program_name,
-            ),
-        )
-
-    else:
-        return InstallationPackage(
-            install_func=lambda: ex(install_command.format(program_name)),
-            uninstall_func=lambda: ex(uninstall_command.format(program_name)),
-            is_installed=lambda: ex(verify_installation.format(program_name)) == 0,
-        )
+    if merge_map is None:
+        merge_map = [False, False, False]
+    program_name = ProgramName.from_raw(program_name)
+    return InstallationPackage(
+        install_func=lambda: __gen_ex(
+            merge_map[0],
+            install_command,
+            program_name,
+        ) and (additional_operation() if additional_operation else True),
+        uninstall_func=lambda: __gen_ex(
+            merge_map[1],
+            uninstall_command,
+            program_name,
+        ),
+        is_installed=lambda: __gen_is_installed(
+            merge_map[2],
+            verify_installation,
+            program_name,
+        ),
+    )
 
 
-def install_apt_program(program_name: PROGRAM_NAME, apt_repository: str = None) -> InstallationPackage:
+def install_apt_program(program_name: RAW_PROGRAM_NAME, apt_repository: str = None) -> InstallationPackage:
     '''
     Installs given program(s) through Aptitude.
     '''
     additional_operation = None
     if apt_repository is not None:
-        additional_operation=lambda: ex('add-apt-repository ' + apt_repository, sudo=True)
+        additional_operation = lambda: ex('add-apt-repository ' + apt_repository, sudo=True)
     return __install_program(
         program_name=program_name,
         install_command='sudo apt install -y {0}',
@@ -67,7 +68,7 @@ def install_apt_program(program_name: PROGRAM_NAME, apt_repository: str = None) 
     )
 
 
-def install_python_program(program_name: PROGRAM_NAME) -> InstallationPackage:
+def install_python_program(program_name: RAW_PROGRAM_NAME) -> InstallationPackage:
     '''
     Installs given program(s) through Python installer (PIP).
     '''
@@ -80,7 +81,7 @@ def install_python_program(program_name: PROGRAM_NAME) -> InstallationPackage:
     )
 
 
-def install_global_javascript_program(program_name: PROGRAM_NAME) -> InstallationPackage:
+def install_global_javascript_program(program_name: RAW_PROGRAM_NAME) -> InstallationPackage:
     '''
     Installs given program(s) through the default JavaScript package manager (NPM).
     '''
@@ -93,7 +94,7 @@ def install_global_javascript_program(program_name: PROGRAM_NAME) -> Installatio
     )
 
 
-def pull_docker_image(program_name: PROGRAM_NAME) -> InstallationPackage:
+def pull_docker_image(program_name: RAW_PROGRAM_NAME) -> InstallationPackage:
     '''
     “Installs” as in downloads a Docker image with a given program pre-installed.
     '''
@@ -101,6 +102,6 @@ def pull_docker_image(program_name: PROGRAM_NAME) -> InstallationPackage:
         program_name=program_name,
         install_command='docker pull {0}',
         uninstall_command='docker image rm {0}',
-        verify_installation='docker image ls | grep {0} >/dev/null',
+        verify_installation='docker image ls --format \'{{{{.Repository}}}}:{{{{.Tag}}}}\' | grep {0} >/dev/null',
         merge_map=[False, False, False],
     )

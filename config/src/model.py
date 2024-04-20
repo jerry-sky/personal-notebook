@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
-from typing import Callable, Union, List
 from enum import Enum
+from typing import Callable, Union, List
 
 
 class Status(Enum):
@@ -25,7 +27,8 @@ class InstallationPackage:
     __is_installed: Callable
     __is_immutable: bool
 
-    def __init__(self, install_func: Callable, uninstall_func: Callable = lambda: None, is_installed: Callable = lambda: None):
+    def __init__(self, install_func: Callable, uninstall_func: Callable = lambda: None,
+                 is_installed: Callable = lambda: None):
         self.__install = install_func
         self.__is_installed = is_installed
 
@@ -120,16 +123,17 @@ class ConfigEntry:
         Returns the collective state of the entry given all provided
         `is_installed` functions.
         '''
-        status = Status.Installed
         for i in self.__installation_packages:
             o = i.is_installed
             if o == Status.NotInstalled:
                 return Status.NotInstalled
-
             elif o == Status.Unknown:
-                status = Status.Unknown
+                return Status.Unknown
+        return Status.Installed
 
-        return status
+    @property
+    def installation_packages(self) -> List[InstallationPackage]:
+        return self.__installation_packages
 
     @property
     def is_immutable(self) -> bool:
@@ -172,3 +176,25 @@ class ConfigEntryGroup:
 
 
 ConfigEntries = List[ConfigEntryGroup]
+
+
+@dataclass
+class ProgramName:
+    name: str
+    executable: str | None = None
+
+    def __init__(self, name, executable=None):
+        self.name = name
+        self.executable = executable if executable is not None else name
+
+    @staticmethod
+    def from_raw(r: RAW_PROGRAM_NAME) -> Union[ProgramName, List[ProgramName]]:
+        if isinstance(r, list):
+            return [ProgramName.from_raw(x) for x in r]
+        elif isinstance(r, str):
+            return ProgramName(r, r)
+        elif isinstance(r, ProgramName):
+            return r
+
+
+RAW_PROGRAM_NAME = Union[str, ProgramName, List[Union[str, ProgramName]]]

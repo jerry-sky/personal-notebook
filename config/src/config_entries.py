@@ -1,7 +1,7 @@
 import os
 from helper.programs import install_apt_program, install_global_javascript_program, pull_docker_image
 
-from model import ConfigEntries, ConfigEntry, ConfigEntryGroup, InstallationPackage, Status
+from model import ConfigEntries, ConfigEntry, ConfigEntryGroup, InstallationPackage, Status, ProgramName
 from helper.files import toggle_fileblock
 from helper.links import toggle_file_links, toggle_desktop_file_links, toggle_dir_link
 from helper.ex import ex
@@ -48,10 +48,7 @@ config_entries: ConfigEntries = [
                         line_number_location=17,
                     ),
                     # AppImage programs require this utility
-                    install_apt_program(
-                        'libfuse2',
-                        apt_repository='universe',
-                    ),
+                    install_apt_program('libfuse2', apt_repository='universe'),
                     # for changing the background of the login screen in Ubuntu
                     InstallationPackage(
                         install_func=lambda: ex(
@@ -68,13 +65,15 @@ config_entries: ConfigEntries = [
                 description='install (Neo)Vim',
                 shorthand='vim',
                 installation_packages=[
-                    install_apt_program('neovim'),
+                    install_apt_program([
+                        ProgramName('neovim', executable='nvim'),
+                    ]),
                     toggle_dir_link(
                         CFD + '/nvim',
                         HD + '/.config/nvim',
                     ),
                     toggle_file_links(
-                        CFD + '/vim/.vimrc',
+                        CFD + '/vim/init.vim',
                         HD + '/.vimrc',
                     ),
                     toggle_file_links(
@@ -170,7 +169,7 @@ config_entries: ConfigEntries = [
                         'python3-pip',
                         'filezilla',
                         'bat',
-                        'ripgrip',
+                        'ripgrep',
                     ]),
                 ],
             ),
@@ -249,7 +248,7 @@ config_entries: ConfigEntries = [
                 shorthand='pdk',
                 installation_packages=[
                     pull_docker_image([
-                        'dalibo/pandocker',
+                        'dalibo/pandocker:stable',
                     ]),
                 ],
             ),
