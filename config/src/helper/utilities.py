@@ -1,6 +1,5 @@
 from model import ConfigEntries, Status, ConfigEntry
 
-
 INSTALLED_COLOUR = '\033[38;2;95;217;97m'
 INSTALLED_CHARACTER = INSTALLED_COLOUR + '✓'
 NOT_INSTALLED_COLOUR = '\033[38;2;200;40;24m'
@@ -50,7 +49,7 @@ def print_available_options(config_entries: ConfigEntries):
         '  ' + INSTALLED_CHARACTER + ' — installed\n',
         '  ' + NOT_INSTALLED_CHARACTER + ' — not installed\n',
         '  ' + UNKNOWN_STATUS_CHARACTER + ' — unknown status\n'
-        '\033[0m'
+                                          '\033[0m'
     )
 
 
@@ -100,8 +99,9 @@ def execute_entry(config_entry: ConfigEntry) -> bool:
     install = 'install'
     uninstall = 'uninstall'
     nothing = 'nothing'
+    debug = 'debug'
 
-    available_options = [nothing, install]
+    available_options = [nothing, install, debug]
 
     if not config_entry.is_immutable:
         available_options += [reinstall, uninstall]
@@ -113,10 +113,9 @@ def execute_entry(config_entry: ConfigEntry) -> bool:
     for o in available_options:
         print('  \033[4m' + o[:1] + '\033[0;1m' + o[1:])
 
-    # take only first two letters from the names of the options
-    # — user has to input these two letters of their chosen option
+    # take only the first letter from the names of the options
+    # — user has to input this letter of their chosen option
     available_options_cmds = [x[:1] for x in available_options]
-    cmd_index = 0
     x = input()
     while x not in available_options_cmds:
         x = input(
@@ -137,6 +136,14 @@ def execute_entry(config_entry: ConfigEntry) -> bool:
         return True
     elif chosen_option == uninstall:
         config_entry.uninstall()
+        return True
+    elif chosen_option == debug:
+        print('installation packages:')
+        for i, ip in enumerate(config_entry.installation_packages):
+            print(
+                '  \033[0;1m' + str(i) + '.\033[0m '
+                + str(ip.is_installed),
+            )
         return True
 
     return False
