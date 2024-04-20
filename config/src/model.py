@@ -147,12 +147,13 @@ class ConfigEntry:
 
         return False
 
-    def install(self) -> None:
+    def install(self, skip_already_installed=False) -> None:
         '''
         Installs all installation packages related to this config entry.
         '''
         for i in self.__installation_packages:
-            i.install()
+            if not (skip_already_installed and i.is_installed):
+                i.install()
 
     def uninstall(self) -> None:
         '''
