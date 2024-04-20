@@ -52,6 +52,17 @@ def toggle_file_links(source: str, target: str, sudo: bool = False):
     )
 
 
+def toggle_dir_link(source: str, target: str, sudo: bool = False):
+    '''
+    Creates link to provided directory in another location.
+    '''
+    return InstallationPackage(
+        install_func=lambda: ex('ln -s -- ' + source + ' ' + target, sudo),
+        uninstall_func=lambda: ex('rm -f -- ' + target, sudo),
+        is_installed=lambda: True if os.path.exists(target) else False,
+    )
+
+
 def toggle_desktop_file_links(source: str, target: str):
     '''
     Does the same thing as `toggle_file_links` and updated the desktop database.

@@ -52,5 +52,5 @@ function! TitlePath(path)
 endfunction
 
 
-set titlestring=%r\ %t\ \ %{TitlePath(expand('%f'))}:%l 
+set titlestring=%r\ %t\ \ %{TitlePath(expand('%f'))}:%l
 
