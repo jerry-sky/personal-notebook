@@ -22,7 +22,7 @@ def __toggle_file_links(source: str, target: str, sudo: bool = False):
         )
     else:
         ex('mkdir -p -- ' + os.path.dirname(target), sudo)
-        ex('ln -fs -- ' + source + ' ' + target, sudo)
+        ex('ln -s -- ' + source + ' ' + target, sudo)
 
 
 def __remove_file_links(source: str, target: str, sudo: bool = False):

@@ -128,7 +128,7 @@ def execute_entry(config_entry: ConfigEntry) -> bool:
     print('\033[0m', end='')
 
     if chosen_option == install:
-        config_entry.install()
+        config_entry.install(skip_already_installed=True)
         return True
     elif chosen_option == reinstall:
         config_entry.uninstall()
