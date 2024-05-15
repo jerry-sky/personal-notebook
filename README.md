@@ -1,13 +1,13 @@
 ---
-lang: 'en-GB'
-title: 'Jerry Sky’s personal notebook'
-author: 'Jerry Sky'
-description: |
-    Software is cool. \
-    View this repository on
-    [the web](https://personal.jerry-sky.me)
-    or on [GitHub](https://github.com/jerry-sky/personal-notebook).
-keywords: 'notebook, notes, personal, dotfiles, python, latex, languages, programming, computer science, linux'
+lang: en-GB
+title: Jerry Sky’s personal notebook
+author: Jerry Sky
+description: |-
+  Software is cool. \
+  View this repository on
+  [the web](https://personal.jerry-sky.me)
+  or on [GitHub](https://github.com/jerry-sky/personal-notebook).
+keywords: notebook, notes, personal, dotfiles, python, latex, languages, programming, computer science, linux
 ---
 
 
@@ -16,7 +16,7 @@ keywords: 'notebook, notes, personal, dotfiles, python, latex, languages, progra
 
 ### Environment configuration
 
-[_My outlook on how to setup a Linux-based Operating System. The “dotfiles” part of this repository._](config/readme.md)
+[_My outlook on how to setup a Linux-based Operating System. The “dotfiles” part of this repository._](config/CONFIG.md)
 
 
 ### Plumbing notes
@@ -27,7 +27,6 @@ _and solutions with applicable tools that help in handling them._
 - [Unix & Linux](plumbing/unix-linux.md)
 - [Git](plumbing/git-notes.md)
 - [Software issues](plumbing/software-issues.md)
-
 
 ### DevOps
 
@@ -40,7 +39,7 @@ _Sysadmin, Linux, virtual infrastructure, tooling, all that jazz._
 
 _Everything web development._
 
-- [General](web-dev/general.md)
+- [General](web-dev/web-dev.md)
 - [TypeScript](web-dev/typescript.md)
 - [Angular](web-dev/angular-notes.md)
 - [CSS/SCSS + HTML](web-dev/css-scss-html-notes.md)
@@ -139,7 +138,7 @@ _[AltaCV template](https://www.overleaf.com/latex/templates/altacv-template/trgq
 
 ## Archive
 
-[_Archived notes._](archive/README.md)
+[_Archived notes._](archive/ARCHIVE.md)
 
 ---
 

@@ -78,7 +78,7 @@ To get notifications about a file being uploaded use `reportProgress: true` in a
 ## The `.htaccess` file
 
 For serving a static Angular app on a standard Apache server
-you need to setup a `.htaccess` file [like so](general.md#corb--cors).
+you need to setup a `.htaccess` file [like so](web-dev.md#corb--cors).
 
 [Source](https://stackoverflow.com/a/22740184/4249875)
 

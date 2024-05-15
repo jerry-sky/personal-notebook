@@ -6,7 +6,9 @@ description: 'Config files and other utilities that I use every day.'
 keywords: 'bash, config, script, utilities, python3, keyboard, markdown, bash aliases'
 ---
 
+[Environment configuration](../README.md#environment-configuration)
 
+[Environment configuration](../README.md#environment-configuration)
 
 ## First time setup
 
