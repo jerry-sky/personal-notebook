@@ -139,7 +139,7 @@ pandoc_config_dir="$HOME/Code/jerry-sky/personal-notebook/config/config-files/pa
 alias pandocker="printf '\033[1m%s\033[0m\n' 'warning: Pandocker image not found, running Pandoc instead of Pandocker' && pandoc"
 # Pandoc (https://github.com/jgm/pandoc) through Pandocker (https://github.com/dalibo/pandocker)
 if docker image ls | grep pandocker >/dev/null; then
-    alias pandocker="docker run --rm -u `id -u`:`id -g` -v $pandoc_config_dir:/pandoc-config -v $(pwd):/pandoc dalibo/pandocker:stable"
+    alias pandocker='docker run --rm -u $(id -u):$(id -g) -v $pandoc_config_dir:/pandoc-config -v $(pwd):/pandoc dalibo/pandocker:stable'
     pandoc_config_dir="/pandoc-config"
 fi
 

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jerry Sky" />
+  <meta name="keywords" content="web, development, Angular, NodeJS,
+ExpressJS, JS, JavaScript, TypeScript, SQL, CSS, SCSS, Sass, links,
+resources, tcp, port" />
+  <meta name="description" content="My notes on various web-dev related matters." />
+  <title>Web dev</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+</head>
+<body>
+
+<header id="title-block-header">
+<h1 class="title">Web dev</h1>
+<p class="author">
+    <span>by </span>
+    <span class="author">Jerry Sky</span>
+</p>
+</header>
+<p id="document-description"><em>My notes on various web-dev related
+matters.</em></p>
+<nav id="TOC">
+<hr>
+<ul>
+<li><a href="#resources" id="toc-resources"><span
+class="toc-section-number">1.</span> Resources</a>
+<ul>
+<li><a href="#security" id="toc-security"><span
+class="toc-section-number">1.1.</span> Security</a></li>
+<li><a href="#interesting" id="toc-interesting"><span
+class="toc-section-number">1.2.</span> Interesting</a></li>
+<li><a href="#building" id="toc-building"><span
+class="toc-section-number">1.3.</span> Building</a></li>
+<li><a href="#abstract" id="toc-abstract"><span
+class="toc-section-number">1.4.</span> Abstract</a></li>
+<li><a href="#useful" id="toc-useful"><span
+class="toc-section-number">1.5.</span> Useful</a></li>
+<li><a href="#fun" id="toc-fun"><span
+class="toc-section-number">1.6.</span> Fun</a></li>
+</ul></li>
+<li><a href="#nodejs--apache-server-htaccess"
+id="toc-nodejs--apache-server-htaccess"><span
+class="toc-section-number">2.</span> NodeJS + Apache server
+(<code>.htaccess</code>)</a></li>
+<li><a href="#freeing-a-tcp-port" id="toc-freeing-a-tcp-port"><span
+class="toc-section-number">3.</span> Freeing a TCP port</a></li>
+<li><a href="#corb--cors" id="toc-corb--cors"><span
+class="toc-section-number">4.</span> CORB &amp; CORS</a></li>
+<li><a href="#samsung-internet-browser-webpage-scroll-position"
+id="toc-samsung-internet-browser-webpage-scroll-position"><span
+class="toc-section-number">5.</span> Samsung Internet browser webpage
+scroll position</a></li>
+</ul>
+<hr>
+</nav>
+<h2 data-number="1." id="resources"><span
+class="header-section-number">1.</span> Resources</h2>
+<h3 data-number="1.1." id="security"><span
+class="header-section-number">1.1.</span> Security</h3>
+<ul>
+<li><a
+href="https://hackernoon.com/your-node-js-authentication-tutorial-is-wrong-f1a3bf831a46">Your
+NodeJS authentication tutorial is (probably) wrong</a></li>
+<li><a
+href="https://github.com/emilbayes/secure-password"><code>secure-password</code></a></li>
+<li><a
+href="https://hackernoon.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9">How
+to stop me harvesting credit card numbers and passwords from your
+site</a></li>
+<li><a
+href="https://www.simonholywell.com/post/2013/05/improve-php-session-cookie-security/">PHP
+Cookies security</a></li>
+<li><a
+href="http://wayback.archive.org/web/20150204143440/https://resonantcore.net/blog/2015/02/remember-me-safely-secure-long-term-authentication-strategies">Remember
+me Safely</a></li>
+</ul>
+<h3 data-number="1.2." id="interesting"><span
+class="header-section-number">1.2.</span> Interesting</h3>
+<ul>
+<li><a
+href="https://medium.com/edge-coders/you-dont-hate-javascript-62cd6c609d43">You
+don’t hate JavaScript</a></li>
+<li><a href="https://www.youtube.com/watch?v=99Zacm7SsWQ">The Post
+JavaScript Apocalypse</a></li>
+</ul>
+<h3 data-number="1.3." id="building"><span
+class="header-section-number">1.3.</span> Building</h3>
+<ul>
+<li><a
+href="https://fdietz.github.io/2015/04/13/day-1-how-to-build-your-own-team-chat-in-five-days.html">How
+to build your own team chat in five days</a></li>
+<li><a
+href="https://solovyov.net/blog/2020/a-tale-of-webpage-speed-or-throwing-away-react/">A
+tale of webpage speed, or throwing away React</a><br />
+— an efficient web app that is not bloated, <em>imagine that</em></li>
+</ul>
+<h3 data-number="1.4." id="abstract"><span
+class="header-section-number">1.4.</span> Abstract</h3>
+<ul>
+<li><a
+href="https://simpleprogrammer.com/2015/09/11/a-programmers-guide-to-managing-stress/?utm_source=facebook.com&amp;utm_medium=referral&amp;utm_campaign=i-love-coding">A
+Programmer’s Guide to Managing Stress</a></li>
+<li><a
+href="http://web.archive.org/web/20150208203207/http://blog.ircmaxell.com/2014/11/its-all-about-time.html">It’s
+all about time</a></li>
+</ul>
+<h3 data-number="1.5." id="useful"><span
+class="header-section-number">1.5.</span> Useful</h3>
+<ul>
+<li><a href="https://leafletjs.com/"><strong>Leaflet</strong> — map
+plugin</a></li>
+<li><a href="https://stackoverflow.com/a/48524488/4249875">NPM —
+overriding nested NPM dependency versions</a></li>
+<li><a
+href="https://spin.atomicobject.com/2021/03/22/makefiles-vs-package-json-scripts/">Makefile
+over NPM scripts</a></li>
+</ul>
+<h3 data-number="1.6." id="fun"><span
+class="header-section-number">1.6.</span> Fun</h3>
+<ul>
+<li><a href="https://death-to-ie11.netlify.com/">IE-11 end of support
+countdown</a></li>
+<li><a href="https://www.youtube.com/watch?v=G1bRi4El0iw">Creating
+Electronic Dance Music with NodeJS</a></li>
+<li><a href="https://github.com/samir-dahal/MusicPlayer">Music Player
+with physics-based seekbar</a></li>
+</ul>
+<hr />
+<h2 data-number="2." id="nodejs--apache-server-htaccess"><span
+class="header-section-number">2.</span> NodeJS + Apache server
+(<code>.htaccess</code>)</h2>
+<p>To use a NodeJS app on an Apache server you can setup the
+<code>.htaccess</code> file to redirect any request to the NodeJS
+server:</p>
+<pre class="htaccess"><code>DirectoryIndex disabled
+RewriteEngine On
+RewriteCond %{HTTPS} on
+RewriteRule ^$ http://127.0.0.1:**PORT**/ [P,L]
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://127.0.0.1:**PORT**/$1 [P,L]
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</code></pre>
+<p>Obviously, you would replace the <code>**PORT**</code> fields with
+actual port on which the desired NodeJS app runs.</p>
+<p>For WebSocket support use:</p>
+<pre class="htaccess"><code>RewriteCond %{REQUEST_URI} ^/socket.io [NC]
+RewriteCond %{QUERY_STRING} transport=websocket [NC]
+RewriteRule /(.*) ws://localhost:**PORT**/$1 [P,L]</code></pre>
+<p>Again, replace <code>**PORT**</code> with an actual port.</p>
+<p>Source: <a
+href="http://web.archive.org/web/20180625042814/https://www.smarthost.pl/instalacja-i-uruchomienie-nodejs-na-koncie-hostingowym-smarthost">original
+article <em>in polish</em></a></p>
+<hr />
+<h2 data-number="3." id="freeing-a-tcp-port"><span
+class="header-section-number">3.</span> Freeing a TCP port</h2>
+<p>Execute bash command</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> fuser 80/tcp</span></code></pre></div>
+<p>to see all the processes listening to HTTP requests on port 80. Add
+the <code>-k</code> option to kill them.</p>
+<p><a href="https://stackoverflow.com/a/750705/4249875">Source</a></p>
+<hr />
+<h2 data-number="4." id="corb--cors"><span
+class="header-section-number">4.</span> CORB &amp; CORS</h2>
+<p>CORB might be a potential hiccup when attempting to load resources
+from different origin (CORS). The problem can occur when a website (SPA)
+requests additional data, but the user accessed the website using two
+different links one with <code>www.</code> and one without the prefix.
+Browser then remembers that the resource had the
+<code>Access-Control-Allow-Origin</code> set to the website link with
+<code>www.</code> prefix for example. That’s why when accessing the
+website without the prefix, browser blocks the CORS connection, because
+it remembers the resource had the header set to a different domain. The
+domains <code>www.example.com</code> and <code>example.com</code> are
+two different domains.</p>
+<p><a
+href="https://www.siteground.com/kb/how_to_redirect_www_urls_to_nonwww/">Further
+reading</a></p>
+<p>The code snippet attached below is an example <code>.htaccess</code>
+file implementing necessary redirections from http and/or www addresses
+to https non-www version of the domain including SPA redirect to the
+main index file.</p>
+<pre class="htaccess"><code>RewriteEngine on
+# redirect all non https links to https non-www domain
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*) https://example.com/index.html [NC,L,R=301]
+
+# redirect www https links to https non-www domain
+RewriteCond %{HTTP_HOST} ^www\.example\.com [NC]
+RewriteRule ^(.*) https://example.com/index.html [NC,L,R=301]
+
+# if the link contains a file that doesn&#39;t exist redirect to index.html (SPA)
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^(.*) /index.html [NC]</code></pre>
+<hr />
+<h2 data-number="5."
+id="samsung-internet-browser-webpage-scroll-position"><span
+class="header-section-number">5.</span> Samsung Internet browser
+webpage scroll position</h2>
+<p>Samsung Internet doesn’t output scroll position through
+<code>document.documentElement.scrollTop</code>, instead use
+<code>document.body.scrollTop</code>. However, unfortunately the second
+option isn’t supported in other major browsers. Therefore, the best
+implementation of <code>scrollTop</code> would be to check the value
+from both sources to ensure thorough browser support.</p>
+<hr />
+</body>
+</html>
