@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title># Useful Git configs</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+</head>
+<body>
+<h1># Useful Git configs</h1>
+<p>#git #config</p>
+<p>source:
+https://jvns.ca/blog/2024/02/16/popular-git-config-options/</p>
+<ul>
+<li><code>pull.rebase true</code> — I better set it up, since I’ve been
+doing this, but indirectly through my aliases, Bash functions or via
+IntelliJ’s Git integration</li>
+<li><code>merge.conflictstyle zdiff3</code> — definitely to check out;
+it allows you to see the original version from before changes were made
+to the part where conflict arose, in other words this is the state from
+the <strong>base commit</strong> #diff</li>
+<li><code>rebase.autostash true</code> — basically what IntelliJ does
+with their <em>shelve</em> functionality when pulling from remote and
+there have been changes made on the same files</li>
+<li><code>push.autoSetupRemote true</code> — not sure if I have it set
+up</li>
+<li><code>commit.verbose true</code> — could be added for fun</li>
+<li><code>help.autocorrect prompt</code> — useful #fixtypo</li>
+<li><code>diff.algorithm histogram</code>
+<ul>
+<li>definitely on the list to set it up</li>
+<li>#TODO check how this would be applied to IntelliJ’s POV #diff</li>
+</ul></li>
+<li><code>includeIf</code>
+<ul>
+<li>#TODO</li>
+<li>more info here:
+https://jdsalaro.com/tutorial/git-configuration-folder-dependent-conditional-includes/#solving-the-problem-at-the-root</li>
+</ul></li>
+<li><code>fetch.prune true</code> and <code>fetch.prunetags</code>
+#TODO</li>
+<li><code>diff.context 10</code></li>
+<li><code>diff.colorMoved</code> default and
+<code>diff.colorMovedWS allow-indentation-change</code> #TODO</li>
+<li><code>push.followtags true</code></li>
+<li>rebasing:
+<ul>
+<li><code>rebase.missingCommitsCheck error</code></li>
+<li><code>rebase.updateRefs true</code></li>
+</ul></li>
+</ul>
+</body>
+</html>
