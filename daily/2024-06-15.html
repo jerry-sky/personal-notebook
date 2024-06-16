@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title># IKEA-based development</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+</head>
+<body>
+<h1># IKEA-based development</h1>
+<nav id="TOC">
+<hr>
+<ul>
+<li><a href="#seniors" id="toc-seniors"><span
+class="toc-section-number">1.</span> “seniors”</a></li>
+</ul>
+<hr>
+</nav>
+<p>#optimal #generator #Unix #data #database</p>
+<p>source:https://taylor.town/ikea-oriented-development</p>
+<ul>
+<li>take up as little air as possible</li>
+<li>in #SQL world: basically <em>don’t do N+1</em>, which is obvious,
+don’t do stupid loops in application code if it can be done via O(1)
+efficient query(ies)
+<ul>
+<li>sometimes it isn’t obvious, e.g.
+<ul>
+<li>recursive data fetching (e.g. #trees)</li>
+<li>listing large sets of data — use generators, or some kind of
+iterator model, that fetches items on “as-you-go” basis; don’t download
+it as a big array, chunk it up and process a limited number items at a
+time</li>
+</ul></li>
+</ul></li>
+<li>write repurposable and replaceable code; do it like Unix, a
+program/function/module is a small part that does one thing (or a small
+number of things) good</li>
+<li>use standards for input and output, if it can be just a CSV, don’t
+overengineer it</li>
+</ul>
+<h2 data-number="1." id="seniors"><span
+class="header-section-number">1.</span> “seniors”</h2>
+<p>source:
+https://vadimkravcenko.com/shorts/falsehoods-junior-developers-believe-about-becoming-senior/</p>
+<ul>
+<li>being a senior isn’t magic
+<ul>
+<li>you learn more how little you know given field</li>
+<li>you are more proficient in how to manage things and work your way
+around problems, becoming a senior developer isn’t about suddenly having
+all the answers in the world</li>
+</ul></li>
+<li></li>
+</ul>
+</body>
+</html>
