@@ -7,7 +7,6 @@ from helper.links import toggle_file_links, toggle_desktop_file_links, toggle_di
 from helper.ex import ex
 from env import CFD, HD, HDC, ISD, UBU, USD, FXD
 
-
 config_entries: ConfigEntries = [
 
     ConfigEntryGroup(
@@ -367,7 +366,7 @@ config_entries: ConfigEntries = [
                 installation_packages=[
                     toggle_fileblock(
                         CFD + '/.bashrc',
-                        HD + '/.bashrc'
+                        HD + '/.bashrc',
                     ),
                     toggle_file_links(
                         CFD + '/.bash_aliases',
@@ -376,6 +375,17 @@ config_entries: ConfigEntries = [
                     toggle_file_links(
                         CFD + '/.inputrc',
                         HD + '/.inputrc',
+                    ),
+                ],
+            ),
+
+            ConfigEntry(
+                description='load Git config',
+                shorthand='git',
+                installation_packages=[
+                    toggle_file_links(
+                        CFD + '/.gitconfig',
+                        HD + '/.gitconfig',
                     ),
                 ],
             ),

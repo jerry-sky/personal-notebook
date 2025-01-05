@@ -142,7 +142,7 @@ def execute_entry(config_entry: ConfigEntry) -> bool:
         for i, ip in enumerate(config_entry.installation_packages):
             print(
                 '  \033[0;1m' + str(i) + '.\033[0m '
-                + str(ip.is_installed),
+                + str(ip.installation_status),
             )
         return True
 
