@@ -91,11 +91,11 @@ class ConfigEntry:
         description: str,
         shorthand: str,
         installation_packages: Union[List[InstallationPackage], InstallationPackage],
-        child_entries: List = [],
+        child_entries: Union[List, None] = None,
     ):
         self.__description = description
         self.__shorthand = shorthand
-        self.__child_entries = child_entries
+        self.__child_entries = child_entries if child_entries is not None else []
 
         # ensure it is a list of installation packages
         if type(installation_packages) is list:
