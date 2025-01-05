@@ -136,14 +136,6 @@ _[AltaCV template](https://www.overleaf.com/latex/templates/altacv-template/trgq
 
 
 
-## Archive
-
-[_Archived notes._](archive/ARCHIVE.md)
-
----
-
-
-
 ## Some remarks
 
 [m-aio]: https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one
