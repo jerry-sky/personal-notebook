@@ -1,0 +1,31 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = jwroczynski@gmail.com
+	name = Jerzy Wroczyński
+[core]
+	editor = /usr/bin/vi
+	quotepath = false
+	autocrlf = input
+[url "https://"]
+	insteadOf = git://
+
+[init]
+    defaultBranch = master
+[rebase]
+	autostash = true
+    updateRefs = true
+[pull]
+    rebase = true
+[push]
+    autoSetupRemote = true
+[merge]
+    conflictstyle = zdiff3
+[diff]
+    algorithm = histogram
+[help]
+    autocorrect = prompt

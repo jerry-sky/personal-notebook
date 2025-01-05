@@ -24,13 +24,13 @@ class InstallationPackage:
 
     __install: Callable
     __uninstall: Callable
-    __is_installed: Callable
+    __installation_status: Callable
     __is_immutable: bool
 
     def __init__(self, install_func: Callable, uninstall_func: Callable = lambda: None,
                  is_installed: Callable = lambda: None):
         self.__install = install_func
-        self.__is_installed = is_installed
+        self.__installation_status = is_installed
 
         # if no uninstall function provided, mark it as immutable
         if uninstall_func is None:
@@ -53,14 +53,14 @@ class InstallationPackage:
         self.__uninstall()
 
     @property
-    def is_installed(self) -> Status:
+    def installation_status(self) -> Status:
         '''
         Returns the status of the package.
         '''
-        if self.__is_installed is None:
+        if self.__installation_status is None:
             return Status.Unknown
         else:
-            output = self.__is_installed()
+            output = self.__installation_status()
             if type(output) is list:
                 return Status.Installed if sum(output) == len(output) else Status.NotInstalled
             else:
@@ -91,11 +91,11 @@ class ConfigEntry:
         description: str,
         shorthand: str,
         installation_packages: Union[List[InstallationPackage], InstallationPackage],
-        child_entries: List = [],
+        child_entries: Union[List, None] = None,
     ):
         self.__description = description
         self.__shorthand = shorthand
-        self.__child_entries = child_entries
+        self.__child_entries = child_entries if child_entries is not None else []
 
         # ensure it is a list of installation packages
         if type(installation_packages) is list:
@@ -124,7 +124,7 @@ class ConfigEntry:
         `is_installed` functions.
         '''
         for i in self.__installation_packages:
-            o = i.is_installed
+            o = i.installation_status
             if o == Status.NotInstalled:
                 return Status.NotInstalled
             elif o == Status.Unknown:
@@ -152,7 +152,7 @@ class ConfigEntry:
         Installs all installation packages related to this config entry.
         '''
         for i in self.__installation_packages:
-            if not (skip_already_installed and i.is_installed):
+            if not (skip_already_installed and i.installation_status == Status.Installed):
                 i.install()
 
     def uninstall(self) -> None:
