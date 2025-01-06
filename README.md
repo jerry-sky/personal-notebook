@@ -131,6 +131,7 @@ _[AltaCV template](https://www.overleaf.com/latex/templates/altacv-template/trgq
 - [2D Animation](the-arbitrary-collection/2d-animation.md)
 - [Lifehacks Stack Exchange](https://lifehacks.stackexchange.com/)
 - [Crazy software](the-arbitrary-collection/crazy-software.md)
+- [Humourous](the-arbitrary-collection/Humourous.md)
 
 ---
 
