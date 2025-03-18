@@ -11,7 +11,6 @@ keywords: 'bash, config, script, utilities, python3, keyboard, markdown, bash al
 First time setup includes some basic things such as:
 
 - Internet browser (Google Chrome),
-- IDE (VS Code),
 - NeoVim,
 - Git (with GitHub configuration).
 
